@@ -5,11 +5,18 @@ import Sidebar from './menu/Sidebar';
 import { GridItem } from '@chakra-ui/react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { LuHome, LuList, LuSearch, LuSettings, LuStar } from 'react-icons/lu';
+import Search from './menu/Search';
+
 
 export default function Menu() {
   const [selectedMenu, setSelectedMenu] = useState('');
   const location = useLocation();
   const navigate = useNavigate();
+
+  // Felugró popup állapota
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [popupType, setPopupType] = useState(""); // Aktuális popup típusa (pl. search)
+
 
   // Sidebar állapota
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -27,10 +34,25 @@ export default function Menu() {
     { label: "Beállítások", icon: <LuSettings />, path: "/settings" },
   ], []);
 
+  // Felugró popup bezárása
+  const handlePopupClose = () => {
+    setIsPopupOpen(false);
+    setPopupType("");
+    navigate(location.pathname.split('?')[0]); // Törli a query paramétert
+  };
 
   // URL változás figyelése
   useEffect(() => {
     const currentPath = location.pathname + location.search;
+    const popupParam = new URLSearchParams(location.search).get("popup");
+
+    if (popupParam) {
+      setIsPopupOpen(true);
+      setPopupType(popupParam);
+    } else {
+      setIsPopupOpen(false);
+      setPopupType("");
+    }
   
     // Kijelölt menüpont beállítása
     const selectedMenuItem = menuItems.find(item => item.path === currentPath.split('?')[0]);
@@ -40,6 +62,9 @@ export default function Menu() {
     }
     if (selectedFooterItem) {
       setSelectedMenu(selectedFooterItem.label);
+    }
+    if(currentPath.includes("search")){
+      setSelectedMenu("Keresés");
     }
   }, [location, menuItems, footerItems]);
 
@@ -54,6 +79,11 @@ export default function Menu() {
           isSidebarOpen={isSidebarOpen}
           setIsSidebarOpen={setIsSidebarOpen}
         />
+      )}
+
+       {/* Felugró popupok */}
+       {isPopupOpen && popupType === "search" && (
+        <Search handlePopupClose={handlePopupClose}/>
       )}
 
       {/* Navbar */}
