@@ -1,13 +1,14 @@
 import { Provider } from "./components/ui/provider"
 import './App.css';
-import Main from "./Main"
+import Main from "./Main";
+import { Box } from "@chakra-ui/react";
 
 function App() {
   return (
     <Provider>
-      <div className="App">
-        <Main/>
-      </div>
+        <Box bg="Background">
+          <Main></Main>
+        </Box>
     </Provider>
   );
 }
