@@ -1,11 +1,14 @@
-import logo from './logo.svg';
+import { Provider } from "./components/ui/provider"
 import './App.css';
+import Main from "./Main"
 
 function App() {
   return (
-    <div className="App">
-      {/* Test */}
-    </div>
+    <Provider>
+      <div className="App">
+        <Main/>
+      </div>
+    </Provider>
   );
 }
 
