@@ -4,6 +4,8 @@ import {
     Flex,
   } from "@chakra-ui/react";
 import logo from "../media/logo.png";
+import MenuAvatar from './MenuAvatar';
+
 export default function Navbar() {
   return (
     <>
@@ -22,7 +24,7 @@ export default function Navbar() {
               />
             </Button>
         </Flex>
-        
+        <MenuAvatar/>
     </Flex>
     </>
   )

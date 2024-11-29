@@ -1,19 +1,22 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import Navbar from './menu/Navbar';
+import SmallSidebar from './menu/SmallSidebar';
+import Sidebar from './menu/Sidebar';
 import { GridItem } from '@chakra-ui/react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { LuHome, LuList, LuSearch, LuSettings, LuStar } from 'react-icons/lu';
-import SmallSidebar from './menu/SmallSidebar';
 
 export default function Menu() {
   const [selectedMenu, setSelectedMenu] = useState('');
   const location = useLocation();
   const navigate = useNavigate();
 
+  // Sidebar állapota
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   // Menü elemek
   const menuItems = useMemo(() => [
-    { label: "Menü", icon: <LuList /> },
+    { label: "Menü", icon: <LuList /> }, // Sidebar nem tartalmaz path-et
     { label: "Keresés", icon: <LuSearch />, path: "?popup=search" },
     { label: "Kezdőlap", icon: <LuHome />, path: "/" },
     { label: "Kedvencek", icon: <LuStar />, path: "/favorites" },
@@ -25,12 +28,10 @@ export default function Menu() {
   ], []);
 
 
-  
-
   // URL változás figyelése
   useEffect(() => {
     const currentPath = location.pathname + location.search;
-
+  
     // Kijelölt menüpont beállítása
     const selectedMenuItem = menuItems.find(item => item.path === currentPath.split('?')[0]);
     const selectedFooterItem = footerItems.find(item => item.path === currentPath);
@@ -44,7 +45,16 @@ export default function Menu() {
 
   return (
     <>
-
+      {/* Sidebar megjelenítése függetlenül a popupoktól */}
+      {isSidebarOpen && (
+        <Sidebar
+          menuItems={menuItems}
+          footerItems={footerItems}
+          selectedMenu={selectedMenu}
+          isSidebarOpen={isSidebarOpen}
+          setIsSidebarOpen={setIsSidebarOpen}
+        />
+      )}
 
       {/* Navbar */}
       <GridItem
@@ -78,6 +88,7 @@ export default function Menu() {
       >
         <SmallSidebar
           selectedMenu={selectedMenu}
+          setIsSidebarOpen={()=> setIsSidebarOpen(true)}
           menuItems={menuItems}
           footerItems={footerItems}
         />
