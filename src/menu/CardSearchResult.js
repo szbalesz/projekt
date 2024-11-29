@@ -2,7 +2,7 @@
 import React from 'react';
 import { Button, Box, Text } from "@chakra-ui/react";
 
-export default function CardSearchResult({ result, track }) {
+export default function CardSearchResult({ result, handlePlay }) {
   return (
     <Button
       _hover={{ transform: "scale(1.05)" }}
@@ -14,6 +14,7 @@ export default function CardSearchResult({ result, track }) {
       textAlign="center"
       justifyContent="center"
       borderRadius="10px"
+      onClick={()=>handlePlay(result)}
     >
       <Box
         backgroundSize="cover"

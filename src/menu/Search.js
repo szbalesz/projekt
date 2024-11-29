@@ -16,7 +16,7 @@ import {
 } from "../components/ui/dialog";
 import CardSearchResult from './CardSearchResult';
 
-export default function Search({handlePopupClose}) {
+export default function Search({handlePlay, handlePopupClose}) {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
 
@@ -43,7 +43,7 @@ export default function Search({handlePopupClose}) {
                           artist: "Azahriah",
                           listeners: "30",
                           image: "https://i.scdn.co/image/ab67616d0000b273b9f856c934243d5bb06f0deb",
-                        }])}
+                          }])}
               />
             </InputGroup>
           </DialogTitle>
@@ -52,9 +52,9 @@ export default function Search({handlePopupClose}) {
         <DialogBody p={{ base: "1", md: "5" }} justifyContent="center" textAlign="center">
         <DialogTrigger>
           {results.length > 0 ? (
-            results.map((track) => (
+            results.map((track,index) => (
               <CardSearchResult
-                key={track.id}
+                key={index}
                 result={{
                   title: track.title,
                   artist: track.artist,
@@ -62,6 +62,7 @@ export default function Search({handlePopupClose}) {
                   image: track.image,
                 }}
                 track={track}
+                handlePlay={handlePlay}
               />
             ))
           ) : (

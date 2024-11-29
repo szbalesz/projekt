@@ -40,7 +40,7 @@ export default function Sidebar({menuItems,footerItems,selectedMenu,setIsSidebar
           </DrawerHeader>
           <DrawerBody p="0" onClick={onClose}>
               {menuItems.map((item, index) => item.label !== "Menü" ? (
-                <DrawerTrigger width="100%">
+                <DrawerTrigger key={index} width="100%">
                 <Link to={item.path} key={index}>
                 <Button
                   key={index}

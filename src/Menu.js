@@ -8,7 +8,7 @@ import { LuHome, LuList, LuSearch, LuSettings, LuStar } from 'react-icons/lu';
 import Search from './menu/Search';
 
 
-export default function Menu() {
+export default function Menu({ handlePlay }) {
   const [selectedMenu, setSelectedMenu] = useState('');
   const location = useLocation();
   const navigate = useNavigate();
@@ -83,7 +83,7 @@ export default function Menu() {
 
        {/* Felugró popupok */}
        {isPopupOpen && popupType === "search" && (
-        <Search handlePopupClose={handlePopupClose}/>
+        <Search handlePlay={handlePlay} handlePopupClose={handlePopupClose}/>
       )}
 
       {/* Navbar */}

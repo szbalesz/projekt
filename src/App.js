@@ -7,7 +7,7 @@ function App() {
   return (
     <Provider>
         <Box bg="Background">
-          <Main></Main>
+          <Main/>
         </Box>
     </Provider>
   );
