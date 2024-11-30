@@ -50,7 +50,6 @@ export default function Search({handlePlay, handlePopupClose}) {
         </DialogHeader>
 
         <DialogBody p={{ base: "1", md: "5" }} justifyContent="center" textAlign="center">
-        <DialogTrigger>
           {results.length > 0 ? (
             results.map((track,index) => (
               <CardSearchResult
@@ -63,12 +62,12 @@ export default function Search({handlePlay, handlePopupClose}) {
                 }}
                 track={track}
                 handlePlay={handlePlay}
+                handlePopupClose={handlePopupClose}
               />
             ))
           ) : (
             <p>Nincs találat.</p>
           )}
-          </DialogTrigger>
         </DialogBody>
 
         <DialogFooter justifyContent="center">

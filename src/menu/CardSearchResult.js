@@ -1,8 +1,17 @@
 // CardSearchResult.js
 import React from 'react';
 import { Button, Box, Text } from "@chakra-ui/react";
+import { useNavigate } from 'react-router-dom';
 
-export default function CardSearchResult({ result, handlePlay }) {
+export default function CardSearchResult({ result, handlePlay, handlePopupClose }) {
+  const navigate = useNavigate();
+
+  const play = ()=>{
+    handlePlay(result);
+    navigate("/current-song");
+    handlePopupClose();
+  }
+
   return (
     <Button
       _hover={{ transform: "scale(1.05)" }}
@@ -14,7 +23,7 @@ export default function CardSearchResult({ result, handlePlay }) {
       textAlign="center"
       justifyContent="center"
       borderRadius="10px"
-      onClick={()=>handlePlay(result)}
+      onClick={()=>play()}
     >
       <Box
         backgroundSize="cover"
