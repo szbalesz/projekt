@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {  LuPanelBottomClose, LuPanelLeftClose } from "react-icons/lu";
+import {  LuPanelBottomClose } from "react-icons/lu";
 import {
   DrawerBody,
   DrawerContent,
@@ -7,9 +7,9 @@ import {
   DrawerHeader,
   DrawerRoot,
   DrawerTitle,
-  DrawerTrigger,
+  DrawerBackdrop
 } from "../components/ui/drawer";
-import { Button ,DrawerBackdrop, Flex } from "@chakra-ui/react";
+import { Button , Flex } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
 export default function Sidebar({menuItems,footerItems,selectedMenu,setIsSidebarOpen}) {
@@ -26,6 +26,7 @@ export default function Sidebar({menuItems,footerItems,selectedMenu,setIsSidebar
   return (
     <>
         <DrawerRoot open={open} onOpenChange={onClose} placement={{ base: "bottom", md: "start" }} size={{ base: "full", md: "xs" }}>
+        <DrawerBackdrop/> 
         <DrawerContent bg="Background" borderWidth={{ base: "0px", md: "0px" }} borderTopWidth="0"  width={{ base: "100%", md: "225px" }}>
           <DrawerTitle textAlign="center">
             <Button top="0px" left="0px" width="100%" position="absolute" cursor="pointer" onClick={onClose} fontSize="md" justifyContent="space-between" height="50px" variant="outline">
