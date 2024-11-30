@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import {  LuPanelBottomClose, LuPanelLeftClose } from "react-icons/lu";
-// import Valaszto from "./Valaszto";
 import {
   DrawerBody,
   DrawerContent,
@@ -29,21 +28,19 @@ export default function Sidebar({menuItems,footerItems,selectedMenu,setIsSidebar
         <DrawerRoot open={open} onOpenChange={onClose} placement={{ base: "bottom", md: "start" }} size={{ base: "full", md: "xs" }}>
         <DrawerContent bg="Background" borderWidth={{ base: "0px", md: "0px" }} borderTopWidth="0"  width={{ base: "100%", md: "225px" }}>
           <DrawerTitle textAlign="center">
-            <DrawerTrigger top="0px" left="0px" width="100%" position="absolute" cursor="pointer">
-            <Button onClick={onClose} fontSize="md" justifyContent="space-between" width="100%" height="50px" variant="outline">
+            <Button top="0px" left="0px" width="100%" position="absolute" cursor="pointer" onClick={onClose} fontSize="md" justifyContent="space-between" height="50px" variant="outline">
               <LuPanelBottomClose /> Menü <LuPanelBottomClose />
             </Button>
-            </DrawerTrigger>
           </DrawerTitle>
           <DrawerHeader borderBottomWidth="1px" p="24.5px">
 
           </DrawerHeader>
           <DrawerBody p="0" onClick={onClose}>
               {menuItems.map((item, index) => item.label !== "Menü" ? (
-                <DrawerTrigger key={index} width="100%">
-                <Link to={item.path} key={index}>
+                <Link style={{display: "flex"}} onClick={onclose} to={item.path} key={index}>
                 <Button
                   key={index}
+                  mx={item.label === "Keresés" ? "auto" : "0"}
                   my={item.label === "Keresés" ? "5" : "0"}
                   justifyContent={{ base: "center", md: "space-between" }}
                   variant={selectedMenu === item.label ? "surface" : (item.label === "Keresés" ? "subtle":"ghost")}
@@ -53,14 +50,12 @@ export default function Sidebar({menuItems,footerItems,selectedMenu,setIsSidebar
                 >
                  {item.label} {item.icon}
                 </Button></Link>
-                </DrawerTrigger>
               ) : "" )}
           </DrawerBody>
           <DrawerFooter p="0" w="100%">
           <Flex w="100%" direction="column">
           {footerItems.map((item, index) => (
-              <DrawerTrigger py={{base: "5", md:"0"}} width="100%" onClick={onClose}>
-              <Link to={item.path} key={index}>
+              <Link py={{base: "5", md:"0"}} width="100%" onClick={onClose} to={item.path} key={index}>
               <Button
                 key={index}
                 justifyContent={{ base: "center", md: "space-between" }}
@@ -71,18 +66,15 @@ export default function Sidebar({menuItems,footerItems,selectedMenu,setIsSidebar
               >
                {item.label} {item.icon}
               </Button></Link>
-              </DrawerTrigger>
             ))
             }
-            <DrawerTrigger display={{base: "flex",md:"none"}} width="100%" cursor="pointer">
             <Button onClick={onClose} fontSize="md" justifyContent="space-between" display={{base: "flex", md:"none"}} width="100%" height="50px" variant="outline">
               <LuPanelBottomClose/> Bezárás <LuPanelBottomClose/>
             </Button>
-            </DrawerTrigger>
           </Flex>
           </DrawerFooter>
         </DrawerContent>
       </DrawerRoot>
     </>
   )
-}
+} 
