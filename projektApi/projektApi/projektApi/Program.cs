@@ -1,4 +1,7 @@
 
+using Microsoft.EntityFrameworkCore;
+using projektApi.Models;
+
 namespace projektApi
 {
     public class Program
@@ -6,6 +9,11 @@ namespace projektApi
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            builder.Services.AddDbContext<ProjektContext>(option =>
+            {
+                var connectionString = builder.Configuration.GetConnectionString("MySql");
+                option.UseMySQL(connectionString);
+            });
 
             // Add services to the container.
 

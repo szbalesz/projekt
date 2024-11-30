@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\tamas\\Desktop\\projekt\\projektApi\\projektApi\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{E4452194-F4CE-4C42-B49F-D54F4436BC1F}|projektApi\\projektApi.csproj|c:\\users\\tamas\\desktop\\projekt\\projektapi\\projektapi\\projektapi\\controllers\\felhasznalocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4452194-F4CE-4C42-B49F-D54F4436BC1F}|projektApi\\projektApi.csproj|solutionrelative:projektapi\\controllers\\felhasznalocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4452194-F4CE-4C42-B49F-D54F4436BC1F}|projektApi\\projektApi.csproj|c:\\users\\tamas\\desktop\\projekt\\projektapi\\projektapi\\projektapi\\models\\dto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4452194-F4CE-4C42-B49F-D54F4436BC1F}|projektApi\\projektApi.csproj|solutionrelative:projektapi\\models\\dto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E4452194-F4CE-4C42-B49F-D54F4436BC1F}|projektApi\\projektApi.csproj|c:\\users\\tamas\\desktop\\projekt\\projektapi\\projektapi\\projektapi\\models\\projektcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E4452194-F4CE-4C42-B49F-D54F4436BC1F}|projektApi\\projektApi.csproj|solutionrelative:projektapi\\models\\projektcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -23,25 +31,50 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Lista.cs",
-              "DocumentMoniker": "C:\\Users\\tamas\\Desktop\\projekt\\projektApi\\projektApi\\projektApi\\Models\\Lista.cs",
-              "RelativeDocumentMoniker": "projektApi\\Models\\Lista.cs",
-              "ToolTip": "C:\\Users\\tamas\\Desktop\\projekt\\projektApi\\projektApi\\projektApi\\Models\\Lista.cs*",
-              "RelativeToolTip": "projektApi\\Models\\Lista.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Title": "Dto.cs",
+              "DocumentMoniker": "C:\\Users\\tamas\\Desktop\\projekt\\projektApi\\projektApi\\projektApi\\Models\\Dto.cs",
+              "RelativeDocumentMoniker": "projektApi\\Models\\Dto.cs",
+              "ToolTip": "C:\\Users\\tamas\\Desktop\\projekt\\projektApi\\projektApi\\projektApi\\Models\\Dto.cs",
+              "RelativeToolTip": "projektApi\\Models\\Dto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-30T11:55:51.336Z",
+              "WhenOpened": "2024-11-30T17:01:52.38Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "FelhasznaloController.cs",
+              "DocumentMoniker": "C:\\Users\\tamas\\Desktop\\projekt\\projektApi\\projektApi\\projektApi\\Controllers\\FelhasznaloController.cs",
+              "RelativeDocumentMoniker": "projektApi\\Controllers\\FelhasznaloController.cs",
+              "ToolTip": "C:\\Users\\tamas\\Desktop\\projekt\\projektApi\\projektApi\\projektApi\\Controllers\\FelhasznaloController.cs",
+              "RelativeToolTip": "projektApi\\Controllers\\FelhasznaloController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-30T16:59:27.858Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Lista.cs",
+              "DocumentMoniker": "C:\\Users\\tamas\\Desktop\\projekt\\projektApi\\projektApi\\projektApi\\Models\\Lista.cs",
+              "RelativeDocumentMoniker": "projektApi\\Models\\Lista.cs",
+              "ToolTip": "C:\\Users\\tamas\\Desktop\\projekt\\projektApi\\projektApi\\projektApi\\Models\\Lista.cs",
+              "RelativeToolTip": "projektApi\\Models\\Lista.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-30T11:55:51.336Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "ProjektContext.cs",
               "DocumentMoniker": "C:\\Users\\tamas\\Desktop\\projekt\\projektApi\\projektApi\\projektApi\\Models\\ProjektContext.cs",
               "RelativeDocumentMoniker": "projektApi\\Models\\ProjektContext.cs",
-              "ToolTip": "C:\\Users\\tamas\\Desktop\\projekt\\projektApi\\projektApi\\projektApi\\Models\\ProjektContext.cs*",
-              "RelativeToolTip": "projektApi\\Models\\ProjektContext.cs*",
-              "ViewState": "AgIAABsAAAAAAAAAAAAmwAAAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\tamas\\Desktop\\projekt\\projektApi\\projektApi\\projektApi\\Models\\ProjektContext.cs",
+              "RelativeToolTip": "projektApi\\Models\\ProjektContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-30T11:55:44.589Z",
               "EditorCaption": ""
