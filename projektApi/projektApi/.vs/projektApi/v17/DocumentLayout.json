@@ -1,12 +1,54 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\tamas\\Desktop\\projekt\\projektApi\\projektApi\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E4452194-F4CE-4C42-B49F-D54F4436BC1F}|projektApi\\projektApi.csproj|c:\\users\\tamas\\desktop\\projekt\\projektapi\\projektapi\\projektapi\\models\\projektcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4452194-F4CE-4C42-B49F-D54F4436BC1F}|projektApi\\projektApi.csproj|solutionrelative:projektapi\\models\\projektcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4452194-F4CE-4C42-B49F-D54F4436BC1F}|projektApi\\projektApi.csproj|c:\\users\\tamas\\desktop\\projekt\\projektapi\\projektapi\\projektapi\\models\\lista.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4452194-F4CE-4C42-B49F-D54F4436BC1F}|projektApi\\projektApi.csproj|solutionrelative:projektapi\\models\\lista.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Lista.cs",
+              "DocumentMoniker": "C:\\Users\\tamas\\Desktop\\projekt\\projektApi\\projektApi\\projektApi\\Models\\Lista.cs",
+              "RelativeDocumentMoniker": "projektApi\\Models\\Lista.cs",
+              "ToolTip": "C:\\Users\\tamas\\Desktop\\projekt\\projektApi\\projektApi\\projektApi\\Models\\Lista.cs",
+              "RelativeToolTip": "projektApi\\Models\\Lista.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-30T11:55:51.336Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProjektContext.cs",
+              "DocumentMoniker": "C:\\Users\\tamas\\Desktop\\projekt\\projektApi\\projektApi\\projektApi\\Models\\ProjektContext.cs",
+              "RelativeDocumentMoniker": "projektApi\\Models\\ProjektContext.cs",
+              "ToolTip": "C:\\Users\\tamas\\Desktop\\projekt\\projektApi\\projektApi\\projektApi\\Models\\ProjektContext.cs",
+              "RelativeToolTip": "projektApi\\Models\\ProjektContext.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAmwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-30T11:55:44.589Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
