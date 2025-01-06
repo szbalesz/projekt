@@ -22,8 +22,7 @@ const CurrentSongPage = ({ currentSong }) => {
       </Box>
       {/* Háttér elsötétülése */}
       <Box 
-      style={{content: ""}}
-      backgroundColor="rgba(0,0,0,0.25)"
+      style={{content: ""}} backgroundColor="rgba(0,0,0,0.25)"
       position="absolute" 
       left="0" 
       top="0" 
@@ -51,10 +50,9 @@ const CurrentSongPage = ({ currentSong }) => {
         align="center" 
         w="auto" 
         p="0">
-          <Image 
+          <Image src={currentSong.image} 
           borderRadius="10px" 
           p="0" 
-          src={currentSong.image} 
           alt={currentSong.title} 
           boxSize="250px" />
           <Text fontSize="2xl" fontWeight="bold">
@@ -67,7 +65,6 @@ const CurrentSongPage = ({ currentSong }) => {
           </Text>
           <Text fontSize="md">
             <Button p={1} m={1} variant="solid"><LuStar/></Button>
-            {/* <Button p={1} m={1} variant="outline" colorScheme='teal' disabled><PlayIcon/></Button> */}
             <Button p={1} m={1} variant="solid"><LuList/></Button>
           </Text>
         </VStack>

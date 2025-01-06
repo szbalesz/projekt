@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {  LuPanelBottomClose } from "react-icons/lu";
+import { LuPanelBottomClose } from "react-icons/lu";
 import {
   DrawerBody,
   DrawerContent,
@@ -50,7 +50,8 @@ export default function Sidebar({menuItems,footerItems,selectedMenu,setIsSidebar
                   h="50px"
                 >
                  {item.label} {item.icon}
-                </Button></Link>
+                </Button>
+                </Link>
               ) : "" )}
           </DrawerBody>
           <DrawerFooter p="0" w="100%">
@@ -66,7 +67,8 @@ export default function Sidebar({menuItems,footerItems,selectedMenu,setIsSidebar
                 h="50px"
               >
                {item.label} {item.icon}
-              </Button></Link>
+              </Button>
+              </Link>
             ))
             }
             <Button onClick={onClose} fontSize="md" justifyContent="space-between" display={{base: "flex", md:"none"}} width="100%" height="50px" variant="outline">

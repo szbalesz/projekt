@@ -1,9 +1,9 @@
 // CardSearchResult.js
 import React from 'react';
-import { Button, Box, Text } from "@chakra-ui/react";
+import { Button, Box, Text, Image } from "@chakra-ui/react";
 import { useNavigate } from 'react-router-dom';
 
-export default function CardSearchResult({ result, handlePlay, handlePopupClose }) {
+export default function MusicCard({ result, handlePlay, handlePopupClose }) {
   const navigate = useNavigate();
 
   const play = ()=>{
@@ -16,9 +16,9 @@ export default function CardSearchResult({ result, handlePlay, handlePopupClose 
     <Button
       _hover={{ transform: "scale(1.05)" }}
       variant="ghost"
-      w="115px"
-      h="115px"
-      m="1"
+      w="150px"
+      h="auto"
+      m="2"
       p="0"
       textAlign="center"
       justifyContent="center"
@@ -26,15 +26,15 @@ export default function CardSearchResult({ result, handlePlay, handlePopupClose 
       onClick={()=>play()}
     >
       <Box
-        backgroundSize="cover"
-        backgroundImage={`url(${result.image})`}
         borderRadius="10px"
         color="white"
         textAlign="center"
         justifyContent="center"
         overflow="hidden"
+        boxShadow="0 0 10px 0 #99f6e4"
       >
-        <Box position="relative" p="0" w="115px" h="115px" paddingTop="7" backgroundColor="rgba(0,0,0,0.33)">
+      <Image src={result.image}/>
+        <Box p="0" w="auto" paddingTop="5" paddingBottom="5" backgroundColor="rgba(0,0,0,0.33)">
           <Text fontWeight="bold">{result.title}</Text>
           <Text color="#99f6e4">{result.artist}</Text>
           <Text fontSize="12px" letterSpacing="tight">

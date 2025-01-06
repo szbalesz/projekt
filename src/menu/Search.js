@@ -14,7 +14,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "../components/ui/dialog";
-import CardSearchResult from './CardSearchResult';
+import MusicCard from '../MusicCard';
 
 export default function Search({handlePlay, handlePopupClose}) {
   const [query, setQuery] = useState('');
@@ -52,7 +52,7 @@ export default function Search({handlePlay, handlePopupClose}) {
         <DialogBody p={{ base: "1", md: "5" }} justifyContent="center" textAlign="center">
           {results.length > 0 ? (
             results.map((track,index) => (
-              <CardSearchResult
+              <MusicCard
                 key={index}
                 result={{
                   title: track.title,
