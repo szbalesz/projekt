@@ -14,6 +14,13 @@ namespace projektApi
                 var connectionString = builder.Configuration.GetConnectionString("MySql");
                 option.UseMySQL(connectionString);
             });
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowLocalhost3000",
+                    policy => policy.WithOrigins("http://localhost:3000") // Add hozzá a kívánt origin-t
+                                    .AllowAnyHeader()
+                                    .AllowAnyMethod());
+            });
 
             // Add services to the container.
 
@@ -34,7 +41,7 @@ namespace projektApi
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
-
+            app.UseCors("AllowLocalhost3000");
 
             app.MapControllers();
 
