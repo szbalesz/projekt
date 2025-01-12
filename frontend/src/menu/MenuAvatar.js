@@ -11,26 +11,25 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "../components/ui/drawer"
-import { Flex } from '@chakra-ui/react'
+import { Flex, Span } from '@chakra-ui/react'
 import { LuPanelRightClose, LuSpace} from "react-icons/lu";
 import profilKep from "../media/azahriah.jpg";
 
-export default function MenuAvatar() {
+export default function MenuAvatar({ account }) {
 
   return (
     <>
     <DrawerRoot placement={{ base: "top", md: "end" }} size={{ base: "full", md: "xs" }}>
       <DrawerBackdrop/> 
-      <DrawerTrigger position="absolute" right="5" asChild >
-        <Button variant="outline" p="0" borderRadius="50%">
-            <Avatar src={profilKep} h="95%" colorPalette="teal" />
-        </Button>
+      <DrawerTrigger variant="outline" position="absolute" p={0} w="45px" right="5" borderRadius="50%" asChild>
+            <Avatar src={account.profilkep} h="95%" colorPalette="teal" />
       </DrawerTrigger>
       <DrawerContent bg="Background" borderWidth={{base: "0px"}} borderRightWidth="1px">
-      <DrawerTrigger width="100%" variant="outline" position="absolute" top="0" right="0">
-          <Button justifyContent="right" variant="outline" width="100%" height="50px">
-          <Flex paddingLeft="25px" justifyContent="center" w="100%" fontSize="md">Profil</Flex> <LuPanelRightClose/>
-          </Button>
+      <DrawerTrigger fontWeight="bold" borderRadius="5px" variant="outline" width="100%" height="50px" position="absolute" top="0" right="0">
+          <Flex justifyContent="space-between" fontSize="md">
+          <Span width="100%">Profil</Span> 
+          <Span w="10%" position="absolute" right="0" p="2px" color="#5eead4"><LuPanelRightClose/></Span>
+          </Flex>
         </DrawerTrigger>
         <DrawerHeader p="5">
             <DrawerTitle>
@@ -40,7 +39,7 @@ export default function MenuAvatar() {
         <DrawerHeader>
           <DrawerTitle>
           <Flex justifyContent="center" textAlign="center">
-          <Avatar width="50px" height="50px" src={profilKep}/><Flex p="3">TomeeL9</Flex>
+          <Avatar width="50px" height="50px" src={account.profilkep}/><Flex p="3" color="#5eead4">{account.felhasznalonev}</Flex>
           </Flex>
           </DrawerTitle>
         </DrawerHeader>

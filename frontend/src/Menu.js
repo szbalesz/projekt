@@ -8,7 +8,7 @@ import { LuHome, LuList, LuSearch, LuSettings, LuStar } from 'react-icons/lu';
 import Search from './menu/Search';
 
 
-export default function Menu({ handlePlay }) {
+export default function Menu({ handlePlay, account }) {
   const [selectedMenu, setSelectedMenu] = useState('');
   const location = useLocation();
   const navigate = useNavigate();
@@ -97,7 +97,7 @@ export default function Menu({ handlePlay }) {
         zIndex={12}
         bg="Background"
       >
-        <Navbar />
+        <Navbar account={account}/>
       </GridItem>
 
       {/* Small Sidebar */}

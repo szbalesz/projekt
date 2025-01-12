@@ -12,7 +12,7 @@ import Player from './menu/Player';
 import CurrentSongPage from './pages/CurrentSongPage';
 
 
-export default function Main() {
+export default function Main({account}) {
     const [currentSong, setCurrentSong] = useState(null);
 
     const handlePlay = (song) => {
@@ -24,7 +24,7 @@ export default function Main() {
         <Router>
           {/* Main Grid */}
           <Grid templateRows="50px 1fr" templateColumns="50px 1fr" height="100vh">
-                <Menu handlePlay={handlePlay}/>
+                <Menu account={account} handlePlay={handlePlay}/>
               {/* Main Content */}
             <GridItem bg="Background" transition="all 1s ease-in-out" rowSpan={1} paddingTop={{ base: "35px", md: "0" }}  colSpan={{ base: "2", md: "1" }} paddingRight={{ base: "0px", md: "50px" }}>
               <Box py={5}>

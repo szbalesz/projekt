@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tamas\\Desktop\\projekt\\projektApi\\projektApi\\projektApi\\projektApi.csproj": {}
+    "C:\\Users\\bales\\Desktop\\projekt\\backend\\projektApi\\projektApi\\projektApi\\projektApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tamas\\Desktop\\projekt\\projektApi\\projektApi\\projektApi\\projektApi.csproj": {
+    "C:\\Users\\bales\\Desktop\\projekt\\backend\\projektApi\\projektApi\\projektApi\\projektApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tamas\\Desktop\\projekt\\projektApi\\projektApi\\projektApi\\projektApi.csproj",
+        "projectUniqueName": "C:\\Users\\bales\\Desktop\\projekt\\backend\\projektApi\\projektApi\\projektApi\\projektApi.csproj",
         "projectName": "projektApi",
-        "projectPath": "C:\\Users\\tamas\\Desktop\\projekt\\projektApi\\projektApi\\projektApi\\projektApi.csproj",
-        "packagesPath": "C:\\Users\\tamas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tamas\\Desktop\\projekt\\projektApi\\projektApi\\projektApi\\obj\\",
+        "projectPath": "C:\\Users\\bales\\Desktop\\projekt\\backend\\projektApi\\projektApi\\projektApi\\projektApi.csproj",
+        "packagesPath": "C:\\Users\\bales\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\bales\\Desktop\\projekt\\backend\\projektApi\\projektApi\\projektApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\tamas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\bales\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

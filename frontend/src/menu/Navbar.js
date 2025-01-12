@@ -6,7 +6,7 @@ import {
 import logo from "../media/logo.png";
 import MenuAvatar from './MenuAvatar';
 
-export default function Navbar() {
+export default function Navbar({account}) {
   return (
     <>
     <Flex bg="Background" as="nav" h="50px" align="center" justify="space-between" p="3" borderBottomWidth="1px" color="white">
@@ -24,7 +24,7 @@ export default function Navbar() {
               />
             </Button>
         </Flex>
-        <MenuAvatar/>
+        <MenuAvatar account={account}/>
     </Flex>
     </>
   )
