@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2025. Jan 12. 15:02
+-- Létrehozás ideje: 2025. Jan 13. 11:59
 -- Kiszolgáló verziója: 10.4.32-MariaDB
 -- PHP verzió: 8.2.12
 
@@ -33,57 +33,81 @@ CREATE TABLE `felhasznalo` (
   `GUID` varchar(36) NOT NULL,
   `Felhasznalonev` varchar(50) NOT NULL,
   `Jelszo` varchar(50) NOT NULL,
-  `Teljesnev` varchar(50) NOT NULL,
-  `Email` varchar(50) NOT NULL,
-  `Lejatszasilistak` varchar(36) NOT NULL,
-  `Szuletesidatum` date NOT NULL,
-  `Profilkep` longtext NOT NULL
+  `Teljesnev` varchar(50) DEFAULT NULL,
+  `Email` varchar(50) DEFAULT NULL,
+  `Szuletesdatum` date DEFAULT NULL,
+  `Profilkep` longtext DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
 
 --
 -- A tábla adatainak kiíratása `felhasznalo`
 --
 
-INSERT INTO `felhasznalo` (`GUID`, `Felhasznalonev`, `Jelszo`, `Teljesnev`, `Email`, `Lejatszasilistak`, `Szuletesidatum`, `Profilkep`) VALUES
-('2b9fb29b-73d8-4d48-b621-70dec6cecccc', 'vlapwood0', 'bmaccoveney0', 'McIsti', 'fpearlman0@zimbio.com', '33d4fa10-af41-11ef-8761-047c16bd83b3', '2024-06-18', '18X7iSnPrEAg6X56WBNAJ6BZRxN9kK9Uyn');
+INSERT INTO `felhasznalo` (`GUID`, `Felhasznalonev`, `Jelszo`, `Teljesnev`, `Email`, `Szuletesdatum`, `Profilkep`) VALUES
+('2b9fb29b-73d8-4d48-b621-70dec6cecccc', 'Isti', 'bmaccoveney0', 'McIsti', 'fpearlman0@zimbio.com', '2024-06-18', 'https://i.scdn.co/image/ab6761610000e5eb647202030fc53a44ecea960d'),
+('5c34221b-73d8-4d48-b621-70dec6cedddd', 'Józsi', 'bmaccoveney0313113', 'McIsti2311', 'fpearlman0@zimbio.com131313', '2024-06-18', 'https://i.scdn.co/image/ab6761610000e5eb647202030fc53a44ecea960d');
 
 -- --------------------------------------------------------
 
 --
--- Tábla szerkezet ehhez a táblához `lista`
+-- Tábla szerkezet ehhez a táblához `lejátszasi_lista`
 --
 
-CREATE TABLE `lista` (
+CREATE TABLE `lejátszasi_lista` (
   `GUID` varchar(36) NOT NULL,
-  `ZeneId` varchar(36) NOT NULL
+  `FelhasznaloID` varchar(36) NOT NULL,
+  `ListaNev` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
 
 --
--- A tábla adatainak kiíratása `lista`
+-- A tábla adatainak kiíratása `lejátszasi_lista`
 --
 
-INSERT INTO `lista` (`GUID`, `ZeneId`) VALUES
-('33d4fa10-af41-11ef-8761-047c16bd83b3', '12ce675b-af41-11ef-8761-047c16bd83b3');
+INSERT INTO `lejátszasi_lista` (`GUID`, `FelhasznaloID`, `ListaNev`) VALUES
+('33d4fa10-af41-11ef-8761-047c16bd83b3', '2b9fb29b-73d8-4d48-b621-70dec6cecccc', 'Kedvencek'),
+('44d4fa10-af41-11ef-8761-047c16bd83b4', '2b9fb29b-73d8-4d48-b621-70dec6cecccc', 'Népszerű');
 
 -- --------------------------------------------------------
 
 --
--- Tábla szerkezet ehhez a táblához `tartalom`
+-- Tábla szerkezet ehhez a táblához `lista_zene`
 --
 
-CREATE TABLE `tartalom` (
-  `GUID` varchar(36) NOT NULL,
-  `Eloado` varchar(50) NOT NULL,
-  `Cim` varchar(50) NOT NULL,
-  `Kep` longtext NOT NULL
+CREATE TABLE `lista_zene` (
+  `ListaID` varchar(36) NOT NULL,
+  `ZeneID` varchar(36) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
 
 --
--- A tábla adatainak kiíratása `tartalom`
+-- A tábla adatainak kiíratása `lista_zene`
 --
 
-INSERT INTO `tartalom` (`GUID`, `Eloado`, `Cim`, `Kep`) VALUES
-('12ce675b-af41-11ef-8761-047c16bd83b3', 'McIsti', 'Picsaszagvan', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPmZClpmfPdwIXFF5b1S5UCaU-uY0xFXSd9w&s');
+INSERT INTO `lista_zene` (`ListaID`, `ZeneID`) VALUES
+('33d4fa10-af41-11ef-8761-047c16bd83b3', '12ce675b-af41-11ef-8761-047c16bd83b3'),
+('33d4fa10-af41-11ef-8761-047c16bd83b3', '5dc947c5-d196-11ef-a697-701ab8764395'),
+('44d4fa10-af41-11ef-8761-047c16bd83b4', '1dc947c5-d196-11ef-a697-701ab8764391');
+
+-- --------------------------------------------------------
+
+--
+-- Tábla szerkezet ehhez a táblához `zene`
+--
+
+CREATE TABLE `zene` (
+  `GUID` varchar(36) NOT NULL,
+  `Eloado` varchar(50) DEFAULT NULL,
+  `Cim` varchar(50) DEFAULT NULL,
+  `Kep` longtext DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
+
+--
+-- A tábla adatainak kiíratása `zene`
+--
+
+INSERT INTO `zene` (`GUID`, `Eloado`, `Cim`, `Kep`) VALUES
+('12ce675b-af41-11ef-8761-047c16bd83b3', 'Azahriah', 'SZIA', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPmZClpmfPdwIXFF5b1S5UCaU-uY0xFXSd9w&s'),
+('1dc947c5-d196-11ef-a697-701ab8764391', 'MCISTI', 'ASJDSAK', 'https://f4.bcbits.com/img/a0466831023_65'),
+('5dc947c5-d196-11ef-a697-701ab8764395', 'MCISTI2', 'Fekália', 'https://f4.bcbits.com/img/a0466831023_65');
 
 --
 -- Indexek a kiírt táblákhoz
@@ -93,20 +117,26 @@ INSERT INTO `tartalom` (`GUID`, `Eloado`, `Cim`, `Kep`) VALUES
 -- A tábla indexei `felhasznalo`
 --
 ALTER TABLE `felhasznalo`
-  ADD PRIMARY KEY (`GUID`),
-  ADD KEY `Lejatszasilistak` (`Lejatszasilistak`);
+  ADD PRIMARY KEY (`GUID`);
 
 --
--- A tábla indexei `lista`
+-- A tábla indexei `lejátszasi_lista`
 --
-ALTER TABLE `lista`
+ALTER TABLE `lejátszasi_lista`
   ADD PRIMARY KEY (`GUID`),
-  ADD KEY `ZeneId` (`ZeneId`);
+  ADD KEY `FelhasznaloID` (`FelhasznaloID`);
 
 --
--- A tábla indexei `tartalom`
+-- A tábla indexei `lista_zene`
 --
-ALTER TABLE `tartalom`
+ALTER TABLE `lista_zene`
+  ADD PRIMARY KEY (`ListaID`,`ZeneID`),
+  ADD KEY `ZeneID` (`ZeneID`);
+
+--
+-- A tábla indexei `zene`
+--
+ALTER TABLE `zene`
   ADD PRIMARY KEY (`GUID`);
 
 --
@@ -114,16 +144,17 @@ ALTER TABLE `tartalom`
 --
 
 --
--- Megkötések a táblához `felhasznalo`
+-- Megkötések a táblához `lejátszasi_lista`
 --
-ALTER TABLE `felhasznalo`
-  ADD CONSTRAINT `felhasznalo_ibfk_1` FOREIGN KEY (`Lejatszasilistak`) REFERENCES `lista` (`GUID`);
+ALTER TABLE `lejátszasi_lista`
+  ADD CONSTRAINT `lejátszasi_lista_ibfk_1` FOREIGN KEY (`FelhasznaloID`) REFERENCES `felhasznalo` (`GUID`) ON DELETE CASCADE;
 
 --
--- Megkötések a táblához `lista`
+-- Megkötések a táblához `lista_zene`
 --
-ALTER TABLE `lista`
-  ADD CONSTRAINT `lista_ibfk_1` FOREIGN KEY (`ZeneId`) REFERENCES `tartalom` (`GUID`);
+ALTER TABLE `lista_zene`
+  ADD CONSTRAINT `lista_zene_ibfk_1` FOREIGN KEY (`ListaID`) REFERENCES `lejátszasi_lista` (`GUID`) ON DELETE CASCADE,
+  ADD CONSTRAINT `lista_zene_ibfk_2` FOREIGN KEY (`ZeneID`) REFERENCES `zene` (`GUID`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
