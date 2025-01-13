@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace projektApi.Models;
 
@@ -11,15 +12,13 @@ public partial class Felhasznalo
 
     public string Jelszo { get; set; } = null!;
 
-    public string Teljesnev { get; set; } = null!;
+    public string? Teljesnev { get; set; }
 
-    public string Email { get; set; } = null!;
+    public string? Email { get; set; }
 
-    public string Lejatszasilistak { get; set; } = null!;
+    public DateTime? Szuletesdatum { get; set; }
 
-    public DateTime Szuletesidatum { get; set; }
-
-    public string Profilkep { get; set; } = null!;
-
-    public virtual Lista LejatszasilistakNavigation { get; set; } = null!;
+    public string? Profilkep { get; set; }
+    
+    public virtual ICollection<LejatszasiLista> LejátszasiLista { get; set; } = new List<LejatszasiLista>();
 }

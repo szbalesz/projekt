@@ -1,0 +1,141 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "projektApi",
+    "version": "1.0"
+  },
+  "paths": {
+    "/felhasznalo": {
+      "get": {
+        "tags": [
+          "Felhasznalo"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Felhasznalo"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Felhasznalo"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Felhasznalo"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Felhasznalo": {
+        "type": "object",
+        "properties": {
+          "guid": {
+            "type": "string",
+            "nullable": true
+          },
+          "felhasznalonev": {
+            "type": "string",
+            "nullable": true
+          },
+          "jelszo": {
+            "type": "string",
+            "nullable": true
+          },
+          "teljesnev": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "szuletesdatum": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "profilkep": {
+            "type": "string",
+            "nullable": true
+          },
+          "lejátszasiLista": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LejatszasiLista"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LejatszasiLista": {
+        "type": "object",
+        "properties": {
+          "guid": {
+            "type": "string",
+            "nullable": true
+          },
+          "felhasznaloId": {
+            "type": "string",
+            "nullable": true
+          },
+          "listaNev": {
+            "type": "string",
+            "nullable": true
+          },
+          "felhasznalo": {
+            "$ref": "#/components/schemas/Felhasznalo"
+          },
+          "zenes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Zene"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Zene": {
+        "type": "object",
+        "properties": {
+          "guid": {
+            "type": "string",
+            "nullable": true
+          },
+          "eloado": {
+            "type": "string",
+            "nullable": true
+          },
+          "cim": {
+            "type": "string",
+            "nullable": true
+          },
+          "kep": {
+            "type": "string",
+            "nullable": true
+          },
+          "lista": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LejatszasiLista"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}
