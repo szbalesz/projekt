@@ -31,7 +31,7 @@ export default function PlaylistCard({ playlist, handlePlay, handlePopupClose })
         overflow="hidden"
         boxShadow="0 0 10px 0 #99f6e4"
       >
-      <Image src={playlist.image}/>
+      <Image src="https://t3.ftcdn.net/jpg/04/62/60/80/360_F_462608080_J2AJrf8h0fmbFqnTVUQfza8JivYOfShz.jpg"/>
         <Box p="0" w="auto" paddingTop="5" paddingBottom="5" backgroundColor="rgba(0,0,0,0.33)">
           <Text fontWeight="bold">{playlist.listaNev}</Text>
           <Text color="#99f6e4">{playlist.artist}</Text>
