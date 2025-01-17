@@ -24,7 +24,7 @@ export default function Navbar({account, isLoggedIn}) {
         {isLoggedIn? 
         <MenuAvatar account={account}/> 
         : 
-        <Link to={"/login"}>
+        <Link to={"/login"} style={{position: "absolute", p: "0", width: "45px", right:"15px"}}>
           <Avatar colorPalette="teal" />
         </Link>
         }
