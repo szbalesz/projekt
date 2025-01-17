@@ -16,35 +16,35 @@ import { Checkbox } from "../components/ui/checkbox"
 import { Link } from 'react-router-dom';
 
 
-export default function Login() {
+export default function Register() {
+    const [showPassword, setShowPassword] = useState(false);
   return (
     <>
       <Flex display={{ base: "block", md: "flex"}} justifyContent="center">
         <AbsoluteCenter>
             <Stack spacing={8} mx="auto" px={6}>
             <Box rounded="lg" w="350px" bg="bg" boxShadow="0 0 50px 0px #99f6e4"  px={8} py={5}>
-                <Heading textAlign="center" color="teal.500" w="50%" borderRadius="25px" mx="auto" my="3" p="1">Bejelentkezés</Heading>
+                <Heading textAlign="center" color="teal.500" w="50%" borderRadius="25px" mx="auto" my="3" p="1">Regisztráció</Heading>
                 <Stack spacing={4}>
                 <Field label="Felhasználónév">
                     <Input type="text" name="email" placeholder="Add meg a felhasználóneved" />
                 </Field>
+                <Field label="E-mail">
+                    <Input type="email" name="email" placeholder="Add meg az e-mailedet" />
+                </Field>
                 <Field label="Jelszó">
-                    <Input type="password" placeholder="Add meg a jelszavad"
-                    />
+                    <Input type="password" placeholder="Add meg a jelszavad"/>
                 </Field>
-                <Field my="2">
-                    <Checkbox colorScheme="teal" color="white">
-                    Maradjon bejelentkezve
-                    </Checkbox>
+                <Field label="Jelszó újra">
+                    <Input type="password" placeholder="Add meg a jelszavad újra"/>
                 </Field>
-                <Link colorPalette="teal">Elfelejtett jelszó?</Link>
                 <Button colorPalette="teal" color="white" mt={4} mb={3}>
-                    Bejelentkezés
+                    Regisztráció
                 </Button>
                 </Stack>
             </Box>
             <Text textAlign="center">
-                Ha még nincs fiókod <ChakraLink colorPalette="teal"><Link to={"/register"}>Regisztrálj</Link></ChakraLink>!
+                Ha már van fiókod  <ChakraLink colorPalette="teal"><Link to={"/login"} > Jelentkezz be</Link></ChakraLink>!
             </Text>
             </Stack>
         </AbsoluteCenter>

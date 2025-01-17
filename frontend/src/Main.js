@@ -11,6 +11,7 @@ import Settings from "./pages/Settings";
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Player from './menu/Player';
 import CurrentSongPage from './pages/CurrentSongPage';
+import Register from './pages/Register';
 
 
 export default function Main({account}) {
@@ -32,6 +33,7 @@ export default function Main({account}) {
                 <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/login" element={<Login />} />
+                  <Route path="/register" element={<Register />} />
                   <Route path="/favorites" element={<Favorites />} />
                   <Route path="/playlists" element={<Playlists />} />
                   <Route path="/settings" element={<Settings />} />
