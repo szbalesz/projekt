@@ -3,6 +3,7 @@ import { Box, Grid, GridItem} from '@chakra-ui/react';
 
 import Menu from './Menu';
 import Home from "./pages/Home";
+import Login from './pages/Login';
 import Favorites from "./pages/Favorites";
 import Playlists from "./pages/Playlists";
 import Settings from "./pages/Settings";
@@ -30,6 +31,7 @@ export default function Main({account}) {
               <Box py={5}>
                 <Routes>
                   <Route path="/" element={<Home />} />
+                  <Route path="/login" element={<Login />} />
                   <Route path="/favorites" element={<Favorites />} />
                   <Route path="/playlists" element={<Playlists />} />
                   <Route path="/settings" element={<Settings />} />
