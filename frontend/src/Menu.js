@@ -4,7 +4,7 @@ import SmallSidebar from './menu/SmallSidebar';
 import Sidebar from './menu/Sidebar';
 import { GridItem } from '@chakra-ui/react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { LuHome, LuList, LuSearch, LuSettings, LuStar } from 'react-icons/lu';
+import { LuHouse, LuList, LuSearch, LuSettings, LuStar } from 'react-icons/lu';
 import Search from './menu/Search';
 
 
@@ -25,7 +25,7 @@ export default function Menu({ handlePlay, account }) {
   const menuItems = useMemo(() => [
     { label: "Menü", icon: <LuList /> }, // Sidebar nem tartalmaz path-et
     { label: "Keresés", icon: <LuSearch />, path: "?popup=search" },
-    { label: "Kezdőlap", icon: <LuHome />, path: "/" },
+    { label: "Kezdőlap", icon: <LuHouse />, path: "/" },
     { label: "Kedvencek", icon: <LuStar />, path: "/favorites" },
     { label: "Lejátszási listák", icon: <LuList />, path: "/playlists" },
   ], []);
