@@ -10,7 +10,7 @@ const CurrentSongPage = ({ currentSong }) => {
       <Box 
       style={{content: ""}}
       transition="all 1s ease-in-out"
-      backgroundImage={currentSong ? `url(${currentSong.image})` : ""} 
+      backgroundImage={currentSong ? `url(${currentSong.kep})` : ""} 
       backgroundSize="cover" 
       backgroundPosition="center" 
       backgroundRepeat="no-repeat" 
@@ -50,16 +50,16 @@ const CurrentSongPage = ({ currentSong }) => {
         align="center" 
         w="auto" 
         p="0">
-          <Image src={currentSong.image} 
+          <Image src={currentSong.kep} 
           borderRadius="10px" 
           p="0" 
-          alt={currentSong.title} 
+          alt={currentSong.cim} 
           boxSize="250px" />
           <Text fontSize="2xl" fontWeight="bold">
-            {currentSong.title}
+            {currentSong.cim}
           </Text>
           <Text fontSize="lg">
-            {currentSong.artist}
+            {currentSong.eloado}
           </Text>
           <Text fontSize="md">
           </Text>

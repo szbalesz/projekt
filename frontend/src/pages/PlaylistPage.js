@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import MusicCard from '../MusicCard';
 import { Center, Flex, Heading } from '@chakra-ui/react';
 
-export default function PlaylistPage() {
+export default function PlaylistPage({handlePlay}) {
     const [playlist, setPlaylist] = useState([
         {
             zenes: [{},{}],
@@ -19,7 +19,7 @@ export default function PlaylistPage() {
             //         setPlaylist(data[i]);
             //     }
             // }
-            setPlaylist(data[0]);
+            setPlaylist(data[0].zenes);
             console.log(data[0])
         })
         .catch(e => {console.error("HIBA, Nem sikerült lekérni a lejátszási listát: ",e)})
@@ -34,8 +34,8 @@ export default function PlaylistPage() {
         <Heading textAlign="center"> {playlist.listaNev} </Heading>
         <Center>
           <Flex wrap="wrap" justify="center" gap={4} width="100%">
-            {playlist.zenes.map((music, index) => (
-              <MusicCard key={index} music={music} />
+            {playlist.map((music, index) => (
+              <MusicCard key={index} music={music} handlePlay={handlePlay}/>
             ))}
           </Flex>
         </Center>

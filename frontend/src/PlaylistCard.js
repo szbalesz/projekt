@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 export default function PlaylistCard({ playlist }) {
   const navigate = useNavigate();
 
-  const play = ()=>{
+  const openPlaylist = ()=>{
     navigate(`/playlist/${playlist.listaNev}`);
   }
   return (
@@ -19,7 +19,7 @@ export default function PlaylistCard({ playlist }) {
       textAlign="center"
       justifyContent="center"
       borderRadius="10px"
-      onClick={()=>play()}
+      onClick={()=>openPlaylist()}
     >
       <Box
         borderRadius="10px"

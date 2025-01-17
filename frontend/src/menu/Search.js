@@ -39,10 +39,9 @@ export default function Search({handlePlay, handlePopupClose}) {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 onKeyDown={()=> setResults([{
-                          title: "XDDDDDD",
-                          artist: "Azahriah",
-                          listeners: "30",
-                          image: "https://i.scdn.co/image/ab67616d0000b273b9f856c934243d5bb06f0deb",
+                          cim: "XDDDDDD",
+                          eloado: "Azahriah",
+                          kep: "https://i.scdn.co/image/ab67616d0000b273b9f856c934243d5bb06f0deb",
                           }])}
               />
             </InputGroup>
@@ -54,12 +53,7 @@ export default function Search({handlePlay, handlePopupClose}) {
             results.map((track,index) => (
               <MusicCard
                 key={index}
-                music={{
-                  title: track.title,
-                  artist: track.artist,
-                  listeners: track.listeners,
-                  image: track.image,
-                }}
+                music={track}
                 track={track}
                 handlePlay={handlePlay}
                 handlePopupClose={handlePopupClose}

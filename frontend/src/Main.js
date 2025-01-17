@@ -41,7 +41,7 @@ export default function Main({account, isLoggedIn, onLogin}) {
                   {/* Ha ismeretlen az útvonal, irányítsd a kezdőlapra */}
                   <Route path="*" element={<Navigate to="/" />} />
                   <Route path="/current-song/:song" element={<CurrentSongPage currentSong={currentSong} />} />
-                  <Route path="/playlist/:listaNev" element={<PlaylistPage/>} />
+                  <Route path="/playlist/:listaNev" element={<PlaylistPage handlePlay={handlePlay}/>} />
                 </Routes>
               </Box>
             </GridItem>

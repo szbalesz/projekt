@@ -1,14 +1,17 @@
 import React from 'react';
 import { Button, Box, Text, Image } from "@chakra-ui/react";
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 export default function MusicCard({ music, handlePlay, handlePopupClose }) {
   const navigate = useNavigate();
-
+  const location = useLocation();
+  const isPopup = location.pathname.includes("popup");  
   const play = ()=>{
     handlePlay(music);
-    navigate(`/current-song/${music.title}`);
-    handlePopupClose();
+    navigate(`/current-song/${music.guid}`);
+    if(isPopup){
+      handlePopupClose();
+    }
   }
 
   return (
@@ -32,13 +35,10 @@ export default function MusicCard({ music, handlePlay, handlePopupClose }) {
         overflow="hidden"
         boxShadow="0 0 10px 0 #99f6e4"
       >
-      <Image src={music.image}/>
+      <Image src={music.kep}/>
         <Box p="0" w="auto" paddingTop="5" paddingBottom="5" backgroundColor="rgba(0,0,0,0.33)">
-          <Text fontWeight="bold">{music.title}</Text>
-          <Text color="#99f6e4">{music.artist}</Text>
-          <Text fontSize="12px" letterSpacing="tight">
-            {music.listeners} hallgató
-          </Text>
+          <Text fontWeight="bold">{music.cim}</Text>
+          <Text color="#99f6e4">{music.eloado}</Text>
         </Box>
       </Box>
     </Button>
