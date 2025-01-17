@@ -1,23 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   Box,
   Flex,
   Heading,
   Stack,
   Button,
-  Link as ChakraLink,
   Text,
   Input,
   AbsoluteCenter,
 } from '@chakra-ui/react';
 import { Field } from "../components/ui/field"
-import { InputGroup } from '../components/ui/input-group';
-import { Checkbox } from "../components/ui/checkbox"
 import { Link } from 'react-router-dom';
 
 
 export default function Register() {
-    const [showPassword, setShowPassword] = useState(false);
   return (
     <>
       <Flex display={{ base: "block", md: "flex"}} justifyContent="center">
@@ -44,7 +40,7 @@ export default function Register() {
                 </Stack>
             </Box>
             <Text textAlign="center">
-                Ha már van fiókod  <ChakraLink colorPalette="teal"><Link to={"/login"} > Jelentkezz be</Link></ChakraLink>!
+                Ha már van fiókod  <Link to={"/login"} style={{color: "#2dd4bf"}}> Jelentkezz be</Link>!
             </Text>
             </Stack>
         </AbsoluteCenter>

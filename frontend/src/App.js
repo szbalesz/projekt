@@ -2,32 +2,33 @@ import { Provider } from "./components/ui/provider"
 import './App.css';
 import Main from "./Main";
 import { Box } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [account,SetAccount] = useState({
     felhasznalonev: "Kijelentkezve",
     profilkep: ""
   });
   //http://localhost:5202/felhasznalo
-  const onLogin =()=>{
+  const onLogin=(username,password)=>{
+    console.log(`Username: ${username} Password: ${password}`);
+
       fetch("http://localhost:5202/felhasznalo")
       .then(response => {
         return response.json();
       })
       .then(data => {
+          setIsLoggedIn(true);
           SetAccount(data[0]);
           console.log(data[0])
       })
       .catch(e => {console.error("HIBA, Nem sikerült a bejelentkezés: ",e)})
   }
-  useEffect(() => {
-    onLogin();
-  }, [])
   return (
     <Provider>
         <Box bg="Background">
-          <Main account={account}/>
+          <Main account={account} isLoggedIn={isLoggedIn} onLogin={onLogin}/>
         </Box>
     </Provider>
   );

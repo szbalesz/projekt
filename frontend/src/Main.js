@@ -14,7 +14,7 @@ import CurrentSongPage from './pages/CurrentSongPage';
 import Register from './pages/Register';
 
 
-export default function Main({account}) {
+export default function Main({account, isLoggedIn, onLogin}) {
     const [currentSong, setCurrentSong] = useState(null);
 
     const handlePlay = (song) => {
@@ -26,14 +26,14 @@ export default function Main({account}) {
         <Router>
           {/* Main Grid */}
           <Grid templateRows="50px 1fr" templateColumns="50px 1fr" height="100vh">
-                <Menu account={account} handlePlay={handlePlay}/>
+                <Menu account={account} handlePlay={handlePlay} isLoggedIn={isLoggedIn}/>
               {/* Main Content */}
             <GridItem bg="Background" transition="all 1s ease-in-out" rowSpan={1} paddingTop={{ base: "35px", md: "0" }}  colSpan={{ base: "2", md: "1" }} paddingRight={{ base: "0px", md: "50px" }}>
               <Box py={5}>
                 <Routes>
                   <Route path="/" element={<Home />} />
-                  <Route path="/login" element={<Login />} />
-                  <Route path="/register" element={<Register />} />
+                  <Route path="/login" element={<Login onLogin={onLogin}/>} />
+                  <Route path="/register" element={<Register/>} />
                   <Route path="/favorites" element={<Favorites />} />
                   <Route path="/playlists" element={<Playlists />} />
                   <Route path="/settings" element={<Settings />} />

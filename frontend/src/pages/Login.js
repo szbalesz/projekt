@@ -11,12 +11,13 @@ import {
   AbsoluteCenter,
 } from '@chakra-ui/react';
 import { Field } from "../components/ui/field"
-import { InputGroup } from '../components/ui/input-group';
 import { Checkbox } from "../components/ui/checkbox"
 import { Link } from 'react-router-dom';
 
 
-export default function Login() {
+export default function Login({onLogin}) {
+  const [username, setUsername] = useState("")
+  const [password, setPassword] = useState("")
   return (
     <>
       <Flex display={{ base: "block", md: "flex"}} justifyContent="center">
@@ -26,25 +27,25 @@ export default function Login() {
                 <Heading textAlign="center" color="teal.500" w="50%" borderRadius="25px" mx="auto" my="3" p="1">Bejelentkezés</Heading>
                 <Stack spacing={4}>
                 <Field label="Felhasználónév">
-                    <Input type="text" name="email" placeholder="Add meg a felhasználóneved" />
+                    <Input type="text" value={username} onChange={(q) => setUsername(q.target.value)} placeholder="Add meg a felhasználóneved" />
                 </Field>
                 <Field label="Jelszó">
-                    <Input type="password" placeholder="Add meg a jelszavad"
+                    <Input type="password" value={password} onChange={(q) => setPassword(q.target.value)} placeholder="Add meg a jelszavad"
                     />
                 </Field>
                 <Field my="2">
-                    <Checkbox color="white">
+                    <Checkbox colorPalette="teal" color="white">
                     Maradjon bejelentkezve
                     </Checkbox>
                 </Field>
                 <ChakraLink colorPalette="teal">Elfelejtett jelszó?</ChakraLink>
-                <Button colorPalette="teal" color="white" mt={4} mb={3}>
+                <Button onClick={()=> onLogin(username,password)} colorPalette="teal" color="white" mt={4} mb={3}>
                     Bejelentkezés
                 </Button>
                 </Stack>
             </Box>
             <Text textAlign="center">
-                Ha még nincs fiókod <ChakraLink colorPalette="teal"><Link to={"/register"}>Regisztrálj</Link></ChakraLink>!
+                Ha még nincs fiókod <Link to={"/register"} style={{color: "#2dd4bf"}}> Regisztrálj</Link>!
             </Text>
             </Stack>
         </AbsoluteCenter>
