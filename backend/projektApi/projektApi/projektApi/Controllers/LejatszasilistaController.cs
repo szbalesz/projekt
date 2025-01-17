@@ -5,7 +5,7 @@ using projektApi.Models;
 
 namespace projektApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("playlist")]
     [ApiController]
     public class LejatszasilistaController : ControllerBase
     {
@@ -15,7 +15,7 @@ namespace projektApi.Controllers
         {
             this.projektContext = projektContext;
         }
-        [HttpGet]
+        [HttpGet("GetAllPlaylist")]
         public async Task<ActionResult<LejatszasiLista>> Get()
         {
             return Ok(await projektContext.LejátszasiLista.Select(ll => new

@@ -5,7 +5,7 @@ using projektApi.Models;
 
 namespace projektApi.Controllers
 {
-    [Route("felhasznalo")]
+    [Route("user")]
     [ApiController]
     public class FelhasznaloController : ControllerBase
     {
@@ -16,7 +16,7 @@ namespace projektApi.Controllers
             this.projektContext = projektContext;
         }
 
-        [HttpGet]
+        [HttpGet("GetAllUser")]
         public async Task<ActionResult<Felhasznalo>> Get()
         {
             return Ok(await projektContext.Felhasznalos.Select(f => new

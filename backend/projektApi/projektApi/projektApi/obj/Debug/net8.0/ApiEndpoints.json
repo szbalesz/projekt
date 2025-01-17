@@ -1,8 +1,28 @@
 [
   {
+    "ContainingType": "projektApi.Controllers.ZeneController",
+    "Method": "Get",
+    "RelativePath": "music/GetAllMusic",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "projektApi.Models.Zene",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "projektApi.Controllers.LejatszasilistaController",
     "Method": "Get",
-    "RelativePath": "api/Lejatszasilista",
+    "RelativePath": "playlist/GetAllPlaylist",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -22,7 +42,7 @@
   {
     "ContainingType": "projektApi.Controllers.FelhasznaloController",
     "Method": "Get",
-    "RelativePath": "felhasznalo",
+    "RelativePath": "user/GetAllUser",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
