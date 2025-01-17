@@ -4164,19 +4164,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\bales\\.nuget\\packages\\": {}
+    "C:\\Users\\Tanulo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\bales\\Desktop\\projekt\\backend\\projektApi\\projektApi\\projektApi\\projektApi.csproj",
+      "projectUniqueName": "C:\\Users\\Tanulo\\ftamas\\projekt\\backend\\projektApi\\projektApi\\projektApi\\projektApi.csproj",
       "projectName": "projektApi",
-      "projectPath": "C:\\Users\\bales\\Desktop\\projekt\\backend\\projektApi\\projektApi\\projektApi\\projektApi.csproj",
-      "packagesPath": "C:\\Users\\bales\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\bales\\Desktop\\projekt\\backend\\projektApi\\projektApi\\projektApi\\obj\\",
+      "projectPath": "C:\\Users\\Tanulo\\ftamas\\projekt\\backend\\projektApi\\projektApi\\projektApi\\projektApi.csproj",
+      "packagesPath": "C:\\Users\\Tanulo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Tanulo\\ftamas\\projekt\\backend\\projektApi\\projektApi\\projektApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\bales\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Tanulo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

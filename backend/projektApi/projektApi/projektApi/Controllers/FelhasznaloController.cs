@@ -19,17 +19,15 @@ namespace projektApi.Controllers
         [HttpGet]
         public async Task<ActionResult<Felhasznalo>> Get()
         {
-            return Ok(await projektContext.Felhasznalos.Select(f=> new
+            return Ok(await projektContext.Felhasznalos.Select(f => new
             {
-                felhasznalonev = f.Felhasznalonev ,
+                felhasznalonev = f.Felhasznalonev,
                 profilkep = f.Profilkep,
-                LejátszasiLista = f.LejátszasiLista.Select(ll => new
-                {
-                    listaNev = ll.ListaNev,
-                    zenes = ll.Zenes,
-                }).ToList()
+                           
             }).ToListAsync());
         }
+
+
 
     }
 }
