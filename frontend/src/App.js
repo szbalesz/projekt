@@ -12,16 +12,13 @@ function App() {
   });
   //http://localhost:5202/felhasznalo
   const onLogin=(username,password)=>{
-    console.log(`Username: ${username} Password: ${password}`);
-
-      fetch("http://localhost:5202/felhasznalo")
+      fetch("http://localhost:5202/user/GetAllUser")
       .then(response => {
         return response.json();
       })
       .then(data => {
           setIsLoggedIn(true);
           SetAccount(data[0]);
-          console.log(data[0])
       })
       .catch(e => {console.error("HIBA, Nem sikerült a bejelentkezés: ",e)})
   }

@@ -20,7 +20,6 @@ export default function Main({account, isLoggedIn, onLogin}) {
 
     const handlePlay = (music) => {
         setcurrentMusic(music); // Beállítja a lejátszandó zenét
-        console.log("Lejátszás: ", music);
     };
   return (
     <Box backgroundSize="cover" backgroundPosition="center" backgroundRepeat="no-repeat">

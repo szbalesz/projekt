@@ -5,13 +5,12 @@ import PlaylistCard from '../PlaylistCard';
 export default function Playlists() {
   const [playlists, setPlaylists] = useState([])
   const getPlaylists=()=>{
-      fetch("http://localhost:5202/api/Lejatszasilista")
+      fetch("http://localhost:5202/playlist/GetAllPlaylist")
       .then(response => {
         return response.json();
       })
       .then(data => {
           setPlaylists(data);
-          console.log(data)
       })
       .catch(e => {console.error("HIBA, Nem sikerült lekérni a lejátszási listák: ",e)})
   }

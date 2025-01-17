@@ -8,19 +8,12 @@ const MusicPage = () => {
   const { guid } = useParams();
   const location = useLocation();
   const getMusic=()=>{
-    fetch("http://localhost:5202/api/Lejatszasilista")
+    fetch("http://localhost:5202/music/GetAllMusic")
     .then(response => {
       return response.json();
     })
     .then(data => {
-        for (let i = 0; i < data.length; i++) {
-          for (let f = 0; f < data[i].zenes.length; f++) {
-            if(data[i].zenes[f].guid === guid)
-            setMusic(data[i].zenes[f]);
-            console.log(data[i].zenes[f]);
-          }
-        }
-        console.log(data[0])
+        setMusic(data.find((m) => m.guid === guid))
     })
     .catch(e => {console.error("HIBA, Nem sikerült lekérni a zenét: ",e)})
 }

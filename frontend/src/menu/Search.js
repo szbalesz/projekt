@@ -15,23 +15,20 @@ import MusicCard from '../MusicCard';
 
 export default function Search({handlePlay, handlePopupClose}) {
   const [query, setQuery] = useState('');
-  const [results] = useState([]);
+  const [results, setResults] = useState([]);
   //ideiglenes keresés de ezt majd a backend fogja végezni
   const searchMusic=(q)=>{
-    results.length = 0; //lista kiürítése
-    fetch("http://localhost:5202/api/Lejatszasilista")
-    .then(response => {
-      return response.json();
-    })
-    .then(data => {
-        for (let i = 0; i < data.length; i++) {
-          for (let f = 0; f < data[i].zenes.length; f++) {
-            results.push(data[i].zenes[f]);
-          }
-        }
-  
-    })
-    .catch(e => {console.error("HIBA, Nem sikerült lekérni a zenéket: ",e)}) 
+    if(q.length > 0){
+      fetch("http://localhost:5202/music/GetMusicByName?betu="+q)
+      .then(response => {
+        return response.json();
+      })
+      .then(data => {
+        setResults(data);
+    
+      })
+      .catch(e => {console.error("HIBA, Nem sikerült lekérni a zenéket: ",e)}) 
+    }
 }
 
   useEffect(() => {

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2025. Jan 13. 11:59
+-- Létrehozás ideje: 2025. Jan 17. 18:08
 -- Kiszolgáló verziója: 10.4.32-MariaDB
 -- PHP verzió: 8.2.12
 
@@ -65,7 +65,8 @@ CREATE TABLE `lejátszasi_lista` (
 
 INSERT INTO `lejátszasi_lista` (`GUID`, `FelhasznaloID`, `ListaNev`) VALUES
 ('33d4fa10-af41-11ef-8761-047c16bd83b3', '2b9fb29b-73d8-4d48-b621-70dec6cecccc', 'Kedvencek'),
-('44d4fa10-af41-11ef-8761-047c16bd83b4', '2b9fb29b-73d8-4d48-b621-70dec6cecccc', 'Népszerű');
+('44d4fa10-af41-11ef-8761-047c16bd83b4', '2b9fb29b-73d8-4d48-b621-70dec6cecccc', 'Népszerű'),
+('66d4fa10-af41-11ef-8761-047c16bd83b4', '2b9fb29b-73d8-4d48-b621-70dec6cecccc', 'Felkapott');
 
 -- --------------------------------------------------------
 
@@ -85,7 +86,8 @@ CREATE TABLE `lista_zene` (
 INSERT INTO `lista_zene` (`ListaID`, `ZeneID`) VALUES
 ('33d4fa10-af41-11ef-8761-047c16bd83b3', '12ce675b-af41-11ef-8761-047c16bd83b3'),
 ('33d4fa10-af41-11ef-8761-047c16bd83b3', '5dc947c5-d196-11ef-a697-701ab8764395'),
-('44d4fa10-af41-11ef-8761-047c16bd83b4', '1dc947c5-d196-11ef-a697-701ab8764391');
+('44d4fa10-af41-11ef-8761-047c16bd83b4', '1dc947c5-d196-11ef-a697-701ab8764391'),
+('66d4fa10-af41-11ef-8761-047c16bd83b4', '10c947c5-d196-11ef-a697-701ab8764395');
 
 -- --------------------------------------------------------
 
@@ -105,6 +107,7 @@ CREATE TABLE `zene` (
 --
 
 INSERT INTO `zene` (`GUID`, `Eloado`, `Cim`, `Kep`) VALUES
+('10c947c5-d196-11ef-a697-701ab8764395', 'MCISTI22', 'ASIDUIHASKDL', 'https://i.ytimg.com/vi/dVe6Tn4kV9s/hqdefault.jpg'),
 ('12ce675b-af41-11ef-8761-047c16bd83b3', 'Azahriah', 'SZIA', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPmZClpmfPdwIXFF5b1S5UCaU-uY0xFXSd9w&s'),
 ('1dc947c5-d196-11ef-a697-701ab8764391', 'MCISTI', 'ASJDSAK', 'https://f4.bcbits.com/img/a0466831023_65'),
 ('5dc947c5-d196-11ef-a697-701ab8764395', 'MCISTI2', 'Fekália', 'https://f4.bcbits.com/img/a0466831023_65');
