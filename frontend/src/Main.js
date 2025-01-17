@@ -10,17 +10,17 @@ import Settings from "./pages/Settings";
 
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Player from './menu/Player';
-import CurrentSongPage from './pages/CurrentSongPage';
+import MusicPage from './pages/MusicPage';
 import PlaylistPage from './pages/PlaylistPage';
 import Register from './pages/Register';
 
 
 export default function Main({account, isLoggedIn, onLogin}) {
-    const [currentSong, setCurrentSong] = useState(null);
+    const [currentMusic, setcurrentMusic] = useState(null);
 
-    const handlePlay = (song) => {
-        setCurrentSong(song); // Beállítja a lejátszandó zenét
-        console.log("Lejátszás: ", song);
+    const handlePlay = (music) => {
+        setcurrentMusic(music); // Beállítja a lejátszandó zenét
+        console.log("Lejátszás: ", music);
     };
   return (
     <Box backgroundSize="cover" backgroundPosition="center" backgroundRepeat="no-repeat">
@@ -40,13 +40,13 @@ export default function Main({account, isLoggedIn, onLogin}) {
                   <Route path="/settings" element={<Settings />} />
                   {/* Ha ismeretlen az útvonal, irányítsd a kezdőlapra */}
                   <Route path="*" element={<Navigate to="/" />} />
-                  <Route path="/current-song/:song" element={<CurrentSongPage currentSong={currentSong} />} />
-                  <Route path="/playlist/:listaNev" element={<PlaylistPage handlePlay={handlePlay}/>} />
+                  <Route path="/music/:guid" element={<MusicPage music={currentMusic} />} />
+                  <Route path="/playlist/:name" element={<PlaylistPage handlePlay={handlePlay}/>} />
                 </Routes>
               </Box>
             </GridItem>
             <GridItem rowSpan={1} zIndex="4">
-               <Player currentSong={currentSong}/>
+               <Player currentMusic={currentMusic}/>
             </GridItem>
           </Grid>
         </Router>

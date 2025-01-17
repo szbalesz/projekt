@@ -1,6 +1,4 @@
-// Search.js
-
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { LuSearch } from "react-icons/lu";
 import { Input } from "@chakra-ui/react";
 import { Button } from "../components/ui/button";
@@ -12,14 +10,33 @@ import {
   DialogHeader,
   DialogRoot,
   DialogTitle,
-  DialogTrigger,
 } from "../components/ui/dialog";
 import MusicCard from '../MusicCard';
 
 export default function Search({handlePlay, handlePopupClose}) {
   const [query, setQuery] = useState('');
-  const [results, setResults] = useState([]);
+  const [results] = useState([]);
+  //ideiglenes keresés de ezt majd a backend fogja végezni
+  const searchMusic=(q)=>{
+    results.length = 0; //lista kiürítése
+    fetch("http://localhost:5202/api/Lejatszasilista")
+    .then(response => {
+      return response.json();
+    })
+    .then(data => {
+        for (let i = 0; i < data.length; i++) {
+          for (let f = 0; f < data[i].zenes.length; f++) {
+            results.push(data[i].zenes[f]);
+          }
+        }
+  
+    })
+    .catch(e => {console.error("HIBA, Nem sikerült lekérni a zenéket: ",e)}) 
+}
 
+  useEffect(() => {
+    searchMusic(query);
+  }, [query])
 
   return (
     <DialogRoot defaultOpen onExitComplete={handlePopupClose} role="search" scrollBehavior="inside">
@@ -38,11 +55,6 @@ export default function Search({handlePlay, handlePopupClose}) {
                 placeholder="Keresés a zenék között"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                onKeyDown={()=> setResults([{
-                          cim: "XDDDDDD",
-                          eloado: "Azahriah",
-                          kep: "https://i.scdn.co/image/ab67616d0000b273b9f856c934243d5bb06f0deb",
-                          }])}
               />
             </InputGroup>
           </DialogTitle>

@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import MusicCard from '../MusicCard';
 import { Center, Flex, Heading } from '@chakra-ui/react';
+import { useParams } from 'react-router-dom';
 
 export default function PlaylistPage({handlePlay}) {
+    const { name } = useParams();
+    console.log(name)
     const [playlist, setPlaylist] = useState([
         {
             zenes: [{},{}],
@@ -14,16 +17,16 @@ export default function PlaylistPage({handlePlay}) {
           return response.json();
         })
         .then(data => {
-            // for (let i = 0; i < data.length; i++) {
-            //     if(data[i].listaNev ==){
-            //         setPlaylist(data[i]);
-            //     }
-            // }
-            setPlaylist(data[0].zenes);
-            console.log(data[0])
+            for (let i = 0; i < data.length; i++) {
+                 if(data[i].listaNev === name){
+                    setPlaylist(data[i].zenes);
+                    console.log(data[i].zenes);
+                 }
+             }
         })
         .catch(e => {console.error("HIBA, Nem sikerült lekérni a lejátszási listát: ",e)})
     }
+
     useEffect(() => {
       getPlaylist();
     }, [])
