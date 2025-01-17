@@ -7,7 +7,7 @@ export default function MusicCard({ music, handlePlay, handlePopupClose }) {
 
   const play = ()=>{
     handlePlay(music);
-    navigate("/current-song");
+    navigate(`/current-song/${music.title}`);
     handlePopupClose();
   }
 

@@ -9,7 +9,7 @@ export default function Player({ currentSong }) {
 
   const handleSongClick = () => {
     if (currentSong) {
-      navigate(`/current-song/`);
+      navigate(`/current-song/${currentSong.title}`);
     }
   };
  

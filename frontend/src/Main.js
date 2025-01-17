@@ -11,6 +11,7 @@ import Settings from "./pages/Settings";
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Player from './menu/Player';
 import CurrentSongPage from './pages/CurrentSongPage';
+import PlaylistPage from './pages/PlaylistPage';
 import Register from './pages/Register';
 
 
@@ -39,7 +40,8 @@ export default function Main({account, isLoggedIn, onLogin}) {
                   <Route path="/settings" element={<Settings />} />
                   {/* Ha ismeretlen az útvonal, irányítsd a kezdőlapra */}
                   <Route path="*" element={<Navigate to="/" />} />
-                  <Route path="/current-song" element={<CurrentSongPage currentSong={currentSong} />} />
+                  <Route path="/current-song/:song" element={<CurrentSongPage currentSong={currentSong} />} />
+                  <Route path="/playlist/:listaNev" element={<PlaylistPage/>} />
                 </Routes>
               </Box>
             </GridItem>

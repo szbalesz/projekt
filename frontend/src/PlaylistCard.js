@@ -2,13 +2,11 @@ import React from 'react';
 import { Button, Box, Text, Image } from "@chakra-ui/react";
 import { useNavigate } from 'react-router-dom';
 
-export default function PlaylistCard({ playlist, handlePlay, handlePopupClose }) {
+export default function PlaylistCard({ playlist }) {
   const navigate = useNavigate();
 
   const play = ()=>{
-    handlePlay(playlist);
-    navigate("/current-song");
-    handlePopupClose();
+    navigate(`/playlist/${playlist.listaNev}`);
   }
   return (
     <Button
