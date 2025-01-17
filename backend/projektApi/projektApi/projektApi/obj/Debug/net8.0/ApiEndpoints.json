@@ -20,6 +20,32 @@
     ]
   },
   {
+    "ContainingType": "projektApi.Controllers.ZeneController",
+    "Method": "GetByName",
+    "RelativePath": "music/GetMusicByName",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "betu",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "projektApi.Models.Zene",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "projektApi.Controllers.LejatszasilistaController",
     "Method": "Get",
     "RelativePath": "playlist/GetAllPlaylist",
