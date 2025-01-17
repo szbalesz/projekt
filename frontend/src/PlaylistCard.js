@@ -2,15 +2,14 @@ import React from 'react';
 import { Button, Box, Text, Image } from "@chakra-ui/react";
 import { useNavigate } from 'react-router-dom';
 
-export default function MusicCard({ music, handlePlay, handlePopupClose }) {
+export default function PlaylistCard({ playlist, handlePlay, handlePopupClose }) {
   const navigate = useNavigate();
 
   const play = ()=>{
-    handlePlay(music);
+    handlePlay(playlist);
     navigate("/current-song");
     handlePopupClose();
   }
-
   return (
     <Button
       _hover={{ transform: "scale(1.05)" }}
@@ -32,12 +31,12 @@ export default function MusicCard({ music, handlePlay, handlePopupClose }) {
         overflow="hidden"
         boxShadow="0 0 10px 0 #99f6e4"
       >
-      <Image src={music.image}/>
+      <Image src={playlist.image}/>
         <Box p="0" w="auto" paddingTop="5" paddingBottom="5" backgroundColor="rgba(0,0,0,0.33)">
-          <Text fontWeight="bold">{music.title}</Text>
-          <Text color="#99f6e4">{music.artist}</Text>
+          <Text fontWeight="bold">{playlist.listaNev}</Text>
+          <Text color="#99f6e4">{playlist.artist}</Text>
           <Text fontSize="12px" letterSpacing="tight">
-            {music.listeners} hallgató
+            {playlist.zenes.length} zene
           </Text>
         </Box>
       </Box>

@@ -54,7 +54,7 @@ export default function Search({handlePlay, handlePopupClose}) {
             results.map((track,index) => (
               <MusicCard
                 key={index}
-                result={{
+                music={{
                   title: track.title,
                   artist: track.artist,
                   listeners: track.listeners,

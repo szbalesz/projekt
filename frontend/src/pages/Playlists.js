@@ -1,18 +1,23 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Heading, Flex, Center } from "@chakra-ui/react";
-import MusicCard from '../MusicCard';
+import PlaylistCard from '../PlaylistCard';
 
 export default function Playlists() {
-  const playlists = [
-    {
-      title: "Kedvencek",
-      image: "https://m.blog.hu/re/recorder/image/filmrecorder/pogany_indulo.jpg",
-    },
-    {
-      title: "Népszerű",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-azGumwf0E5jNxZvPtFYzHxKB_I5hzBtdaw&s",
-    },
-  ];
+  const [playlists, setPlaylists] = useState([])
+  const getPlaylists=()=>{
+      fetch("http://localhost:5202/api/Lejatszasilista")
+      .then(response => {
+        return response.json();
+      })
+      .then(data => {
+          setPlaylists(data);
+          console.log(data)
+      })
+      .catch(e => {console.error("HIBA, Nem sikerült lekérni a lejátszási listák: ",e)})
+  }
+  useEffect(() => {
+    getPlaylists();
+  }, [])
   
   return (
     <>
@@ -21,7 +26,7 @@ export default function Playlists() {
         <Center>
           <Flex wrap="wrap" justify="center" gap={4} width="100%">
             {playlists.map((playlist, index) => (
-              <MusicCard key={index} result={playlist} />
+              <PlaylistCard key={index} playlist={playlist} />
             ))}
           </Flex>
         </Center>
