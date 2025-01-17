@@ -33,11 +33,11 @@ export default function Login() {
                     />
                 </Field>
                 <Field my="2">
-                    <Checkbox colorScheme="teal" color="white">
+                    <Checkbox color="white">
                     Maradjon bejelentkezve
                     </Checkbox>
                 </Field>
-                <Link colorPalette="teal">Elfelejtett jelszó?</Link>
+                <ChakraLink colorPalette="teal">Elfelejtett jelszó?</ChakraLink>
                 <Button colorPalette="teal" color="white" mt={4} mb={3}>
                     Bejelentkezés
                 </Button>
