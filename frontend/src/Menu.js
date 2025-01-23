@@ -26,7 +26,7 @@ export default function Menu({ handlePlay, account, isLoggedIn }) {
     { label: "Menü", icon: <LuList /> }, // Sidebar nem tartalmaz path-et
     { label: "Keresés", icon: <LuSearch />, path: "?popup=search" },
     { label: "Kezdőlap", icon: <LuHouse />, path: "/" },
-    { label: "Kedvencek", icon: <LuStar />, path: "/favorites" },
+    { label: "Kedvencek", icon: <LuStar />, path: "/playlist/Kedvencek" },
     { label: "Lejátszási listák", icon: <LuList />, path: "/playlists" },
   ], []);
 

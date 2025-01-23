@@ -4,7 +4,6 @@ import { Box, Grid, GridItem} from '@chakra-ui/react';
 import Menu from './Menu';
 import Home from "./pages/Home";
 import Login from './pages/Login';
-import Favorites from "./pages/Favorites";
 import Playlists from "./pages/Playlists";
 import Settings from "./pages/Settings";
 
@@ -34,7 +33,6 @@ export default function Main({account, isLoggedIn, onLogin}) {
                   <Route path="/" element={<Home />} />
                   <Route path="/login" element={<Login onLogin={onLogin}/>} />
                   <Route path="/register" element={<Register/>} />
-                  <Route path="/favorites" element={<Favorites />} />
                   <Route path="/playlists" element={<Playlists />} />
                   <Route path="/settings" element={<Settings />} />
                   {/* Ha ismeretlen az útvonal, irányítsd a kezdőlapra */}
