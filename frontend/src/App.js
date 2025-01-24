@@ -11,7 +11,6 @@ function App() {
     felhasznalonev: "Kijelentkezve",
     profilkep: ""
   });
-  //http://localhost:5202/felhasznalo
   const onLogin=(username,password)=>{
       axios.get("https://localhost:5205/user/GetAllUser")
       .then(response => {
