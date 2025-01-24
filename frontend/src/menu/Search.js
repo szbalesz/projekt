@@ -12,6 +12,7 @@ import {
   DialogTitle,
 } from "../components/ui/dialog";
 import MusicCard from '../MusicCard';
+import axios from 'axios';
 
 export default function Search({handlePlay, handlePopupClose}) {
   const [query, setQuery] = useState('');
@@ -19,12 +20,9 @@ export default function Search({handlePlay, handlePopupClose}) {
   //ideiglenes keresés de ezt majd a backend fogja végezni
   const searchMusic=(q)=>{
     if(q.length > 0){
-      fetch("http://localhost:5202/music/GetMusicByName?betu="+q)
+      axios.get("https://localhost:5205/music/GetMusicByName?betu="+q)
       .then(response => {
-        return response.json();
-      })
-      .then(data => {
-        setResults(data);
+        setResults(response.data);
     
       })
       .catch(e => {console.error("HIBA, Nem sikerült lekérni a zenéket: ",e)}) 

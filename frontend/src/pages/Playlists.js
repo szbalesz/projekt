@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { Heading, Flex, Center } from "@chakra-ui/react";
 import PlaylistCard from '../PlaylistCard';
+import axios from 'axios';
 
 export default function Playlists() {
   const [playlists, setPlaylists] = useState([])
   const getPlaylists=()=>{
-      fetch("http://localhost:5202/playlist/GetAllPlaylist")
+      axios.get("https://localhost:5205/playlist/GetAllPlaylist")
       .then(response => {
-        return response.json();
-      })
-      .then(data => {
-          setPlaylists(data);
+          setPlaylists(response.data);
       })
       .catch(e => {console.error("HIBA, Nem sikerült lekérni a lejátszási listák: ",e)})
   }

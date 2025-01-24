@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import MusicCard from '../MusicCard';
 import { Center, Flex, Heading } from '@chakra-ui/react';
 import { useParams } from 'react-router-dom';
+import axios from 'axios';
 
 export default function PlaylistPage({handlePlay}) {
     const { name } = useParams();
@@ -11,11 +12,9 @@ export default function PlaylistPage({handlePlay}) {
         }
     ]);
     const getPlaylist=()=>{
-        fetch("http://localhost:5202/playlist/GetAllPlaylist")
+        axios.get("https://localhost:5205/playlist/GetAllPlaylist")
         .then(response => {
-          return response.json();
-        })
-        .then(data => {
+          let data = response.data;
             for (let i = 0; i < data.length; i++) {
                  if(data[i].listaNev === name){
                     setPlaylist(data[i].zenes);

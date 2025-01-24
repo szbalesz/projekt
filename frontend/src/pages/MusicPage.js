@@ -2,18 +2,16 @@ import React, { useEffect, useState } from 'react';
 import { Box, Text, Image, VStack, AbsoluteCenter, Button } from '@chakra-ui/react';
 import { LuList, LuStar } from 'react-icons/lu';
 import { useLocation, useParams } from 'react-router-dom';
+import axios from 'axios';
 
 const MusicPage = () => {
   const [music, setMusic] = useState();
   const { guid } = useParams();
   const location = useLocation();
   const getMusic=()=>{
-    fetch("http://localhost:5202/music/GetAllMusic")
+    axios.get("https://localhost:5205/music/GetAllMusic")
     .then(response => {
-      return response.json();
-    })
-    .then(data => {
-        setMusic(data.find((m) => m.guid === guid))
+        setMusic(response.data.find((m) => m.guid === guid))
     })
     .catch(e => {console.error("HIBA, Nem sikerült lekérni a zenét: ",e)})
 }

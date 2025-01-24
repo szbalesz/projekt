@@ -3,6 +3,7 @@ import './App.css';
 import Main from "./Main";
 import { Box } from "@chakra-ui/react";
 import { useState } from "react";
+import axios from "axios";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -12,13 +13,10 @@ function App() {
   });
   //http://localhost:5202/felhasznalo
   const onLogin=(username,password)=>{
-      fetch("http://localhost:5202/user/GetAllUser")
+      axios.get("https://localhost:5205/user/GetAllUser")
       .then(response => {
-        return response.json();
-      })
-      .then(data => {
           setIsLoggedIn(true);
-          SetAccount(data[0]);
+          SetAccount(response.data[0]);
       })
       .catch(e => {console.error("HIBA, Nem sikerült a bejelentkezés: ",e)})
   }
