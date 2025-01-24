@@ -4169,11 +4169,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Tanulo\\szbalesz\\projekt\\projekt\\backend\\projektApi\\projektApi\\projektApi\\projektApi.csproj",
+      "projectUniqueName": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\projektApi\\projektApi\\projektApi\\projektApi.csproj",
       "projectName": "projektApi",
-      "projectPath": "C:\\Users\\Tanulo\\szbalesz\\projekt\\projekt\\backend\\projektApi\\projektApi\\projektApi\\projektApi.csproj",
+      "projectPath": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\projektApi\\projektApi\\projektApi\\projektApi.csproj",
       "packagesPath": "C:\\Users\\Tanulo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Tanulo\\szbalesz\\projekt\\projekt\\backend\\projektApi\\projektApi\\projektApi\\obj\\",
+      "outputPath": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\projektApi\\projektApi\\projektApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Tanulo\\AppData\\Roaming\\NuGet\\NuGet.Config",

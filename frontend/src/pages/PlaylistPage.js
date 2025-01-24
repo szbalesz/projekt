@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import MusicCard from '../MusicCard';
-import { Center, Flex, Heading } from '@chakra-ui/react';
+import { Center, Flex, Heading, Spinner } from '@chakra-ui/react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
 export default function PlaylistPage({handlePlay}) {
     const { name } = useParams();
+    const [isPending, setPending] = useState(false)
     const [playlist, setPlaylist] = useState([
         {
             zenes: [{},{}],
         }
     ]);
     const getPlaylist=()=>{
+      setPending(true);
         axios.get("https://localhost:5205/playlist/GetAllPlaylist")
         .then(response => {
           let data = response.data;
@@ -22,6 +24,9 @@ export default function PlaylistPage({handlePlay}) {
              }
         })
         .catch(e => {console.error("HIBA, Nem sikerült lekérni a lejátszási listát: ",e)})
+        .finally(()=>{
+            setPending(false);
+        })
     }
 
     useEffect(() => {
@@ -34,7 +39,7 @@ export default function PlaylistPage({handlePlay}) {
         <Heading textAlign="center"> {playlist.listaNev} </Heading>
         <Center>
           <Flex wrap="wrap" justify="center" gap={4} width="100%">
-            {playlist.map((music, index) => (
+          {isPending? <Spinner/> : playlist.map((music, index) => (
               <MusicCard key={index} music={music} handlePlay={handlePlay}/>
             ))}
           </Flex>

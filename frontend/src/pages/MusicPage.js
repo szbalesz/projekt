@@ -1,19 +1,24 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Text, Image, VStack, AbsoluteCenter, Button } from '@chakra-ui/react';
+import { Box, Text, Image, VStack, AbsoluteCenter, Button, Spinner } from '@chakra-ui/react';
 import { LuList, LuStar } from 'react-icons/lu';
 import { useLocation, useParams } from 'react-router-dom';
 import axios from 'axios';
 
 const MusicPage = () => {
   const [music, setMusic] = useState();
+  const [isPending, setPending] = useState(false)
   const { guid } = useParams();
   const location = useLocation();
   const getMusic=()=>{
+    setPending(true);
     axios.get("https://localhost:5205/music/GetAllMusic")
     .then(response => {
         setMusic(response.data.find((m) => m.guid === guid))
     })
     .catch(e => {console.error("HIBA, Nem sikerült lekérni a zenét: ",e)})
+    .finally(()=>{
+        setPending(false)
+    })
 }
 useEffect(() => {
   getMusic();
@@ -60,7 +65,7 @@ useEffect(() => {
         boxShadow="0 0 25px 0 teal"
         borderRadius="25px"
         _hover={{transition:"all 1s ease-in-out", transform: "scale(1.05)" ,padding: "35px",borderRadius: `50px 15px`}}>
-      {music ? (
+      {isPending? <Spinner/> : music ? (
         <VStack 
         spacing={4} 
         align="center" 
