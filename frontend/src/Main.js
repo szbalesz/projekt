@@ -12,6 +12,7 @@ import Player from './menu/Player';
 import MusicPage from './pages/MusicPage';
 import PlaylistPage from './pages/PlaylistPage';
 import Register from './pages/Register';
+import About from './pages/About';
 
 
 export default function Main({account, isLoggedIn, onLogin}) {
@@ -39,6 +40,7 @@ export default function Main({account, isLoggedIn, onLogin}) {
                   <Route path="*" element={<Navigate to="/" />} />
                   <Route path="/music/:guid" element={<MusicPage music={currentMusic} />} />
                   <Route path="/playlist/:name" element={<PlaylistPage handlePlay={handlePlay}/>} />
+                  <Route path="/about" element={<About />} />
                 </Routes>
               </Box>
             </GridItem>
