@@ -10,7 +10,7 @@ import { Avatar } from "../components/ui/avatar"
 
 export default function About() {
     return (
-        <Flex mx={"auto"} width={"650px"}> 
+        <Flex mx={"auto"} maxWidth={"650px"}> 
             <AccordionRoot collapsible defaultValue={["b"]}>
           {items.map((item, index) => (
             <AccordionItem key={index} value={item.name}>
@@ -29,17 +29,17 @@ export default function About() {
 }
 const items = [
     {
-      name: "Bálint",
+      name: "Száraz Bálint Csaba",
       bio: "asdasd",
       image: "https://i.pravatar.cc/150?u=a",
     },
     {
-      name: "Tamás",
+      name: "Csehi Tamás",
       bio: "asdasd",
       image: "https://i.pravatar.cc/150?u=b",
     },
     {
-      name: "Tamás",
+      name: "Fehér Tamás",
       bio: "asdasdasd",
       image: "https://i.pravatar.cc/150?u=c",
     },
