@@ -11,6 +11,7 @@ import {
 } from '@chakra-ui/react';
 import { Field } from "../components/ui/field"
 import { Link } from 'react-router-dom';
+import { PasswordInput } from "../components/ui/password-input"
 
 
 export default function Register() {
@@ -29,10 +30,10 @@ export default function Register() {
                     <Input type="email" name="email" placeholder="Add meg az e-mailedet" />
                 </Field>
                 <Field label="Jelszó">
-                    <Input type="password" placeholder="Add meg a jelszavad"/>
+                    <PasswordInput type="password" placeholder="Add meg a jelszavad"/>
                 </Field>
                 <Field label="Jelszó újra">
-                    <Input type="password" placeholder="Add meg a jelszavad újra"/>
+                    <PasswordInput type="password" placeholder="Add meg a jelszavad újra"/>
                 </Field>
                 <Button colorPalette="teal" color="white" mt={4} mb={3}>
                     Regisztráció

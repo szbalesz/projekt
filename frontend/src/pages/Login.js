@@ -13,6 +13,7 @@ import {
 import { Field } from "../components/ui/field"
 import { Checkbox } from "../components/ui/checkbox"
 import { Link } from 'react-router-dom';
+import { PasswordInput } from "../components/ui/password-input"
 
 export default function Login({onLogin}) {
   const [username, setUsername] = useState("")
@@ -29,7 +30,7 @@ export default function Login({onLogin}) {
                     <Input type="text" value={username} onChange={(q) => setUsername(q.target.value)} placeholder="Add meg a felhasználóneved" />
                 </Field>
                 <Field label="Jelszó">
-                    <Input type="password" value={password} onChange={(q) => setPassword(q.target.value)} placeholder="Add meg a jelszavad"
+                    <PasswordInput type="password" value={password} onChange={(q) => setPassword(q.target.value)} placeholder="Add meg a jelszavad"
                     />
                 </Field>
                 <Field my="2">
