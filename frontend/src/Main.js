@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Box, Grid, GridItem} from '@chakra-ui/react';
+import { Box, Flex, Grid, GridItem} from '@chakra-ui/react';
 
 import Menu from './Menu';
 import Home from "./pages/Home";
@@ -22,14 +22,14 @@ export default function Main({account, isLoggedIn, onLogin}) {
         setcurrentMusic(music); // Beállítja a lejátszandó zenét
     };
   return (
-    <Box backgroundSize="cover" backgroundPosition="center" backgroundRepeat="no-repeat">
+    <Box backgroundSize="cover" backgroundPosition="center" backgroundRepeat="no-repeat" bg={"Background"}>
         <Router>
           {/* Main Grid */}
           <Grid templateRows="50px 1fr" templateColumns="50px 1fr" height="100vh">
                 <Menu account={account} handlePlay={handlePlay} isLoggedIn={isLoggedIn}/>
               {/* Main Content */}
-            <GridItem bg="Background" transition="all 1s ease-in-out" rowSpan={1} paddingTop={{ base: "35px", md: "0" }}  colSpan={{ base: "2", md: "1" }} paddingRight={{ base: "0px", md: "50px" }}>
-              <Box py={5}>
+            <GridItem bg="Background" transition="all 1s ease-in-out" rowSpan={1} paddingTop={{ base: "35px", md: "0" }}  colSpan={{ base: "2", md: "1" }} paddingRight={{base: "0", md: "50px"}}>
+              <Box py={5} minHeight={"100%"}>
                 <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/login" element={<Login onLogin={onLogin}/>} />

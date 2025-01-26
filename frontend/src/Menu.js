@@ -6,6 +6,7 @@ import { GridItem } from '@chakra-ui/react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { LuHouse, LuList, LuPersonStanding, LuSearch, LuSettings, LuStar } from 'react-icons/lu';
 import Search from './menu/Search';
+import Footer from './Footer';
 
 
 export default function Menu({ handlePlay, account, isLoggedIn }) {
@@ -123,6 +124,16 @@ export default function Menu({ handlePlay, account, isLoggedIn }) {
           menuItems={menuItems}
           footerItems={footerItems}
         />
+      </GridItem>
+      <GridItem rowSpan={1}
+        colSpan={2}
+        position="fixed"
+        bottom="0"
+        left="0"
+        width="100%"
+        zIndex={12}
+        bg="Background">
+      <Footer></Footer>
       </GridItem>
     </>
   );
