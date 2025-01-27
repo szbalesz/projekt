@@ -65,7 +65,11 @@ useEffect(() => {
         boxShadow="0 0 25px 0 teal"
         borderRadius="25px"
         _hover={{transition:"all 1s ease-in-out", transform: "scale(1.05)" ,padding: "35px",borderRadius: `50px 15px`}}>
-      {isPending? <Spinner/> : music ? (
+      {isPending?
+      <AbsoluteCenter>
+        <Spinner/>
+      </AbsoluteCenter> 
+     : music ? (
         <VStack 
         spacing={4} 
         align="center" 

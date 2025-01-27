@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { Heading, Flex, Center, Spinner } from "@chakra-ui/react";
+import { Heading, Flex, Center, Spinner, AbsoluteCenter } from "@chakra-ui/react";
 import PlaylistCard from '../PlaylistCard';
 import axios from 'axios';
 
 export default function Playlists() {
-  const [playlists, setPlaylists] = useState([])
+  const [playlists, setPlaylists] = useState()
   const [isPending, setPending] = useState(false)
   const getPlaylists=()=>{
       setPending(true);
@@ -26,11 +26,17 @@ export default function Playlists() {
       <Flex display="block" justifyContent="center">
         <Heading textAlign="center"> Lejátszási listák </Heading>
          <Center>
-          {isPending? <Spinner/> : <Flex wrap="wrap" justify="center" gap={4} width="100%">
+          {isPending? 
+          <AbsoluteCenter>
+            <Spinner/>
+          </AbsoluteCenter>  
+        : playlists? <Flex wrap="wrap" justify="center" gap={4} width="100%">
             {playlists.map((playlist, index) => (
               <PlaylistCard key={index} playlist={playlist} />
             ))}
-          </Flex>}
+          </Flex> : <AbsoluteCenter color="red">
+            Nem sikerült betölteni a lejátszási listákat!
+          </AbsoluteCenter>}
           
         </Center>
       </Flex>

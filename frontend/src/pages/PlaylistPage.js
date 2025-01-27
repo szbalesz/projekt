@@ -1,17 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import MusicCard from '../MusicCard';
-import { Center, Flex, Heading, Spinner } from '@chakra-ui/react';
+import { AbsoluteCenter, Center, Flex, Heading, Spinner } from '@chakra-ui/react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
 export default function PlaylistPage({handlePlay}) {
     const { name } = useParams();
     const [isPending, setPending] = useState(false)
-    const [playlist, setPlaylist] = useState([
-        {
-            zenes: [{},{}],
-        }
-    ]);
+    const [playlist, setPlaylist] = useState();
     const getPlaylist=()=>{
       setPending(true);
         axios.get("https://localhost:5205/playlist/GetAllPlaylist")
@@ -36,12 +32,18 @@ export default function PlaylistPage({handlePlay}) {
   return (
     <div>
         <Flex display="block" justifyContent="center">
-        <Heading textAlign="center"> {playlist.listaNev} </Heading>
+        <Heading textAlign="center"> {name} </Heading>
         <Center>
           <Flex wrap="wrap" justify="center" gap={4} width="100%">
-          {isPending? <Spinner/> : playlist.map((music, index) => (
-              <MusicCard key={index} music={music} handlePlay={handlePlay}/>
-            ))}
+          {isPending?
+           <AbsoluteCenter>
+            <Spinner/>
+            </AbsoluteCenter>  
+         : playlist? playlist.map((music, index) => (
+          <MusicCard key={index} music={music} handlePlay={handlePlay}/>
+        )) : <AbsoluteCenter color="red">
+              Nem sikerült betölteni a zenéket!
+            </AbsoluteCenter>}
           </Flex>
         </Center>
       </Flex>

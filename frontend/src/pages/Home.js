@@ -1,19 +1,22 @@
-import { Flex } from '@chakra-ui/react';
+import { AbsoluteCenter, Flex, Spinner } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
 import BigMusicCard from '../BigMusicCard';
 import axios from 'axios';
 
 export default function Home() {
   const [isPending, setPending] = useState(false)
-  const [musicList, setMusicList] = useState([]);
-  //ideiglenes keresés de ezt majd a backend fogja végezni
+  const [musicList, setMusicList] = useState();
   const getAllMusic=()=>{
+      setPending(true);
       axios.get("https://localhost:5205/music/GetAllMusic")
       .then(response => {
         setMusicList(response.data);
     
       })
-      .catch(e => {console.error("HIBA, Nem sikerült lekérni a zenéket: ",e)}) 
+      .catch(e => {console.error("HIBA, Nem sikerült lekérni a zenéket: ",e);}) 
+      .finally(()=>{
+        setPending(false);
+      })
 }
   useEffect(() => {
     getAllMusic();
@@ -28,9 +31,15 @@ export default function Home() {
           gap={6}
           padding={4}
         >
-          {musicList.map((music, index) => (
-              <BigMusicCard key={index} music={music}/>
-          ))}
+          {isPending? 
+          <AbsoluteCenter>
+            <Spinner/>
+          </AbsoluteCenter> 
+          : musicList? musicList.map((music, index) => (
+            <BigMusicCard key={index} music={music}/>
+        )) : <AbsoluteCenter color="red">
+        Nem sikerült betölteni a zenéket!
+      </AbsoluteCenter>}
         </Flex>
       </Flex>
     </>

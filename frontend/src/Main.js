@@ -41,8 +41,8 @@ export default function Main({account, isLoggedIn, onLogin}) {
               <ScrollToTop/> {/* Az oldal tetejére görget minden oldal váltáskor */}
                 <Menu account={account} handlePlay={handlePlay} isLoggedIn={isLoggedIn}/>
               {/* Main Content */}
-            <GridItem bg="Background" transition="all 1s ease-in-out" rowSpan={1} paddingTop={"65px"}  colSpan="2">
-              <Box bg="Background" minH="90vh" paddingRight={{base: "0", md: "50px"}}>
+            <GridItem bg="Background" transition="all 1s ease-in-out" rowSpan={1} paddingTop={"15px"}  colSpan="2">
+              <Box bg="Background" minH="100vh" padding={{base: "0", md: "50px"}}>
                 <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/login" element={<Login onLogin={onLogin}/>} />
