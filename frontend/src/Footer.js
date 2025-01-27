@@ -1,6 +1,6 @@
 import React from "react";
-import { Box, Container, Divider, Flex, HStack, Image, Link as ChakraLink, Stack, Text } from "@chakra-ui/react";
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaGithub, FaTwitter, FaTrello } from "react-icons/fa";
+import { Box, Container, Flex, HStack, Image, Link as ChakraLink, Stack, Text } from "@chakra-ui/react";
+import { FaGithub, FaTrello } from "react-icons/fa";
 import logo from "./media/logo.png"
 import { Link } from "react-router-dom";
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Box, Flex, Grid, GridItem} from '@chakra-ui/react';
+import { Box, Grid, GridItem} from '@chakra-ui/react';
 
 import Menu from './Menu';
 import Home from "./pages/Home";

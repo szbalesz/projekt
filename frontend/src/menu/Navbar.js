@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Flex } from "@chakra-ui/react";
+import {  Flex } from "@chakra-ui/react";
 import logo from "../media/logo.png";
 import MenuAvatar from './MenuAvatar';
 import { Avatar } from "../components/ui/avatar";

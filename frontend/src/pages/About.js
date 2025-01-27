@@ -1,5 +1,5 @@
 import React from 'react'
-import { AbsoluteCenter, Flex, HStack } from "@chakra-ui/react"
+import { Flex, HStack } from "@chakra-ui/react"
 import {
   AccordionItem,
   AccordionItemContent,

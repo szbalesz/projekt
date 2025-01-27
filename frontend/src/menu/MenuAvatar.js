@@ -12,8 +12,7 @@ import {
   DrawerTrigger,
 } from "../components/ui/drawer"
 import { Flex, Span } from '@chakra-ui/react'
-import { LuPanelRightClose, LuSpace} from "react-icons/lu";
-import profilKep from "../media/azahriah.jpg";
+import { LuPanelRightClose } from "react-icons/lu";
 
 export default function MenuAvatar({ account }) {
 
