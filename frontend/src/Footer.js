@@ -4,7 +4,7 @@ import { FaFacebookF, FaInstagram, FaLinkedinIn, FaGithub, FaTwitter, FaTrello }
 import logo from "./media/logo.png"
 import { Link } from "react-router-dom";
 
-export default function Footer() {
+export default function Footer({currentMusic}) {
   return (
     <Box as="footer" bg="background" py={8} mt="auto" borderTopWidth={"1px"}>
       <Container>
@@ -56,7 +56,7 @@ export default function Footer() {
           justify="space-between"
           align="center"
           mt={6}
-          pb={{ base: "60px", lg: "0" }}
+          pb={currentMusic? { base: "120px", md: "60px" } : { base: "60px", lg: "0" }}
           fontSize="sm"
           color="gray.400"
         >

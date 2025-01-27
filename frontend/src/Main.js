@@ -13,6 +13,7 @@ import MusicPage from './pages/MusicPage';
 import PlaylistPage from './pages/PlaylistPage';
 import Register from './pages/Register';
 import About from './pages/About';
+import Footer from './Footer';
 
 
 export default function Main({account, isLoggedIn, onLogin}) {
@@ -25,11 +26,11 @@ export default function Main({account, isLoggedIn, onLogin}) {
     <Box backgroundSize="cover" backgroundPosition="center" backgroundRepeat="no-repeat" bg={"Background"}>
         <Router>
           {/* Main Grid */}
-          <Grid templateRows="50px 1fr" templateColumns="50px 1fr" height="100vh">
+          <Grid templateRows="50px 1fr" templateColumns="50px 1fr" minHeight="100vh">
                 <Menu account={account} handlePlay={handlePlay} isLoggedIn={isLoggedIn}/>
               {/* Main Content */}
-            <GridItem bg="Background" transition="all 1s ease-in-out" rowSpan={1} paddingTop={{ base: "35px", md: "0" }}  colSpan={{ base: "2", md: "1" }} paddingRight={{base: "0", md: "50px"}}>
-              <Box py={5} minHeight={"100%"}>
+            <GridItem bg="Background" transition="all 1s ease-in-out" rowSpan={1} paddingTop={"65px"}  colSpan="2">
+              <Box bg="Background" minH="90vh" paddingRight={{base: "0", md: "50px"}}>
                 <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/login" element={<Login onLogin={onLogin}/>} />
@@ -42,7 +43,8 @@ export default function Main({account, isLoggedIn, onLogin}) {
                   <Route path="/playlist/:name" element={<PlaylistPage handlePlay={handlePlay}/>} />
                   <Route path="/about" element={<About />} />
                 </Routes>
-              </Box>
+                </Box>
+                <Footer currentMusic={currentMusic}/>
             </GridItem>
             <GridItem rowSpan={1} zIndex="4">
                <Player currentMusic={currentMusic}/>

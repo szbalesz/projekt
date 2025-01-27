@@ -891,3 +891,7 @@ C:\Users\Tanulo\szbalesz\projekt\projekt\backend\projektApi\projektApi\projektAp
 C:\Users\Tanulo\szbalesz\projekt\projekt\backend\projektApi\projektApi\projektApi\obj\Debug\net8.0\projektApi.pdb
 C:\Users\Tanulo\szbalesz\projekt\projekt\backend\projektApi\projektApi\projektApi\obj\Debug\net8.0\projektApi.genruntimeconfig.cache
 C:\Users\Tanulo\szbalesz\projekt\projekt\backend\projektApi\projektApi\projektApi\obj\Debug\net8.0\ref\projektApi.dll
+C:\Users\Tanulo\csehit\projekt\backend\projektApi\projektApi\projektApi\bin\Debug\net8.0\projektApi.staticwebassets.endpoints.json
+C:\Users\Tanulo\csehit\projekt\backend\projektApi\projektApi\projektApi\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\Tanulo\csehit\projekt\backend\projektApi\projektApi\projektApi\obj\Debug\net8.0\staticwebassets\msbuild.projektApi.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\Tanulo\csehit\projekt\backend\projektApi\projektApi\projektApi\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

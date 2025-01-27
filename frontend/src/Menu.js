@@ -92,10 +92,10 @@ export default function Menu({ handlePlay, account, isLoggedIn }) {
       <GridItem
         rowSpan={1}
         colSpan={2}
-        position={{ base: "fixed", md: "relative" }}
-        top={{ base: "0", md: "auto" }}
-        left={{ base: "0", md: "auto" }}
-        width={{ base: "100%", md: "auto" }}
+        position="fixed"
+        top="0"
+        left="0"
+        width="100%"
         zIndex={12}
         bg="Background"
       >
@@ -106,15 +106,14 @@ export default function Menu({ handlePlay, account, isLoggedIn }) {
       <GridItem
         rowSpan={0}
         colSpan={0}
-        position={{ base: "fixed", md: "relative" }}
+        position="fixed"
         bottom={{ base: "0", md: "auto" }}
         left={{ base: "0", md: "auto" }}
-        marginTop={{ base: "0", md: "-100px" }}
-        paddingTop={{ base: "0", md: "50px" }}
+        top={{ base: "auto", md: "0" }}
         width={{ base: "100%", md: "auto" }}
         borderRightWidth={{ base: "0px", md: "1px" }}
         borderTopWidth={{ base: "1px", md: "0px" }}
-        h={{ base: "70px", md: "auto" }}
+        h={{ base: "70px", md: "100%" }}
         zIndex="15"
         bg="Background"
       >
@@ -124,16 +123,6 @@ export default function Menu({ handlePlay, account, isLoggedIn }) {
           menuItems={menuItems}
           footerItems={footerItems}
         />
-      </GridItem>
-      <GridItem rowSpan={1}
-        colSpan={2}
-        position="fixed"
-        bottom="0"
-        left="0"
-        width="100%"
-        zIndex={12}
-        bg="Background">
-      <Footer></Footer>
       </GridItem>
     </>
   );
