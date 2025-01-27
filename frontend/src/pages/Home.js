@@ -15,7 +15,6 @@ export default function Home() {
       })
       .catch(e => {console.error("HIBA, Nem sikerült lekérni a zenéket: ",e)}) 
 }
-
   useEffect(() => {
     getAllMusic();
   }, [])
