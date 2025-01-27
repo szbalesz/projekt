@@ -90,7 +90,7 @@ useEffect(() => {
           </Text>
         </VStack>
       ) : (
-        <Text>Jelenleg nincs kiválasztva zene</Text>
+        <Text>Nem létezik ilyen zene</Text>
       )}
     </Box>
     </AbsoluteCenter>
