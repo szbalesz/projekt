@@ -31,7 +31,7 @@ const items = [
     {
       name: "Száraz Bálint Csaba",
       bio: "asdasd",
-      image: "https://i.pravatar.cc/150?u=a",
+      image: "https://yt3.googleusercontent.com/xzvwuor2VIDCJU0MrRcEhYk12Tat4mFafmLWPdmC3AXCp3FS_0ne5WdDzEKP8MTQ9wr4hUBsew=s900-c-k-c0x00ffffff-no-rj",
     },
     {
       name: "Csehi Tamás",
@@ -41,6 +41,6 @@ const items = [
     {
       name: "Fehér Tamás",
       bio: "asdasdasd",
-      image: "https://i.pravatar.cc/150?u=c",
+      image: "https://i.ytimg.com/vi/QDHjHO7jdqg/maxresdefault.jpg",
     },
   ]

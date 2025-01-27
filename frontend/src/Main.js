@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Box, Flex, Grid, GridItem} from '@chakra-ui/react';
 
 import Menu from './Menu';
@@ -7,7 +7,7 @@ import Login from './pages/Login';
 import Playlists from "./pages/Playlists";
 import Settings from "./pages/Settings";
 
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import Player from './menu/Player';
 import MusicPage from './pages/MusicPage';
 import PlaylistPage from './pages/PlaylistPage';
@@ -22,11 +22,23 @@ export default function Main({account, isLoggedIn, onLogin}) {
     const handlePlay = (music) => {
         setcurrentMusic(music); // Beállítja a lejátszandó zenét
     };
+    
+    // Az oldal tetejére ugrik
+    const ScrollToTop = () => {
+      const location = useLocation();
+    
+      useEffect(() => {
+        window.scrollTo(0, 0);
+      }, [location]);
+    
+      return null;
+    };
   return (
     <Box backgroundSize="cover" backgroundPosition="center" backgroundRepeat="no-repeat" bg={"Background"}>
         <Router>
           {/* Main Grid */}
           <Grid templateRows="50px 1fr" templateColumns="50px 1fr" minHeight="100vh">
+              <ScrollToTop/> {/* Az oldal tetejére görget minden oldal váltáskor */}
                 <Menu account={account} handlePlay={handlePlay} isLoggedIn={isLoggedIn}/>
               {/* Main Content */}
             <GridItem bg="Background" transition="all 1s ease-in-out" rowSpan={1} paddingTop={"65px"}  colSpan="2">
