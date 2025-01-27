@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2025. Jan 17. 18:08
--- Kiszolgáló verziója: 10.4.32-MariaDB
--- PHP verzió: 8.2.12
+-- Létrehozás ideje: 2025. Jan 27. 14:08
+-- Kiszolgáló verziója: 10.4.20-MariaDB
+-- PHP verzió: 7.3.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,13 +30,13 @@ USE `projekt`;
 --
 
 CREATE TABLE `felhasznalo` (
-  `GUID` varchar(36) NOT NULL,
-  `Felhasznalonev` varchar(50) NOT NULL,
-  `Jelszo` varchar(50) NOT NULL,
-  `Teljesnev` varchar(50) DEFAULT NULL,
-  `Email` varchar(50) DEFAULT NULL,
+  `GUID` varchar(36) COLLATE utf8mb4_hungarian_ci NOT NULL,
+  `Felhasznalonev` varchar(50) COLLATE utf8mb4_hungarian_ci NOT NULL,
+  `Jelszo` varchar(50) COLLATE utf8mb4_hungarian_ci NOT NULL,
+  `Teljesnev` varchar(50) COLLATE utf8mb4_hungarian_ci DEFAULT NULL,
+  `Email` varchar(50) COLLATE utf8mb4_hungarian_ci DEFAULT NULL,
   `Szuletesdatum` date DEFAULT NULL,
-  `Profilkep` longtext DEFAULT NULL
+  `Profilkep` longtext COLLATE utf8mb4_hungarian_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
 
 --
@@ -54,9 +54,9 @@ INSERT INTO `felhasznalo` (`GUID`, `Felhasznalonev`, `Jelszo`, `Teljesnev`, `Ema
 --
 
 CREATE TABLE `lejátszasi_lista` (
-  `GUID` varchar(36) NOT NULL,
-  `FelhasznaloID` varchar(36) NOT NULL,
-  `ListaNev` varchar(50) DEFAULT NULL
+  `GUID` varchar(36) COLLATE utf8mb4_hungarian_ci NOT NULL,
+  `FelhasznaloID` varchar(36) COLLATE utf8mb4_hungarian_ci NOT NULL,
+  `ListaNev` varchar(50) COLLATE utf8mb4_hungarian_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
 
 --
@@ -75,8 +75,8 @@ INSERT INTO `lejátszasi_lista` (`GUID`, `FelhasznaloID`, `ListaNev`) VALUES
 --
 
 CREATE TABLE `lista_zene` (
-  `ListaID` varchar(36) NOT NULL,
-  `ZeneID` varchar(36) NOT NULL
+  `ListaID` varchar(36) COLLATE utf8mb4_hungarian_ci NOT NULL,
+  `ZeneID` varchar(36) COLLATE utf8mb4_hungarian_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
 
 --
@@ -96,10 +96,10 @@ INSERT INTO `lista_zene` (`ListaID`, `ZeneID`) VALUES
 --
 
 CREATE TABLE `zene` (
-  `GUID` varchar(36) NOT NULL,
-  `Eloado` varchar(50) DEFAULT NULL,
-  `Cim` varchar(50) DEFAULT NULL,
-  `Kep` longtext DEFAULT NULL
+  `GUID` varchar(36) COLLATE utf8mb4_hungarian_ci NOT NULL,
+  `Eloado` varchar(50) COLLATE utf8mb4_hungarian_ci DEFAULT NULL,
+  `Cim` varchar(50) COLLATE utf8mb4_hungarian_ci DEFAULT NULL,
+  `Kep` longtext COLLATE utf8mb4_hungarian_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
 
 --
@@ -107,10 +107,12 @@ CREATE TABLE `zene` (
 --
 
 INSERT INTO `zene` (`GUID`, `Eloado`, `Cim`, `Kep`) VALUES
-('10c947c5-d196-11ef-a697-701ab8764395', 'MCISTI22', 'ASIDUIHASKDL', 'https://i.ytimg.com/vi/dVe6Tn4kV9s/hqdefault.jpg'),
-('12ce675b-af41-11ef-8761-047c16bd83b3', 'Azahriah', 'SZIA', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPmZClpmfPdwIXFF5b1S5UCaU-uY0xFXSd9w&s'),
-('1dc947c5-d196-11ef-a697-701ab8764391', 'MCISTI', 'ASJDSAK', 'https://f4.bcbits.com/img/a0466831023_65'),
-('5dc947c5-d196-11ef-a697-701ab8764395', 'MCISTI2', 'Fekália', 'https://f4.bcbits.com/img/a0466831023_65');
+('10c947c5-d196-11ef-a697-701ab8764395', 'Desh', 'Walkin\' a street', 'https://i.scdn.co/image/ab67616d0000b2737ac1501b2c36c9b4e785f336'),
+('12ce675b-af41-11ef-8761-047c16bd83b3', 'Azahriah', 'Cipoe', 'https://img.projektn.sk/wp-static/2024/04/872A49711.jpg'),
+('1dc947c5-d196-11ef-a697-701ab8764391', 'KKevin', 'Prosecco', 'https://i.ytimg.com/vi/1uu-TUeNtbk/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB4EXHbBMMcvuwi8B6LF1t3jCZa3w'),
+('5dc947c5-d196-11ef-a697-701ab8764395', 'Mc Isti', 'A 66 OS ÚT', 'https://i.scdn.co/image/ab67616d0000b273cd78bbcd5556df0518b56749'),
+('8492f71a-ee1a-447b-8347-24d0f8adef3e', 'Ariana Grande', '7 Rings', 'https://compote.slate.com/images/6d00a1ad-6b1e-46ec-a06f-f1b3d759f134.jpeg'),
+('9ed0973f-536b-4134-8844-16b1cd4efd72', 'Katy Perry', 'Firework', 'https://static.stereogum.com/uploads/2023/08/Katy-Perry-Firework-1692215086.jpeg');
 
 --
 -- Indexek a kiírt táblákhoz
