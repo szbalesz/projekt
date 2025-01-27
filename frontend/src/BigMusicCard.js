@@ -1,17 +1,21 @@
 import React from 'react'
-import { Box, Text } from '@chakra-ui/react';
+import { Box, Button, Text } from '@chakra-ui/react';
+import { useNavigate } from 'react-router-dom';
 
 export default function BigMusicCard({music}) {
+  const navigate = useNavigate();
   return (
-        <Box
-        borderRadius="md"
+        <Button
+        onClick={()=> navigate("/music/"+music.guid)}
+        borderRadius="lg"
+        border="0px"
         overflow="hidden"
         _hover={{ transform: "scale(1.02)" }}
         transition={"all 0.2s ease-in-out"}
         variant="ghost"
         color="white"
         height="300px"
-        w="300px"
+        width="300px"
         backgroundPosition="center"
         backgroundImage={"url("+music.kep+")"}
         backgroundSize="cover"
@@ -25,6 +29,6 @@ export default function BigMusicCard({music}) {
                 </Text>
                 <Text fontSize="sm">Előadó: {music.eloado}</Text>
             </Box>
-        </Box>
+        </Button>
   )
 }
