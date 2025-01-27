@@ -1,28 +1,24 @@
 import { Flex } from '@chakra-ui/react';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import BigMusicCard from '../BigMusicCard';
+import axios from 'axios';
 
 export default function Home() {
-  const zenek = [
-    {
-      guid: "undefined",
-      cim: "Walkin' a Street",
-      eloado: "DESH",
-      kep: "https://cdn-images.dzcdn.net/images/cover/a88e0be2f94ae3ff617e035c52f4da45/0x1900-000000-80-0-0.jpg",
-    },
-    {
-      guid: "undefined",
-      cim: "Cipoe",
-      eloado: "Azahriah",
-      kep: "https://assets.4cdn.hu/kraken/7y0I8C0R5WmQ1AamOs.jpeg",
-    },
-    {
-      guid: "undefined",
-      cim: "Kukásautó",
-      eloado: "DESH",
-      kep: "https://pcpult.hu/galeria/2023/11/30/JOY-Desh_.jpg",
-    },
-  ];
+  const [isPending, setPending] = useState(false)
+  const [musicList, setMusicList] = useState([]);
+  //ideiglenes keresés de ezt majd a backend fogja végezni
+  const getAllMusic=()=>{
+      axios.get("https://localhost:5205/music/GetAllMusic")
+      .then(response => {
+        setMusicList(response.data);
+    
+      })
+      .catch(e => {console.error("HIBA, Nem sikerült lekérni a zenéket: ",e)}) 
+}
+
+  useEffect(() => {
+    getAllMusic();
+  }, [])
 
   return (
     <>
@@ -33,8 +29,8 @@ export default function Home() {
           gap={6}
           padding={4}
         >
-          {zenek.map((zene, index) => (
-              <BigMusicCard key={index} zene={zene}/>
+          {musicList.map((music, index) => (
+              <BigMusicCard key={index} music={music}/>
           ))}
         </Flex>
       </Flex>

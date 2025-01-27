@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bitef/XNx3o=",
+  "dgSpecHash": "Qrju18ME1pI=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\projektApi\\projektApi\\projektApi\\projektApi.csproj",
+  "projectFilePath": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\projektApi\\projektApi\\projektApi\\projektApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Tanulo\\.nuget\\packages\\bouncycastle.cryptography\\2.3.1\\bouncycastle.cryptography.2.3.1.nupkg.sha512",
     "C:\\Users\\Tanulo\\.nuget\\packages\\google.protobuf\\3.26.1\\google.protobuf.3.26.1.nupkg.sha512",
@@ -81,16 +81,5 @@
     "C:\\Users\\Tanulo\\.nuget\\packages\\system.windows.extensions\\8.0.0\\system.windows.extensions.8.0.0.nupkg.sha512",
     "C:\\Users\\Tanulo\\.nuget\\packages\\zstdsharp.port\\0.8.0\\zstdsharp.port.0.8.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1903",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'System.Text.Json' 8.0.4 has a known high severity vulnerability, https://github.com/advisories/GHSA-8g4q-xg66-9fp4",
-      "libraryId": "System.Text.Json",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    }
-  ]
+  "logs": []
 }
