@@ -11,7 +11,7 @@ export default function Footer({currentMusic}) {
         {/* Felső szakasz */}
         <Flex
           direction={{ base: "column", lg: "row" }}
-          justify="space-between"
+          justifyContent="space-between"
           align="center"
           borderBottom="1px solid"
           borderColor="gray.700"
@@ -30,7 +30,7 @@ export default function Footer({currentMusic}) {
           </HStack>
 
           {/* Navigációs Linkek */}
-          <HStack spacing={8} fontSize="sm">
+          <HStack w={{lg: "300px"}} spacing={8} fontSize="sm">
             <Link to="/about" >
               Rólunk
             </Link>
