@@ -16,8 +16,10 @@ export default function BigMusicCard({music}) {
         backgroundImage={"url("+music.kep+")"}
         backgroundSize="cover"
         boxShadow="0 0 15px 0 #99f6e4"
+        position="relative"
+      
         >
-            <Box p={4}>
+            <Box w="100%" background="linear-gradient(to top, black, rgba(0, 0, 0, 0))" p={4} pt="75px" position="absolute" bottom="0">
                 <Text fontSize="xl" fontWeight="bold" color="teal.300" mb={2}>
                 {music.cim}
                 </Text>
