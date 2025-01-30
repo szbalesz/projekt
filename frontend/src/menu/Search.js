@@ -27,6 +27,14 @@ export default function Search( {handlePopupClose}) {
       })
       .catch(e => {console.error("HIBA, Nem sikerült lekérni a zenéket: ",e)}) 
     }
+    else{
+      axios.get("https://localhost:5205/music/GetAllMusic")
+      .then(response => {
+        setResults(response.data);
+    
+      })
+      .catch(e => {console.error("HIBA, Nem sikerült lekérni a zenéket: ",e)}) 
+    }
 }
 
   useEffect(() => {

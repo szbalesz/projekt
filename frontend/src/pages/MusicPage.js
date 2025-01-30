@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Text, Image, VStack, AbsoluteCenter, Button, Spinner } from '@chakra-ui/react';
-import { LuList, LuPause, LuPlay, LuStar, LuStarOff } from 'react-icons/lu';
+import { LuList, LuPause, LuPlay, LuStar } from 'react-icons/lu';
 import { useLocation, useParams } from 'react-router-dom';
 import axios from 'axios';
 
