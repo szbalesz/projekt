@@ -1,25 +1,49 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Text, Image, VStack, AbsoluteCenter, Button, Spinner } from '@chakra-ui/react';
-import { LuList, LuPause, LuPlay, LuStar } from 'react-icons/lu';
+import { LuList, LuPause, LuPlay, LuStar, LuStarOff } from 'react-icons/lu';
 import { useLocation, useParams } from 'react-router-dom';
 import axios from 'axios';
 
 const MusicPage = ({ currentMusic, handlePlay, isPlaying }) => {
   const [music, setMusic] = useState();
   const [isPending, setPending] = useState(false)
+  const [isFavorite, setFavorite] = useState(false)
   const { guid } = useParams();
   const location = useLocation();
   const getMusic=()=>{
     setPending(true);
     axios.get("https://localhost:5205/music/GetAllMusic")
     .then(response => {
-        setMusic(response.data.find((m) => m.guid === guid))
+       let foundMusic = response.data.find((m) => m.guid === guid); 
+       setMusic(foundMusic);
+       getFavorite(foundMusic.cim);  //Ideiglenes, később ID alapján fog működni
     })
     .catch(e => {console.error("HIBA, Nem sikerült lekérni a zenét: ",e)})
     .finally(()=>{
         setPending(false)
     })
 }
+
+  const getFavorite = (name) => {
+    setPending(true);
+    axios.get("https://localhost:5205/playlist/GetAllPlaylist")
+    .then(response => {
+      let data = response.data;
+        for (let i = 0; i < data.length; i++) {
+             if(data[i].listaNev === "Kedvencek"){
+                for (let f = 0; f < data[i].zenes.length; f++) {
+                  if(name === data[i].zenes[f].cim){
+                    setFavorite(true);
+                  }
+                }
+             }
+         }
+  })
+    .catch(e => {console.error("HIBA, Nem sikerült lekérni a lejátszási listát: ",e)})
+    .finally(()=>{
+        setPending(false);
+    })
+  }
 
 useEffect(() => {
   getMusic();
@@ -90,8 +114,8 @@ useEffect(() => {
           <Text fontSize="md">
           </Text>
           <Text fontSize="md">
-            <Button p={1} m={1} variant="solid"><LuStar/></Button>
-            <Button p={1} m={1} variant={isPlaying && music?.cim == currentMusic?.cim ? "outline" : "subtle"} colorPalette="teal" onClick={()=> handlePlay(music)}>{isPlaying && music?.cim == currentMusic?.cim ? <LuPause /> : <LuPlay />} </Button>
+            <Button p={1} m={1} variant="solid">{isFavorite? <LuStar fill="teal" stroke="0"/> : <LuStar/>}</Button>
+            <Button p={1} m={1} variant={isPlaying && music?.cim === currentMusic?.cim ? "outline" : "subtle"} colorPalette="teal" onClick={()=> handlePlay(music)}>{isPlaying && music?.cim === currentMusic?.cim ? <LuPause /> : <LuPlay />} </Button>
             <Button p={1} m={1} variant="solid"><LuList/></Button>
           </Text>
         </VStack>
