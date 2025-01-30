@@ -4,7 +4,7 @@ import { LuList, LuPause, LuPlay, LuStar } from 'react-icons/lu';
 import { useLocation, useParams } from 'react-router-dom';
 import axios from 'axios';
 
-const MusicPage = ({ handlePlay, isPlaying }) => {
+const MusicPage = ({ currentMusic, handlePlay, isPlaying }) => {
   const [music, setMusic] = useState();
   const [isPending, setPending] = useState(false)
   const { guid } = useParams();
@@ -20,6 +20,7 @@ const MusicPage = ({ handlePlay, isPlaying }) => {
         setPending(false)
     })
 }
+
 useEffect(() => {
   getMusic();
 }, [location])
@@ -90,7 +91,7 @@ useEffect(() => {
           </Text>
           <Text fontSize="md">
             <Button p={1} m={1} variant="solid"><LuStar/></Button>
-            <Button p={1} m={1} variant={isPlaying ? "outline" : "subtle"} colorPalette="teal" onClick={()=> handlePlay(music)}>{isPlaying ? <LuPause /> : <LuPlay />} </Button>
+            <Button p={1} m={1} variant={isPlaying && music?.cim == currentMusic?.cim ? "outline" : "subtle"} colorPalette="teal" onClick={()=> handlePlay(music)}>{isPlaying && music?.cim == currentMusic?.cim ? <LuPause /> : <LuPlay />} </Button>
             <Button p={1} m={1} variant="solid"><LuList/></Button>
           </Text>
         </VStack>
