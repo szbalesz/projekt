@@ -35,8 +35,8 @@ export default function MusicCard({ music, handlePopupClose }) {
         boxShadow="0 0 10px 0 #99f6e4"
       >
       <Image h="150px" w="150px" src={music.kep}/>
-        <Box p="0" w="auto" paddingTop="5" paddingBottom="5" backgroundColor="rgba(0,0,0,0.33)">
-          <Text fontWeight="bold">{music.cim}</Text>
+        <Box p="0" w="auto" paddingTop="5" paddingBottom="5" backgroundColor="colorPalette.inverted">
+          <Text fontWeight="bold" color="colorPalette.solid">{music.cim}</Text>
           <Text color="#99f6e4">{music.eloado}</Text>
         </Box>
       </Box>
