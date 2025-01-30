@@ -1,18 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Box, Flex, Text, IconButton, Button } from "@chakra-ui/react";
-import { Slider } from "../components/ui/slider"
+import { Slider } from "../components/ui/slider";
 import { useNavigate } from 'react-router-dom';
-import { LuPlay, LuSkipBack, LuSkipForward, LuVolume } from "react-icons/lu";
+import { LuPlay, LuSkipBack, LuSkipForward, LuVolume, LuPause } from "react-icons/lu";
 
-export default function Player({ currentMusic }) {
+import musicFile from "../music/deshwalkinastreet.mp3" //teszt zene
+
+export default function Player({ currentMusic,togglePlayPause, isPlaying, audioRef}) {
   const navigate = useNavigate();
+  const [volume, setVolume] = useState(50);
 
   const handleSongClick = () => {
     if (currentMusic) {
       navigate(`/music/${currentMusic.guid}`);
     }
   };
- 
+
+  useEffect(() => {
+    audioRef.current.volume = volume/100;
+  }, [volume])
+  
+
   return (
     <Box
       bg="Background"
@@ -63,14 +71,15 @@ export default function Player({ currentMusic }) {
               variant="ghost"
               zIndex="101"
               size="sm"
-              > <LuSkipBack /></IconButton>
+            > <LuSkipBack /></IconButton>
             <IconButton
-              aria-label="Play"
+              aria-label={isPlaying ? "Pause" : "Play"}
               variant="ghost"
               zIndex="101"
               size="sm"
               colorPalette="teal"
-            > <LuPlay /> </IconButton>
+              onClick={togglePlayPause}
+            > {isPlaying ? <LuPause /> : <LuPlay />} </IconButton>
             <IconButton
               aria-label="Next"
               variant="ghost"
@@ -79,13 +88,26 @@ export default function Player({ currentMusic }) {
             ><LuSkipForward /></IconButton>
 
             {/* Volume Slider */}
-            <Box display={{base: "none", md:"flex"}} width="150px" mx="5">
-            <LuVolume/>
-              <Slider width="100px" size="sm" defaultValue={[50]} />
+            <Box display={{ base: 'none', md: 'flex' }} width="150px" mx="5">
+              <LuVolume />
+              <Slider
+                width="100px"
+                size="sm"
+                value={[volume]}
+                onValueChange={(a)=> setVolume(a.value)}
+                min={0}
+                max={100}
+                step={1}
+              />
             </Box>
+
           </Flex>
         ) : ""}
       </Flex>
+]
+      {/* Audio element */}
+      {/* Majd a rendes elérési útja lesz currentmusic?.Path eddig csak ideiglenes*/}
+      <audio ref={audioRef} src={musicFile} />
     </Box>
   );
 }

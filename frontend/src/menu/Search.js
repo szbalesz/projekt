@@ -14,7 +14,7 @@ import {
 import MusicCard from '../MusicCard';
 import axios from 'axios';
 
-export default function Search({handlePlay, handlePopupClose}) {
+export default function Search( {handlePopupClose}) {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
   //ideiglenes keresés de ezt majd a backend fogja végezni
@@ -62,7 +62,6 @@ export default function Search({handlePlay, handlePopupClose}) {
                 key={index}
                 music={track}
                 track={track}
-                handlePlay={handlePlay}
                 handlePopupClose={handlePopupClose}
               />
             ))

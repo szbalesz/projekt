@@ -2,12 +2,11 @@ import React from 'react';
 import { Button, Box, Text, Image } from "@chakra-ui/react";
 import { useLocation, useNavigate } from 'react-router-dom';
 
-export default function MusicCard({ music, handlePlay, handlePopupClose }) {
+export default function MusicCard({ music, handlePopupClose }) {
   const navigate = useNavigate();
   const location = useLocation();
   const isPopup = location.pathname.includes("popup");  
-  const play = ()=>{
-    handlePlay(music);
+  const click = ()=>{
     navigate(`/music/${music.guid}`);
     if(isPopup){
       handlePopupClose();
@@ -25,7 +24,7 @@ export default function MusicCard({ music, handlePlay, handlePopupClose }) {
       textAlign="center"
       justifyContent="center"
       borderRadius="10px"
-      onClick={()=>play()}
+      onClick={()=>click()}
     >
       <Box
         borderRadius="10px"

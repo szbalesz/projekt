@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Text, Image, VStack, AbsoluteCenter, Button, Spinner } from '@chakra-ui/react';
-import { LuList, LuStar } from 'react-icons/lu';
+import { LuList, LuPause, LuPlay, LuStar } from 'react-icons/lu';
 import { useLocation, useParams } from 'react-router-dom';
 import axios from 'axios';
 
-const MusicPage = () => {
+const MusicPage = ({ handlePlay, isPlaying }) => {
   const [music, setMusic] = useState();
   const [isPending, setPending] = useState(false)
   const { guid } = useParams();
@@ -90,6 +90,7 @@ useEffect(() => {
           </Text>
           <Text fontSize="md">
             <Button p={1} m={1} variant="solid"><LuStar/></Button>
+            <Button p={1} m={1} variant={isPlaying ? "outline" : "subtle"} colorPalette="teal" onClick={()=> handlePlay(music)}>{isPlaying ? <LuPause /> : <LuPlay />} </Button>
             <Button p={1} m={1} variant="solid"><LuList/></Button>
           </Text>
         </VStack>

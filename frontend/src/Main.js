@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Box, Grid, GridItem} from '@chakra-ui/react';
 
 import Menu from './Menu';
@@ -17,10 +17,20 @@ import Footer from './Footer';
 
 
 export default function Main({account, isLoggedIn, onLogin}) {
+    const audioRef = useRef(null);
     const [currentMusic, setcurrentMusic] = useState(null);
-
+    const [isPlaying, setIsPlaying] = useState(false);
+    const togglePlayPause = () => {
+      if (isPlaying) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    };
     const handlePlay = (music) => {
         setcurrentMusic(music); // Beállítja a lejátszandó zenét
+        togglePlayPause();
     };
     
     // Az oldal tetejére ugrik
@@ -51,7 +61,7 @@ export default function Main({account, isLoggedIn, onLogin}) {
                   <Route path="/settings" element={<Settings />} />
                   {/* Ha ismeretlen az útvonal, irányítsd a kezdőlapra */}
                   <Route path="*" element={<Navigate to="/" />} />
-                  <Route path="/music/:guid" element={<MusicPage music={currentMusic} />} />
+                  <Route path="/music/:guid" element={<MusicPage handlePlay={handlePlay} isPlaying={isPlaying}/>} />
                   <Route path="/playlist/:name" element={<PlaylistPage handlePlay={handlePlay}/>} />
                   <Route path="/about" element={<About />} />
                 </Routes>
@@ -59,7 +69,7 @@ export default function Main({account, isLoggedIn, onLogin}) {
                 <Footer currentMusic={currentMusic}/>
             </GridItem>
             <GridItem rowSpan={1} zIndex="4">
-               <Player currentMusic={currentMusic}/>
+               <Player currentMusic={currentMusic} isPlaying={isPlaying} togglePlayPause={togglePlayPause} audioRef={audioRef}/>
             </GridItem>
           </Grid>
         </Router>
