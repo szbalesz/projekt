@@ -26,7 +26,7 @@ export default function Player({ currentMusic,togglePlayPause, isPlaying, audioR
       bg="Background"
       position="fixed"
       boxShadow="-5px 0px 50px -20px #5eead4"
-      bottom={{ base: currentMusic?.cim != null ? "70px" : "-70px", md: currentMusic?.cim != null ? "0px" : "-70px" }}
+      bottom={{ base: currentMusic?.cim != null ? "65px" : "-70px", md: currentMusic?.cim != null ? "0px" : "-70px" }}
       transition="all 1s ease-in-out"
       marginLeft={{ base: "0px", md: "50px" }}
       width={{ base: "100%", md: "100%" }}
