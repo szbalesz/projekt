@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Box,
   Flex,
@@ -10,17 +10,22 @@ import {
   AbsoluteCenter,
 } from '@chakra-ui/react';
 import { Field } from "../components/ui/field"
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { PasswordInput } from "../components/ui/password-input"
 import { toaster } from '../components/ui/toaster';
 
 
-export default function Register({ onRegister }) {
+export default function Register({ isLoggedin, onRegister }) {
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [passwordAgain, setPasswordAgain] = useState("");
-    
+    const navigate = useNavigate();
+    useEffect(() => {
+      if(isLoggedin){
+        navigate("/")
+      }
+    }, [])
   return (
     <>
       <Flex display={{ base: "block", md: "flex"}} justifyContent="center">

@@ -54,8 +54,8 @@ export default function Main({account, isLoggedIn, onRegister, onLogin, onLogout
               <Box bg="Background" minH="97vh" py="65px" px={{base: "0", md: "50px"}}>
                 <Routes>
                   <Route path="/" element={<Home />} />
-                  <Route path="/login" element={<Login onLogin={onLogin}/>} />
-                  <Route path="/register" element={<Register onRegister={onRegister}/>} />
+                  <Route path="/login" element={<Login isLoggedIn={isLoggedIn} onLogin={onLogin}/>} />
+                  <Route path="/register" element={<Register isLoggedIn={isLoggedIn} onRegister={onRegister}/>} />
                   <Route path="/playlists" element={<Playlists />} />
                   <Route path="/settings" element={<Settings />} />
                   {/* Ha ismeretlen az útvonal, irányítsd a kezdőlapra */}

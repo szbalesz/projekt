@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Box,
   Flex,
@@ -12,12 +12,19 @@ import {
 } from '@chakra-ui/react';
 import { Field } from "../components/ui/field"
 import { Checkbox } from "../components/ui/checkbox"
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { PasswordInput } from "../components/ui/password-input"
 
-export default function Login({onLogin}) {
+export default function Login({ isLoggedin, onLogin}) {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
+  const navigate = useNavigate();
+  useEffect(() => {
+    if(isLoggedin){
+      navigate("/")
+    }
+  }, [])
+  
   return (
     <>
       <Flex display={{ base: "block", md: "flex"}} justifyContent="center">
@@ -45,7 +52,7 @@ export default function Login({onLogin}) {
                 </Stack>
             </Box>
             <Text textAlign="center">
-                Ha még nincs fiókod <Link to={"/register"} style={{color: "#2dd4bf"}}> Regisztrálj</Link>!
+                Ha még nincs fiókod <Link to={"/register"} style={{color: "#2dd4bf"}}>Regisztrálj</Link>!
             </Text>
             </Stack>
         </AbsoluteCenter>
