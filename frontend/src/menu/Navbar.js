@@ -13,17 +13,16 @@ export default function Navbar({setIsSidebarOpen, account, isLoggedIn, onLogout}
             <Button display={{base: "none", md:"flex"}} h="50px" fontSize="10px" variant="surface" bg="Background" w="50px" onClick={()=>setIsSidebarOpen(true)}>
                   <Flex justifyContent="center"><LuList/></Flex>
             </Button>
-        <Flex marginLeft="25px" w="100%" p="0" textAlign="center" justifyContent="center">
+        <Flex marginLeft="-50px" w="100%" p="0" textAlign="center" justifyContent="center">
               <Link to={"/"}>
               <Image
+              transition="all 0.5s ease-in-out"
+              _hover={{ transform: "scale(1.05)" }}
               src={logo}
               alt="logo"
-              style={{
-                  pointerEvents: "none",
-                  height: "65px",
-                  padding: "0px",
-                  filter: "brightness(100%) saturate(0%) contrast(0%)",
-              }}
+              filter= "brightness(100%) saturate(0%) contrast(0%)"
+              height= "65px"
+              padding="0"
               />
               </Link>
         </Flex>
