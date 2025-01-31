@@ -7,7 +7,7 @@ import Login from './pages/Login';
 import Playlists from "./pages/Playlists";
 import Settings from "./pages/Settings";
 
-import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import Player from './menu/Player';
 import MusicPage from './pages/MusicPage';
 import PlaylistPage from './pages/PlaylistPage';
@@ -16,7 +16,7 @@ import About from './pages/About';
 import Footer from './Footer';
 
 
-export default function Main({account, isLoggedIn, onLogin}) {
+export default function Main({account, isLoggedIn, onLogin, onLogout}) {
     const audioRef = useRef(null);
     const [currentMusic, setcurrentMusic] = useState(null);
     const [isPlaying, setIsPlaying] = useState(false);
@@ -45,11 +45,10 @@ export default function Main({account, isLoggedIn, onLogin}) {
     };
   return (
     <Box backgroundSize="cover" backgroundPosition="center" backgroundRepeat="no-repeat" bg={"Background"}>
-        <Router>
           {/* Main Grid */}
           <Grid templateRows="50px 1fr" templateColumns="50px 1fr" minHeight="100vh">
               <ScrollToTop/> {/* Az oldal tetejére görget minden oldal váltáskor */}
-                <Menu account={account} handlePlay={handlePlay} isLoggedIn={isLoggedIn}/>
+                <Menu account={account} handlePlay={handlePlay} isLoggedIn={isLoggedIn} onLogout={onLogout}/>
               {/* Main Content */}
             <GridItem bg="Background" transition="all 1s ease-in-out" rowSpan={1}  colSpan="2">
               <Box bg="Background" minH="97vh" py="65px" px={{base: "0", md: "50px"}}>
@@ -72,7 +71,6 @@ export default function Main({account, isLoggedIn, onLogin}) {
                <Player currentMusic={currentMusic} isPlaying={isPlaying} togglePlayPause={togglePlayPause} audioRef={audioRef}/>
             </GridItem>
           </Grid>
-        </Router>
     </Box>
   )
 }

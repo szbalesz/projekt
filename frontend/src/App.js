@@ -5,13 +5,12 @@ import { Box } from "@chakra-ui/react";
 import { useState } from "react";
 import axios from "axios";
 import { Toaster, toaster } from "./components/ui/toaster"
+import { useNavigate } from "react-router-dom";
 
 function App() {
+  const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [account,SetAccount] = useState({
-    felhasznalonev: "Kijelentkezve",
-    profilkep: ""
-  });
+  const [account,SetAccount] = useState({});
   const onLogin=(username,password)=>{
       axios.get("https://localhost:5205/user/GetAllUser")
       .then(response => {
@@ -23,19 +22,30 @@ function App() {
               type: "success",
             })
           }
+          navigate("/");
+
       })
       .catch(e => {
-        console.error("HIBA, Nem sikerült a bejelentkezés: ",e);
+          console.error("HIBA, Nem sikerült a bejelentkezés: ",e);
           toaster.create({
             title: `Sikertelen bejelentkezés!`,
             type: "error",
           })
         })
   }
+
+  const onLogout=()=>{
+    setIsLoggedIn(false);
+    SetAccount({});
+    toaster.create({
+      title: `Sikeres kijelentkezés!`,
+      type: "success",
+    })
+  }
   return (
     <Provider>
         <Box bg="Background">
-          <Main account={account} isLoggedIn={isLoggedIn} onLogin={onLogin}/>
+          <Main account={account} isLoggedIn={isLoggedIn} onLogin={onLogin} onLogout={onLogout}/>
           <Toaster/>
         </Box>
     </Provider>

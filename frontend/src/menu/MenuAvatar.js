@@ -14,7 +14,7 @@ import {
 import { Flex, Span } from '@chakra-ui/react'
 import { LuPanelRightClose } from "react-icons/lu";
 
-export default function MenuAvatar({ account }) {
+export default function MenuAvatar({ account, onLogout }) {
 
   return (
     <>
@@ -38,7 +38,7 @@ export default function MenuAvatar({ account }) {
         <DrawerHeader>
           <DrawerTitle>
           <Flex justifyContent="center" textAlign="center">
-          <Avatar width="50px" height="50px" src={account.profilkep}/><Flex p="3" color="#5eead4">{account.felhasznalonev}</Flex>
+          <Avatar width="50px" height="50px" src={account?.profilkep}/><Flex p="3" color="#5eead4">{account?.felhasznalonev}</Flex>
           </Flex>
           </DrawerTitle>
         </DrawerHeader>
@@ -49,7 +49,7 @@ export default function MenuAvatar({ account }) {
           </p>
         </DrawerBody>
         <DrawerFooter justifyContent="center">
-          <Button colorPalette="teal" variant="outline">Kijelenkezés</Button>
+          <Button colorPalette="teal" variant="outline" onClick={()=> onLogout()}>Kijelenkezés</Button>
         </DrawerFooter>
       </DrawerContent>
     </DrawerRoot>

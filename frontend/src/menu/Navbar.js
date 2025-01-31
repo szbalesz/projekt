@@ -5,7 +5,7 @@ import MenuAvatar from './MenuAvatar';
 import { Avatar } from "../components/ui/avatar";
 import { Link } from 'react-router-dom';
 
-export default function Navbar({account, isLoggedIn}) {
+export default function Navbar({account, isLoggedIn, onLogout}) {
   return (
     <>
     <Flex bg="Background" as="nav" h="50px" align="center" justify="space-between" p="3" borderBottomWidth="1px" color="white">
@@ -22,7 +22,7 @@ export default function Navbar({account, isLoggedIn}) {
               />
         </Flex>
         {isLoggedIn? 
-        <MenuAvatar account={account}/> 
+        <MenuAvatar account={account} onLogout={onLogout}/> 
         : 
         <Link to={"/login"} style={{position: "absolute", p: "0", width: "45px", right:"15px"}}>
           <Avatar colorPalette="teal" />

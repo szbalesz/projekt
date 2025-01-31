@@ -8,7 +8,7 @@ import { LuHouse, LuList, LuSearch, LuSettings, LuStar, LuUsers, } from 'react-i
 import Search from './menu/Search';
 
 
-export default function Menu({ handlePlay, account, isLoggedIn }) {
+export default function Menu({ handlePlay, account, isLoggedIn, onLogout }) {
   const [selectedMenu, setSelectedMenu] = useState('');
   const location = useLocation();
   const navigate = useNavigate();
@@ -98,7 +98,7 @@ export default function Menu({ handlePlay, account, isLoggedIn }) {
         zIndex={12}
         bg="Background"
       >
-        <Navbar account={account} isLoggedIn={isLoggedIn}/>
+        <Navbar account={account} isLoggedIn={isLoggedIn} onLogout={onLogout}/>
       </GridItem>
 
       {/* Small Sidebar */}
