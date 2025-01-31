@@ -3,11 +3,12 @@ import { Button, Flex } from "@chakra-ui/react";
 import { Link } from 'react-router-dom';
 
 export default function SmallSidebar({ menuItems, footerItems, selectedMenu, setIsSidebarOpen}) {
-  
+  const isMd = window.innerWidth >= 768; //ha kisméretű a kijelzője akkor csak 5 elemet jelenítsen meg 
+  const maxItems = isMd ? 10 : 5;
   return (
     <>
       <Flex direction={{ base: "row", md: "column" }} align="center" pt={{ base: "1", md: "0" }}>
-        {menuItems.map((item, index) => (
+        {menuItems.slice(0,maxItems).map((item, index) => (
           <Flex width={{base: "20%", md:"50px"}} p="0" m="0" key={index}>
               <Link style={{width: "100%"}} to={item.path} key={index}>
                 <Button
