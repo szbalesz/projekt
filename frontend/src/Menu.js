@@ -106,7 +106,7 @@ export default function Menu({ handlePlay, account, isLoggedIn, onLogout }) {
         rowSpan={0}
         colSpan={0}
         position="fixed"
-        bottom={{ base: "0", md: "auto" }}
+        bottom={{ base: "-1", md: "auto" }}
         left={{ base: "0", md: "auto" }}
         top={{ base: "auto", md: "0" }}
         width={{ base: "100%", md: "auto" }}
