@@ -35,7 +35,7 @@ export default function Home() {
           <AbsoluteCenter>
             <Spinner/>
           </AbsoluteCenter> 
-          : musicList? musicList.map((music, index) => (
+          : musicList? musicList.slice(0,8).map((music, index) => (
             <BigMusicCard key={index} music={music}/>
         )) : <AbsoluteCenter color="red">
         Nem sikerült betölteni a zenéket!
