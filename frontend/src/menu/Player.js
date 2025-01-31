@@ -45,6 +45,7 @@ export default function Player({ currentMusic,togglePlayPause, isPlaying, audioR
           _hover={{ transform: "scale(1.02)" }}
           variant="ghost"
           colorPalette="gray"
+          onClick={handleSongClick}
         >
           <Box display="flex" alignItems="center" gap={3}>
             <Box
@@ -54,7 +55,7 @@ export default function Player({ currentMusic,togglePlayPause, isPlaying, audioR
               height="45px"
               borderRadius="8px"
             />
-            <Box textAlign="left" onClick={handleSongClick}>
+            <Box textAlign="left">
               <Text fontSize="md" p="0" maxW={{ base: "125px", md: "275px" }} h="25px" overflow="hidden" fontWeight="bold">
                 {currentMusic?.cim || ""}
               </Text>
