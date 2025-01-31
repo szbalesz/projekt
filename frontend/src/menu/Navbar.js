@@ -13,7 +13,7 @@ export default function Navbar({setIsSidebarOpen, account, isLoggedIn, onLogout}
             <Button display={{base: "none", md:"flex"}} h="50px" fontSize="10px" variant="surface" bg="Background" w="50px" onClick={()=>setIsSidebarOpen(true)}>
                   <Flex justifyContent="center"><LuList/></Flex>
             </Button>
-        <Flex marginLeft="-50px" w="100%" p="0" textAlign="center" justifyContent="center">
+        <Flex marginLeft={{base: "0", md: "-50px"}} w="100%" p="0" textAlign="center" justifyContent="center">
               <Link to={"/"}>
               <Image
               transition="all 0.5s ease-in-out"
