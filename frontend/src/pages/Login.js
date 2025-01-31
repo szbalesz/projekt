@@ -41,12 +41,12 @@ export default function Login({ isLoggedin, onLogin}) {
                     />
                 </Field>
                 <Field my="2">
-                    <Checkbox colorPalette="teal" color="white">
+                    <Checkbox colorPalette="teal">
                     Maradjon bejelentkezve
                     </Checkbox>
                 </Field>
                 <ChakraLink colorPalette="teal">Elfelejtett jelszó?</ChakraLink>
-                <Button onClick={()=> onLogin(username,password)} colorPalette="teal" color="white" mt={4} mb={3}>
+                <Button onClick={()=> onLogin(username,password)} colorPalette="teal"  color="white" mt={4} mb={3}>
                     Bejelentkezés
                 </Button>
                 </Stack>
