@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Box,
   Flex,
@@ -12,9 +12,15 @@ import {
 import { Field } from "../components/ui/field"
 import { Link } from 'react-router-dom';
 import { PasswordInput } from "../components/ui/password-input"
+import { toaster } from '../components/ui/toaster';
 
 
-export default function Register() {
+export default function Register({ onRegister }) {
+    const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [passwordAgain, setPasswordAgain] = useState("");
+    
   return (
     <>
       <Flex display={{ base: "block", md: "flex"}} justifyContent="center">
@@ -22,26 +28,63 @@ export default function Register() {
             <Stack spacing={8} mx="auto" px={6}>
             <Box rounded="lg" w="350px" bg="bg" boxShadow="0 0 50px 0px #99f6e4"  px={8} py={5}>
                 <Heading textAlign="center" color="teal.500" w="50%" borderRadius="25px" mx="auto" my="3" p="1">Regisztráció</Heading>
-                <Stack spacing={4}>
-                <Field label="Felhasználónév">
-                    <Input type="text" name="email" placeholder="Add meg a felhasználóneved" />
-                </Field>
-                <Field label="E-mail">
-                    <Input type="email" name="email" placeholder="Add meg az e-mailedet" />
-                </Field>
-                <Field label="Jelszó">
-                    <PasswordInput type="password" placeholder="Add meg a jelszavad"/>
-                </Field>
-                <Field label="Jelszó újra">
-                    <PasswordInput type="password" placeholder="Add meg a jelszavad újra"/>
-                </Field>
-                <Button colorPalette="teal" color="white" mt={4} mb={3}>
-                    Regisztráció
-                </Button>
-                </Stack>
+                <form onSubmit={(f) => {
+                    f.preventDefault();
+                    if(username.length >= 4){
+                        if(email.length > 2 && email.includes(".")){
+                            if(password.length >= 6){
+                            if(password === passwordAgain){
+                                onRegister(username,email,password);
+                            }
+                            else{
+                                toaster.create({
+                                title: `A két jelszó nem egyezik.`,
+                                type: "error",
+                            })
+                            }
+                        }
+                        else{
+                            toaster.create({
+                            title: `Jelszó minimum 6 karakter.`,
+                            type: "error",
+                        })
+                        }
+                        }
+                        else{
+                            toaster.create({
+                            title: `Adjon meg egy valós email címet.`,
+                            type: "error",
+                        })
+                        }
+                    }
+                    else{
+                        toaster.create({
+                        title: `Felhasználónév minimum 4 karakter.`,
+                        type: "error",
+                    })
+                    }
+                }}>
+                    <Stack spacing={4}>
+                    <Field label="Felhasználónév">
+                        <Input type="text" name="username" onChange={(q) => setUsername(q.target.value)} placeholder="Add meg a felhasználóneved" />
+                    </Field>
+                    <Field label="Email">
+                        <Input type="email" name="email" onChange={(q) => setEmail(q.target.value)} placeholder="Add meg az emailedet" />
+                    </Field>
+                    <Field label="Jelszó">
+                        <PasswordInput onChange={(q) => setPassword(q.target.value)} placeholder="Add meg a jelszavad"/>
+                    </Field>
+                    <Field label="Jelszó újra">
+                        <PasswordInput onChange={(q) => setPasswordAgain(q.target.value)} placeholder="Add meg a jelszavad újra"/>
+                    </Field>
+                    <Button type="submit" colorPalette="teal" color="white" mt={4} mb={3}>
+                        Regisztráció
+                    </Button>
+                    </Stack>
+                </form>
             </Box>
             <Text textAlign="center">
-                Ha már van fiókod  <Link to={"/login"} style={{color: "#2dd4bf"}}> Jelentkezz be</Link>!
+                Ha már van fiókod  <Link to={"/login"} style={{color: "#2dd4bf"}}>Jelentkezz be</Link>!
             </Text>
             </Stack>
         </AbsoluteCenter>

@@ -16,7 +16,7 @@ import About from './pages/About';
 import Footer from './Footer';
 
 
-export default function Main({account, isLoggedIn, onLogin, onLogout}) {
+export default function Main({account, isLoggedIn, onRegister, onLogin, onLogout}) {
     const audioRef = useRef(null);
     const [currentMusic, setcurrentMusic] = useState(null);
     const [isPlaying, setIsPlaying] = useState(false);
@@ -55,7 +55,7 @@ export default function Main({account, isLoggedIn, onLogin, onLogout}) {
                 <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/login" element={<Login onLogin={onLogin}/>} />
-                  <Route path="/register" element={<Register/>} />
+                  <Route path="/register" element={<Register onRegister={onRegister}/>} />
                   <Route path="/playlists" element={<Playlists />} />
                   <Route path="/settings" element={<Settings />} />
                   {/* Ha ismeretlen az útvonal, irányítsd a kezdőlapra */}
