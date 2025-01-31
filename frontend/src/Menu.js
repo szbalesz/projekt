@@ -98,7 +98,7 @@ export default function Menu({ handlePlay, account, isLoggedIn, onLogout }) {
         zIndex={12}
         bg="Background"
       >
-        <Navbar account={account} isLoggedIn={isLoggedIn} onLogout={onLogout}/>
+        <Navbar setIsSidebarOpen={setIsSidebarOpen} account={account} isLoggedIn={isLoggedIn} onLogout={onLogout}/>
       </GridItem>
 
       {/* Small Sidebar */}
@@ -113,7 +113,7 @@ export default function Menu({ handlePlay, account, isLoggedIn, onLogout }) {
         borderRightWidth={{ base: "0px", md: "1px" }}
         borderTopWidth={{ base: "1px", md: "0px" }}
         h={{ base: "70px", md: "100%" }}
-        zIndex="15"
+        zIndex={"11"}
         bg="Background"
       >
         <SmallSidebar

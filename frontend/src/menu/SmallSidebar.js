@@ -11,17 +11,12 @@ export default function SmallSidebar({ menuItems, footerItems, selectedMenu, set
           <Flex width={{base: "20%", md:"50px"}} p="0" m="0" key={index}>
               <Link style={{width: "100%"}} to={item.path} key={index}>
                 <Button
-                  _focus={{ outline: "none" }}
                   h="50px"
                   fontSize="10px"
                   key={index}
                   transition="all 0.5s ease-in-out"
-                  borderLeftWidth={item.label === "Menü"? "0": "1"}
-                  borderTopWidth={item.label === "Menü"? "0": "1"}
-                  borderRightWidth={item.label === "Menü"? "0": "1"}
-                  borderBottomWidth={item.label === "Menü"? {base: "0", md:"1px"}: "1"}
                   borderRadius={selectedMenu === item.label || item.label === "Keresés" ? "5rem" : "0"}
-                  variant={selectedMenu === item.label ? "solid" : "ghost" && item.label === "Keresés" ? {base:"ghost",md:"subtle"} : "ghost" && item.label === "Menü" ? "outline" : "ghost"}
+                  variant={selectedMenu === item.label ? "solid" : "ghost" && item.label === "Keresés" ? {base:"ghost",md:"subtle"} : "ghost" }
                   colorPalette={selectedMenu === item.label ? "teal" : "gray"}
                   p={item.label === "Keresés" ? { base: "1", md: "0" } : 0}
                   my={item.label === "Keresés" ? { base: "0", md: "5" } : "0"}
