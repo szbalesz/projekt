@@ -27,7 +27,8 @@ namespace MelodyFlowApi.Services
             {
                 new Claim(JwtRegisteredClaimNames.Sub, applicationUser.Id),
                 new Claim(JwtRegisteredClaimNames.Name,applicationUser.Email.ToString()),
-                new Claim(JwtRegisteredClaimNames.Name,applicationUser.UserName.ToString())
+                new Claim(JwtRegisteredClaimNames.Name,applicationUser.UserName.ToString()),
+                new Claim(JwtRegisteredClaimNames.Name,applicationUser.ProfilePictureURL.ToString())
             };
 
             claimList.AddRange(role.Select(role => new Claim(ClaimTypes.Role, role)));
