@@ -1,4 +1,5 @@
 ﻿using MelodyFlowApi.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -15,7 +16,7 @@ namespace MelodyFlowApi.Controllers
         {
             _context = context;
         }
-
+        [Authorize]
         [HttpGet("GetAllPlaylist")]
         public async Task<ActionResult<Playlist>> Get()
         {
