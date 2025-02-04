@@ -16,7 +16,7 @@ import About from './pages/About';
 import Footer from './Footer';
 
 
-export default function Main({account, isLoggedIn, onRegister, onLogin, onLogout}) {
+export default function Main({token, account, isLoggedIn, onRegister, onLogin, onLogout}) {
     const audioRef = useRef(null);
     const [currentMusic, setcurrentMusic] = useState(null);
     const [isPlaying, setIsPlaying] = useState(false);
@@ -56,12 +56,12 @@ export default function Main({account, isLoggedIn, onRegister, onLogin, onLogout
                   <Route path="/" element={<Home />} />
                   <Route path="/login" element={<Login isLoggedIn={isLoggedIn} onLogin={onLogin}/>} />
                   <Route path="/register" element={<Register isLoggedIn={isLoggedIn} onRegister={onRegister}/>} />
-                  <Route path="/playlists" element={<Playlists />} />
+                  <Route path="/playlists" element={<Playlists token={token}/>} />
                   <Route path="/settings" element={<Settings />} />
                   {/* Ha ismeretlen az útvonal, irányítsd a kezdőlapra */}
                   <Route path="*" element={<Navigate to="/" />} />
-                  <Route path="/music/:id" element={<MusicPage currentMusic={currentMusic} handlePlay={handlePlay} isPlaying={isPlaying}/>} />
-                  <Route path="/playlist/:id" element={<PlaylistPage handlePlay={handlePlay}/>} />
+                  <Route path="/music/:id" element={<MusicPage token={token} currentMusic={currentMusic} handlePlay={handlePlay} isPlaying={isPlaying}/>} />
+                  <Route path="/playlist/:id" element={<PlaylistPage token={token} handlePlay={handlePlay}/>} />
                   <Route path="/about" element={<About />} />
                 </Routes>
                 </Box>

@@ -6,6 +6,7 @@ import { GridItem } from '@chakra-ui/react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { LuHouse, LuList, LuSearch, LuSettings, LuStar, LuUsers, } from 'react-icons/lu';
 import Search from './menu/Search';
+import axios from 'axios';
 
 
 export default function Menu({ handlePlay, account, isLoggedIn, onLogout }) {
@@ -20,7 +21,7 @@ export default function Menu({ handlePlay, account, isLoggedIn, onLogout }) {
 
   // Sidebar állapota
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
+  
   // Menü elemek
   const menuItems = useMemo(() => [
     { label: "Menü", icon: <LuList /> }, // Sidebar nem tartalmaz path-et

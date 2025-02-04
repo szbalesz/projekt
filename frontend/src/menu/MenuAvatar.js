@@ -38,7 +38,7 @@ export default function MenuAvatar({ account, onLogout }) {
         <DrawerHeader>
           <DrawerTitle>
           <Flex justifyContent="center" textAlign="center">
-          <Avatar width="50px" height="50px" src={account?.profilkep}/><Flex p="3" color="#5eead4">{account?.felhasznalonev}</Flex>
+          <Avatar width="50px" height="50px" src={account?.profilkep}/><Flex p="3" color="#5eead4">{account?.userName}</Flex>
           </Flex>
           </DrawerTitle>
         </DrawerHeader>

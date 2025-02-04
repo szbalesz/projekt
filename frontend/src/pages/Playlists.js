@@ -3,12 +3,16 @@ import { Heading, Flex, Center, Spinner, AbsoluteCenter } from "@chakra-ui/react
 import PlaylistCard from '../PlaylistCard';
 import axios from 'axios';
 
-export default function Playlists() {
+export default function Playlists({token}) {
   const [playlists, setPlaylists] = useState()
   const [isPending, setPending] = useState(false)
   const getPlaylists=()=>{
       setPending(true);
-      axios.get("https://localhost:5205/playlist/GetAllPlaylist")
+      axios.get("https://localhost:5205/api/playlist/GetAllPlaylist",{
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      })
       .then(response => {
           setPlaylists(response.data);
       })

@@ -4,7 +4,7 @@ import { LuList, LuPause, LuPlay, LuStar } from 'react-icons/lu';
 import { useLocation, useParams } from 'react-router-dom';
 import axios from 'axios';
 
-const MusicPage = ({ currentMusic, handlePlay, isPlaying }) => {
+const MusicPage = ({ token, currentMusic, handlePlay, isPlaying }) => {
   const [music, setMusic] = useState();
   const [isPending, setPending] = useState(false)
   const [isFavorite, setFavorite] = useState(false)
@@ -16,7 +16,7 @@ const MusicPage = ({ currentMusic, handlePlay, isPlaying }) => {
     .then(response => {
        let foundMusic = response.data.find((m) => m.id === id); 
        setMusic(foundMusic);
-       getFavorite(foundMusic.cim);  //Ideiglenes, később ID alapján fog működni
+       getFavorite(foundMusic.title);  //Ideiglenes, később ID alapján fog működni
     })
     .catch(e => {console.error("HIBA, Nem sikerült lekérni a zenét: ",e)})
     .finally(()=>{
@@ -26,13 +26,17 @@ const MusicPage = ({ currentMusic, handlePlay, isPlaying }) => {
 
   const getFavorite = (name) => {
     setPending(true);
-    axios.get("https://localhost:5205/api/playlist/GetAllPlaylist")
+    axios.get("https://localhost:5205/api/playlist/GetAllPlaylist",{
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
     .then(response => {
       let data = response.data;
         for (let i = 0; i < data.length; i++) {
-             if(data[i].listaNev === "Kedvencek"){
-                for (let f = 0; f < data[i].zenes.length; f++) {
-                  if(name === data[i].zenes[f].cim){
+             if(data[i].playlistName === "Kedvencek"){
+                for (let f = 0; f < data[i].musics.length; f++) {
+                  if(name === data[i].musics[f].title){
                     setFavorite(true);
                   }
                 }

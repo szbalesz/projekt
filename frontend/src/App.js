@@ -10,6 +10,7 @@ function App() {
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [account,SetAccount] = useState({});
+  const [token, setToken] = useState("")
   const onRegister=(username,email,password)=>{
     console.log("Regisztráció");
       let newUser = {
@@ -27,10 +28,15 @@ function App() {
   }
 
   const onLogin=(username,password)=>{
-      axios.get("https://localhost:5205/user/GetAllUser")
+      let user = {
+        username: username,
+        password: password
+      }
+      axios.post("https://localhost:5205/api/auth/login",user)
       .then(response => {
           setIsLoggedIn(true);
-          SetAccount(response.data[0]);
+          SetAccount(response.data.result);
+          setToken(response.data.token);
           if(response.data[0] != null){
             toaster.create({
               title: `Sikeres bejelentkezés!`,
@@ -59,7 +65,7 @@ function App() {
   return (
     <Provider>
         <Box bg="Background">
-          <Main account={account} isLoggedIn={isLoggedIn} onRegister={onRegister} onLogin={onLogin} onLogout={onLogout}/>
+          <Main token={token} account={account} isLoggedIn={isLoggedIn} onRegister={onRegister} onLogin={onLogin} onLogout={onLogout}/>
           <Toaster/>
         </Box>
     </Provider>

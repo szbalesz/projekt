@@ -6,7 +6,7 @@ export default function PlaylistCard({ playlist }) {
   const navigate = useNavigate();
 
   const openPlaylist = ()=>{
-    navigate(`/playlist/${playlist.listaNev}`);
+    navigate(`/playlist/${playlist.id}`);
   }
   return (
     <Button
