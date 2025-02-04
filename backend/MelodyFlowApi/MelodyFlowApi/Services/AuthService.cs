@@ -1,5 +1,4 @@
-﻿using MelodyFlowApi.Datas;
-using MelodyFlowApi.Models.Dtos;
+﻿using MelodyFlowApi.Models.Dtos;
 using MelodyFlowApi.Models;
 using MelodyFlowApi.Services.IAuthService;
 using Microsoft.AspNetCore.Identity;

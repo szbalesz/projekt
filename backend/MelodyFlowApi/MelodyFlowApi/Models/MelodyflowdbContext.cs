@@ -83,6 +83,8 @@ public partial class MelodyflowdbContext : DbContext
 
             entity.HasIndex(e => e.NormalizedEmail, "EmailIndex");
 
+            entity.HasIndex(e => e.Id, "Id");
+
             entity.HasIndex(e => e.NormalizedUserName, "UserNameIndex").IsUnique();
 
             entity.Property(e => e.AccessFailedCount).HasColumnType("int(11)");
@@ -110,6 +112,26 @@ public partial class MelodyflowdbContext : DbContext
             entity.Property(e => e.UserName)
                 .HasMaxLength(256)
                 .HasDefaultValueSql("'NULL'");
+
+            entity.HasMany(d => d.Playlists).WithMany(p => p.Users)
+                .UsingEntity<Dictionary<string, object>>(
+                    "UserPlaylist",
+                    r => r.HasOne<Playlist>().WithMany()
+                        .HasForeignKey("PlaylistId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .HasConstraintName("user_playlist_ibfk_1"),
+                    l => l.HasOne<Aspnetuser>().WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .HasConstraintName("user_playlist_ibfk_2"),
+                    j =>
+                    {
+                        j.HasKey("UserId", "PlaylistId").HasName("PRIMARY");
+                        j.ToTable("user_playlist");
+                        j.HasIndex(new[] { "PlaylistId" }, "PlaylistId");
+                        j.HasIndex(new[] { "UserId" }, "UserId");
+                        j.IndexerProperty<string>("PlaylistId").HasMaxLength(36);
+                    });
 
             entity.HasMany(d => d.Roles).WithMany(p => p.Users)
                 .UsingEntity<Dictionary<string, object>>(
@@ -206,11 +228,9 @@ public partial class MelodyflowdbContext : DbContext
         {
             entity.HasKey(e => e.Id).HasName("PRIMARY");
 
-            entity.ToTable("playlists");
+            entity.ToTable("playlist");
 
-            entity.HasIndex(e => e.Id, "UserId");
-
-            entity.HasIndex(e => e.UserId, "UserId_2");
+            entity.HasIndex(e => e.Id, "Id");
 
             entity.Property(e => e.Id).HasMaxLength(36);
             entity.Property(e => e.ImageUrl).HasColumnName("Image_URL");
