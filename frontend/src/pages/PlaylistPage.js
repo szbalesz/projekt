@@ -18,7 +18,7 @@ export default function PlaylistPage({token, handlePlay}) {
         .then(response => {
           let data = response.data;
             for (let i = 0; i < data.length; i++) {
-                 if(data[i].id === id || id == "Kedvencek"){
+                 if(data[i].id === id || id === "Kedvencek"){
                     setPlaylist(data[i].musics);
                  }
              }
@@ -30,7 +30,9 @@ export default function PlaylistPage({token, handlePlay}) {
     }
 
     useEffect(() => {
-      getPlaylist();
+      if(token !== ""){
+        getPlaylist();
+      }
     }, [])
     
   return (

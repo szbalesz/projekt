@@ -22,7 +22,9 @@ export default function Playlists({token}) {
       })
   }
   useEffect(() => {
-    getPlaylists();
+    if(token !== ""){
+      getPlaylists();
+    }
   }, [])
   
   return (

@@ -15,7 +15,7 @@ namespace MelodyFlowApi.Controllers
             this.auth = auth;
         }
 
-        [HttpPost("Register")]
+        [HttpPost("register")]
         public async Task<ActionResult> AddNewUser(CreateUserDto createUserDto)
         {
             var res = await auth.Register(createUserDto);

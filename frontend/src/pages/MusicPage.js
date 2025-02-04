@@ -16,7 +16,9 @@ const MusicPage = ({ token, currentMusic, handlePlay, isPlaying }) => {
     .then(response => {
        let foundMusic = response.data.find((m) => m.id === id); 
        setMusic(foundMusic);
-       getFavorite(foundMusic.title);  //Ideiglenes, később ID alapján fog működni
+       if(token != ""){
+        getFavorite(foundMusic.title);
+       }
     })
     .catch(e => {console.error("HIBA, Nem sikerült lekérni a zenét: ",e)})
     .finally(()=>{

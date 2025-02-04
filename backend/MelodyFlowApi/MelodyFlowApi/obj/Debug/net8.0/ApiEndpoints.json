@@ -34,7 +34,7 @@
   {
     "ContainingType": "MelodyFlowApi.Controllers.AuthController",
     "Method": "AddNewUser",
-    "RelativePath": "api/auth/Register",
+    "RelativePath": "api/auth/register",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,

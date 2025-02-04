@@ -12,19 +12,32 @@ function App() {
   const [account,SetAccount] = useState({});
   const [token, setToken] = useState("")
   const onRegister=(username,email,password)=>{
-    console.log("Regisztráció");
       let newUser = {
         username: username,
         email: email,
-        password: password //teszt
+        password: password, //teszt
+        birthDate: "2025-02-04T13:22:44.891Z", //ideiglenes mert még nincsen hozzá mező
+        phoneNumber: "06301234567" //ideiglenes
       }
-      toaster.create({
-        title: `Sikeres regisztráció.`,
-        type: "success",
+      axios.post("https://localhost:5205/api/auth/register",newUser)
+      .then(response => {
+        if(response.data.token != ""){
+            toaster.create({
+              title: `Sikeres regisztráció.`,
+              type: "success",
+            })
+            navigate("/login");
+          }
+          else{
+            toaster.create({
+              title: `Sikertelen regisztráció!`,
+              type: "error",
+            })
+          }
       })
-      navigate("/login");
-      console.log(newUser);
-    
+      .catch(e => {
+          console.error("HIBA, Nem sikerült a regisztráció: ",e);
+        })
   }
 
   const onLogin=(username,password)=>{
