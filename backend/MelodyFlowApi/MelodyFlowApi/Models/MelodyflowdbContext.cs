@@ -33,8 +33,6 @@ public partial class MelodyflowdbContext : DbContext
 
     public virtual DbSet<Playlist> Playlists { get; set; }
 
-    public virtual DbSet<PlaylistMusic> PlaylistMusics { get; set; }
-
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
         => optionsBuilder.UseMySQL("server=localhost;database=melodyflowdb;user=root;password=;sslmode=none;");
@@ -237,18 +235,26 @@ public partial class MelodyflowdbContext : DbContext
             entity.Property(e => e.PlaylistName)
                 .HasMaxLength(50)
                 .HasDefaultValueSql("'NULL'");
-        });
 
-        modelBuilder.Entity<PlaylistMusic>(entity =>
-        {
-            entity.HasKey(e => new { e.PlaylistId, e.MusicId }).HasName("PRIMARY");
-
-            entity.ToTable("playlist_music");
-
-            entity.HasIndex(e => e.MusicId, "MusicId");
-
-            entity.Property(e => e.PlaylistId).HasMaxLength(36);
-            entity.Property(e => e.MusicId).HasMaxLength(36);
+            entity.HasMany(d => d.Musics).WithMany(p => p.Playlists)
+                .UsingEntity<Dictionary<string, object>>(
+                    "PlaylistMusic",
+                    r => r.HasOne<Music>().WithMany()
+                        .HasForeignKey("MusicId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .HasConstraintName("playlist_music_ibfk_1"),
+                    l => l.HasOne<Playlist>().WithMany()
+                        .HasForeignKey("PlaylistId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .HasConstraintName("playlist_music_ibfk_2"),
+                    j =>
+                    {
+                        j.HasKey("PlaylistId", "MusicId").HasName("PRIMARY");
+                        j.ToTable("playlist_music");
+                        j.HasIndex(new[] { "MusicId" }, "MusicId");
+                        j.IndexerProperty<string>("PlaylistId").HasMaxLength(36);
+                        j.IndexerProperty<string>("MusicId").HasMaxLength(36);
+                    });
         });
 
         OnModelCreatingPartial(modelBuilder);

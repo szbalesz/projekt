@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2025. Feb 04. 12:46
+-- Létrehozás ideje: 2025. Feb 04. 13:02
 -- Kiszolgáló verziója: 10.4.20-MariaDB
 -- PHP verzió: 7.3.29
 
@@ -147,6 +147,13 @@ CREATE TABLE `music` (
   `Music_URL` longtext COLLATE utf8mb4_hungarian_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
 
+--
+-- A tábla adatainak kiíratása `music`
+--
+
+INSERT INTO `music` (`Id`, `Artist`, `Title`, `Image_URL`, `Music_URL`) VALUES
+('10c947c5-d196-11ef-a697-701ab8764395', 'Desh', 'Walkin\' A Street', 'https://i.scdn.co/image/ab67616d0000b2737ac1501b2c36c9b4e785f336', '');
+
 -- --------------------------------------------------------
 
 --
@@ -159,6 +166,13 @@ CREATE TABLE `playlist` (
   `Image_URL` longtext COLLATE utf8mb4_hungarian_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
 
+--
+-- A tábla adatainak kiíratása `playlist`
+--
+
+INSERT INTO `playlist` (`Id`, `PlaylistName`, `Image_URL`) VALUES
+('50c947c5-d196-11ef-a697-701ab8764395', 'Kedvencek', 'https://t3.ftcdn.net/jpg/04/62/60/80/360_F_462608080_J2AJrf8h0fmbFqnTVUQfza8JivYOfShz.jpg');
+
 -- --------------------------------------------------------
 
 --
@@ -169,6 +183,13 @@ CREATE TABLE `playlist_music` (
   `PlaylistId` varchar(36) COLLATE utf8mb4_hungarian_ci NOT NULL,
   `MusicId` varchar(36) COLLATE utf8mb4_hungarian_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
+
+--
+-- A tábla adatainak kiíratása `playlist_music`
+--
+
+INSERT INTO `playlist_music` (`PlaylistId`, `MusicId`) VALUES
+('50c947c5-d196-11ef-a697-701ab8764395', '10c947c5-d196-11ef-a697-701ab8764395');
 
 -- --------------------------------------------------------
 
@@ -339,16 +360,11 @@ ALTER TABLE `aspnetusertokens`
   ADD CONSTRAINT `FK_AspNetUserTokens_AspNetUsers_UserId` FOREIGN KEY (`UserId`) REFERENCES `aspnetusers` (`Id`) ON DELETE CASCADE;
 
 --
--- Megkötések a táblához `music`
+-- Megkötések a táblához `playlist_music`
 --
-ALTER TABLE `music`
-  ADD CONSTRAINT `music_ibfk_1` FOREIGN KEY (`Id`) REFERENCES `playlist_music` (`MusicId`);
-
---
--- Megkötések a táblához `playlist`
---
-ALTER TABLE `playlist`
-  ADD CONSTRAINT `playlist_ibfk_1` FOREIGN KEY (`Id`) REFERENCES `playlist_music` (`PlaylistId`);
+ALTER TABLE `playlist_music`
+  ADD CONSTRAINT `playlist_music_ibfk_1` FOREIGN KEY (`MusicId`) REFERENCES `music` (`Id`),
+  ADD CONSTRAINT `playlist_music_ibfk_2` FOREIGN KEY (`PlaylistId`) REFERENCES `playlist` (`Id`);
 
 --
 -- Megkötések a táblához `user_playlist`

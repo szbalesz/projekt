@@ -11,5 +11,7 @@ public partial class Playlist
 
     public string ImageUrl { get; set; } = null!;
 
+    public virtual ICollection<Music> Musics { get; set; } = new List<Music>();
+
     public virtual ICollection<Aspnetuser> Users { get; set; } = new List<Aspnetuser>();
 }

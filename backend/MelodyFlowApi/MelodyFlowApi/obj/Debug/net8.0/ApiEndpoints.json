@@ -48,6 +48,26 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "MelodyFlowApi.Controllers.MusicController",
+    "Method": "Get",
+    "RelativePath": "api/music/GetAllMusic",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "MelodyFlowApi.Models.Music",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "MelodyFlowApi.Controllers.PlaylistController",
     "Method": "Get",
     "RelativePath": "api/playlist/GetAllPlaylist",
