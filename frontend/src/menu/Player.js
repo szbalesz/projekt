@@ -12,7 +12,7 @@ export default function Player({ currentMusic,togglePlayPause, isPlaying, audioR
 
   const handleSongClick = () => {
     if (currentMusic) {
-      navigate(`/music/${currentMusic.guid}`);
+      navigate(`/music/${currentMusic.id}`);
     }
   };
 
@@ -26,7 +26,7 @@ export default function Player({ currentMusic,togglePlayPause, isPlaying, audioR
       bg="Background"
       position="fixed"
       boxShadow="-5px 0px 50px -20px #5eead4"
-      bottom={{ base: currentMusic?.cim != null ? "65px" : "-70px", md: currentMusic?.cim != null ? "0px" : "-70px" }}
+      bottom={{ base: currentMusic?.title != null ? "65px" : "-70px", md: currentMusic?.title != null ? "0px" : "-70px" }}
       transition="all 1s ease-in-out"
       marginLeft={{ base: "0px", md: "50px" }}
       width={{ base: "100%", md: "100%" }}
@@ -50,22 +50,22 @@ export default function Player({ currentMusic,togglePlayPause, isPlaying, audioR
           <Box display="flex" alignItems="center" gap={3}>
             <Box
               backgroundSize="cover"
-              backgroundImage={`url(${currentMusic?.kep})`}
+              backgroundImage={`url(${currentMusic?.imageUrl})`}
               width="45px"
               height="45px"
               borderRadius="8px"
             />
             <Box textAlign="left">
               <Text fontSize="md" p="0" maxW={{ base: "125px", md: "275px" }} h="25px" overflow="hidden" fontWeight="bold">
-                {currentMusic?.cim || ""}
+                {currentMusic?.title || ""}
               </Text>
-              <Text fontSize="sm" p="0">{currentMusic?.eloado || ""}</Text>
+              <Text fontSize="sm" p="0">{currentMusic?.artist || ""}</Text>
             </Box>
           </Box>
         </Button>
 
         {/* Playback controls */}
-        {currentMusic?.cim != null ? (
+        {currentMusic?.title != null ? (
           <Flex align="center" gap={4}>
             <IconButton
               aria-label="Previous"

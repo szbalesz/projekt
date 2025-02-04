@@ -60,8 +60,8 @@ export default function Main({account, isLoggedIn, onRegister, onLogin, onLogout
                   <Route path="/settings" element={<Settings />} />
                   {/* Ha ismeretlen az útvonal, irányítsd a kezdőlapra */}
                   <Route path="*" element={<Navigate to="/" />} />
-                  <Route path="/music/:guid" element={<MusicPage currentMusic={currentMusic} handlePlay={handlePlay} isPlaying={isPlaying}/>} />
-                  <Route path="/playlist/:name" element={<PlaylistPage handlePlay={handlePlay}/>} />
+                  <Route path="/music/:id" element={<MusicPage currentMusic={currentMusic} handlePlay={handlePlay} isPlaying={isPlaying}/>} />
+                  <Route path="/playlist/:id" element={<PlaylistPage handlePlay={handlePlay}/>} />
                   <Route path="/about" element={<About />} />
                 </Routes>
                 </Box>

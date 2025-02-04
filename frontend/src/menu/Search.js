@@ -20,7 +20,7 @@ export default function Search( {handlePopupClose}) {
   //ideiglenes keresés de ezt majd a backend fogja végezni
   const searchMusic=(q)=>{
     if(q.length > 0){
-      axios.get("https://localhost:5205/music/GetMusicByName?betu="+q)
+      axios.get("https://localhost:5205/api/music/GetMusicByName?betu="+q)
       .then(response => {
         setResults(response.data);
     
@@ -28,7 +28,7 @@ export default function Search( {handlePopupClose}) {
       .catch(e => {console.error("HIBA, Nem sikerült lekérni a zenéket: ",e)}) 
     }
     else{
-      axios.get("https://localhost:5205/music/GetAllMusic")
+      axios.get("https://localhost:5205/api/music/GetAllMusic")
       .then(response => {
         setResults(response.data);
     

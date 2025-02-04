@@ -77,7 +77,7 @@ namespace MelodyFlowApi
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
-
+            app.UseCors("_myAllowSpecificOrigins");
 
             app.MapControllers();
 

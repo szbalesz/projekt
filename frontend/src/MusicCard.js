@@ -7,7 +7,7 @@ export default function MusicCard({ music, handlePopupClose }) {
   const location = useLocation();
   const isPopup = location.pathname.includes("popup");  
   const click = ()=>{
-    navigate(`/music/${music.guid}`);
+    navigate(`/music/${music.id}`);
     if(isPopup){
       handlePopupClose();
     }
@@ -34,10 +34,10 @@ export default function MusicCard({ music, handlePopupClose }) {
         overflow="hidden"
         boxShadow="0 0 10px 0 #99f6e4"
       >
-      <Image h="150px" w="150px" src={music.kep}/>
+      <Image h="150px" w="150px" src={music.imageUrl}/>
         <Box p="0" w="auto" paddingTop="5" paddingBottom="5" backgroundColor="colorPalette.inverted">
-          <Text fontWeight="bold" color="colorPalette.solid">{music.cim}</Text>
-          <Text color="#99f6e4">{music.eloado}</Text>
+          <Text fontWeight="bold" color="colorPalette.solid">{music.title}</Text>
+          <Text color="#99f6e4">{music.artist}</Text>
         </Box>
       </Box>
     </Button>

@@ -8,10 +8,9 @@ export default function Home() {
   const [musicList, setMusicList] = useState();
   const getAllMusic=()=>{
       setPending(true);
-      axios.get("https://localhost:5205/music/GetAllMusic")
+      axios.get("https://localhost:5205/api/music/GetAllMusic")
       .then(response => {
         setMusicList(response.data);
-    
       })
       .catch(e => {console.error("HIBA, Nem sikerült lekérni a zenéket: ",e);}) 
       .finally(()=>{

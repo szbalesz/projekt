@@ -8,13 +8,13 @@ const MusicPage = ({ currentMusic, handlePlay, isPlaying }) => {
   const [music, setMusic] = useState();
   const [isPending, setPending] = useState(false)
   const [isFavorite, setFavorite] = useState(false)
-  const { guid } = useParams();
+  const { id } = useParams();
   const location = useLocation();
   const getMusic=()=>{
     setPending(true);
-    axios.get("https://localhost:5205/music/GetAllMusic")
+    axios.get("https://localhost:5205/api/music/GetAllMusic")
     .then(response => {
-       let foundMusic = response.data.find((m) => m.guid === guid); 
+       let foundMusic = response.data.find((m) => m.id === id); 
        setMusic(foundMusic);
        getFavorite(foundMusic.cim);  //Ideiglenes, később ID alapján fog működni
     })
@@ -26,7 +26,7 @@ const MusicPage = ({ currentMusic, handlePlay, isPlaying }) => {
 
   const getFavorite = (name) => {
     setPending(true);
-    axios.get("https://localhost:5205/playlist/GetAllPlaylist")
+    axios.get("https://localhost:5205/api/playlist/GetAllPlaylist")
     .then(response => {
       let data = response.data;
         for (let i = 0; i < data.length; i++) {
@@ -56,7 +56,7 @@ useEffect(() => {
       <Box 
       style={{content: ""}}
       transition="all 1s ease-in-out"
-      backgroundImage={music ? `url(${music.kep})` : ""} 
+      backgroundImage={music ? `url(${music.imageUrl})` : ""} 
       backgroundSize="cover" 
       backgroundPosition="center" 
       backgroundRepeat="no-repeat" 
@@ -100,22 +100,22 @@ useEffect(() => {
         align="center" 
         w="auto" 
         p="0">
-          <Image src={music.kep} 
+          <Image src={music.imageUrl} 
           borderRadius="10px" 
           p="0" 
-          alt={music.cim} 
+          alt={music.title} 
           boxSize="250px" />
           <Text fontSize="2xl" fontWeight="bold">
-            {music.cim}
+            {music.title}
           </Text>
           <Text fontSize="lg">
-            {music.eloado}
+            {music.artist}
           </Text>
           <Text fontSize="md">
           </Text>
           <Text fontSize="md">
             <Button p={1} m={1} variant="solid">{isFavorite? <LuStar fill="teal" stroke="0"/> : <LuStar/>}</Button>
-            <Button p={1} m={1} variant={isPlaying && music?.cim === currentMusic?.cim ? "outline" : "subtle"} colorPalette="teal" onClick={()=> handlePlay(music)}>{isPlaying && music?.cim === currentMusic?.cim ? <LuPause /> : <LuPlay />} </Button>
+            <Button p={1} m={1} variant={isPlaying && music?.title === currentMusic?.title ? "outline" : "subtle"} colorPalette="teal" onClick={()=> handlePlay(music)}>{isPlaying && music?.title === currentMusic?.title ? <LuPause /> : <LuPlay />} </Button>
             <Button p={1} m={1} variant="solid"><LuList/></Button>
           </Text>
         </VStack>

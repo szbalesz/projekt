@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
 export default function PlaylistPage({handlePlay}) {
-    const { name } = useParams();
+    const { id } = useParams();
     const [isPending, setPending] = useState(false)
     const [playlist, setPlaylist] = useState();
     const getPlaylist=()=>{
@@ -14,8 +14,8 @@ export default function PlaylistPage({handlePlay}) {
         .then(response => {
           let data = response.data;
             for (let i = 0; i < data.length; i++) {
-                 if(data[i].listaNev === name){
-                    setPlaylist(data[i].zenes);
+                 if(data[i].id === i){
+                    setPlaylist(data[i]);
                  }
              }
         })
@@ -32,14 +32,14 @@ export default function PlaylistPage({handlePlay}) {
   return (
     <div>
         <Flex display="block" justifyContent="center">
-        <Heading textAlign="center"> {name} </Heading>
+        <Heading textAlign="center"> {playlist?.PlaylistName} </Heading>
         <Center>
           <Flex wrap="wrap" justify="center" gap={4} width="100%">
           {isPending?
            <AbsoluteCenter>
             <Spinner/>
             </AbsoluteCenter>  
-         : playlist? playlist.map((music, index) => (
+         : playlist? playlist.musics.map((music, index) => (
           <MusicCard key={index} music={music} handlePlay={handlePlay}/>
         )) : <AbsoluteCenter color="red">
               Nem sikerült betölteni a zenéket!

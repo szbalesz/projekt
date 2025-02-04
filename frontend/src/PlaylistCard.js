@@ -31,9 +31,9 @@ export default function PlaylistCard({ playlist }) {
       >
       <Image src="https://t3.ftcdn.net/jpg/04/62/60/80/360_F_462608080_J2AJrf8h0fmbFqnTVUQfza8JivYOfShz.jpg"/>
         <Box p="0" w="auto" paddingTop="5" paddingBottom="5" backgroundColor="colorPalette.inverted">
-          <Text fontWeight="bold" color="colorPalette.solid">{playlist.listaNev}</Text>
+          <Text fontWeight="bold" color="colorPalette.solid">{playlist.playlistName}</Text>
           <Text fontSize="12px" letterSpacing="tight" color="colorPalette.solid">
-            {playlist.zenes.length} zene
+            {playlist.musics.length} zene
           </Text>
         </Box>
       </Box>
