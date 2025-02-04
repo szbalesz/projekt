@@ -1,4 +1,13 @@
 
+using MelodyFlowApi.Datas;
+using MelodyFlowApi.Services.IAuthService;
+using MelodyFlowApi.Services;
+using MelodyFlowApi.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+
 namespace MelodyFlowApi
 {
     public class Program
@@ -7,6 +16,49 @@ namespace MelodyFlowApi
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            builder.Services.AddDbContext<AppDbContext>();
+            builder.Services.AddScoped<IAuth, AuthService>();
+            builder.Services.AddScoped<ITokenGenerator, TokenGenerator>();
+            builder.Services.Configure<JwtOptions>(builder.Configuration.GetSection("AuthSettings:JwtOptions"));
+
+            builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>()
+               .AddDefaultTokenProviders();
+
+            var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy(MyAllowSpecificOrigins,
+                                      policy =>
+                                      {
+                                          policy.WithOrigins("*")
+                                                                .AllowAnyHeader()
+                                                                .AllowAnyMethod();
+                                      });
+            });
+            var settingsSection = builder.Configuration.GetSection("AuthSettings:JwtOptions");
+
+            var secret = settingsSection.GetValue<string>("Secret");
+            var issuer = settingsSection.GetValue<string>("Issuer");
+            var auidience = settingsSection.GetValue<string>("Audience");
+
+            var key = Encoding.ASCII.GetBytes(secret);
+
+            builder.Services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(x =>
+            {
+                x.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    ValidateIssuer = true,
+                    ValidIssuer = issuer,
+                    ValidAudience = auidience,
+                    ValidateAudience = true
+                };
+            });
             // Add services to the container.
 
             builder.Services.AddControllers();
