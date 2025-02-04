@@ -2,7 +2,7 @@
   {
     "ContainingType": "MelodyFlowApi.Controllers.AuthController",
     "Method": "AssignRole",
-    "RelativePath": "auth/AssignRole",
+    "RelativePath": "api/auth/AssignRole",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -18,7 +18,7 @@
   {
     "ContainingType": "MelodyFlowApi.Controllers.AuthController",
     "Method": "LoginUser",
-    "RelativePath": "auth/login",
+    "RelativePath": "api/auth/login",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -34,7 +34,7 @@
   {
     "ContainingType": "MelodyFlowApi.Controllers.AuthController",
     "Method": "AddNewUser",
-    "RelativePath": "auth/Register",
+    "RelativePath": "api/auth/Register",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -46,5 +46,25 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MelodyFlowApi.Controllers.PlaylistController",
+    "Method": "Get",
+    "RelativePath": "api/playlist/GetAllPlaylist",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "MelodyFlowApi.Models.Playlist",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   }
 ]

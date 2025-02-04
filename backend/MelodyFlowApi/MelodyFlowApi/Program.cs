@@ -17,6 +17,7 @@ namespace MelodyFlowApi
             var builder = WebApplication.CreateBuilder(args);
 
             builder.Services.AddDbContext<AppDbContext>();
+            builder.Services.AddDbContext<MelodyflowdbContext>();
             builder.Services.AddScoped<IAuth, AuthService>();
             builder.Services.AddScoped<ITokenGenerator, TokenGenerator>();
             builder.Services.Configure<JwtOptions>(builder.Configuration.GetSection("AuthSettings:JwtOptions"));
