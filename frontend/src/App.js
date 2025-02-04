@@ -34,29 +34,32 @@ function App() {
       }
       axios.post("https://localhost:5205/api/auth/login",user)
       .then(response => {
-          setIsLoggedIn(true);
-          SetAccount(response.data.result);
-          setToken(response.data.token);
-          if(response.data[0] != null){
+        if(response.data.token != ""){
+            setIsLoggedIn(true);
+            SetAccount(response.data.result);
+            setToken(response.data.token);
             toaster.create({
               title: `Sikeres bejelentkezés!`,
               type: "success",
             })
+            navigate("/");
           }
-          navigate("/");
+          else{
+            toaster.create({
+              title: `Sikertelen bejelentkezés!`,
+              type: "error",
+            })
+          }
       })
       .catch(e => {
           console.error("HIBA, Nem sikerült a bejelentkezés: ",e);
-          toaster.create({
-            title: `Sikertelen bejelentkezés!`,
-            type: "error",
-          })
         })
   }
 
   const onLogout=()=>{
     setIsLoggedIn(false);
     SetAccount({});
+    setToken("");
     toaster.create({
       title: `Sikeres kijelentkezés!`,
       type: "success",
