@@ -20,7 +20,20 @@ namespace MelodyFlowApi.Controllers
         [HttpGet("GetAllPlaylist")]
         public async Task<ActionResult<Playlist>> Get()
         {
-            return Ok(await _context.Playlists.ToListAsync());
+            return Ok(await _context.Playlists.Select(p => new
+            {
+                Id = p.Id,
+                PlaylistName = p.PlaylistName,
+                ImageUrl = p.ImageUrl,
+                Musics = p.Musics.Select(m => new
+                {
+                    Id = m.Id,
+                    Title = m.Title,
+                    Artist = m.Artist,
+                    ImageUrl = m.ImageUrl,
+                    MusicUrl = m.MusicUrl
+                }).ToList()
+            }).ToListAsync());
         }
     }
 }
