@@ -21,5 +21,10 @@ namespace MelodyFlowApi.Controllers
         {
             return Ok(await _context.Musics.ToListAsync());
         }
+        [HttpGet("GetMusicByName")]
+        public async Task<ActionResult<Music>> GetByName(string betu)
+        {
+            return Ok(await _context.Musics.Where(f => (f.Title.ToLower().Contains(betu.ToLower()) || f.Artist.ToLower().Contains(betu.ToLower()))).ToListAsync());
+        }
     }
 }
