@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2025. Feb 04. 13:02
--- Kiszolgáló verziója: 10.4.20-MariaDB
--- PHP verzió: 7.3.29
+-- Létrehozás ideje: 2025. Feb 06. 21:13
+-- Kiszolgáló verziója: 10.4.32-MariaDB
+-- PHP verzió: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -34,7 +34,7 @@ CREATE TABLE `aspnetroleclaims` (
   `RoleId` varchar(255) NOT NULL,
   `ClaimType` longtext DEFAULT NULL,
   `ClaimValue` longtext DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -47,7 +47,7 @@ CREATE TABLE `aspnetroles` (
   `Name` varchar(256) DEFAULT NULL,
   `NormalizedName` varchar(256) DEFAULT NULL,
   `ConcurrencyStamp` longtext DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -60,7 +60,7 @@ CREATE TABLE `aspnetuserclaims` (
   `UserId` varchar(255) NOT NULL,
   `ClaimType` longtext DEFAULT NULL,
   `ClaimValue` longtext DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -73,7 +73,7 @@ CREATE TABLE `aspnetuserlogins` (
   `ProviderKey` varchar(255) NOT NULL,
   `ProviderDisplayName` longtext DEFAULT NULL,
   `UserId` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -84,7 +84,7 @@ CREATE TABLE `aspnetuserlogins` (
 CREATE TABLE `aspnetuserroles` (
   `UserId` varchar(255) NOT NULL,
   `RoleId` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -111,7 +111,7 @@ CREATE TABLE `aspnetusers` (
   `LockoutEnd` datetime DEFAULT NULL,
   `LockoutEnabled` tinyint(1) NOT NULL,
   `AccessFailedCount` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- A tábla adatainak kiíratása `aspnetusers`
@@ -131,7 +131,7 @@ CREATE TABLE `aspnetusertokens` (
   `LoginProvider` varchar(255) NOT NULL,
   `Name` varchar(255) NOT NULL,
   `Value` longtext DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -140,11 +140,11 @@ CREATE TABLE `aspnetusertokens` (
 --
 
 CREATE TABLE `music` (
-  `Id` varchar(36) COLLATE utf8mb4_hungarian_ci NOT NULL,
-  `Artist` varchar(50) COLLATE utf8mb4_hungarian_ci DEFAULT NULL,
-  `Title` varchar(50) COLLATE utf8mb4_hungarian_ci DEFAULT NULL,
-  `Image_URL` longtext COLLATE utf8mb4_hungarian_ci DEFAULT NULL,
-  `Music_URL` longtext COLLATE utf8mb4_hungarian_ci NOT NULL
+  `Id` varchar(36) NOT NULL,
+  `Artist` varchar(50) DEFAULT NULL,
+  `Title` varchar(50) DEFAULT NULL,
+  `Image_URL` longtext DEFAULT NULL,
+  `Music_URL` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
 
 --
@@ -152,7 +152,13 @@ CREATE TABLE `music` (
 --
 
 INSERT INTO `music` (`Id`, `Artist`, `Title`, `Image_URL`, `Music_URL`) VALUES
-('10c947c5-d196-11ef-a697-701ab8764395', 'Desh', 'Walkin\' A Street', 'https://i.scdn.co/image/ab67616d0000b2737ac1501b2c36c9b4e785f336', '');
+('0e418a2c-bab4-4549-9d4f-7839aa9a9460', 'Ariana Grande', '7 rings', 'https://pyxis.nymag.com/v1/imgs/a61/af6/3fd12792da57d7f85b8fe655c78b7cd76c-23-ariana-grande.rsquare.w400.jpg', '/music/2d98ee0e-baf9-441e-abb5-abc0ac9516a6_Ariana Grande - 7 rings (Official Video).mp3'),
+('395bf642-c850-463d-8171-fe129f062275', 'Azahriah', 'cipoe', 'https://i.ytimg.com/vi/d7judDbrovM/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB7AxNhC9bF2b6mOll7UhR2xNVNGg', '/music/e50cf012-93be-4df5-8a53-3e9800f1fd29_Azahriah - cipoe.mp3'),
+('4d121dca-b04f-4189-a948-6ebb56b0d30b', 'LMEN PRALA', 'A KARRIEREM LESZ*ROM', 'https://scontent-vie1-1.xx.fbcdn.net/v/t39.30808-6/475429595_1196463745169885_7514113168078260845_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=rDD0JnQiMgwQ7kNvgFYlp_s&_nc_oc=Adgdteh2BOFGOV6CA3OtVOFMhGhDbdSYV6Bf363H_gptWY-3rUooKakDenIdCpnUEZ2HMInRmSthYAOILkYi6NAR&_nc_zt=23&_nc_ht=scontent-vie1-1.xx&_nc_gid=AX3kghcoLnACjkxe7DyObzZ&oh=00_AYB3xwIBQbqzr_rOhgDTQQXlKshyxtFajZEl09_w4nFm6Q&oe=67AAD2FA', '/music/83add612-6180-4c49-af2f-84918412c551_LMEN PRALA - A KARRIEREM LESZROM OFFICIAL MUSIC VIDEO  PROD. BY SMITHMUSIX.mp3'),
+('507d3e28-551d-43fb-97eb-574b4911c2c7', 'Kkevin', 'Prosecco', 'https://i.ytimg.com/vi/1uu-TUeNtbk/maxresdefault.jpg', '/music/cf7d8fbd-2072-4ed1-8fe8-ef7b6733fddc_KKevin - PROSECCO ft. Bruno (Official Music Video).mp3'),
+('a6fee57b-8ac3-4ea1-a036-8714925b4f3a', 'Jaber', 'Milliók', 'https://i.ytimg.com/vi/GVJ6PY2e0fY/maxresdefault.jpg', '/music/cde7a600-37c6-4332-a889-ef4811b6e7e0_JABER X T. Danny - MILLIÓK (Official Music Video).mp3'),
+('cc7568b6-f58e-4ab2-aa33-e94bcba38c8f', 'Katy Perry', 'Firework', 'https://static.stereogum.com/uploads/2023/08/Katy-Perry-Firework-1692215086.jpeg', '/music/8e589e6a-881f-4df4-996d-597482f6e185_Katy Perry - Firework (Official Music Video).mp3'),
+('f4aa3d71-2a90-4d39-ab08-223f3f4f0fe5', 'Desh', 'Walkin\' A Street', 'https://i.scdn.co/image/ab67616d0000b2737ac1501b2c36c9b4e785f336', '/music/4c74b7c9-ced4-4bc4-9ff0-b43506ae448c_deshwalkinastreet.mp3');
 
 -- --------------------------------------------------------
 
@@ -161,9 +167,9 @@ INSERT INTO `music` (`Id`, `Artist`, `Title`, `Image_URL`, `Music_URL`) VALUES
 --
 
 CREATE TABLE `playlist` (
-  `Id` varchar(36) COLLATE utf8mb4_hungarian_ci NOT NULL,
-  `PlaylistName` varchar(50) COLLATE utf8mb4_hungarian_ci DEFAULT NULL,
-  `Image_URL` longtext COLLATE utf8mb4_hungarian_ci NOT NULL
+  `Id` varchar(36) NOT NULL,
+  `PlaylistName` varchar(50) DEFAULT NULL,
+  `Image_URL` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
 
 --
@@ -180,8 +186,8 @@ INSERT INTO `playlist` (`Id`, `PlaylistName`, `Image_URL`) VALUES
 --
 
 CREATE TABLE `playlist_music` (
-  `PlaylistId` varchar(36) COLLATE utf8mb4_hungarian_ci NOT NULL,
-  `MusicId` varchar(36) COLLATE utf8mb4_hungarian_ci NOT NULL
+  `PlaylistId` varchar(36) NOT NULL,
+  `MusicId` varchar(36) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
 
 --
@@ -189,7 +195,7 @@ CREATE TABLE `playlist_music` (
 --
 
 INSERT INTO `playlist_music` (`PlaylistId`, `MusicId`) VALUES
-('50c947c5-d196-11ef-a697-701ab8764395', '10c947c5-d196-11ef-a697-701ab8764395');
+('50c947c5-d196-11ef-a697-701ab8764395', 'f4aa3d71-2a90-4d39-ab08-223f3f4f0fe5');
 
 -- --------------------------------------------------------
 
@@ -200,7 +206,14 @@ INSERT INTO `playlist_music` (`PlaylistId`, `MusicId`) VALUES
 CREATE TABLE `user_playlist` (
   `UserId` varchar(255) NOT NULL,
   `PlaylistId` varchar(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_hungarian_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- A tábla adatainak kiíratása `user_playlist`
+--
+
+INSERT INTO `user_playlist` (`UserId`, `PlaylistId`) VALUES
+('64db6df7-6cce-4ce9-85fd-f4bc0408cd6b', '50c947c5-d196-11ef-a697-701ab8764395');
 
 -- --------------------------------------------------------
 
@@ -211,7 +224,7 @@ CREATE TABLE `user_playlist` (
 CREATE TABLE `__efmigrationshistory` (
   `MigrationId` varchar(150) NOT NULL,
   `ProductVersion` varchar(32) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- A tábla adatainak kiíratása `__efmigrationshistory`
