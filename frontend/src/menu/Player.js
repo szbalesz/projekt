@@ -4,8 +4,6 @@ import { Slider } from "../components/ui/slider";
 import { useNavigate } from 'react-router-dom';
 import { LuPlay, LuSkipBack, LuSkipForward, LuVolume, LuPause } from "react-icons/lu";
 
-import musicFile from "../music/deshwalkinastreet.mp3" //teszt zene
-
 export default function Player({ currentMusic,togglePlayPause, isPlaying, audioRef}) {
   const navigate = useNavigate();
   const [volume, setVolume] = useState(50);
@@ -106,9 +104,8 @@ export default function Player({ currentMusic,togglePlayPause, isPlaying, audioR
         ) : ""}
       </Flex>
 ]
-      {/* Audio element */}
-      {/* Majd a rendes elérési útja lesz currentmusic?.Path eddig csak ideiglenes*/}
-      <audio ref={audioRef} src={musicFile} />
+      {/* Zene*/}
+      <audio ref={audioRef} src={currentMusic ? `https://localhost:5205/${currentMusic?.musicUrl}` : ""} />
     </Box>
   );
 }

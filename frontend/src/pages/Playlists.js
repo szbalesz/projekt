@@ -10,18 +10,23 @@ export default function Playlists() {
   const token = Cookies.get("token");
   const getPlaylists=()=>{
       setPending(true);
-      api.get("/playlist/GetAllPlaylist",{
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
-      })
-      .then(response => {
-          setPlaylists(response.data);
-      })
-      .catch(e => {console.error("HIBA, Nem sikerült lekérni a lejátszási listák: ",e)})
-      .finally(()=>{
+      if(token){
+        api.get("/playlist/GetAllPlaylist",{
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        })
+        .then(response => {
+            setPlaylists(response.data);
+        })
+        .catch(e => {console.error("HIBA, Nem sikerült lekérni a lejátszási listák: ",e)})
+        .finally(()=>{
+          setPending(false);
+        })
+      }
+      else{
         setPending(false);
-      })
+      }
   }
   useEffect(() => {
     if(token !== ""){

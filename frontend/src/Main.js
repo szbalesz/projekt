@@ -17,22 +17,37 @@ import Footer from './Footer';
 
 
 export default function Main({ isLoggedIn, onRegister, onLogin, onLogout}) {
-    const audioRef = useRef(null);
-    const [currentMusic, setcurrentMusic] = useState(null);
-    const [isPlaying, setIsPlaying] = useState(false);
-    const togglePlayPause = () => {
-      if (isPlaying) {
-        audioRef.current.pause();
-      } else {
-        audioRef.current.play();
-      }
-      setIsPlaying(!isPlaying);
-    };
-    const handlePlay = (music) => {
-        setcurrentMusic(music); // Beállítja a lejátszandó zenét
-        togglePlayPause();
-    };
-    
+  const audioRef = useRef(null);
+  const [currentMusic, setCurrentMusic] = useState(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  
+  const togglePlayPause = () => {
+    if (!audioRef.current) return;
+    if (isPlaying) {
+      audioRef.current.pause();
+    } else {
+      audioRef.current.play();
+    }
+    setIsPlaying(!isPlaying);
+  };
+  
+  const handlePlay = (music) => {
+    if (currentMusic !== music) {
+      setCurrentMusic(music); // Új zene beállítása
+      setIsPlaying(true); // Automatikusan lejátszásra állítja
+    } else {
+      togglePlayPause(); // Ha ugyanaz a zene, akkor toggle
+    }
+  };
+  
+  // Ha a currentMusic változik, automatikusan elindítja
+  useEffect(() => {
+    if (currentMusic && audioRef.current) {
+      audioRef.current.play();
+      setIsPlaying(true);
+    }
+  }, [currentMusic]);
+
     // Az oldal tetejére ugrik
     const ScrollToTop = () => {
       const location = useLocation();

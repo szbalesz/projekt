@@ -18,7 +18,7 @@ const MusicPage = ({ currentMusic, handlePlay, isPlaying }) => {
     .then(response => {
        let foundMusic = response.data.find((m) => m.id === id); 
        setMusic(foundMusic);
-       if(token != ""){
+       if(token !== ""){
         getFavorite(foundMusic.title);
        }
     })

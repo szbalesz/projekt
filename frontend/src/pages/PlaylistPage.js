@@ -14,6 +14,7 @@ export default function PlaylistPage({ handlePlay }) {
     setPending(true);
     const token = Cookies.get("token");
 
+   if(token){
     api.get("/playlist/GetAllPlaylist", {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -33,6 +34,10 @@ export default function PlaylistPage({ handlePlay }) {
       .finally(() => {
         setPending(false);
       });
+   }
+   else{
+    setPending(false);
+   }
   };
 
   useEffect(() => {

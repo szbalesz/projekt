@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "KXEphb5STdiIsMKBzvGsDW1l2MPjc6O+4mbxbElE9oQ=",
+  "Hash": "DcEempaZsGNj2UUgG9REvAVI2vVJwZ1WF7UTeqGRh1U=",
   "Source": "MelodyFlowApi",
   "BasePath": "_content/MelodyFlowApi",
   "Mode": "Default",
@@ -10,7 +10,7 @@
     {
       "Name": "MelodyFlowApi\\wwwroot",
       "Source": "MelodyFlowApi",
-      "ContentRoot": "C:\\Users\\tamas\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
       "Pattern": "**"
     }
