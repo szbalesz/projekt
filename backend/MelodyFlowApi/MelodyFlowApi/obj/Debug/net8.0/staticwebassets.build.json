@@ -1,11 +1,19 @@
 {
   "Version": 1,
-  "Hash": "FnFzH9fry3ONlCyI3zmCWWOs/quQYthknEhCtPKLwog=",
+  "Hash": "KXEphb5STdiIsMKBzvGsDW1l2MPjc6O+4mbxbElE9oQ=",
   "Source": "MelodyFlowApi",
   "BasePath": "_content/MelodyFlowApi",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "MelodyFlowApi\\wwwroot",
+      "Source": "MelodyFlowApi",
+      "ContentRoot": "C:\\Users\\tamas\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "BasePath": "_content/MelodyFlowApi",
+      "Pattern": "**"
+    }
+  ],
   "Assets": []
 }

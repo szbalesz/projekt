@@ -81,7 +81,7 @@ namespace MelodyFlowApi
             app.UseCors("_myAllowSpecificOrigins");
 
             app.MapControllers();
-
+            app.UseStaticFiles();
             app.Run();
         }
     }
