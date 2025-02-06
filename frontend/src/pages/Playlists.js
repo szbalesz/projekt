@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react'
 import { Heading, Flex, Center, Spinner, AbsoluteCenter } from "@chakra-ui/react";
 import PlaylistCard from '../PlaylistCard';
 import api from '../Api';
+import Cookies from "js-cookie"
 
-export default function Playlists({token}) {
+export default function Playlists() {
   const [playlists, setPlaylists] = useState()
   const [isPending, setPending] = useState(false)
+  const token = Cookies.get("token");
   const getPlaylists=()=>{
       setPending(true);
       api.get("/playlist/GetAllPlaylist",{

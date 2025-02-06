@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Avatar } from "../components/ui/avatar";
 import { Button } from "../components/ui/button"
 import {
@@ -13,9 +13,11 @@ import {
 } from "../components/ui/drawer"
 import { Flex, Span } from '@chakra-ui/react'
 import { LuPanelRightClose } from "react-icons/lu";
+import Cookies from "js-cookie";
 
-export default function MenuAvatar({ account, onLogout }) {
-
+export default function MenuAvatar({ onLogout }) {
+  const token = Cookies.get("token");
+  const [account, setAccount] = useState({});
   return (
     <>
     <DrawerRoot placement={{ base: "top", md: "end" }} size={{ base: "full", md: "xs" }}>

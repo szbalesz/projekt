@@ -3,12 +3,14 @@ import { Box, Text, Image, VStack, AbsoluteCenter, Button, Spinner } from '@chak
 import { LuList, LuPause, LuPlay, LuStar } from 'react-icons/lu';
 import { useLocation, useParams } from 'react-router-dom';
 import api from '../Api';
+import Cookies from "js-cookie";
 
-const MusicPage = ({ token, currentMusic, handlePlay, isPlaying }) => {
+const MusicPage = ({ currentMusic, handlePlay, isPlaying }) => {
   const [music, setMusic] = useState();
   const [isPending, setPending] = useState(false)
   const [isFavorite, setFavorite] = useState(false)
   const { id } = useParams();
+  const token = Cookies.get("token");
   const location = useLocation();
   const getMusic=()=>{
     setPending(true);

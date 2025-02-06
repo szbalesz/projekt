@@ -15,7 +15,7 @@ import { Checkbox } from "../components/ui/checkbox"
 import { Link, useNavigate } from 'react-router-dom';
 import { PasswordInput } from "../components/ui/password-input"
 
-export default function Login({ isLoggedin, onLogin}) {
+export default function Login({ isLoggedin, onLogin }) {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
   const navigate = useNavigate();

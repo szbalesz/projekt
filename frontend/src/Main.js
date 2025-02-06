@@ -16,7 +16,7 @@ import About from './pages/About';
 import Footer from './Footer';
 
 
-export default function Main({token, account, isLoggedIn, onRegister, onLogin, onLogout}) {
+export default function Main({ isLoggedIn, onRegister, onLogin, onLogout}) {
     const audioRef = useRef(null);
     const [currentMusic, setcurrentMusic] = useState(null);
     const [isPlaying, setIsPlaying] = useState(false);
@@ -48,7 +48,7 @@ export default function Main({token, account, isLoggedIn, onRegister, onLogin, o
           {/* Main Grid */}
           <Grid templateRows="50px 1fr" templateColumns="50px 1fr" minHeight="100vh">
               <ScrollToTop/> {/* Az oldal tetejére görget minden oldal váltáskor */}
-                <Menu account={account} handlePlay={handlePlay} isLoggedIn={isLoggedIn} onLogout={onLogout}/>
+                <Menu handlePlay={handlePlay} isLoggedIn={isLoggedIn} onLogout={onLogout}/>
               {/* Main Content */}
             <GridItem bg="Background" transition="all 1s ease-in-out" rowSpan={1}  colSpan="2">
               <Box bg="Background" minH="100vh" py="65px" px={{base: "0", md: "50px"}}>
@@ -56,12 +56,12 @@ export default function Main({token, account, isLoggedIn, onRegister, onLogin, o
                   <Route path="/" element={<Home />} />
                   <Route path="/login" element={<Login isLoggedIn={isLoggedIn} onLogin={onLogin}/>} />
                   <Route path="/register" element={<Register isLoggedIn={isLoggedIn} onRegister={onRegister}/>} />
-                  <Route path="/playlists" element={<Playlists token={token}/>} />
+                  <Route path="/playlists" element={<Playlists/>} />
                   <Route path="/settings" element={<Settings />} />
                   {/* Ha ismeretlen az útvonal, irányítsd a kezdőlapra */}
                   <Route path="*" element={<Navigate to="/" />} />
-                  <Route path="/music/:id" element={<MusicPage token={token} currentMusic={currentMusic} handlePlay={handlePlay} isPlaying={isPlaying}/>} />
-                  <Route path="/playlist/:id" element={<PlaylistPage token={token} handlePlay={handlePlay}/>} />
+                  <Route path="/music/:id" element={<MusicPage currentMusic={currentMusic} handlePlay={handlePlay} isPlaying={isPlaying}/>} />
+                  <Route path="/playlist/:id" element={<PlaylistPage handlePlay={handlePlay}/>} />
                   <Route path="/about" element={<About />} />
                 </Routes>
                 </Box>

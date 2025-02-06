@@ -7,7 +7,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { LuHouse, LuList, LuSearch, LuSettings, LuStar, LuUsers, } from 'react-icons/lu';
 import Search from './menu/Search';
 
-export default function Menu({ handlePlay, account, isLoggedIn, onLogout }) {
+export default function Menu({ handlePlay, isLoggedIn, onLogout }) {
   const [selectedMenu, setSelectedMenu] = useState('');
   const location = useLocation();
   const navigate = useNavigate();
@@ -97,7 +97,7 @@ export default function Menu({ handlePlay, account, isLoggedIn, onLogout }) {
         zIndex={12}
         bg="Background"
       >
-        <Navbar setIsSidebarOpen={setIsSidebarOpen} account={account} isLoggedIn={isLoggedIn} onLogout={onLogout}/>
+        <Navbar setIsSidebarOpen={setIsSidebarOpen} isLoggedIn={isLoggedIn} onLogout={onLogout}/>
       </GridItem>
 
       {/* Small Sidebar */}
