@@ -29,9 +29,10 @@ namespace MelodyFlowApi
                 options.AddPolicy(MyAllowSpecificOrigins,
                                       policy =>
                                       {
-                                          policy.WithOrigins("*")
-                                                                .AllowAnyHeader()
-                                                                .AllowAnyMethod();
+                                          policy.WithOrigins("http://localhost:3000")
+                                         .AllowAnyHeader()
+                                         .AllowAnyMethod()
+                                         .AllowCredentials();
                                       });
             });
             var settingsSection = builder.Configuration.GetSection("AuthSettings:JwtOptions");
