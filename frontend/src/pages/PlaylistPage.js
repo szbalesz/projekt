@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import MusicCard from '../MusicCard';
 import { AbsoluteCenter, Center, Flex, Heading, Spinner } from '@chakra-ui/react';
 import { useParams } from 'react-router-dom';
-import axios from 'axios';
+import api from '../Api';
 
 export default function PlaylistPage({token, handlePlay}) {
     const { id } = useParams();
@@ -10,7 +10,7 @@ export default function PlaylistPage({token, handlePlay}) {
     const [playlist, setPlaylist] = useState();
     const getPlaylist=()=>{
       setPending(true);
-        axios.get("https://localhost:5205/api/playlist/GetAllPlaylist",{
+        api.get("/playlist/GetAllPlaylist",{
           headers: {
             Authorization: `Bearer ${token}`
           }

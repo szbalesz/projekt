@@ -2,9 +2,9 @@ import { Provider } from "./components/ui/provider"
 import Main from "./Main";
 import { Box } from "@chakra-ui/react";
 import { useState } from "react";
-import axios from "axios";
 import { Toaster, toaster } from "./components/ui/toaster"
 import { useNavigate } from "react-router-dom";
+import api from "./Api";
 
 function App() {
   const navigate = useNavigate();
@@ -19,7 +19,7 @@ function App() {
         birthDate: "2025-02-04T13:22:44.891Z", //ideiglenes mert még nincsen hozzá mező
         phoneNumber: "06301234567" //ideiglenes
       }
-      axios.post("https://localhost:5205/api/auth/register",newUser)
+      api.post("/auth/register",newUser)
       .then(response => {
         if(response.data.token != ""){
             toaster.create({
@@ -45,7 +45,7 @@ function App() {
         username: username,
         password: password
       }
-      axios.post("https://localhost:5205/api/auth/login",user)
+      api.post("/auth/login",user)
       .then(response => {
         if(response.data.token != ""){
             setIsLoggedIn(true);

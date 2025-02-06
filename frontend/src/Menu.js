@@ -6,8 +6,6 @@ import { GridItem } from '@chakra-ui/react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { LuHouse, LuList, LuSearch, LuSettings, LuStar, LuUsers, } from 'react-icons/lu';
 import Search from './menu/Search';
-import axios from 'axios';
-
 
 export default function Menu({ handlePlay, account, isLoggedIn, onLogout }) {
   const [selectedMenu, setSelectedMenu] = useState('');

@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { Heading, Flex, Center, Spinner, AbsoluteCenter } from "@chakra-ui/react";
 import PlaylistCard from '../PlaylistCard';
-import axios from 'axios';
+import api from '../Api';
 
 export default function Playlists({token}) {
   const [playlists, setPlaylists] = useState()
   const [isPending, setPending] = useState(false)
   const getPlaylists=()=>{
       setPending(true);
-      axios.get("https://localhost:5205/api/playlist/GetAllPlaylist",{
+      api.get("/playlist/GetAllPlaylist",{
         headers: {
           Authorization: `Bearer ${token}`
         }

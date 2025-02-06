@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Box, Text, Image, VStack, AbsoluteCenter, Button, Spinner } from '@chakra-ui/react';
 import { LuList, LuPause, LuPlay, LuStar } from 'react-icons/lu';
 import { useLocation, useParams } from 'react-router-dom';
-import axios from 'axios';
+import api from '../Api';
 
 const MusicPage = ({ token, currentMusic, handlePlay, isPlaying }) => {
   const [music, setMusic] = useState();
@@ -12,7 +12,7 @@ const MusicPage = ({ token, currentMusic, handlePlay, isPlaying }) => {
   const location = useLocation();
   const getMusic=()=>{
     setPending(true);
-    axios.get("https://localhost:5205/api/music/GetAllMusic")
+    api.get("/music/GetAllMusic")
     .then(response => {
        let foundMusic = response.data.find((m) => m.id === id); 
        setMusic(foundMusic);
@@ -28,7 +28,7 @@ const MusicPage = ({ token, currentMusic, handlePlay, isPlaying }) => {
 
   const getFavorite = (name) => {
     setPending(true);
-    axios.get("https://localhost:5205/api/playlist/GetAllPlaylist",{
+    api.get("/playlist/GetAllPlaylist",{
       headers: {
         Authorization: `Bearer ${token}`
       }
