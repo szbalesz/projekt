@@ -27,7 +27,7 @@ export default function BigMusicCard({music}) {
                 <Text fontSize="xl" fontWeight="bold" color="teal.300" mb={2}>
                 {music.title}
                 </Text>
-                <Text fontSize="sm">Előadó: {music.artist}</Text>
+                <Text fontSize="sm">{music.artist}</Text>
             </Box>
         </Button>
   )
