@@ -1,30 +1,73 @@
-import { Button, Center, Flex, Heading, Input, Stack } from '@chakra-ui/react'
-import { Field } from "../components/ui/field"
-import {
-    FileUploadList,
-    FileUploadRoot,
-    FileUploadTrigger,
-} from "../components/ui/file-upload"
-import { HiUpload } from "react-icons/hi"
-import React from 'react'
+import { Button, Center, Flex, Heading, Input, Stack } from '@chakra-ui/react';
+import { Field } from "../components/ui/field";
+import { FileUploadList, FileUploadRoot, FileUploadTrigger } from "../components/ui/file-upload";
+import { HiUpload } from "react-icons/hi";
+import React, { useState } from 'react';
+import api from "../Api"
+import { toaster } from '../components/ui/toaster';
 
 export default function UploadPage() {
+    const [title, setTitle] = useState("");
+    const [artist, setArtist] = useState("");
+    const [imageurl, setImageurl] = useState("");
+    const [musicfile, setMusicfile] = useState(null);
+
+    const uploadMusic = async () => {
+        const formData = new FormData();
+        formData.append("Title", title);
+        formData.append("Artist", artist);
+        formData.append("ImageUrl", imageurl);
+        formData.append("MusicFile", musicfile);
+
+        try {
+            const response = await api.post("/Music/UploadMusic", formData, {
+                headers: {
+                    "Content-Type": "multipart/form-data",
+                },
+            });
+
+            if (response.status === 201) {
+                toaster.create({
+                    title: `Zene sikeresen feltöltve!`,
+                    type: "success",
+                })
+                setTitle("");
+                setArtist("");
+                setImageurl("");
+                setMusicfile(null);
+            } else {
+                toaster.create({
+                    title: `Hiba történt a fájl feltöltésekor.`,
+                    type: "error",
+                })
+            }
+        } catch (error) {
+            toaster.create({
+                title: `Hiba történt a kapcsolatban.`,
+                type: "error",
+            })
+        }
+    };
+
     return (
         <Center>
             <Flex direction="column" justifyContent="center" textAlign="center">
                 <Heading pb="5"> Zene feltöltés </Heading>
-                <form>
-                    <Stack gap="4" w="md">
+                <form onSubmit={(f) => {
+                        f.preventDefault();
+                        uploadMusic();
+                    }}>
+                    <Stack gap="4" w={{base: "sm", md:"md"}}>
                         <Field label="Zene cím" required helperText="Add meg a zene címét.">
-                            <Input placeholder="Walkin' a street" />
+                            <Input value={title} onChange={(q) => setTitle(q.target.value)} placeholder="Walkin' a street"/>
                         </Field>
                         <Field label="Zene előadó" required helperText="Add meg a zene előadóját.">
-                            <Input placeholder="Desh" />
+                            <Input value={artist} onChange={(q) => setArtist(q.target.value)} placeholder="Desh"/>
                         </Field>
                         <Field label="Zene borítókép url" required helperText="Add meg a zene borítójának az urljét.">
-                            <Input placeholder="https://image.jpg" />
+                            <Input value={imageurl} onChange={(q) => setImageurl(q.target.value)} placeholder="https://image.jpg"/>
                         </Field>
-                        <FileUploadRoot maxFiles={1} accept={["audio/*"]}>
+                        <FileUploadRoot value={musicfile} onChange={(q) => setMusicfile(q.target.files[0])} required maxFiles={1} accept={["audio/*"]}>
                             <FileUploadTrigger asChild>
                                 <Button variant="outline" size="sm">
                                     <HiUpload /> Upload file
@@ -37,5 +80,5 @@ export default function UploadPage() {
                 </form>
             </Flex>
         </Center>
-    )
+    );
 }
