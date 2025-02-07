@@ -14,6 +14,7 @@ import PlaylistPage from './pages/PlaylistPage';
 import Register from './pages/Register';
 import About from './pages/About';
 import Footer from './Footer';
+import UploadPage from './pages/UploadPage';
 
 
 export default function Main({ isLoggedIn, onRegister, onLogin, onLogout}) {
@@ -77,6 +78,7 @@ export default function Main({ isLoggedIn, onRegister, onLogin, onLogout}) {
                   <Route path="*" element={<Navigate to="/" />} />
                   <Route path="/music/:id" element={<MusicPage currentMusic={currentMusic} handlePlay={handlePlay} isPlaying={isPlaying}/>} />
                   <Route path="/playlist/:id" element={<PlaylistPage handlePlay={handlePlay}/>} />
+                  <Route path="/upload" element={<UploadPage/>} />
                   <Route path="/about" element={<About />} />
                 </Routes>
                 </Box>

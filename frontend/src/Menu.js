@@ -4,7 +4,7 @@ import SmallSidebar from './menu/SmallSidebar';
 import Sidebar from './menu/Sidebar';
 import { GridItem } from '@chakra-ui/react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { LuHouse, LuList, LuSearch, LuSettings, LuStar, LuUsers, } from 'react-icons/lu';
+import { LuHouse, LuList, LuSearch, LuSettings, LuStar, LuUpload, LuUsers, } from 'react-icons/lu';
 import Search from './menu/Search';
 
 export default function Menu({ handlePlay, isLoggedIn, onLogout }) {
@@ -27,6 +27,7 @@ export default function Menu({ handlePlay, isLoggedIn, onLogout }) {
     { label: "Kezdőlap", icon: <LuHouse />, path: "/" },
     { label: "Kedvencek", icon: <LuStar />, path: "/playlist/Kedvencek" },
     { label: "Lejátszási listák", icon: <LuList />, path: "/playlists" },
+    { label: "Zene feltöltés", icon: <LuUpload />, path: "/upload" },
     { label: "Rólunk", icon: <LuUsers />, path: "/about" },
   ], []);
 
