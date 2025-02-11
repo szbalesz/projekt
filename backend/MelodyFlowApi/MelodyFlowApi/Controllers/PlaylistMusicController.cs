@@ -16,10 +16,10 @@ namespace MelodyFlowApi.Controllers
             _context = context;
         }
 
-        [HttpPost("AddMusicToPlaylist")]
-        public async Task<ActionResult<PlaylistMusic>> AddMusicToPlaylist(PlaylistMusic playlistmusic)
+       [HttpPost("AddMusicToPlaylist")]
+        public async Task<ActionResult<Playlistmusic>> AddMusicToPlaylist(Playlistmusic playlistmusic)
         {
-            _context.PlaylistsMusic.Add(playlistmusic);
+            _context.Playlistmusics.Add(playlistmusic);
             await _context.SaveChangesAsync();
             return Ok(playlistmusic);
         }

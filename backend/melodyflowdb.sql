@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2025. Feb 06. 21:13
--- Kiszolgáló verziója: 10.4.32-MariaDB
--- PHP verzió: 8.2.12
+-- Létrehozás ideje: 2025. Feb 11. 12:18
+-- Kiszolgáló verziója: 10.4.20-MariaDB
+-- PHP verzió: 7.3.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -34,7 +34,7 @@ CREATE TABLE `aspnetroleclaims` (
   `RoleId` varchar(255) NOT NULL,
   `ClaimType` longtext DEFAULT NULL,
   `ClaimValue` longtext DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -47,7 +47,7 @@ CREATE TABLE `aspnetroles` (
   `Name` varchar(256) DEFAULT NULL,
   `NormalizedName` varchar(256) DEFAULT NULL,
   `ConcurrencyStamp` longtext DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -60,7 +60,7 @@ CREATE TABLE `aspnetuserclaims` (
   `UserId` varchar(255) NOT NULL,
   `ClaimType` longtext DEFAULT NULL,
   `ClaimValue` longtext DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -73,7 +73,7 @@ CREATE TABLE `aspnetuserlogins` (
   `ProviderKey` varchar(255) NOT NULL,
   `ProviderDisplayName` longtext DEFAULT NULL,
   `UserId` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -84,7 +84,7 @@ CREATE TABLE `aspnetuserlogins` (
 CREATE TABLE `aspnetuserroles` (
   `UserId` varchar(255) NOT NULL,
   `RoleId` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -111,7 +111,7 @@ CREATE TABLE `aspnetusers` (
   `LockoutEnd` datetime DEFAULT NULL,
   `LockoutEnabled` tinyint(1) NOT NULL,
   `AccessFailedCount` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- A tábla adatainak kiíratása `aspnetusers`
@@ -131,7 +131,7 @@ CREATE TABLE `aspnetusertokens` (
   `LoginProvider` varchar(255) NOT NULL,
   `Name` varchar(255) NOT NULL,
   `Value` longtext DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -140,11 +140,11 @@ CREATE TABLE `aspnetusertokens` (
 --
 
 CREATE TABLE `music` (
-  `Id` varchar(36) NOT NULL,
-  `Artist` varchar(50) DEFAULT NULL,
-  `Title` varchar(50) DEFAULT NULL,
-  `Image_URL` longtext DEFAULT NULL,
-  `Music_URL` longtext NOT NULL
+  `Id` varchar(36) COLLATE utf8mb4_hungarian_ci NOT NULL,
+  `Artist` varchar(50) COLLATE utf8mb4_hungarian_ci DEFAULT NULL,
+  `Title` varchar(50) COLLATE utf8mb4_hungarian_ci DEFAULT NULL,
+  `Image_URL` longtext COLLATE utf8mb4_hungarian_ci DEFAULT NULL,
+  `Music_URL` longtext COLLATE utf8mb4_hungarian_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
 
 --
@@ -167,9 +167,9 @@ INSERT INTO `music` (`Id`, `Artist`, `Title`, `Image_URL`, `Music_URL`) VALUES
 --
 
 CREATE TABLE `playlist` (
-  `Id` varchar(36) NOT NULL,
-  `PlaylistName` varchar(50) DEFAULT NULL,
-  `Image_URL` longtext NOT NULL
+  `Id` varchar(36) COLLATE utf8mb4_hungarian_ci NOT NULL,
+  `PlaylistName` varchar(50) COLLATE utf8mb4_hungarian_ci DEFAULT NULL,
+  `Image_URL` longtext COLLATE utf8mb4_hungarian_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
 
 --
@@ -182,38 +182,31 @@ INSERT INTO `playlist` (`Id`, `PlaylistName`, `Image_URL`) VALUES
 -- --------------------------------------------------------
 
 --
--- Tábla szerkezet ehhez a táblához `playlist_music`
+-- Tábla szerkezet ehhez a táblához `playlistmusic`
 --
 
-CREATE TABLE `playlist_music` (
-  `PlaylistId` varchar(36) NOT NULL,
-  `MusicId` varchar(36) NOT NULL
+CREATE TABLE `playlistmusic` (
+  `PlaylistId` varchar(36) COLLATE utf8mb4_hungarian_ci NOT NULL,
+  `MusicId` varchar(36) COLLATE utf8mb4_hungarian_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
 
 --
--- A tábla adatainak kiíratása `playlist_music`
+-- A tábla adatainak kiíratása `playlistmusic`
 --
 
-INSERT INTO `playlist_music` (`PlaylistId`, `MusicId`) VALUES
-('50c947c5-d196-11ef-a697-701ab8764395', 'f4aa3d71-2a90-4d39-ab08-223f3f4f0fe5');
+INSERT INTO `playlistmusic` (`PlaylistId`, `MusicId`) VALUES
+('50c947c5-d196-11ef-a697-701ab8764395', 'a6fee57b-8ac3-4ea1-a036-8714925b4f3a');
 
 -- --------------------------------------------------------
 
 --
--- Tábla szerkezet ehhez a táblához `user_playlist`
+-- Tábla szerkezet ehhez a táblához `userplaylist`
 --
 
-CREATE TABLE `user_playlist` (
+CREATE TABLE `userplaylist` (
   `UserId` varchar(255) NOT NULL,
   `PlaylistId` varchar(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_hungarian_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- A tábla adatainak kiíratása `user_playlist`
---
-
-INSERT INTO `user_playlist` (`UserId`, `PlaylistId`) VALUES
-('64db6df7-6cce-4ce9-85fd-f4bc0408cd6b', '50c947c5-d196-11ef-a697-701ab8764395');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -224,7 +217,7 @@ INSERT INTO `user_playlist` (`UserId`, `PlaylistId`) VALUES
 CREATE TABLE `__efmigrationshistory` (
   `MigrationId` varchar(150) NOT NULL,
   `ProductVersion` varchar(32) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- A tábla adatainak kiíratása `__efmigrationshistory`
@@ -301,19 +294,18 @@ ALTER TABLE `playlist`
   ADD KEY `Id` (`Id`);
 
 --
--- A tábla indexei `playlist_music`
+-- A tábla indexei `playlistmusic`
 --
-ALTER TABLE `playlist_music`
+ALTER TABLE `playlistmusic`
   ADD PRIMARY KEY (`PlaylistId`,`MusicId`),
-  ADD KEY `MusicId` (`MusicId`);
+  ADD KEY `PlaylistId` (`PlaylistId`,`MusicId`);
 
 --
--- A tábla indexei `user_playlist`
+-- A tábla indexei `userplaylist`
 --
-ALTER TABLE `user_playlist`
+ALTER TABLE `userplaylist`
   ADD PRIMARY KEY (`UserId`,`PlaylistId`),
-  ADD KEY `PlaylistId` (`PlaylistId`),
-  ADD KEY `UserId` (`UserId`);
+  ADD KEY `UserId` (`UserId`,`PlaylistId`);
 
 --
 -- A tábla indexei `__efmigrationshistory`
@@ -371,20 +363,6 @@ ALTER TABLE `aspnetuserroles`
 --
 ALTER TABLE `aspnetusertokens`
   ADD CONSTRAINT `FK_AspNetUserTokens_AspNetUsers_UserId` FOREIGN KEY (`UserId`) REFERENCES `aspnetusers` (`Id`) ON DELETE CASCADE;
-
---
--- Megkötések a táblához `playlist_music`
---
-ALTER TABLE `playlist_music`
-  ADD CONSTRAINT `playlist_music_ibfk_1` FOREIGN KEY (`MusicId`) REFERENCES `music` (`Id`),
-  ADD CONSTRAINT `playlist_music_ibfk_2` FOREIGN KEY (`PlaylistId`) REFERENCES `playlist` (`Id`);
-
---
--- Megkötések a táblához `user_playlist`
---
-ALTER TABLE `user_playlist`
-  ADD CONSTRAINT `user_playlist_ibfk_1` FOREIGN KEY (`PlaylistId`) REFERENCES `playlist` (`Id`),
-  ADD CONSTRAINT `user_playlist_ibfk_2` FOREIGN KEY (`UserId`) REFERENCES `aspnetusers` (`Id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
