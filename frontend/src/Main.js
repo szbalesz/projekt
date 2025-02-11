@@ -16,6 +16,7 @@ import About from './pages/About';
 import Footer from './Footer';
 import UploadPage from './pages/UploadPage';
 import Cookie from './Cookie';
+import UserPage from './pages/UserPage';
 
 
 export default function Main({ isLoggedIn, onRegister, onLogin, onLogout}) {
@@ -68,7 +69,7 @@ export default function Main({ isLoggedIn, onRegister, onLogin, onLogout}) {
                 <Menu handlePlay={handlePlay} isLoggedIn={isLoggedIn} onLogout={onLogout}/>
               {/* Main Content */}
             <GridItem bg="Background" transition="all 1s ease-in-out" rowSpan={1}  colSpan="2">
-              <Box bg="Background" minH="100vh" py="65px" px={{base: "0", md: "50px"}}>
+              <Box bg="Background" minH="100vh" py="65px" pl={{base: "0", md: "50px"}}>
                 <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/login" element={<Login isLoggedIn={isLoggedIn} onLogin={onLogin}/>} />
@@ -81,6 +82,7 @@ export default function Main({ isLoggedIn, onRegister, onLogin, onLogout}) {
                   <Route path="/playlist/:id" element={<PlaylistPage handlePlay={handlePlay}/>} />
                   <Route path="/upload" element={<UploadPage/>} />
                   <Route path="/about" element={<About />} />
+                  <Route path="/user/:id" element={<UserPage/>} />
                 </Routes>
                 </Box>
                 <Footer currentMusic={currentMusic}/>
