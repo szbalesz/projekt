@@ -4,7 +4,7 @@ import SmallSidebar from './menu/SmallSidebar';
 import Sidebar from './menu/Sidebar';
 import { GridItem } from '@chakra-ui/react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { LuHouse, LuList, LuSearch, LuSettings, LuStar, LuUpload, LuUsers, } from 'react-icons/lu';
+import { LuHouse, LuList, LuSearch, LuSettings, LuStar, LuUpload, LuUser, LuUsers, } from 'react-icons/lu';
 import Search from './menu/Search';
 
 export default function Menu({ handlePlay, isLoggedIn, onLogout }) {
@@ -31,7 +31,9 @@ export default function Menu({ handlePlay, isLoggedIn, onLogout }) {
     { label: "Rólunk", icon: <LuUsers />, path: "/about" },
   ], []);
 
-  const footerItems = useMemo(() => [
+  const profileMenuItems = useMemo(() => [
+    { label: "Profil megtekintése", icon: <LuUser />, path: "/profile" },
+    { label: "Zene feltöltés", icon: <LuUpload />, path: "/upload" },
     { label: "Beállítások", icon: <LuSettings />, path: "/settings" },
   ], []);
 
@@ -57,17 +59,13 @@ export default function Menu({ handlePlay, isLoggedIn, onLogout }) {
   
     // Kijelölt menüpont beállítása
     const selectedMenuItem = menuItems.find(item => item.path === currentPath.split('?')[0]);
-    const selectedFooterItem = footerItems.find(item => item.path === currentPath);
     if (selectedMenuItem) {
       setSelectedMenu(selectedMenuItem.label);
-    }
-    if (selectedFooterItem) {
-      setSelectedMenu(selectedFooterItem.label);
     }
     if(currentPath.includes("search")){
       setSelectedMenu("Keresés");
     }
-  }, [location, menuItems, footerItems]);
+  }, [location, menuItems]);
 
   return (
     <>
@@ -75,7 +73,6 @@ export default function Menu({ handlePlay, isLoggedIn, onLogout }) {
       {isSidebarOpen && (
         <Sidebar
           menuItems={menuItems}
-          footerItems={footerItems}
           selectedMenu={selectedMenu}
           isSidebarOpen={isSidebarOpen}
           setIsSidebarOpen={setIsSidebarOpen}
@@ -98,7 +95,7 @@ export default function Menu({ handlePlay, isLoggedIn, onLogout }) {
         zIndex={12}
         bg="Background"
       >
-        <Navbar setIsSidebarOpen={setIsSidebarOpen} isLoggedIn={isLoggedIn} onLogout={onLogout}/>
+        <Navbar profileMenuItems={profileMenuItems} setIsSidebarOpen={setIsSidebarOpen} isLoggedIn={isLoggedIn} onLogout={onLogout}/>
       </GridItem>
 
       {/* Small Sidebar */}
@@ -120,7 +117,6 @@ export default function Menu({ handlePlay, isLoggedIn, onLogout }) {
           selectedMenu={selectedMenu}
           setIsSidebarOpen={()=> setIsSidebarOpen(true)}
           menuItems={menuItems}
-          footerItems={footerItems}
         />
       </GridItem>
     </>

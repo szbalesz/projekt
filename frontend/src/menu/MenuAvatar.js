@@ -14,8 +14,9 @@ import {
 import { Flex, Span } from '@chakra-ui/react'
 import { LuPanelRightClose } from "react-icons/lu";
 import Cookies from "js-cookie";
+import { Link } from 'react-router-dom';
 
-export default function MenuAvatar({ onLogout }) {
+export default function  MenuAvatar({ onLogout, profileMenuItems }) {
   const token = Cookies.get("token");
   const [account, setAccount] = useState({});
   return (
@@ -45,10 +46,23 @@ export default function MenuAvatar({ onLogout }) {
           </DrawerTitle>
         </DrawerHeader>
         <DrawerBody>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
+        {profileMenuItems.map((item, index) => item.label !== "Menü" ? (
+                <Link style={{display: "flex" , margin:"5px"}} onClick={onclose} to={item.path} key={index}>
+                <Button
+                  key={index}
+                  mx={item.label === "Keresés" ? "auto" : "0"}
+                  my={item.label === "Keresés" ? "5" : "0"}
+                  justifyContent={{ base: "center", md: "space-between" }}
+                  variant={"subtle"}
+                  colorPalette={"teal"}
+                  w={"100%"}
+                  h="50px"
+
+                >
+                 {item.label} {item.icon}
+                </Button>
+                </Link>
+              ) : "" )}
         </DrawerBody>
         <DrawerFooter justifyContent="center">
           <Button colorPalette="teal" variant="outline" onClick={()=> onLogout()}>Kijelenkezés</Button>

@@ -12,7 +12,7 @@ import {
 import { Button , Flex } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
-export default function Sidebar({menuItems,footerItems,selectedMenu,setIsSidebarOpen}) {
+export default function Sidebar({menuItems,selectedMenu,setIsSidebarOpen}) {
 
   const [open,setOpen] = useState(true);
 
@@ -56,21 +56,6 @@ export default function Sidebar({menuItems,footerItems,selectedMenu,setIsSidebar
           </DrawerBody>
           <DrawerFooter p="0" w="100%">
           <Flex w="100%" direction="column">
-          {footerItems.map((item, index) => (
-              <Link py={{base: "5", md:"0"}} width="100%" onClick={onClose} to={item.path} key={index}>
-              <Button
-                key={index}
-                justifyContent={{ base: "center", md: "space-between" }}
-                variant={selectedMenu === item.label ? "surface" : "ghost"}
-                colorPalette={selectedMenu === item.label ? "teal" : "gray"}
-                w="100%"
-                h="50px"
-              >
-               {item.label} {item.icon}
-              </Button>
-              </Link>
-            ))
-            }
             <Button onClick={onClose} fontSize="md" justifyContent="space-between" display={{base: "flex", md:"none"}} width="100%" height="50px" variant="outline">
               <LuPanelBottomClose/> Bezárás <LuPanelBottomClose/>
             </Button>

@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Flex } from "@chakra-ui/react";
 import { Link } from 'react-router-dom';
 
-export default function SmallSidebar({ menuItems, footerItems, selectedMenu, setIsSidebarOpen}) {
+export default function SmallSidebar({ menuItems,selectedMenu, setIsSidebarOpen}) {
   const isMd = window.innerWidth >= 768; //ha kisméretű a kijelzője akkor csak 5 elemet jelenítsen meg 
   const maxItems = isMd ? 10 : 5;
   return (
@@ -30,31 +30,6 @@ export default function SmallSidebar({ menuItems, footerItems, selectedMenu, set
                 </Button>
               </Link>
           </Flex>
-        ))}
-        {footerItems.map((item, index) => (
-          <Link to={item.path} key={index}>
-            <Button
-              _focus={{ outline: "none" }}
-              h="50px"
-              fontSize="10px"
-              key={index}
-              transition="all 0.5s ease-in-out"
-              variant={selectedMenu === item.label ? "surface" : "ghost"}
-              colorPalette={selectedMenu === item.label ? "teal" : "gray"}
-              borderRadius={selectedMenu === item.label ? "5rem" : "0"}
-              display={{ base: "none", md: "flex" }}
-              position="absolute"
-              left={{ base: "auto", md: "0" }}
-              bottom={{ base: "15px", md: "0" }}
-              right={{ base: "0", md: "auto" }}
-              w={{ base: "20%", md: "50px" }}
-            >
-              <Flex justifyContent="center">{item.icon}</Flex>
-              <Flex justifyContent="center" display={{ base: "flex", md: "none" }}>
-                {item.label}
-              </Flex>
-            </Button>
-          </Link>
         ))}
       </Flex>
     </>
