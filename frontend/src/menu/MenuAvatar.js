@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Avatar } from "../components/ui/avatar";
 import { Button } from "../components/ui/button"
 import {
@@ -16,16 +16,25 @@ import { Flex, Span } from '@chakra-ui/react'
 import { LuPanelRightClose, LuUser } from "react-icons/lu";
 import Cookies from "js-cookie";
 import { Link } from 'react-router-dom';
+import api from '../Api';
 
 export default function MenuAvatar({ isLoggedIn, onLogout, profileMenuItems }) {
   const token = Cookies.get("token");
+  const userid = Cookies.get("userid");
   const [account, setAccount] = useState({});
+  useEffect(() => {
+    api.get("/user/GetProfile?Id="+userid)
+    .then(response=>{
+      setAccount(response.data[0]);
+    })
+  }, [isLoggedIn])
+  
   return (
     <>
       <DrawerRoot placement={{ base: "top", md: "end" }} size={{ base: "full", md: "xs" }}>
         <DrawerBackdrop />
         <DrawerTrigger variant="outline" position="absolute" p={0} w="45px" right="5" borderRadius="50%" asChild>
-          <Avatar src={account.profilkep} h="95%" colorPalette="teal" />
+          <Avatar src={account?.profilePictureURL} h="95%" colorPalette="teal" />
         </DrawerTrigger>
         <DrawerContent bg="Background" borderWidth={{ base: "0px" }} borderRightWidth="1px">
           <DrawerTrigger fontWeight="bold" borderRadius="5px" variant="outline" width="100%" height="50px" position="absolute" top="0" right="0">
@@ -44,7 +53,7 @@ export default function MenuAvatar({ isLoggedIn, onLogout, profileMenuItems }) {
               <Flex justifyContent="center" textAlign="center">
                 {isLoggedIn ?
                   <div>
-                    <Avatar width="50px" height="50px" src={account?.profilkep} /><Flex p="3" color="#5eead4">{account?.userName}</Flex>
+                    <Avatar width="50px" height="50px" src={account?.profilePictureURL} /><Flex p="3" color="#5eead4">{account?.username}</Flex>
                   </div> :
                   <DrawerActionTrigger as="p">
                     <Link style={{ display: "flex", margin: "5px" }} onClick={onclose} to={"/login"}>
