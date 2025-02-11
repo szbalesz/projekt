@@ -2,11 +2,10 @@ import React from 'react'
 import { Button, Flex, Image } from "@chakra-ui/react";
 import logo from "../media/logo.png";
 import MenuAvatar from './MenuAvatar';
-import { Avatar } from "../components/ui/avatar";
 import { Link } from 'react-router-dom';
 import { LuList } from 'react-icons/lu';
 
-export default function Navbar({setIsSidebarOpen,profileMenuItems, account, isLoggedIn, onLogout}) {
+export default function Navbar({setIsSidebarOpen,profileMenuItems, isLoggedIn, onLogout}) {
   return (
     <>
     <Flex bg="Background" as="nav" h="50px" align="center" justify="space-between" borderBottomWidth="1px" color="white">
@@ -26,13 +25,7 @@ export default function Navbar({setIsSidebarOpen,profileMenuItems, account, isLo
               />
               </Link>
         </Flex>
-        {isLoggedIn? 
-        <MenuAvatar profileMenuItems={profileMenuItems} account={account} onLogout={onLogout}/> 
-        : 
-        <Link to={"/login"} style={{position: "absolute", p: "0", width: "45px", right:"15px"}}>
-          <Avatar colorPalette="teal" />
-        </Link>
-        }
+        <MenuAvatar isLoggedIn={isLoggedIn} profileMenuItems={profileMenuItems} onLogout={onLogout}/> 
     </Flex>
     </>
   )

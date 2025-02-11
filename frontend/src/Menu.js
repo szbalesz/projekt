@@ -32,7 +32,7 @@ export default function Menu({ handlePlay, isLoggedIn, onLogout }) {
   ], []);
 
   const profileMenuItems = useMemo(() => [
-    { label: "Profil megtekintése", icon: <LuUser />, path: "/profile" },
+    { label: "Profil megtekintése", icon: <LuUser />, path: "/user" },
     { label: "Zene feltöltés", icon: <LuUpload />, path: "/upload" },
     { label: "Beállítások", icon: <LuSettings />, path: "/settings" },
   ], []);

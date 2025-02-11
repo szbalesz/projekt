@@ -12,11 +12,11 @@ import {
   DrawerTrigger,
 } from "../components/ui/drawer"
 import { Flex, Span } from '@chakra-ui/react'
-import { LuPanelRightClose } from "react-icons/lu";
+import { LuPanelRightClose, LuUser } from "react-icons/lu";
 import Cookies from "js-cookie";
 import { Link } from 'react-router-dom';
 
-export default function  MenuAvatar({ onLogout, profileMenuItems }) {
+export default function  MenuAvatar({ isLoggedIn, onLogout, profileMenuItems }) {
   const token = Cookies.get("token");
   const [account, setAccount] = useState({});
   return (
@@ -41,32 +41,47 @@ export default function  MenuAvatar({ onLogout, profileMenuItems }) {
         <DrawerHeader>
           <DrawerTitle>
           <Flex justifyContent="center" textAlign="center">
-          <Avatar width="50px" height="50px" src={account?.profilkep}/><Flex p="3" color="#5eead4">{account?.userName}</Flex>
+            {isLoggedIn ? 
+            <div>
+              <Avatar width="50px" height="50px" src={account?.profilkep}/><Flex p="3" color="#5eead4">{account?.userName}</Flex>
+            </div> :
+            <Link style={{display: "flex" , margin:"5px"}} onClick={onclose} to={"/login"}>
+            <Button
+              mx={"0"}
+              my={"0"}
+              justifyContent={{ base: "center", md: "space-between" }}
+              colorPalette={"teal"}
+              w={"100%"}
+              h="50px"
+            >
+             Bejelentkezés <LuUser/>
+            </Button>
+            </Link>
+            }
           </Flex>
           </DrawerTitle>
         </DrawerHeader>
         <DrawerBody>
-        {profileMenuItems.map((item, index) => item.label !== "Menü" ? (
+          {profileMenuItems.map((item, index) =>
                 <Link style={{display: "flex" , margin:"5px"}} onClick={onclose} to={item.path} key={index}>
                 <Button
                   key={index}
-                  mx={item.label === "Keresés" ? "auto" : "0"}
-                  my={item.label === "Keresés" ? "5" : "0"}
+                  mx={"0"}
+                  my={"0"}
                   justifyContent={{ base: "center", md: "space-between" }}
                   variant={"subtle"}
                   colorPalette={"teal"}
                   w={"100%"}
                   h="50px"
-
                 >
                  {item.label} {item.icon}
                 </Button>
                 </Link>
-              ) : "" )}
+              )}
         </DrawerBody>
-        <DrawerFooter justifyContent="center">
+        {isLoggedIn? <DrawerFooter justifyContent="center">
           <Button colorPalette="teal" variant="outline" onClick={()=> onLogout()}>Kijelenkezés</Button>
-        </DrawerFooter>
+        </DrawerFooter> : ""}
       </DrawerContent>
     </DrawerRoot>
     </>
