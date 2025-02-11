@@ -1,18 +1,29 @@
 import React from 'react'
-import { Button, Flex, Text } from '@chakra-ui/react'
+import { Button, Center, Flex, Heading, Text } from '@chakra-ui/react'
 import { useColorMode } from '../components/ui/color-mode';
-import { LuMoon, LuSun } from 'react-icons/lu';
+import { LuMoon, LuPencil, LuSun } from 'react-icons/lu';
 
 export default function Settings() {
   const { colorMode, setColorMode } = useColorMode();
   return (
     <>
-      <Flex  h="100%" display="block" textAlign="center" justifyContent="center">
-        {/* <Text fontSize={25} color={"gray"}>Beállítások</Text>*/}
-        <Text p="3">Alkalmazás témája</Text>
-        <Button onClick={() => setColorMode("dark")} colorPalette={colorMode === "dark" ? "teal" : ""} variant={colorMode === "dark" ? "surface" : "outline"}><LuMoon/> <Text p={2}>Sötét</Text></Button>
-        <Button onClick={() => setColorMode("light")} m={2} colorPalette={colorMode === "light" ? "teal" : ""} variant={colorMode === "light" ? "surface" : "outline"} ><LuSun/> <Text p={2}>Világos</Text></Button>
-      </Flex>
+      <Center padding={"25px"} height={"100%"}>
+        <Flex width={"3xl"} direction={"column"}>
+          <Heading py={"3"} size={"3xl"}>Beállítások</Heading>
+          <hr/>
+          <Heading py={"3"} size={"1xl"}>Fiók</Heading>
+          <Flex pb={"3"} direction={"row"} justifyContent={"space-between"}>
+            <Text pt={"2"}>Személyes adatok módosítása</Text>
+            <Button size={"sm"} colorPalette={"teal"} variant={"surface"}>Módosítás <LuPencil/></Button>
+          </Flex>
+          <hr/>
+          <Heading py={"3"} size={"1xl"}>Megjelenítés</Heading>
+          <Flex pb={"3"} direction={"row"}>
+            <Button onClick={() => setColorMode("dark")} colorPalette={colorMode === "dark" ? "teal" : ""} variant={colorMode === "dark" ? "surface" : "outline"}><LuMoon /> <Text p={2}>Sötét</Text></Button>
+            <Button onClick={() => setColorMode("light")} mx={2} colorPalette={colorMode === "light" ? "teal" : ""} variant={colorMode === "light" ? "surface" : "outline"} ><LuSun /> <Text p={2}>Világos</Text></Button>
+          </Flex>
+        </Flex>
+      </Center>
     </>
   )
 }

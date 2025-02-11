@@ -34,9 +34,6 @@ export default function Footer({currentMusic}) {
             <Link to="/about" >
               Rólunk
             </Link>
-            <Link to="/contact">
-              Kapcsolat
-            </Link>
           </HStack>
 
           {/* Social ikonok */}
