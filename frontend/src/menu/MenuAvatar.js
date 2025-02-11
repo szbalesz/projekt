@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Avatar } from "../components/ui/avatar";
 import { Button } from "../components/ui/button"
 import {
+  DrawerActionTrigger,
   DrawerBackdrop,
   DrawerBody,
   DrawerContent,
@@ -16,74 +17,77 @@ import { LuPanelRightClose, LuUser } from "react-icons/lu";
 import Cookies from "js-cookie";
 import { Link } from 'react-router-dom';
 
-export default function  MenuAvatar({ isLoggedIn, onLogout, profileMenuItems }) {
+export default function MenuAvatar({ isLoggedIn, onLogout, profileMenuItems }) {
   const token = Cookies.get("token");
   const [account, setAccount] = useState({});
   return (
     <>
-    <DrawerRoot placement={{ base: "top", md: "end" }} size={{ base: "full", md: "xs" }}>
-      <DrawerBackdrop/> 
-      <DrawerTrigger variant="outline" position="absolute" p={0} w="45px" right="5" borderRadius="50%" asChild>
-            <Avatar src={account.profilkep} h="95%" colorPalette="teal" />
-      </DrawerTrigger>
-      <DrawerContent bg="Background" borderWidth={{base: "0px"}} borderRightWidth="1px">
-      <DrawerTrigger fontWeight="bold" borderRadius="5px" variant="outline" width="100%" height="50px" position="absolute" top="0" right="0">
-          <Flex justifyContent="space-between" fontSize="md">
-          <Span width="100%">Profil</Span> 
-          <Span w="10%" position="absolute" right="0" p="2px" color="#5eead4"><LuPanelRightClose/></Span>
-          </Flex>
+      <DrawerRoot placement={{ base: "top", md: "end" }} size={{ base: "full", md: "xs" }}>
+        <DrawerBackdrop />
+        <DrawerTrigger variant="outline" position="absolute" p={0} w="45px" right="5" borderRadius="50%" asChild>
+          <Avatar src={account.profilkep} h="95%" colorPalette="teal" />
         </DrawerTrigger>
-        <DrawerHeader p="5">
+        <DrawerContent bg="Background" borderWidth={{ base: "0px" }} borderRightWidth="1px">
+          <DrawerTrigger fontWeight="bold" borderRadius="5px" variant="outline" width="100%" height="50px" position="absolute" top="0" right="0">
+            <Flex justifyContent="space-between" fontSize="md">
+              <Span width="100%">Profil</Span>
+              <Span w="10%" position="absolute" right="0" p="2px" color="#5eead4"><LuPanelRightClose /></Span>
+            </Flex>
+          </DrawerTrigger>
+          <DrawerHeader p="5">
             <DrawerTitle>
-              
+
             </DrawerTitle>
-        </DrawerHeader>
-        <DrawerHeader>
-          <DrawerTitle>
-          <Flex justifyContent="center" textAlign="center">
-            {isLoggedIn ? 
-            <div>
-              <Avatar width="50px" height="50px" src={account?.profilkep}/><Flex p="3" color="#5eead4">{account?.userName}</Flex>
-            </div> :
-            <Link style={{display: "flex" , margin:"5px"}} onClick={onclose} to={"/login"}>
-            <Button
-              mx={"0"}
-              my={"0"}
-              justifyContent={{ base: "center", md: "space-between" }}
-              colorPalette={"teal"}
-              w={"100%"}
-              h="50px"
-            >
-             Bejelentkezés <LuUser/>
-            </Button>
-            </Link>
-            }
-          </Flex>
-          </DrawerTitle>
-        </DrawerHeader>
-        <DrawerBody>
-          {profileMenuItems.map((item, index) =>
-                <Link style={{display: "flex" , margin:"5px"}} onClick={onclose} to={item.path} key={index}>
-                <Button
-                  key={index}
-                  mx={"0"}
-                  my={"0"}
-                  justifyContent={{ base: "center", md: "space-between" }}
-                  variant={"subtle"}
-                  colorPalette={"teal"}
-                  w={"100%"}
-                  h="50px"
-                >
-                 {item.label} {item.icon}
-                </Button>
+          </DrawerHeader>
+          <DrawerHeader>
+            <DrawerTitle>
+              <Flex justifyContent="center" textAlign="center">
+                {isLoggedIn ?
+                  <div>
+                    <Avatar width="50px" height="50px" src={account?.profilkep} /><Flex p="3" color="#5eead4">{account?.userName}</Flex>
+                  </div> :
+                  <DrawerActionTrigger as="p">
+                    <Link style={{ display: "flex", margin: "5px" }} onClick={onclose} to={"/login"}>
+                      <Button
+                        mx={"0"}
+                        my={"0"}
+                        justifyContent={{ base: "center", md: "space-between" }}
+                        colorPalette={"teal"}
+                        w={"100%"}
+                        h="50px"
+                      >
+                        Bejelentkezés <LuUser />
+                      </Button>
+                    </Link>
+                  </DrawerActionTrigger>
+                }
+              </Flex>
+            </DrawerTitle>
+          </DrawerHeader>
+          <DrawerBody>
+            {profileMenuItems.map((item, index) =>
+              <DrawerActionTrigger as="p" key={index}>
+                <Link style={{ display: "flex", margin: "5px" }} onClick={onclose} to={item.path}>
+                  <Button
+                    mx={"0"}
+                    my={"0"}
+                    justifyContent={{ base: "center", md: "space-between" }}
+                    variant={"subtle"}
+                    colorPalette={"teal"}
+                    w={"100%"}
+                    h="50px"
+                  >
+                    {item.label} {item.icon}
+                  </Button>
                 </Link>
-              )}
-        </DrawerBody>
-        {isLoggedIn? <DrawerFooter justifyContent="center">
-          <Button colorPalette="teal" variant="outline" onClick={()=> onLogout()}>Kijelenkezés</Button>
-        </DrawerFooter> : ""}
-      </DrawerContent>
-    </DrawerRoot>
+              </DrawerActionTrigger>
+            )}
+          </DrawerBody>
+          {isLoggedIn ? <DrawerFooter justifyContent="center">
+            <Button colorPalette="teal" variant="outline" onClick={() => onLogout()}>Kijelenkezés</Button>
+          </DrawerFooter> : ""}
+        </DrawerContent>
+      </DrawerRoot>
     </>
   )
 }
