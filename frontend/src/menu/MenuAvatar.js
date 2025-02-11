@@ -19,7 +19,6 @@ import { Link } from 'react-router-dom';
 import api from '../Api';
 
 export default function MenuAvatar({ isLoggedIn, onLogout, profileMenuItems }) {
-  const token = Cookies.get("token");
   const userid = Cookies.get("userid");
   const [account, setAccount] = useState({});
   useEffect(() => {

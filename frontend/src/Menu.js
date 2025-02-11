@@ -6,6 +6,7 @@ import { GridItem } from '@chakra-ui/react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { LuHouse, LuList, LuSearch, LuSettings, LuStar, LuUpload, LuUser, LuUsers, } from 'react-icons/lu';
 import Search from './menu/Search';
+import Cookies from "js-cookie";
 
 export default function Menu({ handlePlay, isLoggedIn, onLogout }) {
   const [selectedMenu, setSelectedMenu] = useState('');
@@ -31,8 +32,9 @@ export default function Menu({ handlePlay, isLoggedIn, onLogout }) {
     { label: "Rólunk", icon: <LuUsers />, path: "/about" },
   ], []);
 
+  const userid = Cookies.get("userid");
   const profileMenuItems = useMemo(() => [
-    { label: "Profil megtekintése", icon: <LuUser />, path: "/user/ideiglenes" },
+    { label: "Profil megtekintése", icon: <LuUser />, path: "/user/"+userid },
     { label: "Zene feltöltés", icon: <LuUpload />, path: "/upload" },
     { label: "Beállítások", icon: <LuSettings />, path: "/settings" },
   ], []);

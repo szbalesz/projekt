@@ -1,11 +1,24 @@
 import { Box, Flex, Text, Heading } from '@chakra-ui/react';
-import React from 'react';
-import { Avatar } from "../components/ui/avatar";
+import React, { useEffect, useState } from 'react';
 import { Image } from "@chakra-ui/react"
+import { useNavigate, useParams } from 'react-router-dom';
+import api from '../Api';
 
 export default function UserPage() {
+  const { id } = useParams(); 
+  const navigate = useNavigate();
+  const [account, setAccount] = useState({});
+  useEffect(() => {
+    api.get("/user/GetProfile?Id="+id)
+    .then(response=>{
+      setAccount(response.data[0]);
+    })
+    console.log(account);
+  }, [])
+  
   return (
     <Flex w={"100%"}>
+    {account?
       <Box
         w={"full"}
         alignItems={"left"}
@@ -14,7 +27,7 @@ export default function UserPage() {
       >
         <Flex direction={"row"} p={"5"}>
           <Image
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTc3iw9U_DgP-f2ppJu0avXQ1P_9ARSEPdxYQ&s"
+            src={account?.profilePictureURL}
             boxSize={"150px"}
             borderRadius={"full"}
             fit={"cover"}
@@ -25,7 +38,7 @@ export default function UserPage() {
               Profil
             </Text>
             <Text fontSize="4xl" fontWeight="bold">
-              TommY
+              {account?.username}
             </Text>
             <Text fontSize="md">
               2 zene
@@ -36,7 +49,8 @@ export default function UserPage() {
         <Flex p={"5"} direction={"column"}>
           <Heading>Zenék</Heading>
         </Flex>
-      </Box>
+      </Box>: 
+      navigate("/")}
     </Flex>
   );
 }

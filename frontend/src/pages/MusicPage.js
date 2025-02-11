@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Text, Image, VStack, AbsoluteCenter, Button, Spinner } from '@chakra-ui/react';
 import { LuList, LuPause, LuPlay, LuStar } from 'react-icons/lu';
-import { useLocation, useParams } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import api from '../Api';
 import Cookies from "js-cookie";
 
@@ -12,6 +12,7 @@ const MusicPage = ({ currentMusic, handlePlay, isPlaying }) => {
   const { id } = useParams();
   const token = Cookies.get("token");
   const location = useLocation();
+  const navigate = useNavigate();
   const getMusic=()=>{
     setPending(true);
     api.get("/music/GetAllMusic")
@@ -128,7 +129,7 @@ useEffect(() => {
           </Text>
         </VStack>
       ) : (
-        <Text>Nem létezik ilyen zene</Text>
+        navigate("/")
       )}
     </Box>
     </AbsoluteCenter>
