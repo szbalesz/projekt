@@ -15,6 +15,7 @@ import Register from './pages/Register';
 import About from './pages/About';
 import Footer from './Footer';
 import UploadPage from './pages/UploadPage';
+import Cookie from './Cookie';
 
 
 export default function Main({ isLoggedIn, onRegister, onLogin, onLogout}) {
@@ -88,6 +89,7 @@ export default function Main({ isLoggedIn, onRegister, onLogin, onLogout}) {
                <Player currentMusic={currentMusic} isPlaying={isPlaying} togglePlayPause={togglePlayPause} audioRef={audioRef}/>
             </GridItem>
           </Grid>
+          <Cookie/>
     </Box>
   )
 }
