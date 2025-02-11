@@ -725,3 +725,4 @@ C:\Users\bales\Desktop\projekt\backend\MelodyFlowApi\MelodyFlowApi\obj\Debug\net
 C:\Users\bales\Desktop\projekt\backend\MelodyFlowApi\MelodyFlowApi\obj\Debug\net8.0\MelodyFlowApi.genruntimeconfig.cache
 C:\Users\bales\Desktop\projekt\backend\MelodyFlowApi\MelodyFlowApi\obj\Debug\net8.0\ref\MelodyFlowApi.dll
 C:\Users\Tanulo\szbalesz\projekt\projekt\backend\MelodyFlowApi\MelodyFlowApi\bin\Debug\net8.0\MelodyFlowApi.staticwebassets.runtime.json
+C:\Users\Tanulo\Desktop\projekt\projekt\backend\MelodyFlowApi\MelodyFlowApi\bin\Debug\net8.0\MelodyFlowApi.staticwebassets.runtime.json

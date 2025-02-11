@@ -143,5 +143,57 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "MelodyFlowApi.Controllers.PlaylistMusicController",
+    "Method": "AddMusicToPlaylist",
+    "RelativePath": "api/PlaylistMusic/AddMusicToPlaylist",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "playlistmusic",
+        "Type": "MelodyFlowApi.Models.PlaylistMusic",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MelodyFlowApi.Models.PlaylistMusic",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MelodyFlowApi.Controllers.UserController",
+    "Method": "GetProfile",
+    "RelativePath": "api/user/GetProfile",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MelodyFlowApi.Models.Aspnetuser",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   }
 ]
