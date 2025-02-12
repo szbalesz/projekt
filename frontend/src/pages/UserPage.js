@@ -9,15 +9,23 @@ export default function UserPage() {
   const navigate = useNavigate();
   const [account, setAccount] = useState({});
   useEffect(() => {
-    api.get("/user/GetProfile?Id="+id)
-    .then(response=>{
-      setAccount(response.data[0]);
-    })
-    .catch(()=>{
-      setAccount({});
-    })
-  }, [navigate])
+    try {
+      api.get("/user/GetProfile?Id="+id)
+      .then(response=>{
+        setAccount(response.data[0]);
+      })
+    } catch (error) {
+      console.log("Hiba történt a profil lekérése közben:",error);
+    }
+  }, [id])
   
+  useEffect(() => {
+    if(!account){
+      navigate("/");
+    }
+  }, [account])
+  
+
   return (
     <Flex w={"100%"}>
     {account?
@@ -52,7 +60,7 @@ export default function UserPage() {
           <Heading>Zenék</Heading>
         </Flex>
       </Box>: 
-      navigate("/")}
+      ""}
     </Flex>
   );
 }

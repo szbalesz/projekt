@@ -6,7 +6,7 @@ import api from '../Api';
 import Cookies from "js-cookie";
 
 const MusicPage = ({ currentMusic, handlePlay, isPlaying }) => {
-  const [music, setMusic] = useState();
+  const [music, setMusic] = useState({});
   const [isPending, setPending] = useState(false)
   const [isFavorite, setFavorite] = useState(false)
   const { id } = useParams();
@@ -57,6 +57,12 @@ const MusicPage = ({ currentMusic, handlePlay, isPlaying }) => {
 useEffect(() => {
   getMusic();
 }, [location])
+
+useEffect(() => {
+  if(!music){
+    navigate("/");
+  }
+}, [music])
 
   return (
 
@@ -128,9 +134,7 @@ useEffect(() => {
             <Button p={1} m={1} variant="solid"><LuList/></Button>
           </Text>
         </VStack>
-      ) : (
-        navigate("/")
-      )}
+      ) : ""}
     </Box>
     </AbsoluteCenter>
     </>
