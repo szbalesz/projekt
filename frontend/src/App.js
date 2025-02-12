@@ -29,14 +29,14 @@ function App() {
 
     api.post("/auth/register", newUser)
       .then(response => {
-        if (response.data.token) {
-          toaster.create({ title: "Sikeres regisztráció.", type: "success" });
+        toaster.create({ title: "Sikeres regisztráció.", type: "success" });
           navigate("/login");
-        } else {
-          toaster.create({ title: "Sikertelen regisztráció!", type: "error" });
-        }
+          
       })
-      .catch(e => console.error("HIBA, Nem sikerült a regisztráció: ", e));
+      .catch(e => {
+        console.error("HIBA, Nem sikerült a regisztráció: ", e);
+        toaster.create({ title: "Sikertelen regisztráció!", type: "error" });
+      });
   };
 
   const onLogin = (username, password) => {

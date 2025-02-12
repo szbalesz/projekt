@@ -13,8 +13,10 @@ export default function UserPage() {
     .then(response=>{
       setAccount(response.data[0]);
     })
-    console.log(account);
-  }, [])
+    .catch(()=>{
+      setAccount({});
+    })
+  }, [navigate])
   
   return (
     <Flex w={"100%"}>

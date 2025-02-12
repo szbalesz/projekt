@@ -32,12 +32,16 @@ export default function Menu({ handlePlay, isLoggedIn, onLogout }) {
     { label: "Rólunk", icon: <LuUsers />, path: "/about" },
   ], []);
 
-  const userid = Cookies.get("userid");
+  const [userid, setUserid] = useState("")
+  useEffect(() => {
+    setUserid(Cookies.get("userid"));
+  }, [isLoggedIn])
+  
   const profileMenuItems = useMemo(() => [
     { label: "Profil megtekintése", icon: <LuUser />, path: "/user/"+userid },
     { label: "Zene feltöltés", icon: <LuUpload />, path: "/upload" },
     { label: "Beállítások", icon: <LuSettings />, path: "/settings" },
-  ], []);
+  ], [userid]);
 
   // Felugró popup bezárása
   const handlePopupClose = () => {

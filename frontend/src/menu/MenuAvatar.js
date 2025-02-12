@@ -54,7 +54,7 @@ export default function MenuAvatar({ isLoggedIn, onLogout, profileMenuItems }) {
                   <div>
                     <Avatar width="50px" height="50px" src={account?.profilePictureURL} /><Flex p="3" color="#5eead4">{account?.username}</Flex>
                   </div> :
-                  <DrawerActionTrigger as="p">
+                  <DrawerActionTrigger as="div">
                     <Link style={{ display: "flex", margin: "5px" }} onClick={onclose} to={"/login"}>
                       <Button
                         mx={"0"}
@@ -73,8 +73,8 @@ export default function MenuAvatar({ isLoggedIn, onLogout, profileMenuItems }) {
             </DrawerTitle>
           </DrawerHeader>
           <DrawerBody>
-            {profileMenuItems.map((item, index) =>
-              <DrawerActionTrigger as="p" key={index}>
+            {isLoggedIn? profileMenuItems.map((item, index) =>
+              <DrawerActionTrigger as="div" key={index}>
                 <Link style={{ display: "flex", margin: "5px" }} onClick={onclose} to={item.path}>
                   <Button
                     mx={"0"}
@@ -89,7 +89,7 @@ export default function MenuAvatar({ isLoggedIn, onLogout, profileMenuItems }) {
                   </Button>
                 </Link>
               </DrawerActionTrigger>
-            )}
+            ): ""}
           </DrawerBody>
           {isLoggedIn ? <DrawerFooter justifyContent="center">
             <Button colorPalette="teal" variant="outline" onClick={() => onLogout()}>Kijelenkezés</Button>
