@@ -18,6 +18,7 @@
 
 📌 **Következő lépések**  
 - Profil oldalon lévő zenék/lejátszási listák kinézete
+- Zene hozzáadása lejátszási listához menü kinézete
 
 ---
 
@@ -27,9 +28,9 @@
 
 ❌ **Problémák**  
 - Ha a felhasználó elfogadja a cookiekat csak akkor tárolja el
-- Még nem működnek a végpontok teljes mértékben
 
 📌 **Következő lépések**  
+- Zene hozzáadása lejátszási listához   
 - Lejátszási lista létrehozása  
 
 ---
