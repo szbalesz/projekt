@@ -14,37 +14,38 @@
 
 ### 🎨 Frontend UI – Csehi Tamás  
 ✅ **Folyamatban lévő fejlesztések**  
-- Új zene feltöltése oldal kinézetének fejlesztése  
+- Profil oldal kinézete
 
 📌 **Következő lépések**  
-- "Elfogadod a cookiekat?" felugró ablak kinézete 
-- Előadó zenéi aloldal kinézete 
+- Profil oldalon lévő zenék/lejátszási listák kinézete
 
 ---
 
 ### 🔄 Frontend ↔ Backend kapcsolat – Száraz Bálint Csaba  
 ✅ **Folyamatban lévő fejlesztések**  
-- Token tárolása a cookieban  
+- Profil oldalon lévő zenék/lejátszási listák betöltése
 
 ❌ **Problémák**  
 - Ha a felhasználó elfogadja a cookiekat csak akkor tárolja el
+- Még nem működnek a végpontok teljes mértékben
 
 📌 **Következő lépések**  
-- Új zene feltöltésének működése
-- Előadó zenéinek betöltése  
+- Lejátszási lista létrehozása  
 
 ---
 
 ### 🗄️ Backend + Adatbázis – Fehér Tamás  
 ✅ **Folyamatban lévő fejlesztések**  
-- `POST api/UploadMusic` végpont fejlesztése  
+- `GET api/GetPlaylistByUser` végpont fejlesztése  
+
+❌ **Problémák**
+- Az adatbázis táblákat módosítani kell, hogy az új kérésekre alkalmas legyen
 
 📌 **Következő lépések**  
-- Profil adatainak lekérése végpont
-- `GET GetMusicByArtist` végpont készítése
+- `GET api/GetAllMusicByUser` végpont fejlesztése 
 - Zene hozzáadása listához `POST` végpont
 
 ---
 
-- 📌 Legutóbbi frissítés: **2025.02.06.**
+- 📌 Legutóbbi frissítés: **2025.02.12.**
 - ✏️ Frissítette: **Száraz Bálint Csaba**
