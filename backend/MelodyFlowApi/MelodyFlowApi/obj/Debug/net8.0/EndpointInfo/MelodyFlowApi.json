@@ -330,6 +330,44 @@
         }
       }
     },
+    "/api/PlaylistMusic/GetMusicFromPlaylist": {
+      "get": {
+        "tags": [
+          "PlaylistMusic"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Playlistmusic"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Playlistmusic"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Playlistmusic"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/user/GetProfile": {
       "get": {
         "tags": [
