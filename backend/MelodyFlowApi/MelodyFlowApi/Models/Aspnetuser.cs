@@ -50,4 +50,7 @@ public partial class Aspnetuser
     public virtual ICollection<Playlist> Playlists { get; set; } = new List<Playlist>();
 
     public virtual ICollection<Aspnetrole> Roles { get; set; } = new List<Aspnetrole>();
+
+    public virtual ICollection<Music> Musics { get; set; } = new List<Music>();
+
 }

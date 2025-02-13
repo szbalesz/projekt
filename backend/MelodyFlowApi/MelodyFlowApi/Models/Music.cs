@@ -15,5 +15,7 @@ public partial class Music
 
     public string MusicUrl { get; set; } = null!;
 
+    public string UploaderId { get; set; } = null!;
     public virtual ICollection<Playlist> Playlists { get; set; } = new List<Playlist>();
+
 }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2025. Feb 13. 08:35
+-- Létrehozás ideje: 2025. Feb 13. 09:02
 -- Kiszolgáló verziója: 10.4.20-MariaDB
 -- PHP verzió: 7.3.29
 
@@ -144,21 +144,22 @@ CREATE TABLE `music` (
   `Artist` varchar(50) COLLATE utf8mb4_hungarian_ci DEFAULT NULL,
   `Title` varchar(50) COLLATE utf8mb4_hungarian_ci DEFAULT NULL,
   `Image_URL` longtext COLLATE utf8mb4_hungarian_ci DEFAULT NULL,
-  `Music_URL` longtext COLLATE utf8mb4_hungarian_ci NOT NULL
+  `Music_URL` longtext COLLATE utf8mb4_hungarian_ci NOT NULL,
+  `UploaderId` varchar(255) CHARACTER SET utf8mb4 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
 
 --
 -- A tábla adatainak kiíratása `music`
 --
 
-INSERT INTO `music` (`Id`, `Artist`, `Title`, `Image_URL`, `Music_URL`) VALUES
-('0e418a2c-bab4-4549-9d4f-7839aa9a9460', 'Ariana Grande', '7 rings', 'https://pyxis.nymag.com/v1/imgs/a61/af6/3fd12792da57d7f85b8fe655c78b7cd76c-23-ariana-grande.rsquare.w400.jpg', '/music/2d98ee0e-baf9-441e-abb5-abc0ac9516a6_Ariana Grande - 7 rings (Official Video).mp3'),
-('395bf642-c850-463d-8171-fe129f062275', 'Azahriah', 'cipoe', 'https://i.ytimg.com/vi/d7judDbrovM/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB7AxNhC9bF2b6mOll7UhR2xNVNGg', '/music/e50cf012-93be-4df5-8a53-3e9800f1fd29_Azahriah - cipoe.mp3'),
-('4d121dca-b04f-4189-a948-6ebb56b0d30b', 'LMEN PRALA', 'A KARRIEREM LESZ*ROM', 'https://i.ytimg.com/vi/YHc6lKogw7s/maxresdefault.jpg', '/music/83add612-6180-4c49-af2f-84918412c551_LMEN PRALA - A KARRIEREM LESZROM OFFICIAL MUSIC VIDEO  PROD. BY SMITHMUSIX.mp3'),
-('507d3e28-551d-43fb-97eb-574b4911c2c7', 'Kkevin', 'Prosecco', 'https://i.ytimg.com/vi/1uu-TUeNtbk/maxresdefault.jpg', '/music/cf7d8fbd-2072-4ed1-8fe8-ef7b6733fddc_KKevin - PROSECCO ft. Bruno (Official Music Video).mp3'),
-('a6fee57b-8ac3-4ea1-a036-8714925b4f3a', 'Jaber', 'Milliók', 'https://i.ytimg.com/vi/GVJ6PY2e0fY/maxresdefault.jpg', '/music/cde7a600-37c6-4332-a889-ef4811b6e7e0_JABER X T. Danny - MILLIÓK (Official Music Video).mp3'),
-('cc7568b6-f58e-4ab2-aa33-e94bcba38c8f', 'Katy Perry', 'Firework', 'https://static.stereogum.com/uploads/2023/08/Katy-Perry-Firework-1692215086.jpeg', '/music/8e589e6a-881f-4df4-996d-597482f6e185_Katy Perry - Firework (Official Music Video).mp3'),
-('f4aa3d71-2a90-4d39-ab08-223f3f4f0fe5', 'Desh', 'Walkin\' A Street', 'https://i.scdn.co/image/ab67616d0000b2737ac1501b2c36c9b4e785f336', '/music/4c74b7c9-ced4-4bc4-9ff0-b43506ae448c_deshwalkinastreet.mp3');
+INSERT INTO `music` (`Id`, `Artist`, `Title`, `Image_URL`, `Music_URL`, `UploaderId`) VALUES
+('0e418a2c-bab4-4549-9d4f-7839aa9a9460', 'Ariana Grande', '7 rings', 'https://pyxis.nymag.com/v1/imgs/a61/af6/3fd12792da57d7f85b8fe655c78b7cd76c-23-ariana-grande.rsquare.w400.jpg', '/music/2d98ee0e-baf9-441e-abb5-abc0ac9516a6_Ariana Grande - 7 rings (Official Video).mp3', '64db6df7-6cce-4ce9-85fd-f4bc0408cd6b'),
+('395bf642-c850-463d-8171-fe129f062275', 'Azahriah', 'cipoe', 'https://i.ytimg.com/vi/d7judDbrovM/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB7AxNhC9bF2b6mOll7UhR2xNVNGg', '/music/e50cf012-93be-4df5-8a53-3e9800f1fd29_Azahriah - cipoe.mp3', '64db6df7-6cce-4ce9-85fd-f4bc0408cd6b'),
+('4d121dca-b04f-4189-a948-6ebb56b0d30b', 'LMEN PRALA', 'A KARRIEREM LESZ*ROM', 'https://i.ytimg.com/vi/YHc6lKogw7s/maxresdefault.jpg', '/music/83add612-6180-4c49-af2f-84918412c551_LMEN PRALA - A KARRIEREM LESZROM OFFICIAL MUSIC VIDEO  PROD. BY SMITHMUSIX.mp3', '64db6df7-6cce-4ce9-85fd-f4bc0408cd6b'),
+('507d3e28-551d-43fb-97eb-574b4911c2c7', 'Kkevin', 'Prosecco', 'https://i.ytimg.com/vi/1uu-TUeNtbk/maxresdefault.jpg', '/music/cf7d8fbd-2072-4ed1-8fe8-ef7b6733fddc_KKevin - PROSECCO ft. Bruno (Official Music Video).mp3', '64db6df7-6cce-4ce9-85fd-f4bc0408cd6b'),
+('a6fee57b-8ac3-4ea1-a036-8714925b4f3a', 'Jaber', 'Milliók', 'https://i.ytimg.com/vi/GVJ6PY2e0fY/maxresdefault.jpg', '/music/cde7a600-37c6-4332-a889-ef4811b6e7e0_JABER X T. Danny - MILLIÓK (Official Music Video).mp3', '64db6df7-6cce-4ce9-85fd-f4bc0408cd6b'),
+('cc7568b6-f58e-4ab2-aa33-e94bcba38c8f', 'Katy Perry', 'Firework', 'https://static.stereogum.com/uploads/2023/08/Katy-Perry-Firework-1692215086.jpeg', '/music/8e589e6a-881f-4df4-996d-597482f6e185_Katy Perry - Firework (Official Music Video).mp3', '64db6df7-6cce-4ce9-85fd-f4bc0408cd6b'),
+('f4aa3d71-2a90-4d39-ab08-223f3f4f0fe5', 'Desh', 'Walkin\' A Street', 'https://i.scdn.co/image/ab67616d0000b2737ac1501b2c36c9b4e785f336', '/music/4c74b7c9-ced4-4bc4-9ff0-b43506ae448c_deshwalkinastreet.mp3', '64db6df7-6cce-4ce9-85fd-f4bc0408cd6b');
 
 -- --------------------------------------------------------
 
@@ -177,7 +178,8 @@ CREATE TABLE `playlist` (
 --
 
 INSERT INTO `playlist` (`Id`, `PlaylistName`, `Image_URL`) VALUES
-('50c947c5-d196-11ef-a697-701ab8764395', 'Kedvencek', 'https://t3.ftcdn.net/jpg/04/62/60/80/360_F_462608080_J2AJrf8h0fmbFqnTVUQfza8JivYOfShz.jpg');
+('50c947c5-d196-11ef-a697-701ab8764395', 'Kedvencek', 'https://t3.ftcdn.net/jpg/04/62/60/80/360_F_462608080_J2AJrf8h0fmbFqnTVUQfza8JivYOfShz.jpg'),
+('80c947c5-d196-11ef-a697-701ab8764395', 'loucu', 'https://t3.ftcdn.net/jpg/04/62/60/80/360_F_462608080_J2AJrf8h0fmbFqnTVUQfza8JivYOfShz.jpg');
 
 -- --------------------------------------------------------
 
@@ -190,6 +192,13 @@ CREATE TABLE `playlistmusic` (
   `MusicId` varchar(36) COLLATE utf8mb4_hungarian_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
 
+--
+-- A tábla adatainak kiíratása `playlistmusic`
+--
+
+INSERT INTO `playlistmusic` (`PlaylistId`, `MusicId`) VALUES
+('50c947c5-d196-11ef-a697-701ab8764395', '0e418a2c-bab4-4549-9d4f-7839aa9a9460');
+
 -- --------------------------------------------------------
 
 --
@@ -200,6 +209,14 @@ CREATE TABLE `userplaylist` (
   `UserId` varchar(255) NOT NULL,
   `PlaylistId` varchar(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_hungarian_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- A tábla adatainak kiíratása `userplaylist`
+--
+
+INSERT INTO `userplaylist` (`UserId`, `PlaylistId`) VALUES
+('64db6df7-6cce-4ce9-85fd-f4bc0408cd6b', '50c947c5-d196-11ef-a697-701ab8764395'),
+('64db6df7-6cce-4ce9-85fd-f4bc0408cd6b', '80c947c5-d196-11ef-a697-701ab8764395');
 
 -- --------------------------------------------------------
 
@@ -277,7 +294,8 @@ ALTER TABLE `aspnetusertokens`
 -- A tábla indexei `music`
 --
 ALTER TABLE `music`
-  ADD PRIMARY KEY (`Id`);
+  ADD PRIMARY KEY (`Id`),
+  ADD KEY `UploaderId` (`UploaderId`);
 
 --
 -- A tábla indexei `playlist`
@@ -358,6 +376,12 @@ ALTER TABLE `aspnetuserroles`
 --
 ALTER TABLE `aspnetusertokens`
   ADD CONSTRAINT `FK_AspNetUserTokens_AspNetUsers_UserId` FOREIGN KEY (`UserId`) REFERENCES `aspnetusers` (`Id`) ON DELETE CASCADE;
+
+--
+-- Megkötések a táblához `music`
+--
+ALTER TABLE `music`
+  ADD CONSTRAINT `music_ibfk_1` FOREIGN KEY (`UploaderId`) REFERENCES `aspnetusers` (`Id`);
 
 --
 -- Megkötések a táblához `playlistmusic`

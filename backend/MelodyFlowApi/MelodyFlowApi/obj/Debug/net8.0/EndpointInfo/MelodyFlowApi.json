@@ -538,6 +538,13 @@
               "$ref": "#/components/schemas/Aspnetrole"
             },
             "nullable": true
+          },
+          "musics": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Music"
+            },
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -691,6 +698,10 @@
             "nullable": true
           },
           "musicUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "uploaderId": {
             "type": "string",
             "nullable": true
           },
