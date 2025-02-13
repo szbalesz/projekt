@@ -8,7 +8,7 @@ import { LuHouse, LuList, LuSearch, LuSettings, LuStar, LuUpload, LuUser, LuUser
 import Search from './menu/Search';
 import Cookies from "js-cookie";
 
-export default function Menu({ handlePlay, isLoggedIn, onLogout }) {
+export default function Menu({ isLoggedIn, onLogout }) {
   const [selectedMenu, setSelectedMenu] = useState('');
   const location = useLocation();
   const navigate = useNavigate();
@@ -87,7 +87,7 @@ export default function Menu({ handlePlay, isLoggedIn, onLogout }) {
 
        {/* Felugró popupok */}
        {isPopupOpen && popupType === "search" && (
-        <Search handlePlay={handlePlay} handlePopupClose={handlePopupClose}/>
+        <Search handlePopupClose={handlePopupClose}/>
       )}
 
       {/* Navbar */}

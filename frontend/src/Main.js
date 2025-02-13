@@ -66,7 +66,7 @@ export default function Main({ isLoggedIn, onRegister, onLogin, onLogout}) {
           {/* Main Grid */}
           <Grid templateRows="50px 1fr" templateColumns="50px 1fr" minHeight="100vh">
               <ScrollToTop/> {/* Az oldal tetejére görget minden oldal váltáskor */}
-                <Menu handlePlay={handlePlay} isLoggedIn={isLoggedIn} onLogout={onLogout}/>
+                <Menu isLoggedIn={isLoggedIn} onLogout={onLogout}/>
               {/* Main Content */}
             <GridItem bg="Background" transition="all 1s ease-in-out" rowSpan={1}  colSpan="2">
               <Box bg="Background" minH="100vh" py="65px" pl={{base: "0", md: "50px"}}>
@@ -79,7 +79,7 @@ export default function Main({ isLoggedIn, onRegister, onLogin, onLogout}) {
                   {/* Ha ismeretlen az útvonal, irányítsd a kezdőlapra */}
                   <Route path="*" element={<Navigate to="/" />} />
                   <Route path="/music/:id" element={<MusicPage currentMusic={currentMusic} handlePlay={handlePlay} isPlaying={isPlaying}/>} />
-                  <Route path="/playlist/:id" element={<PlaylistPage handlePlay={handlePlay}/>} />
+                  <Route path="/playlist/:id" element={<PlaylistPage/>} />
                   <Route path="/upload" element={<UploadPage/>} />
                   <Route path="/about" element={<About />} />
                   <Route path="/user/:id" element={<UserPage/>} />

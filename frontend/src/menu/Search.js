@@ -69,7 +69,6 @@ export default function Search( {handlePopupClose}) {
               <MusicCard
                 key={index}
                 music={track}
-                track={track}
                 handlePopupClose={handlePopupClose}
               />
             ))

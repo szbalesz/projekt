@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import api from "../Api";
 import Cookies from "js-cookie";
 
-export default function PlaylistPage({ handlePlay }) {
+export default function PlaylistPage() {
   const { id } = useParams();
   const [isPending, setPending] = useState(false);
   const [playlist, setPlaylist] = useState();
@@ -15,18 +15,10 @@ export default function PlaylistPage({ handlePlay }) {
     const token = Cookies.get("token");
 
    if(token){
-    api.get("/playlist/GetAllPlaylist", {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    })
+    api.get("/PlaylistMusic/GetMusicFromPlaylist?id="+id)
       .then((response) => {
         let data = response.data;
-        for (let i = 0; i < data.length; i++) {
-          if (data[i].id === id || id === "Kedvencek") {
-            setPlaylist(data[i].musics);
-          }
-        }
+        setPlaylist(data);
       })
       .catch((e) => {
         console.error("HIBA, Nem sikerült lekérni a lejátszási listát: ", e);
@@ -55,7 +47,7 @@ export default function PlaylistPage({ handlePlay }) {
                 <Spinner />
               </AbsoluteCenter>
             ) : playlist ? (
-              playlist.map((music, index) => <MusicCard key={index} music={music} handlePlay={handlePlay} />)
+              playlist.map((music, index) => <MusicCard key={index} music={music} />)
             ) : (
               <AbsoluteCenter color="red">Nem sikerült betölteni a zenéket!</AbsoluteCenter>
             )}
