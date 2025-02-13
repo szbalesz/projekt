@@ -4,13 +4,13 @@
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\music\2d98ee0e-baf9-441e-abb5-abc0ac9516a6_Ariana Grande - 7 rings (Official Video).mp3'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-W9U6AnrAXqBrv1T4P7a6dVstIzvLLJc9\u002BHVte1k\u002B9Ho="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"4440117"},{"Name":"Content-Type","Value":"audio/mpeg"},{"Name":"ETag","Value":"\u0022W9U6AnrAXqBrv1T4P7a6dVstIzvLLJc9\u002BHVte1k\u002B9Ho=\u0022"},{"Name":"Last-Modified","Value":"Thu, 13 Feb 2025 07:30:58 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"4440117"},{"Name":"Content-Type","Value":"audio/mpeg"},{"Name":"ETag","Value":"\u0022W9U6AnrAXqBrv1T4P7a6dVstIzvLLJc9\u002BHVte1k\u002B9Ho=\u0022"},{"Name":"Last-Modified","Value":"Thu, 13 Feb 2025 07:30:57 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/MelodyFlowApi/music/2d98ee0e-baf9-441e-abb5-abc0ac9516a6_Ariana Grande - 7 rings (Official Video).vzhdpoamxc.mp3">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\music\2d98ee0e-baf9-441e-abb5-abc0ac9516a6_Ariana Grande - 7 rings (Official Video).mp3'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"vzhdpoamxc"},{"Name":"integrity","Value":"sha256-W9U6AnrAXqBrv1T4P7a6dVstIzvLLJc9\u002BHVte1k\u002B9Ho="},{"Name":"label","Value":"_content/MelodyFlowApi/music/2d98ee0e-baf9-441e-abb5-abc0ac9516a6_Ariana Grande - 7 rings (Official Video).mp3"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"4440117"},{"Name":"Content-Type","Value":"audio/mpeg"},{"Name":"ETag","Value":"\u0022W9U6AnrAXqBrv1T4P7a6dVstIzvLLJc9\u002BHVte1k\u002B9Ho=\u0022"},{"Name":"Last-Modified","Value":"Thu, 13 Feb 2025 07:30:58 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"4440117"},{"Name":"Content-Type","Value":"audio/mpeg"},{"Name":"ETag","Value":"\u0022W9U6AnrAXqBrv1T4P7a6dVstIzvLLJc9\u002BHVte1k\u002B9Ho=\u0022"},{"Name":"Last-Modified","Value":"Thu, 13 Feb 2025 07:30:57 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/MelodyFlowApi/music/4c74b7c9-ced4-4bc4-9ff0-b43506ae448c_deshwalkinastreet.mp3">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\music\4c74b7c9-ced4-4bc4-9ff0-b43506ae448c_deshwalkinastreet.mp3'))</AssetFile>

@@ -8,6 +8,7 @@ export default function UserPage() {
   const { id } = useParams(); 
   const navigate = useNavigate();
   const [account, setAccount] = useState({});
+  const [musics, setMusics] = useState([]);
   useEffect(() => {
     try {
       api.get("/user/GetProfile?Id="+id)
@@ -17,6 +18,11 @@ export default function UserPage() {
     } catch (error) {
       console.log("Hiba történt a profil lekérése közben:",error);
     }
+    api.get("/music/GetMusicByUploader?id="+id)
+      .then(response=>{
+        setMusics(response.data);
+        console.log(response.data)
+      })
   }, [id])
   
   useEffect(() => {
@@ -51,7 +57,7 @@ export default function UserPage() {
               {account?.username}
             </Text>
             <Text fontSize="md">
-              2 zene
+            {musics.length} zene
             </Text>
           </Box>
         </Flex>
