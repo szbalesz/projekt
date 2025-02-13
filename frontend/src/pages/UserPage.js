@@ -1,8 +1,9 @@
-import { Box, Flex, Text, Heading } from '@chakra-ui/react';
+import { Box, Flex, Text, Heading, Button } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
 import { Image } from "@chakra-ui/react"
 import { useNavigate, useParams } from 'react-router-dom';
 import api from '../Api';
+import MusicCard from '../MusicCard';
 
 export default function UserPage() {
   const { id } = useParams(); 
@@ -42,12 +43,13 @@ export default function UserPage() {
         position={"relative"}
       >
         <Flex direction={"row"} p={"5"}>
-          <Image
-            src={account?.profilePictureURL}
+          <Button
+            backgroundImage={`url(${account?.profilePictureURL})`}
             boxSize={"150px"}
+            variant={"outline"}
+            colorPalette={"teal"}
             borderRadius={"full"}
             fit={"cover"}
-            alt="Profilkép"
           />
           <Box px={"5"} py={"5"}>
             <Text fontSize="sm">
@@ -64,6 +66,7 @@ export default function UserPage() {
         <hr/>
         <Flex p={"5"} direction={"column"}>
           <Heading>Zenék</Heading>
+          <Flex wrap="wrap" gap={4} width="100%">{musics.map((music, index) => <MusicCard key={index} music={music} />)}</Flex>
         </Flex>
       </Box>: 
       ""}

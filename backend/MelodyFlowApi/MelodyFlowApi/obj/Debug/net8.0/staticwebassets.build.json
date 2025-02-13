@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "5+FTBd1UhxJeiuUTZXeU6H4hjJxGlhm7eQgRVApbWUo=",
+  "Hash": "zIj3NUlxLjYvNvxSvmgtrZRQEtb3QnMYbJtX6RmDtqw=",
   "Source": "MelodyFlowApi",
   "BasePath": "_content/MelodyFlowApi",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "MelodyFlowApi\\wwwroot",
       "Source": "MelodyFlowApi",
-      "ContentRoot": "C:\\Users\\Tanulo\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\Tanulo\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\2d98ee0e-baf9-441e-abb5-abc0ac9516a6_Ariana Grande - 7 rings (Official Video).mp3",
+      "Identity": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\2d98ee0e-baf9-441e-abb5-abc0ac9516a6_Ariana Grande - 7 rings (Official Video).mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tanulo\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
       "RelativePath": "music/2d98ee0e-baf9-441e-abb5-abc0ac9516a6_Ariana Grande - 7 rings (Official Video)#[.{fingerprint}]?.mp3",
       "AssetKind": "All",
@@ -38,10 +38,10 @@
       "OriginalItemSpec": "wwwroot\\music\\2d98ee0e-baf9-441e-abb5-abc0ac9516a6_Ariana Grande - 7 rings (Official Video).mp3"
     },
     {
-      "Identity": "C:\\Users\\Tanulo\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\4c74b7c9-ced4-4bc4-9ff0-b43506ae448c_deshwalkinastreet.mp3",
+      "Identity": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\4c74b7c9-ced4-4bc4-9ff0-b43506ae448c_deshwalkinastreet.mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tanulo\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
       "RelativePath": "music/4c74b7c9-ced4-4bc4-9ff0-b43506ae448c_deshwalkinastreet#[.{fingerprint}]?.mp3",
       "AssetKind": "All",
@@ -59,10 +59,10 @@
       "OriginalItemSpec": "wwwroot\\music\\4c74b7c9-ced4-4bc4-9ff0-b43506ae448c_deshwalkinastreet.mp3"
     },
     {
-      "Identity": "C:\\Users\\Tanulo\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\6cfd77a9-b029-4de8-be5c-d670e513b409_Gyémi - Billie Jean Official music video.mp3",
+      "Identity": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\6cfd77a9-b029-4de8-be5c-d670e513b409_Gyémi - Billie Jean Official music video.mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tanulo\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
       "RelativePath": "music/6cfd77a9-b029-4de8-be5c-d670e513b409_Gyémi - Billie Jean Official music video#[.{fingerprint}]?.mp3",
       "AssetKind": "All",
@@ -80,10 +80,10 @@
       "OriginalItemSpec": "wwwroot\\music\\6cfd77a9-b029-4de8-be5c-d670e513b409_Gyémi - Billie Jean Official music video.mp3"
     },
     {
-      "Identity": "C:\\Users\\Tanulo\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\83add612-6180-4c49-af2f-84918412c551_LMEN PRALA - A KARRIEREM LESZROM OFFICIAL MUSIC VIDEO  PROD. BY SMITHMUSIX.mp3",
+      "Identity": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\83add612-6180-4c49-af2f-84918412c551_LMEN PRALA - A KARRIEREM LESZROM OFFICIAL MUSIC VIDEO  PROD. BY SMITHMUSIX.mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tanulo\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
       "RelativePath": "music/83add612-6180-4c49-af2f-84918412c551_LMEN PRALA - A KARRIEREM LESZROM OFFICIAL MUSIC VIDEO  PROD. BY SMITHMUSIX#[.{fingerprint}]?.mp3",
       "AssetKind": "All",
@@ -101,10 +101,10 @@
       "OriginalItemSpec": "wwwroot\\music\\83add612-6180-4c49-af2f-84918412c551_LMEN PRALA - A KARRIEREM LESZROM OFFICIAL MUSIC VIDEO  PROD. BY SMITHMUSIX.mp3"
     },
     {
-      "Identity": "C:\\Users\\Tanulo\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\8e589e6a-881f-4df4-996d-597482f6e185_Katy Perry - Firework (Official Music Video).mp3",
+      "Identity": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\8e589e6a-881f-4df4-996d-597482f6e185_Katy Perry - Firework (Official Music Video).mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tanulo\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
       "RelativePath": "music/8e589e6a-881f-4df4-996d-597482f6e185_Katy Perry - Firework (Official Music Video)#[.{fingerprint}]?.mp3",
       "AssetKind": "All",
@@ -122,10 +122,10 @@
       "OriginalItemSpec": "wwwroot\\music\\8e589e6a-881f-4df4-996d-597482f6e185_Katy Perry - Firework (Official Music Video).mp3"
     },
     {
-      "Identity": "C:\\Users\\Tanulo\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\cde7a600-37c6-4332-a889-ef4811b6e7e0_JABER X T. Danny - MILLIÓK (Official Music Video).mp3",
+      "Identity": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\cde7a600-37c6-4332-a889-ef4811b6e7e0_JABER X T. Danny - MILLIÓK (Official Music Video).mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tanulo\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
       "RelativePath": "music/cde7a600-37c6-4332-a889-ef4811b6e7e0_JABER X T. Danny - MILLIÓK (Official Music Video)#[.{fingerprint}]?.mp3",
       "AssetKind": "All",
@@ -143,10 +143,10 @@
       "OriginalItemSpec": "wwwroot\\music\\cde7a600-37c6-4332-a889-ef4811b6e7e0_JABER X T. Danny - MILLIÓK (Official Music Video).mp3"
     },
     {
-      "Identity": "C:\\Users\\Tanulo\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\cf7d8fbd-2072-4ed1-8fe8-ef7b6733fddc_KKevin - PROSECCO ft. Bruno (Official Music Video).mp3",
+      "Identity": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\cf7d8fbd-2072-4ed1-8fe8-ef7b6733fddc_KKevin - PROSECCO ft. Bruno (Official Music Video).mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tanulo\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
       "RelativePath": "music/cf7d8fbd-2072-4ed1-8fe8-ef7b6733fddc_KKevin - PROSECCO ft. Bruno (Official Music Video)#[.{fingerprint}]?.mp3",
       "AssetKind": "All",
@@ -164,10 +164,10 @@
       "OriginalItemSpec": "wwwroot\\music\\cf7d8fbd-2072-4ed1-8fe8-ef7b6733fddc_KKevin - PROSECCO ft. Bruno (Official Music Video).mp3"
     },
     {
-      "Identity": "C:\\Users\\Tanulo\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\e228040b-4f28-4f53-b910-1cf5d693e53d_Koboldok.mp3",
+      "Identity": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\e228040b-4f28-4f53-b910-1cf5d693e53d_Koboldok.mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tanulo\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
       "RelativePath": "music/e228040b-4f28-4f53-b910-1cf5d693e53d_Koboldok#[.{fingerprint}]?.mp3",
       "AssetKind": "All",
@@ -185,10 +185,10 @@
       "OriginalItemSpec": "wwwroot\\music\\e228040b-4f28-4f53-b910-1cf5d693e53d_Koboldok.mp3"
     },
     {
-      "Identity": "C:\\Users\\Tanulo\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\e50cf012-93be-4df5-8a53-3e9800f1fd29_Azahriah - cipoe.mp3",
+      "Identity": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\e50cf012-93be-4df5-8a53-3e9800f1fd29_Azahriah - cipoe.mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tanulo\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
       "RelativePath": "music/e50cf012-93be-4df5-8a53-3e9800f1fd29_Azahriah - cipoe#[.{fingerprint}]?.mp3",
       "AssetKind": "All",
@@ -209,7 +209,7 @@
   "Endpoints": [
     {
       "Route": "music/2d98ee0e-baf9-441e-abb5-abc0ac9516a6_Ariana Grande - 7 rings (Official Video).mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\2d98ee0e-baf9-441e-abb5-abc0ac9516a6_Ariana Grande - 7 rings (Official Video).mp3",
+      "AssetFile": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\2d98ee0e-baf9-441e-abb5-abc0ac9516a6_Ariana Grande - 7 rings (Official Video).mp3",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -230,7 +230,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 07:30:58 GMT"
+          "Value": "Thu, 13 Feb 2025 10:43:36 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -246,7 +246,7 @@
     },
     {
       "Route": "music/2d98ee0e-baf9-441e-abb5-abc0ac9516a6_Ariana Grande - 7 rings (Official Video).vzhdpoamxc.mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\2d98ee0e-baf9-441e-abb5-abc0ac9516a6_Ariana Grande - 7 rings (Official Video).mp3",
+      "AssetFile": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\2d98ee0e-baf9-441e-abb5-abc0ac9516a6_Ariana Grande - 7 rings (Official Video).mp3",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -267,7 +267,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 07:30:58 GMT"
+          "Value": "Thu, 13 Feb 2025 10:43:36 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -291,7 +291,7 @@
     },
     {
       "Route": "music/4c74b7c9-ced4-4bc4-9ff0-b43506ae448c_deshwalkinastreet.mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\4c74b7c9-ced4-4bc4-9ff0-b43506ae448c_deshwalkinastreet.mp3",
+      "AssetFile": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\4c74b7c9-ced4-4bc4-9ff0-b43506ae448c_deshwalkinastreet.mp3",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -312,7 +312,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 07:30:58 GMT"
+          "Value": "Thu, 13 Feb 2025 10:43:36 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -328,7 +328,7 @@
     },
     {
       "Route": "music/4c74b7c9-ced4-4bc4-9ff0-b43506ae448c_deshwalkinastreet.t2e4y29ftp.mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\4c74b7c9-ced4-4bc4-9ff0-b43506ae448c_deshwalkinastreet.mp3",
+      "AssetFile": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\4c74b7c9-ced4-4bc4-9ff0-b43506ae448c_deshwalkinastreet.mp3",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -349,7 +349,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 07:30:58 GMT"
+          "Value": "Thu, 13 Feb 2025 10:43:36 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -373,7 +373,7 @@
     },
     {
       "Route": "music/6cfd77a9-b029-4de8-be5c-d670e513b409_Gyémi - Billie Jean Official music video.04nx4vc7qe.mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\6cfd77a9-b029-4de8-be5c-d670e513b409_Gyémi - Billie Jean Official music video.mp3",
+      "AssetFile": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\6cfd77a9-b029-4de8-be5c-d670e513b409_Gyémi - Billie Jean Official music video.mp3",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -394,7 +394,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 07:30:58 GMT"
+          "Value": "Thu, 13 Feb 2025 10:43:36 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -418,7 +418,7 @@
     },
     {
       "Route": "music/6cfd77a9-b029-4de8-be5c-d670e513b409_Gyémi - Billie Jean Official music video.mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\6cfd77a9-b029-4de8-be5c-d670e513b409_Gyémi - Billie Jean Official music video.mp3",
+      "AssetFile": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\6cfd77a9-b029-4de8-be5c-d670e513b409_Gyémi - Billie Jean Official music video.mp3",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -439,7 +439,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 07:30:58 GMT"
+          "Value": "Thu, 13 Feb 2025 10:43:36 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -455,7 +455,7 @@
     },
     {
       "Route": "music/83add612-6180-4c49-af2f-84918412c551_LMEN PRALA - A KARRIEREM LESZROM OFFICIAL MUSIC VIDEO  PROD. BY SMITHMUSIX.8rta36ive1.mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\83add612-6180-4c49-af2f-84918412c551_LMEN PRALA - A KARRIEREM LESZROM OFFICIAL MUSIC VIDEO  PROD. BY SMITHMUSIX.mp3",
+      "AssetFile": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\83add612-6180-4c49-af2f-84918412c551_LMEN PRALA - A KARRIEREM LESZROM OFFICIAL MUSIC VIDEO  PROD. BY SMITHMUSIX.mp3",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -476,7 +476,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 07:30:58 GMT"
+          "Value": "Thu, 13 Feb 2025 10:43:36 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -500,7 +500,7 @@
     },
     {
       "Route": "music/83add612-6180-4c49-af2f-84918412c551_LMEN PRALA - A KARRIEREM LESZROM OFFICIAL MUSIC VIDEO  PROD. BY SMITHMUSIX.mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\83add612-6180-4c49-af2f-84918412c551_LMEN PRALA - A KARRIEREM LESZROM OFFICIAL MUSIC VIDEO  PROD. BY SMITHMUSIX.mp3",
+      "AssetFile": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\83add612-6180-4c49-af2f-84918412c551_LMEN PRALA - A KARRIEREM LESZROM OFFICIAL MUSIC VIDEO  PROD. BY SMITHMUSIX.mp3",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -521,7 +521,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 07:30:58 GMT"
+          "Value": "Thu, 13 Feb 2025 10:43:36 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -537,7 +537,7 @@
     },
     {
       "Route": "music/8e589e6a-881f-4df4-996d-597482f6e185_Katy Perry - Firework (Official Music Video).mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\8e589e6a-881f-4df4-996d-597482f6e185_Katy Perry - Firework (Official Music Video).mp3",
+      "AssetFile": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\8e589e6a-881f-4df4-996d-597482f6e185_Katy Perry - Firework (Official Music Video).mp3",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -558,7 +558,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 07:30:58 GMT"
+          "Value": "Thu, 13 Feb 2025 10:43:36 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -574,7 +574,7 @@
     },
     {
       "Route": "music/8e589e6a-881f-4df4-996d-597482f6e185_Katy Perry - Firework (Official Music Video).qypfd6cdg5.mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\8e589e6a-881f-4df4-996d-597482f6e185_Katy Perry - Firework (Official Music Video).mp3",
+      "AssetFile": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\8e589e6a-881f-4df4-996d-597482f6e185_Katy Perry - Firework (Official Music Video).mp3",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -595,7 +595,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 07:30:58 GMT"
+          "Value": "Thu, 13 Feb 2025 10:43:36 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -619,7 +619,7 @@
     },
     {
       "Route": "music/cde7a600-37c6-4332-a889-ef4811b6e7e0_JABER X T. Danny - MILLIÓK (Official Music Video).ed8k43zejd.mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\cde7a600-37c6-4332-a889-ef4811b6e7e0_JABER X T. Danny - MILLIÓK (Official Music Video).mp3",
+      "AssetFile": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\cde7a600-37c6-4332-a889-ef4811b6e7e0_JABER X T. Danny - MILLIÓK (Official Music Video).mp3",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -640,7 +640,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 07:30:58 GMT"
+          "Value": "Thu, 13 Feb 2025 10:43:36 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -664,7 +664,7 @@
     },
     {
       "Route": "music/cde7a600-37c6-4332-a889-ef4811b6e7e0_JABER X T. Danny - MILLIÓK (Official Music Video).mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\cde7a600-37c6-4332-a889-ef4811b6e7e0_JABER X T. Danny - MILLIÓK (Official Music Video).mp3",
+      "AssetFile": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\cde7a600-37c6-4332-a889-ef4811b6e7e0_JABER X T. Danny - MILLIÓK (Official Music Video).mp3",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -685,7 +685,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 07:30:58 GMT"
+          "Value": "Thu, 13 Feb 2025 10:43:36 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -701,7 +701,7 @@
     },
     {
       "Route": "music/cf7d8fbd-2072-4ed1-8fe8-ef7b6733fddc_KKevin - PROSECCO ft. Bruno (Official Music Video).gpwf8k3yih.mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\cf7d8fbd-2072-4ed1-8fe8-ef7b6733fddc_KKevin - PROSECCO ft. Bruno (Official Music Video).mp3",
+      "AssetFile": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\cf7d8fbd-2072-4ed1-8fe8-ef7b6733fddc_KKevin - PROSECCO ft. Bruno (Official Music Video).mp3",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -722,7 +722,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 07:30:58 GMT"
+          "Value": "Thu, 13 Feb 2025 10:43:36 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -746,7 +746,7 @@
     },
     {
       "Route": "music/cf7d8fbd-2072-4ed1-8fe8-ef7b6733fddc_KKevin - PROSECCO ft. Bruno (Official Music Video).mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\cf7d8fbd-2072-4ed1-8fe8-ef7b6733fddc_KKevin - PROSECCO ft. Bruno (Official Music Video).mp3",
+      "AssetFile": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\cf7d8fbd-2072-4ed1-8fe8-ef7b6733fddc_KKevin - PROSECCO ft. Bruno (Official Music Video).mp3",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -767,7 +767,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 07:30:58 GMT"
+          "Value": "Thu, 13 Feb 2025 10:43:36 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -783,7 +783,7 @@
     },
     {
       "Route": "music/e228040b-4f28-4f53-b910-1cf5d693e53d_Koboldok.30pdqqj9xg.mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\e228040b-4f28-4f53-b910-1cf5d693e53d_Koboldok.mp3",
+      "AssetFile": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\e228040b-4f28-4f53-b910-1cf5d693e53d_Koboldok.mp3",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -804,7 +804,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 07:30:58 GMT"
+          "Value": "Thu, 13 Feb 2025 10:43:36 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -828,7 +828,7 @@
     },
     {
       "Route": "music/e228040b-4f28-4f53-b910-1cf5d693e53d_Koboldok.mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\e228040b-4f28-4f53-b910-1cf5d693e53d_Koboldok.mp3",
+      "AssetFile": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\e228040b-4f28-4f53-b910-1cf5d693e53d_Koboldok.mp3",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -849,7 +849,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 07:30:58 GMT"
+          "Value": "Thu, 13 Feb 2025 10:43:36 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -865,7 +865,7 @@
     },
     {
       "Route": "music/e50cf012-93be-4df5-8a53-3e9800f1fd29_Azahriah - cipoe.94ycgm5c6t.mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\e50cf012-93be-4df5-8a53-3e9800f1fd29_Azahriah - cipoe.mp3",
+      "AssetFile": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\e50cf012-93be-4df5-8a53-3e9800f1fd29_Azahriah - cipoe.mp3",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -886,7 +886,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 07:30:58 GMT"
+          "Value": "Thu, 13 Feb 2025 10:43:36 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -910,7 +910,7 @@
     },
     {
       "Route": "music/e50cf012-93be-4df5-8a53-3e9800f1fd29_Azahriah - cipoe.mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\e50cf012-93be-4df5-8a53-3e9800f1fd29_Azahriah - cipoe.mp3",
+      "AssetFile": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\e50cf012-93be-4df5-8a53-3e9800f1fd29_Azahriah - cipoe.mp3",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -931,7 +931,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 07:30:58 GMT"
+          "Value": "Thu, 13 Feb 2025 10:43:36 GMT"
         },
         {
           "Name": "Cache-Control",
