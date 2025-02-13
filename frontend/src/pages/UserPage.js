@@ -1,15 +1,16 @@
 import { Box, Flex, Text, Heading, Button } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
-import { Image } from "@chakra-ui/react"
 import { useNavigate, useParams } from 'react-router-dom';
 import api from '../Api';
 import MusicCard from '../MusicCard';
+import PlaylistCard from '../PlaylistCard';
 
 export default function UserPage() {
   const { id } = useParams(); 
   const navigate = useNavigate();
   const [account, setAccount] = useState({});
   const [musics, setMusics] = useState([]);
+  const [playlists, setPlaylists] = useState([]);
   useEffect(() => {
     try {
       api.get("/user/GetProfile?Id="+id)
@@ -25,7 +26,18 @@ export default function UserPage() {
         console.log(response.data)
       })
   }, [id])
+  const getPlaylists=()=>{
+    
+      api.get("/playlist/GetAllPlaylist")
+      .then(response => {
+          setPlaylists(response.data);
+      })
+      .catch(e => {console.error("HIBA, Nem sikerült lekérni a lejátszási listák: ",e)})
+}
+useEffect(() => {
+    getPlaylists();
   
+}, [])
   useEffect(() => {
     if(!account){
       navigate("/");
@@ -66,7 +78,10 @@ export default function UserPage() {
         <hr/>
         <Flex p={"5"} direction={"column"}>
           <Heading>Zenék</Heading>
-          <Flex wrap="wrap" gap={4} width="100%">{musics.map((music, index) => <MusicCard key={index} music={music} />)}</Flex>
+          <Flex m={"3"} wrap="wrap" gap={4} width="100%">{musics.map((music, index) => <MusicCard key={index} music={music} />)}</Flex>
+          <hr />
+          <Heading>Lejátszási listák</Heading>
+          <Flex m={"3"} wrap="wrap" gap={4} width="100%">{playlists.map((playlist, index) => <PlaylistCard key={index} playlist={playlist} />)}</Flex>
         </Flex>
       </Box>: 
       ""}
