@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2025. Feb 11. 13:00
+-- Létrehozás ideje: 2025. Feb 13. 08:35
 -- Kiszolgáló verziója: 10.4.20-MariaDB
 -- PHP verzió: 7.3.29
 
@@ -190,13 +190,6 @@ CREATE TABLE `playlistmusic` (
   `MusicId` varchar(36) COLLATE utf8mb4_hungarian_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
 
---
--- A tábla adatainak kiíratása `playlistmusic`
---
-
-INSERT INTO `playlistmusic` (`PlaylistId`, `MusicId`) VALUES
-('50c947c5-d196-11ef-a697-701ab8764395', 'a6fee57b-8ac3-4ea1-a036-8714925b4f3a');
-
 -- --------------------------------------------------------
 
 --
@@ -298,14 +291,16 @@ ALTER TABLE `playlist`
 --
 ALTER TABLE `playlistmusic`
   ADD PRIMARY KEY (`PlaylistId`,`MusicId`),
-  ADD KEY `PlaylistId` (`PlaylistId`,`MusicId`);
+  ADD KEY `PlaylistId` (`PlaylistId`,`MusicId`),
+  ADD KEY `MusicId` (`MusicId`);
 
 --
 -- A tábla indexei `userplaylist`
 --
 ALTER TABLE `userplaylist`
   ADD PRIMARY KEY (`UserId`,`PlaylistId`),
-  ADD KEY `UserId` (`UserId`,`PlaylistId`);
+  ADD KEY `UserId` (`UserId`,`PlaylistId`),
+  ADD KEY `PlaylistId` (`PlaylistId`);
 
 --
 -- A tábla indexei `__efmigrationshistory`
@@ -363,6 +358,20 @@ ALTER TABLE `aspnetuserroles`
 --
 ALTER TABLE `aspnetusertokens`
   ADD CONSTRAINT `FK_AspNetUserTokens_AspNetUsers_UserId` FOREIGN KEY (`UserId`) REFERENCES `aspnetusers` (`Id`) ON DELETE CASCADE;
+
+--
+-- Megkötések a táblához `playlistmusic`
+--
+ALTER TABLE `playlistmusic`
+  ADD CONSTRAINT `playlistmusic_ibfk_1` FOREIGN KEY (`MusicId`) REFERENCES `music` (`Id`),
+  ADD CONSTRAINT `playlistmusic_ibfk_2` FOREIGN KEY (`PlaylistId`) REFERENCES `playlist` (`Id`);
+
+--
+-- Megkötések a táblához `userplaylist`
+--
+ALTER TABLE `userplaylist`
+  ADD CONSTRAINT `userplaylist_ibfk_1` FOREIGN KEY (`UserId`) REFERENCES `aspnetusers` (`Id`),
+  ADD CONSTRAINT `userplaylist_ibfk_2` FOREIGN KEY (`PlaylistId`) REFERENCES `playlist` (`Id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
