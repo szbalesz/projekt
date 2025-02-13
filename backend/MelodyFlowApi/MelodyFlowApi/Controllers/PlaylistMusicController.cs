@@ -24,9 +24,15 @@ namespace MelodyFlowApi.Controllers
             return Ok(playlistmusic);
         }
         [HttpGet("GetMusicFromPlaylist")]
-        public async Task<ActionResult<Playlistmusic>> GetMusicFromPlaylist(string id)
+        public async Task<ActionResult<object>> GetMusicFromPlaylist(string id)
         {
-            return Ok(await _context.Playlistmusics.Where(f=>f.PlaylistId==id).Select(f=>f.MusicId).ToListAsync());
+            List<string> MusicIds = await _context.Playlistmusics.Where(f => f.PlaylistId == id).Select(f => f.MusicId).ToListAsync();
+            List<Music> Musics = new List<Music>();
+            foreach (var mid in MusicIds)
+            {
+                Musics.Add(await _context.Musics.FirstOrDefaultAsync(m => m.Id == mid));
+            }
+            return Ok(Musics);
         }
     }
 }
