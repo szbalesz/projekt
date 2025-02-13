@@ -29,12 +29,6 @@ export default function Footer({currentMusic}) {
             </Image>
           </HStack>
 
-          {/* Navigációs Linkek */}
-          <HStack w={{lg: "300px"}} spacing={8} fontSize="sm">
-            <Link to="/about" >
-              Rólunk
-            </Link>
-          </HStack>
 
           {/* Social ikonok */}
           <HStack spacing={4} fontSize="xl">
@@ -68,6 +62,11 @@ export default function Footer({currentMusic}) {
             <ChakraLink href="#license">
             Licencmegállapodás
             </ChakraLink>
+            <Link to="/about" >
+              <ChakraLink>
+                Rólunk
+              </ChakraLink>
+            </Link>
           </HStack>
         </Stack>
       </Container>

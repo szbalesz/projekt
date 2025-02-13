@@ -61,6 +61,8 @@ useEffect(() => {
             variant={"outline"}
             colorPalette={"teal"}
             borderRadius={"full"}
+            backgroundSize={"cover"}
+            backgroundPosition={"center"}
             fit={"cover"}
           />
           <Box px={"5"} py={"5"}>
