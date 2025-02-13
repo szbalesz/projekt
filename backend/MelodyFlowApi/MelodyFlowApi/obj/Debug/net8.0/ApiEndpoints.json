@@ -280,7 +280,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "MelodyFlowApi.Models.Userplaylist",
+        "Type": "MelodyFlowApi.Models.Playlist",
         "MediaTypes": [
           "text/plain",
           "application/json",

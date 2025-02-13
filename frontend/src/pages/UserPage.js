@@ -25,19 +25,15 @@ export default function UserPage() {
         setMusics(response.data);
         console.log(response.data)
       })
+      getPlaylists();
   }, [id])
   const getPlaylists=()=>{
-    
-      api.get("/playlist/GetAllPlaylist")
-      .then(response => {
-          setPlaylists(response.data);
-      })
-      .catch(e => {console.error("HIBA, Nem sikerült lekérni a lejátszási listák: ",e)})
-}
-useEffect(() => {
-    getPlaylists();
-  
-}, [])
+        api.get("/UserPlaylist/GetPlaylistByUser?id="+id)
+        .then(response => {
+            setPlaylists(response.data);
+        })
+        .catch(e => {console.error("HIBA, Nem sikerült lekérni a lejátszási listák: ",e)})
+  }
   useEffect(() => {
     if(!account){
       navigate("/");

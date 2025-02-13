@@ -39,7 +39,6 @@ export default function PlaylistPage() {
   return (
     <div>
       <Flex display="block" justifyContent="center">
-        <Heading textAlign="center"> {playlist?.playlistName} </Heading>
         <Center>
           <Flex wrap="wrap" justify="center" gap={4} width="100%">
             {isPending ? (
