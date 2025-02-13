@@ -69,17 +69,17 @@ export default function UserPage() {
               {account?.username}
             </Text>
             <Text fontSize="md">
-            {musics.length} zene
+            {musics?.length} zene
             </Text>
           </Box>
         </Flex>
         <hr/>
         <Flex p={"5"} direction={"column"}>
           <Heading>Zenék</Heading>
-          <Flex m={"3"} wrap="wrap" gap={4} width="100%">{musics.map((music, index) => <MusicCard key={index} music={music} />)}</Flex>
+          <Flex my={"3"} overflowX={"auto"} gap={4} width="100%">{musics.map((music, index) => <MusicCard key={index} music={music} />)}</Flex>
           <hr />
           <Heading>Lejátszási listák</Heading>
-          <Flex m={"3"} wrap="wrap" gap={4} width="100%">{playlists.map((playlist, index) => <PlaylistCard key={index} playlist={playlist} />)}</Flex>
+          <Flex my={"3"} overflowX={"auto"} gap={4} width="100%">{playlists.map((playlist, index) => <PlaylistCard key={index} playlist={playlist} />)}</Flex>
         </Flex>
       </Box>: 
       ""}

@@ -12,7 +12,20 @@ code {
     monospace;
 }
 
-/* Scrollbar eltüntetése */
 ::-webkit-scrollbar {
   width: 0px;
+  height: 0.75vh;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #319795; /* Chakra UI teal.500 */
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2c7a7b; /* Chakra UI teal.600 */
 }
