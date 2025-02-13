@@ -253,6 +253,44 @@
         }
       }
     },
+    "/api/music/GetMusicById": {
+      "get": {
+        "tags": [
+          "Music"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Music"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Music"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Music"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/playlist/GetAllPlaylist": {
       "get": {
         "tags": [

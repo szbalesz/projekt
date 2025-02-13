@@ -71,5 +71,10 @@ namespace MelodyFlowApi.Controllers
         {
             return Ok(await _context.Musics.Where(f=>f.UploaderId==id).ToListAsync());
         }
+        [HttpGet("GetMusicById")]
+        public async Task<ActionResult<Music>> GetMusicById(string id)
+        {
+            return Ok(await _context.Musics.Where(f => f.Id == id).ToListAsync());
+        }
     }
 }
