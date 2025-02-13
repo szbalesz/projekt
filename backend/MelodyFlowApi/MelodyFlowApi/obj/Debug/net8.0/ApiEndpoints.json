@@ -95,6 +95,32 @@
   },
   {
     "ContainingType": "MelodyFlowApi.Controllers.MusicController",
+    "Method": "GetMusicByUploader",
+    "RelativePath": "api/music/GetMusicByUploader",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MelodyFlowApi.Models.Music",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MelodyFlowApi.Controllers.MusicController",
     "Method": "UploadFile",
     "RelativePath": "api/music/UploadMusic",
     "HttpMethod": "POST",

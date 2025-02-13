@@ -64,6 +64,12 @@ namespace MelodyFlowApi.Controllers
             {
                 return StatusCode(500, $"Hiba történt: {ex.Message}");
             }
+
+        }
+        [HttpGet("GetMusicByUploader")]
+        public async Task<ActionResult<Music>> GetMusicByUploader(string id)
+        {
+            return Ok(await _context.Musics.Where(f=>f.UploaderId==id).ToListAsync());
         }
     }
 }

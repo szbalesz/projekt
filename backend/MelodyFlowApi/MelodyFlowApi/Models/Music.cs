@@ -17,5 +17,7 @@ public partial class Music
 
     public string UploaderId { get; set; } = null!;
     public virtual ICollection<Playlist> Playlists { get; set; } = new List<Playlist>();
+    public virtual ICollection<Aspnetuser> Aspnetusers { get; set; } = new List<Aspnetuser>();
+
 
 }
