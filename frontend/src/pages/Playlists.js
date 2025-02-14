@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { Heading, Flex, Center, Spinner, AbsoluteCenter } from "@chakra-ui/react";
+import { Heading, Flex, Center, Spinner, AbsoluteCenter, Button } from "@chakra-ui/react";
 import PlaylistCard from '../PlaylistCard';
 import api from '../Api';
 import Cookies from "js-cookie"
+import PlaylistWindow from './PlaylistWindow';
 
 export default function Playlists() {
   const [playlists, setPlaylists] = useState()
@@ -37,6 +38,7 @@ export default function Playlists() {
   return (
     <>
       <Flex display="block" justifyContent="center">
+        <PlaylistWindow/>
         <Heading textAlign="center"> Lejátszási listák </Heading>
          <Center>
           {isPending? 

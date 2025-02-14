@@ -729,7 +729,6 @@ C:\Users\Tanulo\Desktop\projekt\projekt\backend\MelodyFlowApi\MelodyFlowApi\bin\
 C:\Users\Tanulo\csehit\projekt\backend\MelodyFlowApi\MelodyFlowApi\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\Tanulo\csehit\projekt\backend\MelodyFlowApi\MelodyFlowApi\bin\Debug\net8.0\appsettings.json
 C:\Users\Tanulo\csehit\projekt\backend\MelodyFlowApi\MelodyFlowApi\bin\Debug\net8.0\MelodyFlowApi.staticwebassets.runtime.json
-C:\Users\Tanulo\csehit\projekt\backend\MelodyFlowApi\MelodyFlowApi\bin\Debug\net8.0\MelodyFlowApi.staticwebassets.endpoints.json
 C:\Users\Tanulo\csehit\projekt\backend\MelodyFlowApi\MelodyFlowApi\bin\Debug\net8.0\MelodyFlowApi.exe
 C:\Users\Tanulo\csehit\projekt\backend\MelodyFlowApi\MelodyFlowApi\bin\Debug\net8.0\MelodyFlowApi.deps.json
 C:\Users\Tanulo\csehit\projekt\backend\MelodyFlowApi\MelodyFlowApi\bin\Debug\net8.0\MelodyFlowApi.runtimeconfig.json
@@ -861,14 +860,11 @@ C:\Users\Tanulo\csehit\projekt\backend\MelodyFlowApi\MelodyFlowApi\obj\Debug\net
 C:\Users\Tanulo\csehit\projekt\backend\MelodyFlowApi\MelodyFlowApi\obj\Debug\net8.0\scopedcss\bundle\MelodyFlowApi.styles.css
 C:\Users\Tanulo\csehit\projekt\backend\MelodyFlowApi\MelodyFlowApi\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\Tanulo\csehit\projekt\backend\MelodyFlowApi\MelodyFlowApi\obj\Debug\net8.0\staticwebassets.development.json
-C:\Users\Tanulo\csehit\projekt\backend\MelodyFlowApi\MelodyFlowApi\obj\Debug\net8.0\staticwebassets.build.endpoints.json
 C:\Users\Tanulo\csehit\projekt\backend\MelodyFlowApi\MelodyFlowApi\obj\Debug\net8.0\staticwebassets\msbuild.MelodyFlowApi.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\Tanulo\csehit\projekt\backend\MelodyFlowApi\MelodyFlowApi\obj\Debug\net8.0\staticwebassets\msbuild.MelodyFlowApi.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
 C:\Users\Tanulo\csehit\projekt\backend\MelodyFlowApi\MelodyFlowApi\obj\Debug\net8.0\staticwebassets\msbuild.build.MelodyFlowApi.props
 C:\Users\Tanulo\csehit\projekt\backend\MelodyFlowApi\MelodyFlowApi\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.MelodyFlowApi.props
 C:\Users\Tanulo\csehit\projekt\backend\MelodyFlowApi\MelodyFlowApi\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.MelodyFlowApi.props
 C:\Users\Tanulo\csehit\projekt\backend\MelodyFlowApi\MelodyFlowApi\obj\Debug\net8.0\staticwebassets.pack.json
-C:\Users\Tanulo\csehit\projekt\backend\MelodyFlowApi\MelodyFlowApi\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\Tanulo\csehit\projekt\backend\MelodyFlowApi\MelodyFlowApi\obj\Debug\net8.0\MelodyFl.C0890F4F.Up2Date
 C:\Users\Tanulo\csehit\projekt\backend\MelodyFlowApi\MelodyFlowApi\obj\Debug\net8.0\MelodyFlowApi.dll
 C:\Users\Tanulo\csehit\projekt\backend\MelodyFlowApi\MelodyFlowApi\obj\Debug\net8.0\refint\MelodyFlowApi.dll
