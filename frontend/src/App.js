@@ -45,8 +45,9 @@ function App() {
       .then(response => {
         if (response.data.token) {
           setIsLoggedIn(true);
+          console.log(response)
           Cookies.set("token", response.data.token, { expires: 1, secure: true });
-          Cookies.set("userid", response.data.result.id, { expires: 1, secure: true });
+          Cookies.set("userid", response.data.id, { expires: 1, secure: true });
           toaster.create({ title: "Sikeres bejelentkezés!", type: "success" });
           navigate("/");
         } else {
