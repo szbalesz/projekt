@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "cKuJG3X2qvZDmAu1vqwdkNGwBB8p1lOafl9IDdisVIM=",
+  "Hash": "jJ767fkOKHnDdtIOOLfjHV/BBuE0Fo64Dzmeblm4rHY=",
   "Source": "MelodyFlowApi",
   "BasePath": "_content/MelodyFlowApi",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "MelodyFlowApi\\wwwroot",
       "Source": "MelodyFlowApi",
-      "ContentRoot": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tanulo\\Desktop\\projekt\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\2d98ee0e-baf9-441e-abb5-abc0ac9516a6_Ariana Grande - 7 rings (Official Video).mp3",
+      "Identity": "C:\\Users\\Tanulo\\Desktop\\projekt\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\2d98ee0e-baf9-441e-abb5-abc0ac9516a6_Ariana Grande - 7 rings (Official Video).mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tanulo\\Desktop\\projekt\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
       "RelativePath": "music/2d98ee0e-baf9-441e-abb5-abc0ac9516a6_Ariana Grande - 7 rings (Official Video).mp3",
       "AssetKind": "All",
@@ -36,10 +36,10 @@
       "OriginalItemSpec": "wwwroot\\music\\2d98ee0e-baf9-441e-abb5-abc0ac9516a6_Ariana Grande - 7 rings (Official Video).mp3"
     },
     {
-      "Identity": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\4c74b7c9-ced4-4bc4-9ff0-b43506ae448c_deshwalkinastreet.mp3",
+      "Identity": "C:\\Users\\Tanulo\\Desktop\\projekt\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\4c74b7c9-ced4-4bc4-9ff0-b43506ae448c_deshwalkinastreet.mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tanulo\\Desktop\\projekt\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
       "RelativePath": "music/4c74b7c9-ced4-4bc4-9ff0-b43506ae448c_deshwalkinastreet.mp3",
       "AssetKind": "All",
@@ -55,10 +55,10 @@
       "OriginalItemSpec": "wwwroot\\music\\4c74b7c9-ced4-4bc4-9ff0-b43506ae448c_deshwalkinastreet.mp3"
     },
     {
-      "Identity": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\6cfd77a9-b029-4de8-be5c-d670e513b409_Gyémi - Billie Jean Official music video.mp3",
+      "Identity": "C:\\Users\\Tanulo\\Desktop\\projekt\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\6cfd77a9-b029-4de8-be5c-d670e513b409_Gyémi - Billie Jean Official music video.mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tanulo\\Desktop\\projekt\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
       "RelativePath": "music/6cfd77a9-b029-4de8-be5c-d670e513b409_Gyémi - Billie Jean Official music video.mp3",
       "AssetKind": "All",
@@ -74,10 +74,10 @@
       "OriginalItemSpec": "wwwroot\\music\\6cfd77a9-b029-4de8-be5c-d670e513b409_Gyémi - Billie Jean Official music video.mp3"
     },
     {
-      "Identity": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\83add612-6180-4c49-af2f-84918412c551_LMEN PRALA - A KARRIEREM LESZROM OFFICIAL MUSIC VIDEO  PROD. BY SMITHMUSIX.mp3",
+      "Identity": "C:\\Users\\Tanulo\\Desktop\\projekt\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\83add612-6180-4c49-af2f-84918412c551_LMEN PRALA - A KARRIEREM LESZROM OFFICIAL MUSIC VIDEO  PROD. BY SMITHMUSIX.mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tanulo\\Desktop\\projekt\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
       "RelativePath": "music/83add612-6180-4c49-af2f-84918412c551_LMEN PRALA - A KARRIEREM LESZROM OFFICIAL MUSIC VIDEO  PROD. BY SMITHMUSIX.mp3",
       "AssetKind": "All",
@@ -93,10 +93,10 @@
       "OriginalItemSpec": "wwwroot\\music\\83add612-6180-4c49-af2f-84918412c551_LMEN PRALA - A KARRIEREM LESZROM OFFICIAL MUSIC VIDEO  PROD. BY SMITHMUSIX.mp3"
     },
     {
-      "Identity": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\8e589e6a-881f-4df4-996d-597482f6e185_Katy Perry - Firework (Official Music Video).mp3",
+      "Identity": "C:\\Users\\Tanulo\\Desktop\\projekt\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\8e589e6a-881f-4df4-996d-597482f6e185_Katy Perry - Firework (Official Music Video).mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tanulo\\Desktop\\projekt\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
       "RelativePath": "music/8e589e6a-881f-4df4-996d-597482f6e185_Katy Perry - Firework (Official Music Video).mp3",
       "AssetKind": "All",
@@ -112,10 +112,10 @@
       "OriginalItemSpec": "wwwroot\\music\\8e589e6a-881f-4df4-996d-597482f6e185_Katy Perry - Firework (Official Music Video).mp3"
     },
     {
-      "Identity": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\cde7a600-37c6-4332-a889-ef4811b6e7e0_JABER X T. Danny - MILLIÓK (Official Music Video).mp3",
+      "Identity": "C:\\Users\\Tanulo\\Desktop\\projekt\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\cde7a600-37c6-4332-a889-ef4811b6e7e0_JABER X T. Danny - MILLIÓK (Official Music Video).mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tanulo\\Desktop\\projekt\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
       "RelativePath": "music/cde7a600-37c6-4332-a889-ef4811b6e7e0_JABER X T. Danny - MILLIÓK (Official Music Video).mp3",
       "AssetKind": "All",
@@ -131,10 +131,10 @@
       "OriginalItemSpec": "wwwroot\\music\\cde7a600-37c6-4332-a889-ef4811b6e7e0_JABER X T. Danny - MILLIÓK (Official Music Video).mp3"
     },
     {
-      "Identity": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\cf7d8fbd-2072-4ed1-8fe8-ef7b6733fddc_KKevin - PROSECCO ft. Bruno (Official Music Video).mp3",
+      "Identity": "C:\\Users\\Tanulo\\Desktop\\projekt\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\cf7d8fbd-2072-4ed1-8fe8-ef7b6733fddc_KKevin - PROSECCO ft. Bruno (Official Music Video).mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tanulo\\Desktop\\projekt\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
       "RelativePath": "music/cf7d8fbd-2072-4ed1-8fe8-ef7b6733fddc_KKevin - PROSECCO ft. Bruno (Official Music Video).mp3",
       "AssetKind": "All",
@@ -150,10 +150,10 @@
       "OriginalItemSpec": "wwwroot\\music\\cf7d8fbd-2072-4ed1-8fe8-ef7b6733fddc_KKevin - PROSECCO ft. Bruno (Official Music Video).mp3"
     },
     {
-      "Identity": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\e228040b-4f28-4f53-b910-1cf5d693e53d_Koboldok.mp3",
+      "Identity": "C:\\Users\\Tanulo\\Desktop\\projekt\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\e228040b-4f28-4f53-b910-1cf5d693e53d_Koboldok.mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tanulo\\Desktop\\projekt\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
       "RelativePath": "music/e228040b-4f28-4f53-b910-1cf5d693e53d_Koboldok.mp3",
       "AssetKind": "All",
@@ -169,10 +169,10 @@
       "OriginalItemSpec": "wwwroot\\music\\e228040b-4f28-4f53-b910-1cf5d693e53d_Koboldok.mp3"
     },
     {
-      "Identity": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\e50cf012-93be-4df5-8a53-3e9800f1fd29_Azahriah - cipoe.mp3",
+      "Identity": "C:\\Users\\Tanulo\\Desktop\\projekt\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\e50cf012-93be-4df5-8a53-3e9800f1fd29_Azahriah - cipoe.mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tanulo\\Desktop\\projekt\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
       "RelativePath": "music/e50cf012-93be-4df5-8a53-3e9800f1fd29_Azahriah - cipoe.mp3",
       "AssetKind": "All",
