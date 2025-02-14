@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button, Flex, Image, Text } from "@chakra-ui/react"
+import { Button, Flex, Image, Text, Theme } from "@chakra-ui/react"
 import {
     DialogActionTrigger,
     DialogBackdrop,
@@ -15,7 +15,8 @@ import { Input } from "@chakra-ui/react"
 import { toaster } from '../components/ui/toaster'
 import api from '../Api'
 
-export default function PlaylistWindow({userid, getPlaylists}) {
+export default function PlaylistWindow({ userid, getPlaylists}) {
+    const themecolor = localStorage.getItem("themecolor");
     const [playlistName, setPlaylistName] = useState("");
     const [imageUrl, setImageUrl] = useState("");
     const [open, setOpen] = useState(false)
@@ -26,6 +27,7 @@ export default function PlaylistWindow({userid, getPlaylists}) {
             </DialogTrigger>
             <DialogBackdrop onClick={()=>setOpen(false)}/>
             <DialogContent>
+            <Theme colorPalette={themecolor} display={"flex"} flexDirection={"column"} bg={"Background"} h={"100%"}>
                 <DialogHeader>
                     <DialogTitle>Részletek szerkesztése</DialogTitle>
                 </DialogHeader>
@@ -64,6 +66,7 @@ export default function PlaylistWindow({userid, getPlaylists}) {
                     </form>
                 </DialogBody>
                 <DialogCloseTrigger onClick={()=>setOpen(false)} />
+                </Theme>
             </DialogContent>
         </DialogRoot>
     )

@@ -7,7 +7,8 @@ import Cookies from "js-cookie";
 import AddToPlaylistMenu from './AddToPlaylistMenu';
 import { Slider } from '../components/ui/slider';
 
-const MusicPage = ({ currentTime, handleSliderChange, duration, currentMusic, handlePlay, isPlaying }) => {
+const MusicPage = ({currentTime, handleSliderChange, duration, currentMusic, handlePlay, isPlaying }) => {
+  const themecolor = localStorage.getItem("themecolor");
   const [music, setMusic] = useState({});
   const [isPending, setPending] = useState(false)
   const [isFavorite, setFavorite] = useState(false)
@@ -104,7 +105,7 @@ useEffect(() => {
         p="25px" 
         bg="Background"
         transition="all 1s ease-in-out"
-        boxShadow="0 0 25px 0 teal"
+        boxShadow={`0 0 25px 0 ${themecolor}`}
         borderRadius="25px"
         _hover={{transition:"all 1s ease-in-out", transform: "scale(1.05)" ,padding: "35px",borderRadius: `50px 15px`}}>
       {isPending?
@@ -131,8 +132,8 @@ useEffect(() => {
           <Text fontSize="md">
           </Text>
           <Text fontSize="md">
-            <Button p={1} m={1} variant="solid">{isFavorite? <LuStar fill="teal" stroke="0"/> : <LuStar/>}</Button>
-            <Button p={1} m={1} variant={isPlaying && music?.title === currentMusic?.title ? "outline" : "subtle"} colorPalette="teal" onClick={()=> handlePlay(music)}>{isPlaying && music?.title === currentMusic?.title ? <LuPause /> : <LuPlay />} </Button>
+            <Button p={1} m={1} variant="solid">{isFavorite? <LuStar fill={"colorPalette.solid"} stroke="0"/> : <LuStar/>}</Button>
+            <Button p={1} m={1} variant={isPlaying && music?.title === currentMusic?.title ? "outline" : "subtle"} onClick={()=> handlePlay(music)}>{isPlaying && music?.title === currentMusic?.title ? <LuPause /> : <LuPlay />} </Button>
             <AddToPlaylistMenu musicId={id}/>
           </Text>
           {music?.id === currentMusic?.id? 

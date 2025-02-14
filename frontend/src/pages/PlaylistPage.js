@@ -53,7 +53,7 @@ export default function PlaylistPage() {
   return (
     <div>
       <Flex display="block" justifyContent="center">
-      <Heading textAlign={"center"} m={"3"} color={"teal.400"}>{playlistName}</Heading>
+      <Heading textAlign={"center"} m={"3"} color={"colorPalette.300"}>{playlistName}</Heading>
         <Center>
           <Flex wrap="wrap" justify="center" gap={4} width="100%">
             {isPending ? (

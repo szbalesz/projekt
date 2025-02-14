@@ -37,7 +37,6 @@ export default function Player({ volume, setVolume, currentTime,duration,handleS
           marginLeft="0px"
           _hover={{ transform: "scale(1.02)" }}
           variant="ghost"
-          colorPalette="gray"
           onClick={handleSongClick}
         >
           <Box display="flex" alignItems="center" gap={3}>
@@ -83,7 +82,6 @@ export default function Player({ volume, setVolume, currentTime,duration,handleS
               variant="ghost"
               zIndex="101"
               size="sm"
-              colorPalette="teal"
               onClick={togglePlayPause}
             > {isPlaying ? <LuPause /> : <LuPlay />} </IconButton>
             <IconButton

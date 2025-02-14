@@ -14,13 +14,13 @@ export default function Settings() {
           <Heading py={"3"} size={"1xl"}>Fiók</Heading>
           <Flex pb={"3"} direction={"row"} justifyContent={"space-between"}>
             <Text pt={"2"}>Személyes adatok módosítása</Text>
-            <Link to={"/settings/profile"}><Button size={"sm"} colorPalette={"teal"} variant={"surface"}>Módosítás <LuPencil/></Button></Link>
+            <Link to={"/settings/profile"}><Button size={"sm"}  variant={"surface"}>Módosítás <LuPencil/></Button></Link>
           </Flex>
           <hr/>
           <Heading py={"3"} size={"1xl"}>Megjelenítés</Heading>
           <Flex pb={"3"} direction={"row"}>
-            <Button onClick={() => setColorMode("dark")} colorPalette={colorMode === "dark" ? "teal" : ""} variant={colorMode === "dark" ? "surface" : "outline"}><LuMoon /> <Text p={2}>Sötét</Text></Button>
-            <Button onClick={() => setColorMode("light")} mx={2} colorPalette={colorMode === "light" ? "teal" : ""} variant={colorMode === "light" ? "surface" : "outline"} ><LuSun /> <Text p={2}>Világos</Text></Button>
+            <Button onClick={() => setColorMode("dark")}  variant={colorMode === "dark" ? "surface" : "outline"}><LuMoon /> <Text p={2}>Sötét</Text></Button>
+            <Button onClick={() => setColorMode("light")} mx={2} variant={colorMode === "light" ? "surface" : "outline"} ><LuSun /> <Text p={2}>Világos</Text></Button>
           </Flex>
         </Flex>
       </Center> 

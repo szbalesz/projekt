@@ -6,6 +6,7 @@ import Cookies from "js-cookie"
 import PlaylistWindow from './PlaylistWindow';
 
 export default function Playlists() {
+  const themecolor = localStorage.getItem("themecolor");
   const [playlists, setPlaylists] = useState()
   const [isPending, setPending] = useState(false)
   const token = Cookies.get("token");
@@ -37,7 +38,7 @@ export default function Playlists() {
     <>
       <Flex display="block" justifyContent="center">
 
-        <Heading textAlign="center" m={"3"}> {token?  <PlaylistWindow userid={userid} getPlaylists={getPlaylists}/> : ""}  </Heading>
+        <Heading textAlign="center" m={"3"}> {token?  <PlaylistWindow themecolor={themecolor} userid={userid} getPlaylists={getPlaylists}/> : ""}  </Heading>
          <Center>
           {isPending? 
           <AbsoluteCenter>

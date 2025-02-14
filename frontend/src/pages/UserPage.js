@@ -49,15 +49,15 @@ export default function UserPage() {
         justifyContent={"center"}
         position={"relative"}
       >
-        <Flex zIndex={"1"} bgGradient="to-tr" gradientFrom="bg.subtle" gradientTo="transparent" position={"absolute"} w={"full"} h={"190px"}></Flex>
+        <Flex zIndex={"1"} bgGradient="to-tr" gradientFrom="colorPalette.solid/65" gradientTo="transparent" position={"absolute"} w={"full"} h={"190px"}></Flex>
         <Flex backgroundImage={`url(${account?.profilePictureURL})`} backgroundPosition={"center"} backgroundSize={"cover"} direction={"row"} p={"5"}>
           <Button
             zIndex={"2"}
-            boxShadow={"0 0 25px 0 teal"}
+            boxShadowColor={"colorPalette"}
+            boxShadow={"0 0 25px 0"}
             backgroundImage={`url(${account?.profilePictureURL})`}
             boxSize={"150px"}
             variant={"outline"}
-            colorPalette={"teal"}
             borderRadius={"full"}
             backgroundSize={"cover"}
             backgroundPosition={"center"}

@@ -9,6 +9,7 @@ import {
   Text,
   Input,
   AbsoluteCenter,
+  Span,
 } from '@chakra-ui/react';
 import { Field } from "../components/ui/field"
 import { Checkbox } from "../components/ui/checkbox"
@@ -32,7 +33,7 @@ export default function Login({ isLoggedin, onLogin }) {
         <AbsoluteCenter>
             <Stack spacing={8} mx="auto" px={6}>
             <Box rounded="lg" w="350px" bg="bg" boxShadow="0 0 50px 0px #99f6e4"  px={8} py={5}>
-                <Heading textAlign="center" color="teal.500" w="50%" borderRadius="25px" mx="auto" my="3" p="1">Bejelentkezés</Heading>
+                <Heading textAlign="center" color={"colorPalette.solid"} w="50%" borderRadius="25px" mx="auto" my="3" p="1">Bejelentkezés</Heading>
                 <Stack spacing={4}>
                 <Field label="Felhasználónév">
                     <Input type="text" value={username} onChange={(q) => setUsername(q.target.value)} placeholder="Add meg a felhasználóneved" />
@@ -42,18 +43,18 @@ export default function Login({ isLoggedin, onLogin }) {
                     />
                 </Field>
                 <Field my="2">
-                    <Checkbox colorPalette="teal">
+                    <Checkbox>
                     Maradjon bejelentkezve
                     </Checkbox>
                 </Field>
-                <ChakraLink colorPalette="teal">Elfelejtett jelszó?</ChakraLink>
-                <Button onClick={()=> onLogin(username,password)} colorPalette="teal"  color="white" mt={4} mb={3}>
+                <ChakraLink>Elfelejtett jelszó?</ChakraLink>
+                <Button onClick={()=> onLogin(username,password)}  color="white" mt={4} mb={3}>
                     Bejelentkezés
                 </Button>
                 </Stack>
             </Box>
             <Text textAlign="center">
-                Ha még nincs fiókod <Link to={"/register"} style={{color: "#2dd4bf"}}>Regisztrálj</Link>!
+                Ha még nincs fiókod <Link to={"/register"}><Span color={"colorPalette.solid"}>Regisztrálj</Span></Link>!
             </Text>
             </Stack>
         </AbsoluteCenter>

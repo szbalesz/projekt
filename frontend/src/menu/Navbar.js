@@ -6,10 +6,11 @@ import { Link } from 'react-router-dom';
 import { LuList } from 'react-icons/lu';
 
 export default function Navbar({setIsSidebarOpen,profileMenuItems, isLoggedIn, onLogout}) {
+  const themecolor = localStorage.getItem("themecolor");
   return (
     <>
     <Flex bg="Background" as="nav" h="50px" align="center" justify="space-between" borderBottomWidth="1px" color="white">
-        <Button display={{base: "none", md:"flex"}} h="50px" fontSize="10px" variant="surface" bg="Background" w="50px" onClick={()=>setIsSidebarOpen(true)}>
+        <Button display={{base: "none", md:"flex"}} h="50px" fontSize="10px" rounded={"0"} colorPalette={"gray"} color={themecolor+".300"} variant={"surface"} bg="Background" w="50px" onClick={()=>setIsSidebarOpen(true)}>
               <Flex justifyContent="center"><LuList/></Flex>
         </Button>
         <Flex w="100%" p="0" textAlign="center" justifyContent="center">

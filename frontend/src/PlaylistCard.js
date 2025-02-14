@@ -3,6 +3,7 @@ import { Button, Box, Text, Image } from "@chakra-ui/react";
 import { useNavigate } from 'react-router-dom';
 
 export default function PlaylistCard({ playlist }) {
+  const themecolor = localStorage.getItem("themecolor");
   const navigate = useNavigate();
 
   const openPlaylist = ()=>{
@@ -27,12 +28,12 @@ export default function PlaylistCard({ playlist }) {
         textAlign="center"
         justifyContent="center"
         overflow="hidden"
-        boxShadow="0 0 10px 0 #99f6e4"
+        boxShadow={`0 0 10px 0 ${themecolor}`}
       >
       <Image minW="150px" minH={"150px"} src={playlist.imageUrl.length > 15 ? playlist.imageUrl : "https://www.svgrepo.com/show/340721/no-image.svg"}/>
         <Box p="0" w="auto" paddingTop="5" paddingBottom="5" backgroundColor="colorPalette.inverted">
-          <Text fontWeight="bold" color="colorPalette.solid">{playlist.playlistName}</Text>
-          <Text fontSize="12px" letterSpacing="tight" color="colorPalette.solid">
+          <Text fontWeight="bold" color="colorPalette.300">{playlist.playlistName}</Text>
+          <Text fontSize="12px" letterSpacing="tight">
             {playlist.musics.length} zene
           </Text>
         </Box>

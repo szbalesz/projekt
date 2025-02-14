@@ -3,6 +3,7 @@ import { Button, Box, Text, Image } from "@chakra-ui/react";
 import { useLocation, useNavigate } from 'react-router-dom';
 
 export default function MusicCard({ music, handlePopupClose }) {
+  const themecolor = localStorage.getItem("themecolor");
   const navigate = useNavigate();
   const location = useLocation();
   const isPopup = location.pathname.includes("popup");  
@@ -32,12 +33,12 @@ export default function MusicCard({ music, handlePopupClose }) {
         textAlign="center"
         justifyContent="center"
         overflow="hidden"
-        boxShadow="0 0 10px 0 #99f6e4"
+        boxShadow={`0 0 10px 0 ${themecolor}`}
       >
       <Image h="150px" w="150px" src={music.imageUrl}/>
         <Box p="0" w="auto" paddingTop="5" paddingBottom="5" backgroundColor="colorPalette.inverted">
-          <Text fontWeight="bold" color="colorPalette.solid">{music.title}</Text>
-          <Text color="teal.400">{music.artist}</Text>
+          <Text fontWeight="bold" color="colorPalette.300">{music.title}</Text>
+          <Text>{music.artist}</Text>
         </Box>
       </Box>
     </Button>

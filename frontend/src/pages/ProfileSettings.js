@@ -22,12 +22,12 @@ export default function ProfileSettings() {
                         <Text>
                             Felhasználónév
                         </Text>
-                        <Text color={"teal.400"} fontSize={"13px"}>
+                        <Text color={"colorPalette.solid"} fontSize={"13px"}>
                             példa@kkszki.hu
                         </Text>
                         </Flex>
                         <Flex pt={"2"} px={"3"}>
-                        <Button  size={"sm"} colorPalette={"teal"} variant={"ghost"}>Frissítés</Button>
+                        <Button  size={"sm"} color={"colorPalette.solid"} variant={"ghost"}>Frissítés</Button>
                         </Flex>
                     </Flex>
                     <Flex direction={"row"} justifyContent={"space-between"} pt={"3"}>
@@ -35,12 +35,12 @@ export default function ProfileSettings() {
                         <Text>
                             Jelszó
                         </Text>
-                        <Text color={"teal.400"} fontSize={"13px"}>
+                        <Text color={"colorPalette.solid"} fontSize={"13px"}>
                             ********
                         </Text>
                         </Flex>
                         <Flex pt={"2"} px={"3"}>
-                        <Button  size={"sm"} colorPalette={"teal"} variant={"ghost"}>Frissítés</Button>
+                        <Button  size={"sm"} color={"colorPalette.solid"} variant={"ghost"}>Frissítés</Button>
                         </Flex>
                     </Flex>
                 </Flex>

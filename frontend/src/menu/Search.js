@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { LuSearch } from "react-icons/lu";
-import { Input } from "@chakra-ui/react";
+import { Input, Theme } from "@chakra-ui/react";
 import { Button } from "../components/ui/button";
 import { InputGroup } from "../components/ui/input-group";
 import {
@@ -15,6 +15,7 @@ import MusicCard from '../MusicCard';
 import api from '../Api';
 
 export default function Search( {handlePopupClose}) {
+  const themecolor = localStorage.getItem("themecolor");
   const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
   //ideiglenes keresés de ezt majd a backend fogja végezni
@@ -44,13 +45,13 @@ export default function Search( {handlePopupClose}) {
   return (
     <DialogRoot defaultOpen onExitComplete={handlePopupClose} role="search" scrollBehavior="inside">
       <DialogContent bg="Background" width={{ base: "100%", md: "85%" }} height={{ base: "80%", md: "85%" }} maxW="1500px" maxH="750px">
+      <Theme display={"flex"} flexDirection={"column"} colorPalette={themecolor} bg={"Background"} h={"100%"}>
         <DialogHeader>
           <DialogTitle>
             <InputGroup
               _hover={{ transform: "scale(1.01)" }}
               width="100%"
               flex="1"
-              colorPalette="teal"
               transition="all 0.3s ease-in-out"
               startElement={<LuSearch />}
             >
@@ -78,10 +79,11 @@ export default function Search( {handlePopupClose}) {
         </DialogBody>
 
         <DialogFooter justifyContent="center">
-          <Button colorPalette="teal" variant="outline">
+          <Button variant="outline">
             Keresés
           </Button>
         </DialogFooter>
+        </Theme>
       </DialogContent>
     </DialogRoot>
   );

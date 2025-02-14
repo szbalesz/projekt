@@ -8,6 +8,7 @@ import {
   Text,
   Input,
   AbsoluteCenter,
+  Span,
 } from '@chakra-ui/react';
 import { Field } from "../components/ui/field"
 import { Link, useNavigate } from 'react-router-dom';
@@ -31,8 +32,8 @@ export default function Register({ isLoggedin, onRegister }) {
       <Flex display={{ base: "block", md: "flex"}} justifyContent="center">
         <AbsoluteCenter>
             <Stack spacing={8} mx="auto" px={6}>
-            <Box rounded="lg" w="350px" bg="bg" boxShadow="0 0 50px 0px #99f6e4"  px={8} py={5}>
-                <Heading textAlign="center" color="teal.500" w="50%" borderRadius="25px" mx="auto" my="3" p="1">Regisztráció</Heading>
+            <Box rounded="lg" w="350px" bg="bg" boxShadow="0 0 50px 0px" boxShadowColor={"colorPalette.emphasized"} px={8} py={5}>
+                <Heading textAlign="center" color="colorpalette.solid" w="50%" borderRadius="25px" mx="auto" my="3" p="1">Regisztráció</Heading>
                 <form onSubmit={(f) => {
                     f.preventDefault();
                     if(username.length >= 4){
@@ -82,14 +83,14 @@ export default function Register({ isLoggedin, onRegister }) {
                     <Field label="Jelszó újra">
                         <PasswordInput onChange={(q) => setPasswordAgain(q.target.value)} placeholder="Add meg a jelszavad újra"/>
                     </Field>
-                    <Button type="submit" colorPalette="teal" color="white" mt={4} mb={3}>
+                    <Button type="submit"  color="white" mt={4} mb={3}>
                         Regisztráció
                     </Button>
                     </Stack>
                 </form>
             </Box>
             <Text textAlign="center">
-                Ha már van fiókod  <Link to={"/login"} style={{color: "#2dd4bf"}}>Jelentkezz be</Link>!
+                Ha már van fiókod  <Link to={"/login"}><Span color={"colorPalette.solid"}>Jelentkezz be</Span></Link>!
             </Text>
             </Stack>
         </AbsoluteCenter>

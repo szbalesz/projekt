@@ -12,13 +12,14 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "../components/ui/drawer"
-import { Flex, Span } from '@chakra-ui/react'
+import { Flex, Span, Theme } from '@chakra-ui/react'
 import { LuPanelRightClose, LuUser } from "react-icons/lu";
 import Cookies from "js-cookie";
 import { Link } from 'react-router-dom';
 import api from '../Api';
 
 export default function MenuAvatar({ isLoggedIn, onLogout, profileMenuItems }) {
+  const themecolor = localStorage.getItem("themecolor");
   const userid = Cookies.get("userid");
   const [account, setAccount] = useState({});
   useEffect(() => {
@@ -29,13 +30,13 @@ export default function MenuAvatar({ isLoggedIn, onLogout, profileMenuItems }) {
   }, [isLoggedIn])
   
   return (
-    <>
       <DrawerRoot placement={{ base: "top", md: "end" }} size={{ base: "full", md: "xs" }}>
         <DrawerBackdrop />
         <DrawerTrigger variant="outline" position="absolute" p={0} w="45px" right="5" borderRadius="50%" asChild>
-          <Avatar src={account?.profilePictureURL} h="95%" colorPalette="teal" />
+          <Avatar src={account?.profilePictureURL} h="95%" />
         </DrawerTrigger>
         <DrawerContent bg="Background" borderWidth={{ base: "0px" }} borderRightWidth="1px">
+        <Theme display={"flex"} flexDirection={"column"} colorPalette={themecolor} bg={"Background"} h={"100%"}>
           <DrawerTrigger fontWeight="bold" borderRadius="5px" variant="outline" width="100%" height="50px" position="absolute" top="0" right="0">
             <Flex justifyContent="space-between" fontSize="md">
               <Span width="100%">Profil</Span>
@@ -52,7 +53,7 @@ export default function MenuAvatar({ isLoggedIn, onLogout, profileMenuItems }) {
               <Flex justifyContent="center" textAlign="center">
                 {isLoggedIn ?
                   <div>
-                    <Avatar width="50px" height="50px" src={account?.profilePictureURL} /><Flex p="3" color="#5eead4">{account?.username}</Flex>
+                    <Avatar width="50px" height="50px" src={account?.profilePictureURL} /><Flex p="3" color="colorPalette.solid">{account?.username}</Flex>
                   </div> :
                   <DrawerActionTrigger as="div">
                     <Link style={{ display: "flex", margin: "5px" }} onClick={onclose} to={"/login"}>
@@ -60,7 +61,6 @@ export default function MenuAvatar({ isLoggedIn, onLogout, profileMenuItems }) {
                         mx={"0"}
                         my={"0"}
                         justifyContent={"space-between"}
-                        colorPalette={"teal"}
                         w={"100%"}
                         h="50px"
                       >
@@ -81,7 +81,7 @@ export default function MenuAvatar({ isLoggedIn, onLogout, profileMenuItems }) {
                     my={"0"}
                     justifyContent={"space-between"}
                     variant={"subtle"}
-                    colorPalette={"teal"}
+                    colorPalette="current"
                     w={"100%"}
                     h="50px"
                   >
@@ -92,10 +92,10 @@ export default function MenuAvatar({ isLoggedIn, onLogout, profileMenuItems }) {
             ): ""}
           </DrawerBody>
           {isLoggedIn ? <DrawerFooter justifyContent="center">
-            <Button colorPalette="teal" variant="outline" onClick={() => onLogout()}>Kijelenkezés</Button>
+            <Button variant="outline" onClick={() => onLogout()}>Kijelenkezés</Button>
           </DrawerFooter> : ""}
+          </Theme>
         </DrawerContent>
       </DrawerRoot>
-    </>
   )
 }

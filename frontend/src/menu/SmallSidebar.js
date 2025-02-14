@@ -18,7 +18,6 @@ export default function SmallSidebar({ menuItems,selectedMenu, setIsSidebarOpen}
                   transition="all 0.5s ease-in-out"
                   borderRadius={selectedMenu === item.label || item.label === "Keresés" ? "5rem" : "0"}
                   variant={selectedMenu === item.label ? "surface" : "ghost" && item.label === "Keresés" ? {base:"ghost",md:"subtle"} : "ghost" }
-                  colorPalette={selectedMenu === item.label ? "teal" : "gray"}
                   p={item.label === "Keresés" ? { base: "1", md: "0" } : 0}
                   my={item.label === "Keresés" ? { base: "0", md: "5" } : "0"}
                   display={{ base: "block", md: "flex" }}

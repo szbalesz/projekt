@@ -1,12 +1,11 @@
 import { Provider } from "./components/ui/provider";
 import Main from "./Main";
-import { Box } from "@chakra-ui/react";
+import { Box, ChakraProvider, Theme } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import { Toaster, toaster } from "./components/ui/toaster";
 import { useNavigate } from "react-router-dom";
 import api from "./Api";
 import Cookies from "js-cookie";
-
 function App() {
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -69,12 +68,21 @@ function App() {
     toaster.create({ title: "Sikeres kijelentkezés!", type: "success" });
   };
 
+  localStorage.setItem("themecolor","cyan"); // cyan,teal,purple,red,blue,green,yellow,orange,pink
+  const [themecolor, setThemecolor] = useState("");
+  useEffect(() => {
+    setThemecolor(localStorage.getItem("themecolor"));
+  }, [])
+  
+
   return (
     <Provider>
-      <Box bg="Background">
-        <Main isLoggedIn={isLoggedIn} onRegister={onRegister} onLogin={onLogin} onLogout={onLogout} />
-        <Toaster />
-      </Box>
+      <Theme colorPalette={themecolor}>
+        <Box bg="Background">
+          <Main isLoggedIn={isLoggedIn} onRegister={onRegister} onLogin={onLogin} onLogout={onLogout} />
+          <Toaster />
+        </Box>
+      </Theme>
     </Provider>
   );
 }
