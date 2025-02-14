@@ -6,12 +6,14 @@ import React, { useState } from 'react';
 import api from "../Api"
 import { toaster } from '../components/ui/toaster';
 import BigMusicCard from "../BigMusicCard"
+import Cookies from "js-cookie"
 
 export default function UploadPage() {
     const [title, setTitle] = useState("");
     const [artist, setArtist] = useState("");
     const [imageurl, setImageurl] = useState("");
     const [musicfile, setMusicfile] = useState(null);
+    const userid = Cookies.get("userid");
 
     const uploadMusic = async () => {
         const formData = new FormData();
@@ -19,6 +21,7 @@ export default function UploadPage() {
         formData.append("Artist", artist);
         formData.append("ImageUrl", imageurl);
         formData.append("MusicFile", musicfile);
+        formData.append("UploaderId", userid);
 
         try {
             const response = await api.post("/Music/UploadMusic", formData, {

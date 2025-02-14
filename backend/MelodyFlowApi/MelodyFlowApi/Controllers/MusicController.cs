@@ -52,7 +52,8 @@ namespace MelodyFlowApi.Controllers
                     Artist = uploadMusicDto.Artist,
                     Title = uploadMusicDto.Title,
                     ImageUrl = uploadMusicDto.ImageUrl,
-                    MusicUrl = fileUrl
+                    MusicUrl = fileUrl,
+                    UploaderId = uploadMusicDto.UploaderId
                 };
 
                 await _context.Musics.AddAsync(newMusic);

@@ -15,10 +15,11 @@ export default function PlaylistPage() {
   const getPlaylist = async () => {
     setPending(true);
     const token = Cookies.get("token");
+    const userid = Cookies.get("userid");
 
     if (token) {
       try {
-        const response = await api.get("/playlist/GetAllPlaylist");
+        const response = await api.get("/UserPlaylist/GetPlaylistByUser?id="+userid);
         if(id !== "Kedvencek"){
           const plist = response.data.find(pl => pl.id === id);
           setPlaylistname(plist.playlistName)

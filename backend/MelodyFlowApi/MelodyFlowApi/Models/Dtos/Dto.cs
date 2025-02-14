@@ -20,6 +20,8 @@ namespace MelodyFlowApi.Models.Dtos
 
         [FromForm]
         public IFormFile MusicFile { get; set; }
+        [FromForm]
+        public string UploaderId { get; set; }
     }
     public record CreatePlaylistDto(string playlistName,string imageUrl,string CreatorId);
 }

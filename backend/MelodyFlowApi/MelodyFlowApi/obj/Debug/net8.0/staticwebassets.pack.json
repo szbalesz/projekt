@@ -1,6 +1,14 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\02d7fb0c-a77f-41d8-bd37-9d75aa27ed60_Kendrick Lamar - Not Like Us.mp3",
+      "PackagePath": "staticwebassets\\music\\02d7fb0c-a77f-41d8-bd37-9d75aa27ed60_Kendrick Lamar - Not Like Us.mp3"
+    },
+    {
+      "Id": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\075e0bd2-bd8c-4109-a040-98ed94f2b31c_Kendrick Lamar - Not Like Us.mp3",
+      "PackagePath": "staticwebassets\\music\\075e0bd2-bd8c-4109-a040-98ed94f2b31c_Kendrick Lamar - Not Like Us.mp3"
+    },
+    {
       "Id": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\2d98ee0e-baf9-441e-abb5-abc0ac9516a6_Ariana Grande - 7 rings (Official Video).mp3",
       "PackagePath": "staticwebassets\\music\\2d98ee0e-baf9-441e-abb5-abc0ac9516a6_Ariana Grande - 7 rings (Official Video).mp3"
     },
@@ -17,6 +25,10 @@
       "PackagePath": "staticwebassets\\music\\83add612-6180-4c49-af2f-84918412c551_LMEN PRALA - A KARRIEREM LESZROM OFFICIAL MUSIC VIDEO  PROD. BY SMITHMUSIX.mp3"
     },
     {
+      "Id": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\864e5407-15af-4f21-ac55-136219584f21_Kendrick Lamar - Not Like Us.mp3",
+      "PackagePath": "staticwebassets\\music\\864e5407-15af-4f21-ac55-136219584f21_Kendrick Lamar - Not Like Us.mp3"
+    },
+    {
       "Id": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\8e589e6a-881f-4df4-996d-597482f6e185_Katy Perry - Firework (Official Music Video).mp3",
       "PackagePath": "staticwebassets\\music\\8e589e6a-881f-4df4-996d-597482f6e185_Katy Perry - Firework (Official Music Video).mp3"
     },
@@ -29,12 +41,24 @@
       "PackagePath": "staticwebassets\\music\\cf7d8fbd-2072-4ed1-8fe8-ef7b6733fddc_KKevin - PROSECCO ft. Bruno (Official Music Video).mp3"
     },
     {
+      "Id": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\d38307cc-97b8-4820-a09d-8ba56c5f39c4_Kendrick Lamar - Not Like Us.mp3",
+      "PackagePath": "staticwebassets\\music\\d38307cc-97b8-4820-a09d-8ba56c5f39c4_Kendrick Lamar - Not Like Us.mp3"
+    },
+    {
+      "Id": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\dfa8cc99-7069-4221-8de2-7274842b3f80_Kendrick Lamar - Not Like Us.mp3",
+      "PackagePath": "staticwebassets\\music\\dfa8cc99-7069-4221-8de2-7274842b3f80_Kendrick Lamar - Not Like Us.mp3"
+    },
+    {
       "Id": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\e228040b-4f28-4f53-b910-1cf5d693e53d_Koboldok.mp3",
       "PackagePath": "staticwebassets\\music\\e228040b-4f28-4f53-b910-1cf5d693e53d_Koboldok.mp3"
     },
     {
       "Id": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\e50cf012-93be-4df5-8a53-3e9800f1fd29_Azahriah - cipoe.mp3",
       "PackagePath": "staticwebassets\\music\\e50cf012-93be-4df5-8a53-3e9800f1fd29_Azahriah - cipoe.mp3"
+    },
+    {
+      "Id": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\fefab84c-75d7-48e6-9015-619a5d294427_Kendrick Lamar - Not Like Us.mp3",
+      "PackagePath": "staticwebassets\\music\\fefab84c-75d7-48e6-9015-619a5d294427_Kendrick Lamar - Not Like Us.mp3"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.MelodyFlowApi.Microsoft.AspNetCore.StaticWebAssets.props",

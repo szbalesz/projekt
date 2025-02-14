@@ -26,7 +26,7 @@ export default function UserPage() {
       })
       getPlaylists();
   }, [id])
-  const getPlaylists=()=>{
+   const getPlaylists=()=>{
         api.get("/UserPlaylist/GetPlaylistByUser?id="+id)
         .then(response => {
             setPlaylists(response.data);
