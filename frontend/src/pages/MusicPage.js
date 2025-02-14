@@ -5,8 +5,9 @@ import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import api from '../Api';
 import Cookies from "js-cookie";
 import AddToPlaylistMenu from './AddToPlaylistMenu';
+import { Slider } from '../components/ui/slider';
 
-const MusicPage = ({ currentMusic, handlePlay, isPlaying }) => {
+const MusicPage = ({ currentTime, handleSliderChange, duration, currentMusic, handlePlay, isPlaying }) => {
   const [music, setMusic] = useState({});
   const [isPending, setPending] = useState(false)
   const [isFavorite, setFavorite] = useState(false)
@@ -134,6 +135,20 @@ useEffect(() => {
             <Button p={1} m={1} variant={isPlaying && music?.title === currentMusic?.title ? "outline" : "subtle"} colorPalette="teal" onClick={()=> handlePlay(music)}>{isPlaying && music?.title === currentMusic?.title ? <LuPause /> : <LuPlay />} </Button>
             <AddToPlaylistMenu musicId={id}/>
           </Text>
+          {music?.id === currentMusic?.id? 
+            <Box display={{base:"flex",md:"none"}} alignItems="center" width={"xs"} mx="5">
+            <Text fontSize="sm" mr="2">{Math.floor(currentTime)} mp</Text>
+              <Slider
+                value={[currentTime]}
+                onValueChange={(a) => handleSliderChange(a.value)}
+                min={0}
+                max={duration}
+                step={1}
+                width="75%"
+              />
+              <Text fontSize="sm" ml="2">{Math.floor(duration)} mp</Text>
+            </Box>
+        : ""}
         </VStack>
       ) : ""}
     </Box>

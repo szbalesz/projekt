@@ -24,6 +24,9 @@ export default function Main({ isLoggedIn, onRegister, onLogin, onLogout}) {
   const audioRef = useRef(null);
   const [currentMusic, setCurrentMusic] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0); 
+  const [volume, setVolume] = useState(50);
   
   const togglePlayPause = () => {
     if (!audioRef.current) return;
@@ -62,6 +65,39 @@ export default function Main({ isLoggedIn, onRegister, onLogin, onLogout}) {
     
       return null;
     };
+    
+  useEffect(() => {
+    if (audioRef.current) {
+      const updateTime = () => {
+        setCurrentTime(audioRef.current.currentTime);
+      };
+      audioRef.current.addEventListener('timeupdate', updateTime);
+
+      audioRef.current.addEventListener('loadedmetadata', () => {
+        setDuration(audioRef.current.duration);
+      });
+
+      return () => {
+        audioRef.current.removeEventListener('timeupdate', updateTime);
+      };
+    }
+  }, [audioRef]);
+
+  const handleSliderChange = (value) => {
+    if (audioRef.current) {
+      audioRef.current.currentTime = value;
+    }
+  };
+
+  useEffect(() => {
+    if (audioRef.current && isPlaying) {
+      audioRef.current.play();
+    }
+  }, [isPlaying, audioRef]);
+
+  useEffect(() => {
+    audioRef.current.volume = volume / 100;
+  }, [volume]);
   return (
     <Box backgroundSize="cover" backgroundPosition="center" backgroundRepeat="no-repeat" bg={"Background"}>
           {/* Main Grid */}
@@ -80,7 +116,7 @@ export default function Main({ isLoggedIn, onRegister, onLogin, onLogout}) {
                   <Route path="/settings/profile" element={<ProfileSettings />} />
                   {/* Ha ismeretlen az útvonal, irányítsd a kezdőlapra */}
                   <Route path="*" element={<Navigate to="/" />} />
-                  <Route path="/music/:id" element={<MusicPage currentMusic={currentMusic} handlePlay={handlePlay} isPlaying={isPlaying}/>} />
+                  <Route path="/music/:id" element={<MusicPage currentTime={currentTime} duration={duration} handleSliderChange={handleSliderChange} currentMusic={currentMusic} handlePlay={handlePlay} isPlaying={isPlaying}/>} />
                   <Route path="/playlist/:id" element={<PlaylistPage/>} />
                   <Route path="/upload" element={<UploadPage/>} />
                   <Route path="/about" element={<About />} />
@@ -90,7 +126,8 @@ export default function Main({ isLoggedIn, onRegister, onLogin, onLogout}) {
                 <Footer currentMusic={currentMusic}/>
             </GridItem>
             <GridItem rowSpan={1} zIndex="4">
-               <Player currentMusic={currentMusic} isPlaying={isPlaying} togglePlayPause={togglePlayPause} audioRef={audioRef}/>
+               <Player volume={volume} setVolume={setVolume} currentTime={currentTime} duration={duration} handleSliderChange={handleSliderChange} currentMusic={currentMusic} isPlaying={isPlaying} togglePlayPause={togglePlayPause}/>
+               <audio ref={audioRef} src={currentMusic ? `https://localhost:5205/${currentMusic?.musicUrl}` : ""} />
             </GridItem>
           </Grid>
           <Cookie/>

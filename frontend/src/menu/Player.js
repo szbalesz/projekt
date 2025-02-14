@@ -4,9 +4,8 @@ import { Slider } from "../components/ui/slider";
 import { useNavigate } from 'react-router-dom';
 import { LuPlay, LuSkipBack, LuSkipForward, LuVolume, LuPause } from "react-icons/lu";
 
-export default function Player({ currentMusic,togglePlayPause, isPlaying, audioRef}) {
+export default function Player({ volume, setVolume, currentTime,duration,handleSliderChange, currentMusic, togglePlayPause, isPlaying }) {
   const navigate = useNavigate();
-  const [volume, setVolume] = useState(50);
 
   const handleSongClick = () => {
     if (currentMusic) {
@@ -14,10 +13,6 @@ export default function Player({ currentMusic,togglePlayPause, isPlaying, audioR
     }
   };
 
-  useEffect(() => {
-    audioRef.current.volume = volume/100;
-  }, [volume])
-  
 
   return (
     <Box
@@ -35,8 +30,8 @@ export default function Player({ currentMusic,togglePlayPause, isPlaying, audioR
       zIndex="10"
       borderLeftWidth={{ base: "0px", md: "1px" }}
     >
-      <Flex align="center" justify="space-between" py="2" marginRight={{ base: "0px", md: "75px" }}>
-        {/* Current song info */}
+      <Flex align="center" justify="space-between" py="2">
+
         <Button
           height="50px"
           marginLeft="0px"
@@ -61,8 +56,20 @@ export default function Player({ currentMusic,togglePlayPause, isPlaying, audioR
             </Box>
           </Box>
         </Button>
+        
+        <Box display={{base:"none",md:"flex"}} alignItems="center" minWidth={"250px"} width={"lg"} mx="5">
+        <Text fontSize="sm" mr="2">{Math.floor(currentTime)} mp</Text>
+          <Slider
+            value={[currentTime]}
+            onValueChange={(a) => handleSliderChange(a.value)}
+            min={0}
+            max={duration}
+            step={1}
+            width="75%"
+          />
+          <Text fontSize="sm" ml="2">{Math.floor(duration)} mp</Text>
+        </Box>
 
-        {/* Playback controls */}
         {currentMusic?.title != null ? (
           <Flex align="center" gap={4}>
             <IconButton
@@ -86,26 +93,21 @@ export default function Player({ currentMusic,togglePlayPause, isPlaying, audioR
               size="sm"
             ><LuSkipForward /></IconButton>
 
-            {/* Volume Slider */}
             <Box display={{ base: 'none', md: 'flex' }} width="150px" mx="5">
               <LuVolume />
               <Slider
                 width="100px"
                 size="sm"
                 value={[volume]}
-                onValueChange={(a)=> setVolume(a.value)}
+                onValueChange={(a) => setVolume(a.value)}
                 min={0}
                 max={100}
                 step={1}
               />
             </Box>
-
           </Flex>
         ) : ""}
       </Flex>
-]
-      {/* Zene*/}
-      <audio ref={audioRef} src={currentMusic ? `https://localhost:5205/${currentMusic?.musicUrl}` : ""} />
     </Box>
   );
 }
