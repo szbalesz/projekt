@@ -31,7 +31,7 @@ function App() {
       .then(response => {
         toaster.create({ title: "Sikeres regisztráció.", type: "success" });
           navigate("/login");
-          
+          onLogin(username,password)
       })
       .catch(e => {
         console.error("HIBA, Nem sikerült a regisztráció: ", e);
