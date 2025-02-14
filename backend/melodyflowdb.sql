@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2025. Feb 13. 09:02
+-- Létrehozás ideje: 2025. Feb 14. 08:00
 -- Kiszolgáló verziója: 10.4.20-MariaDB
 -- PHP verzió: 7.3.29
 
@@ -170,16 +170,17 @@ INSERT INTO `music` (`Id`, `Artist`, `Title`, `Image_URL`, `Music_URL`, `Uploade
 CREATE TABLE `playlist` (
   `Id` varchar(36) COLLATE utf8mb4_hungarian_ci NOT NULL,
   `PlaylistName` varchar(50) COLLATE utf8mb4_hungarian_ci DEFAULT NULL,
-  `Image_URL` longtext COLLATE utf8mb4_hungarian_ci NOT NULL
+  `Image_URL` longtext COLLATE utf8mb4_hungarian_ci NOT NULL,
+  `CreatorId` varchar(255) CHARACTER SET utf8mb4 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
 
 --
 -- A tábla adatainak kiíratása `playlist`
 --
 
-INSERT INTO `playlist` (`Id`, `PlaylistName`, `Image_URL`) VALUES
-('50c947c5-d196-11ef-a697-701ab8764395', 'Kedvencek', 'https://t3.ftcdn.net/jpg/04/62/60/80/360_F_462608080_J2AJrf8h0fmbFqnTVUQfza8JivYOfShz.jpg'),
-('80c947c5-d196-11ef-a697-701ab8764395', 'loucu', 'https://t3.ftcdn.net/jpg/04/62/60/80/360_F_462608080_J2AJrf8h0fmbFqnTVUQfza8JivYOfShz.jpg');
+INSERT INTO `playlist` (`Id`, `PlaylistName`, `Image_URL`, `CreatorId`) VALUES
+('50c947c5-d196-11ef-a697-701ab8764395', 'Kedvencek', 'https://t3.ftcdn.net/jpg/04/62/60/80/360_F_462608080_J2AJrf8h0fmbFqnTVUQfza8JivYOfShz.jpg', '64db6df7-6cce-4ce9-85fd-f4bc0408cd6b'),
+('80c947c5-d196-11ef-a697-701ab8764395', 'loucu', 'https://t3.ftcdn.net/jpg/04/62/60/80/360_F_462608080_J2AJrf8h0fmbFqnTVUQfza8JivYOfShz.jpg', '64db6df7-6cce-4ce9-85fd-f4bc0408cd6b');
 
 -- --------------------------------------------------------
 
@@ -302,7 +303,8 @@ ALTER TABLE `music`
 --
 ALTER TABLE `playlist`
   ADD PRIMARY KEY (`Id`),
-  ADD KEY `Id` (`Id`);
+  ADD KEY `Id` (`Id`),
+  ADD KEY `CreatorId` (`CreatorId`);
 
 --
 -- A tábla indexei `playlistmusic`
@@ -370,6 +372,12 @@ ALTER TABLE `aspnetuserlogins`
 ALTER TABLE `aspnetuserroles`
   ADD CONSTRAINT `FK_AspNetUserRoles_AspNetRoles_RoleId` FOREIGN KEY (`RoleId`) REFERENCES `aspnetroles` (`Id`) ON DELETE CASCADE,
   ADD CONSTRAINT `FK_AspNetUserRoles_AspNetUsers_UserId` FOREIGN KEY (`UserId`) REFERENCES `aspnetusers` (`Id`) ON DELETE CASCADE;
+
+--
+-- Megkötések a táblához `aspnetusers`
+--
+ALTER TABLE `aspnetusers`
+  ADD CONSTRAINT `aspnetusers_ibfk_1` FOREIGN KEY (`Id`) REFERENCES `playlist` (`CreatorId`);
 
 --
 -- Megkötések a táblához `aspnetusertokens`
