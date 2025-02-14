@@ -29,7 +29,7 @@ export default function PlaylistCard({ playlist }) {
         overflow="hidden"
         boxShadow="0 0 10px 0 #99f6e4"
       >
-      <Image src="https://t3.ftcdn.net/jpg/04/62/60/80/360_F_462608080_J2AJrf8h0fmbFqnTVUQfza8JivYOfShz.jpg"/>
+      <Image minW="150px" minH={"150px"} src={playlist.imageUrl.length > 15 ? playlist.imageUrl : "https://www.svgrepo.com/show/340721/no-image.svg"}/>
         <Box p="0" w="auto" paddingTop="5" paddingBottom="5" backgroundColor="colorPalette.inverted">
           <Text fontWeight="bold" color="colorPalette.solid">{playlist.playlistName}</Text>
           <Text fontSize="12px" letterSpacing="tight" color="colorPalette.solid">

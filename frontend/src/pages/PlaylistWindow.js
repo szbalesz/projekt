@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Button, Flex, Image, Text } from "@chakra-ui/react"
 import {
     DialogActionTrigger,
+    DialogBackdrop,
     DialogBody,
     DialogCloseTrigger,
     DialogContent,
-    DialogFooter,
     DialogHeader,
     DialogRoot,
     DialogTitle,
@@ -13,13 +13,18 @@ import {
 } from "../components/ui/dialog"
 import { Input } from "@chakra-ui/react"
 import { toaster } from '../components/ui/toaster'
+import api from '../Api'
 
-export default function PlaylistWindow() {
+export default function PlaylistWindow({userid, getPlaylists}) {
+    const [playlistName, setPlaylistName] = useState("");
+    const [imageUrl, setImageUrl] = useState("");
+    const [open, setOpen] = useState(false)
     return (
-        <DialogRoot placement={"center"}>
+        <DialogRoot lazyMount open={open} onOpenChange={(e) => setOpen(e.open)} placement={"center"}>
             <DialogTrigger asChild>
-                <Button mx={"5"}>Lejátszási lista létrehozása</Button>
+                <Button onClick={()=> setOpen(true)} mx={"5"}>Lejátszási lista létrehozása</Button>
             </DialogTrigger>
+            <DialogBackdrop onClick={()=>setOpen(false)}/>
             <DialogContent>
                 <DialogHeader>
                     <DialogTitle>Részletek szerkesztése</DialogTitle>
@@ -27,24 +32,38 @@ export default function PlaylistWindow() {
                 <DialogBody>
                     <form onSubmit={(a) => {
                         a.preventDefault();
-                        toaster.create({ title: "Sikeres létrehozás.", type: "success" });
+                        let newPlaylist = {
+                            playlistName: playlistName,
+                            imageUrl: imageUrl,
+                            creatorId: userid,
+                        }
+                        api.post("/playlist/CreatePlaylist",newPlaylist)
+                        .then(()=>{
+                            toaster.create({ title: "Sikeres létrehozás.", type: "success" });
+                            setPlaylistName("");
+                            setImageUrl("");
+                            getPlaylists();
+                            setOpen(false);
+                        })
+                        .catch((e)=>{
+                            toaster.create({ title: "Hiba történt.", type: "danger" });
+                            console.error("Hiba történt a lejátszási lista elkészítése alatt: ",e)
+                        })
                     }}>
-                        <Flex direction={"row"}>
-                            <Image width={"200px"} height={"150px"} />
+                        <Flex direction={"row"} pb={"3"}>
+                            <Image src={imageUrl? imageUrl : null} minWidth={"150px"} height={"150px"} />
                             <Flex width={"full"} direction={"column"} p={"3"}>
-                                <Input placeholder="Írd be a nevet" />
-                                <Input my={"5"} placeholder="Kép elérési útja" />
+                                <Input required value={playlistName} onChange={(e)=> setPlaylistName(e.target.value)} placeholder="Írd be a nevet" />
+                                <Input required value={imageUrl} onChange={(e)=> setImageUrl(e.target.value)} my={"5"} placeholder="Kép elérési útja" />
                             </Flex>
                         </Flex>
                         <Flex>
                             <Text fontSize={"xs"}>A folytatással engedélyezed, hogy a MelodyFlow hozzáférhessen az általad feltöltött képhez. Ügyelj arra, hogy legyen jogosultságod feltölteni a képet.</Text>
-                            <DialogActionTrigger asChild>
-                                <Button type='submit'>Mentés</Button>
-                            </DialogActionTrigger>
+                            <Button type='submit'>Mentés</Button>
                         </Flex>
                     </form>
                 </DialogBody>
-                <DialogCloseTrigger />
+                <DialogCloseTrigger onClick={()=>setOpen(false)} />
             </DialogContent>
         </DialogRoot>
     )

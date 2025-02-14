@@ -63,7 +63,7 @@ export default function Footer({currentMusic}) {
             Licencmegállapodás
             </ChakraLink>
             <Link to="/about" >
-              <ChakraLink>
+              <ChakraLink as={"span"}>
                 Rólunk
               </ChakraLink>
             </Link>

@@ -9,6 +9,8 @@ export default function Playlists() {
   const [playlists, setPlaylists] = useState()
   const [isPending, setPending] = useState(false)
   const token = Cookies.get("token");
+  const userid = Cookies.get("userid");
+
   const getPlaylists=()=>{
       setPending(true);
       if(token){
@@ -38,7 +40,7 @@ export default function Playlists() {
   return (
     <>
       <Flex display="block" justifyContent="center">
-        <PlaylistWindow/>
+        {token?  <PlaylistWindow userid={userid} getPlaylists={getPlaylists}/> : ""}
         <Heading textAlign="center"> Lejátszási listák </Heading>
          <Center>
           {isPending? 

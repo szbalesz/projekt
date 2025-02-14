@@ -9,9 +9,9 @@ export default function Navbar({setIsSidebarOpen,profileMenuItems, isLoggedIn, o
   return (
     <>
     <Flex bg="Background" as="nav" h="50px" align="center" justify="space-between" borderBottomWidth="1px" color="white">
-            <Button display={{base: "none", md:"flex"}} h="50px" fontSize="10px" variant="surface" bg="Background" w="50px" onClick={()=>setIsSidebarOpen(true)}>
-                  <Flex justifyContent="center"><LuList/></Flex>
-            </Button>
+        <Button display={{base: "none", md:"flex"}} h="50px" fontSize="10px" variant="surface" bg="Background" w="50px" onClick={()=>setIsSidebarOpen(true)}>
+              <Flex justifyContent="center"><LuList/></Flex>
+        </Button>
         <Flex w="100%" p="0" textAlign="center" justifyContent="center">
               <Link to={"/"}>
               <Image
