@@ -55,16 +55,11 @@ export default function Main({ isLoggedIn, onRegister, onLogin, onLogout}) {
     }
   }, [currentMusic]);
 
-    // Az oldal tetejére ugrik
-    const ScrollToTop = () => {
-      const location = useLocation();
+  const location = useLocation();
     
-      useEffect(() => {
-        window.scrollTo(0, 0);
-      }, [location]);
-    
-      return null;
-    };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
     
   useEffect(() => {
     if (audioRef.current) {
@@ -102,7 +97,6 @@ export default function Main({ isLoggedIn, onRegister, onLogin, onLogout}) {
     <Box backgroundSize="cover" backgroundPosition="center" backgroundRepeat="no-repeat" bg={"Background"}>
           {/* Main Grid */}
           <Grid templateRows="50px 1fr" templateColumns="50px 1fr" minHeight="100vh">
-              <ScrollToTop/> {/* Az oldal tetejére görget minden oldal váltáskor */}
                 <Menu isLoggedIn={isLoggedIn} onLogout={onLogout}/>
               {/* Main Content */}
             <GridItem bg="Background" transition="all 1s ease-in-out" rowSpan={1}  colSpan="2">
