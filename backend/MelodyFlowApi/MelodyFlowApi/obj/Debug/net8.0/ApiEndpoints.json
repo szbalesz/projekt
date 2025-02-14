@@ -178,6 +178,32 @@
   },
   {
     "ContainingType": "MelodyFlowApi.Controllers.PlaylistController",
+    "Method": "CreatePlaylist",
+    "RelativePath": "api/playlist/CreatePlaylist",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createPlaylistDto",
+        "Type": "MelodyFlowApi.Models.Dtos.CreatePlaylistDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MelodyFlowApi.Models.Playlist",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MelodyFlowApi.Controllers.PlaylistController",
     "Method": "Get",
     "RelativePath": "api/playlist/GetAllPlaylist",
     "HttpMethod": "GET",

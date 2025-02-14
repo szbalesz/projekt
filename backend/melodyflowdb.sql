@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2025. Feb 14. 08:00
+-- Létrehozás ideje: 2025. Feb 14. 08:13
 -- Kiszolgáló verziója: 10.4.20-MariaDB
 -- PHP verzió: 7.3.29
 
@@ -374,12 +374,6 @@ ALTER TABLE `aspnetuserroles`
   ADD CONSTRAINT `FK_AspNetUserRoles_AspNetUsers_UserId` FOREIGN KEY (`UserId`) REFERENCES `aspnetusers` (`Id`) ON DELETE CASCADE;
 
 --
--- Megkötések a táblához `aspnetusers`
---
-ALTER TABLE `aspnetusers`
-  ADD CONSTRAINT `aspnetusers_ibfk_1` FOREIGN KEY (`Id`) REFERENCES `playlist` (`CreatorId`);
-
---
 -- Megkötések a táblához `aspnetusertokens`
 --
 ALTER TABLE `aspnetusertokens`
@@ -390,6 +384,12 @@ ALTER TABLE `aspnetusertokens`
 --
 ALTER TABLE `music`
   ADD CONSTRAINT `music_ibfk_1` FOREIGN KEY (`UploaderId`) REFERENCES `aspnetusers` (`Id`);
+
+--
+-- Megkötések a táblához `playlist`
+--
+ALTER TABLE `playlist`
+  ADD CONSTRAINT `playlist_ibfk_1` FOREIGN KEY (`CreatorId`) REFERENCES `aspnetusers` (`Id`);
 
 --
 -- Megkötések a táblához `playlistmusic`
