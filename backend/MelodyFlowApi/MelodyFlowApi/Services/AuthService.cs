@@ -52,7 +52,7 @@ namespace MelodyFlowApi.Services
                 var roles = await userManager.GetRolesAsync(user);
                 var jwtToken = tokenGenerator.GenerateToken(user, roles);
 
-                return new { result = user, token = jwtToken };
+                return new { id = user.Id, token = jwtToken };
             }
 
             return new { result = "", token = "" };

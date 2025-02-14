@@ -33,7 +33,6 @@ namespace MelodyFlowApi.Controllers
         public async Task<ActionResult> LoginUser(LoginIUserDto loginIUserDto)
         {
             var res = await auth.Login(loginIUserDto);
-
             if (res != null)
             {
                 return Ok(res);
