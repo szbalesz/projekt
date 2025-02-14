@@ -29,9 +29,15 @@ function App() {
 
     api.post("/auth/register", newUser)
       .then(response => {
-        toaster.create({ title: "Sikeres regisztráció.", type: "success" });
+        if(response.data.message !== "Sikeres regisztráció."){
+          toaster.create({ title: response.data.message, type: "error" });
+        }
+        else{
+          toaster.create({ title: "Sikeres regisztráció.", type: "success" });
           navigate("/login");
           onLogin(username,password)
+        }
+
       })
       .catch(e => {
         console.error("HIBA, Nem sikerült a regisztráció: ", e);
@@ -45,7 +51,6 @@ function App() {
       .then(response => {
         if (response.data.token) {
           setIsLoggedIn(true);
-          console.log(response)
           Cookies.set("token", response.data.token, { expires: 1, secure: true });
           Cookies.set("userid", response.data.id, { expires: 1, secure: true });
           toaster.create({ title: "Sikeres bejelentkezés!", type: "success" });
