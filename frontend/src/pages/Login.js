@@ -14,13 +14,14 @@ import { Field } from "../components/ui/field"
 import { Checkbox } from "../components/ui/checkbox"
 import { Link, useNavigate } from 'react-router-dom';
 import { PasswordInput } from "../components/ui/password-input"
+import Cookies from "js-cookie"
 
 export default function Login({ isLoggedin, onLogin }) {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
   const navigate = useNavigate();
   useEffect(() => {
-    if(isLoggedin){
+    if(isLoggedin || Cookies.get("token")){
       navigate("/")
     }
   }, [])

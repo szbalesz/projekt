@@ -59,7 +59,7 @@ export default function MenuAvatar({ isLoggedIn, onLogout, profileMenuItems }) {
                       <Button
                         mx={"0"}
                         my={"0"}
-                        justifyContent={{ base: "center", md: "space-between" }}
+                        justifyContent={"space-between"}
                         colorPalette={"teal"}
                         w={"100%"}
                         h="50px"
@@ -79,7 +79,7 @@ export default function MenuAvatar({ isLoggedIn, onLogout, profileMenuItems }) {
                   <Button
                     mx={"0"}
                     my={"0"}
-                    justifyContent={{ base: "center", md: "space-between" }}
+                    justifyContent={"space-between"}
                     variant={"subtle"}
                     colorPalette={"teal"}
                     w={"100%"}

@@ -53,7 +53,7 @@ export default function UploadPage() {
     return (
         <Center>
             <Flex direction="column" justifyContent="center" textAlign="center">
-                <Heading pb="2"> Zene feltöltés </Heading>
+                <Heading p="3"> Zene feltöltés </Heading>
                 <Flex direction={{base: "column", md:"row"}}>
                     <form onSubmit={(f) => {
                             f.preventDefault();

@@ -28,7 +28,8 @@ export default function Home() {
           justifyContent="center"
           wrap="wrap"
           gap={6}
-          padding={4}
+          padding={5}
+          mt={5}
         >
           {isPending? 
           <AbsoluteCenter>

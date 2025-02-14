@@ -8,37 +8,51 @@ import Cookies from "js-cookie";
 export default function PlaylistPage() {
   const { id } = useParams();
   const [isPending, setPending] = useState(false);
-  const [playlist, setPlaylist] = useState();
+  const [playlist, setPlaylist] = useState([]);
+  const [kedvenc, setKedvenc] = useState({});
+  const [playlistName, setPlaylistname] = useState("");
 
-  const getPlaylist = () => {
+  const getPlaylist = async () => {
     setPending(true);
     const token = Cookies.get("token");
 
-   if(token){
-    api.get("/PlaylistMusic/GetMusicFromPlaylist?id="+id)
-      .then((response) => {
-        let data = response.data;
-        setPlaylist(data);
-      })
-      .catch((e) => {
+    if (token) {
+      try {
+        const response = await api.get("/playlist/GetAllPlaylist");
+        if(id !== "Kedvencek"){
+          const plist = response.data.find(pl => pl.id === id);
+          setPlaylistname(plist.playlistName)
+        }
+        else{
+          setPlaylistname("Kedvencek")
+        }
+        const kedvencPlaylist = response.data.find(pl => pl.playlistName === "Kedvencek");
+        if (kedvencPlaylist) {
+          setKedvenc(kedvencPlaylist);
+        }
+
+        const playlistId = id === "Kedvencek" && kedvenc.id ? kedvenc.id : id;
+        const musicResponse = await api.get(`/PlaylistMusic/GetMusicFromPlaylist?id=${playlistId}`);
+        setPlaylist(musicResponse.data);
+        
+      } catch (e) {
         console.error("HIBA, Nem sikerült lekérni a lejátszási listát: ", e);
-      })
-      .finally(() => {
+      } finally {
         setPending(false);
-      });
-   }
-   else{
-    setPending(false);
-   }
+      }
+    } else {
+      setPending(false);
+    }
   };
 
   useEffect(() => {
     getPlaylist();
-  }, []);
+  }, [id, kedvenc.id]);
 
   return (
     <div>
       <Flex display="block" justifyContent="center">
+      <Heading textAlign={"center"} m={"3"} color={"teal.400"}>{playlistName}</Heading>
         <Center>
           <Flex wrap="wrap" justify="center" gap={4} width="100%">
             {isPending ? (
@@ -50,6 +64,7 @@ export default function PlaylistPage() {
             ) : (
               <AbsoluteCenter color="red">Nem sikerült betölteni a zenéket!</AbsoluteCenter>
             )}
+            {playlist.length < 1? <Heading size={"sm"}>Ebben a lejátszási listában nincsenek zenék!</Heading> : ""}
           </Flex>
         </Center>
       </Flex>

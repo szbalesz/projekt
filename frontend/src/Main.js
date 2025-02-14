@@ -70,7 +70,7 @@ export default function Main({ isLoggedIn, onRegister, onLogin, onLogout}) {
                 <Menu isLoggedIn={isLoggedIn} onLogout={onLogout}/>
               {/* Main Content */}
             <GridItem bg="Background" transition="all 1s ease-in-out" rowSpan={1}  colSpan="2">
-              <Box bg="Background" minH="100vh" py="65px" pl={{base: "0", md: "50px"}}>
+              <Box bg="Background" minH="100vh" py="50px" pl={{base: "0", md: "50px"}}>
                 <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/login" element={<Login isLoggedIn={isLoggedIn} onLogin={onLogin}/>} />

@@ -23,11 +23,11 @@ export default function BigMusicCard({music}) {
         position="relative"
       
         >
-            <Box w="100%" background="linear-gradient(to top, black, rgba(0, 0, 0, 0))" p={4} pt="75px" position="absolute" bottom="0">
+            <Box w="100%" bgGradient="to-t" gradientFrom="bg.muted" gradientTo="transparent" p={4} pt="75px" position="absolute" bottom="0">
                 <Text fontSize="xl" fontWeight="bold" color="teal.300" mb={2}>
                 {music.title}
                 </Text>
-                <Text fontSize="sm">{music.artist}</Text>
+                <Text fontSize="sm" color={"bg.inverted"}>{music.artist}</Text>
             </Box>
         </Button>
   )

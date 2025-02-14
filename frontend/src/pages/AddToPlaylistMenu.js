@@ -19,9 +19,6 @@ export default function AddToPlaylistMenu({ musicId }) {
     .then((res)=>{
       setPlaylists(res.data);
     })
-    .then(()=>{
-      console.log(playlists)
-    })
   }, [])
   
   const AddOrRemove = (playlistId,playlistName) =>{

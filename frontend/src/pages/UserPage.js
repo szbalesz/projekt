@@ -49,8 +49,11 @@ export default function UserPage() {
         justifyContent={"center"}
         position={"relative"}
       >
-        <Flex direction={"row"} p={"5"}>
+        <Flex zIndex={"1"} bgGradient="to-tr" gradientFrom="bg.subtle" gradientTo="transparent" position={"absolute"} w={"full"} h={"190px"}></Flex>
+        <Flex backgroundImage={`url(${account?.profilePictureURL})`} backgroundPosition={"center"} backgroundSize={"cover"} direction={"row"} p={"5"}>
           <Button
+            zIndex={"2"}
+            boxShadow={"0 0 25px 0 teal"}
             backgroundImage={`url(${account?.profilePictureURL})`}
             boxSize={"150px"}
             variant={"outline"}
@@ -60,7 +63,7 @@ export default function UserPage() {
             backgroundPosition={"center"}
             fit={"cover"}
           />
-          <Box px={"5"} py={"5"}>
+          <Box zIndex={"2"} px={"5"} py={"5"}>
             <Text fontSize="sm">
               Profil
             </Text>
@@ -73,7 +76,7 @@ export default function UserPage() {
           </Box>
         </Flex>
         <hr/>
-        <Flex p={"5"} direction={"column"}>
+        <Flex px={"5"} pt={"3"} direction={"column"}>
           <Heading>Zenék</Heading>
           <Flex my={"3"} overflowX={"auto"} gap={4} width="100%">{musics.map((music, index) => <MusicCard key={index} music={music} />)}</Flex>
           <hr />

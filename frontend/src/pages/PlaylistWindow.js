@@ -21,8 +21,8 @@ export default function PlaylistWindow({userid, getPlaylists}) {
     const [open, setOpen] = useState(false)
     return (
         <DialogRoot lazyMount open={open} onOpenChange={(e) => setOpen(e.open)} placement={"center"}>
-            <DialogTrigger asChild>
-                <Button onClick={()=> setOpen(true)} mx={"5"}>Lejátszási lista létrehozása</Button>
+            <DialogTrigger mx={"auto"} asChild>
+                <Button variant={"surface"} onClick={()=> setOpen(true)} mx={"5"}>Lejátszási lista létrehozása</Button>
             </DialogTrigger>
             <DialogBackdrop onClick={()=>setOpen(false)}/>
             <DialogContent>

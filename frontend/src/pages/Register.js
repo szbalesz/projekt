@@ -13,7 +13,7 @@ import { Field } from "../components/ui/field"
 import { Link, useNavigate } from 'react-router-dom';
 import { PasswordInput } from "../components/ui/password-input"
 import { toaster } from '../components/ui/toaster';
-
+import Cookies from "js-cookie"
 
 export default function Register({ isLoggedin, onRegister }) {
     const [username, setUsername] = useState("");
@@ -22,7 +22,7 @@ export default function Register({ isLoggedin, onRegister }) {
     const [passwordAgain, setPasswordAgain] = useState("");
     const navigate = useNavigate();
     useEffect(() => {
-      if(isLoggedin){
+      if(isLoggedin || Cookies.get("token")){
         navigate("/")
       }
     }, [])

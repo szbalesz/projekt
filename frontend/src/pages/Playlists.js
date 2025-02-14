@@ -14,11 +14,7 @@ export default function Playlists() {
   const getPlaylists=()=>{
       setPending(true);
       if(token){
-        api.get("/playlist/GetAllPlaylist",{
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        })
+        api.get("/UserPlaylist/GetPlaylistByUser?id="+userid)
         .then(response => {
             setPlaylists(response.data);
         })
@@ -40,8 +36,8 @@ export default function Playlists() {
   return (
     <>
       <Flex display="block" justifyContent="center">
-        {token?  <PlaylistWindow userid={userid} getPlaylists={getPlaylists}/> : ""}
-        <Heading textAlign="center"> Lejátszási listák </Heading>
+
+        <Heading textAlign="center" m={"3"}> {token?  <PlaylistWindow userid={userid} getPlaylists={getPlaylists}/> : ""}  </Heading>
          <Center>
           {isPending? 
           <AbsoluteCenter>
