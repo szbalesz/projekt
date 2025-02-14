@@ -46,7 +46,7 @@ export default function PlaylistWindow({userid, getPlaylists}) {
                             setOpen(false);
                         })
                         .catch((e)=>{
-                            toaster.create({ title: "Hiba történt.", type: "danger" });
+                            toaster.create({ title: "Hiba történt.", type: "error" });
                             console.error("Hiba történt a lejátszási lista elkészítése alatt: ",e)
                         })
                     }}>

@@ -23,7 +23,6 @@ export default function UserPage() {
     api.get("/music/GetMusicByUploader?id="+id)
       .then(response=>{
         setMusics(response.data);
-        console.log(response.data)
       })
       getPlaylists();
   }, [id])

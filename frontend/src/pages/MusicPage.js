@@ -132,7 +132,7 @@ useEffect(() => {
           <Text fontSize="md">
             <Button p={1} m={1} variant="solid">{isFavorite? <LuStar fill="teal" stroke="0"/> : <LuStar/>}</Button>
             <Button p={1} m={1} variant={isPlaying && music?.title === currentMusic?.title ? "outline" : "subtle"} colorPalette="teal" onClick={()=> handlePlay(music)}>{isPlaying && music?.title === currentMusic?.title ? <LuPause /> : <LuPlay />} </Button>
-            <AddToPlaylistMenu/>
+            <AddToPlaylistMenu musicId={id}/>
           </Text>
         </VStack>
       ) : ""}
