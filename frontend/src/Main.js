@@ -17,6 +17,7 @@ import Footer from './Footer';
 import UploadPage from './pages/UploadPage';
 import Cookie from './Cookie';
 import UserPage from './pages/UserPage';
+import ProfileSettings from './pages/ProfileSettings';
 
 
 export default function Main({ isLoggedIn, onRegister, onLogin, onLogout}) {
@@ -76,6 +77,7 @@ export default function Main({ isLoggedIn, onRegister, onLogin, onLogout}) {
                   <Route path="/register" element={<Register isLoggedIn={isLoggedIn} onRegister={onRegister}/>} />
                   <Route path="/playlists" element={<Playlists/>} />
                   <Route path="/settings" element={<Settings />} />
+                  <Route path="/settings/profile" element={<ProfileSettings />} />
                   {/* Ha ismeretlen az útvonal, irányítsd a kezdőlapra */}
                   <Route path="*" element={<Navigate to="/" />} />
                   <Route path="/music/:id" element={<MusicPage currentMusic={currentMusic} handlePlay={handlePlay} isPlaying={isPlaying}/>} />
