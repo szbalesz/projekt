@@ -26,6 +26,12 @@ namespace MelodyFlowApi.Controllers
             }
             return Ok(Playlists);
         }
-
+        [HttpPost("AddPlaylistToUser")]
+        public async Task<ActionResult<Userplaylist>> AddPlaylistToUser(Userplaylist userplaylist)
+        {
+            _context.Userplaylists.Add(userplaylist);
+            await _context.SaveChangesAsync();
+            return Ok(userplaylist);
+        }
     } 
 }
