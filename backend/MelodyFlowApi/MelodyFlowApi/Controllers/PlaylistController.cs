@@ -42,5 +42,17 @@ namespace MelodyFlowApi.Controllers
             }
             return BadRequest();
         }
+        [HttpDelete("playlist/{id}")]
+        public ActionResult DeletePlaylist(string id)
+        {
+            var data = _context.Playlists.FirstOrDefault(x => x.Id == id);
+            if (data != null)
+            {
+                _context.Playlists.Remove(data);
+                _context.SaveChanges();
+                return Ok();
+            }
+            return BadRequest();
+        }
     }
 }
