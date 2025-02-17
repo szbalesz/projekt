@@ -38,7 +38,7 @@ export default function MusicCard({ music, handlePopupClose }) {
       <Image h="150px" w="150px" src={music.imageUrl}/>
         <Box p="0" w="auto" paddingTop="5" paddingBottom="5" backgroundColor="colorPalette.inverted">
           <Text fontWeight="bold" color="colorPalette.300">{music.title}</Text>
-          <Text>{music.artist}</Text>
+          <Text color={"bg.inverted"}>{music.artist}</Text>
         </Box>
       </Box>
     </Button>

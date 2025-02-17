@@ -4,8 +4,43 @@ import { useColorMode } from '../components/ui/color-mode';
 import { LuMoon, LuPencil, LuSun } from 'react-icons/lu';
 import { Link } from 'react-router-dom';
 
+
 export default function Settings() {
   const { colorMode, setColorMode } = useColorMode();
+  const themes = [
+    {
+      title: "Fehér",
+      value: "gray"
+    },
+    {
+      title: "Piros",
+      value: "red"
+    },
+    {
+      title: "Zöld",
+      value: "green"
+    },
+    {
+      title: "Kék",
+      value: "blue"
+    },
+    {
+      title: "Kékeszöld",
+      value: "teal"
+    },
+    {
+      title: "Rózsaszín",
+      value: "pink"
+    },
+    {
+      title: "Lila",
+      value: "purple"
+    },
+    {
+      title: "Ciánkék",
+      value: "cyan"
+    } 
+  ]
   return (
       <Center padding={"25px"} height={"100%"}>
         <Flex width={"3xl"} direction={"column"}>
@@ -21,6 +56,11 @@ export default function Settings() {
           <Flex pb={"3"} direction={"row"}>
             <Button onClick={() => setColorMode("dark")}  variant={colorMode === "dark" ? "surface" : "outline"}><LuMoon /> <Text p={2}>Sötét</Text></Button>
             <Button onClick={() => setColorMode("light")} mx={2} variant={colorMode === "light" ? "surface" : "outline"} ><LuSun /> <Text p={2}>Világos</Text></Button>
+          </Flex>
+          <hr/>
+          <Heading py={"3"} size={"1xl"}>Téma</Heading>
+          <Flex wrap={"wrap"} pb={"3"} direction={"row"}>
+            {themes.map((theme,index) => <Button colorPalette={theme.value} variant={"surface"} m={"1"}>{theme.title}</Button>)}
           </Flex>
         </Flex>
       </Center> 

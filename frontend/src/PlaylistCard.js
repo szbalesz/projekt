@@ -33,7 +33,7 @@ export default function PlaylistCard({ playlist }) {
       <Image minW="150px" minH={"150px"} src={playlist.imageUrl.length > 15 ? playlist.imageUrl : "https://www.svgrepo.com/show/340721/no-image.svg"}/>
         <Box p="0" w="auto" paddingTop="5" paddingBottom="5" backgroundColor="colorPalette.inverted">
           <Text fontWeight="bold" color="colorPalette.300">{playlist.playlistName}</Text>
-          <Text fontSize="12px" letterSpacing="tight">
+          <Text color={"bg.inverted"} fontSize="12px" letterSpacing="tight">
             {playlist.musics.length} zene
           </Text>
         </Box>
