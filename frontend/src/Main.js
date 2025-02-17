@@ -20,7 +20,7 @@ import UserPage from './pages/UserPage';
 import ProfileSettings from './pages/ProfileSettings';
 
 
-export default function Main({ isLoggedIn, onRegister, onLogin, onLogout}) {
+export default function Main({ themecolor, setThemecolor, isLoggedIn, onRegister, onLogin, onLogout}) {
   const audioRef = useRef(null);
   const [currentMusic, setCurrentMusic] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -97,7 +97,7 @@ export default function Main({ isLoggedIn, onRegister, onLogin, onLogout}) {
     <Box backgroundSize="cover" backgroundPosition="center" backgroundRepeat="no-repeat" bg={"Background"}>
           {/* Main Grid */}
           <Grid templateRows="50px 1fr" templateColumns="50px 1fr" minHeight="100vh">
-                <Menu isLoggedIn={isLoggedIn} onLogout={onLogout}/>
+                <Menu themecolor={themecolor} isLoggedIn={isLoggedIn} onLogout={onLogout}/>
               {/* Main Content */}
             <GridItem bg="Background" transition="all 1s ease-in-out" rowSpan={1}  colSpan="2">
               <Box bg="Background" minH="100vh" py="50px" pl={{base: "0", md: "50px"}}>
@@ -106,7 +106,7 @@ export default function Main({ isLoggedIn, onRegister, onLogin, onLogout}) {
                   <Route path="/login" element={<Login isLoggedIn={isLoggedIn} onLogin={onLogin}/>} />
                   <Route path="/register" element={<Register isLoggedIn={isLoggedIn} onRegister={onRegister}/>} />
                   <Route path="/playlists" element={<Playlists/>} />
-                  <Route path="/settings" element={<Settings />} />
+                  <Route path="/settings" element={<Settings setThemecolor={setThemecolor}/>} />
                   <Route path="/settings/profile" element={<ProfileSettings />} />
                   {/* Ha ismeretlen az útvonal, irányítsd a kezdőlapra */}
                   <Route path="*" element={<Navigate to="/" />} />

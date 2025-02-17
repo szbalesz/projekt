@@ -18,8 +18,7 @@ import Cookies from "js-cookie";
 import { Link } from 'react-router-dom';
 import api from '../Api';
 
-export default function MenuAvatar({ isLoggedIn, onLogout, profileMenuItems }) {
-  const themecolor = localStorage.getItem("themecolor");
+export default function MenuAvatar({themecolor, isLoggedIn, onLogout, profileMenuItems }) {
   const userid = Cookies.get("userid");
   const [account, setAccount] = useState({});
   useEffect(() => {
@@ -40,7 +39,7 @@ export default function MenuAvatar({ isLoggedIn, onLogout, profileMenuItems }) {
           <DrawerTrigger fontWeight="bold" borderRadius="5px" variant="outline" width="100%" height="50px" position="absolute" top="0" right="0">
             <Flex justifyContent="space-between" fontSize="md">
               <Span width="100%">Profil</Span>
-              <Span w="10%" position="absolute" right="0" p="2px" color="#5eead4"><LuPanelRightClose /></Span>
+              <Span w="10%" position="absolute" right="0" p="2px" color="colorPalette.300"><LuPanelRightClose /></Span>
             </Flex>
           </DrawerTrigger>
           <DrawerHeader p="5">

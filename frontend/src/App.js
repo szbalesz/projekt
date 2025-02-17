@@ -68,18 +68,20 @@ function App() {
     toaster.create({ title: "Sikeres kijelentkezés!", type: "success" });
   };
 
-  localStorage.setItem("themecolor","cyan"); // cyan,teal,purple,red,blue,green,yellow,orange,pink
+  // cyan,teal,purple,red,blue,green,yellow,orange,pink
   const [themecolor, setThemecolor] = useState("");
   useEffect(() => {
     setThemecolor(localStorage.getItem("themecolor"));
   }, [])
-  
+  useEffect(() => {
+    localStorage.setItem("themecolor",themecolor);
+  }, [themecolor])
 
   return (
     <Provider>
       <Theme colorPalette={themecolor}>
         <Box bg="Background">
-          <Main isLoggedIn={isLoggedIn} onRegister={onRegister} onLogin={onLogin} onLogout={onLogout} />
+          <Main themecolor={themecolor} setThemecolor={setThemecolor} isLoggedIn={isLoggedIn} onRegister={onRegister} onLogin={onLogin} onLogout={onLogout} />
           <Toaster />
         </Box>
       </Theme>

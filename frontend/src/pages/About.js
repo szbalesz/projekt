@@ -12,7 +12,7 @@ import AboutCard from '../AboutCard'
 export default function About() {
     return (
         <Center display={"flex"} flexWrap={"wrap"}>
-          {items.map((item,index)=> <AboutCard item={item}/>)}
+          {items.map((item,index)=> <AboutCard key={index} item={item}/>)}
         </Center>
       )
 }

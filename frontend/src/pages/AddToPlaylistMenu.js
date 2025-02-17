@@ -26,7 +26,7 @@ export default function AddToPlaylistMenu({ musicId }) {
       playlistId: playlistId,
       musicId: musicId
     }
-    api.get("/PlaylistMusic/GetMusicFromPlaylist?id="+playlistId)
+    api.get("/GetMusicFromPlaylist?id="+playlistId)
     .then((res)=>{
       for (const music of res.data) {
         if(music.id == musicId){
@@ -35,7 +35,7 @@ export default function AddToPlaylistMenu({ musicId }) {
           return;
         }
       }
-      api.post("/PlaylistMusic/AddMusicToPlaylist",obj)
+      api.post("/AddMusicToPlaylist",obj)
       .then(()=>{
         toaster.create({ title: `Zene hozzáadva ${playlistName} listához.`, type: "success" });
       })

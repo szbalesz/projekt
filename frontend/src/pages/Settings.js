@@ -5,7 +5,7 @@ import { LuMoon, LuPencil, LuSun } from 'react-icons/lu';
 import { Link } from 'react-router-dom';
 
 
-export default function Settings() {
+export default function Settings({setThemecolor}) {
   const { colorMode, setColorMode } = useColorMode();
   const themes = [
     {
@@ -60,7 +60,7 @@ export default function Settings() {
           <hr/>
           <Heading py={"3"} size={"1xl"}>Téma</Heading>
           <Flex wrap={"wrap"} pb={"3"} direction={"row"}>
-            {themes.map((theme,index) => <Button colorPalette={theme.value} variant={"surface"} m={"1"}>{theme.title}</Button>)}
+            {themes.map((theme,index) => <Button onClick={()=> setThemecolor(theme.value)} key={index} colorPalette={theme.value} variant={"surface"} m={"1"}>{theme.title}</Button>)}
           </Flex>
         </Flex>
       </Center> 

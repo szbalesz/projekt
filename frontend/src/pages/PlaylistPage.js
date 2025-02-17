@@ -55,7 +55,11 @@ export default function PlaylistPage() {
   return (
     <div>
       <Flex w={"100%"}>
-    {playlist?
+    {isPending ? (
+        <AbsoluteCenter>
+          <Spinner />
+        </AbsoluteCenter>
+      ) : playlist?
       <Box
         w={"full"}
         alignItems={"left"}
