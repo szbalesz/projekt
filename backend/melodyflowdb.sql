@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2025. Feb 14. 08:13
+-- Létrehozás ideje: 2025. Feb 17. 13:31
 -- Kiszolgáló verziója: 10.4.20-MariaDB
 -- PHP verzió: 7.3.29
 
@@ -153,7 +153,6 @@ CREATE TABLE `music` (
 --
 
 INSERT INTO `music` (`Id`, `Artist`, `Title`, `Image_URL`, `Music_URL`, `UploaderId`) VALUES
-('0e418a2c-bab4-4549-9d4f-7839aa9a9460', 'Ariana Grande', '7 rings', 'https://pyxis.nymag.com/v1/imgs/a61/af6/3fd12792da57d7f85b8fe655c78b7cd76c-23-ariana-grande.rsquare.w400.jpg', '/music/2d98ee0e-baf9-441e-abb5-abc0ac9516a6_Ariana Grande - 7 rings (Official Video).mp3', '64db6df7-6cce-4ce9-85fd-f4bc0408cd6b'),
 ('395bf642-c850-463d-8171-fe129f062275', 'Azahriah', 'cipoe', 'https://i.ytimg.com/vi/d7judDbrovM/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB7AxNhC9bF2b6mOll7UhR2xNVNGg', '/music/e50cf012-93be-4df5-8a53-3e9800f1fd29_Azahriah - cipoe.mp3', '64db6df7-6cce-4ce9-85fd-f4bc0408cd6b'),
 ('4d121dca-b04f-4189-a948-6ebb56b0d30b', 'LMEN PRALA', 'A KARRIEREM LESZ*ROM', 'https://i.ytimg.com/vi/YHc6lKogw7s/maxresdefault.jpg', '/music/83add612-6180-4c49-af2f-84918412c551_LMEN PRALA - A KARRIEREM LESZROM OFFICIAL MUSIC VIDEO  PROD. BY SMITHMUSIX.mp3', '64db6df7-6cce-4ce9-85fd-f4bc0408cd6b'),
 ('507d3e28-551d-43fb-97eb-574b4911c2c7', 'Kkevin', 'Prosecco', 'https://i.ytimg.com/vi/1uu-TUeNtbk/maxresdefault.jpg', '/music/cf7d8fbd-2072-4ed1-8fe8-ef7b6733fddc_KKevin - PROSECCO ft. Bruno (Official Music Video).mp3', '64db6df7-6cce-4ce9-85fd-f4bc0408cd6b'),
@@ -192,13 +191,6 @@ CREATE TABLE `playlistmusic` (
   `PlaylistId` varchar(36) COLLATE utf8mb4_hungarian_ci NOT NULL,
   `MusicId` varchar(36) COLLATE utf8mb4_hungarian_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
-
---
--- A tábla adatainak kiíratása `playlistmusic`
---
-
-INSERT INTO `playlistmusic` (`PlaylistId`, `MusicId`) VALUES
-('50c947c5-d196-11ef-a697-701ab8764395', '0e418a2c-bab4-4549-9d4f-7839aa9a9460');
 
 -- --------------------------------------------------------
 
@@ -383,27 +375,27 @@ ALTER TABLE `aspnetusertokens`
 -- Megkötések a táblához `music`
 --
 ALTER TABLE `music`
-  ADD CONSTRAINT `music_ibfk_1` FOREIGN KEY (`UploaderId`) REFERENCES `aspnetusers` (`Id`);
+  ADD CONSTRAINT `music_ibfk_1` FOREIGN KEY (`UploaderId`) REFERENCES `aspnetusers` (`Id`) ON DELETE CASCADE;
 
 --
 -- Megkötések a táblához `playlist`
 --
 ALTER TABLE `playlist`
-  ADD CONSTRAINT `playlist_ibfk_1` FOREIGN KEY (`CreatorId`) REFERENCES `aspnetusers` (`Id`);
+  ADD CONSTRAINT `playlist_ibfk_1` FOREIGN KEY (`CreatorId`) REFERENCES `aspnetusers` (`Id`) ON DELETE CASCADE;
 
 --
 -- Megkötések a táblához `playlistmusic`
 --
 ALTER TABLE `playlistmusic`
-  ADD CONSTRAINT `playlistmusic_ibfk_1` FOREIGN KEY (`MusicId`) REFERENCES `music` (`Id`),
-  ADD CONSTRAINT `playlistmusic_ibfk_2` FOREIGN KEY (`PlaylistId`) REFERENCES `playlist` (`Id`);
+  ADD CONSTRAINT `playlistmusic_ibfk_1` FOREIGN KEY (`MusicId`) REFERENCES `music` (`Id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `playlistmusic_ibfk_2` FOREIGN KEY (`PlaylistId`) REFERENCES `playlist` (`Id`) ON DELETE CASCADE;
 
 --
 -- Megkötések a táblához `userplaylist`
 --
 ALTER TABLE `userplaylist`
-  ADD CONSTRAINT `userplaylist_ibfk_1` FOREIGN KEY (`UserId`) REFERENCES `aspnetusers` (`Id`),
-  ADD CONSTRAINT `userplaylist_ibfk_2` FOREIGN KEY (`PlaylistId`) REFERENCES `playlist` (`Id`);
+  ADD CONSTRAINT `userplaylist_ibfk_1` FOREIGN KEY (`UserId`) REFERENCES `aspnetusers` (`Id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `userplaylist_ibfk_2` FOREIGN KEY (`PlaylistId`) REFERENCES `playlist` (`Id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
