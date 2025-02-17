@@ -15,7 +15,7 @@ export default function AddToPlaylistMenu({ musicId }) {
   const userid = Cookies.get("userid");
   const [playlists, setPlaylists] = useState([])
   useEffect(() => {
-    api.get("/UserPlaylist/GetPlaylistByUser?id="+userid)
+    api.get("/GetPlaylistByUser?id="+userid)
     .then((res)=>{
       setPlaylists(res.data);
     })

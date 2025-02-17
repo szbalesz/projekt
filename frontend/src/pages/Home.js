@@ -8,7 +8,7 @@ export default function Home() {
   const [musicList, setMusicList] = useState();
   const getAllMusic=()=>{
       setPending(true);
-      api.get("/music/GetAllMusic")
+      api.get("/GetAllMusic")
       .then(response => {
         setMusicList(response.data);
       })

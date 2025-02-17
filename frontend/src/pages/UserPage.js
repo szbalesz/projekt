@@ -13,21 +13,21 @@ export default function UserPage() {
   const [playlists, setPlaylists] = useState([]);
   useEffect(() => {
     try {
-      api.get("/user/GetProfile?Id="+id)
+      api.get("/user/"+id)
       .then(response=>{
         setAccount(response.data[0]);
       })
     } catch (error) {
       console.log("Hiba történt a profil lekérése közben:",error);
     }
-    api.get("/music/GetMusicByUploader?id="+id)
+    api.get("/music/uploader/"+id)
       .then(response=>{
         setMusics(response.data);
       })
       getPlaylists();
   }, [id])
    const getPlaylists=()=>{
-        api.get("/UserPlaylist/GetPlaylistByUser?id="+id)
+        api.get("/GetPlaylistByUser?id="+id)
         .then(response => {
             setPlaylists(response.data);
         })

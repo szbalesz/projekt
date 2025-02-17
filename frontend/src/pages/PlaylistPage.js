@@ -19,7 +19,7 @@ export default function PlaylistPage() {
 
     if (token) {
       try {
-        const response = await api.get("/UserPlaylist/GetPlaylistByUser?id="+userid);
+        const response = await api.get("/GetPlaylistByUser?id="+userid);
         if(id !== "Kedvencek"){
           const plist = response.data.find(pl => pl.id === id);
           setPlaylistname(plist.playlistName)
@@ -33,7 +33,7 @@ export default function PlaylistPage() {
         }
 
         const playlistId = id === "Kedvencek" && kedvenc.id ? kedvenc.id : id;
-        const musicResponse = await api.get(`/PlaylistMusic/GetMusicFromPlaylist?id=${playlistId}`);
+        const musicResponse = await api.get(`/GetMusicFromPlaylist?id=${playlistId}`);
         setPlaylist(musicResponse.data);
         
       } catch (e) {

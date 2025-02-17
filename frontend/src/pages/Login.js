@@ -18,6 +18,7 @@ import { PasswordInput } from "../components/ui/password-input"
 import Cookies from "js-cookie"
 
 export default function Login({ isLoggedin, onLogin }) {
+  const themecolor = localStorage.getItem("themecolor");
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
   const navigate = useNavigate();
@@ -32,7 +33,7 @@ export default function Login({ isLoggedin, onLogin }) {
       <Flex display={{ base: "block", md: "flex"}} justifyContent="center">
         <AbsoluteCenter>
             <Stack spacing={8} mx="auto" px={6}>
-            <Box rounded="lg" w="350px" bg="bg" boxShadow="0 0 50px 0px #99f6e4"  px={8} py={5}>
+            <Box rounded="lg" w="350px" bg="bg" boxShadow={`0 0 50px 0px ${themecolor}`}  px={8} py={5}>
                 <Heading textAlign="center" color={"colorPalette.solid"} w="50%" borderRadius="25px" mx="auto" my="3" p="1">Bejelentkezés</Heading>
                 <Stack spacing={4}>
                 <Field label="Felhasználónév">

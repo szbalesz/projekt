@@ -24,7 +24,7 @@ export default function UploadPage() {
         formData.append("UploaderId", userid);
 
         try {
-            const response = await api.post("/Music/UploadMusic", formData, {
+            const response = await api.post("/UploadMusic", formData, {
                 headers: {
                     "Content-Type": "multipart/form-data",
                 },

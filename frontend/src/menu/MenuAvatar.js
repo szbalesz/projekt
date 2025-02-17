@@ -23,7 +23,7 @@ export default function MenuAvatar({ isLoggedIn, onLogout, profileMenuItems }) {
   const userid = Cookies.get("userid");
   const [account, setAccount] = useState({});
   useEffect(() => {
-    api.get("/user/GetProfile?Id="+userid)
+    api.get("/user/"+userid)
     .then(response=>{
       setAccount(response.data[0]);
     })

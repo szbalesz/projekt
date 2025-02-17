@@ -21,7 +21,7 @@ export default function Search( {handlePopupClose}) {
   //ideiglenes keresés de ezt majd a backend fogja végezni
   const searchMusic=(q)=>{
     if(q.length > 0){
-      api.get("/music/GetMusicByName?betu="+q)
+      api.get("/GetMusicByName?betu="+q)
       .then(response => {
         setResults(response.data);
     
@@ -29,7 +29,7 @@ export default function Search( {handlePopupClose}) {
       .catch(e => {console.error("HIBA, Nem sikerült lekérni a zenéket: ",e)}) 
     }
     else{
-      api.get("/music/GetAllMusic")
+      api.get("/GetAllMusic")
       .then(response => {
         setResults(response.data);
     

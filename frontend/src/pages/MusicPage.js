@@ -18,12 +18,11 @@ const MusicPage = ({currentTime, handleSliderChange, duration, currentMusic, han
   const navigate = useNavigate();
   const getMusic=()=>{
     setPending(true);
-    api.get("/music/GetAllMusic")
+    api.get("/music/"+id)
     .then(response => {
-       let foundMusic = response.data.find((m) => m.id === id); 
-       setMusic(foundMusic);
+       setMusic(response.data[0]);
        if(token !== ""){
-        getFavorite(foundMusic.title);
+        getFavorite(response.data[0].title);
        }
     })
     .catch(e => {console.error("HIBA, Nem sikerült lekérni a zenét: ",e)})
@@ -34,7 +33,7 @@ const MusicPage = ({currentTime, handleSliderChange, duration, currentMusic, han
 
   const getFavorite = (name) => {
     setPending(true);
-    api.get("/playlist/GetAllPlaylist",{
+    api.get("/GetAllPlaylist",{
       headers: {
         Authorization: `Bearer ${token}`
       }

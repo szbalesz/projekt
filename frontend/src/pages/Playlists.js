@@ -15,7 +15,7 @@ export default function Playlists() {
   const getPlaylists=()=>{
       setPending(true);
       if(token){
-        api.get("/UserPlaylist/GetPlaylistByUser?id="+userid)
+        api.get("/GetPlaylistByUser?id="+userid)
         .then(response => {
             setPlaylists(response.data);
         })

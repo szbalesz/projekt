@@ -17,6 +17,7 @@ import { toaster } from '../components/ui/toaster';
 import Cookies from "js-cookie"
 
 export default function Register({ isLoggedin, onRegister }) {
+    const themecolor = localStorage.getItem("themecolor");
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -32,7 +33,7 @@ export default function Register({ isLoggedin, onRegister }) {
       <Flex display={{ base: "block", md: "flex"}} justifyContent="center">
         <AbsoluteCenter>
             <Stack spacing={8} mx="auto" px={6}>
-            <Box rounded="lg" w="350px" bg="bg" boxShadow="0 0 50px 0px" boxShadowColor={"colorPalette.emphasized"} px={8} py={5}>
+            <Box rounded="lg" w="350px" bg="bg" boxShadow={`0 0 50px 0px ${themecolor}`} px={8} py={5}>
                 <Heading textAlign="center" color="colorpalette.solid" w="50%" borderRadius="25px" mx="auto" my="3" p="1">Regisztráció</Heading>
                 <form onSubmit={(f) => {
                     f.preventDefault();
