@@ -6,14 +6,17 @@ import api from '../Api';
 import Cookies from "js-cookie";
 import AddToPlaylistMenu from './AddToPlaylistMenu';
 import { Slider } from '../components/ui/slider';
+import { toaster } from '../components/ui/toaster';
 
 const MusicPage = ({currentTime, handleSliderChange, duration, currentMusic, handlePlay, isPlaying }) => {
   const themecolor = localStorage.getItem("themecolor");
   const [music, setMusic] = useState({});
   const [isPending, setPending] = useState(false)
   const [isFavorite, setFavorite] = useState(false)
+  const [isUploader, setIsUploader] = useState(false)
   const { id } = useParams();
   const token = Cookies.get("token");
+  let userid = Cookies.get("userid");
   const location = useLocation();
   const navigate = useNavigate();
   const getMusic=()=>{
@@ -23,6 +26,10 @@ const MusicPage = ({currentTime, handleSliderChange, duration, currentMusic, han
        setMusic(response.data[0]);
        if(token !== ""){
         getFavorite(response.data[0].title);
+       }
+       if(response.data[0].uploaderId === userid){
+        setIsUploader(true);
+        console.log("asd");
        }
     })
     .catch(e => {console.error("HIBA, Nem sikerült lekérni a zenét: ",e)})
@@ -56,6 +63,16 @@ const MusicPage = ({currentTime, handleSliderChange, duration, currentMusic, han
     })
   }
 
+  const deleteMusic = ()=>{
+    api.delete("/music/"+id)
+    .then(() =>{
+      toaster.create({ title: `Sikeresen törölted a ${music?.title} című zenét!`, type: "success" });
+      navigate("/");
+    })
+    .catch((e)=>{
+      console.error("Hiba történt a zene törlése közben: ",e);
+    })
+  }
 useEffect(() => {
   getMusic();
 }, [location])
@@ -134,7 +151,7 @@ useEffect(() => {
             <Button p={1} m={1} variant="solid">{isFavorite? <LuStar fill={"colorPalette.solid"} stroke="0"/> : <LuStar/>}</Button>
             <Button p={1} m={1} variant={isPlaying && music?.title === currentMusic?.title ? "outline" : "subtle"} onClick={()=> handlePlay(music)}>{isPlaying && music?.title === currentMusic?.title ? <LuPause /> : <LuPlay />} </Button>
             <AddToPlaylistMenu musicId={id}/>
-            <Button p={1} m={1} variant="solid" colorPalette={"red"}><LuTrash/></Button>
+            {isUploader? <Button p={1} m={1} variant="solid" colorPalette={"red"} onClick={deleteMusic}><LuTrash/></Button>: null}
           </Text>
           {music?.id === currentMusic?.id? 
             <Box display={{base:"flex",md:"none"}} alignItems="center" width={"xs"} mx="5">

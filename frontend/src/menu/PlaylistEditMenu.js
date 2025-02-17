@@ -18,13 +18,12 @@ export default function PlaylistEditMenu({playlistName,playlistId,userId}) {
   const [isAdded, setIsAdded] = useState(false);
   const deletePlaylist =()=>{
     api.delete("/playlist/"+playlistId)
-    .then((res)=>{
-      console.log(res);
+    .then(()=>{
       toaster.create({ title: `Sikeresen törölted a ${playlistName} lejátszási listát!`, type: "success" });
       navigate("/playlists");
     })
     .catch((e)=>{
-      console.log("Hiba történt a lista törlése közben: ",e);
+      console.error("Hiba történt a lista törlése közben: ",e);
     })
   }
 
@@ -51,7 +50,7 @@ export default function PlaylistEditMenu({playlistName,playlistId,userId}) {
       setIsAdded(true);
     })
     .catch((e)=>{
-      console.log("Hiba történt a lista hozzáadása közben: ",e);
+      console.error("Hiba történt a lista hozzáadása közben: ",e);
     })
   }
 

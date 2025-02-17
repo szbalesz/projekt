@@ -17,7 +17,7 @@ export default function AddToPlaylistMenu({ musicId }) {
   useEffect(() => {
     api.get("/GetPlaylistByUser?id="+userid)
     .then((res)=>{
-      setPlaylists(res.data);
+      setPlaylists(res.data.filter(pl => pl.creatorId === userid));
     })
   }, [])
   
