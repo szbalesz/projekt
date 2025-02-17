@@ -77,5 +77,17 @@ namespace MelodyFlowApi.Controllers
         {
             return Ok(await _context.Musics.Where(f => f.Id == id).ToListAsync());
         }
+        [HttpDelete("music/{id}")]
+        public ActionResult DeleteMusic(string id)
+        {
+            var data = _context.Musics.FirstOrDefault(x => x.Id == id);
+            if (data != null)
+            {
+                _context.Musics.Remove(data);
+                _context.SaveChanges();
+                return Ok();
+            }
+            return BadRequest();
+        }
     }
 }
