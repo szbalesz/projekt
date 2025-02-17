@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import MusicCard from "../MusicCard";
-import { AbsoluteCenter, Box, Button, Center, Flex, Heading, Spinner, Text } from "@chakra-ui/react";
+import { AbsoluteCenter, Box, Button, Flex, Heading, Spinner, Text } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import api from "../Api";
 import Cookies from "js-cookie";
-import { LuEllipsis } from "react-icons/lu";
 import PlaylistEditMenu from "../menu/PlaylistEditMenu";
 
 export default function PlaylistPage() {

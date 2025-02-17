@@ -1,6 +1,6 @@
 import { Provider } from "./components/ui/provider";
 import Main from "./Main";
-import { Box, ChakraProvider, Theme } from "@chakra-ui/react";
+import { Box, Theme } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import { Toaster, toaster } from "./components/ui/toaster";
 import { useNavigate } from "react-router-dom";

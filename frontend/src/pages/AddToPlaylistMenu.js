@@ -29,7 +29,7 @@ export default function AddToPlaylistMenu({ musicId }) {
     api.get("/GetMusicFromPlaylist?id="+playlistId)
     .then((res)=>{
       for (const music of res.data) {
-        if(music.id == musicId){
+        if(music.id === musicId){
           // Itt lesz majd a törlés  a listból ha majd lesz végpont
           toaster.create({ title: `A zene már benne van a ${playlistName} listában!`, type: "error" });
           return;

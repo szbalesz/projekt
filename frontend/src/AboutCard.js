@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Button, Card, Image, Text } from "@chakra-ui/react"
+import { Box, Button, Card } from "@chakra-ui/react"
 import { LuInstagram } from 'react-icons/lu'
 
 
