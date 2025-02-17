@@ -1,13 +1,11 @@
 import React from 'react'
 import { Box, Button, Text } from '@chakra-ui/react';
-import { useNavigate } from 'react-router-dom';
 
-export default function BigMusicCard({music}) {
+export default function BigMusicCard({func, music}) {
   const themecolor = localStorage.getItem("themecolor");
-  const navigate = useNavigate();
   return (
         <Button
-        onClick={()=> navigate("/music/"+music.id)}
+        onClick={func}
         borderRadius="lg"
         border="0px"
         overflow="hidden"

@@ -2,10 +2,12 @@ import { AbsoluteCenter, Flex, Spinner } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
 import BigMusicCard from '../BigMusicCard';
 import api from '../Api';
+import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
   const [isPending, setPending] = useState(false)
   const [musicList, setMusicList] = useState();
+  const navigate = useNavigate();
   const getAllMusic=()=>{
       setPending(true);
       api.get("/GetAllMusic")
@@ -36,7 +38,7 @@ export default function Home() {
             <Spinner/>
           </AbsoluteCenter> 
           : musicList? musicList.slice(0,8).map((music, index) => (
-            <BigMusicCard key={index} music={music}/>
+            <BigMusicCard func={()=> navigate("/music/"+music.id)} key={index} music={music}/>
         )) : <AbsoluteCenter color="red">
         Nem sikerült betölteni a zenéket!
       </AbsoluteCenter>}

@@ -94,6 +94,9 @@ export default function PlaylistPage() {
             <Text fontSize="4xl" fontWeight="bold">
               {playlistName}
             </Text>
+            <Text fontSize="sm">
+            {playlist.length} zene
+            </Text>
             <Text fontSize="md">
               <PlaylistEditMenu userId={userid} playlistName={playlistName} playlistId={id}/>
             </Text>
@@ -102,7 +105,7 @@ export default function PlaylistPage() {
         <hr/>
         <Flex px={"5"} pt={"3"} direction={"column"}>
           <Heading>Zenék</Heading>
-          <Flex my={"3"} overflowX={"auto"} gap={4} width="100%">{playlist.map((music, index) => <MusicCard key={index} music={music} />)}</Flex>
+          <Flex my={"3"} wrap={"wrap"} gap={4} width="100%">{playlist.map((music, index) => <MusicCard key={index} music={music} />)}</Flex>
         </Flex>
       </Box>: 
       ""}

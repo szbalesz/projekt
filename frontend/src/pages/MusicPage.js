@@ -29,7 +29,6 @@ const MusicPage = ({currentTime, handleSliderChange, duration, currentMusic, han
        }
        if(response.data[0].uploaderId === userid){
         setIsUploader(true);
-        console.log("asd");
        }
     })
     .catch(e => {console.error("HIBA, Nem sikerült lekérni a zenét: ",e)})
@@ -154,17 +153,17 @@ useEffect(() => {
             {isUploader? <Button p={1} m={1} variant="solid" colorPalette={"red"} onClick={deleteMusic}><LuTrash/></Button>: null}
           </Text>
           {music?.id === currentMusic?.id? 
-            <Box display={{base:"flex",md:"none"}} alignItems="center" width={"xs"} mx="5">
-            <Text fontSize="sm" mr="2">{Math.floor(currentTime)} mp</Text>
+            <Box display={{base:"flex",md:"none"}} w={"100%"} alignItems="center" mx="5">
+            <Text fontSize="xs" mr="3">{Math.floor(currentTime)} mp</Text>
               <Slider
                 value={[currentTime]}
                 onValueChange={(a) => handleSliderChange(a.value)}
                 min={0}
                 max={duration}
                 step={1}
-                width="75%"
+                width="50%"
               />
-              <Text fontSize="sm" ml="2">{Math.floor(duration)} mp</Text>
+              <Text fontSize="xs" ml="3">{Math.floor(duration)} mp</Text>
             </Box>
         : ""}
         </VStack>
