@@ -1,5 +1,21 @@
 [
   {
+    "ContainingType": "MelodyFlowApi.Controllers.UserPlaylistController",
+    "Method": "Delete",
+    "RelativePath": "api",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userplaylist",
+        "Type": "MelodyFlowApi.Models.Userplaylist",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "MelodyFlowApi.Controllers.PlaylistMusicController",
     "Method": "AddMusicToPlaylist",
     "RelativePath": "api/AddMusicToPlaylist",

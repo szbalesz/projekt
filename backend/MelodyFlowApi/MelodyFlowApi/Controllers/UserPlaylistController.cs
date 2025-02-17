@@ -33,5 +33,18 @@ namespace MelodyFlowApi.Controllers
             await _context.SaveChangesAsync();
             return Ok(userplaylist);
         }
+
+        [HttpDelete("DeleteUserFromPlaylist")]
+        public ActionResult DeleteUserFromPlaylist(Userplaylist userplaylist)
+        {
+            var data = _context.Userplaylists.FirstOrDefault(x => x == userplaylist);
+            if (data != null)
+            {
+                _context.Userplaylists.Remove(data);
+                _context.SaveChanges();
+                return StatusCode(200);
+            }
+            return StatusCode(404);
+        }
     } 
 }
