@@ -42,9 +42,9 @@ namespace MelodyFlowApi.Controllers
             {
                 _context.Userplaylists.Remove(data);
                 _context.SaveChanges();
-                return StatusCode(200);
+                return Ok();
             }
-            return StatusCode(404);
+            return BadRequest();
         }
     } 
 }
