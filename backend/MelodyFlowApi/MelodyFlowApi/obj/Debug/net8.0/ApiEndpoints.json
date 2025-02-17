@@ -410,5 +410,21 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "MelodyFlowApi.Controllers.UserController",
+    "Method": "DeleteUser",
+    "RelativePath": "api/user/user/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

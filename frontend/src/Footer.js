@@ -53,15 +53,6 @@ export default function Footer({currentMusic}) {
         >
           <Text>© 2025 MelodyFlow, Inc. Minden jog fenntartva.</Text>
           <HStack spacing={4}>
-            <ChakraLink href="#privacy">
-            Adatvédelmi szabályzat
-            </ChakraLink>
-            <ChakraLink href="#terms">
-            Felhasználási feltételek
-            </ChakraLink>
-            <ChakraLink href="#license">
-            Licencmegállapodás
-            </ChakraLink>
             <Link to="/about" >
               <ChakraLink as={"span"}>
                 Rólunk
