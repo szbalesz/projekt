@@ -15,7 +15,7 @@ namespace MelodyFlowApi.Controllers
         {
             _context = context;
         }
-        [HttpGet("GetProfile")]
+        [HttpGet("{Id}")]
         public async Task<ActionResult<Aspnetuser>> GetProfile(string Id)
         {
             return Ok(await _context.Aspnetusers.Where(f=> Id == f.Id).Select(p => new

@@ -1,5 +1,31 @@
 [
   {
+    "ContainingType": "MelodyFlowApi.Controllers.UserPlaylistController",
+    "Method": "AddPlaylistToUser",
+    "RelativePath": "api/AddPlaylistToUser",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userplaylist",
+        "Type": "MelodyFlowApi.Models.Userplaylist",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MelodyFlowApi.Models.Userplaylist",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "MelodyFlowApi.Controllers.AuthController",
     "Method": "AssignRole",
     "RelativePath": "api/auth/AssignRole",
@@ -46,6 +72,32 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MelodyFlowApi.Controllers.UserPlaylistController",
+    "Method": "GetPlaylistByUser",
+    "RelativePath": "api/GetPlaylistByUser",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MelodyFlowApi.Models.Playlist",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "MelodyFlowApi.Controllers.MusicController",
@@ -272,7 +324,7 @@
   {
     "ContainingType": "MelodyFlowApi.Controllers.UserController",
     "Method": "GetProfile",
-    "RelativePath": "api/user/GetProfile",
+    "RelativePath": "api/user/{Id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -280,64 +332,12 @@
       {
         "Name": "Id",
         "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "MelodyFlowApi.Models.Aspnetuser",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "MelodyFlowApi.Controllers.UserPlaylistController",
-    "Method": "AddPlaylistToUser",
-    "RelativePath": "api/UserPlaylist/AddPlaylistToUser",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "userplaylist",
-        "Type": "MelodyFlowApi.Models.Userplaylist",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "MelodyFlowApi.Models.Userplaylist",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "MelodyFlowApi.Controllers.UserPlaylistController",
-    "Method": "GetPlaylistByUser",
-    "RelativePath": "api/UserPlaylist/GetPlaylistByUser",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "MelodyFlowApi.Models.Playlist",
+        "Type": "MelodyFlowApi.Models.Aspnetuser",
         "MediaTypes": [
           "text/plain",
           "application/json",

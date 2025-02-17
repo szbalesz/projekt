@@ -443,7 +443,7 @@
         }
       }
     },
-    "/api/user/GetProfile": {
+    "/api/user/{Id}": {
       "get": {
         "tags": [
           "User"
@@ -451,7 +451,8 @@
         "parameters": [
           {
             "name": "Id",
-            "in": "query",
+            "in": "path",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -481,7 +482,7 @@
         }
       }
     },
-    "/api/UserPlaylist/GetPlaylistByUser": {
+    "/api/GetPlaylistByUser": {
       "get": {
         "tags": [
           "UserPlaylist"
@@ -519,7 +520,7 @@
         }
       }
     },
-    "/api/UserPlaylist/AddPlaylistToUser": {
+    "/api/AddPlaylistToUser": {
       "post": {
         "tags": [
           "UserPlaylist"
