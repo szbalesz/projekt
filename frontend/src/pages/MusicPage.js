@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Text, Image, VStack, AbsoluteCenter, Button, Spinner } from '@chakra-ui/react';
-import { LuList, LuPause, LuPlay, LuStar } from 'react-icons/lu';
+import { LuList, LuPause, LuPlay, LuStar, LuTrash } from 'react-icons/lu';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import api from '../Api';
 import Cookies from "js-cookie";
@@ -134,6 +134,7 @@ useEffect(() => {
             <Button p={1} m={1} variant="solid">{isFavorite? <LuStar fill={"colorPalette.solid"} stroke="0"/> : <LuStar/>}</Button>
             <Button p={1} m={1} variant={isPlaying && music?.title === currentMusic?.title ? "outline" : "subtle"} onClick={()=> handlePlay(music)}>{isPlaying && music?.title === currentMusic?.title ? <LuPause /> : <LuPlay />} </Button>
             <AddToPlaylistMenu musicId={id}/>
+            <Button p={1} m={1} variant="solid" colorPalette={"red"}><LuTrash/></Button>
           </Text>
           {music?.id === currentMusic?.id? 
             <Box display={{base:"flex",md:"none"}} alignItems="center" width={"xs"} mx="5">

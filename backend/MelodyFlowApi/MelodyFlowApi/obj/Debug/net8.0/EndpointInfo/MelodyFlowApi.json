@@ -297,6 +297,26 @@
             }
           }
         }
+      },
+      "delete": {
+        "tags": [
+          "Music"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
       }
     },
     "/api/GetAllPlaylist": {
@@ -376,6 +396,28 @@
         }
       }
     },
+    "/api/playlist/{id}": {
+      "delete": {
+        "tags": [
+          "Playlist"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/api/AddMusicToPlaylist": {
       "post": {
         "tags": [
@@ -438,6 +480,37 @@
             }
           }
         ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/DeleteMusicFromPlaylist": {
+      "delete": {
+        "tags": [
+          "PlaylistMusic"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Playlistmusic"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Playlistmusic"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Playlistmusic"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "Success"
@@ -570,7 +643,7 @@
         }
       }
     },
-    "/api": {
+    "/api/DeleteUserFromPlaylist": {
       "delete": {
         "tags": [
           "UserPlaylist"
