@@ -297,6 +297,32 @@
   },
   {
     "ContainingType": "MelodyFlowApi.Controllers.UserPlaylistController",
+    "Method": "AddPlaylistToUser",
+    "RelativePath": "api/UserPlaylist/AddPlaylistToUser",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userplaylist",
+        "Type": "MelodyFlowApi.Models.Userplaylist",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MelodyFlowApi.Models.Userplaylist",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MelodyFlowApi.Controllers.UserPlaylistController",
     "Method": "GetPlaylistByUser",
     "RelativePath": "api/UserPlaylist/GetPlaylistByUser",
     "HttpMethod": "GET",
