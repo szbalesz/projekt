@@ -1,5 +1,31 @@
 [
   {
+    "ContainingType": "MelodyFlowApi.Controllers.PlaylistMusicController",
+    "Method": "AddMusicToPlaylist",
+    "RelativePath": "api/AddMusicToPlaylist",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "playlistmusic",
+        "Type": "MelodyFlowApi.Models.Playlistmusic",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MelodyFlowApi.Models.Playlistmusic",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "MelodyFlowApi.Controllers.UserPlaylistController",
     "Method": "AddPlaylistToUser",
     "RelativePath": "api/AddPlaylistToUser",
@@ -74,6 +100,114 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "MelodyFlowApi.Controllers.PlaylistController",
+    "Method": "CreatePlaylist",
+    "RelativePath": "api/CreatePlaylist",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createPlaylistDto",
+        "Type": "MelodyFlowApi.Models.Dtos.CreatePlaylistDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MelodyFlowApi.Models.Playlist",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MelodyFlowApi.Controllers.MusicController",
+    "Method": "Get",
+    "RelativePath": "api/GetAllMusic",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "MelodyFlowApi.Models.Music",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MelodyFlowApi.Controllers.PlaylistController",
+    "Method": "Get",
+    "RelativePath": "api/GetAllPlaylist",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "MelodyFlowApi.Models.Playlist",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MelodyFlowApi.Controllers.MusicController",
+    "Method": "GetByName",
+    "RelativePath": "api/GetMusicByName",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "betu",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MelodyFlowApi.Models.Music",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MelodyFlowApi.Controllers.PlaylistMusicController",
+    "Method": "GetMusicFromPlaylist",
+    "RelativePath": "api/GetMusicFromPlaylist",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "MelodyFlowApi.Controllers.UserPlaylistController",
     "Method": "GetPlaylistByUser",
     "RelativePath": "api/GetPlaylistByUser",
@@ -101,28 +235,8 @@
   },
   {
     "ContainingType": "MelodyFlowApi.Controllers.MusicController",
-    "Method": "Get",
-    "RelativePath": "api/music/GetAllMusic",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "MelodyFlowApi.Models.Music",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "MelodyFlowApi.Controllers.MusicController",
     "Method": "GetMusicById",
-    "RelativePath": "api/music/GetMusicById",
+    "RelativePath": "api/music/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -130,33 +244,7 @@
       {
         "Name": "id",
         "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "MelodyFlowApi.Models.Music",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "MelodyFlowApi.Controllers.MusicController",
-    "Method": "GetByName",
-    "RelativePath": "api/music/GetMusicByName",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "betu",
-        "Type": "System.String",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": [
@@ -174,7 +262,7 @@
   {
     "ContainingType": "MelodyFlowApi.Controllers.MusicController",
     "Method": "GetMusicByUploader",
-    "RelativePath": "api/music/GetMusicByUploader",
+    "RelativePath": "api/music/uploader/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -182,7 +270,7 @@
       {
         "Name": "id",
         "Type": "System.String",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": [
@@ -200,7 +288,7 @@
   {
     "ContainingType": "MelodyFlowApi.Controllers.MusicController",
     "Method": "UploadFile",
-    "RelativePath": "api/music/UploadMusic",
+    "RelativePath": "api/UploadMusic",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -227,94 +315,6 @@
       },
       {
         "Name": "UploaderId",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "MelodyFlowApi.Controllers.PlaylistController",
-    "Method": "CreatePlaylist",
-    "RelativePath": "api/playlist/CreatePlaylist",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "createPlaylistDto",
-        "Type": "MelodyFlowApi.Models.Dtos.CreatePlaylistDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "MelodyFlowApi.Models.Playlist",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "MelodyFlowApi.Controllers.PlaylistController",
-    "Method": "Get",
-    "RelativePath": "api/playlist/GetAllPlaylist",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "MelodyFlowApi.Models.Playlist",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "MelodyFlowApi.Controllers.PlaylistMusicController",
-    "Method": "AddMusicToPlaylist",
-    "RelativePath": "api/PlaylistMusic/AddMusicToPlaylist",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "playlistmusic",
-        "Type": "MelodyFlowApi.Models.Playlistmusic",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "MelodyFlowApi.Models.Playlistmusic",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "MelodyFlowApi.Controllers.PlaylistMusicController",
-    "Method": "GetMusicFromPlaylist",
-    "RelativePath": "api/PlaylistMusic/GetMusicFromPlaylist",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
         "Type": "System.String",
         "IsRequired": false
       }

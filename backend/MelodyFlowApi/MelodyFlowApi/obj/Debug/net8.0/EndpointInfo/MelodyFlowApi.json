@@ -98,7 +98,7 @@
         }
       }
     },
-    "/api/music/GetAllMusic": {
+    "/api/GetAllMusic": {
       "get": {
         "tags": [
           "Music"
@@ -127,7 +127,7 @@
         }
       }
     },
-    "/api/music/GetMusicByName": {
+    "/api/GetMusicByName": {
       "get": {
         "tags": [
           "Music"
@@ -165,7 +165,7 @@
         }
       }
     },
-    "/api/music/UploadMusic": {
+    "/api/UploadMusic": {
       "post": {
         "tags": [
           "Music"
@@ -221,7 +221,7 @@
         }
       }
     },
-    "/api/music/GetMusicByUploader": {
+    "/api/music/uploader/{id}": {
       "get": {
         "tags": [
           "Music"
@@ -229,7 +229,8 @@
         "parameters": [
           {
             "name": "id",
-            "in": "query",
+            "in": "path",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -259,7 +260,7 @@
         }
       }
     },
-    "/api/music/GetMusicById": {
+    "/api/music/{id}": {
       "get": {
         "tags": [
           "Music"
@@ -267,7 +268,8 @@
         "parameters": [
           {
             "name": "id",
-            "in": "query",
+            "in": "path",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -297,7 +299,7 @@
         }
       }
     },
-    "/api/playlist/GetAllPlaylist": {
+    "/api/GetAllPlaylist": {
       "get": {
         "tags": [
           "Playlist"
@@ -326,7 +328,7 @@
         }
       }
     },
-    "/api/playlist/CreatePlaylist": {
+    "/api/CreatePlaylist": {
       "post": {
         "tags": [
           "Playlist"
@@ -374,7 +376,7 @@
         }
       }
     },
-    "/api/PlaylistMusic/AddMusicToPlaylist": {
+    "/api/AddMusicToPlaylist": {
       "post": {
         "tags": [
           "PlaylistMusic"
@@ -422,7 +424,7 @@
         }
       }
     },
-    "/api/PlaylistMusic/GetMusicFromPlaylist": {
+    "/api/GetMusicFromPlaylist": {
       "get": {
         "tags": [
           "PlaylistMusic"

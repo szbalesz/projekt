@@ -7,7 +7,7 @@ using System.Security.Policy;
 
 namespace MelodyFlowApi.Controllers
 {
-    [Route("api/music")]
+    [Route("api/")]
     [ApiController]
     public class MusicController : ControllerBase
     {
@@ -67,12 +67,12 @@ namespace MelodyFlowApi.Controllers
             }
 
         }
-        [HttpGet("GetMusicByUploader")]
+        [HttpGet("music/uploader/{id}")]
         public async Task<ActionResult<Music>> GetMusicByUploader(string id)
         {
             return Ok(await _context.Musics.Where(f=>f.UploaderId==id).ToListAsync());
         }
-        [HttpGet("GetMusicById")]
+        [HttpGet("music/{id}")]
         public async Task<ActionResult<Music>> GetMusicById(string id)
         {
             return Ok(await _context.Musics.Where(f => f.Id == id).ToListAsync());
