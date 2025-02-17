@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace MelodyFlowApi.Controllers
 {
-    [Route("api/playlist")]
+    [Route("api/")]
     [ApiController]
     public class PlaylistController : ControllerBase
     {
