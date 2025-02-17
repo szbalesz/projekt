@@ -8,6 +8,7 @@ import PlaylistEditMenu from "../menu/PlaylistEditMenu";
 
 export default function PlaylistPage() {
   const navigate = useNavigate();
+  let userid = Cookies.get("userid");
   const { id } = useParams();
   const [isPending, setPending] = useState(false);
   const [playlist, setPlaylist] = useState([]);
@@ -17,18 +18,18 @@ export default function PlaylistPage() {
   const getPlaylist = async () => {
     setPending(true);
     const token = Cookies.get("token");
-    const userid = Cookies.get("userid");
+    userid = Cookies.get("userid");
 
     if (token) {
       try {
-        const response = await api.get("/GetPlaylistByUser?id="+userid);
+        const response = await api.get("/GetAllPlaylist");
         if(id !== "Kedvencek"){
           const plist = response.data.find(pl => pl.id === id);
           if(plist !== undefined){
             setPlaylistname(plist?.playlistName)
           }
           else{
-            navigate("/playlists2")
+            navigate("/playlists")
           }
         }
         else{
@@ -94,7 +95,7 @@ export default function PlaylistPage() {
               {playlistName}
             </Text>
             <Text fontSize="md">
-              <PlaylistEditMenu playlistName={playlistName} playlistId={id}/>
+              <PlaylistEditMenu userId={userid} playlistName={playlistName} playlistId={id}/>
             </Text>
           </Box>
         </Flex>
