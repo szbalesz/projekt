@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import MusicCard from "../MusicCard";
 import { AbsoluteCenter, Box, Button, Flex, Heading, Spinner, Text } from "@chakra-ui/react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import api from "../Api";
 import Cookies from "js-cookie";
 import PlaylistEditMenu from "../menu/PlaylistEditMenu";
 
 export default function PlaylistPage() {
+  const navigate = useNavigate();
   const { id } = useParams();
   const [isPending, setPending] = useState(false);
   const [playlist, setPlaylist] = useState([]);
@@ -23,7 +24,12 @@ export default function PlaylistPage() {
         const response = await api.get("/GetPlaylistByUser?id="+userid);
         if(id !== "Kedvencek"){
           const plist = response.data.find(pl => pl.id === id);
-          setPlaylistname(plist.playlistName)
+          if(plist !== undefined){
+            setPlaylistname(plist?.playlistName)
+          }
+          else{
+            navigate("/playlists2")
+          }
         }
         else{
           setPlaylistname("Kedvencek")
@@ -39,6 +45,7 @@ export default function PlaylistPage() {
         
       } catch (e) {
         console.error("HIBA, Nem sikerült lekérni a lejátszási listát: ", e);
+        navigate("/playlists")
       } finally {
         setPending(false);
       }
@@ -58,7 +65,7 @@ export default function PlaylistPage() {
         <AbsoluteCenter>
           <Spinner />
         </AbsoluteCenter>
-      ) : playlist?
+      ) : playlistName ?
       <Box
         w={"full"}
         alignItems={"left"}
@@ -87,7 +94,7 @@ export default function PlaylistPage() {
               {playlistName}
             </Text>
             <Text fontSize="md">
-              <PlaylistEditMenu/>
+              <PlaylistEditMenu playlistName={playlistName} playlistId={id}/>
             </Text>
           </Box>
         </Flex>
@@ -99,23 +106,6 @@ export default function PlaylistPage() {
       </Box>: 
       ""}
     </Flex>
-      {/* <Flex display="block" justifyContent="center">
-      <Heading textAlign={"center"} m={"3"} color={"colorPalette.300"}>{playlistName}</Heading>
-        <Center>
-          <Flex wrap="wrap" justify="center" gap={4} width="100%">
-            {isPending ? (
-              <AbsoluteCenter>
-                <Spinner />
-              </AbsoluteCenter>
-            ) : playlist ? (
-              playlist.map((music, index) => <MusicCard key={index} music={music} />)
-            ) : (
-              <AbsoluteCenter color="red">Nem sikerült betölteni a zenéket!</AbsoluteCenter>
-            )}
-            {playlist.length < 1? <Heading size={"sm"}>Ebben a lejátszási listában nincsenek zenék!</Heading> : ""}
-          </Flex>
-        </Center>
-      </Flex> */}
     </div>
   );
 }

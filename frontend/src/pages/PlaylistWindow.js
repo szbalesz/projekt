@@ -39,13 +39,19 @@ export default function PlaylistWindow({ userid, getPlaylists}) {
                             imageUrl: imageUrl,
                             creatorId: userid,
                         }
-                        api.post("/playlist/CreatePlaylist",newPlaylist)
-                        .then(()=>{
+                        api.post("/CreatePlaylist",newPlaylist)
+                        .then((res)=>{
                             toaster.create({ title: "Sikeres létrehozás.", type: "success" });
-                            setPlaylistName("");
-                            setImageUrl("");
-                            getPlaylists();
-                            setOpen(false);
+                            const newPlaylistId = res.data.id;
+                            const creatorId = res.data.creatorId;
+                            api.post("/AddPlaylistToUser",{playlistId: newPlaylistId,userId: creatorId})
+                            .then(()=>{
+                                setPlaylistName("");
+                                setImageUrl("");
+                                getPlaylists();
+                                setOpen(false);
+                            })
+                            
                         })
                         .catch((e)=>{
                             toaster.create({ title: "Hiba történt.", type: "error" });
