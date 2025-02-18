@@ -84,7 +84,7 @@ export default function Register({ isLoggedin, onRegister }) {
                     <Field label="Jelszó újra">
                         <PasswordInput onChange={(q) => setPasswordAgain(q.target.value)} placeholder="Add meg a jelszavad újra"/>
                     </Field>
-                    <Button type="submit"  color="white" mt={4} mb={3}>
+                    <Button type="submit" mt={4} mb={3}>
                         Regisztráció
                     </Button>
                     </Stack>
