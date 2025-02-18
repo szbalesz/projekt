@@ -1,4 +1,5 @@
 ﻿using MelodyFlowApi.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -15,8 +16,8 @@ namespace MelodyFlowApi.Controllers
         {
             _context = context;
         }
-
-       [HttpPost("AddMusicToPlaylist")]
+        [Authorize]
+        [HttpPost("AddMusicToPlaylist")]
         public async Task<ActionResult<Playlistmusic>> AddMusicToPlaylist(Playlistmusic playlistmusic)
         {
             _context.Playlistmusics.Add(playlistmusic);
@@ -34,6 +35,7 @@ namespace MelodyFlowApi.Controllers
             }
             return Ok(Musics);
         }
+        [Authorize]
         [HttpDelete("DeleteMusicFromPlaylist")]
         public ActionResult DeleteMusicFromPlaylist(Playlistmusic playlistmusic)
         {
