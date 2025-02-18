@@ -56,18 +56,22 @@ export default function Player({ volume, setVolume, currentTime,duration,handleS
           </Box>
         </Button>
         
-        <Box display={{base:"none",md:"flex"}} alignItems="center" minWidth={"250px"} width={"lg"} mx="5">
-        <Text fontSize="sm" mr="2">{Math.floor(currentTime)} mp</Text>
-          <Slider
-            value={[currentTime]}
-            onValueChange={(a) => handleSliderChange(a.value)}
-            min={0}
-            max={duration}
-            step={1}
-            width="75%"
-          />
-          <Text fontSize="sm" ml="2">{Math.floor(duration)} mp</Text>
-        </Box>
+        <Box display={{ base: "none", md: "flex" }} alignItems="center" minWidth={"250px"} width={"lg"} mx="5">
+  <Text fontSize="sm" mr="2">
+    {`${Math.floor(currentTime / 60)}:${Math.floor(currentTime % 60).toString().padStart(2, '0')}`}
+  </Text>
+  <Slider
+    value={[currentTime]}
+    onValueChange={(a) => handleSliderChange(a.value)}
+    min={0}
+    max={duration}
+    step={1}
+    width="75%"
+  />
+  <Text fontSize="sm" ml="2">
+    {`${Math.floor(duration / 60)}:${Math.floor(duration % 60).toString().padStart(2, '0')}`}
+  </Text>
+</Box>
 
         {currentMusic?.title != null ? (
           <Flex align="center" gap={4}>
