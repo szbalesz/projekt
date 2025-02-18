@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import { Box, Flex, Text, IconButton, Button } from "@chakra-ui/react";
 import { Slider } from "../components/ui/slider";
 import { useNavigate } from 'react-router-dom';
-import { LuPlay, LuSkipBack, LuSkipForward, LuVolume, LuPause } from "react-icons/lu";
+import { LuPlay, LuSkipBack, LuSkipForward, LuVolume, LuPause, LuArrowDown, LuArrowUp } from "react-icons/lu";
 
 export default function Player({ volume, setVolume, currentTime,duration,handleSliderChange, currentMusic, togglePlayPause, isPlaying }) {
   const navigate = useNavigate();
+  const [open, setopen] = useState(false);
 
   const handleSongClick = () => {
     if (currentMusic) {
@@ -13,16 +14,21 @@ export default function Player({ volume, setVolume, currentTime,duration,handleS
     }
   };
 
+useEffect(() => {
+  if(currentMusic?.title != null){
+    setopen(true);
+  }
+}, [isPlaying])
 
   return (
     <Box
       bg="Background"
       position="fixed"
       boxShadow="-5px 0px 50px -20px #5eead4"
-      bottom={{ base: currentMusic?.title != null ? "65px" : "-70px", md: currentMusic?.title != null ? "0px" : "-70px" }}
+      bottom={{  base: open != false ? "65px" : "5px", md: open != false ? "0px" : "-63px" }}
       transition="all 1s ease-in-out"
       marginLeft={{ base: "0px", md: "50px" }}
-      width={{ base: "100%", md: "100%" }}
+      width={{ base: "100%", md: "97%" }}
       borderTopWidth="1px"
       borderTop="solid rgba(255, 255, 255, 0.16)"
       height="65px"
@@ -95,7 +101,7 @@ export default function Player({ volume, setVolume, currentTime,duration,handleS
               size="sm"
             ><LuSkipForward /></IconButton>
 
-            <Box display={{ base: 'none', md: 'flex' }} width="150px" mx="5">
+            <Box display={{ base: 'none', md: 'flex' }} width="150px">
               <LuVolume />
               <Slider
                 width="100px"
@@ -109,6 +115,15 @@ export default function Player({ volume, setVolume, currentTime,duration,handleS
             </Box>
           </Flex>
         ) : ""}
+        <Flex position={"absolute"} bottom={"55px"} right={"0"}>
+        {open ?
+        <Button onClick={() => (setopen(false))} bg={"Background"} variant={"ghost"}>
+        <LuArrowDown  />
+      </Button> : 
+      <Button onClick={() => (setopen(true))} bg={"Background"} variant={"ghost"}>
+      <LuArrowUp  />
+    </Button>}
+    </Flex>
       </Flex>
     </Box>
   );
