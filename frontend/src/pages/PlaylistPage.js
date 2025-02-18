@@ -5,6 +5,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import api from "../Api";
 import Cookies from "js-cookie";
 import PlaylistEditMenu from "../menu/PlaylistEditMenu";
+import { Avatar } from "../components/ui/avatar";
 
 export default function PlaylistPage() {
   const navigate = useNavigate();
@@ -87,6 +88,12 @@ export default function PlaylistPage() {
             {musics.length} zene
             </Text>
             <Text fontSize="md" p={"0"}>
+              <Button onClick={()=> {
+                navigate("/user/"+playlist.creatorId)
+              }} mr={"1"} p={"0"} size={"xs"} variant={"ghost"}>
+              <Avatar width="15px" height="15px" src={creator.profilePictureURL}/>
+              {creator.username}
+              </Button>
               <PlaylistEditMenu userId={userid} playlistName={playlist.playlistName} playlistId={id}/>
             </Text>
           </Box>
