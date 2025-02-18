@@ -52,7 +52,7 @@ export default function MenuAvatar({themecolor, isLoggedIn, onLogout, profileMen
               <Flex justifyContent="center" textAlign="center">
                 {isLoggedIn ?
                   <Flex direction={"column"}>
-                      <Avatar boxShadow={`0 0 20px 0 ${themecolor}`} width="125px" height="125px" src={account?.profilePictureURL} /><Flex p="3" color="colorPalette.solid">
+                      <Avatar mx={"auto"} boxShadow={`0 0 20px 0 ${themecolor}`} width="125px" height="125px" src={account?.profilePictureURL} /><Flex p="3" color="colorPalette.solid">
                       <Text mx={"auto"} fontSize={"2xl"} color={themecolor}>{account?.username}</Text>
                       </Flex>
                   </Flex> :

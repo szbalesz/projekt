@@ -91,7 +91,7 @@ export default function PlaylistPage() {
               <Button onClick={()=> {
                 navigate("/user/"+playlist.creatorId)
               }} mr={"1"} p={"0"} size={"xs"} variant={"ghost"}>
-              <Avatar width="15px" height="15px" src={creator.profilePictureURL}/>
+              <Avatar width="25px" height="25px" src={creator.profilePictureURL}/>
               {creator.username}
               </Button>
               <PlaylistEditMenu userId={userid} playlistName={playlist.playlistName} playlistId={id}/>
