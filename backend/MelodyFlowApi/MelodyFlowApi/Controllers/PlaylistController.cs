@@ -56,7 +56,7 @@ namespace MelodyFlowApi.Controllers
             }
             return BadRequest();
         }
-        [HttpGet("/playlist/{id}")]
+        [HttpGet("playlist/{id}")]
         public async Task<ActionResult<object>> GetPlaylistById(string id)
         {
             var Playlist = _context.Playlists.Where(f => f.Id == id);
