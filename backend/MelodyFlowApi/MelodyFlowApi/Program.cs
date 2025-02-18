@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using EmailApiKedd.Services.IEmail;
+using EmailApiKedd.Services;
 
 namespace MelodyFlowApi
 {
@@ -13,7 +15,7 @@ namespace MelodyFlowApi
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-
+            builder.Services.AddScoped<IEmailInterface, Email>();
             builder.Services.AddDbContext<AppDbContext>();
             builder.Services.AddDbContext<MelodyflowdbContext>();
             builder.Services.AddScoped<IAuth, AuthService>();
