@@ -50,7 +50,7 @@ export default function UserPage() {
         position={"relative"}
       >
         <Flex zIndex={"1"} bgGradient="to-tr" gradientFrom="colorPalette.solid/65" gradientTo="transparent" position={"absolute"} w={"full"} h={"190px"}></Flex>
-        <Flex backgroundImage={`url(${account?.profilePictureURL})`} backgroundPosition={"center"} backgroundSize={"cover"} direction={"row"} p={"5"}>
+        <Flex overflowX={"clip"} backgroundImage={`url(${account?.profilePictureURL})`} backgroundPosition={"center"} backgroundSize={"cover"} direction={"row"} p={"5"}>
           <Button
             zIndex={"2"}
             boxShadowColor={"colorPalette"}

@@ -42,6 +42,7 @@ export default function Main({ themecolor, setThemecolor, isLoggedIn, onRegister
     if (currentMusic !== music) {
       setCurrentMusic(music); // Új zene beállítása
       setIsPlaying(true); // Automatikusan lejátszásra állítja
+      setCurrentTime(0);
     } else {
       togglePlayPause(); // Ha ugyanaz a zene, akkor toggle
     }
@@ -117,10 +118,10 @@ export default function Main({ themecolor, setThemecolor, isLoggedIn, onRegister
                   <Route path="/user/:id" element={<UserPage/>} />
                 </Routes>
                 </Box>
-                <Footer currentMusic={currentMusic}/>
+                <Footer/>
             </GridItem>
             <GridItem rowSpan={1} zIndex="4">
-               <Player volume={volume} setVolume={setVolume} currentTime={currentTime} duration={duration} handleSliderChange={handleSliderChange} currentMusic={currentMusic} isPlaying={isPlaying} togglePlayPause={togglePlayPause}/>
+               <Player themecolor={themecolor} volume={volume} setVolume={setVolume} currentTime={currentTime} duration={duration} handleSliderChange={handleSliderChange} currentMusic={currentMusic} isPlaying={isPlaying} togglePlayPause={togglePlayPause}/>
                <audio ref={audioRef} src={currentMusic ? `https://localhost:5205/${currentMusic?.musicUrl}` : ""} />
             </GridItem>
           </Grid>

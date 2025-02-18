@@ -13,6 +13,8 @@ const MusicPage = ({currentTime, handleSliderChange, duration, currentMusic, han
   const [music, setMusic] = useState({});
   const [isPending, setPending] = useState(false)
   const [isFavorite, setFavorite] = useState(false)
+  const [favoritePlaylistId, setFavoritePlaylistId] = useState("")
+
   const [isUploader, setIsUploader] = useState(false)
   const { id } = useParams();
   const token = Cookies.get("token");
@@ -24,9 +26,6 @@ const MusicPage = ({currentTime, handleSliderChange, duration, currentMusic, han
     api.get("/music/"+id)
     .then(response => {
        setMusic(response.data[0]);
-       if(token !== ""){
-        getFavorite(response.data[0].title);
-       }
        if(response.data[0].uploaderId === userid){
         setIsUploader(true);
        }
@@ -37,29 +36,13 @@ const MusicPage = ({currentTime, handleSliderChange, duration, currentMusic, han
     })
 }
 
-  const getFavorite = (name) => {
+  const getFavorite = async () => {
     setPending(true);
-    api.get("/GetAllPlaylist",{
-      headers: {
-        Authorization: `Bearer ${token}`
-      }
-    })
-    .then(response => {
-      let data = response.data;
-        for (let i = 0; i < data.length; i++) {
-             if(data[i].playlistName === "Kedvencek"){
-                for (let f = 0; f < data[i].musics.length; f++) {
-                  if(name === data[i].musics[f].title){
-                    setFavorite(true);
-                  }
-                }
-             }
-         }
-  })
-    .catch(e => {console.error("HIBA, Nem sikerült lekérni a lejátszási listát: ",e)})
-    .finally(()=>{
-        setPending(false);
-    })
+    const response = await api.get("/GetPlaylistByUser?id="+userid);
+    const favoriteId = response.data.find(pl=> pl.playlistName === "Kedvencek" && pl.creatorId === userid)?.id;
+    setFavoritePlaylistId(favoriteId);
+    const favoriteMusics = await api.get("/playlist/"+favoriteId);
+    setFavorite(favoriteMusics.data.musics.find(m=> m.id === id));  
   }
 
   const deleteMusic = ()=>{
@@ -76,6 +59,48 @@ const MusicPage = ({currentTime, handleSliderChange, duration, currentMusic, han
       console.error("Hiba történt a zene törlése közben: ",e);
     })
   }
+
+  const addToFavorite = async ()=>{
+    if(!favoritePlaylistId){
+      toaster.create({ title: `Úgytűnik nincs Kedvencek nevű listád! Hozz létre egyet!`, type: "info" });
+    }
+    else{
+    try {
+      await api.post("/AddMusicToPlaylist", { playlistId: favoritePlaylistId, musicId: music.id }, {
+        headers: {
+          Authorization: `Bearer ${token}`
+      }
+      });
+      toaster.create({ title: `Zene hozzáadva a kedvencekhez.`, type: "success" });
+      setFavorite(true);
+    } catch (error) {
+      toaster.create({ title: `Hiba történt a művelet közben.`, type: "error" });
+      console.error(error);
+    }
+  }
+}
+  const removeFromFavorite = async ()=>{
+    try {
+      await api.delete("/DeleteMusicFromPlaylist", { 
+        data: { playlistId: favoritePlaylistId, musicId: music.id },
+        headers: {
+          Authorization: `Bearer ${token}`
+      }});
+      toaster.create({ title: `A zene törölve a kedvencekből!`, type: "success" });
+      setFavorite(false);
+    } catch (error) {
+      toaster.create({ title: `Hiba történt a művelet közben.`, type: "error" });
+      console.error(error);
+    }
+  }
+
+useEffect(() => {
+  if(token !== ""){
+    getFavorite();
+   }
+}, [])
+
+
 useEffect(() => {
   getMusic();
 }, [location])
@@ -151,9 +176,11 @@ useEffect(() => {
           <Text fontSize="md">
           </Text>
           <Text fontSize="md">
-            <Button p={1} m={1} variant="solid">{isFavorite? <LuStar fill={"colorPalette.solid"} stroke="0"/> : <LuStar/>}</Button>
+          {isFavorite? 
+          <Button p={1} m={1} variant="solid" onClick={removeFromFavorite}><LuStar fill={"colorPalette.solid"} stroke="0"/> </Button> :
+          <Button p={1} m={1} variant="solid" onClick={addToFavorite}><LuStar/></Button>}
             <Button p={1} m={1} variant={isPlaying && music?.title === currentMusic?.title ? "outline" : "subtle"} onClick={()=> handlePlay(music)}>{isPlaying && music?.title === currentMusic?.title ? <LuPause /> : <LuPlay />} </Button>
-            <AddToPlaylistMenu musicId={id}/>
+            <AddToPlaylistMenu isFavorite={isFavorite} musicId={id}/>
             {isUploader? <Button p={1} m={1} variant="solid" colorPalette={"red"} onClick={deleteMusic}><LuTrash/></Button>: null}
           </Text>
           {music?.id === currentMusic?.id? 

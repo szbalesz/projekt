@@ -6,11 +6,13 @@ import api from "../Api";
 import Cookies from "js-cookie";
 import PlaylistEditMenu from "../menu/PlaylistEditMenu";
 import { Avatar } from "../components/ui/avatar";
+import { toaster } from "../components/ui/toaster";
 
 export default function PlaylistPage() {
   const navigate = useNavigate();
   let userid = Cookies.get("userid");
   let { id } = useParams();
+  const [playlistId, setPlaylistId] = useState(id);
   const [isPending, setPending] = useState(false);
   const [musics, setMusics] = useState([]);
   const [playlist, setPlaylist] = useState([]);
@@ -24,9 +26,14 @@ export default function PlaylistPage() {
     if (token) {
       if(id === "Kedvencek"){
         const response = await api.get("/GetPlaylistByUser?id="+userid);
-        console.log(response)
         if(response.data.length > 0){
-          id = response.data.filter(pl=>pl.creatorId === userid).filter(pl=> pl.playlistName === id)[0].id;
+          id = response.data.filter(pl=>pl.creatorId === userid).filter(pl=> pl.playlistName === id)[0]?.id;
+          if(!id){
+            toaster.create({ title: `Úgytűnik nincs ilyen nevű listád! Hozz létre egyet Kedvencek névvel!`, type: "info" });
+          }
+          else{
+            setPlaylistId(id);
+          }
         }
       }
       try {
@@ -37,7 +44,6 @@ export default function PlaylistPage() {
         const result = await api.get("/user/"+creatorId)
         setCreator(result.data[0])
       } catch (e) {
-        console.error("HIBA, Nem sikerült lekérni a lejátszási listát: ", e);
         navigate("/playlists")
       } finally {
         setPending(false);
@@ -67,7 +73,7 @@ export default function PlaylistPage() {
         position={"relative"}
       >
         <Flex zIndex={"1"} bgGradient="to-tr" gradientFrom="colorPalette.solid/65" gradientTo="transparent" position={"absolute"} w={"full"} h={"190px"}></Flex>
-        <Flex backgroundImage={`url(${playlist?.imageUrl})`} backgroundPosition={"center"} backgroundSize={"cover"} direction={"row"} p={"5"}>
+        <Flex overflowX={"clip"} backgroundImage={`url(${playlist?.imageUrl})`} backgroundPosition={"center"} backgroundSize={"cover"} direction={"row"} p={"5"}>
           <Button
             zIndex={"2"}
             boxShadowColor={"colorPalette"}
@@ -97,7 +103,7 @@ export default function PlaylistPage() {
               <Avatar width="25px" height="25px" src={creator.profilePictureURL}/>
               {creator.username}
               </Button>
-              <PlaylistEditMenu userId={userid} playlistName={playlist.playlistName} playlistId={id}/>
+              <PlaylistEditMenu userId={userid} playlistName={playlist.playlistName} playlistId={playlistId}/>
             </Flex>
           </Box>
         </Flex>

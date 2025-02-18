@@ -11,7 +11,7 @@ import api from '../Api'
 import Cookies from "js-cookie";
 import { toaster } from '../components/ui/toaster'
 
-export default function AddToPlaylistMenu({ musicId }) {
+export default function AddToPlaylistMenu({ isFavorite, musicId }) {
   const userid = Cookies.get("userid");
   const token = Cookies.get("token");
   const [playlists, setPlaylists] = useState([]);
@@ -38,7 +38,7 @@ export default function AddToPlaylistMenu({ musicId }) {
     };
 
     getPlaylists();
-  }, [userid, musicId]);
+  }, [userid, musicId,isFavorite]);
 
   const AddOrRemove = async (playlistId, playlistName) => {
     try {

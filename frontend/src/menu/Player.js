@@ -4,7 +4,7 @@ import { Slider } from "../components/ui/slider";
 import { useNavigate } from 'react-router-dom';
 import { LuPlay, LuSkipBack, LuSkipForward, LuVolume, LuPause, LuArrowDown, LuArrowUp } from "react-icons/lu";
 
-export default function Player({ volume, setVolume, currentTime,duration,handleSliderChange, currentMusic, togglePlayPause, isPlaying }) {
+export default function Player({themecolor, volume, setVolume, currentTime,duration,handleSliderChange, currentMusic, togglePlayPause, isPlaying }) {
   const navigate = useNavigate();
   const [open, setopen] = useState(false);
 
@@ -24,7 +24,7 @@ useEffect(() => {
     <Box
       bg="Background"
       position="fixed"
-      boxShadow="-5px 0px 50px -20px #5eead4"
+      boxShadow={`-5px 0px 50px -20px ${themecolor}`}
       bottom={{  base: open != false ? "65px" : "5px", md: open != false ? "0px" : "-63px" }}
       transition="all 1s ease-in-out"
       marginLeft={{ base: "0px", md: "50px" }}
@@ -33,11 +33,9 @@ useEffect(() => {
       borderTop="solid rgba(255, 255, 255, 0.16)"
       height="65px"
       paddingRight={4}
-      zIndex="10"
       borderLeftWidth={{ base: "0px", md: "1px" }}
     >
       <Flex align="center" justify="space-between" py="2">
-
         <Button
           height="50px"
           marginLeft="0px"
@@ -115,16 +113,16 @@ useEffect(() => {
             </Box>
           </Flex>
         ) : ""}
-        <Flex position={"absolute"} bottom={"55px"} right={"0"}>
+      </Flex>
+      <Flex position={"absolute"} bottom={"60px"} right={"0"}>
         {open ?
-        <Button onClick={() => (setopen(false))} bg={"Background"} variant={"ghost"}>
+        <Button rounded={"xl"} onClick={() => (setopen(false))} bg={"Background"} variant={"outline"} borderBottomWidth={"0px"}>
         <LuArrowDown  />
-      </Button> : 
-      <Button onClick={() => (setopen(true))} bg={"Background"} variant={"ghost"}>
-      <LuArrowUp  />
+        </Button> : 
+        <Button rounded={"xl"} onClick={() => (setopen(true))} bg={"Background"} variant={"outline"} borderBottomWidth={"0px"}>
+        <LuArrowUp  />
     </Button>}
     </Flex>
-      </Flex>
     </Box>
   );
 }
