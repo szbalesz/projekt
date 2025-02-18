@@ -9,11 +9,11 @@ import PlaylistEditMenu from "../menu/PlaylistEditMenu";
 export default function PlaylistPage() {
   const navigate = useNavigate();
   let userid = Cookies.get("userid");
-  const { id } = useParams();
+  let { id } = useParams();
   const [isPending, setPending] = useState(false);
-  const [playlist, setPlaylist] = useState([]);
+  const [musics, setMusics] = useState([]);
   const [kedvenc, setKedvenc] = useState({});
-  const [playlistName, setPlaylistname] = useState("");
+  const [playlist, setPlaylist] = useState([]);
 
   const getPlaylist = async () => {
     setPending(true);
@@ -21,28 +21,14 @@ export default function PlaylistPage() {
     userid = Cookies.get("userid");
 
     if (token) {
-      try {
+      if(id === "Kedvencek"){
         const response = await api.get("/GetAllPlaylist");
-        if(id !== "Kedvencek"){
-          const plist = response.data.find(pl => pl.id === id);
-          if(plist !== undefined){
-            setPlaylistname(plist?.playlistName)
-          }
-          else{
-            navigate("/playlists")
-          }
-        }
-        else{
-          setPlaylistname("Kedvencek")
-        }
-        const kedvencPlaylist = response.data.find(pl => pl.playlistName === "Kedvencek");
-        if (kedvencPlaylist) {
-          setKedvenc(kedvencPlaylist);
-        }
-
-        const playlistId = id === "Kedvencek" && kedvenc.id ? kedvenc.id : id;
-        const musicResponse = await api.get(`/GetMusicFromPlaylist?id=${playlistId}`);
-        setPlaylist(musicResponse.data);
+        id = response.data.filter(pl=> pl.playlistName === id)[0].id;
+      }
+      try {
+        const response = await api.get("/playlist/"+id);
+        setMusics(response?.data.musics);
+        setPlaylist(response?.data.playlist[0])
         
       } catch (e) {
         console.error("HIBA, Nem sikerült lekérni a lejátszási listát: ", e);
@@ -57,7 +43,7 @@ export default function PlaylistPage() {
 
   useEffect(() => {
     getPlaylist();
-  }, [id, kedvenc.id]);
+  }, [id]);
 
   return (
     <div>
@@ -66,7 +52,7 @@ export default function PlaylistPage() {
         <AbsoluteCenter>
           <Spinner />
         </AbsoluteCenter>
-      ) : playlistName ?
+      ) : playlist?.playlistName ?
       <Box
         w={"full"}
         alignItems={"left"}
@@ -87,25 +73,25 @@ export default function PlaylistPage() {
             backgroundPosition={"center"}
             fit={"cover"}
           />
-          <Box zIndex={"2"} px={"5"} py={"5"}>
+          <Box zIndex={"2"} px={"5"} pt={"5"}>
             <Text fontSize="sm">
               Lejátszási lista
             </Text>
             <Text fontSize="4xl" fontWeight="bold">
-              {playlistName}
+              {playlist.playlistName}
             </Text>
             <Text fontSize="sm">
-            {playlist.length} zene
+            {musics.length} zene
             </Text>
-            <Text fontSize="md">
-              <PlaylistEditMenu userId={userid} playlistName={playlistName} playlistId={id}/>
+            <Text fontSize="md" p={"0"}>
+              <PlaylistEditMenu userId={userid} playlistName={playlist.playlistName} playlistId={id}/>
             </Text>
           </Box>
         </Flex>
         <hr/>
         <Flex px={"5"} pt={"3"} direction={"column"}>
           <Heading>Zenék</Heading>
-          <Flex my={"3"} wrap={"wrap"} gap={4} width="100%">{playlist.map((music, index) => <MusicCard key={index} music={music} />)}</Flex>
+          <Flex my={"3"} wrap={"wrap"} gap={4} width="100%">{musics.map((music, index) => <MusicCard key={index} music={music} />)}</Flex>
         </Flex>
       </Box>: 
       ""}

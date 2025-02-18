@@ -14,8 +14,10 @@ import {
 import { Input } from "@chakra-ui/react"
 import { toaster } from '../components/ui/toaster'
 import api from '../Api'
+import Cookies from "js-cookie";
 
 export default function PlaylistWindow({ userid, getPlaylists}) {
+    const token = Cookies.get("token");
     const themecolor = localStorage.getItem("themecolor");
     const [playlistName, setPlaylistName] = useState("");
     const [imageUrl, setImageUrl] = useState("");
@@ -39,12 +41,20 @@ export default function PlaylistWindow({ userid, getPlaylists}) {
                             imageUrl: imageUrl,
                             creatorId: userid,
                         }
-                        api.post("/CreatePlaylist",newPlaylist)
+                        api.post("/CreatePlaylist",newPlaylist, {
+                            headers: {
+                                Authorization: `Bearer ${token}`
+                            }
+                            })
                         .then((res)=>{
                             toaster.create({ title: "Sikeres létrehozás.", type: "success" });
                             const newPlaylistId = res.data.id;
                             const creatorId = res.data.creatorId;
-                            api.post("/AddPlaylistToUser",{playlistId: newPlaylistId,userId: creatorId})
+                            api.post("/AddPlaylistToUser",{playlistId: newPlaylistId,userId: creatorId},{
+                            headers: {
+                                Authorization: `Bearer ${token}`
+                            }
+                            })
                             .then(()=>{
                                 setPlaylistName("");
                                 setImageUrl("");

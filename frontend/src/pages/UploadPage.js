@@ -14,6 +14,7 @@ export default function UploadPage() {
     const [imageurl, setImageurl] = useState("");
     const [musicfile, setMusicfile] = useState(null);
     const userid = Cookies.get("userid");
+    const token = Cookies.get("token");
 
     const uploadMusic = async () => {
         const formData = new FormData();
@@ -27,6 +28,7 @@ export default function UploadPage() {
             const response = await api.post("/UploadMusic", formData, {
                 headers: {
                     "Content-Type": "multipart/form-data",
+                    Authorization: `Bearer ${token}`
                 },
             });
 

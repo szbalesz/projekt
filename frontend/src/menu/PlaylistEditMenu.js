@@ -11,13 +11,19 @@ import DialogAlert from './DialogAlert'
 import api from '../Api'
 import { toaster } from '../components/ui/toaster'
 import { useNavigate } from 'react-router-dom'
+import Cookies from "js-cookie"
 
 export default function PlaylistEditMenu({playlistName,playlistId,userId}) {
+  const token = Cookies.get("token");
   const navigate = useNavigate();
   const [isCreator, setIsCreator] = useState(false);
   const [isAdded, setIsAdded] = useState(false);
   const deletePlaylist =()=>{
-    api.delete("/playlist/"+playlistId)
+    api.delete("/playlist/"+playlistId,{
+      headers: {
+        Authorization: `Bearer ${token}`
+    }
+    })
     .then(()=>{
       toaster.create({ title: `Sikeresen törölted a ${playlistName} lejátszási listát!`, type: "success" });
       navigate("/playlists");
@@ -38,13 +44,25 @@ export default function PlaylistEditMenu({playlistName,playlistId,userId}) {
     }
   }
 
+  const getId = async ()=>{
+    if(playlistId === "Kedvencek"){
+      const response = await api.get("/GetAllPlaylist");
+      playlistId = response.data.filter(pl=> pl.playlistName === playlistId)[0].id;
+    }
+  }
+  
   useEffect(() => {
+    getId();
     getIsAdded();
   }, [])
   
 
   const addToMyPlaylists =()=>{
-    api.post("/AddPlaylistToUser",{userId,playlistId})
+    api.post("/AddPlaylistToUser",{userId,playlistId},{
+      headers: {
+        Authorization: `Bearer ${token}`
+    }
+    })
     .then(()=>{
       toaster.create({ title: `Sikeresen hozzáadtad a(z) ${playlistName} listát a saját listáidhoz!`, type: "success" });
       setIsAdded(true);
@@ -55,18 +73,21 @@ export default function PlaylistEditMenu({playlistName,playlistId,userId}) {
   }
 
   const removeFromMyPlaylists =()=>{
-    api.delete("/DeleteUserFromPlaylist",{
+    api.delete("/DeleteUserFromPlaylist", {
       data: {
           userId: userId,
           playlistId: playlistId
       },
-  })
+      headers: {
+          Authorization: `Bearer ${token}`
+      }
+    })
     .then(()=>{
       toaster.create({ title: `Sikeresen törölted a(z) ${playlistName} listát a saját listáid közül!`, type: "success" });
       setIsAdded(false);
     })
     .catch((e)=>{
-      console.log("Hiba történt a lista hozzáadása közben: ",e);
+      console.error("Hiba történt a lista hozzáadása közben: ",e);
     })
   }
   return (

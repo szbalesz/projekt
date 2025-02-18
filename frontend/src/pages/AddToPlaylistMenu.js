@@ -13,6 +13,7 @@ import { toaster } from '../components/ui/toaster'
 
 export default function AddToPlaylistMenu({ musicId }) {
   const userid = Cookies.get("userid");
+  const token = Cookies.get("token");
   const [playlists, setPlaylists] = useState([]);
   const [addedMusic, setAddedMusic] = useState({});
 
@@ -25,8 +26,8 @@ export default function AddToPlaylistMenu({ musicId }) {
 
         const musicStatus = {};
         await Promise.all(userPlaylists.map(async (playlist) => {
-          const musicRes = await api.get(`/GetMusicFromPlaylist?id=${playlist.id}`);
-          const isAdded = musicRes.data.some(music => music.id === musicId);
+          const musicRes = await api.get(`/playlist/${playlist.id}`);
+          const isAdded = musicRes.data.musics.some(music => music.id === musicId);
           musicStatus[playlist.id] = isAdded;
         }));
 
@@ -41,13 +42,19 @@ export default function AddToPlaylistMenu({ musicId }) {
 
   const AddOrRemove = async (playlistId, playlistName) => {
     try {
-      const musicRes = await api.get(`/GetMusicFromPlaylist?id=${playlistId}`);
-      const isAlreadyAdded = musicRes.data.some(music => music.id === musicId);
+      const musicRes = await api.get(`/playlist/${playlistId}`);
+      const isAlreadyAdded = musicRes.data.musics.some(music => music.id === musicId);
       if (isAlreadyAdded) {
-        await api.delete("/DeleteMusicFromPlaylist", { data: { playlistId, musicId } });
+        await api.delete("/DeleteMusicFromPlaylist", { data: { playlistId, musicId }, headers: {
+          Authorization: `Bearer ${token}`
+      }});
         toaster.create({ title: `A zene törölve a ${playlistName} listából!`, type: "success" });
       } else {
-        await api.post("/AddMusicToPlaylist", { playlistId, musicId });
+        await api.post("/AddMusicToPlaylist", { playlistId, musicId }, {
+          headers: {
+            Authorization: `Bearer ${token}`
+        }
+        });
         toaster.create({ title: `Zene hozzáadva ${playlistName} listához.`, type: "success" });
       }
 

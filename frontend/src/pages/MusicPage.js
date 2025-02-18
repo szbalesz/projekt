@@ -63,7 +63,11 @@ const MusicPage = ({currentTime, handleSliderChange, duration, currentMusic, han
   }
 
   const deleteMusic = ()=>{
-    api.delete("/music/"+id)
+    api.delete("/music/"+id, {
+      headers: {
+        Authorization: `Bearer ${token}`
+    }
+    })
     .then(() =>{
       toaster.create({ title: `Sikeresen törölted a ${music?.title} című zenét!`, type: "success" });
       navigate("/");
