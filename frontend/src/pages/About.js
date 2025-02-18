@@ -13,7 +13,7 @@ const items = [
     {
       name: "Csehi Tamás",
       bio: "Fronted UI + Dokumentáció",
-      image: "https://i.pravatar.cc/150?u=b",
+      image: "https://i.ytimg.com/vi/nnyWGcffY1w/hqdefault.jpg",
     },
     {
       name: "Száraz Bálint Csaba",
