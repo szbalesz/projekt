@@ -12,7 +12,7 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "../components/ui/drawer"
-import { Flex, Span, Theme } from '@chakra-ui/react'
+import { Flex, Span, Text, Theme } from '@chakra-ui/react'
 import { LuPanelRightClose, LuUser } from "react-icons/lu";
 import Cookies from "js-cookie";
 import { Link } from 'react-router-dom';
@@ -51,9 +51,11 @@ export default function MenuAvatar({themecolor, isLoggedIn, onLogout, profileMen
             <DrawerTitle>
               <Flex justifyContent="center" textAlign="center">
                 {isLoggedIn ?
-                  <div>
-                    <Avatar width="50px" height="50px" src={account?.profilePictureURL} /><Flex p="3" color="colorPalette.solid">{account?.username}</Flex>
-                  </div> :
+                  <Flex direction={"column"}>
+                      <Avatar boxShadow={`0 0 20px 0 ${themecolor}`} width="125px" height="125px" src={account?.profilePictureURL} /><Flex p="3" color="colorPalette.solid">
+                      <Text mx={"auto"} fontSize={"2xl"} color={themecolor}>{account?.username}</Text>
+                      </Flex>
+                  </Flex> :
                   <DrawerActionTrigger as="div">
                     <Link style={{ display: "flex", margin: "5px" }} onClick={onclose} to={"/login"}>
                       <Button
