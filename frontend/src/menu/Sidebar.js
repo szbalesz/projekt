@@ -29,12 +29,12 @@ export default function Sidebar({menuItems,selectedMenu,setIsSidebarOpen}) {
         <DrawerBackdrop/> 
         <DrawerContent bg="Background" borderWidth={{ base: "0px", md: "0px" }} borderTopWidth="0"  width={{ base: "100%", md: "225px" }}>
         <Theme display={"flex"} flexDirection={"column"} colorPalette={themecolor} bg={"Background"} h={"100%"}>
-          <DrawerTitle textAlign="center">
+          <DrawerTitle display={{base: "none", md:"flex"}} textAlign="center">
             <Button top="0px" left="0px" width="100%" position="absolute" cursor="pointer" onClick={onClose} fontSize="md" justifyContent="space-between" height="50px" variant="outline">
             Menü <LuPanelBottomClose />
             </Button>
           </DrawerTitle>
-          <DrawerHeader borderBottomWidth="1px" p="24.5px">
+          <DrawerHeader display={{base: "none", md:"flex"}} borderBottomWidth="1px" p="24.5px">
 
           </DrawerHeader>
           <DrawerBody p="0" onClick={onClose}>
@@ -57,7 +57,7 @@ export default function Sidebar({menuItems,selectedMenu,setIsSidebarOpen}) {
           <DrawerFooter p="0" w="100%">
           <Flex w="100%" direction="column">
             <Button onClick={onClose} fontSize="md" justifyContent="space-between" display={{base: "flex", md:"none"}} width="100%" height="50px" variant="outline">
-              <LuPanelBottomClose/> Bezárás <LuPanelBottomClose/>
+              Bezárás <LuPanelBottomClose/>
             </Button>
           </Flex>
           </DrawerFooter>
