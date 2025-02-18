@@ -12,8 +12,8 @@ export default function PlaylistPage() {
   let { id } = useParams();
   const [isPending, setPending] = useState(false);
   const [musics, setMusics] = useState([]);
-  const [kedvenc, setKedvenc] = useState({});
   const [playlist, setPlaylist] = useState([]);
+  const [creator, setCreator] = useState({})
 
   const getPlaylist = async () => {
     setPending(true);
@@ -29,7 +29,9 @@ export default function PlaylistPage() {
         const response = await api.get("/playlist/"+id);
         setMusics(response?.data.musics);
         setPlaylist(response?.data.playlist[0])
-        
+        let creatorId = response?.data.playlist[0].creatorId;
+        const result = await api.get("/user/"+creatorId)
+        setCreator(result.data[0])
       } catch (e) {
         console.error("HIBA, Nem sikerült lekérni a lejátszási listát: ", e);
         navigate("/playlists")
@@ -44,6 +46,7 @@ export default function PlaylistPage() {
   useEffect(() => {
     getPlaylist();
   }, [id]);
+  
 
   return (
     <div>
