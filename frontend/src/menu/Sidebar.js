@@ -31,7 +31,7 @@ export default function Sidebar({menuItems,selectedMenu,setIsSidebarOpen}) {
         <Theme display={"flex"} flexDirection={"column"} colorPalette={themecolor} bg={"Background"} h={"100%"}>
           <DrawerTitle textAlign="center">
             <Button top="0px" left="0px" width="100%" position="absolute" cursor="pointer" onClick={onClose} fontSize="md" justifyContent="space-between" height="50px" variant="outline">
-              <LuPanelBottomClose /> Menü <LuPanelBottomClose />
+            Menü <LuPanelBottomClose />
             </Button>
           </DrawerTitle>
           <DrawerHeader borderBottomWidth="1px" p="24.5px">
