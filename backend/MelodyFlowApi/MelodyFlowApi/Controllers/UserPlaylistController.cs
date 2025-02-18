@@ -1,4 +1,5 @@
 ﻿using MelodyFlowApi.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -26,6 +27,7 @@ namespace MelodyFlowApi.Controllers
             }
             return Ok(Playlists);
         }
+        [Authorize]
         [HttpPost("AddPlaylistToUser")]
         public async Task<ActionResult<Userplaylist>> AddPlaylistToUser(Userplaylist userplaylist)
         {
@@ -33,7 +35,7 @@ namespace MelodyFlowApi.Controllers
             await _context.SaveChangesAsync();
             return Ok(userplaylist);
         }
-
+        [Authorize]
         [HttpDelete("DeleteUserFromPlaylist")]
         public ActionResult DeleteUserFromPlaylist(Userplaylist userplaylist)
         {

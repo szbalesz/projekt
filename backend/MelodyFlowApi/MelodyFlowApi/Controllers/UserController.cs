@@ -1,4 +1,5 @@
 ﻿using MelodyFlowApi.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -27,7 +28,8 @@ namespace MelodyFlowApi.Controllers
                 Email=p.Email
             }).ToListAsync());
         }
-        [HttpDelete("user/{id}")]
+        [Authorize]
+        [HttpDelete("{id}")]
         public ActionResult DeleteUser(string id)
         {
             var data = _context.Aspnetusers.FirstOrDefault(x => x.Id == id);

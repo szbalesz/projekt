@@ -24,17 +24,6 @@ namespace MelodyFlowApi.Controllers
             await _context.SaveChangesAsync();
             return Ok(playlistmusic);
         }
-        [HttpGet("GetMusicFromPlaylist")]
-        public async Task<ActionResult<object>> GetMusicFromPlaylist(string id)
-        {
-            List<string> MusicIds = await _context.Playlistmusics.Where(f => f.PlaylistId == id).Select(f => f.MusicId).ToListAsync();
-            List<Music> Musics = new List<Music>();
-            foreach (var mid in MusicIds)
-            {
-                Musics.Add(await _context.Musics.FirstOrDefaultAsync(m => m.Id == mid));
-            }
-            return Ok(Musics);
-        }
         [Authorize]
         [HttpDelete("DeleteMusicFromPlaylist")]
         public ActionResult DeleteMusicFromPlaylist(Playlistmusic playlistmusic)

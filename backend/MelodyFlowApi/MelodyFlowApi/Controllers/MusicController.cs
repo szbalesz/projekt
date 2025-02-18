@@ -1,5 +1,6 @@
 ﻿using MelodyFlowApi.Models;
 using MelodyFlowApi.Models.Dtos;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -27,6 +28,7 @@ namespace MelodyFlowApi.Controllers
         {
             return Ok(await _context.Musics.Where(f => (f.Title.ToLower().Contains(betu.ToLower()) || f.Artist.ToLower().Contains(betu.ToLower()))).ToListAsync());
         }
+        [Authorize]
         [HttpPost("UploadMusic")]
         public async Task<IActionResult> UploadFile([FromForm] UploadMusicDto uploadMusicDto)
         {
@@ -77,6 +79,7 @@ namespace MelodyFlowApi.Controllers
         {
             return Ok(await _context.Musics.Where(f => f.Id == id).ToListAsync());
         }
+        [Authorize]
         [HttpDelete("music/{id}")]
         public ActionResult DeleteMusic(string id)
         {

@@ -23,6 +23,7 @@ namespace MelodyFlowApi.Controllers
         {
             return Ok(await _context.Playlists.ToListAsync());
         }
+        [Authorize]
         [HttpPost("CreatePlaylist")]
         public async Task<ActionResult<Playlist>> CreatePlaylist(CreatePlaylistDto createPlaylistDto)
         {
@@ -42,6 +43,7 @@ namespace MelodyFlowApi.Controllers
             }
             return BadRequest();
         }
+        [Authorize]
         [HttpDelete("playlist/{id}")]
         public ActionResult DeletePlaylist(string id)
         {
@@ -53,6 +55,19 @@ namespace MelodyFlowApi.Controllers
                 return Ok();
             }
             return BadRequest();
+        }
+        [HttpGet("/playlist/{id}")]
+        public async Task<ActionResult<object>> GetPlaylistById(string id)
+        {
+            var Playlist = _context.Playlists.Where(f => f.Id == id);
+            List<string> MusicIds = await _context.Playlistmusics.Where(f => f.PlaylistId == id).Select(f => f.MusicId).ToListAsync();
+            List<Music> Musics = new List<Music>();
+            foreach (var mid in MusicIds)
+            {
+                Musics.Add(await _context.Musics.FirstOrDefaultAsync(m => m.Id == mid));
+            }
+            
+            return Ok(new { Playlist = Playlist, Musics = Musics });
         }
     }
 }
