@@ -1,14 +1,30 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Box, Text, Image } from "@chakra-ui/react";
 import { useNavigate } from 'react-router-dom';
+import api from './Api';
 
 export default function PlaylistCard({ playlist }) {
   const themecolor = localStorage.getItem("themecolor");
   const navigate = useNavigate();
-
+  const [creator, setCreator] = useState({})
+  const [length, setLength] = useState(0)
   const openPlaylist = ()=>{
     navigate(`/playlist/${playlist.id}`);
   }
+
+  const getData = async ()=>{
+    const response = await api.get("/playlist/"+playlist.id);
+       let creatorId = response.data.playlist[0].creatorId
+       setLength(response.data.musics.length)
+        if(creatorId != null){
+          const res = await api.get("/user/"+creatorId);
+          setCreator(res.data[0]);
+        }
+  }
+
+  useEffect(() => {
+    getData();
+  }, [])
   return (
     <Button
       _hover={{ transform: "scale(1.05)" }}

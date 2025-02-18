@@ -90,7 +90,7 @@ export default function PlaylistPage() {
             <Text fontSize="sm">
             {musics.length} zene
             </Text>
-            <Text fontSize="md" p={"0"}>
+            <Flex fontSize="md" p={"0"}>
               <Button onClick={()=> {
                 navigate("/user/"+playlist.creatorId)
               }} mr={"1"} p={"0"} size={"xs"} variant={"ghost"}>
@@ -98,7 +98,7 @@ export default function PlaylistPage() {
               {creator.username}
               </Button>
               <PlaylistEditMenu userId={userid} playlistName={playlist.playlistName} playlistId={id}/>
-            </Text>
+            </Flex>
           </Box>
         </Flex>
         <hr/>
