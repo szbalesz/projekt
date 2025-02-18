@@ -69,8 +69,8 @@ export default function PlaylistWindow({ userid, getPlaylists}) {
                         })
                     }}>
                         <Flex direction={"row"} pb={"3"}>
-                            <Image src={imageUrl? imageUrl : null} minWidth={"150px"} height={"150px"} />
-                            <Flex width={"full"} direction={"column"} p={"3"}>
+                            <Button borderRadius="lg" variant="ghost" height="150px" width="150px" backgroundPosition="center" backgroundImage={"url("+imageUrl+")"} backgroundSize="cover" boxShadow={`0 0 15px 0 ${themecolor}`}/>
+                            <Flex width={"full"} direction={"column"} p={"5"}>
                                 <Input required value={playlistName} onChange={(e)=> setPlaylistName(e.target.value)} placeholder="Írd be a nevet" />
                                 <Input required value={imageUrl} onChange={(e)=> setImageUrl(e.target.value)} my={"5"} placeholder="Kép elérési útja" />
                             </Flex>
