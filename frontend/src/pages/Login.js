@@ -49,7 +49,7 @@ export default function Login({ isLoggedin, onLogin }) {
                     </Checkbox>
                 </Field>
                 <ChakraLink>Elfelejtett jelszó?</ChakraLink>
-                <Button onClick={()=> onLogin(username,password)}  color="white" mt={4} mb={3}>
+                <Button onClick={()=> onLogin(username,password)} mt={4} mb={3}>
                     Bejelentkezés
                 </Button>
                 </Stack>
