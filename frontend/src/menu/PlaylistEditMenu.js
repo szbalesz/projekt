@@ -46,8 +46,8 @@ export default function PlaylistEditMenu({playlistName,playlistId,userId}) {
 
   const getId = async ()=>{
     if(playlistId === "Kedvencek"){
-      const response = await api.get("/GetAllPlaylist");
-      playlistId = response.data.filter(pl=> pl.playlistName === playlistId)[0].id;
+      const response = await api.get("/GetPlaylistByUser?id="+userId);
+      playlistId = response.data.filter(pl=>pl.creatorId === userId).filter(pl=> pl.playlistName === playlistId)[0].id;
     }
   }
   

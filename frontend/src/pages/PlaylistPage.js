@@ -23,8 +23,11 @@ export default function PlaylistPage() {
 
     if (token) {
       if(id === "Kedvencek"){
-        const response = await api.get("/GetAllPlaylist");
-        id = response.data.filter(pl=> pl.playlistName === id)[0].id;
+        const response = await api.get("/GetPlaylistByUser?id="+userid);
+        console.log(response)
+        if(response.data.length > 0){
+          id = response.data.filter(pl=>pl.creatorId === userid).filter(pl=> pl.playlistName === id)[0].id;
+        }
       }
       try {
         const response = await api.get("/playlist/"+id);
