@@ -43,10 +43,10 @@ namespace MelodyFlowApi.Controllers
             return BadRequest();
         }
         [HttpPut("ChangeEmail")]
-        public async Task<ActionResult<Aspnetuser>> ChangeEmail(UserEmailPutDto userEmailPutDto, string id)
+        public async Task<ActionResult<Aspnetuser>> ChangeEmail(UserEmailPutDto userEmailPutDto)
         {
 
-            var existingUser = await _context.Aspnetusers.FirstOrDefaultAsync(x => id == x.Id);
+            var existingUser = await _context.Aspnetusers.FirstOrDefaultAsync(x => x.Id == userEmailPutDto.Id);
 
             if (existingUser != null)
             {
@@ -59,10 +59,10 @@ namespace MelodyFlowApi.Controllers
             return StatusCode(404);
         }
         [HttpPut("ChangeUserName")]
-        public async Task<ActionResult<Aspnetuser>> ChangeUserName(UserNamePutDto userNamePutDto, string id)
+        public async Task<ActionResult<Aspnetuser>> ChangeUserName(UserNamePutDto userNamePutDto)
         {
 
-            var existingUser = await _context.Aspnetusers.FirstOrDefaultAsync(x => id == x.Id);
+            var existingUser = await _context.Aspnetusers.FirstOrDefaultAsync(x => x.Id == userNamePutDto.Id);
 
             if (existingUser != null)
             {
@@ -75,10 +75,10 @@ namespace MelodyFlowApi.Controllers
             return StatusCode(404);
         }
         [HttpPut("ChangePorfilePicture")]
-        public async Task<ActionResult<Aspnetuser>> ChangePorfilePicture(UserPicturePutDto userPicturePutDto, string id)
+        public async Task<ActionResult<Aspnetuser>> ChangePorfilePicture(UserPicturePutDto userPicturePutDto)
         {
 
-            var existingUser = await _context.Aspnetusers.FirstOrDefaultAsync(x => id == x.Id);
+            var existingUser = await _context.Aspnetusers.FirstOrDefaultAsync(x=>x.Id==userPicturePutDto.Id);
 
             if (existingUser != null)
             {
