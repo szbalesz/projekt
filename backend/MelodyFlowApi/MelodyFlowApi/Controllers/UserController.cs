@@ -74,5 +74,21 @@ namespace MelodyFlowApi.Controllers
             }
             return StatusCode(404);
         }
+        [HttpPut("ChangePorfilePicture")]
+        public async Task<ActionResult<Aspnetuser>> ChangePorfilePicture(UserPicturePutDto userPicturePutDto, string id)
+        {
+
+            var existingUser = await _context.Aspnetusers.FirstOrDefaultAsync(x => id == x.Id);
+
+            if (existingUser != null)
+            {
+                existingUser.ProfilePictureUrl = userPicturePutDto.ProfilePictureURL;
+
+                _context.Aspnetusers.Update(existingUser);
+                await _context.SaveChangesAsync();
+                return StatusCode(200, existingUser);
+            }
+            return StatusCode(404);
+        }
     }
 }
