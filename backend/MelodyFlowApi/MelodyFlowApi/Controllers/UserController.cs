@@ -1,4 +1,5 @@
 ﻿using MelodyFlowApi.Models;
+using MelodyFlowApi.Models.Dtos;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -19,13 +20,13 @@ namespace MelodyFlowApi.Controllers
         [HttpGet("{Id}")]
         public async Task<ActionResult<Aspnetuser>> GetProfile(string Id)
         {
-            return Ok(await _context.Aspnetusers.Where(f=> Id == f.Id).Select(p => new
+            return Ok(await _context.Aspnetusers.Where(f => Id == f.Id).Select(p => new
             {
-                Fullname=p.Fullname,
-                Birthdate=p.BirthDate,
-                ProfilePictureURL=p.ProfilePictureUrl,
-                Username=p.UserName,
-                Email=p.Email
+                Fullname = p.Fullname,
+                Birthdate = p.BirthDate,
+                ProfilePictureURL = p.ProfilePictureUrl,
+                Username = p.UserName,
+                Email = p.Email
             }).ToListAsync());
         }
         [Authorize]
@@ -40,6 +41,22 @@ namespace MelodyFlowApi.Controllers
                 return Ok();
             }
             return BadRequest();
+        }
+        [HttpPut("ChangeEmail")]
+        public async Task<ActionResult<Aspnetuser>> ChangeEmail(UserEmailPutDto userEmailPutDto, string id)
+        {
+
+            var existingUser = await _context.Aspnetusers.FirstOrDefaultAsync(x => id == x.Id);
+
+            if (existingUser != null)
+            {
+                existingUser.Email = userEmailPutDto.Email;
+
+                _context.Aspnetusers.Update(existingUser);
+                await _context.SaveChangesAsync();
+                return StatusCode(200, existingUser);
+            }
+            return StatusCode(404);
         }
     }
 }
