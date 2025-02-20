@@ -58,5 +58,21 @@ namespace MelodyFlowApi.Controllers
             }
             return StatusCode(404);
         }
+        [HttpPut("ChangeUserName")]
+        public async Task<ActionResult<Aspnetuser>> ChangeUserName(UserNamePutDto userNamePutDto, string id)
+        {
+
+            var existingUser = await _context.Aspnetusers.FirstOrDefaultAsync(x => id == x.Id);
+
+            if (existingUser != null)
+            {
+                existingUser.UserName = userNamePutDto.UserName;
+
+                _context.Aspnetusers.Update(existingUser);
+                await _context.SaveChangesAsync();
+                return StatusCode(200, existingUser);
+            }
+            return StatusCode(404);
+        }
     }
 }
