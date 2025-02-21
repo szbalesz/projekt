@@ -14,7 +14,7 @@ namespace MelodyFlowApi.Controllers
         {
             this.auth = auth;
         }
-
+        //Regisztráció a createuserdto segítségével(azokat az használja amik a dtoban vannak)
         [HttpPost("register")]
         public async Task<ActionResult> AddNewUser(CreateUserDto createUserDto)
         {
@@ -28,7 +28,7 @@ namespace MelodyFlowApi.Controllers
             return BadRequest(res);
 
         }
-
+        //Bejelentkezés szintén dto segítségével azokat az adatokat szükséges megadni a bejelntkezéshez amik a dto-ban szerepelnek
         [HttpPost("login")]
         public async Task<ActionResult> LoginUser(LoginIUserDto loginIUserDto)
         {
