@@ -16,6 +16,7 @@ namespace MelodyFlowApi.Controllers
         {
             _context = context;
         }
+        //Lekérjük egy ember playlistjeit az id-ja alapján
         [HttpGet("GetPlaylistByUser")]
         public async Task<ActionResult<Playlist>> GetPlaylistByUser(string id)
         {
@@ -27,6 +28,7 @@ namespace MelodyFlowApi.Controllers
             }
             return Ok(Playlists);
         }
+        //Itt hozzáadunk egy playlistet egy adott felhasználóhoz
         [Authorize]
         [HttpPost("AddPlaylistToUser")]
         public async Task<ActionResult<Userplaylist>> AddPlaylistToUser(Userplaylist userplaylist)
@@ -35,6 +37,7 @@ namespace MelodyFlowApi.Controllers
             await _context.SaveChangesAsync();
             return Ok(userplaylist);
         }
+        //Kitöröljük a felhasználót a playlistből mert egy lejátszási listát akár több ember is láthat/használhat így a felhasználó akit töröltünk belőle többé nem ofgja tudni megtenni ezeket
         [Authorize]
         [HttpDelete("DeleteUserFromPlaylist")]
         public ActionResult DeleteUserFromPlaylist(Userplaylist userplaylist)
