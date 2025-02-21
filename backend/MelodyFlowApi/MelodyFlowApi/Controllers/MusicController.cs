@@ -18,16 +18,19 @@ namespace MelodyFlowApi.Controllers
         {
             _context = context;
         }
+        //Kilistázzuk az összes zenét ami megtalálható az adatbázisban
         [HttpGet("GetAllMusic")]
         public async Task<ActionResult<Music>> Get()
         {
             return Ok(await _context.Musics.ToListAsync());
         }
+        //Kilistázzuk a zenét cím/előadó/betű alapján akár többet is ha hasonló a cím vagy nem pontosan van beírva
         [HttpGet("GetMusicByName")]
         public async Task<ActionResult<Music>> GetByName(string betu)
         {
             return Ok(await _context.Musics.Where(f => (f.Title.ToLower().Contains(betu.ToLower()) || f.Artist.ToLower().Contains(betu.ToLower()))).ToListAsync());
         }
+        //Fel tudunk tölteni zenét az uploadmusicdto segítségével
         [Authorize]
         [HttpPost("UploadMusic")]
         public async Task<IActionResult> UploadFile([FromForm] UploadMusicDto uploadMusicDto)
@@ -69,16 +72,19 @@ namespace MelodyFlowApi.Controllers
             }
 
         }
+        //Kilistázzuk a zenéket az alapján hogy ki töltötte fel
         [HttpGet("music/uploader/{id}")]
         public async Task<ActionResult<Music>> GetMusicByUploader(string id)
         {
             return Ok(await _context.Musics.Where(f=>f.UploaderId==id).ToListAsync());
         }
+        //Kilistázzuk a zenéket az egyedi azonosítójuk alapján
         [HttpGet("music/{id}")]
         public async Task<ActionResult<Music>> GetMusicById(string id)
         {
             return Ok(await _context.Musics.Where(f => f.Id == id).ToListAsync());
         }
+        //Zenét tudunk töröli szintén az egyedi azonosítója alapján
         [Authorize]
         [HttpDelete("music/{id}")]
         public ActionResult DeleteMusic(string id)

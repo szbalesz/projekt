@@ -39,7 +39,6 @@ namespace MelodyFlowApi.Controllers
             }
             return BadRequest(res);
         }
-
         [HttpPost("AssignRole")]
         public async Task<ActionResult> AssignRole(AssignUserDto assignUserDto)
         {
