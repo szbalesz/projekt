@@ -14,7 +14,7 @@ namespace EmailApiKedd.Services
         {
             this.configuration = configuration;
         }
-
+        //Email küldés megvalósítása
         public void SendEmail(string To, string Subject, string Body)
         {
             var email = new MimeMessage();

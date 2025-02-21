@@ -16,7 +16,7 @@ namespace MelodyFlowApi.Services
         {
             this.jwtOptions = jwtOptions.Value;
         }
-
+        //Legenerál egy jwt tokent ami tartalmazza a felhasználó egyes adatait amivel hozzáfér több lekérdezéshez
         public string GenerateToken(ApplicationUser applicationUser, IEnumerable<string> role)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
