@@ -24,7 +24,7 @@ export default function Login({ isLoggedin, onLogin }) {
   const navigate = useNavigate();
   useEffect(() => {
     if(isLoggedin || Cookies.get("token")){
-      navigate("/")
+      navigate(-1)
     }
   }, [])
   
@@ -60,6 +60,6 @@ export default function Login({ isLoggedin, onLogin }) {
             </Stack>
         </AbsoluteCenter>
         </Flex>
-    </>
+      </>
   )
 }

@@ -11,6 +11,7 @@ import { toaster } from "../components/ui/toaster";
 export default function PlaylistPage() {
   const navigate = useNavigate();
   let userid = Cookies.get("userid");
+  let token = Cookies.get("token");
   let { id } = useParams();
   const [playlistId, setPlaylistId] = useState(id);
   const [isPending, setPending] = useState(false);
@@ -20,9 +21,8 @@ export default function PlaylistPage() {
 
   const getPlaylist = async () => {
     setPending(true);
-    const token = Cookies.get("token");
     userid = Cookies.get("userid");
-
+    token = Cookies.get("token");
     if (token) {
       if(id === "Kedvencek"){
         const response = await api.get("/GetPlaylistByUser?id="+userid);
@@ -44,7 +44,7 @@ export default function PlaylistPage() {
         const result = await api.get("/user/"+creatorId)
         setCreator(result.data[0])
       } catch (e) {
-        navigate("/playlists")
+        navigate(-1)
       } finally {
         setPending(false);
       }
@@ -54,7 +54,12 @@ export default function PlaylistPage() {
   };
 
   useEffect(() => {
-    getPlaylist();
+    if(token){
+      getPlaylist();
+    }
+    else{
+      navigate(-1);
+    }
   }, [id]);
   
 
@@ -109,11 +114,11 @@ export default function PlaylistPage() {
         </Flex>
         <hr/>
         <Flex px={"5"} pt={"3"} direction={"column"}>
-          <Heading>Zenék</Heading>
+          {musics.length > 0 ? <Heading>Zenék</Heading> : <Heading>A lejátszási lista üres.</Heading>}
           <Flex my={"3"} wrap={"wrap"} gap={4} width="100%">{musics.map((music, index) => <MusicCard key={index} music={music} />)}</Flex>
         </Flex>
       </Box>: 
-      ""}
+      null}
     </Flex>
     </div>
   );

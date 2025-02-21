@@ -1,8 +1,18 @@
 import { Button, Center, Flex, Heading, Text, } from '@chakra-ui/react'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { LuUser } from 'react-icons/lu'
+import { useNavigate } from 'react-router-dom'
+import Cookies from "js-cookie"
 
 export default function ProfileSettings() {
+    const navigate = useNavigate();
+    const token = Cookies.get("token");
+    useEffect(() => {
+      if(!token){
+        navigate(-1);
+      }
+    }, [token])
+    
     return (
         <Center padding={"25px"} height={"100%"}>
             <Flex width={"3xl"} direction={"column"}>

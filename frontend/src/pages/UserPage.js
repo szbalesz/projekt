@@ -78,10 +78,14 @@ export default function UserPage() {
         <hr/>
         <Flex px={"5"} pt={"3"} direction={"column"}>
           <Heading>Zenék</Heading>
-          <Flex my={"3"} overflowX={"auto"} gap={4} width="100%">{musics.map((music, index) => <MusicCard key={index} music={music} />)}</Flex>
+          <Flex my={"3"} overflowX={"auto"} gap={4} width="100%">
+            {musics.map((music, index) => <MusicCard key={index} music={music} />)}
+          </Flex>
           <hr />
           <Heading>Lejátszási listák</Heading>
-          <Flex my={"3"} overflowX={"auto"} gap={4} width="100%">{playlists.map((playlist, index) => <PlaylistCard key={index} playlist={playlist} />)}</Flex>
+          <Flex my={"3"} overflowX={"auto"} gap={4} width="100%">
+            {playlists.map((playlist, index) => <PlaylistCard key={index} playlist={playlist} />)}
+          </Flex>
         </Flex>
       </Box>: 
       ""}

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MelodyFlowApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c28b1084aa4e1fd918554e6e3a6f95c2752fb9aa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1e0099a5f128481547b4f2235a3e0c8689b45f79")]
 [assembly: System.Reflection.AssemblyProductAttribute("MelodyFlowApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MelodyFlowApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

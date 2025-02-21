@@ -4,9 +4,11 @@ import PlaylistCard from '../PlaylistCard';
 import api from '../Api';
 import Cookies from "js-cookie"
 import PlaylistWindow from './PlaylistWindow';
+import { useNavigate } from 'react-router-dom';
 
 export default function Playlists() {
   const themecolor = localStorage.getItem("themecolor");
+  const navigate = useNavigate();
   const [playlists, setPlaylists] = useState()
   const [isPending, setPending] = useState(false)
   const token = Cookies.get("token");
@@ -29,7 +31,7 @@ export default function Playlists() {
       }
   }
   useEffect(() => {
-    if(token !== ""){
+    if(token){
       getPlaylists();
     }
   }, [])
@@ -37,7 +39,6 @@ export default function Playlists() {
   return (
     <>
     <Flex w={"100%"}>
-    {playlists?
       <Box
         w={"full"}
         alignItems={"left"}
@@ -55,13 +56,12 @@ export default function Playlists() {
         <hr/>
         <Flex px={"5"} pt={"3"} direction={"column"}>
           <Flex justifyContent={"space-between"}>
-          <Heading>Lejátszási listák</Heading>
-          <Heading textAlign="center"> {token?  <PlaylistWindow themecolor={themecolor} userid={userid} getPlaylists={getPlaylists}/> : ""}  </Heading>
+          {token? <Heading>Lejátszási listák</Heading> : <Heading color={"colorPalette.300"}>Jelentkezz be a funkció használatához!</Heading>}
+          {token? <Heading textAlign="center">  <PlaylistWindow themecolor={themecolor} userid={userid} getPlaylists={getPlaylists}/> </Heading> : null} 
           </Flex>
-          <Flex my={"3"} overflowX={"auto"} gap={4} width="100%">{playlists.map((playlist, index) => <PlaylistCard key={index} playlist={playlist} />)}</Flex>
+          <Flex my={"3"} overflowX={"auto"} gap={4} width="100%">{playlists?.map((playlist, index) => <PlaylistCard key={index} playlist={playlist} />)}</Flex>
         </Flex>
-      </Box>: 
-      ""}
+      </Box>
     </Flex>
     </>
   );

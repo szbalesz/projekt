@@ -428,6 +428,84 @@
     ]
   },
   {
+    "ContainingType": "MelodyFlowApi.Controllers.UserController",
+    "Method": "ChangeEmail",
+    "RelativePath": "api/user/ChangeEmail",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userEmailPutDto",
+        "Type": "MelodyFlowApi.Models.Dtos.UserEmailPutDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MelodyFlowApi.Models.Aspnetuser",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MelodyFlowApi.Controllers.UserController",
+    "Method": "ChangePorfilePicture",
+    "RelativePath": "api/user/ChangePorfilePicture",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userPicturePutDto",
+        "Type": "MelodyFlowApi.Models.Dtos.UserPicturePutDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MelodyFlowApi.Models.Aspnetuser",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MelodyFlowApi.Controllers.UserController",
+    "Method": "ChangeUserName",
+    "RelativePath": "api/user/ChangeUserName",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userNamePutDto",
+        "Type": "MelodyFlowApi.Models.Dtos.UserNamePutDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MelodyFlowApi.Models.Aspnetuser",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "EmailApiKedd.Controllers.EmailController",
     "Method": "PostSendMail",
     "RelativePath": "emails",

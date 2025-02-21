@@ -1,4 +1,4 @@
-import { Box, Button, Center, Flex, Heading, Input, Stack } from '@chakra-ui/react';
+import { Box, Button, Center, Flex, Heading, Input, Stack, Text } from '@chakra-ui/react';
 import { Field } from "../components/ui/field";
 import { FileUploadList, FileUploadRoot, FileUploadTrigger } from "../components/ui/file-upload";
 import { HiUpload } from "react-icons/hi";
@@ -77,12 +77,15 @@ export default function UploadPage() {
                             <FileUploadRoot value={musicfile} onChange={(q) => setMusicfile(q.target.files[0])} required maxFiles={1} accept={["audio/*"]}>
                                 <FileUploadTrigger asChild>
                                     <Button variant="outline" size="sm">
-                                        <HiUpload /> Upload file
+                                        <HiUpload /> Audio fájl feltöltése
                                     </Button>
                                 </FileUploadTrigger>
                                 <FileUploadList />
                             </FileUploadRoot>
-                            <Button type="submit">Feltöltés</Button>
+                            {token? <Button type="submit">Feltöltés</Button> : <>
+                            <Button disabled>Feltöltés</Button>
+                            <Text color={"colorPalette.300"}>Jelentkezz be a funkció használatához!</Text>
+                            </>}
                         </Stack>
                     </form>
                     <Center w={{base: "100%", md:"350px"}} h="400px">

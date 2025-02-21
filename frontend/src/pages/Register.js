@@ -25,7 +25,7 @@ export default function Register({ isLoggedin, onRegister }) {
     const navigate = useNavigate();
     useEffect(() => {
       if(isLoggedin || Cookies.get("token")){
-        navigate("/")
+        navigate(-1)
       }
     }, [])
   return (

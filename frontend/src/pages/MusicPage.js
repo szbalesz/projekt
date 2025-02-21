@@ -11,16 +11,22 @@ import { toaster } from '../components/ui/toaster';
 const MusicPage = ({currentTime, handleSliderChange, duration, currentMusic, handlePlay, isPlaying }) => {
   const themecolor = localStorage.getItem("themecolor");
   const [music, setMusic] = useState({});
+  const [uploader, setUploader] = useState({});
   const [isPending, setPending] = useState(false)
   const [isFavorite, setFavorite] = useState(false)
   const [favoritePlaylistId, setFavoritePlaylistId] = useState("")
-
   const [isUploader, setIsUploader] = useState(false)
   const { id } = useParams();
   const token = Cookies.get("token");
   let userid = Cookies.get("userid");
   const location = useLocation();
   const navigate = useNavigate();
+
+  const getProfile=async (profileId)=>{
+    const response = await api.get(`/user/${profileId}`);
+    setUploader(response.data[0]);
+  }
+
   const getMusic=()=>{
     setPending(true);
     api.get("/music/"+id)
@@ -29,6 +35,7 @@ const MusicPage = ({currentTime, handleSliderChange, duration, currentMusic, han
        if(response.data[0].uploaderId === userid){
         setIsUploader(true);
        }
+       getProfile(response.data[0].uploaderId);
     })
     .catch(e => {console.error("HIBA, Nem sikerült lekérni a zenét: ",e)})
     .finally(()=>{
@@ -100,14 +107,13 @@ useEffect(() => {
    }
 }, [])
 
-
 useEffect(() => {
   getMusic();
 }, [location])
 
 useEffect(() => {
   if(!music){
-    navigate("/");
+    navigate(-1);
   }
 }, [music])
 
@@ -198,7 +204,7 @@ useEffect(() => {
             </Box>
         : ""}
         </VStack>
-      ) : ""}
+      ) : null}
     </Box>
     </AbsoluteCenter>
     </>

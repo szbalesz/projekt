@@ -22,6 +22,7 @@ export default function PlaylistWindow({ userid, getPlaylists}) {
     const [playlistName, setPlaylistName] = useState("");
     const [imageUrl, setImageUrl] = useState("");
     const [open, setOpen] = useState(false)
+    const prevImg = "https://t3.ftcdn.net/jpg/04/62/60/80/360_F_462608080_J2AJrf8h0fmbFqnTVUQfza8JivYOfShz.jpg";
     return (
         <DialogRoot lazyMount open={open} onOpenChange={(e) => setOpen(e.open)} placement={"center"}>
             <DialogTrigger mx={"auto"} asChild>
@@ -38,7 +39,7 @@ export default function PlaylistWindow({ userid, getPlaylists}) {
                         a.preventDefault();
                         let newPlaylist = {
                             playlistName: playlistName,
-                            imageUrl: imageUrl,
+                            imageUrl: imageUrl.length < 10 ? prevImg : imageUrl,
                             creatorId: userid,
                         }
                         api.post("/CreatePlaylist",newPlaylist, {
@@ -69,7 +70,7 @@ export default function PlaylistWindow({ userid, getPlaylists}) {
                         })
                     }}>
                         <Flex direction={"row"} pb={"3"}>
-                            <Button borderRadius="lg" variant="ghost" height="150px" width="150px" backgroundPosition="center" backgroundImage={"url("+imageUrl+")"} backgroundSize="cover" boxShadow={`0 0 15px 0 ${themecolor}`}/>
+                            <Button borderRadius="lg" variant="ghost" height="150px" width="150px" backgroundPosition="center" backgroundImage={"url("+(imageUrl.length < 10 ? prevImg : imageUrl)+")"} backgroundSize="cover" boxShadow={`0 0 15px 0 ${themecolor}`}/>
                             <Flex width={"full"} direction={"column"} p={"5"}>
                                 <Input required value={playlistName} onChange={(e)=> setPlaylistName(e.target.value)} placeholder="Írd be a nevet" />
                                 <Input required value={imageUrl} onChange={(e)=> setImageUrl(e.target.value)} my={"5"} placeholder="Kép elérési útja" />
