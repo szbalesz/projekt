@@ -21,7 +21,7 @@ namespace MelodyFlowApi.Services
             this.roleManager = roleManager;
             this.tokenGenerator = tokenGenerator;
         }
-
+        //Szerepkör hozzárendelés
         public async Task<object> AssignRole(string email, string roleName)
         {
             var user = await _dbContext.applicationUsers.FirstOrDefaultAsync(user => user.NormalizedEmail == email.ToUpper());
@@ -40,7 +40,7 @@ namespace MelodyFlowApi.Services
 
             return new { result = "", message = "Sikertelen hozzárendelés." };
         }
-
+        //Bejelntkezés
         public async Task<object> Login(LoginIUserDto loginUserDto)
         {
             var user = await _dbContext.applicationUsers.FirstOrDefaultAsync(user => user.NormalizedUserName == loginUserDto.UserName.ToUpper());
@@ -58,7 +58,7 @@ namespace MelodyFlowApi.Services
             return new { result = "", token = "" };
 
         }
-
+        //Regisztráció
         public async Task<object> Register(CreateUserDto createUserDto)
         {
             var user = new ApplicationUser
