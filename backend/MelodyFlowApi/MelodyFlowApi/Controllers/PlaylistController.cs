@@ -17,12 +17,13 @@ namespace MelodyFlowApi.Controllers
         {
             _context = context;
         }
-        
+        //Kilistázzuk az összes playlistet
         [HttpGet("GetAllPlaylist")]
         public async Task<ActionResult<Playlist>> Get()
         {
             return Ok(await _context.Playlists.ToListAsync());
         }
+        //Playlistet tudunk létrehozni a dto segítségével
         [Authorize]
         [HttpPost("CreatePlaylist")]
         public async Task<ActionResult<Playlist>> CreatePlaylist(CreatePlaylistDto createPlaylistDto)
@@ -43,6 +44,7 @@ namespace MelodyFlowApi.Controllers
             }
             return BadRequest();
         }
+        //Itt playlistet tudunk törli id alapján
         [Authorize]
         [HttpDelete("playlist/{id}")]
         public ActionResult DeletePlaylist(string id)
@@ -56,6 +58,7 @@ namespace MelodyFlowApi.Controllers
             }
             return BadRequest();
         }
+        //Playlistet tudunk lekérni id alapján
         [HttpGet("playlist/{id}")]
         public async Task<ActionResult<object>> GetPlaylistById(string id)
         {
