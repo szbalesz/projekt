@@ -17,6 +17,7 @@ namespace MelodyFlowApi.Controllers
         {
             _context = context;
         }
+        //Lekérünk egy profilt id alapján
         [HttpGet("{Id}")]
         public async Task<ActionResult<Aspnetuser>> GetProfile(string Id)
         {
@@ -29,6 +30,7 @@ namespace MelodyFlowApi.Controllers
                 Email = p.Email
             }).ToListAsync());
         }
+        //Porfilt tudunk törölni id alapján
         [Authorize]
         [HttpDelete("{id}")]
         public ActionResult DeleteUser(string id)
@@ -42,6 +44,7 @@ namespace MelodyFlowApi.Controllers
             }
             return BadRequest();
         }
+        //Egy meglévő felhasználó itt tudja módosítani az email címét
         [HttpPut("ChangeEmail")]
         public async Task<ActionResult<Aspnetuser>> ChangeEmail(UserEmailPutDto userEmailPutDto)
         {
@@ -58,6 +61,7 @@ namespace MelodyFlowApi.Controllers
             }
             return StatusCode(404);
         }
+        //Itt a felhasználónevét tudja módosítani
         [HttpPut("ChangeUserName")]
         public async Task<ActionResult<Aspnetuser>> ChangeUserName(UserNamePutDto userNamePutDto)
         {
@@ -74,6 +78,7 @@ namespace MelodyFlowApi.Controllers
             }
             return StatusCode(404);
         }
+        //Itt pedig a profilképét tudja módosítani
         [HttpPut("ChangePorfilePicture")]
         public async Task<ActionResult<Aspnetuser>> ChangePorfilePicture(UserPicturePutDto userPicturePutDto)
         {
