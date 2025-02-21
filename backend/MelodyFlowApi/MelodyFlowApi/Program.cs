@@ -24,7 +24,7 @@ namespace MelodyFlowApi
 
             builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>()
                .AddDefaultTokenProviders();
-
+            //Csak a megadott linknek engedi hogy hozzáférjen a backednhez
             var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
             builder.Services.AddCors(options =>
             {
