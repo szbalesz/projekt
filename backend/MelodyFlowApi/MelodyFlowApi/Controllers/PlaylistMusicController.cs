@@ -16,6 +16,7 @@ namespace MelodyFlowApi.Controllers
         {
             _context = context;
         }
+        //Zenét tudunk hozzá adni egy adott playlisthez
         [Authorize]
         [HttpPost("AddMusicToPlaylist")]
         public async Task<ActionResult<Playlistmusic>> AddMusicToPlaylist(Playlistmusic playlistmusic)
@@ -24,6 +25,7 @@ namespace MelodyFlowApi.Controllers
             await _context.SaveChangesAsync();
             return Ok(playlistmusic);
         }
+        //Zenét tudunk törölni egy adott playlistből
         [Authorize]
         [HttpDelete("DeleteMusicFromPlaylist")]
         public ActionResult DeleteMusicFromPlaylist(Playlistmusic playlistmusic)
