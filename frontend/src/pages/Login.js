@@ -37,7 +37,11 @@ export default function Login({ isLoggedin, onLogin }) {
             <Box rounded="lg" w="350px" bg="bg" boxShadow={`0 0 50px 0px ${themecolor}`}  px={8} py={5}>
                 <Heading textAlign="center" color={"colorPalette.solid"} w="50%" borderRadius="25px" mx="auto" my="3" p="1">Bejelentkezés</Heading>
                 <Stack spacing={4}>
-                <Field label="Felhasználónév">
+                  <form onSubmit={(e) => {
+                    e.preventDefault();
+                    onLogin(username,password);
+                  }}>
+                  <Field label="Felhasználónév">
                     <Input type="text" value={username} onChange={(q) => setUsername(q.target.value)} placeholder="Add meg a felhasználóneved" />
                 </Field>
                 <Field label="Jelszó">
@@ -49,10 +53,13 @@ export default function Login({ isLoggedin, onLogin }) {
                     Maradjon bejelentkezve
                     </Checkbox>
                 </Field>
+                <Flex justifyContent={"space-between"}>
                 <ChakraLink>Elfelejtett jelszó?</ChakraLink>
-                <Button onClick={()=> onLogin(username,password)} mt={4} mb={3}>
+                <Button type={"submit"} mt={4} mb={3}>
                     Bejelentkezés
                 </Button>
+                </Flex>
+                  </form>
                 </Stack>
             </Box>
             <Text textAlign="center">
