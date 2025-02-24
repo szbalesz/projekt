@@ -80,7 +80,7 @@ namespace MelodyFlowApi.Controllers
         }
         //Itt pedig a profilképét tudja módosítani
         [HttpPut("ChangeProfilePicture")]
-        public async Task<ActionResult<Aspnetuser>> ChangePorfilePicture(UserPicturePutDto userPicturePutDto)
+        public async Task<ActionResult<Aspnetuser>> ChangeProfilePicture(UserPicturePutDto userPicturePutDto)
         {
 
             var existingUser = await _context.Aspnetusers.FirstOrDefaultAsync(x=>x.Id==userPicturePutDto.Id);
