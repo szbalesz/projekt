@@ -65,6 +65,7 @@ useEffect(() => {
     {`${Math.floor(currentTime / 60)}:${Math.floor(currentTime % 60).toString().padStart(2, '0')}`}
   </Text>
   <Slider
+    size = {"sm"}
     value={[currentTime]}
     onValueChange={(a) => handleSliderChange(a.value)}
     min={0}
@@ -77,7 +78,7 @@ useEffect(() => {
   </Text>
 </Box>
 
-        {currentMusic?.title != null ? (
+        
           <Flex align="center" gap={4}>
             <IconButton
               aria-label="Previous"
@@ -112,7 +113,6 @@ useEffect(() => {
               />
             </Box>
           </Flex>
-        ) : ""}
       </Flex>
       <Flex position={"absolute"} bottom={"60px"} right={"0"}>
         {open ?
