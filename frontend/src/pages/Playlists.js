@@ -3,7 +3,7 @@ import { Heading, Flex, Center, Spinner, AbsoluteCenter, Button, Box, Text } fro
 import PlaylistCard from '../cards/PlaylistCard';
 import api from '../Api';
 import Cookies from "js-cookie"
-import PlaylistWindow from './PlaylistWindow';
+import PlaylistWindow from '../menu/PlaylistWindow';
 import { useNavigate } from 'react-router-dom';
 
 export default function Playlists() {

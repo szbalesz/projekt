@@ -4,7 +4,7 @@ import { LuList, LuPause, LuPlay, LuStar, LuTrash } from 'react-icons/lu';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import api from '../Api';
 import Cookies from "js-cookie";
-import AddToPlaylistMenu from './AddToPlaylistMenu';
+import AddToPlaylistMenu from '../menu/AddToPlaylistMenu';
 import { Slider } from '../components/ui/slider';
 import { toaster } from '../components/ui/toaster';
 import { Avatar } from '../components/ui/avatar';
