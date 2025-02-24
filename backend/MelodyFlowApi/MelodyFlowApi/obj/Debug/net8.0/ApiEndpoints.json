@@ -224,6 +224,32 @@
     ]
   },
   {
+    "ContainingType": "MelodyFlowApi.Controllers.PlaylistController",
+    "Method": "GetByName",
+    "RelativePath": "api/GetPlaylistByName",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "betu",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MelodyFlowApi.Models.Playlist",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "MelodyFlowApi.Controllers.UserPlaylistController",
     "Method": "GetPlaylistByUser",
     "RelativePath": "api/GetPlaylistByUser",

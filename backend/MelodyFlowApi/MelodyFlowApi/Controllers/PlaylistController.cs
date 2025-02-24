@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 namespace MelodyFlowApi.Controllers
 {
@@ -71,6 +72,14 @@ namespace MelodyFlowApi.Controllers
             }
             
             return Ok(new { Playlist = Playlist, Musics = Musics });
+        }
+        [HttpGet("GetPlaylistByName")]
+        public async Task<ActionResult<Playlist>> GetByName(string betu)
+        {
+            return Ok(await _context.Playlists
+    .Where(f => f.PlaylistName.ToLower().Contains(betu.ToLower()) ||
+                _context.Aspnetusers.Any(x => x.UserName.ToLower().Contains(betu.ToLower())))
+    .ToListAsync());
         }
     }
 }
