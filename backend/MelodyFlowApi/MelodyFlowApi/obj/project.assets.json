@@ -4681,11 +4681,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\MelodyFlowApi.csproj",
+      "projectUniqueName": "C:\\Users\\Tanulo\\fehert\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\MelodyFlowApi.csproj",
       "projectName": "MelodyFlowApi",
-      "projectPath": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\MelodyFlowApi.csproj",
+      "projectPath": "C:\\Users\\Tanulo\\fehert\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\MelodyFlowApi.csproj",
       "packagesPath": "C:\\Users\\Tanulo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\obj\\",
+      "outputPath": "C:\\Users\\Tanulo\\fehert\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -4718,7 +4718,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
       "net8.0": {
@@ -4780,7 +4781,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
