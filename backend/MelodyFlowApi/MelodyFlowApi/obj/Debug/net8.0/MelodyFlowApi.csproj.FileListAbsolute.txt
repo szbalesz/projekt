@@ -1484,3 +1484,7 @@ C:\Users\Tanulo\fehert\projekt\backend\MelodyFlowApi\MelodyFlowApi\obj\Debug\net
 C:\Users\Tanulo\fehert\projekt\backend\MelodyFlowApi\MelodyFlowApi\obj\Debug\net8.0\MelodyFlowApi.pdb
 C:\Users\Tanulo\fehert\projekt\backend\MelodyFlowApi\MelodyFlowApi\obj\Debug\net8.0\MelodyFlowApi.genruntimeconfig.cache
 C:\Users\Tanulo\fehert\projekt\backend\MelodyFlowApi\MelodyFlowApi\obj\Debug\net8.0\ref\MelodyFlowApi.dll
+C:\Users\Tanulo\szarazb\projekt\backend\MelodyFlowApi\MelodyFlowApi\bin\Debug\net8.0\MailKit.dll
+C:\Users\Tanulo\szarazb\projekt\backend\MelodyFlowApi\MelodyFlowApi\bin\Debug\net8.0\MimeKit.dll
+C:\Users\Tanulo\szarazb\projekt\backend\MelodyFlowApi\MelodyFlowApi\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\Tanulo\szarazb\projekt\backend\MelodyFlowApi\MelodyFlowApi\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll

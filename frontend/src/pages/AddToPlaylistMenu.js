@@ -11,7 +11,7 @@ import api from '../Api'
 import Cookies from "js-cookie";
 import { toaster } from '../components/ui/toaster'
 
-export default function AddToPlaylistMenu({ isFavorite, musicId }) {
+export default function AddToPlaylistMenu({ setFavorite, isFavorite, musicId }) {
   const userid = Cookies.get("userid");
   const token = Cookies.get("token");
   const [playlists, setPlaylists] = useState([]);
@@ -45,11 +45,17 @@ export default function AddToPlaylistMenu({ isFavorite, musicId }) {
       const musicRes = await api.get(`/playlist/${playlistId}`);
       const isAlreadyAdded = musicRes.data.musics.some(music => music.id === musicId);
       if (isAlreadyAdded) {
+        if(playlistName === "Kedvencek"){
+          setFavorite(false);
+        }
         await api.delete("/DeleteMusicFromPlaylist", { data: { playlistId, musicId }, headers: {
           Authorization: `Bearer ${token}`
       }});
         toaster.create({ title: `A zene törölve a ${playlistName} listából!`, type: "success" });
       } else {
+        if(playlistName === "Kedvencek"){
+          setFavorite(true);
+        }
         await api.post("/AddMusicToPlaylist", { playlistId, musicId }, {
           headers: {
             Authorization: `Bearer ${token}`

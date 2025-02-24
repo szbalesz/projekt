@@ -195,7 +195,7 @@ useEffect(() => {
           <Button p={1} m={1} variant="solid" onClick={removeFromFavorite}><LuStar fill={"colorPalette.solid"} stroke="0"/> </Button> :
           <Button p={1} m={1} variant="solid" onClick={addToFavorite}><LuStar/></Button>}
             <Button p={1} m={1} variant={isPlaying && music?.title === currentMusic?.title ? "outline" : "subtle"} onClick={()=> handlePlay(music)}>{isPlaying && music?.title === currentMusic?.title ? <LuPause /> : <LuPlay />} </Button>
-            <AddToPlaylistMenu isFavorite={isFavorite} musicId={id}/>
+            <AddToPlaylistMenu setFavorite={setFavorite} isFavorite={isFavorite} musicId={id}/>
             {isUploader? <Button p={1} m={1} variant="solid" colorPalette={"red"} onClick={deleteMusic}><LuTrash/></Button>: null}
           </Text>
           {music?.id === currentMusic?.id? 
