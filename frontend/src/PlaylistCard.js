@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Button, Box, Text, Image } from "@chakra-ui/react";
 import { useNavigate } from 'react-router-dom';
 import api from './Api';
+import { Avatar } from './components/ui/avatar';
 
 export default function PlaylistCard({ playlist }) {
   const themecolor = localStorage.getItem("themecolor");
@@ -38,6 +39,12 @@ export default function PlaylistCard({ playlist }) {
       borderRadius="10px"
       onClick={()=>openPlaylist()}
     >
+      <Text display={"flex"} position={"absolute"} top={"2"} left={"-8"} fontSize={"12px"} as={"div"}>
+            <Avatar boxShadow={"0 0 10px 0"} width="20px" height="20px" src={creator?.profilePictureURL}/>
+        <Text ml={"1"}>
+        {creator?.username}
+        </Text>
+          </Text>
       <Box
         borderRadius="10px"
         color="white"
@@ -50,8 +57,8 @@ export default function PlaylistCard({ playlist }) {
         <Box p="0" w="auto" paddingTop="5" paddingBottom="5" backgroundColor="colorPalette.inverted">
           <Text fontWeight="bold" color="colorPalette.300">{playlist.playlistName}</Text>
           <Text color={"bg.inverted"} fontSize="12px" letterSpacing="tight">
-            {length} zene
-          </Text>
+            {length} zene
+          </Text>
         </Box>
       </Box>
     </Button>
