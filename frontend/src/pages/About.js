@@ -1,6 +1,6 @@
 import React from 'react'
 import { Center } from "@chakra-ui/react"
-import AboutCard from '../AboutCard'
+import AboutCard from '../cards/AboutCard'
 
 export default function About() {
     return (

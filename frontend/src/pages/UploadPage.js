@@ -5,7 +5,7 @@ import { HiUpload } from "react-icons/hi";
 import React, { useState } from 'react';
 import api from "../Api"
 import { toaster } from '../components/ui/toaster';
-import BigMusicCard from "../BigMusicCard"
+import BigMusicCard from "../cards/BigMusicCard"
 import Cookies from "js-cookie"
 
 export default function UploadPage() {

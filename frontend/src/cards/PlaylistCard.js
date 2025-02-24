@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Box, Text, Image } from "@chakra-ui/react";
 import { useNavigate } from 'react-router-dom';
-import api from './Api';
-import { Avatar } from './components/ui/avatar';
+import api from '../Api';
+import { Avatar } from '../components/ui/avatar';
 
 export default function PlaylistCard({ playlist }) {
   const themecolor = localStorage.getItem("themecolor");

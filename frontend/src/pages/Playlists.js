@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Heading, Flex, Center, Spinner, AbsoluteCenter, Button, Box, Text } from "@chakra-ui/react";
-import PlaylistCard from '../PlaylistCard';
+import PlaylistCard from '../cards/PlaylistCard';
 import api from '../Api';
 import Cookies from "js-cookie"
 import PlaylistWindow from './PlaylistWindow';

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import MusicCard from "../MusicCard";
+import MusicCard from "../cards/MusicCard";
 import { AbsoluteCenter, Box, Button, Flex, Heading, Spinner, Text } from "@chakra-ui/react";
 import { useNavigate, useParams } from "react-router-dom";
 import api from "../Api";

@@ -11,10 +11,10 @@ import {
   DialogRoot,
   DialogTitle,
 } from "../components/ui/dialog";
-import MusicCard from '../MusicCard';
+import MusicCard from '../cards/MusicCard';
 import api from '../Api';
 import { SegmentedControl } from "../components/ui/segmented-control"
-import PlaylistCard from '../PlaylistCard';
+import PlaylistCard from '../cards/PlaylistCard';
 
 export default function Search( {handlePopupClose}) {
   const themecolor = localStorage.getItem("themecolor");
