@@ -481,8 +481,8 @@
   },
   {
     "ContainingType": "MelodyFlowApi.Controllers.UserController",
-    "Method": "ChangePorfilePicture",
-    "RelativePath": "api/user/ChangePorfilePicture",
+    "Method": "ChangeProfilePicture",
+    "RelativePath": "api/user/ChangeProfilePicture",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,

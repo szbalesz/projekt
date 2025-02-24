@@ -4,6 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import api from '../Api';
 import MusicCard from '../MusicCard';
 import PlaylistCard from '../PlaylistCard';
+import EditPicture from '../menu/EditPicture';
 
 export default function UserPage() {
   const { id } = useParams(); 
@@ -51,18 +52,7 @@ export default function UserPage() {
       >
         <Flex zIndex={"1"} bgGradient="to-tr" gradientFrom="colorPalette.solid/65" gradientTo="transparent" position={"absolute"} w={"full"} h={"190px"}></Flex>
         <Flex overflowX={"clip"} backgroundImage={`url(${account?.profilePictureURL})`} backgroundPosition={"center"} backgroundSize={"cover"} direction={"row"} p={"5"}>
-          <Button
-            zIndex={"2"}
-            boxShadowColor={"colorPalette"}
-            boxShadow={"0 0 25px 0"}
-            backgroundImage={`url(${account?.profilePictureURL})`}
-            boxSize={"150px"}
-            variant={"outline"}
-            borderRadius={"full"}
-            backgroundSize={"cover"}
-            backgroundPosition={"center"}
-            fit={"cover"}
-          />
+          <EditPicture account={account}/>
           <Box zIndex={"2"} px={"5"} py={"5"}>
             <Text fontSize="sm">
               Profil

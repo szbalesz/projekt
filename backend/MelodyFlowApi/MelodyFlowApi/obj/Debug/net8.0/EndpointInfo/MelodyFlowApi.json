@@ -747,7 +747,7 @@
         }
       }
     },
-    "/api/user/ChangePorfilePicture": {
+    "/api/user/ChangeProfilePicture": {
       "put": {
         "tags": [
           "User"
