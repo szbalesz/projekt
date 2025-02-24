@@ -77,8 +77,9 @@ export default function AddToPlaylistMenu({ setFavorite, isFavorite, musicId }) 
   return (
     // Lejátszási listához adás menü
     <MenuRoot>
+      {/* Lejátszási listához hozzáadás menügomb a zenéknél */}
       <MenuTrigger asChild>
-        <Button p={1} m={1} variant="solid"><LuList/></Button> {/* Lejátszási listához hozzáadás menügomb a zenéknél */}
+        <Button p={1} m={1} variant="solid"><LuList/></Button>
       </MenuTrigger>
       <MenuContent>
         {playlists.map((playlist, index) => { {/* Lejátszási listák betöltése a menüben */}
