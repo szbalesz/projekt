@@ -23,7 +23,7 @@ export default function ProfileSettings() {
                     <Flex>
                         <LuUser size={"25"} />
                         <Heading px={"3"}>
-                            Felhasználónév és jelszó
+                            Fiók adatai
                         </Heading>
                     </Flex>
                     <hr></hr>
@@ -31,6 +31,19 @@ export default function ProfileSettings() {
                         <Flex direction={"column"}>
                         <Text>
                             Felhasználónév
+                        </Text>
+                        <Text color={"colorPalette.solid"} fontSize={"13px"}>
+                            JoskaPista2001
+                        </Text>
+                        </Flex>
+                        <Flex pt={"2"} px={"3"}>
+                        <Button  size={"sm"} color={"colorPalette.solid"} variant={"ghost"}>Frissítés</Button>
+                        </Flex>
+                    </Flex>
+                    <Flex direction={"row"} justifyContent={"space-between"} pt={"3"}>
+                        <Flex direction={"column"}>
+                        <Text>
+                            Email
                         </Text>
                         <Text color={"colorPalette.solid"} fontSize={"13px"}>
                             példa@kkszki.hu
