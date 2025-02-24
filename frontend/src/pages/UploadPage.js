@@ -56,6 +56,7 @@ export default function UploadPage() {
     };
 
     return (
+        // Zene feltöltés
         <Center>
             <Flex direction="column" justifyContent="center" textAlign="center">
                 <Heading p="3"> Zene feltöltés </Heading>

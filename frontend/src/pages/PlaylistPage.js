@@ -64,6 +64,7 @@ export default function PlaylistPage() {
   
 
   return (
+    // Lejátszási lista oldal
     <div>
       <Flex w={"100%"}>
     {isPending ? (

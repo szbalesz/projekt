@@ -25,6 +25,7 @@ export default function Home() {
 
   return (
     <>
+    {/* Főoldal */}
       <Flex justifyContent="center">
         <Flex
           justifyContent="center"
@@ -33,7 +34,8 @@ export default function Home() {
           padding={5}
           mt={5}
         >
-          {isPending? 
+          {/* Betöltő kör megjelenítése amíg betölti a zenéket */}
+          {isPending?  
           <AbsoluteCenter>
             <Spinner/>
           </AbsoluteCenter> 

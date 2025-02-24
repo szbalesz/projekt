@@ -75,12 +75,13 @@ export default function AddToPlaylistMenu({ setFavorite, isFavorite, musicId }) 
   };
 
   return (
+    // Lejátszási listához adás menü
     <MenuRoot>
       <MenuTrigger asChild>
-        <Button p={1} m={1} variant="solid"><LuList/></Button>
+        <Button p={1} m={1} variant="solid"><LuList/></Button> {/* Lejátszási listához hozzáadás menügomb a zenéknél */}
       </MenuTrigger>
       <MenuContent>
-        {playlists.map((playlist, index) => {
+        {playlists.map((playlist, index) => { {/* Lejátszási listák betöltése a menüben */}
           const isAdded = addedMusic[playlist.id] || false;
           return (
             <MenuItem 

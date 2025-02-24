@@ -24,6 +24,7 @@ export default function PlaylistWindow({ userid, getPlaylists}) {
     const [open, setOpen] = useState(false)
     const prevImg = "https://t3.ftcdn.net/jpg/04/62/60/80/360_F_462608080_J2AJrf8h0fmbFqnTVUQfza8JivYOfShz.jpg";
     return (
+        // Új lejátszási lista ablak
         <DialogRoot lazyMount open={open} onOpenChange={(e) => setOpen(e.open)} placement={"center"}>
             <DialogTrigger mx={"auto"} asChild>
                 <Button variant={"surface"} size={"sm"} onClick={()=> setOpen(true)} mx={"5"}>Létrehozás</Button>

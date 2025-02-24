@@ -14,6 +14,7 @@ export default function ProfileSettings() {
     }, [token])
     
     return (
+        // Profil beállítások oldal
         <Center padding={"25px"} height={"100%"}>
             <Flex width={"3xl"} direction={"column"}>
                 <Heading py={"3"} size={"3xl"}>Személyes adatok szerkesztése</Heading>

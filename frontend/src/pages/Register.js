@@ -29,6 +29,7 @@ export default function Register({ isLoggedin, onRegister }) {
       }
     }, [])
   return (
+    // Regisztráció
     <>
       <Flex display={{ base: "block", md: "flex"}} justifyContent="center">
         <AbsoluteCenter>

@@ -43,6 +43,7 @@ export default function Settings({setThemecolor}) {
     } 
   ]
   return (
+    // Beállítások
       <Center padding={"25px"} height={"100%"}>
         <Flex width={"3xl"} direction={"column"}>
           <Heading py={"3"} size={"3xl"}>Beállítások</Heading>

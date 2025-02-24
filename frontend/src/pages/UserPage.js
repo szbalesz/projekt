@@ -42,6 +42,7 @@ export default function UserPage() {
   
 
   return (
+    // Profil oldal
     <Flex w={"100%"}>
     {account?
       <Box

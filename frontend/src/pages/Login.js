@@ -30,6 +30,7 @@ export default function Login({ isLoggedin, onLogin }) {
   
   return (
     <>
+    {/* Bejelentkezés */}
       <Flex display={{ base: "block", md: "flex"}} justifyContent="center">
         <AbsoluteCenter>
             <Stack spacing={8} mx="auto" px={6}>

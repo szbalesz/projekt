@@ -4,8 +4,9 @@ import AboutCard from '../cards/AboutCard'
 
 export default function About() {
     return (
+      // Rólunk oldal
         <Center display={"flex"} flexWrap={"wrap"}>
-          {items.map((item,index)=> <AboutCard key={index} item={item}/>)}
+          {items.map((item,index)=> <AboutCard key={index} item={item}/>)} {/* Kártyák betöltése */}
         </Center>
       )
 }
