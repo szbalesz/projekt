@@ -7,6 +7,7 @@ import Cookies from "js-cookie";
 import AddToPlaylistMenu from './AddToPlaylistMenu';
 import { Slider } from '../components/ui/slider';
 import { toaster } from '../components/ui/toaster';
+import { Avatar } from '../components/ui/avatar';
 
 const MusicPage = ({currentTime, handleSliderChange, duration, currentMusic, handlePlay, isPlaying }) => {
   const themecolor = localStorage.getItem("themecolor");
@@ -16,6 +17,7 @@ const MusicPage = ({currentTime, handleSliderChange, duration, currentMusic, han
   const [isFavorite, setFavorite] = useState(false)
   const [favoritePlaylistId, setFavoritePlaylistId] = useState("")
   const [isUploader, setIsUploader] = useState(false)
+  const [Uploaderid, setUploaderid] = useState(false)
   const { id } = useParams();
   const token = Cookies.get("token");
   let userid = Cookies.get("userid");
@@ -25,6 +27,7 @@ const MusicPage = ({currentTime, handleSliderChange, duration, currentMusic, han
   const getProfile=async (profileId)=>{
     const response = await api.get(`/user/${profileId}`);
     setUploader(response.data[0]);
+    setUploaderid(profileId);
   }
 
   const getMusic=()=>{
@@ -179,6 +182,12 @@ useEffect(() => {
           <Text fontSize="lg">
             {music.artist}
           </Text>
+          <Button onClick={()=> {
+                navigate("/user/"+Uploaderid)
+              }} mr={"1"} p={"0"} size={"xs"} variant={"ghost"}>
+              <Avatar width="25px" height="25px" src={uploader.profilePictureURL}/>
+              {uploader.username}
+              </Button>
           <Text fontSize="md">
           </Text>
           <Text fontSize="md">
