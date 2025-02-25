@@ -319,6 +319,37 @@
   },
   {
     "ContainingType": "MelodyFlowApi.Controllers.MusicController",
+    "Method": "EditMusic",
+    "RelativePath": "api/music/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "editMusicDto",
+        "Type": "MelodyFlowApi.Models.Dtos.EditMusicDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MelodyFlowApi.Models.Music",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MelodyFlowApi.Controllers.MusicController",
     "Method": "GetMusicByUploader",
     "RelativePath": "api/music/uploader/{id}",
     "HttpMethod": "GET",
@@ -374,6 +405,37 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MelodyFlowApi.Controllers.PlaylistController",
+    "Method": "EditPlaylist",
+    "RelativePath": "api/playlist/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "editPlaylistDto",
+        "Type": "MelodyFlowApi.Models.Dtos.EditPlaylistDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MelodyFlowApi.Models.Playlist",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "MelodyFlowApi.Controllers.MusicController",

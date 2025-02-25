@@ -12,6 +12,7 @@ import api from '../Api'
 import { toaster } from '../components/ui/toaster'
 import { useNavigate } from 'react-router-dom'
 import Cookies from "js-cookie"
+import EditPlaylistWindow from './EditPlaylistWindow'
 
 export default function PlaylistEditMenu({playlistName,playlistId,userId}) {
   const token = Cookies.get("token");
@@ -105,7 +106,7 @@ export default function PlaylistEditMenu({playlistName,playlistId,userId}) {
         : null}
         {isCreator ?
          <>
-         <MenuItem value="szerkeszt"><LuPen/>Adatok szerkesztése</MenuItem>
+         <EditPlaylistWindow/>
          <DialogAlert openButton={<MenuItem value="torles" color={"red.500"}><LuCircleX/>Törlés</MenuItem>} func={deletePlaylist} title={"Biztosan törölni szeretnéd?"} text={"Ez a művelet nem vonható vissza. Ez véglegesen törli a lejátszási listát a rendszerből."} buttontext={"Törlés"}/>
          </> : null}
       </MenuContent>
