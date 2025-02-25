@@ -4,10 +4,10 @@ import { LuList, LuPause, LuPlay, LuStar, LuTrash } from 'react-icons/lu';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import api from '../Api';
 import Cookies from "js-cookie";
-import AddToPlaylistMenu from '../menu/AddToPlaylistMenu';
 import { Slider } from '../components/ui/slider';
 import { toaster } from '../components/ui/toaster';
 import { Avatar } from '../components/ui/avatar';
+import MusicMenu from '../menu/MusicMenu';
 
 const MusicPage = ({currentTime, handleSliderChange, duration, currentMusic, handlePlay, isPlaying }) => {
   const themecolor = localStorage.getItem("themecolor");
@@ -195,8 +195,7 @@ useEffect(() => {
           <Button p={1} m={1} variant="solid" onClick={removeFromFavorite}><LuStar fill={"colorPalette.solid"} stroke="0"/> </Button> :
           <Button p={1} m={1} variant="solid" onClick={addToFavorite}><LuStar/></Button>}
             <Button p={1} m={1} variant={isPlaying && music?.title === currentMusic?.title ? "outline" : "subtle"} onClick={()=> handlePlay(music)}>{isPlaying && music?.title === currentMusic?.title ? <LuPause /> : <LuPlay />} </Button>
-            <AddToPlaylistMenu setFavorite={setFavorite} isFavorite={isFavorite} musicId={id}/>
-            {isUploader? <Button p={1} m={1} variant="solid" colorPalette={"red"} onClick={deleteMusic}><LuTrash/></Button>: null}
+            <MusicMenu deleteMusic={deleteMusic} setFavorite={setFavorite} isFavorite={isFavorite} musicId={id}/>
           </Text>
           {music?.id === currentMusic?.id? 
             <Box display={{base:"flex",md:"none"}} w={"100%"} alignItems="center" mx="5">

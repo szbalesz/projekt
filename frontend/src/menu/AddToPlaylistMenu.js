@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import { Button, Flex, Image, Text } from "@chakra-ui/react"
+import { Button, Flex, Image, MenuTriggerItem, Text } from "@chakra-ui/react"
 import {
   MenuContent,
   MenuItem,
   MenuRoot,
   MenuTrigger,
 } from "../components/ui/menu"
-import { LuList, LuMinus, LuPlus } from 'react-icons/lu'
+import { LuChevronRight, LuList, LuMinus, LuPlus } from 'react-icons/lu'
 import api from '../Api'
 import Cookies from "js-cookie";
 import { toaster } from '../components/ui/toaster'
@@ -76,11 +76,9 @@ export default function AddToPlaylistMenu({ setFavorite, isFavorite, musicId }) 
 
   return (
     // Lejátszási listához adás menü
-    <MenuRoot>
+    <MenuRoot positioning={{ placement: "right-start", gutter: 2 }}>
       {/* Lejátszási listához hozzáadás menügomb a zenéknél */}
-      <MenuTrigger asChild>
-        <Button p={1} m={1} variant="solid"><LuList/></Button>
-      </MenuTrigger>
+      <MenuTriggerItem  value="listamenu"><LuPlus/>Felvétel listába</MenuTriggerItem>
       <MenuContent>
         {playlists.map((playlist, index) => { {/* Lejátszási listák betöltése a menüben */}
           const isAdded = addedMusic[playlist.id] || false;
