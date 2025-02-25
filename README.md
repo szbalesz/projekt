@@ -39,5 +39,5 @@
 
 ---
 
-- 📌 Legutóbbi frissítés: **2025.02.12.**
+- 📌 Legutóbbi frissítés: **2025.02.25.**
 - ✏️ Frissítette: **Száraz Bálint Csaba**
