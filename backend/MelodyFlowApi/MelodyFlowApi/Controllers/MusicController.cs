@@ -98,5 +98,23 @@ namespace MelodyFlowApi.Controllers
             }
             return BadRequest();
         }
+        [Authorize]
+        [HttpPut("music/{id}")]
+        public async Task<ActionResult<Music>> EditMusic(string id, EditMusicDto editMusicDto)
+        {
+
+            var existingMusic = await _context.Musics.FirstOrDefaultAsync(x => x.Id == id);
+
+            if (existingMusic != null)
+            {
+                existingMusic.Artist=editMusicDto.Artist;
+                existingMusic.Title=editMusicDto.Title;
+                existingMusic.ImageUrl=editMusicDto.ImageUrl;
+                _context.Musics.Update(existingMusic);
+                await _context.SaveChangesAsync();
+                return StatusCode(200, existingMusic);
+            }
+            return StatusCode(404);
+        }
     }
 }
