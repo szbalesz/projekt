@@ -14,37 +14,28 @@
 
 ### 🎨 Frontend UI – Csehi Tamás  
 ✅ **Folyamatban lévő fejlesztések**  
-- Profil oldal kinézete
+- Lejátszási lista Adatok szerkesztése felugró ablak
 
 📌 **Következő lépések**  
-- Profil oldalon lévő zenék/lejátszási listák kinézete
-- Zene hozzáadása lejátszási listához menü kinézete
+- Felhasználói dokumentáció folytatása
 
 ---
 
 ### 🔄 Frontend ↔ Backend kapcsolat – Száraz Bálint Csaba  
 ✅ **Folyamatban lévő fejlesztések**  
-- Profil oldalon lévő zenék/lejátszási listák betöltése
+- Profilkép módosításának működése
 
-❌ **Problémák**  
-- Ha a felhasználó elfogadja a cookiekat csak akkor tárolja el
+❌ **Problémák**
+- Ne tudjon több Kedvencek nevű lejátszási listát készíteni egy felhasználó
 
 📌 **Következő lépések**  
-- Zene hozzáadása lejátszási listához   
-- Lejátszási lista létrehozása  
+- Problémák megoldása
 
 ---
 
 ### 🗄️ Backend + Adatbázis – Fehér Tamás  
 ✅ **Folyamatban lévő fejlesztések**  
-- `GET api/GetPlaylistByUser` végpont fejlesztése  
-
-❌ **Problémák**
-- Az adatbázis táblákat módosítani kell, hogy az új kérésekre alkalmas legyen
-
-📌 **Következő lépések**  
-- `GET api/GetAllMusicByUser` végpont fejlesztése 
-- Zene hozzáadása listához `POST` végpont
+- Fejlesztői dokumentáció
 
 ---
 
