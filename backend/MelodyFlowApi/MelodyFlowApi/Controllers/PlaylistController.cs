@@ -81,6 +81,7 @@ namespace MelodyFlowApi.Controllers
                 _context.Aspnetusers.Any(x => x.UserName.ToLower().Contains(betu.ToLower())))
     .ToListAsync());
         }
+        //Lejátszási lista adatainak szerkesztése
         [Authorize]
         [HttpPut("playlist/{id}")]
         public async Task<ActionResult<Playlist>> EditPlaylist(string id,EditPlaylistDto editPlaylistDto)

@@ -98,6 +98,7 @@ namespace MelodyFlowApi.Controllers
             }
             return BadRequest();
         }
+        //Zene adatainak szerkesztése
         [Authorize]
         [HttpPut("music/{id}")]
         public async Task<ActionResult<Music>> EditMusic(string id, EditMusicDto editMusicDto)
