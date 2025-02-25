@@ -5,9 +5,11 @@ import api from '../Api';
 import MusicCard from '../cards/MusicCard';
 import PlaylistCard from '../cards/PlaylistCard';
 import EditPicture from '../menu/EditPicture';
+import Cookies from "js-cookie";
 
 export default function UserPage() {
   const { id } = useParams(); 
+  const userid = Cookies.get("userid");
   const navigate = useNavigate();
   const [account, setAccount] = useState({});
   const [musics, setMusics] = useState([]);
@@ -53,7 +55,19 @@ export default function UserPage() {
       >
         <Flex zIndex={"1"} bgGradient="to-tr" gradientFrom="colorPalette.solid/65" gradientTo="transparent" position={"absolute"} w={"full"} h={"190px"}></Flex>
         <Flex overflowX={"clip"} backgroundImage={`url(${account?.profilePictureURL})`} backgroundPosition={"center"} backgroundSize={"cover"} direction={"row"} p={"5"}>
-          <EditPicture account={account}/>
+          {id === userid? <EditPicture account={account}/> :
+          <Button
+            zIndex={"2"}
+            boxShadowColor={"colorPalette"}
+            boxShadow={"0 0 25px 0"}
+            backgroundImage={`url(${account?.profilePictureURL})`}
+            boxSize={"150px"}
+            variant={"outline"}
+            borderRadius={"full"}
+            backgroundSize={"cover"}
+            backgroundPosition={"center"}
+            fit={"cover"}
+            />}
           <Box zIndex={"2"} px={"5"} py={"5"}>
             <Text fontSize="sm">
               Profil

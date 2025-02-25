@@ -10,9 +10,11 @@ import {
     DialogTitle,
     DialogTrigger,
 } from "../components/ui/dialog"
+import { toaster } from '../components/ui/toaster';
 import { Input } from "@chakra-ui/react"
+import api from "../Api"
 
-export default function EditPicture({account}) {
+export default function EditPicture({userid,account}) {
     const [imageUrl, setImageUrl] = useState("");
     const themecolor = localStorage.getItem("themecolor");
     const [open, setOpen] = useState(false)
@@ -30,7 +32,7 @@ export default function EditPicture({account}) {
             backgroundSize={"cover"}
             backgroundPosition={"center"}
             fit={"cover"}
-          />
+            />
             </DialogTrigger>
             <DialogBackdrop onClick={()=>setOpen(false)}/>
             <DialogContent>
@@ -39,7 +41,25 @@ export default function EditPicture({account}) {
                     <DialogTitle>Profilkép szerkesztése</DialogTitle>
                 </DialogHeader>
                 <DialogBody>
-                    <form>
+                    <form onSubmit={(e)=>{
+                        e.preventDefault();
+                        if(imageUrl != ""){
+                            api.put("/user/ChangeProfilePicture",{
+                                profilePictureURL: imageUrl,
+                                id: userid
+                            })
+                            .then(()=>{
+                                toaster.create({
+                                title: `Profilkép sikeresen hozzáadva!`,
+                                type: "success",
+                            })
+                            })
+                            .finally(()=>{
+                                setOpen(false);
+                                window.location.reload(); // az oldal frissítése, hogy az új profilkép mindenhol megjelenjen
+                            })
+                        }
+                    }}>
                         <Flex direction={"row"} pb={"3"}>
                             <Button borderRadius="lg" variant="ghost" height="150px" width="150px" backgroundPosition="center" backgroundImage={"url("+(imageUrl)+")"} backgroundSize="cover" boxShadow={`0 0 15px 0 ${themecolor}`}/>
                             <Flex width={"full"} direction={"column"} p={"5"}>
@@ -47,7 +67,7 @@ export default function EditPicture({account}) {
                             </Flex>
                         </Flex>
                         <Flex justifyContent={"right"}>
-                            <Button  type='submit'>Mentés</Button>
+                            <Button type='submit'>Mentés</Button>
                         </Flex>
                     </form>
                 </DialogBody>
