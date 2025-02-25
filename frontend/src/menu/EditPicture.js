@@ -13,9 +13,13 @@ import {
 import { toaster } from '../components/ui/toaster';
 import { Input } from "@chakra-ui/react"
 import api from "../Api"
+import Cookies from "js-cookie"
 
-export default function EditPicture({userid,account}) {
+export default function EditPicture({account}) {
+    const token = Cookies.get("token");
+    const userid = Cookies.get("userid");
     const [imageUrl, setImageUrl] = useState("");
+    console.log(account.profilePictureURL)
     const themecolor = localStorage.getItem("themecolor");
     const [open, setOpen] = useState(false)
     return (
@@ -44,9 +48,13 @@ export default function EditPicture({userid,account}) {
                     <form onSubmit={(e)=>{
                         e.preventDefault();
                         if(imageUrl != ""){
-                            api.put("/user/ChangeProfilePicture",{
+                            api.put("/user/ChangeProfilePicture", {
                                 profilePictureURL: imageUrl,
                                 id: userid
+                            }, {
+                                headers: {
+                                    Authorization: `Bearer ${token}`
+                                }
                             })
                             .then(()=>{
                                 toaster.create({
