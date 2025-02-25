@@ -45,6 +45,7 @@ namespace MelodyFlowApi.Controllers
             return BadRequest();
         }
         //Egy meglévő felhasználó itt tudja módosítani az email címét
+        [Authorize]
         [HttpPut("ChangeEmail")]
         public async Task<ActionResult<Aspnetuser>> ChangeEmail(UserEmailPutDto userEmailPutDto)
         {
@@ -62,6 +63,7 @@ namespace MelodyFlowApi.Controllers
             return StatusCode(404);
         }
         //Itt a felhasználónevét tudja módosítani
+        [Authorize]
         [HttpPut("ChangeUserName")]
         public async Task<ActionResult<Aspnetuser>> ChangeUserName(UserNamePutDto userNamePutDto)
         {
@@ -79,6 +81,7 @@ namespace MelodyFlowApi.Controllers
             return StatusCode(404);
         }
         //Itt pedig a profilképét tudja módosítani
+        [Authorize]
         [HttpPut("ChangeProfilePicture")]
         public async Task<ActionResult<Aspnetuser>> ChangeProfilePicture(UserPicturePutDto userPicturePutDto)
         {

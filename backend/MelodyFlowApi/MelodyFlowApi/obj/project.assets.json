@@ -4680,11 +4680,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Tanulo\\szbalesz\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\MelodyFlowApi.csproj",
+      "projectUniqueName": "C:\\Users\\Tanulo\\ftamas\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\MelodyFlowApi.csproj",
       "projectName": "MelodyFlowApi",
-      "projectPath": "C:\\Users\\Tanulo\\szbalesz\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\MelodyFlowApi.csproj",
+      "projectPath": "C:\\Users\\Tanulo\\ftamas\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\MelodyFlowApi.csproj",
       "packagesPath": "C:\\Users\\Tanulo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Tanulo\\szbalesz\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\obj\\",
+      "outputPath": "C:\\Users\\Tanulo\\ftamas\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Tanulo\\AppData\\Roaming\\NuGet\\NuGet.Config",
