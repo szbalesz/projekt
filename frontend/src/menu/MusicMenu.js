@@ -11,7 +11,7 @@ import { LuCircleX, LuList } from "react-icons/lu";
 import DialogAlert from "./DialogAlert";
 import EditMusicWindow from "./EditMusicWindow";
 
-export default function MusicMenu({setFavorite, isFavorite, musicId, deleteMusic}) {
+export default function MusicMenu({getMusic,music, setFavorite, isFavorite, musicId, deleteMusic}) {
   return (
     <MenuRoot>
       <MenuTrigger asChild>
@@ -19,7 +19,7 @@ export default function MusicMenu({setFavorite, isFavorite, musicId, deleteMusic
       </MenuTrigger>
       <MenuContent>
         <AddToPlaylistMenu setFavorite={setFavorite} isFavorite={isFavorite} musicId={musicId}/>
-        <EditMusicWindow/>
+        <EditMusicWindow music={music} getMusic={getMusic}/>
         <DialogAlert openButton={<MenuItem value="torles" color={"red.500"}><LuCircleX/>Törlés</MenuItem>} title={"Biztosan törölni szeretnéd?"} func={deleteMusic} text={"Ez a művelet nem vonható vissza. Ez véglegesen törli a lejátszási listát a rendszerből."} buttontext={"Törlés"}/>
       </MenuContent>
     </MenuRoot>

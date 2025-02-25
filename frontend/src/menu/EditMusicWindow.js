@@ -19,17 +19,29 @@ import { LuPen } from 'react-icons/lu'
 import BigMusicCard from '../cards/BigMusicCard'
 import { Field } from '../components/ui/field'
 
-export default function EditMusicWindow({ userid, getPlaylists}) {
+export default function EditMusicWindow({music,getMusic}) {
     const token = Cookies.get("token");
     const themecolor = localStorage.getItem("themecolor");
-    const [playlistName, setPlaylistName] = useState("");
-    const [imageUrl, setImageUrl] = useState("");
     const [open, setOpen] = useState(false)
-    const prevImg = "https://t3.ftcdn.net/jpg/04/62/60/80/360_F_462608080_J2AJrf8h0fmbFqnTVUQfza8JivYOfShz.jpg";
-    const [title, setTitle] = useState("");
-    const [artist, setArtist] = useState("");
-    const [imageurl, setImageurl] = useState("");
-    const [musicfile, setMusicfile] = useState(null);
+    const [title, setTitle] = useState(music.title);
+    const [artist, setArtist] = useState(music.artist);
+    const [imageurl, setImageurl] = useState(music.imageUrl);
+
+    const editMusic = async()=>{
+        api.put("/music/"+music.id,{artist,title,imageurl},{
+            headers: {
+              Authorization: `Bearer ${token}`
+          }
+          })
+          .then(()=>{
+            toaster.create({ title: `Sikeres módosítás!`, type: "success" });
+            getMusic();
+            setOpen(false);
+          })
+          .catch((e)=>{
+            console.error("Hiba történt a lista hozzáadása közben: ",e);
+          })
+    }
 
     return (
         // Új lejátszási lista ablak
@@ -45,7 +57,12 @@ export default function EditMusicWindow({ userid, getPlaylists}) {
                 </DialogHeader>
                 <DialogBody display={"flex"} flexDirection={{base: "column", md:"row"}}>
                     <Stack p="5" w={{base: "", md:"md"}} gap="4">
-                    <form>
+                    <form onSubmit={(e)=>{
+                        e.preventDefault();
+                        if(token){
+                            editMusic();
+                        }
+                    }}>
                             <Field py="1" label="Zene cím" required helperText="Add meg a zene címét.">
                                 <Input value={title} onChange={(q) => setTitle(q.target.value)} placeholder="Walkin' a street"/>
                             </Field>

@@ -109,7 +109,7 @@ export default function PlaylistPage() {
               <Avatar width="25px" height="25px" src={creator.profilePictureURL}/>
               {creator.username}
               </Button>
-              <PlaylistEditMenu userId={userid} playlistName={playlist.playlistName} playlistId={playlistId}/>
+              <PlaylistEditMenu getPlaylist={getPlaylist} playlist={playlist} userId={userid} playlistName={playlist.playlistName} playlistId={playlistId}/>
             </Flex>
           </Box>
         </Flex>

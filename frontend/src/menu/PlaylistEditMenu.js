@@ -14,7 +14,7 @@ import { useNavigate } from 'react-router-dom'
 import Cookies from "js-cookie"
 import EditPlaylistWindow from './EditPlaylistWindow'
 
-export default function PlaylistEditMenu({playlistName,playlistId,userId}) {
+export default function PlaylistEditMenu({getPlaylist,playlist,playlistName,playlistId,userId}) {
   const token = Cookies.get("token");
   const navigate = useNavigate();
   const [isCreator, setIsCreator] = useState(false);
@@ -106,7 +106,7 @@ export default function PlaylistEditMenu({playlistName,playlistId,userId}) {
         : null}
         {isCreator ?
          <>
-         <EditPlaylistWindow/>
+         <EditPlaylistWindow getPlaylist={getPlaylist} playlist={playlist}/>
          <DialogAlert openButton={<MenuItem value="torles" color={"red.500"}><LuCircleX/>Törlés</MenuItem>} func={deletePlaylist} title={"Biztosan törölni szeretnéd?"} text={"Ez a művelet nem vonható vissza. Ez véglegesen törli a lejátszási listát a rendszerből."} buttontext={"Törlés"}/>
          </> : null}
       </MenuContent>
