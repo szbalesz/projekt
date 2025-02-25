@@ -1,15 +1,32 @@
 import { Button, Center, Flex, Heading, Text, } from '@chakra-ui/react'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { LuUser } from 'react-icons/lu'
 import { useNavigate } from 'react-router-dom'
 import Cookies from "js-cookie"
+import api from '../services/Api'
 
 export default function ProfileSettings() {
     const navigate = useNavigate();
     const token = Cookies.get("token");
+    const userid = Cookies.get("userid");
+    const [account, setAccount] = useState({})
+    const getProfile = async()=>{
+        try {
+            await api.get("/user/"+userid)
+            .then(response=>{
+              setAccount(response.data[0]);
+            })
+          } catch (error) {
+            console.log("Hiba történt a profil lekérése közben:",error);
+          }
+    }
+
     useEffect(() => {
       if(!token){
         navigate(-1);
+      }
+      else{
+        getProfile();
       }
     }, [token])
     
@@ -20,7 +37,7 @@ export default function ProfileSettings() {
                 <Heading py={"3"} size={"3xl"}>Személyes adatok szerkesztése</Heading>
                 <hr />
                 <Heading py={"3"} size={"1xl"}>Jelenlegi bejelentkezési módok</Heading>
-                <Flex p={"3"} rounded={"md"} maxWidth={"md"} background={"bg.muted"} pb={"3"} direction={"column"}>
+                <Flex p={"3"} rounded={"md"} background={"bg.muted"} pb={"3"} direction={"column"}>
                     <Flex>
                         <LuUser size={"25"} />
                         <Heading px={"3"}>
@@ -34,7 +51,7 @@ export default function ProfileSettings() {
                             Felhasználónév
                         </Text>
                         <Text color={"colorPalette.solid"} fontSize={"13px"}>
-                            JoskaPista2001
+                            {account.username}
                         </Text>
                         </Flex>
                         <Flex pt={"2"} px={"3"}>
@@ -47,7 +64,7 @@ export default function ProfileSettings() {
                             Email
                         </Text>
                         <Text color={"colorPalette.solid"} fontSize={"13px"}>
-                            példa@kkszki.hu
+                            {account.email}
                         </Text>
                         </Flex>
                         <Flex pt={"2"} px={"3"}>

@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { Button, Center, MenuItem, Stack, Text, Theme } from "@chakra-ui/react"
 import {
-    DialogActionTrigger,
     DialogBackdrop,
     DialogBody,
     DialogCloseTrigger,
@@ -13,7 +12,7 @@ import {
 } from "../components/ui/dialog"
 import { Input } from "@chakra-ui/react"
 import { toaster } from '../components/ui/toaster'
-import api from '../Api'
+import api from '../services/Api'
 import Cookies from "js-cookie";
 import { LuPen } from 'react-icons/lu'
 import BigMusicCard from '../cards/BigMusicCard'

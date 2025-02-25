@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
-import { Button, Flex, Image, Text, Theme } from "@chakra-ui/react"
+import { Button, Flex, Text, Theme } from "@chakra-ui/react"
 import {
-    DialogActionTrigger,
     DialogBackdrop,
     DialogBody,
     DialogCloseTrigger,
@@ -13,10 +12,10 @@ import {
 } from "../components/ui/dialog"
 import { Input } from "@chakra-ui/react"
 import { toaster } from '../components/ui/toaster'
-import api from '../Api'
+import api from '../services/Api'
 import Cookies from "js-cookie";
 
-export default function PlaylistWindow({ userid, getPlaylists}) {
+export default function PlaylistWindow({ playlists, userid, getPlaylists}) {
     const token = Cookies.get("token");
     const themecolor = localStorage.getItem("themecolor");
     const [playlistName, setPlaylistName] = useState("");
@@ -43,7 +42,8 @@ export default function PlaylistWindow({ userid, getPlaylists}) {
                             imageUrl: imageUrl.length < 10 ? prevImg : imageUrl,
                             creatorId: userid,
                         }
-                        api.post("/CreatePlaylist",newPlaylist, {
+                        if(!playlists.find(x=>x.playlistName == playlistName)){
+                            api.post("/CreatePlaylist",newPlaylist, {
                             headers: {
                                 Authorization: `Bearer ${token}`
                             }
@@ -69,6 +69,10 @@ export default function PlaylistWindow({ userid, getPlaylists}) {
                             toaster.create({ title: "Hiba történt.", type: "error" });
                             console.error("Hiba történt a lejátszási lista elkészítése alatt: ",e)
                         })
+                        } 
+                        else{
+                            toaster.create({ title: `Már létrehoztad a(z) ${playlistName} nevű lejátszási listát!`, type: "error" });
+                        }
                     }}>
                         <Flex direction={"row"} pb={"3"}>
                             <Button borderRadius="lg" variant="ghost" height="150px" width="150px" backgroundPosition="center" backgroundImage={"url("+(imageUrl.length < 10 ? prevImg : imageUrl)+")"} backgroundSize="cover" boxShadow={`0 0 15px 0 ${themecolor}`}/>

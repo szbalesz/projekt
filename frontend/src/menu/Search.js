@@ -12,7 +12,7 @@ import {
   DialogTitle,
 } from "../components/ui/dialog";
 import MusicCard from '../cards/MusicCard';
-import api from '../Api';
+import api from '../services/Api';
 import { SegmentedControl } from "../components/ui/segmented-control"
 import PlaylistCard from '../cards/PlaylistCard';
 

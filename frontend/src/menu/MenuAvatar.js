@@ -16,7 +16,7 @@ import { Flex, Span, Text, Theme } from '@chakra-ui/react'
 import { LuPanelRightClose, LuUser } from "react-icons/lu";
 import Cookies from "js-cookie";
 import { Link } from 'react-router-dom';
-import api from '../Api';
+import api from '../services/Api';
 
 export default function MenuAvatar({themecolor, isLoggedIn, onLogout, profileMenuItems }) {
   const userid = Cookies.get("userid");
@@ -36,11 +36,11 @@ export default function MenuAvatar({themecolor, isLoggedIn, onLogout, profileMen
         </DrawerTrigger>
         <DrawerContent bg="Background" borderWidth={{ base: "0px" }} borderRightWidth="1px">
         <Theme display={"flex"} flexDirection={"column"} colorPalette={themecolor} bg={"Background"} h={"100%"}>
-          <DrawerTrigger fontWeight="bold" borderRadius="5px" variant="outline" width="100%" height="50px" position="absolute" top="0" right="0">
-            <Flex justifyContent="space-between" fontSize="md">
+          <DrawerTrigger as={"div"} fontWeight="bold" borderRadius="5px" variant="outline" width="100%" position="absolute" top="0" right="0">
+            <Button w="100%" variant="outline" justifyContent="space-between" fontSize="md" height="50px">
               <Span width="100%">Profil</Span>
-              <Span w="10%" position="absolute" right="0" p="2px" color="colorPalette.300"><LuPanelRightClose /></Span>
-            </Flex>
+              <Span w="10%" position="absolute" right="0" p="2px" color="colorPalette.solid"><LuPanelRightClose /></Span>
+            </Button>
           </DrawerTrigger>
           <DrawerHeader p="5">
             <DrawerTitle>
@@ -53,7 +53,7 @@ export default function MenuAvatar({themecolor, isLoggedIn, onLogout, profileMen
                 {isLoggedIn ?
                   <Flex direction={"column"}>
                       <Avatar mx={"auto"} boxShadow={`0 0 20px 0 ${themecolor}`} width="125px" height="125px" src={account?.profilePictureURL} /><Flex p="3" color="colorPalette.solid">
-                      <Text mx={"auto"} fontSize={"2xl"} color={themecolor}>{account?.username}</Text>
+                      <Text pt={"2"} mx={"auto"} fontSize={"2xl"} color="bg.inverted">{account?.username}</Text>
                       </Flex>
                   </Flex> :
                   <DrawerActionTrigger as="div">

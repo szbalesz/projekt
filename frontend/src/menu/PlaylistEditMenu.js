@@ -6,9 +6,9 @@ import {
   MenuRoot,
   MenuTrigger,
 } from "../components/ui/menu"
-import { LuCircleX, LuEllipsis, LuPen, LuUserRoundMinus, LuUserRoundPlus } from 'react-icons/lu'
+import { LuCircleX, LuEllipsis, LuUserRoundMinus, LuUserRoundPlus } from 'react-icons/lu'
 import DialogAlert from './DialogAlert'
-import api from '../Api'
+import api from '../services/Api'
 import { toaster } from '../components/ui/toaster'
 import { useNavigate } from 'react-router-dom'
 import Cookies from "js-cookie"

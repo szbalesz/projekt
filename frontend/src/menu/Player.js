@@ -15,7 +15,7 @@ export default function Player({themecolor, volume, setVolume, currentTime,durat
   };
 
 useEffect(() => {
-  if(currentMusic?.title != null){
+  if(currentMusic?.title !== null){
     setopen(true);
   }
 }, [isPlaying])
@@ -25,7 +25,7 @@ useEffect(() => {
       bg="Background"
       position="fixed"
       boxShadow={`-5px 0px 50px -20px ${themecolor}`}
-      bottom={{  base: open != false ? "65px" : "5px", md: open != false ? "0px" : "-63px" }}
+      bottom={{  base: open !== false ? "65px" : "5px", md: open !== false ? "0px" : "-63px" }}
       transition="all 1s ease-in-out"
       marginLeft={{ base: "0px", md: "50px" }}
       width={{ base: "100%", md: "97%" }}

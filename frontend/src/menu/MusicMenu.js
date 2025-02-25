@@ -4,7 +4,6 @@ import {
   MenuItem,
   MenuRoot,
   MenuTrigger,
-  MenuTriggerItem,
 } from "../components/ui/menu"
 import AddToPlaylistMenu from '../menu/AddToPlaylistMenu';
 import { LuCircleX, LuList } from "react-icons/lu";
@@ -24,8 +23,9 @@ export default function MusicMenu({isUploader,getMusic,music, setFavorite, isFav
         <AddToPlaylistMenu setFavorite={setFavorite} isFavorite={isFavorite} musicId={musicId}/> 
         : null}
         {isUploader? 
-        <><EditMusicWindow music={music} getMusic={getMusic}/>
-        <DialogAlert openButton={<MenuItem value="torles" color={"red.500"}><LuCircleX/>Törlés</MenuItem>} title={"Biztosan törölni szeretnéd?"} func={deleteMusic} text={"Ez a művelet nem vonható vissza. Ez véglegesen törli a lejátszási listát a rendszerből."} buttontext={"Törlés"}/>
+        <>
+        <EditMusicWindow music={music} getMusic={getMusic}/>
+        <DialogAlert openButton={<MenuItem value="torles" color={"red.500"}><LuCircleX/>Törlés</MenuItem>} title={"Biztosan törölni szeretnéd?"} func={deleteMusic} text={"Ez a művelet nem vonható vissza. Ez véglegesen törli a zenét a rendszerből."} buttontext={"Törlés"}/>
         </>
         : null}
       </MenuContent>

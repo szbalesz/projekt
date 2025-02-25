@@ -1,7 +1,7 @@
 import { Box, Flex, Text, Heading, Button } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import api from '../Api';
+import api from '../services/Api';
 import MusicCard from '../cards/MusicCard';
 import PlaylistCard from '../cards/PlaylistCard';
 import EditPicture from '../menu/EditPicture';

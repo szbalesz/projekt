@@ -1,9 +1,9 @@
-import { Box, Button, Center, Flex, Heading, Input, Stack, Text } from '@chakra-ui/react';
+import { Button, Center, Flex, Heading, Input, Stack, Text } from '@chakra-ui/react';
 import { Field } from "../components/ui/field";
 import { FileUploadList, FileUploadRoot, FileUploadTrigger } from "../components/ui/file-upload";
 import { HiUpload } from "react-icons/hi";
 import React, { useState } from 'react';
-import api from "../Api"
+import api from "../services/Api"
 import { toaster } from '../components/ui/toaster';
 import BigMusicCard from "../cards/BigMusicCard"
 import Cookies from "js-cookie"

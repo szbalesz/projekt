@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import { Button, Flex, Image, MenuTriggerItem, Text } from "@chakra-ui/react"
+import { Flex, Image, MenuTriggerItem, Text } from "@chakra-ui/react"
 import {
   MenuContent,
   MenuItem,
   MenuRoot,
-  MenuTrigger,
 } from "../components/ui/menu"
-import { LuChevronRight, LuList, LuMinus, LuPlus } from 'react-icons/lu'
-import api from '../Api'
+import { LuMinus, LuPlus } from 'react-icons/lu'
+import api from '../services/Api'
 import Cookies from "js-cookie";
 import { toaster } from '../components/ui/toaster'
 

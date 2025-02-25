@@ -1,7 +1,7 @@
 import { AbsoluteCenter, Flex, Spinner } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
 import BigMusicCard from '../cards/BigMusicCard';
-import api from '../Api';
+import api from '../services/Api';
 import { useNavigate } from 'react-router-dom';
 
 export default function Home() {

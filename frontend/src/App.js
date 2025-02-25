@@ -4,8 +4,9 @@ import { Box, Theme } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import { Toaster, toaster } from "./components/ui/toaster";
 import { useNavigate } from "react-router-dom";
-import api from "./Api";
+import api from "./services/Api";
 import Cookies from "js-cookie";
+
 function App() {
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Text, Image, VStack, AbsoluteCenter, Button, Spinner } from '@chakra-ui/react';
-import { LuList, LuPause, LuPlay, LuStar, LuTrash } from 'react-icons/lu';
+import { LuPause, LuPlay, LuStar } from 'react-icons/lu';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
-import api from '../Api';
+import api from '../services/Api';
 import Cookies from "js-cookie";
 import { Slider } from '../components/ui/slider';
 import { toaster } from '../components/ui/toaster';
@@ -71,23 +71,28 @@ const MusicPage = ({currentTime, handleSliderChange, duration, currentMusic, han
   }
 
   const addToFavorite = async ()=>{
-    if(!favoritePlaylistId){
-      toaster.create({ title: `Úgytűnik nincs Kedvencek nevű listád! Hozz létre egyet!`, type: "info" });
+    if(token){
+        if(!favoritePlaylistId){
+          toaster.create({ title: `Úgytűnik nincs Kedvencek nevű listád! Hozz létre egyet!`, type: "info" });
+        }
+        else{
+        try {
+          await api.post("/AddMusicToPlaylist", { playlistId: favoritePlaylistId, musicId: music.id }, {
+            headers: {
+              Authorization: `Bearer ${token}`
+          }
+          });
+          toaster.create({ title: `Zene hozzáadva a kedvencekhez.`, type: "success" });
+          setFavorite(true);
+        } catch (error) {
+          toaster.create({ title: `Hiba történt a művelet közben.`, type: "error" });
+          console.error(error);
+        }
+      }
     }
     else{
-    try {
-      await api.post("/AddMusicToPlaylist", { playlistId: favoritePlaylistId, musicId: music.id }, {
-        headers: {
-          Authorization: `Bearer ${token}`
-      }
-      });
-      toaster.create({ title: `Zene hozzáadva a kedvencekhez.`, type: "success" });
-      setFavorite(true);
-    } catch (error) {
-      toaster.create({ title: `Hiba történt a művelet közben.`, type: "error" });
-      console.error(error);
+      toaster.create({ title: `Jelentkezz be a funkció használatához!`, type: "info" });
     }
-  }
 }
   const removeFromFavorite = async ()=>{
     try {

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Button, Flex, Text, Theme } from "@chakra-ui/react"
+import { Button, Flex, Theme } from "@chakra-ui/react"
 import {
     DialogBackdrop,
     DialogBody,
@@ -12,7 +12,7 @@ import {
 } from "../components/ui/dialog"
 import { toaster } from '../components/ui/toaster';
 import { Input } from "@chakra-ui/react"
-import api from "../Api"
+import api from "../services/Api"
 import Cookies from "js-cookie"
 
 export default function EditPicture({account}) {
@@ -50,7 +50,7 @@ export default function EditPicture({account}) {
                 <DialogBody>
                     <form onSubmit={(e)=>{
                         e.preventDefault();
-                        if(imageUrl != ""){
+                        if(imageUrl !== ""){
                             api.put("/user/ChangeProfilePicture", {
                                 profilePictureURL: imageUrl,
                                 id: userid
