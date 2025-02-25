@@ -11,6 +11,7 @@ namespace MelodyFlowApi.Models.Dtos
     public record UserNamePutDto(string UserName, string Id);
     public record UserPicturePutDto(string ProfilePictureURL, string Id);
     public record EditPlaylistDto(string ImageUrl,string PlaylistName);
+    public record EditMusicDto(string Artist, string Title,string ImageUrl);
 
     public record UploadMusicDto
     {
