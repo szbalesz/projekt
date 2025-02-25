@@ -53,7 +53,7 @@ export default function PlaylistCard({ playlist }) {
         overflow="hidden"
         boxShadow={`0 0 10px 0 ${themecolor}`}
       >
-      <Image minW="150px" minH={"150px"} src={playlist?.imageUrl}/>
+      <Box width="150px" height={"150px"} backgroundPosition="center" backgroundImage={"url("+playlist?.imageUrl+")"} backgroundSize="cover"/>
         <Box p="0" w="auto" paddingTop="5" paddingBottom="5" backgroundColor="colorPalette.inverted">
           <Text fontWeight="bold" color="colorPalette.300">{playlist.playlistName}</Text>
           <Text color={"bg.inverted"} fontSize="12px" letterSpacing="tight">
