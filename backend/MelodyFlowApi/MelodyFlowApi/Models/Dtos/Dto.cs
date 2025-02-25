@@ -10,6 +10,7 @@ namespace MelodyFlowApi.Models.Dtos
     public record UserEmailPutDto(string Email,string Id);
     public record UserNamePutDto(string UserName, string Id);
     public record UserPicturePutDto(string ProfilePictureURL, string Id);
+    public record EditPlaylistDto(string ImageUrl,string PlaylistName);
 
     public record UploadMusicDto
     {

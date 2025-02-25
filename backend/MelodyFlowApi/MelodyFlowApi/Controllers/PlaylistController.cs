@@ -81,5 +81,22 @@ namespace MelodyFlowApi.Controllers
                 _context.Aspnetusers.Any(x => x.UserName.ToLower().Contains(betu.ToLower())))
     .ToListAsync());
         }
+        [Authorize]
+        [HttpPut("playlist/{id}")]
+        public async Task<ActionResult<Playlist>> EditPlaylist(string id,EditPlaylistDto editPlaylistDto)
+        {
+
+            var existingPlaylist = await _context.Playlists.FirstOrDefaultAsync(x => x.Id ==id);
+
+            if (existingPlaylist != null)
+            {
+                existingPlaylist.PlaylistName = editPlaylistDto.PlaylistName;
+                existingPlaylist.ImageUrl = editPlaylistDto.ImageUrl;
+                _context.Playlists.Update(existingPlaylist);
+                await _context.SaveChangesAsync();
+                return StatusCode(200, existingPlaylist);
+            }
+            return StatusCode(404);
+        }
     }
 }
