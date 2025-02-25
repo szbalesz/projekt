@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button, Flex, Text, Theme } from "@chakra-ui/react"
 import {
     DialogBackdrop,
@@ -19,9 +19,12 @@ export default function EditPicture({account}) {
     const token = Cookies.get("token");
     const userid = Cookies.get("userid");
     const [imageUrl, setImageUrl] = useState("");
-    console.log(account.profilePictureURL)
     const themecolor = localStorage.getItem("themecolor");
     const [open, setOpen] = useState(false)
+    useEffect(() => {
+        setImageUrl(account.profilePictureURL);
+    }, [account])
+    
     return (
         <DialogRoot lazyMount open={open} onOpenChange={(e) => setOpen(e.open)} placement={"center"}>
             <DialogTrigger asChild>
