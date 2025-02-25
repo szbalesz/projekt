@@ -14,27 +14,38 @@
 
 ### 🎨 Frontend UI – Csehi Tamás  
 ✅ **Folyamatban lévő fejlesztések**  
-- Lejátszási lista Adatok szerkesztése felugró ablak
+- Fiók beállítások oldal kinézete
 
 📌 **Következő lépések**  
-- Felhasználói dokumentáció folytatása
+- Felhasználónév módosítása ablak kinézete
+- Email módosítása ablak kinézete
+- Jelszó módosítása ablak kinézete
+- Felhasználói dokumentáció
 
 ---
 
 ### 🔄 Frontend ↔ Backend kapcsolat – Száraz Bálint Csaba  
 ✅ **Folyamatban lévő fejlesztések**  
-- Profilkép módosításának működése
-
-❌ **Problémák**
-- Ne tudjon több Kedvencek nevű lejátszási listát készíteni egy felhasználó
+- Fiók beállítások oldal működése
 
 📌 **Következő lépések**  
-- Problémák megoldása
+- Felhasználónév módosítás működése
+- Email módosítás működése
+- Jelszó módosítás működése
+- Sikeres regisztrációnál email küldés
 
 ---
 
 ### 🗄️ Backend + Adatbázis – Fehér Tamás  
 ✅ **Folyamatban lévő fejlesztések**  
+- Email küldés
+
+❌ **Problémák**
+- Zene fájl törlése, zene törléskor
+
+
+📌 **Következő lépések**
+- Probléma megoldása  
 - Fejlesztői dokumentáció
 
 ---
