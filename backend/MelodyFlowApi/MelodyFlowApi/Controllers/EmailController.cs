@@ -15,7 +15,7 @@ namespace EmailApiKedd.Controllers
         }
         //Ezzel a végponttal emailt tudunk küldeni és tartalmazza hogy kinek a tárgyat és magát az üzenetet
         [HttpPost]
-        public ActionResult PostSendMail(string To, string Subject, string Body)
+        public ActionResult PostSendMail()
         {
             emailInterface.SendEmail(To, Subject, Body);
             return Ok("Sikeres email küldés.");
