@@ -98,7 +98,7 @@
         }
       }
     },
-    "/emails": {
+    "/api/email": {
       "post": {
         "tags": [
           "Email"

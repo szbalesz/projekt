@@ -158,6 +158,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "EmailApiKedd.Controllers.EmailController",
+    "Method": "PostSendMail",
+    "RelativePath": "api/email",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sendEmailDto",
+        "Type": "MelodyFlowApi.Models.Dtos.SendEmailDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "MelodyFlowApi.Controllers.MusicController",
     "Method": "Get",
     "RelativePath": "api/GetAllMusic",
@@ -592,21 +608,5 @@
         "StatusCode": 200
       }
     ]
-  },
-  {
-    "ContainingType": "EmailApiKedd.Controllers.EmailController",
-    "Method": "PostSendMail",
-    "RelativePath": "emails",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "sendEmailDto",
-        "Type": "MelodyFlowApi.Models.Dtos.SendEmailDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
   }
 ]

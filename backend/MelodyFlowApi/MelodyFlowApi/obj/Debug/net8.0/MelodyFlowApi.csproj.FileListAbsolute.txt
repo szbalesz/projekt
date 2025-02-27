@@ -1790,3 +1790,7 @@ C:\Users\Tanulo\projektfehert\projekt\backend\MelodyFlowApi\MelodyFlowApi\obj\De
 C:\Users\Tanulo\projektfehert\projekt\backend\MelodyFlowApi\MelodyFlowApi\obj\Debug\net8.0\MelodyFlowApi.pdb
 C:\Users\Tanulo\projektfehert\projekt\backend\MelodyFlowApi\MelodyFlowApi\obj\Debug\net8.0\MelodyFlowApi.genruntimeconfig.cache
 C:\Users\Tanulo\projektfehert\projekt\backend\MelodyFlowApi\MelodyFlowApi\obj\Debug\net8.0\ref\MelodyFlowApi.dll
+C:\Users\Tanulo\szarazb\projekt\backend\MelodyFlowApi\MelodyFlowApi\bin\Debug\net8.0\MelodyFlowApi.staticwebassets.endpoints.json
+C:\Users\Tanulo\szarazb\projekt\backend\MelodyFlowApi\MelodyFlowApi\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\Tanulo\szarazb\projekt\backend\MelodyFlowApi\MelodyFlowApi\obj\Debug\net8.0\staticwebassets\msbuild.MelodyFlowApi.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\Tanulo\szarazb\projekt\backend\MelodyFlowApi\MelodyFlowApi\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

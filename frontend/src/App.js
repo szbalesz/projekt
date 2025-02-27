@@ -6,6 +6,7 @@ import { Toaster, toaster } from "./components/ui/toaster";
 import { useNavigate } from "react-router-dom";
 import api from "./services/Api";
 import Cookies from "js-cookie";
+import { sendEmail } from "./services/Email";
 
 function App() {
   const navigate = useNavigate();
@@ -34,6 +35,7 @@ function App() {
         }
         else{
           toaster.create({ title: "Sikeres regisztráció.", type: "success" });
+          sendEmail(email,username,"register");
           navigate("/login");
           onLogin(username,password)
         }
