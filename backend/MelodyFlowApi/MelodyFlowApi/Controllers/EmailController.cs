@@ -1,9 +1,10 @@
 ﻿using EmailApiKedd.Services.IEmail;
+using MelodyFlowApi.Models.Dtos;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EmailApiKedd.Controllers
 {
-    [Route("emails")]
+    [Route("api/email")]
     [ApiController]
     public class EmailController : ControllerBase
     {
@@ -15,9 +16,9 @@ namespace EmailApiKedd.Controllers
         }
         //Ezzel a végponttal emailt tudunk küldeni és tartalmazza hogy kinek a tárgyat és magát az üzenetet
         [HttpPost]
-        public ActionResult PostSendMail()
+        public ActionResult PostSendMail(SendEmailDto sendEmailDto)
         {
-            emailInterface.SendEmail(To, Subject, Body);
+            emailInterface.SendEmail(sendEmailDto.To,sendEmailDto.Subject,sendEmailDto.Body);
             return Ok("Sikeres email küldés.");
         }
     }

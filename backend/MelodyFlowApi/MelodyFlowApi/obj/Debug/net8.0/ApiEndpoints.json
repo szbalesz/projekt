@@ -602,19 +602,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "To",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Subject",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Body",
-        "Type": "System.String",
-        "IsRequired": false
+        "Name": "sendEmailDto",
+        "Type": "MelodyFlowApi.Models.Dtos.SendEmailDto",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []

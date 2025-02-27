@@ -103,29 +103,25 @@
         "tags": [
           "Email"
         ],
-        "parameters": [
-          {
-            "name": "To",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "Subject",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "Body",
-            "in": "query",
-            "schema": {
-              "type": "string"
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SendEmailDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SendEmailDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SendEmailDto"
+              }
             }
           }
-        ],
+        },
         "responses": {
           "200": {
             "description": "Success"
@@ -1472,6 +1468,24 @@
             "nullable": true
           },
           "musicId": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SendEmailDto": {
+        "type": "object",
+        "properties": {
+          "to": {
+            "type": "string",
+            "nullable": true
+          },
+          "subject": {
+            "type": "string",
+            "nullable": true
+          },
+          "body": {
             "type": "string",
             "nullable": true
           }
