@@ -92,12 +92,26 @@ namespace MelodyFlowApi.Controllers
             var data = _context.Musics.FirstOrDefault(x => x.Id == id);
             if (data != null)
             {
+                var filePath = Path.Combine(_uploadPath, Path.GetFileName(data.MusicUrl));
+
+                if (System.IO.File.Exists(filePath))
+                {
+                    try
+                    {
+                        System.IO.File.Delete(filePath);
+                    }
+                    catch (Exception ex)
+                    {
+                        return StatusCode(500, $"Hiba történt a fájl törlésénél: {ex.Message}");
+                    }
+                }
                 _context.Musics.Remove(data);
                 _context.SaveChanges();
                 return Ok();
             }
-            return BadRequest();
+            return BadRequest("A keresett zene nem található.");
         }
+
         //Zene adatainak szerkesztése
         [Authorize]
         [HttpPut("music/{id}")]
