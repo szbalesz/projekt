@@ -44,7 +44,7 @@ const MusicPage = ({ currentTime, handleSliderChange, duration, currentMusic, ha
       navigate(-1);
     }
 
-    const { favoritePlaylistId, isFavorite } = await getFavoritePlaylist();
+    const { favoritePlaylistId, isFavorite } = await getFavoritePlaylist(id);
     setFavoritePlaylistId(favoritePlaylistId);
     setFavorite(isFavorite);
     setPending(false);

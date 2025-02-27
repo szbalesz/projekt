@@ -5,18 +5,16 @@ import { getUserProfile } from './UserService';
 const token = Cookies.get("token");
 const userid = Cookies.get("userid");
 
-export const getFavoritePlaylist = async () => {
+export const getFavoritePlaylist = async (musicid) => {
     if (!userid) return { favoritePlaylistId: "", isFavorite: false };
 
     try {
         const response = await api.get(`/GetPlaylistByUser?id=${userid}`);
         const favoriteId = response.data.find(pl => pl.playlistName === "Kedvencek" && pl.creatorId === userid)?.id;
-
         if (!favoriteId) return { favoritePlaylistId: "", isFavorite: false };
 
         const favoriteMusics = await api.get(`/playlist/${favoriteId}`);
-        const isFavorite = favoriteMusics.data.musics.some(m => m.id === userid);
-
+        const isFavorite = favoriteMusics.data.musics.some(m => m.id === musicid);
         return { favoritePlaylistId: favoriteId, isFavorite };
     } catch (error) {
         console.error("HIBA, Nem sikerült lekérni a kedvencek listáját: ", error);
