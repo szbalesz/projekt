@@ -3,10 +3,10 @@ import { Field } from "../components/ui/field";
 import { FileUploadList, FileUploadRoot, FileUploadTrigger } from "../components/ui/file-upload";
 import { HiUpload } from "react-icons/hi";
 import React, { useState } from 'react';
-import api from "../services/Api"
 import { toaster } from '../components/ui/toaster';
 import BigMusicCard from "../cards/BigMusicCard"
 import Cookies from "js-cookie"
+import { uploadMusic } from '../services/MusicService';
 
 export default function UploadPage() {
     const [title, setTitle] = useState("");
@@ -15,46 +15,6 @@ export default function UploadPage() {
     const [musicfile, setMusicfile] = useState(null);
     const userid = Cookies.get("userid");
     const token = Cookies.get("token");
-
-    const uploadMusic = async () => {
-        const formData = new FormData();
-        formData.append("Title", title);
-        formData.append("Artist", artist);
-        formData.append("ImageUrl", imageurl);
-        formData.append("MusicFile", musicfile);
-        formData.append("UploaderId", userid);
-
-        try {
-            const response = await api.post("/UploadMusic", formData, {
-                headers: {
-                    "Content-Type": "multipart/form-data",
-                    Authorization: `Bearer ${token}`
-                },
-            });
-
-            if (response.status === 201) {
-                toaster.create({
-                    title: `Zene sikeresen feltöltve!`,
-                    type: "success",
-                })
-                setTitle("");
-                setArtist("");
-                setImageurl("");
-                setMusicfile(null);
-            } else {
-                toaster.create({
-                    title: `Hiba történt a fájl feltöltésekor.`,
-                    type: "error",
-                })
-            }
-        } catch (error) {
-            toaster.create({
-                title: `Hiba történt a kapcsolatban.`,
-                type: "error",
-            })
-        }
-    };
-
     return (
         // Zene feltöltés
         <Center>
@@ -63,7 +23,14 @@ export default function UploadPage() {
                 <Flex direction={{base: "column", md:"row"}}>
                     <form onSubmit={(f) => {
                             f.preventDefault();
-                            uploadMusic();
+                            const formData = new FormData();
+                            formData.append("Title", title);
+                            formData.append("Artist", artist);
+                            formData.append("ImageUrl", imageurl);
+                            formData.append("MusicFile", musicfile);
+                            formData.append("UploaderId", userid);
+
+                            uploadMusic(formData,toaster,setTitle,setArtist,setImageurl,setMusicfile);
                         }}>
                         <Stack p="5" gap="4" w={{base: "sm", md:"md"}}>
                             <Field label="Zene cím" required helperText="Add meg a zene címét.">

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Text, Image, VStack, AbsoluteCenter, Button, Spinner } from '@chakra-ui/react';
+import { Box, Text, VStack, AbsoluteCenter, Button, Spinner } from '@chakra-ui/react';
 import { LuPause, LuPlay, LuStar } from 'react-icons/lu';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Slider } from '../components/ui/slider';

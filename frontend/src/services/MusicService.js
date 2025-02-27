@@ -37,6 +37,38 @@ export const searchMusic = async (query) => {
   }
 }
 
+export const uploadMusic = async (formData,toaster,setTitle,setArtist,setImageurl,setMusicfile) => {
+  try {
+    const response = await api.post("/UploadMusic", formData, {
+        headers: {
+            "Content-Type": "multipart/form-data",
+            Authorization: `Bearer ${token}`
+        },
+    });
+
+    if (response.status === 201) {
+        toaster.create({
+            title: `Zene sikeresen feltöltve!`,
+            type: "success",
+        })
+        setTitle("");
+        setArtist("");
+        setImageurl("");
+        setMusicfile(null);
+    } else {
+        toaster.create({
+            title: `Hiba történt a fájl feltöltésekor.`,
+            type: "error",
+        })
+    }
+} catch (error) {
+    toaster.create({
+        title: `Hiba történt a kapcsolatban.`,
+        type: "error",
+    })
+}
+}
+
 export const deleteMusic = async (id, musicTitle, navigate, toaster) => {
   try {
     await api.delete(`/music/${id}`, {
