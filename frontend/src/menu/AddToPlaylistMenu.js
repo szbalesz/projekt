@@ -6,72 +6,20 @@ import {
   MenuRoot,
 } from "../components/ui/menu"
 import { LuMinus, LuPlus } from 'react-icons/lu'
-import api from '../services/Api'
 import Cookies from "js-cookie";
 import { toaster } from '../components/ui/toaster'
+import { AddOrRemoveFromPlaylist, getPlaylistsWithMusic } from '../services/PlaylistService'
 
 export default function AddToPlaylistMenu({ setFavorite, isFavorite, musicId }) {
   const userid = Cookies.get("userid");
-  const token = Cookies.get("token");
   const [playlists, setPlaylists] = useState([]);
   const [addedMusic, setAddedMusic] = useState({});
 
   useEffect(() => {
-    const getPlaylists = async () => {
-      try {
-        const res = await api.get(`/GetPlaylistByUser?id=${userid}`);
-        const userPlaylists = res.data.filter(pl => pl.creatorId === userid);
-        setPlaylists(userPlaylists);
-
-        const musicStatus = {};
-        await Promise.all(userPlaylists.map(async (playlist) => {
-          const musicRes = await api.get(`/playlist/${playlist.id}`);
-          const isAdded = musicRes.data.musics.some(music => music.id === musicId);
-          musicStatus[playlist.id] = isAdded;
-        }));
-
-        setAddedMusic(musicStatus);
-      } catch (error) {
-        console.error("Hiba a playlist betöltésekor:", error);
-      }
-    };
-
-    getPlaylists();
+    getPlaylistsWithMusic(setPlaylists,musicId,setAddedMusic);
   }, [userid, musicId,isFavorite]);
 
-  const AddOrRemove = async (playlistId, playlistName) => {
-    try {
-      const musicRes = await api.get(`/playlist/${playlistId}`);
-      const isAlreadyAdded = musicRes.data.musics.some(music => music.id === musicId);
-      if (isAlreadyAdded) {
-        if(playlistName === "Kedvencek"){
-          setFavorite(false);
-        }
-        await api.delete("/DeleteMusicFromPlaylist", { data: { playlistId, musicId }, headers: {
-          Authorization: `Bearer ${token}`
-      }});
-        toaster.create({ title: `A zene törölve a ${playlistName} listából!`, type: "success" });
-      } else {
-        if(playlistName === "Kedvencek"){
-          setFavorite(true);
-        }
-        await api.post("/AddMusicToPlaylist", { playlistId, musicId }, {
-          headers: {
-            Authorization: `Bearer ${token}`
-        }
-        });
-        toaster.create({ title: `Zene hozzáadva ${playlistName} listához.`, type: "success" });
-      }
 
-      setAddedMusic(prevState => ({
-        ...prevState,
-        [playlistId]: !isAlreadyAdded
-      }));
-    } catch (error) {
-      console.error("Hiba történt:", error);
-      toaster.create({ title: `Hiba történt a művelet során.`, type: "error" });
-    }
-  };
 
   return (
     // Lejátszási listához adás menü
@@ -84,7 +32,7 @@ export default function AddToPlaylistMenu({ setFavorite, isFavorite, musicId }) 
           return (
             <MenuItem 
               key={index} 
-              onClick={() => AddOrRemove(playlist.id, playlist.playlistName)} 
+              onClick={() => AddOrRemoveFromPlaylist(setAddedMusic,musicId,setFavorite,toaster,playlist.id, playlist.playlistName)} 
               value={playlist.playlistName} 
               justifyContent={"space-between"}
             >

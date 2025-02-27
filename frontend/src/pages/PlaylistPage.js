@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import MusicCard from "../cards/MusicCard";
 import { AbsoluteCenter, Box, Button, Flex, Heading, Spinner, Text } from "@chakra-ui/react";
 import { useNavigate, useParams } from "react-router-dom";
-import api from "../services/Api";
 import Cookies from "js-cookie";
 import PlaylistEditMenu from "../menu/PlaylistEditMenu";
 import { Avatar } from "../components/ui/avatar";
 import { toaster } from "../components/ui/toaster";
+import { getPlaylist } from "../services/PlaylistService";
 
 export default function PlaylistPage() {
   const navigate = useNavigate();
@@ -19,38 +19,8 @@ export default function PlaylistPage() {
   const [playlist, setPlaylist] = useState([]);
   const [creator, setCreator] = useState({})
 
-  const getPlaylist = async () => {
-    setPending(true);
-    userid = Cookies.get("userid");
-    token = Cookies.get("token");
-    if(id === "Kedvencek"){
-      const response = await api.get("/GetPlaylistByUser?id="+userid);
-      if(response.data.length > 0){
-        id = response.data.filter(pl=>pl.creatorId === userid).filter(pl=> pl.playlistName === id)[0]?.id;
-        if(!id){
-          toaster.create({ title: `Úgytűnik nincs ilyen nevű listád! Hozz létre egyet Kedvencek névvel!`, type: "info" });
-        }
-        else{
-          setPlaylistId(id);
-        }
-      }
-    }
-    try {
-      const response = await api.get("/playlist/"+id);
-      setMusics(response?.data.musics);
-      setPlaylist(response?.data.playlist[0])
-      let creatorId = response?.data.playlist[0].creatorId;
-      const result = await api.get("/user/"+creatorId)
-      setCreator(result.data[0])
-    } catch (e) {
-      navigate(-1)
-    } finally {
-      setPending(false);
-    }
-  };
-
   useEffect(() => {
-   getPlaylist();
+    getPlaylist(setPending,id,toaster,setPlaylistId,setMusics,setPlaylist,setCreator,navigate)
   }, [id]);
   
 
@@ -101,7 +71,7 @@ export default function PlaylistPage() {
               {creator.username}
               </Button>
               {token ? 
-              <PlaylistEditMenu getPlaylist={getPlaylist} playlist={playlist} userId={userid} playlistName={playlist.playlistName} playlistId={playlistId}/> 
+              <PlaylistEditMenu playlist={playlist} userId={userid} playlistName={playlist.playlistName} playlistId={playlistId}/> 
               : null}
             </Flex>
           </Box>

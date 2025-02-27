@@ -12,12 +12,10 @@ import {
 } from "../components/ui/dialog"
 import { toaster } from '../components/ui/toaster';
 import { Input } from "@chakra-ui/react"
-import api from "../services/Api"
 import Cookies from "js-cookie"
+import { changeProfilePicture } from '../services/MusicService';
 
 export default function EditPicture({account}) {
-    const token = Cookies.get("token");
-    const userid = Cookies.get("userid");
     const [imageUrl, setImageUrl] = useState("");
     const themecolor = localStorage.getItem("themecolor");
     const [open, setOpen] = useState(false)
@@ -51,24 +49,7 @@ export default function EditPicture({account}) {
                     <form onSubmit={(e)=>{
                         e.preventDefault();
                         if(imageUrl !== ""){
-                            api.put("/user/ChangeProfilePicture", {
-                                profilePictureURL: imageUrl,
-                                id: userid
-                            }, {
-                                headers: {
-                                    Authorization: `Bearer ${token}`
-                                }
-                            })
-                            .then(()=>{
-                                toaster.create({
-                                title: `Profilkép sikeresen hozzáadva!`,
-                                type: "success",
-                            })
-                            })
-                            .finally(()=>{
-                                setOpen(false);
-                                window.location.reload(); // az oldal frissítése, hogy az új profilkép mindenhol megjelenjen
-                            })
+                            changeProfilePicture(imageUrl,toaster,setOpen);
                         }
                     }}>
                         <Flex direction={"row"} pb={"3"}>

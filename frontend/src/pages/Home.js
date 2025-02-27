@@ -1,26 +1,16 @@
 import { AbsoluteCenter, Flex, Spinner } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
 import BigMusicCard from '../cards/BigMusicCard';
-import api from '../services/Api';
 import { useNavigate } from 'react-router-dom';
+import { getAllMusic } from '../services/MusicService';
 
 export default function Home() {
   const [isPending, setPending] = useState(false)
   const [musicList, setMusicList] = useState();
   const navigate = useNavigate();
-  const getAllMusic=()=>{
-      setPending(true);
-      api.get("/GetAllMusic")
-      .then(response => {
-        setMusicList(response.data);
-      })
-      .catch(e => {console.error("HIBA, Nem sikerült lekérni a zenéket: ",e);}) 
-      .finally(()=>{
-        setPending(false);
-      })
-}
+
   useEffect(() => {
-    getAllMusic();
+    getAllMusic(setPending,setMusicList);
   }, [])
 
   return (

@@ -15,8 +15,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import { PasswordInput } from "../components/ui/password-input"
 import { toaster } from '../components/ui/toaster';
 import Cookies from "js-cookie"
+import { onRegister, onLogin } from '../services/AuthService';
 
-export default function Register({ isLoggedin, onRegister }) {
+export default function Register({ isLoggedin, setIsLoggedIn }) {
     const themecolor = localStorage.getItem("themecolor");
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
@@ -42,7 +43,7 @@ export default function Register({ isLoggedin, onRegister }) {
                         if(email.length > 2 && email.includes(".")){
                             if(password.length >= 6){
                             if(password === passwordAgain){
-                                onRegister(username,email,password);
+                                onRegister(username,email,password,navigate,onLogin,setIsLoggedIn);
                             }
                             else{
                                 toaster.create({

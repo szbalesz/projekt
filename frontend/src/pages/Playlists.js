@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { Heading, Flex, Box, Text } from "@chakra-ui/react";
 import PlaylistCard from '../cards/PlaylistCard';
-import api from '../services/Api';
 import Cookies from "js-cookie"
 import PlaylistWindow from '../menu/PlaylistWindow';
+import { getAllPlaylist } from '../services/PlaylistService';
 
 export default function Playlists() {
   const themecolor = localStorage.getItem("themecolor");
@@ -11,15 +11,10 @@ export default function Playlists() {
   const token = Cookies.get("token");
   const userid = Cookies.get("userid");
 
-  const getPlaylists=()=>{
-      if(token){
-        api.get("/GetPlaylistByUser?id="+userid)
-        .then(response => {
-            setPlaylists(response.data);
-        })
-        .catch(e => {console.error("HIBA, Nem sikerült lekérni a lejátszási listák: ",e)})
-      }
+  const getPlaylists = ()=>{
+    getAllPlaylist(setPlaylists);
   }
+
   useEffect(() => {
     if(token){
       getPlaylists();
@@ -48,7 +43,7 @@ export default function Playlists() {
         <Flex px={"5"} pt={"3"} direction={"column"}>
           <Flex justifyContent={"space-between"}>
           {token? <Heading>Lejátszási listák</Heading> : <Heading color={"colorPalette.300"}>Jelentkezz be a funkció használatához!</Heading>}
-          {token? <Heading textAlign="center">  <PlaylistWindow playlists={playlists} themecolor={themecolor} userid={userid} getPlaylists={getPlaylists}/> </Heading> : null} 
+          {token? <Heading textAlign="center">  <PlaylistWindow getPlaylists={getPlaylists} playlists={playlists} themecolor={themecolor} userid={userid}/> </Heading> : null} 
           </Flex>
           <Flex my={"3"} overflowX={"auto"} gap={4} width="100%">{playlists?.map((playlist, index) => <PlaylistCard key={index} playlist={playlist} />)}</Flex>
         </Flex>

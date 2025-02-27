@@ -24,6 +24,6 @@ const items = [
     {
       name: "Fehér Tamás",
       bio: "Backend + Adatbázis",
-      image: "https://i.ytimg.com/vi/QDHjHO7jdqg/maxresdefault.jpg",
+      image: "https://archive.org/download/busakjozsefesacsaladszentsege/busakjozsefesacsaladszentsege.thumbs/Bus%C3%A1k%20J%C3%B3zsef%20%20%C3%A9s%20a%20csal%C3%A1d%20szents%C3%A9ge_000010.jpg",
     },
   ]

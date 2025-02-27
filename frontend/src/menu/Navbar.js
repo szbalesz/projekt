@@ -5,7 +5,7 @@ import MenuAvatar from './MenuAvatar';
 import { Link } from 'react-router-dom';
 import { LuList } from 'react-icons/lu';
 
-export default function Navbar({themecolor, setIsSidebarOpen,profileMenuItems, isLoggedIn, onLogout}) {
+export default function Navbar({themecolor, setIsSidebarOpen,profileMenuItems, isLoggedIn, setIsLoggedIn}) {
   return (
     <>
     <Flex bg="Background" as="nav" h="50px" align="center" justify="space-between" borderBottomWidth="1px" color="white">
@@ -25,7 +25,7 @@ export default function Navbar({themecolor, setIsSidebarOpen,profileMenuItems, i
               />
               </Link>
         </Flex>
-        <MenuAvatar themecolor={themecolor} isLoggedIn={isLoggedIn} profileMenuItems={profileMenuItems} onLogout={onLogout}/> 
+        <MenuAvatar themecolor={themecolor} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} profileMenuItems={profileMenuItems}/> 
     </Flex>
     </>
   )

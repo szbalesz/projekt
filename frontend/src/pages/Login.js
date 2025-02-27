@@ -16,8 +16,9 @@ import { Checkbox } from "../components/ui/checkbox"
 import { Link, useNavigate } from 'react-router-dom';
 import { PasswordInput } from "../components/ui/password-input"
 import Cookies from "js-cookie"
+import { onLogin } from "../services/AuthService";
 
-export default function Login({ isLoggedin, onLogin }) {
+export default function Login({ isLoggedin, setIsLoggedIn }) {
   const themecolor = localStorage.getItem("themecolor");
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
@@ -39,7 +40,7 @@ export default function Login({ isLoggedin, onLogin }) {
                 <Stack spacing={4}>
                   <form onSubmit={(e) => {
                     e.preventDefault();
-                    onLogin(username,password);
+                    onLogin(username,password,setIsLoggedIn,navigate);
                   }}>
                   <Field label="Felhasználónév">
                     <Input type="text" value={username} onChange={(q) => setUsername(q.target.value)} placeholder="Add meg a felhasználóneved" />

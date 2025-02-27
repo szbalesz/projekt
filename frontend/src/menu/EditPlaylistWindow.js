@@ -12,32 +12,17 @@ import {
 } from "../components/ui/dialog"
 import { Input } from "@chakra-ui/react"
 import { toaster } from '../components/ui/toaster'
-import api from '../services/Api'
+import { editPlaylist } from "../services/PlaylistService"
 import Cookies from "js-cookie";
 import { LuPen } from 'react-icons/lu'
+import { Field } from '../components/ui/field'
 
-export default function EditPlaylistWindow({ getPlaylist, playlist }) {
+export default function EditPlaylistWindow({ playlist }) {
     const token = Cookies.get("token");
     const themecolor = localStorage.getItem("themecolor");
     const [playlistName, setPlaylistName] = useState(playlist.playlistName);
     const [imageUrl, setImageUrl] = useState(playlist.imageUrl);
     const [open, setOpen] = useState(false)
-
-    const editPlaylist = async()=>{
-        api.put("/playlist/"+playlist.id,{imageUrl,playlistName},{
-            headers: {
-              Authorization: `Bearer ${token}`
-          }
-          })
-          .then(()=>{
-            toaster.create({ title: `Sikeres módosítás!`, type: "success" });
-            getPlaylist();
-            setOpen(false);
-          })
-          .catch((e)=>{
-            console.error("Hiba történt a lista hozzáadása közben: ",e);
-          })
-    }
 
     return (
         // Új lejátszási lista ablak
@@ -55,14 +40,18 @@ export default function EditPlaylistWindow({ getPlaylist, playlist }) {
                     <form onSubmit={(e)=>{
                         e.preventDefault();
                         if(token){
-                            editPlaylist();
+                            editPlaylist(playlist,imageUrl,playlistName,toaster,setOpen);
                         }
                     }}>
                         <Flex direction={"row"} pb={"3"}>
-                            <Button borderRadius="lg" variant="ghost" height="150px" width="150px" backgroundPosition="center" backgroundImage={"url("+imageUrl+")"} backgroundSize="cover" boxShadow={`0 0 15px 0 ${themecolor}`}/>
+                            <Button borderRadius="lg" mt="8" variant="ghost" height="150px" width="150px" backgroundPosition="center" backgroundImage={"url("+imageUrl+")"} backgroundSize="cover" boxShadow={`0 0 15px 0 ${themecolor}`}/>
                             <Flex width={"full"} direction={"column"} p={"5"}>
+                            <Field py="1" label="Lejátszási lista neve" required helperText="Írd be az új nevet!">
                                 <Input required value={playlistName} onChange={(e)=> setPlaylistName(e.target.value)} placeholder="Írd be az új nevet" />
-                                <Input required value={imageUrl} onChange={(e)=> setImageUrl(e.target.value)} my={"5"} placeholder="Új kép elérési útja" />
+                            </Field>
+                            <Field py="1" label="Kép elérési útja" required helperText="Add meg a lejátszási lista képének az elérési útját.">
+                                <Input required value={imageUrl} onChange={(e)=> setImageUrl(e.target.value)} placeholder="Új kép elérési útja" />
+                            </Field>
                             </Flex>
                         </Flex>
                         <Flex justifyContent={"right"}>

@@ -18,15 +18,25 @@ import UploadPage from './pages/UploadPage';
 import Cookie from './Cookie';
 import UserPage from './pages/UserPage';
 import ProfileSettings from './pages/ProfileSettings';
+import Cookies from "js-cookie";
 
-
-export default function Main({ themecolor, setThemecolor, isLoggedIn, onRegister, onLogin, onLogout}) {
+export default function Main({ themecolor, setThemecolor }) {
   const audioRef = useRef(null);
+  // Bejelentkezés vizsgálata
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const savedToken = Cookies.get("token");
+    if (savedToken) {
+      setIsLoggedIn(true);
+    }
+  }, []);
+
   const [currentMusic, setCurrentMusic] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0); 
-  const [volume, setVolume] = useState(50);
+  const [volume, setVolume] = useState(50); 
   
   const togglePlayPause = () => {
     if (!audioRef.current) return;
@@ -98,14 +108,14 @@ export default function Main({ themecolor, setThemecolor, isLoggedIn, onRegister
     <Box backgroundSize="cover" backgroundPosition="center" backgroundRepeat="no-repeat" bg={"Background"}>
           {/* Main Grid */}
           <Grid templateRows="50px 1fr" templateColumns="50px 1fr" minHeight="100vh">
-                <Menu themecolor={themecolor} isLoggedIn={isLoggedIn} onLogout={onLogout}/>
+                <Menu themecolor={themecolor} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
               {/* Main Content */}
             <GridItem bg="Background" transition="all 1s ease-in-out" rowSpan={1}  colSpan="2">
               <Box bg="Background" minH="100vh" py="50px" pl={{base: "0", md: "50px"}}>
                 <Routes>
                   <Route path="/" element={<Home />} />
-                  <Route path="/login" element={<Login isLoggedIn={isLoggedIn} onLogin={onLogin}/>} />
-                  <Route path="/register" element={<Register isLoggedIn={isLoggedIn} onRegister={onRegister}/>} />
+                  <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn} />}/>
+                  <Route path="/register" element={<Register isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>} />
                   <Route path="/playlists" element={<Playlists/>} />
                   <Route path="/settings" element={<Settings setThemecolor={setThemecolor}/>} />
                   <Route path="/settings/profile" element={<ProfileSettings />} />

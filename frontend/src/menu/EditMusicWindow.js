@@ -12,35 +12,19 @@ import {
 } from "../components/ui/dialog"
 import { Input } from "@chakra-ui/react"
 import { toaster } from '../components/ui/toaster'
-import api from '../services/Api'
 import Cookies from "js-cookie";
 import { LuPen } from 'react-icons/lu'
 import BigMusicCard from '../cards/BigMusicCard'
 import { Field } from '../components/ui/field'
+import { editMusic } from '../services/MusicService'
 
-export default function EditMusicWindow({music,getMusic}) {
+export default function EditMusicWindow({getData, music}) {
     const token = Cookies.get("token");
     const themecolor = localStorage.getItem("themecolor");
     const [open, setOpen] = useState(false)
     const [title, setTitle] = useState(music.title);
     const [artist, setArtist] = useState(music.artist);
     const [imageurl, setImageurl] = useState(music.imageUrl);
-
-    const editMusic = async()=>{
-        api.put("/music/"+music.id,{artist,title,imageurl},{
-            headers: {
-              Authorization: `Bearer ${token}`
-          }
-          })
-          .then(()=>{
-            toaster.create({ title: `Sikeres módosítás!`, type: "success" });
-            getMusic();
-            setOpen(false);
-          })
-          .catch((e)=>{
-            console.error("Hiba történt a lista hozzáadása közben: ",e);
-          })
-    }
 
     return (
         // Új lejátszási lista ablak
@@ -59,9 +43,9 @@ export default function EditMusicWindow({music,getMusic}) {
                     <form onSubmit={(e)=>{
                         e.preventDefault();
                         if(token){
-                            editMusic();
+                            editMusic(music,artist,title,imageurl,toaster,setOpen,getData);
                         }
-                    }}>
+                        }}>
                             <Field py="1" label="Zene cím" required helperText="Add meg a zene címét.">
                                 <Input value={title} onChange={(q) => setTitle(q.target.value)} placeholder="Walkin' a street"/>
                             </Field>

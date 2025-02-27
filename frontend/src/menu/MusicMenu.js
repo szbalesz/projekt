@@ -11,7 +11,7 @@ import DialogAlert from "./DialogAlert";
 import EditMusicWindow from "./EditMusicWindow";
 import Cookies from "js-cookie"
 
-export default function MusicMenu({isUploader,getMusic,music, setFavorite, isFavorite, musicId, deleteMusic}) {
+export default function MusicMenu({getData, isUploader, getMusic, music, setFavorite, isFavorite, musicId, deleteMusic}) {
   const token = Cookies.get("token");
   return (
     <MenuRoot>
@@ -24,7 +24,7 @@ export default function MusicMenu({isUploader,getMusic,music, setFavorite, isFav
         : null}
         {isUploader? 
         <>
-        <EditMusicWindow music={music} getMusic={getMusic}/>
+        <EditMusicWindow getData={getData} music={music} getMusic={getMusic}/>
         <DialogAlert openButton={<MenuItem value="torles" color={"red.500"}><LuCircleX/>Törlés</MenuItem>} title={"Biztosan törölni szeretnéd?"} func={deleteMusic} text={"Ez a művelet nem vonható vissza. Ez véglegesen törli a zenét a rendszerből."} buttontext={"Törlés"}/>
         </>
         : null}

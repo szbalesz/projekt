@@ -3,31 +3,24 @@ import React, { useEffect, useState } from 'react'
 import { LuUser } from 'react-icons/lu'
 import { useNavigate } from 'react-router-dom'
 import Cookies from "js-cookie"
-import api from '../services/Api'
+import { getUserProfile } from '../services/UserService'
 
 export default function ProfileSettings() {
     const navigate = useNavigate();
     const token = Cookies.get("token");
     const userid = Cookies.get("userid");
     const [account, setAccount] = useState({})
-    const getProfile = async()=>{
-        try {
-            await api.get("/user/"+userid)
-            .then(response=>{
-              setAccount(response.data[0]);
-            })
-          } catch (error) {
-            console.log("Hiba történt a profil lekérése közben:",error);
-          }
-    }
 
     useEffect(() => {
-      if(!token){
+        const getProfile = async() =>{
+            setAccount(await getUserProfile(userid));
+        }
+        if(!token){
         navigate(-1);
-      }
-      else{
+        }
+        else{
         getProfile();
-      }
+        }
     }, [token])
     
     return (

@@ -1,11 +1,11 @@
 import { Box, Flex, Text, Heading, Button } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import api from '../services/Api';
 import MusicCard from '../cards/MusicCard';
 import PlaylistCard from '../cards/PlaylistCard';
 import EditPicture from '../menu/EditPicture';
 import Cookies from "js-cookie";
+import { getUserProfile, getUserMusics, getUserPlaylists } from '../services/UserService';
 
 export default function UserPage() {
   const { id } = useParams(); 
@@ -14,34 +14,25 @@ export default function UserPage() {
   const [account, setAccount] = useState({});
   const [musics, setMusics] = useState([]);
   const [playlists, setPlaylists] = useState([]);
+
   useEffect(() => {
-    try {
-      api.get("/user/"+id)
-      .then(response=>{
-        setAccount(response.data[0]);
-      })
-    } catch (error) {
-      console.log("Hiba történt a profil lekérése közben:",error);
-    }
-    api.get("/music/uploader/"+id)
-      .then(response=>{
-        setMusics(response.data);
-      })
-      getPlaylists();
-  }, [id])
-   const getPlaylists=()=>{
-        api.get("/GetPlaylistByUser?id="+id)
-        .then(response => {
-            setPlaylists(response.data);
-        })
-        .catch(e => {console.error("HIBA, Nem sikerült lekérni a lejátszási listák: ",e)})
-  }
-  useEffect(() => {
-    if(!account){
-      navigate("/");
-    }
-  }, [account])
-  
+    const getData = async () => {
+      const profileData = await getUserProfile(id);
+      if (profileData) {
+        setAccount(profileData);
+      } else {
+        navigate("/");
+      }
+
+      const musicsData = await getUserMusics(id);
+      setMusics(musicsData);
+
+      const playlistsData = await getUserPlaylists(id);
+      setPlaylists(playlistsData);
+    };
+
+    getData();
+  }, [id, navigate]);
 
   return (
     // Profil oldal

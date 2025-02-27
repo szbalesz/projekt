@@ -8,89 +8,22 @@ import {
 } from "../components/ui/menu"
 import { LuCircleX, LuEllipsis, LuUserRoundMinus, LuUserRoundPlus } from 'react-icons/lu'
 import DialogAlert from './DialogAlert'
-import api from '../services/Api'
 import { toaster } from '../components/ui/toaster'
 import { useNavigate } from 'react-router-dom'
-import Cookies from "js-cookie"
 import EditPlaylistWindow from './EditPlaylistWindow'
+import { addToMyPlaylists, deletePlaylist, getFavoriteId, getIsPlaylistAdded, removeFromMyPlaylists } from '../services/PlaylistService'
 
-export default function PlaylistEditMenu({getPlaylist,playlist,playlistName,playlistId,userId}) {
-  const token = Cookies.get("token");
+
+export default function PlaylistEditMenu({playlist,playlistName,playlistId,userId}) {
   const navigate = useNavigate();
   const [isCreator, setIsCreator] = useState(false);
   const [isAdded, setIsAdded] = useState(false);
-  const deletePlaylist =()=>{
-    api.delete("/playlist/"+playlistId,{
-      headers: {
-        Authorization: `Bearer ${token}`
-    }
-    })
-    .then(()=>{
-      toaster.create({ title: `Sikeresen törölted a ${playlistName} lejátszási listát!`, type: "success" });
-      navigate("/playlists");
-    })
-    .catch((e)=>{
-      console.error("Hiba történt a lista törlése közben: ",e);
-    })
-  }
 
-  const getIsAdded = async ()=>{
-    const response = await api.get("/GetPlaylistByUser?id="+userId)
-    const plist = response.data.find(pl => pl.id === playlistId);
-    if(plist?.creatorId === userId){
-      setIsCreator(true);
-    }
-    if(plist !== undefined){
-      setIsAdded(true);
-    }
-  }
-
-  const getId = async ()=>{
-    if(playlistId === "Kedvencek"){
-      const response = await api.get("/GetPlaylistByUser?id="+userId);
-      playlistId = response.data.filter(pl=>pl.creatorId === userId).filter(pl=> pl.playlistName === playlistId)[0].id;
-    }
-  }
-  
   useEffect(() => {
-    getId();
-    getIsAdded();
+    getFavoriteId(playlistId);
+    getIsPlaylistAdded(playlistId, setIsCreator, setIsAdded);
   }, [])
-  
 
-  const addToMyPlaylists =()=>{
-    api.post("/AddPlaylistToUser",{userId,playlistId},{
-      headers: {
-        Authorization: `Bearer ${token}`
-    }
-    })
-    .then(()=>{
-      toaster.create({ title: `Sikeresen hozzáadtad a(z) ${playlistName} listát a saját listáidhoz!`, type: "success" });
-      setIsAdded(true);
-    })
-    .catch((e)=>{
-      console.error("Hiba történt a lista hozzáadása közben: ",e);
-    })
-  }
-
-  const removeFromMyPlaylists =()=>{
-    api.delete("/DeleteUserFromPlaylist", {
-      data: {
-          userId: userId,
-          playlistId: playlistId
-      },
-      headers: {
-          Authorization: `Bearer ${token}`
-      }
-    })
-    .then(()=>{
-      toaster.create({ title: `Sikeresen törölted a(z) ${playlistName} listát a saját listáid közül!`, type: "success" });
-      setIsAdded(false);
-    })
-    .catch((e)=>{
-      console.error("Hiba történt a lista hozzáadása közben: ",e);
-    })
-  }
   return (
     <MenuRoot>
       <MenuTrigger asChild>
@@ -99,15 +32,16 @@ export default function PlaylistEditMenu({getPlaylist,playlist,playlistName,play
         </Button>
       </MenuTrigger>
       <MenuContent>
-        {!isCreator? 
+        {
+        !isCreator? 
         !isAdded ? 
-        <MenuItem value="hozzaad" onClick={addToMyPlaylists}><LuUserRoundPlus/> Hozzáadás a saját listáimhoz</MenuItem> 
-        : <MenuItem value="eltavolit" color={"red.500"} onClick={removeFromMyPlaylists}><LuUserRoundMinus/> Eltávolítás a saját listáimból</MenuItem> 
+        <MenuItem value="hozzaad" onClick={()=> addToMyPlaylists(userId,playlistId,playlistName,toaster,setIsAdded)}><LuUserRoundPlus/> Hozzáadás a saját listáimhoz</MenuItem> 
+        : <MenuItem value="eltavolit" color={"red.500"} onClick={()=> removeFromMyPlaylists(userId,playlistId,playlistName,toaster,setIsAdded)}><LuUserRoundMinus/> Eltávolítás a saját listáimból</MenuItem> 
         : null}
         {isCreator ?
          <>
-         <EditPlaylistWindow getPlaylist={getPlaylist} playlist={playlist}/>
-         <DialogAlert openButton={<MenuItem value="torles" color={"red.500"}><LuCircleX/>Törlés</MenuItem>} func={deletePlaylist} title={"Biztosan törölni szeretnéd?"} text={"Ez a művelet nem vonható vissza. Ez véglegesen törli a lejátszási listát a rendszerből."} buttontext={"Törlés"}/>
+         <EditPlaylistWindow playlist={playlist}/>
+         <DialogAlert openButton={<MenuItem value="torles" color={"red.500"}><LuCircleX/>Törlés</MenuItem>} func={()=> deletePlaylist(playlistId,toaster,playlistName,navigate)} title={"Biztosan törölni szeretnéd?"} text={"Ez a művelet nem vonható vissza. Ez véglegesen törli a lejátszási listát a rendszerből."} buttontext={"Törlés"}/>
          </> : null}
       </MenuContent>
     </MenuRoot>

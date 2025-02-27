@@ -8,7 +8,7 @@ import { LuBookHeadphones, LuHouse, LuList, LuSearch, LuSettings, LuStar, LuUplo
 import Search from './menu/Search';
 import Cookies from "js-cookie";
 
-export default function Menu({ themecolor, isLoggedIn, onLogout }) {
+export default function Menu({ themecolor, isLoggedIn, setIsLoggedIn }) {
   const [selectedMenu, setSelectedMenu] = useState('');
   const location = useLocation();
   const navigate = useNavigate();
@@ -101,7 +101,7 @@ export default function Menu({ themecolor, isLoggedIn, onLogout }) {
         zIndex={12}
         bg="Background"
       >
-        <Navbar themecolor={themecolor} profileMenuItems={profileMenuItems} setIsSidebarOpen={setIsSidebarOpen} isLoggedIn={isLoggedIn} onLogout={onLogout}/>
+        <Navbar themecolor={themecolor} profileMenuItems={profileMenuItems} setIsSidebarOpen={setIsSidebarOpen} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
       </GridItem>
 
       {/* Small Sidebar */}

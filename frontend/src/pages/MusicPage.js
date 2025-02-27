@@ -1,129 +1,58 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Text, Image, VStack, AbsoluteCenter, Button, Spinner } from '@chakra-ui/react';
 import { LuPause, LuPlay, LuStar } from 'react-icons/lu';
-import { useLocation, useNavigate, useParams } from 'react-router-dom';
-import api from '../services/Api';
-import Cookies from "js-cookie";
+import { useNavigate, useParams } from 'react-router-dom';
 import { Slider } from '../components/ui/slider';
 import { toaster } from '../components/ui/toaster';
 import { Avatar } from '../components/ui/avatar';
 import MusicMenu from '../menu/MusicMenu';
-
-const MusicPage = ({currentTime, handleSliderChange, duration, currentMusic, handlePlay, isPlaying }) => {
+import { getUserProfile } from '../services/UserService';
+import {
+  getMusic,
+  deleteMusic, 
+  addToFavorite, 
+  removeFromFavorite
+} from '../services/MusicService';
+import { getFavoritePlaylist } from "../services/PlaylistService";
+import Cookies from "js-cookie";
+const MusicPage = ({ currentTime, handleSliderChange, duration, currentMusic, handlePlay, isPlaying }) => {
   const themecolor = localStorage.getItem("themecolor");
-  const [music, setMusic] = useState({});
-  const [uploader, setUploader] = useState({});
-  const [isPending, setPending] = useState(false)
-  const [isFavorite, setFavorite] = useState(false)
-  const [favoritePlaylistId, setFavoritePlaylistId] = useState("")
-  const [isUploader, setIsUploader] = useState(false)
-  const [Uploaderid, setUploaderid] = useState(false)
   const { id } = useParams();
-  const token = Cookies.get("token");
-  let userid = Cookies.get("userid");
-  const location = useLocation();
   const navigate = useNavigate();
 
-  const getProfile=async (profileId)=>{
-    const response = await api.get(`/user/${profileId}`);
-    setUploader(response.data[0]);
-    setUploaderid(profileId);
-  }
+  const [music, setMusic] = useState({});
+  const [uploader, setUploader] = useState({});
+  const [isPending, setPending] = useState(false);
+  const [isFavorite, setFavorite] = useState(false);
+  const [favoritePlaylistId, setFavoritePlaylistId] = useState("");
+  const [isUploader, setIsUploader] = useState(false);
+  const [Uploaderid, setUploaderid] = useState("");
 
-  const getMusic=()=>{
+  const getData = async () => {
     setPending(true);
-    api.get("/music/"+id)
-    .then(response => {
-       setMusic(response.data[0]);
-       if(response.data[0].uploaderId === userid){
-        setIsUploader(true);
-       }
-       getProfile(response.data[0].uploaderId);
-    })
-    .catch(e => {console.error("HIBA, Nem sikerült lekérni a zenét: ",e)})
-    .finally(()=>{
-        setPending(false)
-    })
-}
-
-  const getFavorite = async () => {
-    setPending(true);
-    const response = await api.get("/GetPlaylistByUser?id="+userid);
-    const favoriteId = response.data.find(pl=> pl.playlistName === "Kedvencek" && pl.creatorId === userid)?.id;
-    setFavoritePlaylistId(favoriteId);
-    const favoriteMusics = await api.get("/playlist/"+favoriteId);
-    setFavorite(favoriteMusics.data.musics.find(m=> m.id === id));  
-  }
-
-  const deleteMusic = ()=>{
-    api.delete("/music/"+id, {
-      headers: {
-        Authorization: `Bearer ${token}`
-    }
-    })
-    .then(() =>{
-      toaster.create({ title: `Sikeresen törölted a ${music?.title} című zenét!`, type: "success" });
-      navigate("/");
-    })
-    .catch((e)=>{
-      console.error("Hiba történt a zene törlése közben: ",e);
-    })
-  }
-
-  const addToFavorite = async ()=>{
-    if(token){
-        if(!favoritePlaylistId){
-          toaster.create({ title: `Úgytűnik nincs Kedvencek nevű listád! Hozz létre egyet!`, type: "info" });
-        }
-        else{
-        try {
-          await api.post("/AddMusicToPlaylist", { playlistId: favoritePlaylistId, musicId: music.id }, {
-            headers: {
-              Authorization: `Bearer ${token}`
-          }
-          });
-          toaster.create({ title: `Zene hozzáadva a kedvencekhez.`, type: "success" });
-          setFavorite(true);
-        } catch (error) {
-          toaster.create({ title: `Hiba történt a művelet közben.`, type: "error" });
-          console.error(error);
-        }
+    
+    const musicData = await getMusic(id);
+    if (musicData) {
+      setMusic(musicData);
+      setIsUploader(musicData.uploaderId === Cookies.get("userid"));
+      const uploaderData = await getUserProfile(musicData.uploaderId);
+      if (uploaderData) {
+        setUploader(uploaderData);
+        setUploaderid(musicData.uploaderId);
       }
+    } else {
+      navigate(-1);
     }
-    else{
-      toaster.create({ title: `Jelentkezz be a funkció használatához!`, type: "info" });
-    }
-}
-  const removeFromFavorite = async ()=>{
-    try {
-      await api.delete("/DeleteMusicFromPlaylist", { 
-        data: { playlistId: favoritePlaylistId, musicId: music.id },
-        headers: {
-          Authorization: `Bearer ${token}`
-      }});
-      toaster.create({ title: `A zene törölve a kedvencekből!`, type: "success" });
-      setFavorite(false);
-    } catch (error) {
-      toaster.create({ title: `Hiba történt a művelet közben.`, type: "error" });
-      console.error(error);
-    }
-  }
 
-useEffect(() => {
-  if(token !== ""){
-    getFavorite();
-   }
-}, [])
+    const { favoritePlaylistId, isFavorite } = await getFavoritePlaylist();
+    setFavoritePlaylistId(favoritePlaylistId);
+    setFavorite(isFavorite);
+    setPending(false);
+  };
 
-useEffect(() => {
-  getMusic();
-}, [location])
-
-useEffect(() => {
-  if(!music){
-    navigate(-1);
-  }
-}, [music])
+  useEffect(() => {
+    getData();
+  }, [id, navigate]);
 
   return (
     // Zene oldal
@@ -176,11 +105,7 @@ useEffect(() => {
         align="center" 
         w="auto" 
         p="0">
-          <Image src={music.imageUrl} 
-          borderRadius="10px" 
-          p="0" 
-          alt={music.title} 
-          boxSize="250px" />
+          <Box borderRadius="10px"  width={"250px"} height={"250px"} backgroundImage={"url("+ music.imageUrl+")"} backgroundPosition={"center"} backgroundSize={"cover"}/>
           <Text fontSize="2xl" fontWeight="bold">
             {music.title}
           </Text>
@@ -197,10 +122,10 @@ useEffect(() => {
           </Text>
           <Text fontSize="md">
           {isFavorite? 
-          <Button p={1} m={1} variant="solid" onClick={removeFromFavorite}><LuStar fill={"colorPalette.solid"} stroke="0"/> </Button> :
-          <Button p={1} m={1} variant="solid" onClick={addToFavorite}><LuStar/></Button>}
+          <Button p={1} m={1} variant="solid" onClick={()=> removeFromFavorite(favoritePlaylistId, music.id, toaster, setFavorite)}><LuStar fill={"colorPalette.solid"} stroke="0"/> </Button> :
+          <Button p={1} m={1} variant="solid" onClick={()=> addToFavorite(favoritePlaylistId, music.id, toaster, setFavorite)}><LuStar/></Button>}
             <Button p={1} m={1} variant={isPlaying && music?.title === currentMusic?.title ? "outline" : "subtle"} onClick={()=> handlePlay(music)}>{isPlaying && music?.title === currentMusic?.title ? <LuPause /> : <LuPlay />} </Button>
-            <MusicMenu isUploader={isUploader} getMusic={getMusic} music={music} deleteMusic={deleteMusic} setFavorite={setFavorite} isFavorite={isFavorite} musicId={id}/>
+            <MusicMenu getData={getData} isUploader={isUploader} music={music} deleteMusic={()=> deleteMusic(id, music.title, navigate, toaster)} setFavorite={setFavorite} isFavorite={isFavorite} musicId={id}/>
           </Text>
           {music?.id === currentMusic?.id? 
             <Box display={{base:"flex",md:"none"}} w={"100%"} alignItems="center" mx="5">

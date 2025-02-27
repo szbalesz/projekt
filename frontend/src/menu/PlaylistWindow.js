@@ -12,11 +12,9 @@ import {
 } from "../components/ui/dialog"
 import { Input } from "@chakra-ui/react"
 import { toaster } from '../components/ui/toaster'
-import api from '../services/Api'
-import Cookies from "js-cookie";
+import { createPlaylist } from '../services/PlaylistService'
 
-export default function PlaylistWindow({ playlists, userid, getPlaylists}) {
-    const token = Cookies.get("token");
+export default function PlaylistWindow({getPlaylists, playlists, userid }) {
     const themecolor = localStorage.getItem("themecolor");
     const [playlistName, setPlaylistName] = useState("");
     const [imageUrl, setImageUrl] = useState("");
@@ -43,32 +41,7 @@ export default function PlaylistWindow({ playlists, userid, getPlaylists}) {
                             creatorId: userid,
                         }
                         if(!playlists.find(x=>x.playlistName == playlistName)){
-                            api.post("/CreatePlaylist",newPlaylist, {
-                            headers: {
-                                Authorization: `Bearer ${token}`
-                            }
-                            })
-                        .then((res)=>{
-                            toaster.create({ title: "Sikeres létrehozás.", type: "success" });
-                            const newPlaylistId = res.data.id;
-                            const creatorId = res.data.creatorId;
-                            api.post("/AddPlaylistToUser",{playlistId: newPlaylistId,userId: creatorId},{
-                            headers: {
-                                Authorization: `Bearer ${token}`
-                            }
-                            })
-                            .then(()=>{
-                                setPlaylistName("");
-                                setImageUrl("");
-                                getPlaylists();
-                                setOpen(false);
-                            })
-                            
-                        })
-                        .catch((e)=>{
-                            toaster.create({ title: "Hiba történt.", type: "error" });
-                            console.error("Hiba történt a lejátszási lista elkészítése alatt: ",e)
-                        })
+                            createPlaylist(newPlaylist,toaster,setPlaylistName,setImageUrl,setOpen,getPlaylists);
                         } 
                         else{
                             toaster.create({ title: `Már létrehoztad a(z) ${playlistName} nevű lejátszási listát!`, type: "error" });

@@ -12,9 +12,10 @@ import {
   DialogTitle,
 } from "../components/ui/dialog";
 import MusicCard from '../cards/MusicCard';
-import api from '../services/Api';
 import { SegmentedControl } from "../components/ui/segmented-control"
 import PlaylistCard from '../cards/PlaylistCard';
+import { searchMusic } from '../services/MusicService';
+import { searchPlaylist } from '../services/PlaylistService';
 
 export default function Search( {handlePopupClose}) {
   const themecolor = localStorage.getItem("themecolor");
@@ -22,54 +23,18 @@ export default function Search( {handlePopupClose}) {
   const [query, setQuery] = useState('');
   const [musics, setMusics] = useState([]);
   const [playlists, setPlaylists] = useState([]);
-  //ideiglenes keresés de ezt majd a backend fogja végezni
-  const searchMusic=(q)=>{
-    if(q.length > 0){
-      api.get("/GetMusicByName?betu="+q)
-      .then(response => {
-        console.log(response.data)
-        setMusics(response.data);
-    
-      })
-      .catch(e => {console.error("HIBA, Nem sikerült lekérni a zenéket: ",e)}) 
-    }
-    else{
-      api.get("/GetAllMusic")
-      .then(response => {
-        setMusics(response.data);
-    
-      })
-      .catch(e => {console.error("HIBA, Nem sikerült lekérni a zenéket: ",e)}) 
-    }
-}
 
-const searchPlaylist=(q)=>{
-  if(q.length > 0){
-    api.get("/GetPlaylistByName?betu="+q)
-    .then(response => {
-      setPlaylists(response.data);
-  
-    })
-    .catch(e => {console.error("HIBA, Nem sikerült lekérni a zenéket: ",e)}) 
-  }
-  else{
-    api.get("/GetAllPlaylist")
-    .then(response => {
-      setPlaylists(response.data);
-  
-    })
-    .catch(e => {console.error("HIBA, Nem sikerült lekérni a zenéket: ",e)}) 
-  }
-}
   useEffect(() => {
-    if(searchType === "Zenék"){
-      searchMusic(query);
-    }
-    else{
-      searchPlaylist(query);
-    }
-  }, [query,searchType])
-
+    const fetchData = async () => {
+      if (searchType === "Zenék") {
+        setMusics(await searchMusic(query));
+      } else {
+        setPlaylists(await searchPlaylist(query));
+      }
+    };
+    fetchData();
+  }, [query, searchType]);
+  
   return (
     <DialogRoot defaultOpen onExitComplete={handlePopupClose} role="search" scrollBehavior="inside">
       <DialogContent bg="Background" width={{ base: "100%", md: "85%" }} height={{ base: "80%", md: "85%" }} maxW="1500px" maxH="750px">

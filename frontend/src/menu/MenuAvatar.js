@@ -17,8 +17,9 @@ import { LuPanelRightClose, LuUser } from "react-icons/lu";
 import Cookies from "js-cookie";
 import { Link } from 'react-router-dom';
 import api from '../services/Api';
+import { onLogout } from '../services/AuthService';
 
-export default function MenuAvatar({themecolor, isLoggedIn, onLogout, profileMenuItems }) {
+export default function MenuAvatar({themecolor, setIsLoggedIn, isLoggedIn, profileMenuItems }) {
   const userid = Cookies.get("userid");
   const [account, setAccount] = useState({});
   useEffect(() => {
@@ -93,7 +94,7 @@ export default function MenuAvatar({themecolor, isLoggedIn, onLogout, profileMen
             ): ""}
           </DrawerBody>
           {isLoggedIn ? <DrawerFooter justifyContent="center">
-            <Button variant="outline" onClick={() => onLogout()}>Kijelenkezés</Button>
+            <Button variant="outline" onClick={() => onLogout(setIsLoggedIn)}>Kijelenkezés</Button>
           </DrawerFooter> : ""}
           </Theme>
         </DrawerContent>

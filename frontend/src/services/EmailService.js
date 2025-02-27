@@ -54,4 +54,4 @@ export const sendEmail = async (to, username, type) => {
     console.error("Hiba történt az e-mail küldése közben:", error);
     throw error;
   }
-};
+}
