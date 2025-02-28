@@ -1,4 +1,6 @@
-﻿using MelodyFlowApi.Models.Dtos;
+﻿using EmailApiKedd.Services.IEmail;
+using MelodyFlowApi.Models;
+using MelodyFlowApi.Models.Dtos;
 using MelodyFlowApi.Services.IAuthService;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,7 +11,12 @@ namespace MelodyFlowApi.Controllers
     public class AuthController : ControllerBase
     {
         private readonly IAuth auth;
+        private readonly MelodyflowdbContext _context;
 
+        public AuthController(MelodyflowdbContext context)
+        {
+            _context = context;
+        }
         public AuthController(IAuth auth)
         {
             this.auth = auth;
@@ -49,6 +56,23 @@ namespace MelodyFlowApi.Controllers
                 return Ok(res);
             }
             return BadRequest(res);
+        }
+        [HttpGet("admin/{id}")]
+        public async Task<ActionResult<bool>> IsAdmin(string id)
+        {
+            var userRole = await _context.AspNetUserRoles
+                .Where(ur => ur.UserId == id)
+                .Join(_context.AspNetRoles,
+                      ur => ur.RoleId,
+                      r => r.Id,
+                      (ur, r) => r.Name)
+                .FirstOrDefaultAsync();
+
+            if (userRole == "Admin")
+            {
+                return Ok(true);
+            }
+            return Ok(false);
         }
     }
 }
