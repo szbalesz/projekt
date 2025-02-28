@@ -3,6 +3,7 @@ using MelodyFlowApi.Models;
 using MelodyFlowApi.Models.Dtos;
 using MelodyFlowApi.Services.IAuthService;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace MelodyFlowApi.Controllers
 {
@@ -13,12 +14,9 @@ namespace MelodyFlowApi.Controllers
         private readonly IAuth auth;
         private readonly MelodyflowdbContext _context;
 
-        public AuthController(MelodyflowdbContext context)
+        public AuthController(MelodyflowdbContext context, IAuth auth)
         {
             _context = context;
-        }
-        public AuthController(IAuth auth)
-        {
             this.auth = auth;
         }
         //Regisztráció a createuserdto segítségével(azokat az használja amik a dtoban vannak)
@@ -60,19 +58,15 @@ namespace MelodyFlowApi.Controllers
         [HttpGet("admin/{id}")]
         public async Task<ActionResult<bool>> IsAdmin(string id)
         {
-            var userRole = await _context.AspNetUserRoles
+            var userRoles = await _context.AspNetUserRoles
                 .Where(ur => ur.UserId == id)
-                .Join(_context.AspNetRoles,
-                      ur => ur.RoleId,
-                      r => r.Id,
-                      (ur, r) => r.Name)
-                .FirstOrDefaultAsync();
+                .Select(ur => ur.RoleId)
+                .ToListAsync();
 
-            if (userRole == "Admin")
-            {
-                return Ok(true);
-            }
-            return Ok(false);
+            var isAdmin = await _context.Aspnetroles
+                .AnyAsync(r => userRoles.Contains(r.Id) && r.Name == "Admin");
+
+            return Ok(isAdmin);
         }
     }
 }

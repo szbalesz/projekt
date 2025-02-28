@@ -53,6 +53,32 @@
   },
   {
     "ContainingType": "MelodyFlowApi.Controllers.AuthController",
+    "Method": "IsAdmin",
+    "RelativePath": "api/auth/admin/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Boolean",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MelodyFlowApi.Controllers.AuthController",
     "Method": "AssignRole",
     "RelativePath": "api/auth/AssignRole",
     "HttpMethod": "POST",
