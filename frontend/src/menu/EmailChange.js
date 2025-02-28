@@ -13,9 +13,9 @@ import {
 import { Input } from "@chakra-ui/react"
 import { Field } from '../components/ui/field'
 
-export default function UsernameChange({currentusername}) {
+export default function EmailChange({currentemail}) {
     const themecolor = localStorage.getItem("themecolor");
-    const [newusername, setNewUserName] = useState("");
+    const [newemail, setNewEmail] = useState("");
     const [open, setOpen] = useState(false)
     const prevImg = "https://t3.ftcdn.net/jpg/04/62/60/80/360_F_462608080_J2AJrf8h0fmbFqnTVUQfza8JivYOfShz.jpg";
   return (
@@ -27,17 +27,17 @@ export default function UsernameChange({currentusername}) {
             <DialogContent>
             <Theme colorPalette={themecolor} display={"flex"} flexDirection={"column"} bg={"Background"} h={"100%"}>
                 <DialogHeader>
-                    <DialogTitle>Felhasználónév módosítása</DialogTitle>
+                    <DialogTitle>Email módosítása</DialogTitle>
                 </DialogHeader>
                 <DialogBody>
                     <form>
                         <Flex direction={"row"} pb={"3"}>
                             <Flex width={"full"} direction={"column"} p={"5"}>
-                            <Field mb="2" py="1" label="Jelenlegi felhasználónév">
-                            <Input disabled value={currentusername}/>
+                            <Field mb="2" py="1" label="Jelenlegi email cím">
+                            <Input disabled value={currentemail}/>
                             </Field>
-                            <Field py="1" label="Új felhasználónév">
-                            <Input required value={newusername} onChange={(e)=> setNewUserName(e.target.value)} placeholder="Add meg az új felhasználóneved." />
+                            <Field py="1" label="Új email cím">
+                            <Input required value={newemail} onChange={(e)=> setNewEmail(e.target.value)} placeholder="Add meg az új email címed." />
                             </Field>
                             </Flex>
                         </Flex>

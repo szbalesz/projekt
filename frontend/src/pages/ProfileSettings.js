@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import Cookies from "js-cookie"
 import { getUserProfile } from '../services/UserService'
 import UsernameChange from '../menu/UsernameChange'
+import EmailChange from '../menu/EmailChange'
 
 export default function ProfileSettings() {
     const navigate = useNavigate();
@@ -67,7 +68,7 @@ export default function ProfileSettings() {
                         </Text>
                         </Flex>
                         <Flex pt={"2"} px={"3"}>
-                        <Button  size={"sm"} color={"colorPalette.solid"} variant={"ghost"}>Frissítés</Button>
+                            <EmailChange currentemail={account.email}/>
                         </Flex>
                     </Flex>
                     <Flex direction={"row"} justifyContent={"space-between"} pt={"3"}>
