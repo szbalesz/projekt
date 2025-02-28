@@ -2,6 +2,7 @@
 using MelodyFlowApi.Models.Dtos;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,11 +13,14 @@ namespace MelodyFlowApi.Controllers
     public class UserController : ControllerBase
     {
         private readonly MelodyflowdbContext _context;
+        private readonly UserManager<ApplicationUser> userManager;
 
-        public UserController(MelodyflowdbContext context)
+        public UserController(MelodyflowdbContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
+            this.userManager = userManager;
         }
+
         //Lekérünk egy profilt id alapján
         [HttpGet("{Id}")]
         public async Task<ActionResult<Aspnetuser>> GetProfile(string Id)
@@ -86,7 +90,7 @@ namespace MelodyFlowApi.Controllers
         public async Task<ActionResult<Aspnetuser>> ChangeProfilePicture(UserPicturePutDto userPicturePutDto)
         {
 
-            var existingUser = await _context.Aspnetusers.FirstOrDefaultAsync(x=>x.Id==userPicturePutDto.Id);
+            var existingUser = await _context.Aspnetusers.FirstOrDefaultAsync(x => x.Id == userPicturePutDto.Id);
 
             if (existingUser != null)
             {
@@ -97,6 +101,17 @@ namespace MelodyFlowApi.Controllers
                 return StatusCode(200, existingUser);
             }
             return StatusCode(404);
+        }
+        [HttpGet("admin/{id}")]
+        public async Task<bool> IsAdmin(string Id)
+        {
+            var res = await userManager.FindByIdAsync(Id);
+            if (res != null)
+            {
+                var isadmin = await userManager.IsInRoleAsync(res, "Admin");
+                return isadmin;
+            }
+            return false;
         }
     }
 }

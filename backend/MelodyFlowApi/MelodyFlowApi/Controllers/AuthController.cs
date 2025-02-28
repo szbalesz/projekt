@@ -55,18 +55,6 @@ namespace MelodyFlowApi.Controllers
             }
             return BadRequest(res);
         }
-        [HttpGet("admin/{id}")]
-        public async Task<ActionResult<bool>> IsAdmin(string id)
-        {
-            var userRoles = await _context.AspNetUserRoles
-                .Where(ur => ur.UserId == id)
-                .Select(ur => ur.RoleId)
-                .ToListAsync();
-
-            var isAdmin = await _context.Aspnetroles
-                .AnyAsync(r => userRoles.Contains(r.Id) && r.Name == "Admin");
-
-            return Ok(isAdmin);
-        }
+    
     }
 }
