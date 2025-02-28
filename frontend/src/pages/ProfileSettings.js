@@ -31,11 +31,16 @@ export default function ProfileSettings() {
                 <hr />
                 <Heading py={"3"} size={"1xl"}>Jelenlegi bejelentkezési módok</Heading>
                 <Flex p={"3"} rounded={"md"} background={"bg.muted"} pb={"3"} direction={"column"}>
-                    <Flex>
+                    <Flex justifyContent={"space-between"}>
+                        <Flex mt={"5px"}>
                         <LuUser size={"25"} />
                         <Heading px={"3"}>
                             Fiók adatai
                         </Heading>
+                        </Flex>
+                        <Flex>
+                        <Button mb={"2"} colorPalette={"red"}>Fiók törlése</Button>
+                        </Flex>
                     </Flex>
                     <hr></hr>
                     <Flex direction={"row"} justifyContent={"space-between"} pt={"3"}>
