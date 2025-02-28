@@ -1,6 +1,6 @@
 ﻿<Project>
   <ItemGroup>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\music\0859b03c-fb8b-419e-9d1e-a6f66332d07c_The Weeknd - Save Your Tears (Official Music Video).mp3'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\music\0859b03c-fb8b-419e-9d1e-a6f66332d07c_The Weeknd - Save Your Tears (Official Music Video).mp3))">
       <SourceType>Package</SourceType>
       <SourceId>MelodyFlowApi</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
@@ -12,13 +12,11 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>hs9y8fqsa3</Fingerprint>
-      <Integrity>EaqBB2QWNCVu6xf+bEGYTzol5MKsObFG1VQb0sO9gBk=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\music\0859b03c-fb8b-419e-9d1e-a6f66332d07c_The Weeknd - Save Your Tears (Official Music Video).mp3'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\music\0859b03c-fb8b-419e-9d1e-a6f66332d07c_The Weeknd - Save Your Tears (Official Music Video).mp3))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\music\0c3e50a4-6c2e-4c03-b795-b1fb797c7ddb_Kendrick Lamar - Not Like Us.mp3'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\music\0c3e50a4-6c2e-4c03-b795-b1fb797c7ddb_Kendrick Lamar - Not Like Us.mp3))">
       <SourceType>Package</SourceType>
       <SourceId>MelodyFlowApi</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
@@ -30,13 +28,11 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>0qyeis3662</Fingerprint>
-      <Integrity>uGadyiqCq8CWGkFAzin/dP116QSioZom0NKQDNZv860=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\music\0c3e50a4-6c2e-4c03-b795-b1fb797c7ddb_Kendrick Lamar - Not Like Us.mp3'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\music\0c3e50a4-6c2e-4c03-b795-b1fb797c7ddb_Kendrick Lamar - Not Like Us.mp3))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\music\1502cc33-971f-4ca8-a589-bf8efdbdd8ec_Manuel - Para (Official Lyrics Video).mp3'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\music\1502cc33-971f-4ca8-a589-bf8efdbdd8ec_Manuel - Para (Official Lyrics Video).mp3))">
       <SourceType>Package</SourceType>
       <SourceId>MelodyFlowApi</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
@@ -48,13 +44,11 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>dktpxwhzk9</Fingerprint>
-      <Integrity>7XKvVjhDUkU2SJgfiM7b4kGcNYxfULG4uTAFQs9mLZ4=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\music\1502cc33-971f-4ca8-a589-bf8efdbdd8ec_Manuel - Para (Official Lyrics Video).mp3'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\music\1502cc33-971f-4ca8-a589-bf8efdbdd8ec_Manuel - Para (Official Lyrics Video).mp3))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\music\2d98ee0e-baf9-441e-abb5-abc0ac9516a6_Ariana Grande - 7 rings (Official Video).mp3'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\music\2d98ee0e-baf9-441e-abb5-abc0ac9516a6_Ariana Grande - 7 rings (Official Video).mp3))">
       <SourceType>Package</SourceType>
       <SourceId>MelodyFlowApi</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
@@ -66,13 +60,11 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>vzhdpoamxc</Fingerprint>
-      <Integrity>W9U6AnrAXqBrv1T4P7a6dVstIzvLLJc9+HVte1k+9Ho=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\music\2d98ee0e-baf9-441e-abb5-abc0ac9516a6_Ariana Grande - 7 rings (Official Video).mp3'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\music\2d98ee0e-baf9-441e-abb5-abc0ac9516a6_Ariana Grande - 7 rings (Official Video).mp3))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\music\4c74b7c9-ced4-4bc4-9ff0-b43506ae448c_deshwalkinastreet.mp3'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\music\4c74b7c9-ced4-4bc4-9ff0-b43506ae448c_deshwalkinastreet.mp3))">
       <SourceType>Package</SourceType>
       <SourceId>MelodyFlowApi</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
@@ -84,13 +76,11 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>t2e4y29ftp</Fingerprint>
-      <Integrity>RRo+TzSCNYtD7+OU38LpovT9UXva7z5D7962M988HaQ=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\music\4c74b7c9-ced4-4bc4-9ff0-b43506ae448c_deshwalkinastreet.mp3'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\music\4c74b7c9-ced4-4bc4-9ff0-b43506ae448c_deshwalkinastreet.mp3))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\music\7aa86b41-4d5a-40f8-a7e1-9978bfd11e7c_Feher Krisztian - Így jártam (Official Music Video).mp3'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\music\7aa86b41-4d5a-40f8-a7e1-9978bfd11e7c_Feher Krisztian - Így jártam (Official Music Video).mp3))">
       <SourceType>Package</SourceType>
       <SourceId>MelodyFlowApi</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
@@ -102,13 +92,11 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>b9f6y54ouy</Fingerprint>
-      <Integrity>v2h5Ha62PKAuQTSPCdn+VrkrTSVRnQFJ5hU8Ulnok3o=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\music\7aa86b41-4d5a-40f8-a7e1-9978bfd11e7c_Feher Krisztian - Így jártam (Official Music Video).mp3'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\music\7aa86b41-4d5a-40f8-a7e1-9978bfd11e7c_Feher Krisztian - Így jártam (Official Music Video).mp3))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\music\811d4a92-72bf-4ffc-a356-9c012d0dda7d_Kendrick Lamar - luther (Official Audio).mp3'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\music\811d4a92-72bf-4ffc-a356-9c012d0dda7d_Kendrick Lamar - luther (Official Audio).mp3))">
       <SourceType>Package</SourceType>
       <SourceId>MelodyFlowApi</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
@@ -120,13 +108,11 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>cl3yfpezht</Fingerprint>
-      <Integrity>UKbitS4ahtLAv9sxrRt+PjqBprTbp7pNyWVHrfgVOTA=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\music\811d4a92-72bf-4ffc-a356-9c012d0dda7d_Kendrick Lamar - luther (Official Audio).mp3'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\music\811d4a92-72bf-4ffc-a356-9c012d0dda7d_Kendrick Lamar - luther (Official Audio).mp3))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\music\81f743f6-a04e-4ccb-b525-c860e703cae9_Benson Boone - Beautiful Things (Official Music Video).mp3'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\music\81f743f6-a04e-4ccb-b525-c860e703cae9_Benson Boone - Beautiful Things (Official Music Video).mp3))">
       <SourceType>Package</SourceType>
       <SourceId>MelodyFlowApi</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
@@ -138,31 +124,11 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>g7bzsl3dws</Fingerprint>
-      <Integrity>fKO8/eK/Npt4/4jesHSG9lAML1jU2/tHZ+foJD2L/Bc=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\music\81f743f6-a04e-4ccb-b525-c860e703cae9_Benson Boone - Beautiful Things (Official Music Video).mp3'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\music\81f743f6-a04e-4ccb-b525-c860e703cae9_Benson Boone - Beautiful Things (Official Music Video).mp3))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\music\83add612-6180-4c49-af2f-84918412c551_LMEN PRALA - A KARRIEREM LESZROM OFFICIAL MUSIC VIDEO  PROD. BY SMITHMUSIX.mp3'))">
-      <SourceType>Package</SourceType>
-      <SourceId>MelodyFlowApi</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/MelodyFlowApi</BasePath>
-      <RelativePath>music/83add612-6180-4c49-af2f-84918412c551_LMEN PRALA - A KARRIEREM LESZROM OFFICIAL MUSIC VIDEO  PROD. BY SMITHMUSIX.mp3</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>8rta36ive1</Fingerprint>
-      <Integrity>JFBfkr357h8MDoK81xHYEAYoCAJXFplw4w82e5P6PfU=</Integrity>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\music\83add612-6180-4c49-af2f-84918412c551_LMEN PRALA - A KARRIEREM LESZROM OFFICIAL MUSIC VIDEO  PROD. BY SMITHMUSIX.mp3'))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\music\8995a895-76bb-4f85-8466-3ecb9f44ec04_Farkas Pisti x Bódi Csabi - SZERELEM  (hivatalos videoklip).mp3'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\music\8995a895-76bb-4f85-8466-3ecb9f44ec04_Farkas Pisti x Bódi Csabi - SZERELEM  (hivatalos videoklip).mp3))">
       <SourceType>Package</SourceType>
       <SourceId>MelodyFlowApi</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
@@ -174,13 +140,11 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>9eahcogqqn</Fingerprint>
-      <Integrity>H0VnzXD+n7PaPxzPQlTRBX8JfAkiONNN4V+OoAcpRJ0=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\music\8995a895-76bb-4f85-8466-3ecb9f44ec04_Farkas Pisti x Bódi Csabi - SZERELEM  (hivatalos videoklip).mp3'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\music\8995a895-76bb-4f85-8466-3ecb9f44ec04_Farkas Pisti x Bódi Csabi - SZERELEM  (hivatalos videoklip).mp3))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\music\8e589e6a-881f-4df4-996d-597482f6e185_Katy Perry - Firework (Official Music Video).mp3'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\music\8e589e6a-881f-4df4-996d-597482f6e185_Katy Perry - Firework (Official Music Video).mp3))">
       <SourceType>Package</SourceType>
       <SourceId>MelodyFlowApi</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
@@ -192,13 +156,11 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>qypfd6cdg5</Fingerprint>
-      <Integrity>Mjb6+KtEwxprFBY18/H2MiLrvtX400TI29LF88IB2iQ=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\music\8e589e6a-881f-4df4-996d-597482f6e185_Katy Perry - Firework (Official Music Video).mp3'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\music\8e589e6a-881f-4df4-996d-597482f6e185_Katy Perry - Firework (Official Music Video).mp3))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\music\8eefcd7c-014c-47d5-9adf-6e2f222f8d1b_JABER - Isten Vezet (ft. Sean Price).mp3'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\music\8eefcd7c-014c-47d5-9adf-6e2f222f8d1b_JABER - Isten Vezet (ft. Sean Price).mp3))">
       <SourceType>Package</SourceType>
       <SourceId>MelodyFlowApi</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
@@ -210,13 +172,11 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>hxbodw212j</Fingerprint>
-      <Integrity>m6ByYW4IFnGoQVDkhle434tF6jV7N5gffBK/GOl0ADI=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\music\8eefcd7c-014c-47d5-9adf-6e2f222f8d1b_JABER - Isten Vezet (ft. Sean Price).mp3'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\music\8eefcd7c-014c-47d5-9adf-6e2f222f8d1b_JABER - Isten Vezet (ft. Sean Price).mp3))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\music\a16f4de7-8550-4df9-9845-9a1e36565dce_KKevin - PATKÁNY (OFFICIAL VISUALIZER).mp3'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\music\a16f4de7-8550-4df9-9845-9a1e36565dce_KKevin - PATKÁNY (OFFICIAL VISUALIZER).mp3))">
       <SourceType>Package</SourceType>
       <SourceId>MelodyFlowApi</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
@@ -228,13 +188,11 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>0zu3u2nl4n</Fingerprint>
-      <Integrity>jJWeSlf8duw0L2GuJVBKhvtAbqI3TQ08bl1EBf6h1+k=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\music\a16f4de7-8550-4df9-9845-9a1e36565dce_KKevin - PATKÁNY (OFFICIAL VISUALIZER).mp3'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\music\a16f4de7-8550-4df9-9845-9a1e36565dce_KKevin - PATKÁNY (OFFICIAL VISUALIZER).mp3))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\music\a5f28d33-4e77-4fca-b93e-c62c84f40607_Lady Gaga - Abracadabra (Official Music Video).mp3'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\music\a5f28d33-4e77-4fca-b93e-c62c84f40607_Lady Gaga - Abracadabra (Official Music Video).mp3))">
       <SourceType>Package</SourceType>
       <SourceId>MelodyFlowApi</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
@@ -246,13 +204,11 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>wb1jm24syu</Fingerprint>
-      <Integrity>fOurbpsq8VZlw+VTGgr4WmsyG8n6Ad2knnHrLEb8jSY=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\music\a5f28d33-4e77-4fca-b93e-c62c84f40607_Lady Gaga - Abracadabra (Official Music Video).mp3'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\music\a5f28d33-4e77-4fca-b93e-c62c84f40607_Lady Gaga - Abracadabra (Official Music Video).mp3))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\music\bfa2e020-3511-4e8c-9f84-9ab24cc687b4_Billie Eilish - BIRDS OF A FEATHER (Official Music Video).mp3'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\music\bfa2e020-3511-4e8c-9f84-9ab24cc687b4_Billie Eilish - BIRDS OF A FEATHER (Official Music Video).mp3))">
       <SourceType>Package</SourceType>
       <SourceId>MelodyFlowApi</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
@@ -264,13 +220,11 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>krqw2xktv7</Fingerprint>
-      <Integrity>gDVPbkl0hoVex/leZX00kwaFqkja1uM883E5x20y/Vc=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\music\bfa2e020-3511-4e8c-9f84-9ab24cc687b4_Billie Eilish - BIRDS OF A FEATHER (Official Music Video).mp3'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\music\bfa2e020-3511-4e8c-9f84-9ab24cc687b4_Billie Eilish - BIRDS OF A FEATHER (Official Music Video).mp3))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\music\c94b7531-9476-426f-9813-6f11d586c857_ROSE &amp; Bruno Mars - APT. (Official Music Video).mp3'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\music\c94b7531-9476-426f-9813-6f11d586c857_ROSE &amp; Bruno Mars - APT. (Official Music Video).mp3))">
       <SourceType>Package</SourceType>
       <SourceId>MelodyFlowApi</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
@@ -282,13 +236,11 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>xmkfchqu6k</Fingerprint>
-      <Integrity>Oabc//AQACMrC+ZP8W4MAyQ1au4IYnKiUNqr3HGdVFQ=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\music\c94b7531-9476-426f-9813-6f11d586c857_ROSE &amp; Bruno Mars - APT. (Official Music Video).mp3'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\music\c94b7531-9476-426f-9813-6f11d586c857_ROSE &amp; Bruno Mars - APT. (Official Music Video).mp3))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\music\cde7a600-37c6-4332-a889-ef4811b6e7e0_JABER X T. Danny - MILLIÓK (Official Music Video).mp3'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\music\cde7a600-37c6-4332-a889-ef4811b6e7e0_JABER X T. Danny - MILLIÓK (Official Music Video).mp3))">
       <SourceType>Package</SourceType>
       <SourceId>MelodyFlowApi</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
@@ -300,13 +252,11 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>ed8k43zejd</Fingerprint>
-      <Integrity>Yofie37X/MRxgxlVLmA4oSALYDS6pH6dGmLeFQh1apE=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\music\cde7a600-37c6-4332-a889-ef4811b6e7e0_JABER X T. Danny - MILLIÓK (Official Music Video).mp3'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\music\cde7a600-37c6-4332-a889-ef4811b6e7e0_JABER X T. Danny - MILLIÓK (Official Music Video).mp3))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\music\cf7d8fbd-2072-4ed1-8fe8-ef7b6733fddc_KKevin - PROSECCO ft. Bruno (Official Music Video).mp3'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\music\cf7d8fbd-2072-4ed1-8fe8-ef7b6733fddc_KKevin - PROSECCO ft. Bruno (Official Music Video).mp3))">
       <SourceType>Package</SourceType>
       <SourceId>MelodyFlowApi</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
@@ -318,13 +268,11 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>gpwf8k3yih</Fingerprint>
-      <Integrity>rCQLE95KPmfMTKcVz+Wfx+UjGoS/tUmxRB7huo7fOsc=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\music\cf7d8fbd-2072-4ed1-8fe8-ef7b6733fddc_KKevin - PROSECCO ft. Bruno (Official Music Video).mp3'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\music\cf7d8fbd-2072-4ed1-8fe8-ef7b6733fddc_KKevin - PROSECCO ft. Bruno (Official Music Video).mp3))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\music\d1d61de2-2462-443f-8c86-a0efc5dd4c65_Lady Gaga, Bruno Mars - Die With A Smile (Official Music Video) (1).mp3'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\music\d1d61de2-2462-443f-8c86-a0efc5dd4c65_Lady Gaga, Bruno Mars - Die With A Smile (Official Music Video) (1).mp3))">
       <SourceType>Package</SourceType>
       <SourceId>MelodyFlowApi</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
@@ -336,13 +284,11 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>bn9ceqq2wa</Fingerprint>
-      <Integrity>Ka5PetF37Jrv5Z8xX7mNa2nbTy+2mB+pJIWuCkoO06o=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\music\d1d61de2-2462-443f-8c86-a0efc5dd4c65_Lady Gaga, Bruno Mars - Die With A Smile (Official Music Video) (1).mp3'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\music\d1d61de2-2462-443f-8c86-a0efc5dd4c65_Lady Gaga, Bruno Mars - Die With A Smile (Official Music Video) (1).mp3))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\music\d48de4a3-13e9-43b5-be38-7e1e1b7d3fa3_Burai, Fehér Krisztián, Mario feat. Essemm - BarnaLány.mp3'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\music\d48de4a3-13e9-43b5-be38-7e1e1b7d3fa3_Burai, Fehér Krisztián, Mario feat. Essemm - BarnaLány.mp3))">
       <SourceType>Package</SourceType>
       <SourceId>MelodyFlowApi</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
@@ -354,13 +300,11 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>0b48fv9bb5</Fingerprint>
-      <Integrity>zGKDzRZzRx9ZqNZghg4zU5mcJX5tQE0gCVXhdHocCGg=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\music\d48de4a3-13e9-43b5-be38-7e1e1b7d3fa3_Burai, Fehér Krisztián, Mario feat. Essemm - BarnaLány.mp3'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\music\d48de4a3-13e9-43b5-be38-7e1e1b7d3fa3_Burai, Fehér Krisztián, Mario feat. Essemm - BarnaLány.mp3))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\music\d4f0cf18-5a86-4481-86c9-bc711d6519e7_L.L. Junior x Azahriah (feat. Farkas Pisti) - ZHA MAJ DUR (Official Music Video).mp3'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\music\d4f0cf18-5a86-4481-86c9-bc711d6519e7_L.L. Junior x Azahriah (feat. Farkas Pisti) - ZHA MAJ DUR (Official Music Video).mp3))">
       <SourceType>Package</SourceType>
       <SourceId>MelodyFlowApi</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
@@ -372,13 +316,11 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>il8st512tu</Fingerprint>
-      <Integrity>hhtxhD/ZtgM1LBTpN05UTO5/TmVF0amMLiVBrWRp97A=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\music\d4f0cf18-5a86-4481-86c9-bc711d6519e7_L.L. Junior x Azahriah (feat. Farkas Pisti) - ZHA MAJ DUR (Official Music Video).mp3'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\music\d4f0cf18-5a86-4481-86c9-bc711d6519e7_L.L. Junior x Azahriah (feat. Farkas Pisti) - ZHA MAJ DUR (Official Music Video).mp3))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\music\e228040b-4f28-4f53-b910-1cf5d693e53d_Koboldok.mp3'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\music\e228040b-4f28-4f53-b910-1cf5d693e53d_Koboldok.mp3))">
       <SourceType>Package</SourceType>
       <SourceId>MelodyFlowApi</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
@@ -390,29 +332,9 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>30pdqqj9xg</Fingerprint>
-      <Integrity>Lc5X3Zu5O4budfRJtoejP9+QZLQU0AfLU1vLuc2clPk=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\music\e228040b-4f28-4f53-b910-1cf5d693e53d_Koboldok.mp3'))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\music\e50cf012-93be-4df5-8a53-3e9800f1fd29_Azahriah - cipoe.mp3'))">
-      <SourceType>Package</SourceType>
-      <SourceId>MelodyFlowApi</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/MelodyFlowApi</BasePath>
-      <RelativePath>music/e50cf012-93be-4df5-8a53-3e9800f1fd29_Azahriah - cipoe.mp3</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>94ycgm5c6t</Fingerprint>
-      <Integrity>R1By9yBC/XnKU3BXQXVYbnK6Bapuse+aC3YGv7DZyec=</Integrity>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\music\e50cf012-93be-4df5-8a53-3e9800f1fd29_Azahriah - cipoe.mp3'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\music\e228040b-4f28-4f53-b910-1cf5d693e53d_Koboldok.mp3))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>
 </Project>

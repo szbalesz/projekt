@@ -42,10 +42,10 @@ export default function Login({ isLoggedin, setIsLoggedIn }) {
                     e.preventDefault();
                     onLogin(username,password,setIsLoggedIn,navigate);
                   }}>
-                  <Field label="Felhasználónév">
+                  <Field py="3" label="Felhasználónév">
                     <Input type="text" value={username} onChange={(q) => setUsername(q.target.value)} placeholder="Add meg a felhasználóneved" />
                 </Field>
-                <Field label="Jelszó">
+                <Field  py="3" label="Jelszó">
                     <PasswordInput type="password" value={password} onChange={(q) => setPassword(q.target.value)} placeholder="Add meg a jelszavad"
                     />
                 </Field>
