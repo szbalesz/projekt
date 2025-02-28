@@ -14,12 +14,16 @@ namespace MelodyFlowApi.Controllers
     {
         private readonly MelodyflowdbContext _context;
         private readonly UserManager<ApplicationUser> userManager;
+        private readonly RoleService roleService;
 
-        public UserController(MelodyflowdbContext context, UserManager<ApplicationUser> userManager)
+        public UserController(MelodyflowdbContext context, UserManager<ApplicationUser> userManager, RoleService roleService)
         {
             _context = context;
             this.userManager = userManager;
+            this.roleService = roleService;
         }
+
+
 
         //Lekérünk egy profilt id alapján
         [HttpGet("{Id}")]
@@ -102,16 +106,28 @@ namespace MelodyFlowApi.Controllers
             }
             return StatusCode(404);
         }
-        [HttpGet("admin/{id}")]
-        public async Task<bool> IsAdmin(string Id)
+        //Role hozzáadása egy felhasználóhoz
+        [HttpPost("add-role/{roleName}/{id}")]
+        public async Task<IActionResult> AddAdminRole(string id,string roleName)
         {
-            var res = await userManager.FindByIdAsync(Id);
+            var success = await roleService.AddRoleAsync(id,roleName);
+            if (success)
+            {
+                return Ok(new { message = "Sikeresen"+ roleName +"szerepkörbe léptetted a felhasználót." });
+            }
+            return BadRequest(new { message = "Hiba történt a szerepkör hozzáadása közben." });
+        }
+        //Lekérdezzük a felhaszbáló rolejait
+        [HttpGet("get-role/{id}")]
+        public async Task<ActionResult> IsAdmin(string id)
+        {
+            var res = await userManager.Users.FirstOrDefaultAsync(u => u.Id == id);
             if (res != null)
             {
-                var isadmin = await userManager.IsInRoleAsync(res, "Admin");
-                return isadmin;
+                var roles = await userManager.GetRolesAsync(res);
+                return Ok(roles);
             }
-            return false;
+            return NotFound();
         }
     }
 }

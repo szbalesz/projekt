@@ -21,8 +21,10 @@ namespace MelodyFlowApi
             builder.Services.AddScoped<IAuth, AuthService>();
             builder.Services.AddScoped<ITokenGenerator, TokenGenerator>();
             builder.Services.Configure<JwtOptions>(builder.Configuration.GetSection("AuthSettings:JwtOptions"));
-
-            builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>()
+            builder.Services.AddScoped<RoleService>();
+            builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
+                .AddEntityFrameworkStores<AppDbContext>()
+                .AddEntityFrameworkStores<MelodyflowdbContext>()
                .AddDefaultTokenProviders();
             //Csak a megadott linknek engedi hogy hozzáférjen a backednhez
             var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";

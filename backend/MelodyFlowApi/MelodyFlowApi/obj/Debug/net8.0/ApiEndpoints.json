@@ -533,29 +533,24 @@
   },
   {
     "ContainingType": "MelodyFlowApi.Controllers.UserController",
-    "Method": "IsAdmin",
-    "RelativePath": "api/user/admin/{id}",
-    "HttpMethod": "GET",
+    "Method": "AddAdminRole",
+    "RelativePath": "api/user/add-role/{roleName}/{id}",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "Id",
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "roleName",
         "Type": "System.String",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Boolean",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "MelodyFlowApi.Controllers.UserController",
@@ -634,5 +629,21 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "MelodyFlowApi.Controllers.UserController",
+    "Method": "IsAdmin",
+    "RelativePath": "api/user/get-role/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]
