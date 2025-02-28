@@ -6,7 +6,7 @@ namespace MelodyFlowApi.Models.Dtos
 
     public record LoginIUserDto(string UserName, string Password);
 
-    public record AssignUserDto(string Email, string RoleName);
+    public record AssignUserDto(string Id, string RoleName);
     public record UserEmailPutDto(string Email,string Id);
     public record UserNamePutDto(string UserName, string Id);
     public record UserPicturePutDto(string ProfilePictureURL, string Id);
