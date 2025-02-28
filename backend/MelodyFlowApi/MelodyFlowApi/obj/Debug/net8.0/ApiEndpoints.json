@@ -533,8 +533,8 @@
   },
   {
     "ContainingType": "MelodyFlowApi.Controllers.UserController",
-    "Method": "AddAdminRole",
-    "RelativePath": "api/user/add-role/{roleName}/{id}",
+    "Method": "AddRole",
+    "RelativePath": "api/user/addRole/{roleName}/{id}",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -633,13 +633,34 @@
   {
     "ContainingType": "MelodyFlowApi.Controllers.UserController",
     "Method": "IsAdmin",
-    "RelativePath": "api/user/get-role/{id}",
+    "RelativePath": "api/user/getRole/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MelodyFlowApi.Controllers.UserController",
+    "Method": "RemoveRole",
+    "RelativePath": "api/user/removeRole/{roleName}/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "roleName",
         "Type": "System.String",
         "IsRequired": true
       }

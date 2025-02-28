@@ -107,8 +107,8 @@ namespace MelodyFlowApi.Controllers
             return StatusCode(404);
         }
         //Role hozzáadása egy felhasználóhoz
-        [HttpPost("add-role/{roleName}/{id}")]
-        public async Task<IActionResult> AddAdminRole(string id,string roleName)
+        [HttpPost("addRole/{roleName}/{id}")]
+        public async Task<IActionResult> AddRole(string id,string roleName)
         {
             var success = await roleService.AddRoleAsync(id,roleName);
             if (success)
@@ -118,7 +118,7 @@ namespace MelodyFlowApi.Controllers
             return BadRequest(new { message = "Hiba történt a szerepkör hozzáadása közben." });
         }
         //Lekérdezzük a felhaszbáló rolejait
-        [HttpGet("get-role/{id}")]
+        [HttpGet("getRole/{id}")]
         public async Task<ActionResult> IsAdmin(string id)
         {
             var res = await userManager.Users.FirstOrDefaultAsync(u => u.Id == id);
@@ -128,6 +128,17 @@ namespace MelodyFlowApi.Controllers
                 return Ok(roles);
             }
             return NotFound();
+        }
+        //Role törlése egy felhasználótól
+        [HttpDelete("removeRole/{roleName}/{id}")]
+        public async Task<IActionResult> RemoveRole(string id, string roleName)
+        {
+            var success = await roleService.RemoveRoleAsync(id, roleName);
+            if (success)
+            {
+                return Ok(new { message = "Sikeresen törölted" + roleName + "szerepkörből a felhasználót." });
+            }
+            return BadRequest(new { message = "Hiba történt a szerepkörből törlés közben." });
         }
     }
 }
