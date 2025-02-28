@@ -81,7 +81,7 @@ export default function ProfileSettings() {
                         </Text>
                         </Flex>
                         <Flex pt={"2"} px={"3"}>
-                        <Button  size={"sm"} color={"colorPalette.solid"} variant={"ghost"}>Frissítés</Button>
+                        <Button  size={"sm"} color={"colorPalette.solid"} disabled variant={"ghost"}>Frissítés</Button>
                         </Flex>
                     </Flex>
                 </Flex>
