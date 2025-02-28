@@ -18,13 +18,13 @@ import { PasswordInput } from "../components/ui/password-input"
 import Cookies from "js-cookie"
 import { onLogin } from "../services/AuthService";
 
-export default function Login({ isLoggedin, setIsLoggedIn }) {
+export default function Login() {
   const themecolor = localStorage.getItem("themecolor");
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
   const navigate = useNavigate();
   useEffect(() => {
-    if(isLoggedin || Cookies.get("token")){
+    if(Cookies.get("token")){
       navigate(-1)
     }
   }, [])
@@ -40,7 +40,7 @@ export default function Login({ isLoggedin, setIsLoggedIn }) {
                 <Stack spacing={4}>
                   <form onSubmit={(e) => {
                     e.preventDefault();
-                    onLogin(username,password,setIsLoggedIn,navigate);
+                    onLogin(username,password);
                   }}>
                   <Field py="3" label="Felhasználónév">
                     <Input type="text" value={username} onChange={(q) => setUsername(q.target.value)} placeholder="Add meg a felhasználóneved" />

@@ -1,6 +1,7 @@
 import api from './Api';
 import Cookies from "js-cookie";
 import { sendEmail } from './EmailService';
+import { onLogout } from './AuthService';
 
 const token = Cookies.get("token");
 const userid = Cookies.get("userid");
@@ -69,10 +70,11 @@ export const deleteUser = async (id,toaster,navigate) => {
       type: "success",
   })
   sendEmail(profile.email,profile.username,"accountDeletion");
-  navigate("/");
   })
   .finally(()=>{
-    window.location.reload(); // az oldal frissítése
+    onLogout();
+    navigate("/")
+    window.location.reload(); // az oldal frissítése, hogy minden megfelelően működjön
   })
 }
 

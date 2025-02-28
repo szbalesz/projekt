@@ -53,11 +53,11 @@ export default function ProfileSettings() {
                             Felhasználónév
                         </Text>
                         <Text color={"colorPalette.solid"} fontSize={"13px"}>
-                            {account.username}
+                            {account?.username}
                         </Text>
                         </Flex>
                         <Flex pt={"2"} px={"3"}>
-                        <UsernameChange userid={userid} currentusername={account.username}/>
+                        <UsernameChange userid={userid} currentusername={account?.username}/>
                         </Flex>
                     </Flex>
                     <Flex direction={"row"} justifyContent={"space-between"} pt={"3"}>
@@ -66,11 +66,11 @@ export default function ProfileSettings() {
                             Email
                         </Text>
                         <Text color={"colorPalette.solid"} fontSize={"13px"}>
-                            {account.email}
+                            {account?.email}
                         </Text>
                         </Flex>
                         <Flex pt={"2"} px={"3"}>
-                            <EmailChange userid={userid} currentemail={account.email}/>
+                            <EmailChange userid={userid} currentemail={account?.email}/>
                         </Flex>
                     </Flex>
                     <Flex direction={"row"} justifyContent={"space-between"} pt={"3"}>

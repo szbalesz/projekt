@@ -19,15 +19,16 @@ import { Link } from 'react-router-dom';
 import api from '../services/Api';
 import { onLogout } from '../services/AuthService';
 
-export default function MenuAvatar({themecolor, setIsLoggedIn, isLoggedIn, profileMenuItems }) {
+export default function MenuAvatar({themecolor, profileMenuItems }) {
   const userid = Cookies.get("userid");
+  const token = Cookies.get("token");
   const [account, setAccount] = useState({});
   useEffect(() => {
     api.get("/user/"+userid)
     .then(response=>{
       setAccount(response.data[0]);
     })
-  }, [isLoggedIn])
+  }, [])
   
   return (
       <DrawerRoot placement={{ base: "top", md: "end" }} size={{ base: "full", md: "xs" }}>
@@ -51,7 +52,7 @@ export default function MenuAvatar({themecolor, setIsLoggedIn, isLoggedIn, profi
           <DrawerHeader>
             <DrawerTitle>
               <Flex justifyContent="center" textAlign="center">
-                {isLoggedIn ?
+                {token ?
                   <Flex direction={"column"}>
                       <Avatar mx={"auto"} boxShadow={`0 0 20px 0 ${themecolor}`} width="125px" height="125px" src={account?.profilePictureURL} /><Flex p="3" color="colorPalette.solid">
                       <Text pt={"2"} mx={"auto"} fontSize={"2xl"} color="bg.inverted">{account?.username}</Text>
@@ -75,7 +76,7 @@ export default function MenuAvatar({themecolor, setIsLoggedIn, isLoggedIn, profi
             </DrawerTitle>
           </DrawerHeader>
           <DrawerBody>
-            {isLoggedIn? profileMenuItems.map((item, index) =>
+            {token ? profileMenuItems.map((item, index) =>
               <DrawerActionTrigger as="div" key={index}>
                 <Link style={{ display: "flex", margin: "5px" }} onClick={onclose} to={item.path}>
                   <Button
@@ -93,8 +94,8 @@ export default function MenuAvatar({themecolor, setIsLoggedIn, isLoggedIn, profi
               </DrawerActionTrigger>
             ): ""}
           </DrawerBody>
-          {isLoggedIn ? <DrawerFooter justifyContent="center">
-            <Button variant="outline" onClick={() => onLogout(setIsLoggedIn)}>Kijelenkezés</Button>
+          {token ? <DrawerFooter justifyContent="center">
+            <Button variant="outline" onClick={() => onLogout()}>Kijelenkezés</Button>
           </DrawerFooter> : ""}
           </Theme>
         </DrawerContent>

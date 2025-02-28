@@ -35,7 +35,7 @@ export default function UsernameChange({userid,currentusername}) {
                         e.preventDefault();
                         if(newusername !== currentusername)
                         {
-                            if(newusername.length > 6){
+                            if(newusername.length >= 6){
                                 changeUsername(userid,toaster,newusername);
                                 setOpen(false);
                                 setNewUserName("");

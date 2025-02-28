@@ -17,15 +17,16 @@ import { toaster } from '../components/ui/toaster';
 import Cookies from "js-cookie"
 import { onRegister, onLogin } from '../services/AuthService';
 
-export default function Register({ isLoggedin, setIsLoggedIn }) {
+export default function Register() {
     const themecolor = localStorage.getItem("themecolor");
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [passwordAgain, setPasswordAgain] = useState("");
     const navigate = useNavigate();
+    const token = Cookies.get("token");
     useEffect(() => {
-      if(isLoggedin || Cookies.get("token")){
+      if(token){
         navigate(-1)
       }
     }, [])
@@ -43,7 +44,7 @@ export default function Register({ isLoggedin, setIsLoggedIn }) {
                         if(email.length > 2 && email.includes(".")){
                             if(password.length >= 6){
                             if(password === passwordAgain){
-                                onRegister(username,email,password,navigate,onLogin,setIsLoggedIn);
+                                onRegister(username,email,password,navigate,onLogin);
                             }
                             else{
                                 toaster.create({

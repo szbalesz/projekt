@@ -8,7 +8,7 @@ import { LuBookHeadphones, LuHouse, LuList, LuSearch, LuSettings, LuStar, LuUplo
 import Search from './menu/Search';
 import Cookies from "js-cookie";
 
-export default function Menu({ themecolor, isLoggedIn, setIsLoggedIn }) {
+export default function Menu({ themecolor }) {
   const [selectedMenu, setSelectedMenu] = useState('');
   const location = useLocation();
   const navigate = useNavigate();
@@ -35,7 +35,7 @@ export default function Menu({ themecolor, isLoggedIn, setIsLoggedIn }) {
   const [userid, setUserid] = useState("")
   useEffect(() => {
     setUserid(Cookies.get("userid"));
-  }, [isLoggedIn])
+  }, [])
   
   const profileMenuItems = useMemo(() => [
     { label: "Profil megtekintése", icon: <LuUser />, path: "/user/"+userid },
@@ -101,7 +101,7 @@ export default function Menu({ themecolor, isLoggedIn, setIsLoggedIn }) {
         zIndex={12}
         bg="Background"
       >
-        <Navbar themecolor={themecolor} profileMenuItems={profileMenuItems} setIsSidebarOpen={setIsSidebarOpen} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
+        <Navbar themecolor={themecolor} profileMenuItems={profileMenuItems} setIsSidebarOpen={setIsSidebarOpen}/>
       </GridItem>
 
       {/* Small Sidebar */}

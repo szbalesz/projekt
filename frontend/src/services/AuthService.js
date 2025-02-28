@@ -3,7 +3,7 @@ import Cookies from "js-cookie";
 import { toaster } from "../components/ui/toaster";
 import { sendEmail } from "./EmailService";
 
-export const onRegister = (username, email, password, navigate, onLogin, setIsLoggedin) => {
+export const onRegister = (username, email, password, navigate, onLogin) => {
   let newUser = {
     username,
     email,
@@ -21,7 +21,7 @@ export const onRegister = (username, email, password, navigate, onLogin, setIsLo
         toaster.create({ title: "Sikeres regisztráció.", type: "success" });
         sendEmail(email, username, "register");
         navigate("/login");
-        onLogin(username, password,setIsLoggedin,navigate);
+        onLogin(username, password,navigate);
       }
     })
     .catch(e => {
@@ -30,16 +30,15 @@ export const onRegister = (username, email, password, navigate, onLogin, setIsLo
     });
 }
 
-export const onLogin = (username, password, setIsLoggedIn, navigate) => {
+export const onLogin = (username, password) => {
   let user = { username, password };
   api.post("/auth/login", user)
     .then(response => {
       if (response.data.token) {
-        setIsLoggedIn(true);
         Cookies.set("token", response.data.token, { expires: 1, secure: true });
         Cookies.set("userid", response.data.id, { expires: 1, secure: true });
         toaster.create({ title: "Sikeres bejelentkezés!", type: "success" });
-        navigate("/");
+        window.location.reload(); // az oldal frissítése, hogy minden megfelelően működjön
       } else {
         toaster.create({ title: "Sikertelen bejelentkezés!", type: "error" });
       }
@@ -47,9 +46,9 @@ export const onLogin = (username, password, setIsLoggedIn, navigate) => {
     .catch(e => console.error("HIBA, Nem sikerült a bejelentkezés: ", e));
 }
 
-export const onLogout = (setIsLoggedIn) => {
-  setIsLoggedIn(false);
+export const onLogout = () => {
   Cookies.remove("token");
   Cookies.remove("userid");
   toaster.create({ title: "Sikeres kijelentkezés!", type: "success" });
+  window.location.reload(); // az oldal frissítése, hogy minden megfelelően működjön
 }

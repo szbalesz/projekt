@@ -180,6 +180,7 @@ export const editPlaylist = async(playlist,imageUrl,playlistName,toaster,setOpen
     .then(()=>{
       toaster.create({ title: `Sikeres módosítás!`, type: "success" });
       setOpen(false);
+      window.location.reload(); // oldal frissítése a módosított adatok megjelenítése miatt
     })
     .catch((e)=>{
       console.error("Hiba történt a lista hozzáadása közben: ",e);

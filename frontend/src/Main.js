@@ -22,15 +22,6 @@ import Cookies from "js-cookie";
 
 export default function Main({ themecolor, setThemecolor }) {
   const audioRef = useRef(null);
-  // Bejelentkezés vizsgálata
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  useEffect(() => {
-    const savedToken = Cookies.get("token");
-    if (savedToken) {
-      setIsLoggedIn(true);
-    }
-  }, []);
 
   const [currentMusic, setCurrentMusic] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -108,14 +99,14 @@ export default function Main({ themecolor, setThemecolor }) {
     <Box backgroundSize="cover" backgroundPosition="center" backgroundRepeat="no-repeat" bg={"Background"}>
           {/* Main Grid */}
           <Grid templateRows="50px 1fr" templateColumns="50px 1fr" minHeight="100vh">
-                <Menu themecolor={themecolor} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
+                <Menu themecolor={themecolor}/>
               {/* Main Content */}
             <GridItem bg="Background" transition="all 1s ease-in-out" rowSpan={1}  colSpan="2">
               <Box bg="Background" minH="100vh" py="50px" pl={{base: "0", md: "50px"}}>
                 <Routes>
                   <Route path="/" element={<Home />} />
-                  <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn} />}/>
-                  <Route path="/register" element={<Register isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>} />
+                  <Route path="/login" element={<Login/>}/>
+                  <Route path="/register" element={<Register/>} />
                   <Route path="/playlists" element={<Playlists/>} />
                   <Route path="/settings" element={<Settings setThemecolor={setThemecolor}/>} />
                   <Route path="/settings/profile" element={<ProfileSettings />} />

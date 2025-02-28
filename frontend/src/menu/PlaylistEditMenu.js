@@ -35,8 +35,8 @@ export default function PlaylistEditMenu({playlist,playlistName,playlistId,userI
         {
         !isCreator? 
         !isAdded ? 
-        <MenuItem value="hozzaad" onClick={()=> addToMyPlaylists(userId,playlistId,playlistName,toaster,setIsAdded)}><LuUserRoundPlus/> Hozzáadás a saját listáimhoz</MenuItem> 
-        : <MenuItem value="eltavolit" color={"red.500"} onClick={()=> removeFromMyPlaylists(userId,playlistId,playlistName,toaster,setIsAdded)}><LuUserRoundMinus/> Eltávolítás a saját listáimból</MenuItem> 
+        <MenuItem value="hozzaad" onClick={()=> addToMyPlaylists(playlistId,playlistName,toaster,setIsAdded)}><LuUserRoundPlus/> Hozzáadás a saját listáimhoz</MenuItem> 
+        : <MenuItem value="eltavolit" color={"red.500"} onClick={()=> removeFromMyPlaylists(playlistId,playlistName,toaster,setIsAdded)}><LuUserRoundMinus/> Eltávolítás a saját listáimból</MenuItem> 
         : null}
         {isCreator ?
          <>
