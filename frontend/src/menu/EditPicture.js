@@ -12,8 +12,7 @@ import {
 } from "../components/ui/dialog"
 import { toaster } from '../components/ui/toaster';
 import { Input } from "@chakra-ui/react"
-import Cookies from "js-cookie"
-import { changeProfilePicture } from '../services/MusicService';
+import { changeProfilePicture } from '../services/UserService';
 
 export default function EditPicture({account}) {
     const [imageUrl, setImageUrl] = useState("");

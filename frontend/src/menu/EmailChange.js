@@ -12,12 +12,13 @@ import {
 } from "../components/ui/dialog"
 import { Input } from "@chakra-ui/react"
 import { Field } from '../components/ui/field'
+import { changeEmail } from '../services/UserService'
+import { toaster } from '../components/ui/toaster'
 
-export default function EmailChange({currentemail}) {
+export default function EmailChange({userid,currentemail}) {
     const themecolor = localStorage.getItem("themecolor");
     const [newemail, setNewEmail] = useState("");
     const [open, setOpen] = useState(false)
-    const prevImg = "https://t3.ftcdn.net/jpg/04/62/60/80/360_F_462608080_J2AJrf8h0fmbFqnTVUQfza8JivYOfShz.jpg";
   return (
     <DialogRoot lazyMount open={open} onOpenChange={(e) => setOpen(e.open)} placement={"center"}>
             <DialogTrigger mx={"auto"} asChild>
@@ -30,14 +31,36 @@ export default function EmailChange({currentemail}) {
                     <DialogTitle>Email módosítása</DialogTitle>
                 </DialogHeader>
                 <DialogBody>
-                    <form>
+                <form onSubmit={(e)=>{
+                        e.preventDefault();
+                        if(newemail !== currentemail)
+                        {
+                            if(newemail.length > 6){
+                                changeEmail(userid,toaster,newemail);
+                                setOpen(false);
+                                setNewEmail("");
+                            }
+                            else{
+                                toaster.create({
+                                title: `Adjon meg egy valós email címet!`,
+                                type: "error",
+                            })
+                            }
+                        }
+                        else{
+                            toaster.create({
+                                title: `Már ez a jelenlegi email címed!`,
+                                type: "error",
+                            })
+                        }
+                    }}>
                         <Flex direction={"row"} pb={"3"}>
-                            <Flex width={"full"} direction={"column"} p={"5"}>
+                            <Flex width={"full"} direction={"column"} py={"5"}>
                             <Field mb="2" py="1" label="Jelenlegi email cím">
                             <Input disabled value={currentemail}/>
                             </Field>
                             <Field py="1" label="Új email cím">
-                            <Input required value={newemail} onChange={(e)=> setNewEmail(e.target.value)} placeholder="Add meg az új email címed." />
+                            <Input type='email' required value={newemail} onChange={(e)=> setNewEmail(e.target.value)} placeholder="Add meg az új email címed." />
                             </Field>
                             </Flex>
                         </Flex>

@@ -2,7 +2,6 @@ import api from './Api';
 import Cookies from "js-cookie";
 
 const token = Cookies.get("token");
-const userid = Cookies.get("userid");
 
 export const getAllMusic = async (setPending,setMusicList) =>{
     setPending(true);
@@ -116,27 +115,6 @@ export const removeFromFavorite = async (favoritePlaylistId, musicId, toaster, s
     toaster.create({ title: `Hiba történt a művelet közben.`, type: "error" });
     console.error(error);
   }
-}
-
-export const changeProfilePicture = async (imageUrl,toaster,setOpen) =>{
-  api.put("/user/ChangeProfilePicture", {
-    profilePictureURL: imageUrl,
-    id: userid
-  }, {
-      headers: {
-          Authorization: `Bearer ${token}`
-      }
-  })
-  .then(()=>{
-      toaster.create({
-      title: `Profilkép sikeresen hozzáadva!`,
-      type: "success",
-  })
-  })
-  .finally(()=>{
-      setOpen(false);
-      window.location.reload(); // az oldal frissítése, hogy az új profilkép mindenhol megjelenjen
-  })
 }
 
 export const editMusic = async(music,artist,title,imageurl,toaster,setOpen,getData)=>{

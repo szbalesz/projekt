@@ -30,7 +30,67 @@ const emailTemplates = {
           </div>
         </div>
       `
-    }
+    },  
+    usernameChange: {
+      subject: "🔄 Sikeres felhasználónév módosítás a MelodyFlow-n",
+      body: `
+      <div style="font-family: Arial, sans-serif; text-align: center; padding: 20px; background-color: #f4f4f4;">
+        <div style="max-width: 600px; background: white; padding: 20px; margin: auto; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
+          <h2 style="color: #2c3e50;">Felhasználóneved sikeresen megváltozott!</h2>
+          <p style="font-size: 16px; color: #555;">
+            Sikeresen megváltoztattad a felhasználónevedet a MelodyFlow-on. Az új felhasználóneved: <strong>{username}</strong>.
+          </p>
+          <p style="font-size: 16px; color: #555;">
+            Ha nem te kezdeményezted ezt a változtatást, kérjük, azonnal vedd fel velünk a kapcsolatot!
+          </p>
+          <hr style="margin: 20px 0; border: none; border-top: 1px solid #ddd;">
+          <p style="font-size: 12px; color: #999;">
+            Ezt az e-mailt automatikusan küldtük. Ha nem te módosítottad a felhasználónevedet, kérjük, hagyd figyelmen kívül, vagy lépj kapcsolatba velünk.
+          </p>
+        </div>
+      </div>`
+  },
+  
+  emailChange: {
+      subject: "📧 Sikeres e-mail cím módosítás a MelodyFlow-n",
+      body: `
+      <div style="font-family: Arial, sans-serif; text-align: center; padding: 20px; background-color: #f4f4f4;">
+        <div style="max-width: 600px; background: white; padding: 20px; margin: auto; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
+          <h2 style="color: #2c3e50;">E-mail címed sikeresen megváltozott!</h2>
+          <p style="font-size: 16px; color: #555;">
+            Kedves {username},<br>
+            Az e-mail címed sikeresen módosításra került a MelodyFlow fiókodhoz. Mostantól ezen az email címen fogunk tájékoztatni az újdonságokról.
+          </p>
+          <p style="font-size: 16px; color: #555;">
+            Ha nem te kezdeményezted ezt a változtatást, kérjük, azonnal vedd fel velünk a kapcsolatot!
+          </p>
+          <hr style="margin: 20px 0; border: none; border-top: 1px solid #ddd;">
+          <p style="font-size: 12px; color: #999;">
+            Ezt az e-mailt automatikusan küldtük. Ha nem te módosítottad az e-mail címedet, kérjük, hagyd figyelmen kívül, vagy lépj kapcsolatba velünk.
+          </p>
+        </div>
+      </div>`
+  },
+  accountDeletion: {
+    subject: "⚠️ Fiókod törlésre került a MelodyFlow-n",
+    body: `
+    <div style="font-family: Arial, sans-serif; text-align: center; padding: 20px; background-color: #f4f4f4;">
+      <div style="max-width: 600px; background: white; padding: 20px; margin: auto; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
+        <h2 style="color: #c0392b;">Fiókod törlésre került</h2>
+        <p style="font-size: 16px; color: #555;">
+          Kedves {username},<br>
+          Sajnálattal értesítünk, hogy fiókod törlésre került a MelodyFlow rendszeréből. Ezentúl nem tudsz bejelentkezni vagy hozzáférni a mentett tartalmaidhoz.
+        </p>
+        <p style="font-size: 16px; color: #555;">
+          Ha nem te kezdeményezted ezt a változtatást, kérjük, azonnal vedd fel velünk a kapcsolatot.
+        </p>
+        <hr style="margin: 20px 0; border: none; border-top: 1px solid #ddd;">
+        <p style="font-size: 12px; color: #999;">
+          Ezt az e-mailt automatikusan küldtük. Ha nem te kérted a fiókod törlését, kérjük, lépj kapcsolatba velünk.
+        </p>
+      </div>
+    </div>`
+}
 };
 
 export const sendEmail = async (to, username, type) => {
@@ -42,6 +102,7 @@ export const sendEmail = async (to, username, type) => {
 
   const subject = template.subject.replace("{username}", username);
   const body = template.body.replace(/{username}/g, username);
+
 
   try {
     const response = await api.post("/email", {
