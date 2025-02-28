@@ -2,7 +2,7 @@ import api from './Api';
 import Cookies from "js-cookie";
 
 const token = Cookies.get("token");
-
+// Összes zene lekérése függvény
 export const getAllMusic = async (setPending,setMusicList) =>{
     setPending(true);
     api.get("/GetAllMusic")
@@ -14,7 +14,7 @@ export const getAllMusic = async (setPending,setMusicList) =>{
         setPending(false);
     })
 }
-
+// Id alapján zene lekérés függvény
 export const getMusic = async (id) => {
   try {
     const response = await api.get(`/music/${id}`);
@@ -24,7 +24,7 @@ export const getMusic = async (id) => {
     return null;
   }
 }
-
+// Zene keresés függvény
 export const searchMusic = async (query) => {
   try {
     const endpoint = query.length > 0 ? `/GetMusicByName?betu=${query}` : "/GetAllMusic";
@@ -35,7 +35,7 @@ export const searchMusic = async (query) => {
     return [];
   }
 }
-
+// Zene feltöltés függvény
 export const uploadMusic = async (formData,toaster,setTitle,setArtist,setImageurl,setMusicfile) => {
   try {
     const response = await api.post("/UploadMusic", formData, {
@@ -67,7 +67,7 @@ export const uploadMusic = async (formData,toaster,setTitle,setArtist,setImageur
     })
 }
 }
-
+// Zene törlés függvény
 export const deleteMusic = async (id, musicTitle, navigate, toaster) => {
   try {
     await api.delete(`/music/${id}`, {
@@ -79,7 +79,7 @@ export const deleteMusic = async (id, musicTitle, navigate, toaster) => {
     console.error("Hiba történt a zene törlése közben: ", error);
   }
 }
-
+// Zene hozzáadása kedvencekhez függvény
 export const addToFavorite = async (favoritePlaylistId, musicId, toaster, setFavorite) => {
   if (!token) {
     toaster.create({ title: `Jelentkezz be a funkció használatához!`, type: "info" });
@@ -102,7 +102,7 @@ export const addToFavorite = async (favoritePlaylistId, musicId, toaster, setFav
     console.error(error);
   }
 }
-
+// Zene törlése kedvencekből függvény
 export const removeFromFavorite = async (favoritePlaylistId, musicId, toaster, setFavorite) => {
   try {
     await api.delete("/DeleteMusicFromPlaylist", { 
@@ -116,7 +116,7 @@ export const removeFromFavorite = async (favoritePlaylistId, musicId, toaster, s
     console.error(error);
   }
 }
-
+// Zene szerkesztése függvény
 export const editMusic = async(music,artist,title,imageurl,toaster,setOpen,getData)=>{
   api.put("/music/"+music.id,{artist,title,imageurl},{
       headers: {

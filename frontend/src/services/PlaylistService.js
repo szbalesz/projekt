@@ -4,7 +4,7 @@ import { getUserProfile } from './UserService';
 
 const token = Cookies.get("token");
 const userid = Cookies.get("userid");
-
+// Kedvencek lejátszási lista megkeresése függvény
 export const getFavoritePlaylist = async (musicid) => {
     if (!userid) return { favoritePlaylistId: "", isFavorite: false };
 
@@ -21,7 +21,7 @@ export const getFavoritePlaylist = async (musicid) => {
         return { favoritePlaylistId: "", isFavorite: false };
     }
 }
-
+// Lejátszási lista keresés függvény
 export const searchPlaylist = async (query) => {
   try {
     const endpoint = query.length > 0 ? `/GetPlaylistByName?betu=${query}` : "/GetAllPlaylist";
@@ -32,7 +32,7 @@ export const searchPlaylist = async (query) => {
     return [];
   }
 }
-
+// Id alapján lejátszási lista lekérése függvény
 export const getPlaylistByUser = async (id,setPlaylistId,toaster)=>{
     const response = await api.get("/GetPlaylistByUser?id="+userid);
       if(response.data.length > 0){
@@ -47,7 +47,7 @@ export const getPlaylistByUser = async (id,setPlaylistId,toaster)=>{
       }
       return null;
 }
-
+// Felhasználó lejátszási listáinak lekérése függvény
 export const getPlaylist = async (setPending,id,toaster,setPlaylistId,setMusics,setPlaylist,setCreator,navigate) => {
     setPending(true);
     if(id === "Kedvencek"){
@@ -65,7 +65,7 @@ export const getPlaylist = async (setPending,id,toaster,setPlaylistId,setMusics,
       setPending(false);
     }
 }
-
+// Összes lejátszási lista lekérése függvény
 export const getAllPlaylist = async (setPlaylists) =>{
     if(token){
         api.get("/GetPlaylistByUser?id="+userid)
@@ -75,7 +75,7 @@ export const getAllPlaylist = async (setPlaylists) =>{
         .catch(e => {console.error("HIBA, Nem sikerült lekérni a lejátszási listák: ",e)})
     }
 }
-
+// Lejátszási lista készítés függvény
 export const createPlaylist = async (newPlaylist,toaster,setPlaylistName,setImageUrl,setOpen,getPlaylists) => {
     api.post("/CreatePlaylist",newPlaylist, {
         headers: {
@@ -103,7 +103,7 @@ export const createPlaylist = async (newPlaylist,toaster,setPlaylistName,setImag
         console.error("Hiba történt a lejátszási lista elkészítése alatt: ",e)
     })
 }
-
+// Lejátszási lista törlés függvény
 export const deletePlaylist =(playlistId,toaster,playlistName,navigate)=>{
     api.delete("/playlist/"+playlistId,{
       headers: {
@@ -118,14 +118,14 @@ export const deletePlaylist =(playlistId,toaster,playlistName,navigate)=>{
       console.error("Hiba történt a lista törlése közben: ",e);
     })
 }
-
+// Kedvencek lista id-jának lekérése függvény
 export const getFavoriteId = async (playlistId)=>{
     if(playlistId === "Kedvencek"){
       const response = await api.get("/GetPlaylistByUser?id="+userid);
       playlistId = response.data.filter(pl=>pl.creatorId === userid).filter(pl=> pl.playlistName === playlistId)[0].id;
     }
 }
-
+// Megnézi, hogy a lejátszási lista benne van e a saját listáimban
 export const getIsPlaylistAdded = async (playlistId, setIsCreator, setIsAdded)=>{
     const response = await api.get("/GetPlaylistByUser?id="+userid)
     const plist = response.data.find(pl => pl.id === playlistId);
@@ -136,7 +136,7 @@ export const getIsPlaylistAdded = async (playlistId, setIsCreator, setIsAdded)=>
       setIsAdded(true);
     }
 }
-
+// Lejátszási lista hozzáadása a saját listáimhoz
 export const addToMyPlaylists = async (playlistId,playlistName,toaster,setIsAdded)=>{
     api.post("/AddPlaylistToUser",{userid,playlistId},{
       headers: {
@@ -151,7 +151,7 @@ export const addToMyPlaylists = async (playlistId,playlistName,toaster,setIsAdde
       console.error("Hiba történt a lista hozzáadása közben: ",e);
     })
 }
-
+// Lejátszási lista törlése a saját listáimból
 export  const removeFromMyPlaylists = (playlistId,playlistName,toaster,setIsAdded)=>{
     api.delete("/DeleteUserFromPlaylist", {
       data: {
@@ -170,7 +170,7 @@ export  const removeFromMyPlaylists = (playlistId,playlistName,toaster,setIsAdde
       console.error("Hiba történt a lista hozzáadása közben: ",e);
     })
 }
-
+// Lejátszási lista adatainak módosítása függvény
 export const editPlaylist = async(playlist,imageUrl,playlistName,toaster,setOpen)=>{
   api.put("/playlist/"+playlist.id,{imageUrl,playlistName},{
       headers: {
@@ -186,7 +186,7 @@ export const editPlaylist = async(playlist,imageUrl,playlistName,toaster,setOpen
       console.error("Hiba történt a lista hozzáadása közben: ",e);
     })
 }
-
+// Lejátszási lista és zenéinek lekérése
 export const getPlaylistsWithMusic = async (setPlaylists,musicId,setAddedMusic) => {
   try {
     const res = await api.get(`/GetPlaylistByUser?id=${userid}`);
@@ -205,7 +205,7 @@ export const getPlaylistsWithMusic = async (setPlaylists,musicId,setAddedMusic) 
     console.error("Hiba a playlist betöltésekor:", error);
   }
 };
-
+// Zene törlése/hozzáadása lejátszási listához
 export const AddOrRemoveFromPlaylist = async (setAddedMusic,musicId,setFavorite,toaster,playlistId, playlistName) => {
   try {
     const musicRes = await api.get(`/playlist/${playlistId}`);

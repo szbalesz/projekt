@@ -2,7 +2,7 @@ import api from "./Api";
 import Cookies from "js-cookie";
 import { toaster } from "../components/ui/toaster";
 import { sendEmail } from "./EmailService";
-
+// Regisztrációs függvény
 export const onRegister = (username, email, password, navigate, onLogin) => {
   let newUser = {
     username,
@@ -29,7 +29,7 @@ export const onRegister = (username, email, password, navigate, onLogin) => {
       toaster.create({ title: "Sikertelen regisztráció!", type: "error" });
     });
 }
-
+// Bejelentkezés függvény
 export const onLogin = (username, password) => {
   let user = { username, password };
   api.post("/auth/login", user)
@@ -45,7 +45,7 @@ export const onLogin = (username, password) => {
     })
     .catch(e => console.error("HIBA, Nem sikerült a bejelentkezés: ", e));
 }
-
+// Kijelentkezés függvény
 export const onLogout = () => {
   Cookies.remove("token");
   Cookies.remove("userid");

@@ -1,5 +1,5 @@
 import api from './Api';
-
+// Email sablonok
 const emailTemplates = {
     register: {
       subject: "🎶 Üdvözlünk {username} a MelodyFlow-n – Kezdődjön a zenei utazásod!",
@@ -92,7 +92,7 @@ const emailTemplates = {
     </div>`
 }
 };
-
+// Email küldés függvény
 export const sendEmail = async (to, username, type) => {
   const template = emailTemplates[type];
 

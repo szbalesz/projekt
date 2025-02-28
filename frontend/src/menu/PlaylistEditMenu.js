@@ -14,7 +14,7 @@ import EditPlaylistWindow from './EditPlaylistWindow'
 import { addToMyPlaylists, deletePlaylist, getFavoriteId, getIsPlaylistAdded, removeFromMyPlaylists } from '../services/PlaylistService'
 
 
-export default function PlaylistEditMenu({playlist,playlistName,playlistId,userId}) {
+export default function PlaylistEditMenu({playlist,playlistName,playlistId}) {
   const navigate = useNavigate();
   const [isCreator, setIsCreator] = useState(false);
   const [isAdded, setIsAdded] = useState(false);

@@ -10,7 +10,6 @@ import { getPlaylist } from "../services/PlaylistService";
 
 export default function PlaylistPage() {
   const navigate = useNavigate();
-  let userid = Cookies.get("userid");
   let token = Cookies.get("token");
   let { id } = useParams();
   const [playlistId, setPlaylistId] = useState(id);
@@ -71,7 +70,7 @@ export default function PlaylistPage() {
               {creator.username}
               </Button>
               {token ? 
-              <PlaylistEditMenu playlist={playlist} userId={userid} playlistName={playlist.playlistName} playlistId={playlistId}/> 
+              <PlaylistEditMenu playlist={playlist} playlistName={playlist.playlistName} playlistId={playlistId}/> 
               : null}
             </Flex>
           </Box>

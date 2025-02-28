@@ -5,7 +5,7 @@ import { onLogout } from './AuthService';
 
 const token = Cookies.get("token");
 const userid = Cookies.get("userid");
-
+// Felhasználó adatainak lekérése
 export const getUserProfile = async (id) => {
   try {
     const response = await api.get(`/user/${id}`);
@@ -15,7 +15,7 @@ export const getUserProfile = async (id) => {
     return null;
   }
 };
-
+// Felhasználó zenéinek lekérése
 export const getUserMusics = async (id) => {
   try {
     const response = await api.get(`/music/uploader/${id}`);
@@ -25,7 +25,7 @@ export const getUserMusics = async (id) => {
     return [];
   }
 };
-
+// Felhasználó lejátszási listáinak lekérése
 export const getUserPlaylists = async (id) => {
   try {
     const response = await api.get(`/GetPlaylistByUser?id=${id}`);
@@ -35,7 +35,7 @@ export const getUserPlaylists = async (id) => {
     return [];
   }
 };
-
+// Felhasználó profilképének módosítása
 export const changeProfilePicture = async (imageUrl,toaster,setOpen) =>{
   api.put("/user/ChangeProfilePicture", {
     profilePictureURL: imageUrl,
@@ -56,7 +56,7 @@ export const changeProfilePicture = async (imageUrl,toaster,setOpen) =>{
       window.location.reload(); // az oldal frissítése, hogy az új profilkép mindenhol megjelenjen
   })
 }
-
+// Felhasználó törlése
 export const deleteUser = async (id,toaster,navigate) => {
   const profile = await getUserProfile(id);
   await api.delete("/user/"+id,{
@@ -77,7 +77,7 @@ export const deleteUser = async (id,toaster,navigate) => {
     window.location.reload(); // az oldal frissítése, hogy minden megfelelően működjön
   })
 }
-
+// Felhasználónév módosítása
 export const changeUsername = async (userid,toaster,newusername) => {
   api.put("/user/ChangeUserName", {
     userName: newusername,
@@ -99,7 +99,7 @@ export const changeUsername = async (userid,toaster,newusername) => {
       window.location.reload(); // az oldal frissítése, hogy az új felhasználónév megjelenjen
   })
 }
-
+// Email módosítása
 export const changeEmail = async (userid,toaster,newemail) => {
   api.put("/user/ChangeEmail", {
     email: newemail,
