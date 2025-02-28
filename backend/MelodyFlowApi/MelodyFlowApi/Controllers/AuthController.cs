@@ -42,7 +42,7 @@ namespace MelodyFlowApi.Controllers
         [HttpPost("AssignRole")]
         public async Task<ActionResult> AssignRole(AssignUserDto assignUserDto)
         {
-            var res = await auth.AssignRole(assignUserDto.Email, assignUserDto.RoleName);
+            var res = await auth.AssignRole(assignUserDto.Id, assignUserDto.RoleName);
 
             if (res != null)
             {

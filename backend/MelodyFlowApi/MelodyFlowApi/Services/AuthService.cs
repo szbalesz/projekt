@@ -22,9 +22,9 @@ namespace MelodyFlowApi.Services
             this.tokenGenerator = tokenGenerator;
         }
         //Szerepkör hozzárendelés
-        public async Task<object> AssignRole(string email, string roleName)
+        public async Task<object> AssignRole(string Id, string roleName)
         {
-            var user = await _dbContext.applicationUsers.FirstOrDefaultAsync(user => user.NormalizedEmail == email.ToUpper());
+            var user = await _dbContext.applicationUsers.FirstOrDefaultAsync(user => user.Id == Id);
 
             if (user != null)
             {
