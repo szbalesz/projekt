@@ -985,6 +985,35 @@
         }
       }
     },
+    "/api/user/GetAllUser": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Aspnetuser"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Aspnetuser"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Aspnetuser"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/GetPlaylistByUser": {
       "get": {
         "tags": [

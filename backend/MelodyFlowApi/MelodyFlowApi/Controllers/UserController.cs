@@ -140,5 +140,17 @@ namespace MelodyFlowApi.Controllers
             }
             return BadRequest(new { message = "Hiba történt a szerepkörből törlés közben." });
         }
+        [HttpGet("GetAllUser")]
+        public async Task<ActionResult<Aspnetuser>> GetAllUser()
+        {
+            return Ok(await _context.Aspnetusers.Select(p => new
+            {
+                Fullname = p.Fullname,
+                Birthdate = p.BirthDate,
+                ProfilePictureURL = p.ProfilePictureUrl,
+                Username = p.UserName,
+                Email = p.Email
+            }).ToListAsync());
+        }
     }
 }

@@ -632,6 +632,26 @@
   },
   {
     "ContainingType": "MelodyFlowApi.Controllers.UserController",
+    "Method": "GetAllUser",
+    "RelativePath": "api/user/GetAllUser",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "MelodyFlowApi.Models.Aspnetuser",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MelodyFlowApi.Controllers.UserController",
     "Method": "IsAdmin",
     "RelativePath": "api/user/getRole/{id}",
     "HttpMethod": "GET",
