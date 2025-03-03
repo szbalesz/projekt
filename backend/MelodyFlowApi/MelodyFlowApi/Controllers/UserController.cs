@@ -140,6 +140,7 @@ namespace MelodyFlowApi.Controllers
             }
             return BadRequest(new { message = "Hiba történt a szerepkörből törlés közben." });
         }
+        //Lekérjük az összes felhasználónak a selectben megadott paramétereit
         [HttpGet("GetAllUser")]
         public async Task<ActionResult<Aspnetuser>> GetAllUser()
         {
