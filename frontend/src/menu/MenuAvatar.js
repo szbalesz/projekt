@@ -15,6 +15,7 @@ import {
 import { Flex, Span, Text, Theme } from '@chakra-ui/react'
 import { LuPanelRightClose, LuUser } from "react-icons/lu";
 import Cookies from "js-cookie";
+import { Badge } from "@chakra-ui/react"
 import { Link } from 'react-router-dom';
 import api from '../services/Api';
 import { onLogout } from '../services/AuthService';
@@ -57,6 +58,8 @@ export default function MenuAvatar({themecolor, profileMenuItems }) {
                       <Avatar mx={"auto"} boxShadow={`0 0 20px 0 ${themecolor}`} width="125px" height="125px" src={account?.profilePictureURL} /><Flex p="3" color="colorPalette.solid">
                       <Text pt={"2"} mx={"auto"} fontSize={"2xl"} color="bg.inverted">{account?.username}</Text>
                       </Flex>
+                      <Badge mx={"auto"} w={"50px"} colorPalette="red">Admin</Badge>
+                      <Badge mx={"auto"} w={"60px"}>Prémium</Badge>
                   </Flex> :
                   <DrawerActionTrigger as="div">
                     <Link style={{ display: "flex", margin: "5px" }} onClick={onclose} to={"/login"}>

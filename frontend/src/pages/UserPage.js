@@ -4,6 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import MusicCard from '../cards/MusicCard';
 import PlaylistCard from '../cards/PlaylistCard';
 import EditPicture from '../menu/EditPicture';
+import { Badge } from "@chakra-ui/react"
 import Cookies from "js-cookie";
 import { getUserProfile, getUserMusics, getUserPlaylists } from '../services/UserService';
 
@@ -64,7 +65,7 @@ export default function UserPage() {
               Profil
             </Text>
             <Text fontSize="4xl" fontWeight="bold">
-              {account?.username}
+              {account?.username} <Badge colorPalette="red">Admin</Badge> <Badge>Prémium</Badge>
             </Text>
             <Text fontSize="md">
             {musics?.length} zene

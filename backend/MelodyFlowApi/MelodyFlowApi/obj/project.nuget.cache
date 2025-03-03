@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tBAmbuj10Y4=",
+  "dgSpecHash": "SSxzq0q9eLc=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Tanulo\\szbalesz\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\MelodyFlowApi.csproj",
+  "projectFilePath": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\MelodyFlowApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Tanulo\\.nuget\\packages\\bouncycastle.cryptography\\2.5.0\\bouncycastle.cryptography.2.5.0.nupkg.sha512",
     "C:\\Users\\Tanulo\\.nuget\\packages\\google.protobuf\\3.26.1\\google.protobuf.3.26.1.nupkg.sha512",
