@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Login from './pages/Login';
 import Playlists from "./pages/Playlists";
 import Settings from "./pages/Settings";
+import Admin from "./pages/Admin";
 
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import Player from './menu/Player';
@@ -116,6 +117,7 @@ export default function Main({ themecolor, setThemecolor }) {
                   <Route path="/playlist/:id" element={<PlaylistPage/>} />
                   <Route path="/upload" element={<UploadPage/>} />
                   <Route path="/about" element={<About />} />
+                  <Route path="/admin" element={<Admin />} />
                   <Route path="/user/:id" element={<UserPage/>} />
                 </Routes>
                 </Box>

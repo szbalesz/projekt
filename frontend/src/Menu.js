@@ -4,7 +4,7 @@ import SmallSidebar from './menu/SmallSidebar';
 import Sidebar from './menu/Sidebar';
 import { GridItem } from '@chakra-ui/react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { LuBookHeadphones, LuHouse, LuList, LuSearch, LuSettings, LuStar, LuUpload, LuUser, LuUsers, } from 'react-icons/lu';
+import { LuBookHeadphones, LuHouse, LuList, LuSearch, LuSettings, LuShieldBan, LuShieldEllipsis, LuStar, LuUpload, LuUser, LuUsers, } from 'react-icons/lu';
 import Search from './menu/Search';
 import Cookies from "js-cookie";
 
@@ -40,7 +40,8 @@ export default function Menu({ themecolor }) {
   const profileMenuItems = useMemo(() => [
     { label: "Profil megtekintése", icon: <LuUser />, path: "/user/"+userid },
     { label: "Zene feltöltés", icon: <LuUpload />, path: "/upload" },
-    { label: "Beállítások", icon: <LuSettings />, path: "/settings" },
+    { label: "Admin felület", icon: <LuShieldEllipsis />, path: "/admin" },
+    { label: "Beállítások", icon: <LuSettings />, path: "/settings" }
   ], [userid]);
 
   // Felugró popup bezárása
