@@ -9,7 +9,7 @@ import {
 import { Checkbox } from "../components/ui/checkbox"
 import { Avatar } from "../components/ui/avatar";
 import { useState } from "react"
-import { LuTrash } from "react-icons/lu";
+import { LuPen, LuTrash } from "react-icons/lu";
 
 export default function AdminUsers () {
   const [selection, setSelection] = useState([])
@@ -49,16 +49,6 @@ export default function AdminUsers () {
         <Table.Header>
           <Table.Row>
             <Table.ColumnHeader w="6">
-              <Checkbox
-                top="1"
-                aria-label="Select all rows"
-                checked={indeterminate ? "indeterminate" : selection.length > 0}
-                onCheckedChange={(changes) => {
-                  setSelection(
-                    changes.checked ? items.map((item) => item.name) : [],
-                  )
-                }}
-              />
             </Table.ColumnHeader>
             <Table.ColumnHeader>Felhasználó</Table.ColumnHeader>
             <Table.ColumnHeader>Rang</Table.ColumnHeader>
@@ -75,6 +65,9 @@ export default function AdminUsers () {
             {selection.length} kiválasztva
           </ActionBarSelectionTrigger>
           <ActionBarSeparator />
+          <Button variant="outline" size="sm">
+            Szerkesztés <LuPen/>
+          </Button>
           <Button colorPalette={"red"} variant="solid" size="sm">
             Törlés <LuTrash/>
           </Button>
