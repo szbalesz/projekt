@@ -6,21 +6,24 @@ import PlaylistCard from '../cards/PlaylistCard';
 import EditPicture from '../menu/EditPicture';
 import { Badge } from "@chakra-ui/react"
 import Cookies from "js-cookie";
-import { getUserProfile, getUserMusics, getUserPlaylists } from '../services/UserService';
+import { getUserProfile, getUserMusics, getUserPlaylists, getUserRoles } from '../services/UserService';
 
 export default function UserPage() {
   const { id } = useParams(); 
   const userid = Cookies.get("userid");
   const navigate = useNavigate();
   const [account, setAccount] = useState({});
+  const [roles,setRoles] = useState([]);
   const [musics, setMusics] = useState([]);
   const [playlists, setPlaylists] = useState([]);
 
   useEffect(() => {
     const getData = async () => {
       const profileData = await getUserProfile(id);
+      const userRoles = await getUserRoles(id);
       if (profileData) {
         setAccount(profileData);
+        setRoles(userRoles);
       } else {
         navigate("/");
       }
@@ -65,7 +68,9 @@ export default function UserPage() {
               Profil
             </Text>
             <Text fontSize="4xl" fontWeight="bold">
-              {account?.username} <Badge colorPalette="red">Admin</Badge> <Badge>Prémium</Badge>
+              {account?.username}
+              {roles?.includes("Admin")?  <Badge colorPalette="red">Admin</Badge> : null}
+              {roles?.includes("Prémium")? <Badge>Prémium</Badge> : null}
             </Text>
             <Text fontSize="md">
             {musics?.length} zene

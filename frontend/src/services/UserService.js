@@ -15,6 +15,42 @@ export const getUserProfile = async (id) => {
     return null;
   }
 };
+// Összes felhasználó adatainak lekérése
+export const getAllUser = async () => {
+  try {
+    const response = await api.get(`/user/GetAllUser`);
+    let users = response.data;
+    let updatedusers = [];
+    for (const user of users) {
+      const musiccount = (await getUserMusics(user.id)).length;
+      const playlistcount = (await getUserPlaylists(user.id)).length;
+      const roles = (await getUserRoles(user.id));
+      let updateduser = {
+        id: user.id,
+        username: user.username,
+        profilePictureURL: user.profilePictureURL,
+        musiccount: musiccount,
+        playlistcount: playlistcount,
+        roles: roles
+      };
+      updatedusers.push(updateduser);
+    }
+    return updatedusers;
+  } catch (error) {
+    console.error("Hiba történt a profilok lekérése közben:", error);
+    return null;
+  }
+}
+// Felhasználó rolejainak lekérése
+export const getUserRoles = async (id) => {
+  try {
+    const response = await api.get(`/user/getRole/${id}`);
+    return response.data;
+  } catch (error) {
+    console.error("Hiba történt a roleok lekérése közben:", error);
+    return [];
+  }
+}
 // Felhasználó zenéinek lekérése
 export const getUserMusics = async (id) => {
   try {

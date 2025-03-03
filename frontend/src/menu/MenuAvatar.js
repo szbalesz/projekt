@@ -17,18 +17,22 @@ import { LuPanelRightClose, LuUser } from "react-icons/lu";
 import Cookies from "js-cookie";
 import { Badge } from "@chakra-ui/react"
 import { Link } from 'react-router-dom';
-import api from '../services/Api';
 import { onLogout } from '../services/AuthService';
+import { getUserProfile, getUserRoles } from '../services/UserService';
 
 export default function MenuAvatar({themecolor, profileMenuItems }) {
   const userid = Cookies.get("userid");
   const token = Cookies.get("token");
   const [account, setAccount] = useState({});
+  const [roles,setRoles] = useState([]);
   useEffect(() => {
-    api.get("/user/"+userid)
-    .then(response=>{
-      setAccount(response.data[0]);
-    })
+    const getData = async () => {
+      const profileData = await getUserProfile(userid);
+      const userRoles = await getUserRoles(userid);
+      setAccount(profileData);
+      setRoles(userRoles);
+    };
+    getData();
   }, [])
   
   return (
@@ -58,8 +62,8 @@ export default function MenuAvatar({themecolor, profileMenuItems }) {
                       <Avatar mx={"auto"} boxShadow={`0 0 20px 0 ${themecolor}`} width="125px" height="125px" src={account?.profilePictureURL} /><Flex p="3" color="colorPalette.solid">
                       <Text pt={"2"} mx={"auto"} fontSize={"2xl"} color="bg.inverted">{account?.username}</Text>
                       </Flex>
-                      <Badge mx={"auto"} w={"50px"} colorPalette="red">Admin</Badge>
-                      <Badge mx={"auto"} w={"60px"}>Prémium</Badge>
+                      {roles?.includes("Admin")?  <Badge mx={"auto"} w={"50px"} colorPalette="red">Admin</Badge> : null}
+                      {roles?.includes("Prémium")? <Badge mx={"auto"} w={"60px"}>Prémium</Badge> : null}
                   </Flex> :
                   <DrawerActionTrigger as="div">
                     <Link style={{ display: "flex", margin: "5px" }} onClick={onclose} to={"/login"}>
@@ -79,22 +83,25 @@ export default function MenuAvatar({themecolor, profileMenuItems }) {
             </DrawerTitle>
           </DrawerHeader>
           <DrawerBody>
-            {token ? profileMenuItems.map((item, index) =>
-              <DrawerActionTrigger as="div" key={index}>
-                <Link style={{ display: "flex", margin: "5px" }} onClick={onclose} to={item.path}>
-                  <Button
-                    mx={"0"}
-                    my={"0"}
-                    justifyContent={"space-between"}
-                    variant={"subtle"}
-                    colorPalette="current"
-                    w={"100%"}
-                    h="50px"
-                  >
-                    {item.label} {item.icon}
-                  </Button>
-                </Link>
-              </DrawerActionTrigger>
+            {token ? profileMenuItems.map((item, index) => {
+                if(item.label !== "Admin felület" || roles.includes("Admin")){
+                  return (<DrawerActionTrigger as="div" key={index}>
+                  <Link style={{ display: "flex", margin: "5px" }} onClick={onclose} to={item.path}>
+                    <Button
+                      mx={"0"}
+                      my={"0"}
+                      justifyContent={"space-between"}
+                      variant={"subtle"}
+                      colorPalette="current"
+                      w={"100%"}
+                      h="50px"
+                    >
+                      {item.label} {item.icon}
+                    </Button>
+                  </Link>
+                </DrawerActionTrigger>)
+                } 
+                return null}
             ): ""}
           </DrawerBody>
           {token ? <DrawerFooter justifyContent="center">

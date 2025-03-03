@@ -10,38 +10,22 @@ import { Checkbox } from "../components/ui/checkbox"
 import { Avatar } from "../components/ui/avatar";
 import { useState } from "react"
 import { LuPen, LuTrash } from "react-icons/lu";
+import { useEffect } from "react";
+import { getAllUser } from "../services/UserService";
+import { useNavigate } from 'react-router-dom';
 
 export default function AdminUsers () {
-  const [selection, setSelection] = useState([])
-
+  const [selection, setSelection] = useState([]);
+  const navigate = useNavigate();
+  const [users, setUsers] = useState([]);
   const hasSelection = selection.length > 0
-  const indeterminate = hasSelection && selection.length < items.length
-
-  const rows = items.map((item) => (
-    <Table.Row
-      key={item.name}
-      data-selected={selection.includes(item.name) ? "" : undefined}
-    >
-      <Table.Cell>
-        <Checkbox
-          top="1"
-          aria-label="Select row"
-          checked={selection.includes(item.name)}
-          onCheckedChange={(changes) => {
-            setSelection((prev) =>
-              changes.checked
-                ? [...prev, item.name]
-                : selection.filter((name) => name !== item.name),
-            )
-          }}
-        />
-      </Table.Cell>
-      <Table.Cell><Button variant={"ghost"}><Avatar width="25px" height="25px" src={item.image}/>{item.username}</Button></Table.Cell>
-      <Table.Cell><Badge colorPalette="red">{item.rang}</Badge></Table.Cell>
-      <Table.Cell>{item.musics}</Table.Cell>
-      <Table.Cell>{item.playlists}</Table.Cell>
-    </Table.Row>
-  ))
+  const indeterminate = hasSelection && selection.length < users.length
+  useEffect(() => {
+    const getusers = async () =>{
+      setUsers(await getAllUser());
+    }
+    getusers();
+  }, [])
 
   return (
     <>
@@ -56,7 +40,37 @@ export default function AdminUsers () {
             <Table.ColumnHeader>Lejátszási listák száma</Table.ColumnHeader>
           </Table.Row>
         </Table.Header>
-        <Table.Body>{rows}</Table.Body>
+        <Table.Body>
+          {
+            users.map((user) => {
+              return (
+                <Table.Row
+                  key={user.id}
+                  data-selected={selection.includes(user.id) ? "" : undefined}
+                >
+                  <Table.Cell>
+                    <Checkbox
+                      top="1"
+                      aria-label="Select row"
+                      checked={selection.includes(user.id)}
+                      onCheckedChange={(changes) => {
+                        setSelection((prev) =>
+                          changes.checked
+                            ? [...prev, user.id]
+                            : selection.filter((id) => id !== user.id),
+                        )
+                      }}
+                    />
+                  </Table.Cell>
+                  <Table.Cell><Button onClick={()=> {navigate("/user/"+user.id)}} variant={"ghost"}><Avatar width="25px" height="25px" src={user.profilePictureURL}/>{user.username}</Button></Table.Cell>
+                  <Table.Cell>{user.roles.length > 0 ? user.roles.map((role)=> <Badge colorPalette="red">{role}</Badge>) : <Badge>Alap</Badge>}</Table.Cell>
+                  <Table.Cell>{user.musiccount}</Table.Cell>
+                  <Table.Cell>{user.playlistcount}</Table.Cell>
+                </Table.Row>
+              )
+            })
+          }
+        </Table.Body>
       </Table.Root>
 
       <ActionBarRoot open={hasSelection}>
@@ -77,6 +91,3 @@ export default function AdminUsers () {
   )
 }
 
-const items = [
-  { id: 1, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFUAfyVe3Easiycyh3isP9wDQTYuSmGPsPQvLIJdEYvQ_DsFq5Ez2Nh_QjiS3oZ3B8ZPfK9cZQyIStmQMV1lDPLw",username: "Jozsef", rang: "Admin", musics: 999.99, playlists: 5 }
-]

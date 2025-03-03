@@ -19,7 +19,7 @@ export default function AdminMusics () {
 
   const rows = items.map((item) => (
     <Table.Row
-      key={item.name}
+      key={item.id}
       data-selected={selection.includes(item.name) ? "" : undefined}
     >
       <Table.Cell>

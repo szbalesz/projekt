@@ -1,11 +1,29 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Center } from "@chakra-ui/react"
 import { Tabs } from "@chakra-ui/react"
-import { LuBookHeadphones, LuFolder, LuMic, LuMusic, LuSquareCheck, LuUser } from "react-icons/lu"
+import { LuBookHeadphones, LuMusic, LuUser } from "react-icons/lu"
 import AdminUsers from '../menu/AdminUsers'
 import AdminMusics from '../menu/AdminMusics'
 import AdminPlayList from '../menu/AdminPlayLists'
+import { useNavigate } from 'react-router-dom';
+import { getUserRoles } from '../services/UserService'
+import Cookies from "js-cookie";
+
 export default function Admin() {
+  const navigate = useNavigate();
+  const userid = Cookies.get("userid");
+  useEffect(() => {
+    const getroles = async () => {
+      let roles = await getUserRoles(userid);
+      console.log(roles);
+      // Addig csak kikommentelve érhető el mert még a role hozzáadás nem működik
+      // if (!roles.includes("Admin")) { 
+      //   navigate("/");
+      // }
+    };
+    getroles();
+  }, [])
+  
     return (
       // Admin oldal
         <Center pt={"5"} mx={"auto"} maxW={"5xl"}>
