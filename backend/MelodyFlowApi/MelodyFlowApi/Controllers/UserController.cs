@@ -146,6 +146,7 @@ namespace MelodyFlowApi.Controllers
         {
             return Ok(await _context.Aspnetusers.Select(p => new
             {
+                Id=p.Id,
                 Fullname = p.Fullname,
                 Birthdate = p.BirthDate,
                 ProfilePictureURL = p.ProfilePictureUrl,
