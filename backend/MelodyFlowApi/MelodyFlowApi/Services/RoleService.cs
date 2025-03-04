@@ -24,7 +24,7 @@ public class RoleService
         // Ha az szerepkör nem létezik, hozzuk létre
         if (!await _roleManager.RoleExistsAsync(roleName))
         {
-            return false;
+            await _roleManager.CreateAsync(new IdentityRole(roleName));
         }
 
         // Töröljük a szerepkört a felhasználóhoz
