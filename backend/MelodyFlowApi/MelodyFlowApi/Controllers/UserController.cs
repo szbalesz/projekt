@@ -113,7 +113,7 @@ namespace MelodyFlowApi.Controllers
             var success = await roleService.AddRoleAsync(id,roleName);
             if (success)
             {
-                return Ok(new { message = "Sikeresen"+ roleName +"szerepkörbe léptetted a felhasználót." });
+                return Ok(new { message = "Sikeresen "+ roleName +" szerepkörbe léptetted a felhasználót." });
             }
             return BadRequest(new { message = "Hiba történt a szerepkör hozzáadása közben." });
         }

@@ -4675,24 +4675,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Tanulo\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Tanulo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\MelodyFlowApi.csproj",
+      "projectUniqueName": "C:\\Users\\Tanulo\\ftamas\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\MelodyFlowApi.csproj",
       "projectName": "MelodyFlowApi",
-      "projectPath": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\MelodyFlowApi.csproj",
+      "projectPath": "C:\\Users\\Tanulo\\ftamas\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\MelodyFlowApi.csproj",
       "packagesPath": "C:\\Users\\Tanulo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\obj\\",
+      "outputPath": "C:\\Users\\Tanulo\\ftamas\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
         "C:\\Users\\Tanulo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4780,7 +4775,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
