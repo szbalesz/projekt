@@ -18,8 +18,12 @@ export default function PlaylistPage() {
   const [playlist, setPlaylist] = useState([]);
   const [creator, setCreator] = useState({})
 
+  const load = () => {
+    getPlaylist(setPending,id,toaster,setPlaylistId,setMusics,setPlaylist,setCreator,navigate);
+  }
+
   useEffect(() => {
-    getPlaylist(setPending,id,toaster,setPlaylistId,setMusics,setPlaylist,setCreator,navigate)
+    load();
   }, [id]);
   
 
@@ -70,7 +74,7 @@ export default function PlaylistPage() {
               {creator.username}
               </Button>
               {token ? 
-              <PlaylistEditMenu playlist={playlist} playlistName={playlist.playlistName} playlistId={playlistId}/> 
+              <PlaylistEditMenu playlist={playlist} playlistName={playlist.playlistName} playlistId={playlistId} load={load}/> 
               : null}
             </Flex>
           </Box>

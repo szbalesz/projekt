@@ -15,7 +15,7 @@ export default function Player({themecolor, volume, setVolume, currentTime,durat
   };
 
 useEffect(() => {
-  if(currentMusic?.title !== null){
+  if(isPlaying){
     setopen(true);
   }
 }, [isPlaying])

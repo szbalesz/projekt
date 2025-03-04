@@ -6,7 +6,7 @@ import {
   MenuRoot,
   MenuTrigger,
 } from "../components/ui/menu"
-import { LuCircleX, LuEllipsis, LuUserRoundMinus, LuUserRoundPlus } from 'react-icons/lu'
+import { LuCircleX, LuEllipsis, LuPen, LuUserRoundMinus, LuUserRoundPlus } from 'react-icons/lu'
 import DialogAlert from './DialogAlert'
 import { toaster } from '../components/ui/toaster'
 import { useNavigate } from 'react-router-dom'
@@ -14,7 +14,7 @@ import EditPlaylistWindow from './EditPlaylistWindow'
 import { addToMyPlaylists, deletePlaylist, getFavoriteId, getIsPlaylistAdded, removeFromMyPlaylists } from '../services/PlaylistService'
 
 
-export default function PlaylistEditMenu({playlist,playlistName,playlistId}) {
+export default function PlaylistEditMenu({playlist,playlistName,playlistId,load}) {
   const navigate = useNavigate();
   const [isCreator, setIsCreator] = useState(false);
   const [isAdded, setIsAdded] = useState(false);
@@ -40,7 +40,7 @@ export default function PlaylistEditMenu({playlist,playlistName,playlistId}) {
         : null}
         {isCreator ?
          <>
-         <EditPlaylistWindow playlist={playlist}/>
+         <EditPlaylistWindow openbutton={<MenuItem value="szerkeszt"><LuPen/>Adatok szerkesztése</MenuItem>} playlist={playlist} load={load}/>
          <DialogAlert openButton={<MenuItem value="torles" color={"red.500"}><LuCircleX/>Törlés</MenuItem>} func={()=> deletePlaylist(playlistId,toaster,playlistName,navigate)} title={"Biztosan törölni szeretnéd?"} text={"Ez a művelet nem vonható vissza. Ez véglegesen törli a lejátszási listát a rendszerből."} buttontext={"Törlés"}/>
          </> : null}
       </MenuContent>

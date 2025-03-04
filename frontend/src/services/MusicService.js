@@ -125,7 +125,6 @@ export const editMusic = async(music,artist,title,imageurl,toaster,setOpen,getDa
     })
     .then(()=>{
       toaster.create({ title: `Sikeres módosítás!`, type: "success" });
-      getMusic();
       setOpen(false);
       getData();
     })

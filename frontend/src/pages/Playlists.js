@@ -3,7 +3,7 @@ import { Heading, Flex, Box, Text } from "@chakra-ui/react";
 import PlaylistCard from '../cards/PlaylistCard';
 import Cookies from "js-cookie"
 import PlaylistWindow from '../menu/PlaylistWindow';
-import { getAllPlaylist } from '../services/PlaylistService';
+import { getUsersAllPlaylist } from '../services/PlaylistService';
 
 export default function Playlists() {
   const themecolor = localStorage.getItem("themecolor");
@@ -12,7 +12,7 @@ export default function Playlists() {
   const userid = Cookies.get("userid");
 
   const getPlaylists = ()=>{
-    getAllPlaylist(setPlaylists);
+    getUsersAllPlaylist(setPlaylists);
   }
 
   useEffect(() => {

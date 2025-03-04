@@ -14,29 +14,18 @@ import { toaster } from '../components/ui/toaster';
 import { Input } from "@chakra-ui/react"
 import { changeProfilePicture } from '../services/UserService';
 
-export default function EditPicture({account}) {
+export default function EditPicture({userid,openbutton,profilePictureURL,load}) {
     const [imageUrl, setImageUrl] = useState("");
     const themecolor = localStorage.getItem("themecolor");
     const [open, setOpen] = useState(false)
     useEffect(() => {
-        setImageUrl(account.profilePictureURL);
-    }, [account])
+        setImageUrl(profilePictureURL);
+    }, [profilePictureURL])
     
     return (
         <DialogRoot lazyMount open={open} onOpenChange={(e) => setOpen(e.open)} placement={"center"}>
             <DialogTrigger asChild>
-            <Button
-            zIndex={"2"}
-            boxShadowColor={"colorPalette"}
-            boxShadow={"0 0 25px 0"}
-            backgroundImage={`url(${account?.profilePictureURL})`}
-            boxSize={"150px"}
-            variant={"outline"}
-            borderRadius={"full"}
-            backgroundSize={"cover"}
-            backgroundPosition={"center"}
-            fit={"cover"}
-            />
+            {openbutton}
             </DialogTrigger>
             <DialogBackdrop onClick={()=>setOpen(false)}/>
             <DialogContent>
@@ -48,11 +37,11 @@ export default function EditPicture({account}) {
                     <form onSubmit={(e)=>{
                         e.preventDefault();
                         if(imageUrl !== ""){
-                            changeProfilePicture(imageUrl,toaster,setOpen);
+                            changeProfilePicture(userid,imageUrl,toaster,setOpen,load);
                         }
                     }}>
                         <Flex direction={"row"} pb={"3"}>
-                            <Button borderRadius="lg" variant="ghost" height="150px" width="150px" backgroundPosition="center" backgroundImage={"url("+(imageUrl)+")"} backgroundSize="cover" boxShadow={`0 0 15px 0 ${themecolor}`}/>
+                            <Button borderRadius="full" variant="ghost" height="150px" width="150px" backgroundPosition="center" backgroundImage={"url("+(imageUrl)+")"} backgroundSize="cover" boxShadow={`0 0 15px 0 ${themecolor}`}/>
                             <Flex width={"full"} direction={"column"} p={"5"}>
                                 <Input required value={imageUrl} onChange={(e)=> setImageUrl(e.target.value)} my={"5"} placeholder="Kép elérési útja" />
                             </Flex>

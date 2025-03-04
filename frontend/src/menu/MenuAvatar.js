@@ -62,7 +62,7 @@ export default function MenuAvatar({themecolor, profileMenuItems }) {
                       <Avatar mx={"auto"} boxShadow={`0 0 20px 0 ${themecolor}`} width="125px" height="125px" src={account?.profilePictureURL} /><Flex p="3" color="colorPalette.solid">
                       <Text pt={"2"} mx={"auto"} fontSize={"2xl"} color="bg.inverted">{account?.username}</Text>
                       </Flex>
-                      {roles?.includes("Admin")?  <Badge mx={"auto"} w={"50px"} colorPalette="red">Admin</Badge> : null}
+                      {roles?.includes("Admin")?  <Badge mx={"auto"} w={"50px"} bg={"red"} color="bg">Admin</Badge> : null}
                       {roles?.includes("Prémium")? <Badge mx={"auto"} w={"60px"}>Prémium</Badge> : null}
                   </Flex> :
                   <DrawerActionTrigger as="div">
@@ -85,6 +85,7 @@ export default function MenuAvatar({themecolor, profileMenuItems }) {
           <DrawerBody>
             {token ? profileMenuItems.map((item, index) => {
                 if(item.label !== "Admin felület" || roles.includes("Admin")){
+                  let palette = roles?.includes("Admin") && item.label === "Admin felület" ? "red" : "current";
                   return (<DrawerActionTrigger as="div" key={index}>
                   <Link style={{ display: "flex", margin: "5px" }} onClick={onclose} to={item.path}>
                     <Button
@@ -92,7 +93,7 @@ export default function MenuAvatar({themecolor, profileMenuItems }) {
                       my={"0"}
                       justifyContent={"space-between"}
                       variant={"subtle"}
-                      colorPalette="current"
+                      colorPalette={palette}
                       w={"100%"}
                       h="50px"
                     >

@@ -29,6 +29,7 @@ export const getAllUser = async () => {
         id: user.id,
         username: user.username,
         profilePictureURL: user.profilePictureURL,
+        email: user.email,
         musiccount: musiccount,
         playlistcount: playlistcount,
         roles: roles
@@ -72,10 +73,10 @@ export const getUserPlaylists = async (id) => {
   }
 };
 // Felhasználó profilképének módosítása
-export const changeProfilePicture = async (imageUrl,toaster,setOpen) =>{
+export const changeProfilePicture = async (id,imageUrl,toaster,setOpen,load) =>{
   api.put("/user/ChangeProfilePicture", {
     profilePictureURL: imageUrl,
-    id: userid
+    id: id
   }, {
       headers: {
           Authorization: `Bearer ${token}`
@@ -89,7 +90,7 @@ export const changeProfilePicture = async (imageUrl,toaster,setOpen) =>{
   })
   .finally(()=>{
       setOpen(false);
-      window.location.reload(); // az oldal frissítése, hogy az új profilkép mindenhol megjelenjen
+      load();
   })
 }
 // Felhasználó törlése
@@ -114,7 +115,7 @@ export const deleteUser = async (id,toaster,navigate) => {
   })
 }
 // Felhasználónév módosítása
-export const changeUsername = async (userid,toaster,newusername) => {
+export const changeUsername = async (userid,toaster,newusername,load) => {
   api.put("/user/ChangeUserName", {
     userName: newusername,
     id: userid
@@ -132,11 +133,11 @@ export const changeUsername = async (userid,toaster,newusername) => {
   sendEmail(profile.email,newusername,"usernameChange");
   })
   .finally(()=>{
-      window.location.reload(); // az oldal frissítése, hogy az új felhasználónév megjelenjen
+      load();
   })
 }
 // Email módosítása
-export const changeEmail = async (userid,toaster,newemail) => {
+export const changeEmail = async (userid,toaster,newemail,load) => {
   api.put("/user/ChangeEmail", {
     email: newemail,
     id: userid
@@ -154,6 +155,6 @@ export const changeEmail = async (userid,toaster,newemail) => {
   sendEmail(newemail,profile.userName,"emailChange");
   })
   .finally(()=>{
-      window.location.reload(); // az oldal frissítése, hogy az új felhasználónév megjelenjen
+      load();
   })
 }

@@ -17,25 +17,29 @@ export default function UserPage() {
   const [musics, setMusics] = useState([]);
   const [playlists, setPlaylists] = useState([]);
 
+const load = async () => {
+  const getData = async () => {
+    const profileData = await getUserProfile(id);
+    const userRoles = await getUserRoles(id);
+    if (profileData) {
+      setAccount(profileData);
+      setRoles(userRoles);
+    } else {
+      navigate("/");
+    }
+
+    const musicsData = await getUserMusics(id);
+    setMusics(musicsData);
+
+    const playlistsData = await getUserPlaylists(id);
+    setPlaylists(playlistsData);
+  };
+
+  getData();
+}
+
   useEffect(() => {
-    const getData = async () => {
-      const profileData = await getUserProfile(id);
-      const userRoles = await getUserRoles(id);
-      if (profileData) {
-        setAccount(profileData);
-        setRoles(userRoles);
-      } else {
-        navigate("/");
-      }
-
-      const musicsData = await getUserMusics(id);
-      setMusics(musicsData);
-
-      const playlistsData = await getUserPlaylists(id);
-      setPlaylists(playlistsData);
-    };
-
-    getData();
+    load();
   }, [id, navigate]);
 
   return (
@@ -50,7 +54,20 @@ export default function UserPage() {
       >
         <Flex zIndex={"1"} bgGradient="to-tr" gradientFrom="colorPalette.solid/65" gradientTo="transparent" position={"absolute"} w={"full"} h={"190px"}></Flex>
         <Flex overflowX={"clip"} backgroundImage={`url(${account?.profilePictureURL})`} backgroundPosition={"center"} backgroundSize={"cover"} direction={"row"} p={"5"}>
-          {id === userid? <EditPicture account={account}/> :
+          {id === userid? <EditPicture openbutton={<Button
+            zIndex={"2"}
+            boxShadowColor={"colorPalette"}
+            boxShadow={"0 0 25px 0"}
+            backgroundImage={`url(${account?.profilePictureURL})`}
+            boxSize={"150px"}
+            variant={"outline"}
+            borderRadius={"full"}
+            backgroundSize={"cover"}
+            backgroundPosition={"center"}
+            fit={"cover"}
+            />} userid={userid} profilePictureURL={account?.profilePictureURL} load={()=> {
+              window.location.reload();
+            }}/> :
           <Button
             zIndex={"2"}
             boxShadowColor={"colorPalette"}
@@ -63,14 +80,14 @@ export default function UserPage() {
             backgroundPosition={"center"}
             fit={"cover"}
             />}
-          <Box zIndex={"2"} px={"5"} py={"5"}>
+          <Box zIndex={"2"} px={"5"} py={"5"} color={"white"}>
             <Text fontSize="sm">
-              Profil
-            </Text>
-            <Text fontSize="4xl" fontWeight="bold">
-              {account?.username}
-              {roles?.includes("Admin")?  <Badge colorPalette="red">Admin</Badge> : null}
+              {roles?.length === 0 ? <Badge>Profil</Badge> : null}
               {roles?.includes("Prémium")? <Badge>Prémium</Badge> : null}
+              {roles?.includes("Admin")?  <Badge bg={"red"} color="bg">Admin</Badge> : null}
+            </Text>
+            <Text fontSize="4xl" fontWeight="bold" position={"relative"}>
+              {account?.username}
             </Text>
             <Text fontSize="md">
             {musics?.length} zene

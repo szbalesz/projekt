@@ -15,14 +15,14 @@ import { Field } from '../components/ui/field'
 import { changeEmail } from '../services/UserService'
 import { toaster } from '../components/ui/toaster'
 
-export default function EmailChange({userid,currentemail}) {
+export default function EmailChange({openbutton,userid,currentemail,load}) {
     const themecolor = localStorage.getItem("themecolor");
     const [newemail, setNewEmail] = useState("");
     const [open, setOpen] = useState(false)
   return (
     <DialogRoot lazyMount open={open} onOpenChange={(e) => setOpen(e.open)} placement={"center"}>
             <DialogTrigger mx={"auto"} asChild>
-            <Button  size={"sm"} color={"colorPalette.solid"} variant={"ghost"}>Frissítés</Button>
+            {openbutton}
             </DialogTrigger>
             <DialogBackdrop onClick={()=>setOpen(false)}/>
             <DialogContent>
@@ -36,7 +36,7 @@ export default function EmailChange({userid,currentemail}) {
                         if(newemail !== currentemail)
                         {
                             if(newemail.length > 6){
-                                changeEmail(userid,toaster,newemail);
+                                changeEmail(userid,toaster,newemail,load);
                                 setOpen(false);
                                 setNewEmail("");
                             }

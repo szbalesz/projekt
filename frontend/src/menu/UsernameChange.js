@@ -15,14 +15,14 @@ import { Field } from '../components/ui/field'
 import { changeUsername } from '../services/UserService'
 import { toaster } from '../components/ui/toaster'
 
-export default function UsernameChange({userid,currentusername}) {
+export default function UsernameChange({openbutton,userid,currentusername,load}) {
     const themecolor = localStorage.getItem("themecolor");
     const [newusername, setNewUserName] = useState("");
     const [open, setOpen] = useState(false)
   return (
     <DialogRoot lazyMount open={open} onOpenChange={(e) => setOpen(e.open)} placement={"center"}>
             <DialogTrigger mx={"auto"} asChild>
-            <Button  size={"sm"} color={"colorPalette.solid"} variant={"ghost"}>Frissítés</Button>
+            {openbutton}
             </DialogTrigger>
             <DialogBackdrop onClick={()=>setOpen(false)}/>
             <DialogContent>
@@ -36,7 +36,7 @@ export default function UsernameChange({userid,currentusername}) {
                         if(newusername !== currentusername)
                         {
                             if(newusername.length >= 6){
-                                changeUsername(userid,toaster,newusername);
+                                changeUsername(userid,toaster,newusername,load);
                                 setOpen(false);
                                 setNewUserName("");
                             }

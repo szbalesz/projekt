@@ -1,5 +1,5 @@
 
-import { Badge, Button, Kbd, Table } from "@chakra-ui/react"
+import { Button, Table, Text } from "@chakra-ui/react"
 import {
   ActionBarContent,
   ActionBarRoot,
@@ -8,54 +8,112 @@ import {
 } from "../components/ui/action-bar"
 import { Checkbox } from "../components/ui/checkbox"
 import { Avatar } from "../components/ui/avatar";
-import { useState } from "react"
-import { LuPen, LuTrash } from "react-icons/lu";
+import { useEffect, useState } from "react"
+import { LuPen, LuRefreshCw, LuTrash } from "react-icons/lu";
+import { getAllMusic } from "../services/MusicService";
+import { getUserProfile } from "../services/UserService";
+import { useNavigate } from "react-router-dom"
+import DialogAlert from "./DialogAlert";
+import { toaster } from "../components/ui/toaster";
+import { deleteSelectedMusics } from "../services/AdminService";
+import EditMusicWindow from "./EditMusicWindow";
 
-export default function AdminMusics () {
+export default function AdminMusics ({selectedmenu}) {
   const [selection, setSelection] = useState([])
-
+  const [musics,setMusics] = useState([]);
+  const [uploaders, setUploaders] = useState([]);
+  const [isPending,setPending] = useState(false);
   const hasSelection = selection.length > 0
-  const indeterminate = hasSelection && selection.length < items.length
+  const navigate = useNavigate();
+  
+  const getUploader = async (id) => {
+    const user = await getUserProfile(id);
+    return { 
+     username: user.username,
+     profilePictureURL: user.profilePictureURL
+    }
+   }
 
-  const rows = items.map((item) => (
-    <Table.Row
-      key={item.id}
-      data-selected={selection.includes(item.name) ? "" : undefined}
-    >
-      <Table.Cell>
-        <Checkbox
-          top="1"
-          aria-label="Select row"
-          checked={selection.includes(item.name)}
-          onCheckedChange={(changes) => {
-            setSelection((prev) =>
-              changes.checked
-                ? [...prev, item.name]
-                : selection.filter((name) => name !== item.name),
-            )
-          }}
-        />
-      </Table.Cell>
-      <Table.Cell><Button variant={"ghost"}><Avatar width="25px" height="25px" src={item.musicimage}/>{item.title}</Button></Table.Cell>
-      <Table.Cell>{item.artist}</Table.Cell>
-      <Table.Cell><Button variant={"ghost"}><Avatar width="25px" height="25px" src={item.userimage}/>{item.username}</Button></Table.Cell>
-    </Table.Row>
-  ))
+   useEffect(() => {
+     setSelection([]);
+   }, [selectedmenu])
+   
+
+  useEffect(() => {
+    load();
+  }, [])
+
+  useEffect(() => {
+    const fetchProfiles = async () => {
+      const newProfiles = {};
+      for (let music of musics) {
+        if (!newProfiles[music?.uploaderId]) {
+          const profile = await getUploader(music?.uploaderId);
+          newProfiles[music?.uploaderId] = profile;
+        }
+      }
+      setUploaders(newProfiles);
+    };
+    fetchProfiles();
+  }, [musics]);
+  
+  const load = () =>{
+    getAllMusic(setPending,setMusics);
+    setSelection([]);
+  }
 
   return (
     <>
+      <Table.ScrollArea mx={"auto"} maxW={window.innerWidth} borderWidth={"1px"} rounded={"xl"}>
       <Table.Root showColumnBorder>
         <Table.Header>
           <Table.Row>
-            <Table.ColumnHeader w="6">
+          <Table.ColumnHeader w={"5"}>
+              <Button onClick={load} variant={"ghost"} p={"0"} size={"xs"}><LuRefreshCw/></Button>
             </Table.ColumnHeader>
             <Table.ColumnHeader>Zene cím</Table.ColumnHeader>
             <Table.ColumnHeader>Előadó</Table.ColumnHeader>
             <Table.ColumnHeader>Feltöltő</Table.ColumnHeader>
           </Table.Row>
         </Table.Header>
-        <Table.Body>{rows}</Table.Body>
+        <Table.Body>
+          {
+            musics.map((music) => {
+            const profile = uploaders[music?.uploaderId];
+            return (
+            <Table.Row
+              key={music?.id}
+              data-selected={selection.includes(music) ? "" : undefined}
+            >
+              <Table.Cell>
+                <Checkbox
+                  top="1"
+                  aria-label="Select row"
+                  checked={selection.includes(music)}
+                  onCheckedChange={(changes) => {
+                    setSelection((prev) =>
+                      changes.checked
+                        ? [...prev, music]
+                        : selection.filter((name) => name !== music),
+                    )
+                  }}
+                />
+              </Table.Cell>
+              <Table.Cell>
+              <Button onClick={()=>{
+                navigate("/music/"+music?.id)
+              }} variant={"ghost"}><Avatar width="25px" height="25px" src={music?.imageUrl}/>{music?.title}</Button>
+              </Table.Cell>
+              <Table.Cell>{music?.artist}</Table.Cell>
+              <Table.Cell><Button onClick={()=>{
+                navigate("/user/"+music?.uploaderId)
+              }} variant={"ghost"}><Avatar width="25px" height="25px" src={profile?.profilePictureURL}/>{profile?.username}</Button></Table.Cell>
+            </Table.Row>
+          )})
+          }
+        </Table.Body>
       </Table.Root>
+      </Table.ScrollArea>
 
       <ActionBarRoot open={hasSelection}>
         <ActionBarContent>
@@ -63,18 +121,21 @@ export default function AdminMusics () {
             {selection.length} kiválasztva
           </ActionBarSelectionTrigger>
           <ActionBarSeparator />
-          <Button variant="outline" size="sm">
-            Szerkesztés <LuPen/>
-          </Button>
-          <Button colorPalette={"red"} variant="solid" size="sm">
-            Törlés <LuTrash/>
-          </Button>
+          <EditMusicWindow 
+            openbutton={<Button
+            disabled={selection?.length !== 1}
+            variant="outline" size="sm">
+              Szerkesztés <LuPen/>
+            </Button>} 
+            music={selection[0]} 
+            getData={load}/>
+          <DialogAlert 
+           openButton={<Button colorPalette={"red"} variant="solid" size="sm">Törlés <LuTrash/></Button>}
+           title={"Biztosan törölni szeretnéd?"} 
+           func={()=> deleteSelectedMusics(selection,toaster,load)} 
+           text={"Ez a művelet nem vonható vissza. Ez véglegesen törli a kiválasztott zenéket a rendszerből."} buttontext={"Törlés"}/>
         </ActionBarContent>
       </ActionBarRoot>
     </>
   )
 }
-
-const items = [
-  { id: 1, musicimage : "https://i.ytimg.com/vi/RBlh62UZzCo/maxresdefault.jpg",title: "SZÍNVAK", artist: "VALMAR", userimage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFUAfyVe3Easiycyh3isP9wDQTYuSmGPsPQvLIJdEYvQ_DsFq5Ez2Nh_QjiS3oZ3B8ZPfK9cZQyIStmQMV1lDPLw",username: "Jozsef" }
-]

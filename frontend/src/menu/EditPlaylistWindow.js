@@ -14,21 +14,20 @@ import { Input } from "@chakra-ui/react"
 import { toaster } from '../components/ui/toaster'
 import { editPlaylist } from "../services/PlaylistService"
 import Cookies from "js-cookie";
-import { LuPen } from 'react-icons/lu'
 import { Field } from '../components/ui/field'
 
-export default function EditPlaylistWindow({ playlist }) {
+export default function EditPlaylistWindow({ openbutton,playlist,load }) {
     const token = Cookies.get("token");
     const themecolor = localStorage.getItem("themecolor");
-    const [playlistName, setPlaylistName] = useState(playlist.playlistName);
-    const [imageUrl, setImageUrl] = useState(playlist.imageUrl);
+    const [playlistName, setPlaylistName] = useState(playlist?.playlistName);
+    const [imageUrl, setImageUrl] = useState(playlist?.imageUrl);
     const [open, setOpen] = useState(false)
 
     return (
         // Új lejátszási lista ablak
         <DialogRoot lazyMount open={open} onOpenChange={(e) => setOpen(e.open)} placement={"center"}>
             <DialogTrigger mx={"auto"} asChild>
-            <MenuItem value="szerkeszt"><LuPen/>Adatok szerkesztése</MenuItem>
+            {openbutton}
             </DialogTrigger>
             <DialogBackdrop onClick={()=>setOpen(false)}/>
             <DialogContent>
@@ -40,7 +39,7 @@ export default function EditPlaylistWindow({ playlist }) {
                     <form onSubmit={(e)=>{
                         e.preventDefault();
                         if(token){
-                            editPlaylist(playlist,imageUrl,playlistName,toaster,setOpen);
+                            editPlaylist(playlist,imageUrl,playlistName,toaster,setOpen,load);
                         }
                     }}>
                         <Flex direction={"row"} pb={"3"}>

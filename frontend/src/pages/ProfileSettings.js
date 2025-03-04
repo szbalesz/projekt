@@ -57,7 +57,9 @@ export default function ProfileSettings() {
                         </Text>
                         </Flex>
                         <Flex pt={"2"} px={"3"}>
-                        <UsernameChange userid={userid} currentusername={account?.username}/>
+                        <UsernameChange load={()=> {
+                            window.location.reload();
+                        }} openbutton={<Button  size={"sm"} color={"colorPalette.solid"} variant={"ghost"}>Frissítés</Button>} userid={userid} currentusername={account?.username}/>
                         </Flex>
                     </Flex>
                     <Flex direction={"row"} justifyContent={"space-between"} pt={"3"}>
@@ -70,7 +72,7 @@ export default function ProfileSettings() {
                         </Text>
                         </Flex>
                         <Flex pt={"2"} px={"3"}>
-                            <EmailChange userid={userid} currentemail={account?.email}/>
+                            <EmailChange openbutton={<Button  size={"sm"} color={"colorPalette.solid"} variant={"ghost"}>Frissítés</Button>} userid={userid} currentemail={account?.email} load={()=> window.location.reload()}/>
                         </Flex>
                     </Flex>
                     <Flex direction={"row"} justifyContent={"space-between"} pt={"3"}>

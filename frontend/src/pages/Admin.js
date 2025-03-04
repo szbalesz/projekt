@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Center } from "@chakra-ui/react"
 import { Tabs } from "@chakra-ui/react"
 import { LuBookHeadphones, LuMusic, LuUser } from "react-icons/lu"
@@ -12,14 +12,13 @@ import Cookies from "js-cookie";
 export default function Admin() {
   const navigate = useNavigate();
   const userid = Cookies.get("userid");
+  const [selectedmenu, setSelectedMenu] = useState("adminusers")
   useEffect(() => {
     const getroles = async () => {
       let roles = await getUserRoles(userid);
-      console.log(roles);
-      // Addig csak kikommentelve érhető el mert még a role hozzáadás nem működik
-      // if (!roles.includes("Admin")) { 
-      //   navigate("/");
-      // }
+      if (!roles.includes("Admin")) { 
+        navigate("/");
+      }
     };
     getroles();
   }, [])
@@ -27,30 +26,30 @@ export default function Admin() {
     return (
       // Admin oldal
         <Center pt={"5"} mx={"auto"} maxW={"5xl"}>
-            <Tabs.Root w={"5xl"} defaultValue="adminusers" variant="plain" >
-      <Tabs.List w={"100%"} justifyContent={"center"} rounded="l3" p="1">
-        <Tabs.Trigger value="adminusers">
+    <Tabs.Root w={"5xl"} defaultValue={selectedmenu} variant="plain" >
+      <Tabs.List flexDir={{base: "column", md: "row"}} textAlign={"center"} w={"100%"} justifyContent={"center"} rounded="l3" p="1">
+        <Tabs.Trigger mx={"auto"} onClick={()=> setSelectedMenu("adminusers")} value="adminusers">
           <LuUser />
           Összes felhasználó
         </Tabs.Trigger>
-        <Tabs.Trigger value="adminmusics">
+        <Tabs.Trigger mx={"auto"} onClick={()=> setSelectedMenu("adminmusics")} value="adminmusics">
           <LuMusic />
           Összes zene
         </Tabs.Trigger>
-        <Tabs.Trigger value="adminplaylists">
+        <Tabs.Trigger mx={"auto"} onClick={()=> setSelectedMenu("adminplaylists")} value="adminplaylists">
           <LuBookHeadphones />
           Összes lejátszási lista
         </Tabs.Trigger>
         <Tabs.Indicator rounded="l2" />
       </Tabs.List>
       <Tabs.Content value="adminusers">
-        <AdminUsers/>
+        <AdminUsers selectedmenu={selectedmenu}/>
       </Tabs.Content>
       <Tabs.Content value="adminmusics">
-        <AdminMusics/>
+        <AdminMusics selectedmenu={selectedmenu}/>
     </Tabs.Content>
       <Tabs.Content value="adminplaylists">
-        <AdminPlayList/>
+        <AdminPlayList selectedmenu={selectedmenu}/>
       </Tabs.Content>
     </Tabs.Root>
         </Center>

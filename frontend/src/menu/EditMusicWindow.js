@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button, Center, MenuItem, Stack, Text, Theme } from "@chakra-ui/react"
 import {
     DialogBackdrop,
@@ -13,25 +13,30 @@ import {
 import { Input } from "@chakra-ui/react"
 import { toaster } from '../components/ui/toaster'
 import Cookies from "js-cookie";
-import { LuPen } from 'react-icons/lu'
 import BigMusicCard from '../cards/BigMusicCard'
 import { Field } from '../components/ui/field'
 import { editMusic } from '../services/MusicService'
 
-export default function EditMusicWindow({getData, music}) {
+export default function EditMusicWindow({openbutton,getData, music}) {
     const token = Cookies.get("token");
     const themecolor = localStorage.getItem("themecolor");
     const [open, setOpen] = useState(false)
-    const [title, setTitle] = useState(music.title);
-    const [artist, setArtist] = useState(music.artist);
-    const [imageurl, setImageurl] = useState(music.imageUrl);
+    const [title, setTitle] = useState(music?.title);
+    const [artist, setArtist] = useState(music?.artist);
+    const [imageurl, setImageurl] = useState(music?.imageUrl);
+
+    const handleEdit = async () => {
+        const editm = await editMusic(music,artist,title,imageurl,toaster,setOpen,getData);
+    }
 
     return (
         // Új lejátszási lista ablak
         <DialogRoot size={"xl"} lazyMount open={open} onOpenChange={(e) => setOpen(e.open)} placement={"center"}>
+
             <DialogTrigger mx={"auto"} asChild>
-            <MenuItem value="szerkeszt"><LuPen/>Adatok szerkesztése</MenuItem>
-            </DialogTrigger>
+                {openbutton}
+            </DialogTrigger> 
+            
             <DialogBackdrop onClick={()=>setOpen(false)}/>
             <DialogContent>
             <Theme colorPalette={themecolor} display={"flex"} flexDirection={"column"} bg={"Background"} h={"100%"}>
@@ -43,7 +48,7 @@ export default function EditMusicWindow({getData, music}) {
                     <form onSubmit={(e)=>{
                         e.preventDefault();
                         if(token){
-                            editMusic(music,artist,title,imageurl,toaster,setOpen,getData);
+                            handleEdit();
                         }
                         }}>
                             <Field py="1" label="Zene cím" required helperText="Add meg a zene címét.">

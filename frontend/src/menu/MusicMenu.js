@@ -6,7 +6,7 @@ import {
   MenuTrigger,
 } from "../components/ui/menu"
 import AddToPlaylistMenu from '../menu/AddToPlaylistMenu';
-import { LuCircleX, LuList } from "react-icons/lu";
+import { LuCircleX, LuList, LuPen } from "react-icons/lu";
 import DialogAlert from "./DialogAlert";
 import EditMusicWindow from "./EditMusicWindow";
 import Cookies from "js-cookie"
@@ -24,7 +24,7 @@ export default function MusicMenu({getData, isUploader, getMusic, music, setFavo
         : null}
         {isUploader? 
         <>
-        <EditMusicWindow getData={getData} music={music} getMusic={getMusic}/>
+        <EditMusicWindow openbutton={<MenuItem value="szerkeszt"><LuPen/>Adatok szerkesztése</MenuItem>} getData={getData} music={music} />
         <DialogAlert openButton={<MenuItem value="torles" color={"red.500"}><LuCircleX/>Törlés</MenuItem>} title={"Biztosan törölni szeretnéd?"} func={deleteMusic} text={"Ez a művelet nem vonható vissza. Ez véglegesen törli a zenét a rendszerből."} buttontext={"Törlés"}/>
         </>
         : null}

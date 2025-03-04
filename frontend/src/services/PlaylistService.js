@@ -21,6 +21,19 @@ export const getFavoritePlaylist = async (musicid) => {
         return { favoritePlaylistId: "", isFavorite: false };
     }
 }
+// Összes lejátszási lista lekérése
+export const getAllPlaylist = async (setPlaylists) => {
+   await api.get("/GetAllPlaylist")
+    .then(response => {
+        setPlaylists(response.data);
+    })
+    .catch(e => {console.error("HIBA, Nem sikerült lekérni a lejátszási listákat: ",e);}) 
+}
+// Id alapján lejátszási lista lekérése
+export const getPlaylistById = async (id) =>{
+  const response = await api.get("/playlist/"+id)
+  return response.data;
+}
 // Lejátszási lista keresés függvény
 export const searchPlaylist = async (query) => {
   try {
@@ -65,8 +78,8 @@ export const getPlaylist = async (setPending,id,toaster,setPlaylistId,setMusics,
       setPending(false);
     }
 }
-// Összes lejátszási lista lekérése függvény
-export const getAllPlaylist = async (setPlaylists) =>{
+// Felhasználó összes lejátszási listájának lekérése függvény
+export const getUsersAllPlaylist = async (setPlaylists) =>{
     if(token){
         api.get("/GetPlaylistByUser?id="+userid)
         .then(response => {
@@ -104,8 +117,8 @@ export const createPlaylist = async (newPlaylist,toaster,setPlaylistName,setImag
     })
 }
 // Lejátszási lista törlés függvény
-export const deletePlaylist =(playlistId,toaster,playlistName,navigate)=>{
-    api.delete("/playlist/"+playlistId,{
+export const deletePlaylist = async (playlistId,toaster,playlistName,navigate)=>{
+    await api.delete("/playlist/"+playlistId,{
       headers: {
         Authorization: `Bearer ${token}`
     }
@@ -171,7 +184,7 @@ export  const removeFromMyPlaylists = (playlistId,playlistName,toaster,setIsAdde
     })
 }
 // Lejátszási lista adatainak módosítása függvény
-export const editPlaylist = async(playlist,imageUrl,playlistName,toaster,setOpen)=>{
+export const editPlaylist = async(playlist,imageUrl,playlistName,toaster,setOpen,load)=>{
   api.put("/playlist/"+playlist.id,{imageUrl,playlistName},{
       headers: {
         Authorization: `Bearer ${token}`
@@ -180,7 +193,7 @@ export const editPlaylist = async(playlist,imageUrl,playlistName,toaster,setOpen
     .then(()=>{
       toaster.create({ title: `Sikeres módosítás!`, type: "success" });
       setOpen(false);
-      window.location.reload(); // oldal frissítése a módosított adatok megjelenítése miatt
+      load();
     })
     .catch((e)=>{
       console.error("Hiba történt a lista hozzáadása közben: ",e);
