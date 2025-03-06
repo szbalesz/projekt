@@ -9,17 +9,16 @@ import AddToPlaylistMenu from '../menu/AddToPlaylistMenu';
 import { LuCircleX, LuList, LuPen } from "react-icons/lu";
 import DialogAlert from "./DialogAlert";
 import EditMusicWindow from "./EditMusicWindow";
-import Cookies from "js-cookie"
+import { getToken } from "../services/AuthService";
 
-export default function MusicMenu({getData, isUploader, getMusic, music, setFavorite, isFavorite, musicId, deleteMusic}) {
-  const token = Cookies.get("token");
+export default function MusicMenu({getData, isUploader, music, setFavorite, isFavorite, musicId, deleteMusic}) {
   return (
     <MenuRoot>
       <MenuTrigger asChild>
       <Button p={1} m={1} variant="solid"><LuList/></Button> 
       </MenuTrigger>
       <MenuContent>
-        {token? 
+        {getToken()? 
         <AddToPlaylistMenu setFavorite={setFavorite} isFavorite={isFavorite} musicId={musicId}/> 
         : null}
         {isUploader? 

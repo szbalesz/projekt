@@ -27,7 +27,7 @@ export default function PlaylistEditMenu({playlist,playlistName,playlistId,load}
   return (
     <MenuRoot>
       <MenuTrigger asChild>
-      <Button size={"s"} variant={"ghost"}>
+      <Button color={"white"} size={"s"} variant={"ghost"}>
                 <LuEllipsis/>
         </Button>
       </MenuTrigger>

@@ -6,7 +6,7 @@ import { Slider } from '../components/ui/slider';
 import { toaster } from '../components/ui/toaster';
 import { Avatar } from '../components/ui/avatar';
 import MusicMenu from '../menu/MusicMenu';
-import { getUserProfile } from '../services/UserService';
+import { getUserId, getUserProfile } from '../services/UserService';
 import {
   getMusic,
   deleteMusic, 
@@ -14,7 +14,6 @@ import {
   removeFromFavorite
 } from '../services/MusicService';
 import { getFavoritePlaylist } from "../services/PlaylistService";
-import Cookies from "js-cookie";
 const MusicPage = ({ currentTime, handleSliderChange, duration, currentMusic, handlePlay, isPlaying }) => {
   const themecolor = localStorage.getItem("themecolor");
   const { id } = useParams();
@@ -34,7 +33,7 @@ const MusicPage = ({ currentTime, handleSliderChange, duration, currentMusic, ha
     const musicData = await getMusic(id);
     if (musicData) {
       setMusic(musicData);
-      setIsUploader(musicData.uploaderId === Cookies.get("userid"));
+      setIsUploader(musicData.uploaderId === getUserId());
       const uploaderData = await getUserProfile(musicData.uploaderId);
       if (uploaderData) {
         setUploader(uploaderData);

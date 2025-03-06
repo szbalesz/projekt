@@ -1,7 +1,7 @@
 import api from './Api';
-import Cookies from "js-cookie";
+import { getToken } from './AuthService';
 
-const token = Cookies.get("token");
+const token = getToken();
 // Összes zene lekérése függvény
 export const getAllMusic = async (setPending,setMusicList) =>{
     setPending(true);

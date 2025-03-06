@@ -5,16 +5,17 @@ import { HiUpload } from "react-icons/hi";
 import React, { useState } from 'react';
 import { toaster } from '../components/ui/toaster';
 import BigMusicCard from "../cards/BigMusicCard"
-import Cookies from "js-cookie"
 import { uploadMusic } from '../services/MusicService';
+import { getToken } from '../services/AuthService';
+import { getUserId } from '../services/UserService';
 
 export default function UploadPage() {
     const [title, setTitle] = useState("");
     const [artist, setArtist] = useState("");
     const [imageurl, setImageurl] = useState("");
     const [musicfile, setMusicfile] = useState(null);
-    const userid = Cookies.get("userid");
-    const token = Cookies.get("token");
+    const userid = getUserId();
+    const token = getToken();
     return (
         // Zene feltöltés
         <Center>

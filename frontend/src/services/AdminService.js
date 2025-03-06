@@ -1,9 +1,9 @@
 import api from "./Api";
-import Cookies from "js-cookie";
 import { sendEmail } from "./EmailService";
 import { getUserProfile } from "./UserService";
+import { getToken } from "./AuthService";
 
-const token = Cookies.get("token");
+const token = getToken();
 
 // Kiválasztott felhasználók törlése
 export const deleteSelectedUsers = async (selecteduserids,toaster,load) => {

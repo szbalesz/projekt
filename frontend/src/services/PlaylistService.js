@@ -1,8 +1,9 @@
 import api from './Api';
 import Cookies from "js-cookie";
 import { getUserProfile } from './UserService';
+import { getToken } from './AuthService';
 
-const token = Cookies.get("token");
+const token = getToken();
 const userid = Cookies.get("userid");
 // Kedvencek lejátszási lista megkeresése függvény
 export const getFavoritePlaylist = async (musicid) => {

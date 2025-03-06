@@ -6,12 +6,11 @@ import AdminUsers from '../menu/AdminUsers'
 import AdminMusics from '../menu/AdminMusics'
 import AdminPlayList from '../menu/AdminPlayLists'
 import { useNavigate } from 'react-router-dom';
-import { getUserRoles } from '../services/UserService'
-import Cookies from "js-cookie";
+import { getUserId, getUserRoles } from '../services/UserService'
 
 export default function Admin() {
   const navigate = useNavigate();
-  const userid = Cookies.get("userid");
+  const userid = getUserId();
   const [selectedmenu, setSelectedMenu] = useState("adminusers")
   useEffect(() => {
     const getroles = async () => {

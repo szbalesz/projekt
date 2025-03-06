@@ -2,15 +2,15 @@ import React, { useEffect, useState } from "react";
 import MusicCard from "../cards/MusicCard";
 import { AbsoluteCenter, Box, Button, Flex, Heading, Spinner, Text } from "@chakra-ui/react";
 import { useNavigate, useParams } from "react-router-dom";
-import Cookies from "js-cookie";
 import PlaylistEditMenu from "../menu/PlaylistEditMenu";
 import { Avatar } from "../components/ui/avatar";
 import { toaster } from "../components/ui/toaster";
 import { getPlaylist } from "../services/PlaylistService";
+import { getToken } from "../services/AuthService";
 
 export default function PlaylistPage() {
   const navigate = useNavigate();
-  let token = Cookies.get("token");
+  const token = getToken();
   let { id } = useParams();
   const [playlistId, setPlaylistId] = useState(id);
   const [isPending, setPending] = useState(false);
@@ -56,7 +56,7 @@ export default function PlaylistPage() {
             backgroundPosition={"center"}
             fit={"cover"}
           />
-          <Box zIndex={"2"} px={"5"} pt={"5"}>
+          <Box zIndex={"2"} px={"5"} pt={"5"} color={"white"}>
             <Text fontSize="sm">
               Lejátszási lista
             </Text>
@@ -67,7 +67,7 @@ export default function PlaylistPage() {
             {musics.length} zene
             </Text>
             <Flex fontSize="md" p={"0"}>
-              <Button onClick={()=> {
+              <Button color={"white"} onClick={()=> {
                 navigate("/user/"+playlist.creatorId)
               }} mr={"1"} p={"0"} size={"xs"} variant={"ghost"}>
               <Avatar width="25px" height="25px" src={creator.profilePictureURL}/>

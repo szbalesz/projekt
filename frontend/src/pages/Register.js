@@ -14,8 +14,7 @@ import { Field } from "../components/ui/field"
 import { Link, useNavigate } from 'react-router-dom';
 import { PasswordInput } from "../components/ui/password-input"
 import { toaster } from '../components/ui/toaster';
-import Cookies from "js-cookie"
-import { onRegister, onLogin } from '../services/AuthService';
+import { onRegister, onLogin, getToken } from '../services/AuthService';
 
 export default function Register() {
     const themecolor = localStorage.getItem("themecolor");
@@ -24,9 +23,8 @@ export default function Register() {
     const [password, setPassword] = useState("");
     const [passwordAgain, setPasswordAgain] = useState("");
     const navigate = useNavigate();
-    const token = Cookies.get("token");
     useEffect(() => {
-      if(token){
+      if(getToken()){
         navigate(-1)
       }
     }, [])

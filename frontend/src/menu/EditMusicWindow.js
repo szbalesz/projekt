@@ -12,13 +12,13 @@ import {
 } from "../components/ui/dialog"
 import { Input } from "@chakra-ui/react"
 import { toaster } from '../components/ui/toaster'
-import Cookies from "js-cookie";
 import BigMusicCard from '../cards/BigMusicCard'
 import { Field } from '../components/ui/field'
 import { editMusic } from '../services/MusicService'
+import { getToken } from '../services/AuthService'
 
 export default function EditMusicWindow({openbutton,getData, music}) {
-    const token = Cookies.get("token");
+    const token = getToken();
     const themecolor = localStorage.getItem("themecolor");
     const [open, setOpen] = useState(false)
     const [title, setTitle] = useState(music?.title);

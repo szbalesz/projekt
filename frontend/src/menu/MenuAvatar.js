@@ -14,15 +14,14 @@ import {
 } from "../components/ui/drawer"
 import { Flex, Span, Text, Theme } from '@chakra-ui/react'
 import { LuPanelRightClose, LuUser } from "react-icons/lu";
-import Cookies from "js-cookie";
 import { Badge } from "@chakra-ui/react"
 import { Link } from 'react-router-dom';
-import { onLogout } from '../services/AuthService';
-import { getUserProfile, getUserRoles } from '../services/UserService';
+import { getToken, onLogout } from '../services/AuthService';
+import { getUserId, getUserProfile, getUserRoles } from '../services/UserService';
 
 export default function MenuAvatar({themecolor, profileMenuItems }) {
-  const userid = Cookies.get("userid");
-  const token = Cookies.get("token");
+  const userid = getUserId();
+  const token = getToken();
   const [account, setAccount] = useState({});
   const [roles,setRoles] = useState([]);
   useEffect(() => {

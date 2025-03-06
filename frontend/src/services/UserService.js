@@ -1,10 +1,14 @@
 import api from './Api';
 import Cookies from "js-cookie";
 import { sendEmail } from './EmailService';
-import { onLogout } from './AuthService';
+import { getToken, onLogout } from './AuthService';
 
-const token = Cookies.get("token");
-const userid = Cookies.get("userid");
+const token = getToken();
+
+export const getUserId = () => {
+  return Cookies.get("userid");
+}
+
 // Felhasználó adatainak lekérése
 export const getUserProfile = async (id) => {
   try {
@@ -115,10 +119,10 @@ export const deleteUser = async (id,toaster,navigate) => {
   })
 }
 // Felhasználónév módosítása
-export const changeUsername = async (userid,toaster,newusername,load) => {
+export const changeUsername = async (id,toaster,newusername,load) => {
   api.put("/user/ChangeUserName", {
     userName: newusername,
-    id: userid
+    id: id
   }, {
       headers: {
           Authorization: `Bearer ${token}`
@@ -129,7 +133,7 @@ export const changeUsername = async (userid,toaster,newusername,load) => {
       title: `Felhasználónév sikeresen módosítva!`,
       type: "success",
   })
-  const profile = await getUserProfile(userid);
+  const profile = await getUserProfile(id);
   sendEmail(profile.email,newusername,"usernameChange");
   })
   .finally(()=>{
@@ -137,10 +141,10 @@ export const changeUsername = async (userid,toaster,newusername,load) => {
   })
 }
 // Email módosítása
-export const changeEmail = async (userid,toaster,newemail,load) => {
+export const changeEmail = async (id,toaster,newemail,load) => {
   api.put("/user/ChangeEmail", {
     email: newemail,
-    id: userid
+    id: id
   }, {
       headers: {
           Authorization: `Bearer ${token}`
@@ -151,7 +155,7 @@ export const changeEmail = async (userid,toaster,newemail,load) => {
       title: `Email cím sikeresen módosítva!`,
       type: "success",
   })
-  const profile = await getUserProfile(userid);
+  const profile = await getUserProfile(id);
   sendEmail(newemail,profile.userName,"emailChange");
   })
   .finally(()=>{

@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { Heading, Flex, Box, Text } from "@chakra-ui/react";
 import PlaylistCard from '../cards/PlaylistCard';
-import Cookies from "js-cookie"
 import PlaylistWindow from '../menu/PlaylistWindow';
 import { getUsersAllPlaylist } from '../services/PlaylistService';
+import { getToken } from '../services/AuthService';
+import { getUserId } from '../services/UserService';
 
 export default function Playlists() {
   const themecolor = localStorage.getItem("themecolor");
   const [playlists, setPlaylists] = useState()
-  const token = Cookies.get("token");
-  const userid = Cookies.get("userid");
+  const token = getToken();
+  const userid = getUserId();
 
   const getPlaylists = ()=>{
     getUsersAllPlaylist(setPlaylists);
@@ -34,7 +35,7 @@ export default function Playlists() {
         <Flex zIndex={"1"} bgGradient="to-tr" gradientFrom="colorPalette.solid/65" gradientTo="transparent" position={"absolute"} w={"full"} h={"190px"}></Flex>
         <Flex backgroundImage={`url($)`} backgroundPosition={"center"} backgroundSize={"cover"} direction={"row"} h={"190px"} p={"5"}>
           <Box zIndex={"2"} px={"5"} py={"5"}>
-            <Text fontSize="4xl" py={"5"} fontWeight="bold">
+            <Text fontSize="4xl" py={"5"} fontWeight="bold" color={"white"}>
               Lejátszási listák
             </Text>
           </Box>

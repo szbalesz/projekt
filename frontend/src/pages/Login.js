@@ -15,8 +15,7 @@ import { Field } from "../components/ui/field"
 import { Checkbox } from "../components/ui/checkbox"
 import { Link, useNavigate } from 'react-router-dom';
 import { PasswordInput } from "../components/ui/password-input"
-import Cookies from "js-cookie"
-import { onLogin } from "../services/AuthService";
+import { getToken, onLogin } from "../services/AuthService";
 
 export default function Login() {
   const themecolor = localStorage.getItem("themecolor");
@@ -24,7 +23,7 @@ export default function Login() {
   const [password, setPassword] = useState("")
   const navigate = useNavigate();
   useEffect(() => {
-    if(Cookies.get("token")){
+    if(getToken()){
       navigate(-1)
     }
   }, [])

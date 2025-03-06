@@ -1,0 +1,1728 @@
+{
+  "Version": 1,
+  "ManifestType": "Build",
+  "Endpoints": [
+    {
+      "Route": "music/0859b03c-fb8b-419e-9d1e-a6f66332d07c_The Weeknd - Save Your Tears (Official Music Video).hs9y8fqsa3.mp3",
+      "AssetFile": "music/0859b03c-fb8b-419e-9d1e-a6f66332d07c_The Weeknd - Save Your Tears (Official Music Video).mp3",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5976744"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "audio/mpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"EaqBB2QWNCVu6xf+bEGYTzol5MKsObFG1VQb0sO9gBk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Feb 2025 06:28:26 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "hs9y8fqsa3"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-EaqBB2QWNCVu6xf+bEGYTzol5MKsObFG1VQb0sO9gBk="
+        },
+        {
+          "Name": "label",
+          "Value": "music/0859b03c-fb8b-419e-9d1e-a6f66332d07c_The Weeknd - Save Your Tears (Official Music Video).mp3"
+        }
+      ]
+    },
+    {
+      "Route": "music/0859b03c-fb8b-419e-9d1e-a6f66332d07c_The Weeknd - Save Your Tears (Official Music Video).mp3",
+      "AssetFile": "music/0859b03c-fb8b-419e-9d1e-a6f66332d07c_The Weeknd - Save Your Tears (Official Music Video).mp3",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5976744"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "audio/mpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"EaqBB2QWNCVu6xf+bEGYTzol5MKsObFG1VQb0sO9gBk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Feb 2025 06:28:26 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-EaqBB2QWNCVu6xf+bEGYTzol5MKsObFG1VQb0sO9gBk="
+        }
+      ]
+    },
+    {
+      "Route": "music/0c3e50a4-6c2e-4c03-b795-b1fb797c7ddb_Kendrick Lamar - Not Like Us.0qyeis3662.mp3",
+      "AssetFile": "music/0c3e50a4-6c2e-4c03-b795-b1fb797c7ddb_Kendrick Lamar - Not Like Us.mp3",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8505815"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "audio/mpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"uGadyiqCq8CWGkFAzin/dP116QSioZom0NKQDNZv860=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Feb 2025 06:28:26 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "0qyeis3662"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-uGadyiqCq8CWGkFAzin/dP116QSioZom0NKQDNZv860="
+        },
+        {
+          "Name": "label",
+          "Value": "music/0c3e50a4-6c2e-4c03-b795-b1fb797c7ddb_Kendrick Lamar - Not Like Us.mp3"
+        }
+      ]
+    },
+    {
+      "Route": "music/0c3e50a4-6c2e-4c03-b795-b1fb797c7ddb_Kendrick Lamar - Not Like Us.mp3",
+      "AssetFile": "music/0c3e50a4-6c2e-4c03-b795-b1fb797c7ddb_Kendrick Lamar - Not Like Us.mp3",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8505815"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "audio/mpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"uGadyiqCq8CWGkFAzin/dP116QSioZom0NKQDNZv860=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Feb 2025 06:28:26 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-uGadyiqCq8CWGkFAzin/dP116QSioZom0NKQDNZv860="
+        }
+      ]
+    },
+    {
+      "Route": "music/1502cc33-971f-4ca8-a589-bf8efdbdd8ec_Manuel - Para (Official Lyrics Video).dktpxwhzk9.mp3",
+      "AssetFile": "music/1502cc33-971f-4ca8-a589-bf8efdbdd8ec_Manuel - Para (Official Lyrics Video).mp3",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4217554"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "audio/mpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"7XKvVjhDUkU2SJgfiM7b4kGcNYxfULG4uTAFQs9mLZ4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Feb 2025 06:28:26 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "dktpxwhzk9"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-7XKvVjhDUkU2SJgfiM7b4kGcNYxfULG4uTAFQs9mLZ4="
+        },
+        {
+          "Name": "label",
+          "Value": "music/1502cc33-971f-4ca8-a589-bf8efdbdd8ec_Manuel - Para (Official Lyrics Video).mp3"
+        }
+      ]
+    },
+    {
+      "Route": "music/1502cc33-971f-4ca8-a589-bf8efdbdd8ec_Manuel - Para (Official Lyrics Video).mp3",
+      "AssetFile": "music/1502cc33-971f-4ca8-a589-bf8efdbdd8ec_Manuel - Para (Official Lyrics Video).mp3",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4217554"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "audio/mpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"7XKvVjhDUkU2SJgfiM7b4kGcNYxfULG4uTAFQs9mLZ4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Feb 2025 06:28:26 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-7XKvVjhDUkU2SJgfiM7b4kGcNYxfULG4uTAFQs9mLZ4="
+        }
+      ]
+    },
+    {
+      "Route": "music/2d98ee0e-baf9-441e-abb5-abc0ac9516a6_Ariana Grande - 7 rings (Official Video).mp3",
+      "AssetFile": "music/2d98ee0e-baf9-441e-abb5-abc0ac9516a6_Ariana Grande - 7 rings (Official Video).mp3",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4440117"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "audio/mpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"W9U6AnrAXqBrv1T4P7a6dVstIzvLLJc9+HVte1k+9Ho=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 20 Feb 2025 06:23:09 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-W9U6AnrAXqBrv1T4P7a6dVstIzvLLJc9+HVte1k+9Ho="
+        }
+      ]
+    },
+    {
+      "Route": "music/2d98ee0e-baf9-441e-abb5-abc0ac9516a6_Ariana Grande - 7 rings (Official Video).vzhdpoamxc.mp3",
+      "AssetFile": "music/2d98ee0e-baf9-441e-abb5-abc0ac9516a6_Ariana Grande - 7 rings (Official Video).mp3",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4440117"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "audio/mpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"W9U6AnrAXqBrv1T4P7a6dVstIzvLLJc9+HVte1k+9Ho=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 20 Feb 2025 06:23:09 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vzhdpoamxc"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-W9U6AnrAXqBrv1T4P7a6dVstIzvLLJc9+HVte1k+9Ho="
+        },
+        {
+          "Name": "label",
+          "Value": "music/2d98ee0e-baf9-441e-abb5-abc0ac9516a6_Ariana Grande - 7 rings (Official Video).mp3"
+        }
+      ]
+    },
+    {
+      "Route": "music/4c74b7c9-ced4-4bc4-9ff0-b43506ae448c_deshwalkinastreet.mp3",
+      "AssetFile": "music/4c74b7c9-ced4-4bc4-9ff0-b43506ae448c_deshwalkinastreet.mp3",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4578044"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "audio/mpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RRo+TzSCNYtD7+OU38LpovT9UXva7z5D7962M988HaQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 20 Feb 2025 06:23:09 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-RRo+TzSCNYtD7+OU38LpovT9UXva7z5D7962M988HaQ="
+        }
+      ]
+    },
+    {
+      "Route": "music/4c74b7c9-ced4-4bc4-9ff0-b43506ae448c_deshwalkinastreet.t2e4y29ftp.mp3",
+      "AssetFile": "music/4c74b7c9-ced4-4bc4-9ff0-b43506ae448c_deshwalkinastreet.mp3",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4578044"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "audio/mpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RRo+TzSCNYtD7+OU38LpovT9UXva7z5D7962M988HaQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 20 Feb 2025 06:23:09 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "t2e4y29ftp"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-RRo+TzSCNYtD7+OU38LpovT9UXva7z5D7962M988HaQ="
+        },
+        {
+          "Name": "label",
+          "Value": "music/4c74b7c9-ced4-4bc4-9ff0-b43506ae448c_deshwalkinastreet.mp3"
+        }
+      ]
+    },
+    {
+      "Route": "music/7aa86b41-4d5a-40f8-a7e1-9978bfd11e7c_Feher Krisztian - Így jártam (Official Music Video).b9f6y54ouy.mp3",
+      "AssetFile": "music/7aa86b41-4d5a-40f8-a7e1-9978bfd11e7c_Feher Krisztian - Így jártam (Official Music Video).mp3",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3461466"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "audio/mpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"v2h5Ha62PKAuQTSPCdn+VrkrTSVRnQFJ5hU8Ulnok3o=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Feb 2025 06:28:26 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "b9f6y54ouy"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-v2h5Ha62PKAuQTSPCdn+VrkrTSVRnQFJ5hU8Ulnok3o="
+        },
+        {
+          "Name": "label",
+          "Value": "music/7aa86b41-4d5a-40f8-a7e1-9978bfd11e7c_Feher Krisztian - Így jártam (Official Music Video).mp3"
+        }
+      ]
+    },
+    {
+      "Route": "music/7aa86b41-4d5a-40f8-a7e1-9978bfd11e7c_Feher Krisztian - Így jártam (Official Music Video).mp3",
+      "AssetFile": "music/7aa86b41-4d5a-40f8-a7e1-9978bfd11e7c_Feher Krisztian - Így jártam (Official Music Video).mp3",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3461466"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "audio/mpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"v2h5Ha62PKAuQTSPCdn+VrkrTSVRnQFJ5hU8Ulnok3o=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Feb 2025 06:28:26 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-v2h5Ha62PKAuQTSPCdn+VrkrTSVRnQFJ5hU8Ulnok3o="
+        }
+      ]
+    },
+    {
+      "Route": "music/811d4a92-72bf-4ffc-a356-9c012d0dda7d_Kendrick Lamar - luther (Official Audio).cl3yfpezht.mp3",
+      "AssetFile": "music/811d4a92-72bf-4ffc-a356-9c012d0dda7d_Kendrick Lamar - luther (Official Audio).mp3",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4265201"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "audio/mpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"UKbitS4ahtLAv9sxrRt+PjqBprTbp7pNyWVHrfgVOTA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Feb 2025 06:28:27 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "cl3yfpezht"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-UKbitS4ahtLAv9sxrRt+PjqBprTbp7pNyWVHrfgVOTA="
+        },
+        {
+          "Name": "label",
+          "Value": "music/811d4a92-72bf-4ffc-a356-9c012d0dda7d_Kendrick Lamar - luther (Official Audio).mp3"
+        }
+      ]
+    },
+    {
+      "Route": "music/811d4a92-72bf-4ffc-a356-9c012d0dda7d_Kendrick Lamar - luther (Official Audio).mp3",
+      "AssetFile": "music/811d4a92-72bf-4ffc-a356-9c012d0dda7d_Kendrick Lamar - luther (Official Audio).mp3",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4265201"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "audio/mpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"UKbitS4ahtLAv9sxrRt+PjqBprTbp7pNyWVHrfgVOTA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Feb 2025 06:28:27 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-UKbitS4ahtLAv9sxrRt+PjqBprTbp7pNyWVHrfgVOTA="
+        }
+      ]
+    },
+    {
+      "Route": "music/81f743f6-a04e-4ccb-b525-c860e703cae9_Benson Boone - Beautiful Things (Official Music Video).g7bzsl3dws.mp3",
+      "AssetFile": "music/81f743f6-a04e-4ccb-b525-c860e703cae9_Benson Boone - Beautiful Things (Official Music Video).mp3",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4625691"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "audio/mpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fKO8/eK/Npt4/4jesHSG9lAML1jU2/tHZ+foJD2L/Bc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Feb 2025 06:28:27 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "g7bzsl3dws"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-fKO8/eK/Npt4/4jesHSG9lAML1jU2/tHZ+foJD2L/Bc="
+        },
+        {
+          "Name": "label",
+          "Value": "music/81f743f6-a04e-4ccb-b525-c860e703cae9_Benson Boone - Beautiful Things (Official Music Video).mp3"
+        }
+      ]
+    },
+    {
+      "Route": "music/81f743f6-a04e-4ccb-b525-c860e703cae9_Benson Boone - Beautiful Things (Official Music Video).mp3",
+      "AssetFile": "music/81f743f6-a04e-4ccb-b525-c860e703cae9_Benson Boone - Beautiful Things (Official Music Video).mp3",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4625691"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "audio/mpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fKO8/eK/Npt4/4jesHSG9lAML1jU2/tHZ+foJD2L/Bc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Feb 2025 06:28:27 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-fKO8/eK/Npt4/4jesHSG9lAML1jU2/tHZ+foJD2L/Bc="
+        }
+      ]
+    },
+    {
+      "Route": "music/8995a895-76bb-4f85-8466-3ecb9f44ec04_Farkas Pisti x Bódi Csabi - SZERELEM  (hivatalos videoklip).9eahcogqqn.mp3",
+      "AssetFile": "music/8995a895-76bb-4f85-8466-3ecb9f44ec04_Farkas Pisti x Bódi Csabi - SZERELEM  (hivatalos videoklip).mp3",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4448894"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "audio/mpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"H0VnzXD+n7PaPxzPQlTRBX8JfAkiONNN4V+OoAcpRJ0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Feb 2025 06:28:27 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "9eahcogqqn"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-H0VnzXD+n7PaPxzPQlTRBX8JfAkiONNN4V+OoAcpRJ0="
+        },
+        {
+          "Name": "label",
+          "Value": "music/8995a895-76bb-4f85-8466-3ecb9f44ec04_Farkas Pisti x Bódi Csabi - SZERELEM  (hivatalos videoklip).mp3"
+        }
+      ]
+    },
+    {
+      "Route": "music/8995a895-76bb-4f85-8466-3ecb9f44ec04_Farkas Pisti x Bódi Csabi - SZERELEM  (hivatalos videoklip).mp3",
+      "AssetFile": "music/8995a895-76bb-4f85-8466-3ecb9f44ec04_Farkas Pisti x Bódi Csabi - SZERELEM  (hivatalos videoklip).mp3",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4448894"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "audio/mpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"H0VnzXD+n7PaPxzPQlTRBX8JfAkiONNN4V+OoAcpRJ0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Feb 2025 06:28:27 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-H0VnzXD+n7PaPxzPQlTRBX8JfAkiONNN4V+OoAcpRJ0="
+        }
+      ]
+    },
+    {
+      "Route": "music/8e589e6a-881f-4df4-996d-597482f6e185_Katy Perry - Firework (Official Music Video).mp3",
+      "AssetFile": "music/8e589e6a-881f-4df4-996d-597482f6e185_Katy Perry - Firework (Official Music Video).mp3",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5600581"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "audio/mpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Mjb6+KtEwxprFBY18/H2MiLrvtX400TI29LF88IB2iQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 20 Feb 2025 06:23:10 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Mjb6+KtEwxprFBY18/H2MiLrvtX400TI29LF88IB2iQ="
+        }
+      ]
+    },
+    {
+      "Route": "music/8e589e6a-881f-4df4-996d-597482f6e185_Katy Perry - Firework (Official Music Video).qypfd6cdg5.mp3",
+      "AssetFile": "music/8e589e6a-881f-4df4-996d-597482f6e185_Katy Perry - Firework (Official Music Video).mp3",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5600581"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "audio/mpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Mjb6+KtEwxprFBY18/H2MiLrvtX400TI29LF88IB2iQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 20 Feb 2025 06:23:10 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "qypfd6cdg5"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Mjb6+KtEwxprFBY18/H2MiLrvtX400TI29LF88IB2iQ="
+        },
+        {
+          "Name": "label",
+          "Value": "music/8e589e6a-881f-4df4-996d-597482f6e185_Katy Perry - Firework (Official Music Video).mp3"
+        }
+      ]
+    },
+    {
+      "Route": "music/8eefcd7c-014c-47d5-9adf-6e2f222f8d1b_JABER - Isten Vezet (ft. Sean Price).hxbodw212j.mp3",
+      "AssetFile": "music/8eefcd7c-014c-47d5-9adf-6e2f222f8d1b_JABER - Isten Vezet (ft. Sean Price).mp3",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5150439"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "audio/mpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"m6ByYW4IFnGoQVDkhle434tF6jV7N5gffBK/GOl0ADI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Feb 2025 06:28:27 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "hxbodw212j"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-m6ByYW4IFnGoQVDkhle434tF6jV7N5gffBK/GOl0ADI="
+        },
+        {
+          "Name": "label",
+          "Value": "music/8eefcd7c-014c-47d5-9adf-6e2f222f8d1b_JABER - Isten Vezet (ft. Sean Price).mp3"
+        }
+      ]
+    },
+    {
+      "Route": "music/8eefcd7c-014c-47d5-9adf-6e2f222f8d1b_JABER - Isten Vezet (ft. Sean Price).mp3",
+      "AssetFile": "music/8eefcd7c-014c-47d5-9adf-6e2f222f8d1b_JABER - Isten Vezet (ft. Sean Price).mp3",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5150439"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "audio/mpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"m6ByYW4IFnGoQVDkhle434tF6jV7N5gffBK/GOl0ADI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Feb 2025 06:28:27 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-m6ByYW4IFnGoQVDkhle434tF6jV7N5gffBK/GOl0ADI="
+        }
+      ]
+    },
+    {
+      "Route": "music/a16f4de7-8550-4df9-9845-9a1e36565dce_KKevin - PATKÁNY (OFFICIAL VISUALIZER).0zu3u2nl4n.mp3",
+      "AssetFile": "music/a16f4de7-8550-4df9-9845-9a1e36565dce_KKevin - PATKÁNY (OFFICIAL VISUALIZER).mp3",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3581838"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "audio/mpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"jJWeSlf8duw0L2GuJVBKhvtAbqI3TQ08bl1EBf6h1+k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Feb 2025 06:28:27 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "0zu3u2nl4n"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-jJWeSlf8duw0L2GuJVBKhvtAbqI3TQ08bl1EBf6h1+k="
+        },
+        {
+          "Name": "label",
+          "Value": "music/a16f4de7-8550-4df9-9845-9a1e36565dce_KKevin - PATKÁNY (OFFICIAL VISUALIZER).mp3"
+        }
+      ]
+    },
+    {
+      "Route": "music/a16f4de7-8550-4df9-9845-9a1e36565dce_KKevin - PATKÁNY (OFFICIAL VISUALIZER).mp3",
+      "AssetFile": "music/a16f4de7-8550-4df9-9845-9a1e36565dce_KKevin - PATKÁNY (OFFICIAL VISUALIZER).mp3",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3581838"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "audio/mpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"jJWeSlf8duw0L2GuJVBKhvtAbqI3TQ08bl1EBf6h1+k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Feb 2025 06:28:27 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-jJWeSlf8duw0L2GuJVBKhvtAbqI3TQ08bl1EBf6h1+k="
+        }
+      ]
+    },
+    {
+      "Route": "music/a5f28d33-4e77-4fca-b93e-c62c84f40607_Lady Gaga - Abracadabra (Official Music Video).mp3",
+      "AssetFile": "music/a5f28d33-4e77-4fca-b93e-c62c84f40607_Lady Gaga - Abracadabra (Official Music Video).mp3",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6469518"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "audio/mpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fOurbpsq8VZlw+VTGgr4WmsyG8n6Ad2knnHrLEb8jSY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Feb 2025 06:28:27 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-fOurbpsq8VZlw+VTGgr4WmsyG8n6Ad2knnHrLEb8jSY="
+        }
+      ]
+    },
+    {
+      "Route": "music/a5f28d33-4e77-4fca-b93e-c62c84f40607_Lady Gaga - Abracadabra (Official Music Video).wb1jm24syu.mp3",
+      "AssetFile": "music/a5f28d33-4e77-4fca-b93e-c62c84f40607_Lady Gaga - Abracadabra (Official Music Video).mp3",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6469518"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "audio/mpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fOurbpsq8VZlw+VTGgr4WmsyG8n6Ad2knnHrLEb8jSY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Feb 2025 06:28:27 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "wb1jm24syu"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-fOurbpsq8VZlw+VTGgr4WmsyG8n6Ad2knnHrLEb8jSY="
+        },
+        {
+          "Name": "label",
+          "Value": "music/a5f28d33-4e77-4fca-b93e-c62c84f40607_Lady Gaga - Abracadabra (Official Music Video).mp3"
+        }
+      ]
+    },
+    {
+      "Route": "music/bfa2e020-3511-4e8c-9f84-9ab24cc687b4_Billie Eilish - BIRDS OF A FEATHER (Official Music Video).krqw2xktv7.mp3",
+      "AssetFile": "music/bfa2e020-3511-4e8c-9f84-9ab24cc687b4_Billie Eilish - BIRDS OF A FEATHER (Official Music Video).mp3",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5542275"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "audio/mpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gDVPbkl0hoVex/leZX00kwaFqkja1uM883E5x20y/Vc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Feb 2025 10:41:17 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "krqw2xktv7"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-gDVPbkl0hoVex/leZX00kwaFqkja1uM883E5x20y/Vc="
+        },
+        {
+          "Name": "label",
+          "Value": "music/bfa2e020-3511-4e8c-9f84-9ab24cc687b4_Billie Eilish - BIRDS OF A FEATHER (Official Music Video).mp3"
+        }
+      ]
+    },
+    {
+      "Route": "music/bfa2e020-3511-4e8c-9f84-9ab24cc687b4_Billie Eilish - BIRDS OF A FEATHER (Official Music Video).mp3",
+      "AssetFile": "music/bfa2e020-3511-4e8c-9f84-9ab24cc687b4_Billie Eilish - BIRDS OF A FEATHER (Official Music Video).mp3",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5542275"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "audio/mpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gDVPbkl0hoVex/leZX00kwaFqkja1uM883E5x20y/Vc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Feb 2025 10:41:17 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-gDVPbkl0hoVex/leZX00kwaFqkja1uM883E5x20y/Vc="
+        }
+      ]
+    },
+    {
+      "Route": "music/c94b7531-9476-426f-9813-6f11d586c857_ROSE & Bruno Mars - APT. (Official Music Video).mp3",
+      "AssetFile": "music/c94b7531-9476-426f-9813-6f11d586c857_ROSE & Bruno Mars - APT. (Official Music Video).mp3",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4162797"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "audio/mpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Oabc//AQACMrC+ZP8W4MAyQ1au4IYnKiUNqr3HGdVFQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Feb 2025 06:28:27 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Oabc//AQACMrC+ZP8W4MAyQ1au4IYnKiUNqr3HGdVFQ="
+        }
+      ]
+    },
+    {
+      "Route": "music/c94b7531-9476-426f-9813-6f11d586c857_ROSE & Bruno Mars - APT. (Official Music Video).xmkfchqu6k.mp3",
+      "AssetFile": "music/c94b7531-9476-426f-9813-6f11d586c857_ROSE & Bruno Mars - APT. (Official Music Video).mp3",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4162797"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "audio/mpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Oabc//AQACMrC+ZP8W4MAyQ1au4IYnKiUNqr3HGdVFQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Feb 2025 06:28:27 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "xmkfchqu6k"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Oabc//AQACMrC+ZP8W4MAyQ1au4IYnKiUNqr3HGdVFQ="
+        },
+        {
+          "Name": "label",
+          "Value": "music/c94b7531-9476-426f-9813-6f11d586c857_ROSE & Bruno Mars - APT. (Official Music Video).mp3"
+        }
+      ]
+    },
+    {
+      "Route": "music/cde7a600-37c6-4332-a889-ef4811b6e7e0_JABER X T. Danny - MILLIÓK (Official Music Video).ed8k43zejd.mp3",
+      "AssetFile": "music/cde7a600-37c6-4332-a889-ef4811b6e7e0_JABER X T. Danny - MILLIÓK (Official Music Video).mp3",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4295294"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "audio/mpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Yofie37X/MRxgxlVLmA4oSALYDS6pH6dGmLeFQh1apE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 20 Feb 2025 06:23:10 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ed8k43zejd"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Yofie37X/MRxgxlVLmA4oSALYDS6pH6dGmLeFQh1apE="
+        },
+        {
+          "Name": "label",
+          "Value": "music/cde7a600-37c6-4332-a889-ef4811b6e7e0_JABER X T. Danny - MILLIÓK (Official Music Video).mp3"
+        }
+      ]
+    },
+    {
+      "Route": "music/cde7a600-37c6-4332-a889-ef4811b6e7e0_JABER X T. Danny - MILLIÓK (Official Music Video).mp3",
+      "AssetFile": "music/cde7a600-37c6-4332-a889-ef4811b6e7e0_JABER X T. Danny - MILLIÓK (Official Music Video).mp3",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4295294"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "audio/mpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Yofie37X/MRxgxlVLmA4oSALYDS6pH6dGmLeFQh1apE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 20 Feb 2025 06:23:10 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Yofie37X/MRxgxlVLmA4oSALYDS6pH6dGmLeFQh1apE="
+        }
+      ]
+    },
+    {
+      "Route": "music/cf7d8fbd-2072-4ed1-8fe8-ef7b6733fddc_KKevin - PROSECCO ft. Bruno (Official Music Video).gpwf8k3yih.mp3",
+      "AssetFile": "music/cf7d8fbd-2072-4ed1-8fe8-ef7b6733fddc_KKevin - PROSECCO ft. Bruno (Official Music Video).mp3",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3295954"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "audio/mpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rCQLE95KPmfMTKcVz+Wfx+UjGoS/tUmxRB7huo7fOsc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 20 Feb 2025 06:23:10 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gpwf8k3yih"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-rCQLE95KPmfMTKcVz+Wfx+UjGoS/tUmxRB7huo7fOsc="
+        },
+        {
+          "Name": "label",
+          "Value": "music/cf7d8fbd-2072-4ed1-8fe8-ef7b6733fddc_KKevin - PROSECCO ft. Bruno (Official Music Video).mp3"
+        }
+      ]
+    },
+    {
+      "Route": "music/cf7d8fbd-2072-4ed1-8fe8-ef7b6733fddc_KKevin - PROSECCO ft. Bruno (Official Music Video).mp3",
+      "AssetFile": "music/cf7d8fbd-2072-4ed1-8fe8-ef7b6733fddc_KKevin - PROSECCO ft. Bruno (Official Music Video).mp3",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3295954"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "audio/mpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rCQLE95KPmfMTKcVz+Wfx+UjGoS/tUmxRB7huo7fOsc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 20 Feb 2025 06:23:10 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-rCQLE95KPmfMTKcVz+Wfx+UjGoS/tUmxRB7huo7fOsc="
+        }
+      ]
+    },
+    {
+      "Route": "music/d1d61de2-2462-443f-8c86-a0efc5dd4c65_Lady Gaga, Bruno Mars - Die With A Smile (Official Music Video) (1).bn9ceqq2wa.mp3",
+      "AssetFile": "music/d1d61de2-2462-443f-8c86-a0efc5dd4c65_Lady Gaga, Bruno Mars - Die With A Smile (Official Music Video) (1).mp3",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6058246"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "audio/mpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Ka5PetF37Jrv5Z8xX7mNa2nbTy+2mB+pJIWuCkoO06o=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Feb 2025 06:28:27 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "bn9ceqq2wa"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Ka5PetF37Jrv5Z8xX7mNa2nbTy+2mB+pJIWuCkoO06o="
+        },
+        {
+          "Name": "label",
+          "Value": "music/d1d61de2-2462-443f-8c86-a0efc5dd4c65_Lady Gaga, Bruno Mars - Die With A Smile (Official Music Video) (1).mp3"
+        }
+      ]
+    },
+    {
+      "Route": "music/d1d61de2-2462-443f-8c86-a0efc5dd4c65_Lady Gaga, Bruno Mars - Die With A Smile (Official Music Video) (1).mp3",
+      "AssetFile": "music/d1d61de2-2462-443f-8c86-a0efc5dd4c65_Lady Gaga, Bruno Mars - Die With A Smile (Official Music Video) (1).mp3",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6058246"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "audio/mpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Ka5PetF37Jrv5Z8xX7mNa2nbTy+2mB+pJIWuCkoO06o=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Feb 2025 06:28:27 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Ka5PetF37Jrv5Z8xX7mNa2nbTy+2mB+pJIWuCkoO06o="
+        }
+      ]
+    },
+    {
+      "Route": "music/d48de4a3-13e9-43b5-be38-7e1e1b7d3fa3_Burai, Fehér Krisztián, Mario feat. Essemm - BarnaLány.0b48fv9bb5.mp3",
+      "AssetFile": "music/d48de4a3-13e9-43b5-be38-7e1e1b7d3fa3_Burai, Fehér Krisztián, Mario feat. Essemm - BarnaLány.mp3",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5535379"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "audio/mpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"zGKDzRZzRx9ZqNZghg4zU5mcJX5tQE0gCVXhdHocCGg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Feb 2025 06:28:27 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "0b48fv9bb5"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-zGKDzRZzRx9ZqNZghg4zU5mcJX5tQE0gCVXhdHocCGg="
+        },
+        {
+          "Name": "label",
+          "Value": "music/d48de4a3-13e9-43b5-be38-7e1e1b7d3fa3_Burai, Fehér Krisztián, Mario feat. Essemm - BarnaLány.mp3"
+        }
+      ]
+    },
+    {
+      "Route": "music/d48de4a3-13e9-43b5-be38-7e1e1b7d3fa3_Burai, Fehér Krisztián, Mario feat. Essemm - BarnaLány.mp3",
+      "AssetFile": "music/d48de4a3-13e9-43b5-be38-7e1e1b7d3fa3_Burai, Fehér Krisztián, Mario feat. Essemm - BarnaLány.mp3",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5535379"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "audio/mpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"zGKDzRZzRx9ZqNZghg4zU5mcJX5tQE0gCVXhdHocCGg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Feb 2025 06:28:27 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-zGKDzRZzRx9ZqNZghg4zU5mcJX5tQE0gCVXhdHocCGg="
+        }
+      ]
+    },
+    {
+      "Route": "music/d4f0cf18-5a86-4481-86c9-bc711d6519e7_L.L. Junior x Azahriah (feat. Farkas Pisti) - ZHA MAJ DUR (Official Music Video).il8st512tu.mp3",
+      "AssetFile": "music/d4f0cf18-5a86-4481-86c9-bc711d6519e7_L.L. Junior x Azahriah (feat. Farkas Pisti) - ZHA MAJ DUR (Official Music Video).mp3",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5547918"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "audio/mpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"hhtxhD/ZtgM1LBTpN05UTO5/TmVF0amMLiVBrWRp97A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Feb 2025 06:28:27 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "il8st512tu"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-hhtxhD/ZtgM1LBTpN05UTO5/TmVF0amMLiVBrWRp97A="
+        },
+        {
+          "Name": "label",
+          "Value": "music/d4f0cf18-5a86-4481-86c9-bc711d6519e7_L.L. Junior x Azahriah (feat. Farkas Pisti) - ZHA MAJ DUR (Official Music Video).mp3"
+        }
+      ]
+    },
+    {
+      "Route": "music/d4f0cf18-5a86-4481-86c9-bc711d6519e7_L.L. Junior x Azahriah (feat. Farkas Pisti) - ZHA MAJ DUR (Official Music Video).mp3",
+      "AssetFile": "music/d4f0cf18-5a86-4481-86c9-bc711d6519e7_L.L. Junior x Azahriah (feat. Farkas Pisti) - ZHA MAJ DUR (Official Music Video).mp3",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5547918"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "audio/mpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"hhtxhD/ZtgM1LBTpN05UTO5/TmVF0amMLiVBrWRp97A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Feb 2025 06:28:27 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-hhtxhD/ZtgM1LBTpN05UTO5/TmVF0amMLiVBrWRp97A="
+        }
+      ]
+    },
+    {
+      "Route": "music/e228040b-4f28-4f53-b910-1cf5d693e53d_Koboldok.30pdqqj9xg.mp3",
+      "AssetFile": "music/e228040b-4f28-4f53-b910-1cf5d693e53d_Koboldok.mp3",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2712274"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "audio/mpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Lc5X3Zu5O4budfRJtoejP9+QZLQU0AfLU1vLuc2clPk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 20 Feb 2025 06:23:10 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "30pdqqj9xg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Lc5X3Zu5O4budfRJtoejP9+QZLQU0AfLU1vLuc2clPk="
+        },
+        {
+          "Name": "label",
+          "Value": "music/e228040b-4f28-4f53-b910-1cf5d693e53d_Koboldok.mp3"
+        }
+      ]
+    },
+    {
+      "Route": "music/e228040b-4f28-4f53-b910-1cf5d693e53d_Koboldok.mp3",
+      "AssetFile": "music/e228040b-4f28-4f53-b910-1cf5d693e53d_Koboldok.mp3",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2712274"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "audio/mpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Lc5X3Zu5O4budfRJtoejP9+QZLQU0AfLU1vLuc2clPk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 20 Feb 2025 06:23:10 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Lc5X3Zu5O4budfRJtoejP9+QZLQU0AfLU1vLuc2clPk="
+        }
+      ]
+    }
+  ]
+}

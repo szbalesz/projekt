@@ -2,6 +2,11 @@ import api from "./Api";
 import Cookies from "js-cookie";
 import { toaster } from "../components/ui/toaster";
 import { sendEmail } from "./EmailService";
+
+export const getToken = () => {
+  return Cookies.get("token");
+}
+
 // Regisztrációs függvény
 export const onRegister = (username, email, password, navigate, onLogin) => {
   let newUser = {

@@ -6,12 +6,12 @@ import {
   MenuRoot,
 } from "../components/ui/menu"
 import { LuMinus, LuPlus } from 'react-icons/lu'
-import Cookies from "js-cookie";
 import { toaster } from '../components/ui/toaster'
 import { AddOrRemoveFromPlaylist, getPlaylistsWithMusic } from '../services/PlaylistService'
+import { getUserId } from '../services/UserService'
 
 export default function AddToPlaylistMenu({ setFavorite, isFavorite, musicId }) {
-  const userid = Cookies.get("userid");
+  const userid = getUserId();
   const [playlists, setPlaylists] = useState([]);
   const [addedMusic, setAddedMusic] = useState({});
 

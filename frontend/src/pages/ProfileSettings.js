@@ -2,30 +2,29 @@ import { Button, Center, Flex, Heading, Text, } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import { LuUser } from 'react-icons/lu'
 import { useNavigate } from 'react-router-dom'
-import Cookies from "js-cookie"
-import { deleteUser, getUserProfile } from '../services/UserService'
+import { deleteUser, getUserId, getUserProfile } from '../services/UserService'
 import UsernameChange from '../menu/UsernameChange'
 import EmailChange from '../menu/EmailChange'
 import DialogAlert from '../menu/DialogAlert'
 import { toaster } from '../components/ui/toaster'
+import { getToken } from '../services/AuthService'
 
 export default function ProfileSettings() {
     const navigate = useNavigate();
-    const token = Cookies.get("token");
-    const userid = Cookies.get("userid");
+    const userid = getUserId();
     const [account, setAccount] = useState({})
 
     useEffect(() => {
         const getProfile = async() =>{
             setAccount(await getUserProfile(userid));
         }
-        if(!token){
+        if(!getToken){
         navigate(-1);
         }
         else{
         getProfile();
         }
-    }, [token])
+    }, [])
     
     return (
         // Profil beállítások oldal

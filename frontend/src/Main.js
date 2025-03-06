@@ -19,11 +19,10 @@ import UploadPage from './pages/UploadPage';
 import Cookie from './Cookie';
 import UserPage from './pages/UserPage';
 import ProfileSettings from './pages/ProfileSettings';
-import Cookies from "js-cookie";
+
 
 export default function Main({ themecolor, setThemecolor }) {
   const audioRef = useRef(null);
-
   const [currentMusic, setCurrentMusic] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);

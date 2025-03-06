@@ -3,11 +3,11 @@ import { Button, Center, Flex, Heading, Text } from '@chakra-ui/react'
 import { useColorMode } from '../components/ui/color-mode';
 import { LuMoon, LuPencil, LuSun } from 'react-icons/lu';
 import { Link } from 'react-router-dom';
-import Cookies from "js-cookie";
+import { getToken } from '../services/AuthService';
 
 export default function Settings({setThemecolor}) {
   const { colorMode, setColorMode } = useColorMode();
-  const token = Cookies.get("token");
+  const token = getToken();
   const themes = [
     {
       title: "Fehér",

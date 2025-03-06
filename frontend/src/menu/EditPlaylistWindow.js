@@ -13,11 +13,11 @@ import {
 import { Input } from "@chakra-ui/react"
 import { toaster } from '../components/ui/toaster'
 import { editPlaylist } from "../services/PlaylistService"
-import Cookies from "js-cookie";
 import { Field } from '../components/ui/field'
+import { getToken } from '../services/AuthService'
 
 export default function EditPlaylistWindow({ openbutton,playlist,load }) {
-    const token = Cookies.get("token");
+    const token = getToken();
     const themecolor = localStorage.getItem("themecolor");
     const [playlistName, setPlaylistName] = useState(playlist?.playlistName);
     const [imageUrl, setImageUrl] = useState(playlist?.imageUrl);

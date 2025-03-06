@@ -5,12 +5,11 @@ import MusicCard from '../cards/MusicCard';
 import PlaylistCard from '../cards/PlaylistCard';
 import EditPicture from '../menu/EditPicture';
 import { Badge } from "@chakra-ui/react"
-import Cookies from "js-cookie";
-import { getUserProfile, getUserMusics, getUserPlaylists, getUserRoles } from '../services/UserService';
+import { getUserProfile, getUserMusics, getUserPlaylists, getUserRoles, getUserId } from '../services/UserService';
 
 export default function UserPage() {
   const { id } = useParams(); 
-  const userid = Cookies.get("userid");
+  const userid = getUserId();
   const navigate = useNavigate();
   const [account, setAccount] = useState({});
   const [roles,setRoles] = useState([]);
