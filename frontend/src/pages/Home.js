@@ -10,7 +10,12 @@ export default function Home() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    getAllMusic(setPending,setMusicList);
+    const getMusics = async () => {
+      await setPending(true);
+      setMusicList(await getAllMusic())
+      await setPending(false);
+    };
+    getMusics();
   }, [])
 
   return (

@@ -14,9 +14,14 @@ export default function AddToPlaylistMenu({ setFavorite, isFavorite, musicId }) 
   const userid = getUserId();
   const [playlists, setPlaylists] = useState([]);
   const [addedMusic, setAddedMusic] = useState({});
-
+  const load = async () => {
+    const response = await getPlaylistsWithMusic(musicId);
+    setPlaylists(response.playlists);
+    setAddedMusic(response.addedMusics);
+  }
+  
   useEffect(() => {
-    getPlaylistsWithMusic(setPlaylists,musicId,setAddedMusic);
+    load();
   }, [userid, musicId,isFavorite]);
 
 
@@ -32,7 +37,7 @@ export default function AddToPlaylistMenu({ setFavorite, isFavorite, musicId }) 
           return (
             <MenuItem 
               key={index} 
-              onClick={() => AddOrRemoveFromPlaylist(setAddedMusic,musicId,setFavorite,toaster,playlist.id, playlist.playlistName)} 
+              onClick={async () => setAddedMusic(await AddOrRemoveFromPlaylist(musicId,setFavorite,toaster,playlist.id, playlist.playlistName))} 
               value={playlist.playlistName} 
               justifyContent={"space-between"}
             >

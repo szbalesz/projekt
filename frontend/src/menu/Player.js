@@ -3,23 +3,61 @@ import { Box, Flex, Text, IconButton, Button } from "@chakra-ui/react";
 import { Slider } from "../components/ui/slider";
 import { useNavigate } from 'react-router-dom';
 import { LuPlay, LuSkipBack, LuSkipForward, LuVolume, LuPause, LuArrowDown, LuArrowUp } from "react-icons/lu";
+import { getCurrentMusic, handlePlay, handleSliderChange, randomMusic} from "../services/PlayerService";
 
-export default function Player({themecolor, volume, setVolume, currentTime,duration,handleSliderChange, currentMusic, togglePlayPause, isPlaying }) {
+export default function Player({audioRef,themecolor, togglePlayPause,setIsPlaying, isPlaying }) {
   const navigate = useNavigate();
   const [open, setopen] = useState(false);
-
+  const [volume, setVolume] = useState(50); 
+  const currentMusic = getCurrentMusic();
+  const [currentTime,setCurrentTime] = useState(0);
+  const [duration,setDuration] = useState(0);
+  // Zenére kattintáskor az oldalára dob
   const handleSongClick = () => {
     if (currentMusic) {
       navigate(`/music/${currentMusic.id}`);
     }
   };
+  // Ha a currentMusic változik, automatikusan elindítja
+  useEffect(() => {
+    if (currentMusic && audioRef.current) {
+      audioRef.current.play();
+      setIsPlaying(true);
+    }
+  }, [currentMusic]);
+ // Zene jelenlegi idő frissítése
+  useEffect(() => {
+    if (audioRef.current) {
+      const updateTime = () => {
+        setCurrentTime(audioRef.current.currentTime);
+      };
+      audioRef.current.addEventListener('timeupdate', updateTime);
 
+      audioRef.current.addEventListener('loadedmetadata', () => {
+        setDuration(audioRef.current.duration);
+      });
+
+      return () => {
+        audioRef.current.removeEventListener('timeupdate', updateTime);
+      };
+    }
+  }, [audioRef]);
+// Ha elindít egy zenét a lejátszó autómatikusan kinyílik
 useEffect(() => {
   if(isPlaying){
     setopen(true);
   }
 }, [isPlaying])
-
+// Zene hangerejének módosítása
+useEffect(() => {
+  audioRef.current.volume = volume / 100;
+}, [volume]);
+// Ha van kiválasztva zene elindítja
+useEffect(() => {
+  if (audioRef.current && isPlaying) {
+    audioRef.current.play();
+  }
+}, [isPlaying, audioRef]);
   return (
     <Box
       bg="Background"
@@ -67,7 +105,7 @@ useEffect(() => {
   <Slider
     size = {"sm"}
     value={[currentTime]}
-    onValueChange={(a) => handleSliderChange(a.value)}
+    onValueChange={(a) => handleSliderChange(audioRef,a.value)}
     min={0}
     max={duration}
     step={1}
@@ -85,6 +123,9 @@ useEffect(() => {
               variant="ghost"
               zIndex="101"
               size="sm"
+              onClick={async ()=> {
+                handlePlay(audioRef,await randomMusic(),setIsPlaying,isPlaying)
+              }}
             > <LuSkipBack /></IconButton>
             <IconButton
               aria-label={isPlaying ? "Pause" : "Play"}
@@ -92,12 +133,16 @@ useEffect(() => {
               zIndex="101"
               size="sm"
               onClick={togglePlayPause}
+              disabled={!currentMusic}
             > {isPlaying ? <LuPause /> : <LuPlay />} </IconButton>
             <IconButton
               aria-label="Next"
               variant="ghost"
               zIndex="101"
               size="sm"
+              onClick={async ()=> {
+                handlePlay(audioRef,await randomMusic(),setIsPlaying,isPlaying)
+              }}
             ><LuSkipForward /></IconButton>
 
             <Box display={{ base: 'none', md: 'flex' }} width="150px">
@@ -123,6 +168,7 @@ useEffect(() => {
         <LuArrowUp  />
     </Button>}
     </Flex>
+    <audio ref={audioRef} src={currentMusic ? `https://localhost:5205/${currentMusic?.musicUrl}` : ""} />
     </Box>
   );
 }

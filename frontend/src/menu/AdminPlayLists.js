@@ -46,9 +46,9 @@ export default function AdminPlayLists({selectedmenu}) {
       const newProfiles = {};
       const newCounts = {};
       for (let playlist of playlists) {
-        if(!newCounts[playlist]){
+        if(!newCounts[playlist?.id]){
           const musiccount = (await getPlaylistById(playlist.id)).musics.length;
-          newCounts[playlist] = musiccount;
+          newCounts[playlist?.id] = musiccount;
         }
         if (!newProfiles[playlist?.creatorId]) {
           const profile = await getCreator(playlist?.creatorId);
@@ -84,7 +84,7 @@ export default function AdminPlayLists({selectedmenu}) {
           {
             playlists.map((playlist) => { 
               const profile = creators[playlist?.creatorId];
-              const musiccount = musiccounts[playlist];
+              const musiccount = musiccounts[playlist?.id];
             return (
             <Table.Row
               key={playlist?.id}

@@ -18,8 +18,17 @@ export default function PlaylistPage() {
   const [playlist, setPlaylist] = useState([]);
   const [creator, setCreator] = useState({})
 
-  const load = () => {
-    getPlaylist(setPending,id,toaster,setPlaylistId,setMusics,setPlaylist,setCreator,navigate);
+  const load = async () => {
+    await setPending(true);
+    const response = await getPlaylist(id,toaster,navigate);
+    if(response == null){
+      navigate(-1);
+    }
+    setPlaylistId(response?.playlistid);
+    setPlaylist(response?.playlist);
+    setMusics(response?.musics);
+    setCreator(response?.creator);
+    await setPending(false);
   }
 
   useEffect(() => {
@@ -61,28 +70,28 @@ export default function PlaylistPage() {
               Lejátszási lista
             </Text>
             <Text fontSize="4xl" fontWeight="bold">
-              {playlist.playlistName}
+              {playlist?.playlistName}
             </Text>
             <Text fontSize="sm">
-            {musics.length} zene
+            {musics?.length} zene
             </Text>
             <Flex fontSize="md" p={"0"}>
               <Button color={"white"} onClick={()=> {
-                navigate("/user/"+playlist.creatorId)
+                navigate("/user/"+playlist?.creatorId)
               }} mr={"1"} p={"0"} size={"xs"} variant={"ghost"}>
               <Avatar width="25px" height="25px" src={creator.profilePictureURL}/>
               {creator.username}
               </Button>
               {token ? 
-              <PlaylistEditMenu playlist={playlist} playlistName={playlist.playlistName} playlistId={playlistId} load={load}/> 
+              <PlaylistEditMenu playlist={playlist} playlistName={playlist?.playlistName} playlistId={playlistId} load={load}/> 
               : null}
             </Flex>
           </Box>
         </Flex>
         <hr/>
         <Flex px={"5"} pt={"3"} direction={"column"}>
-          {musics.length > 0 ? <Heading>Zenék</Heading> : <Heading>A lejátszási lista üres.</Heading>}
-          <Flex my={"3"} wrap={"wrap"} gap={4} width="100%">{musics.map((music, index) => <MusicCard key={index} music={music} />)}</Flex>
+          {musics?.length > 0 ? <Heading>Zenék</Heading> : <Heading>A lejátszási lista üres.</Heading>}
+          <Flex my={"3"} wrap={"wrap"} gap={4} width="100%">{musics?.map((music, index) => <MusicCard key={index} music={music} />)}</Flex>
         </Flex>
       </Box>: 
       null}

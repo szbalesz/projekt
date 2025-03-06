@@ -1,10 +1,9 @@
 import api from './Api';
-import Cookies from "js-cookie";
-import { getUserProfile } from './UserService';
+import { getUserId, getUserProfile } from './UserService';
 import { getToken } from './AuthService';
 
 const token = getToken();
-const userid = Cookies.get("userid");
+const userid = getUserId();
 // Kedvencek lejátszási lista megkeresése függvény
 export const getFavoritePlaylist = async (musicid) => {
     if (!userid) return { favoritePlaylistId: "", isFavorite: false };
@@ -47,51 +46,50 @@ export const searchPlaylist = async (query) => {
   }
 }
 // Id alapján lejátszási lista lekérése függvény
-export const getPlaylistByUser = async (id,setPlaylistId,toaster)=>{
+export const getPlaylistByUser = async (id,toaster)=>{
     const response = await api.get("/GetPlaylistByUser?id="+userid);
       if(response.data.length > 0){
         id = response.data.filter(pl=>pl.creatorId === userid).filter(pl=> pl.playlistName === id)[0]?.id;
         if(!id){
           toaster.create({ title: `Úgytűnik nincs ilyen nevű listád! Hozz létre egyet Kedvencek névvel!`, type: "info" });
         }
-        else{
-            setPlaylistId(id);
+        else{ // Ha talált Kedvencek nevű listát akkor az idjét küldi vissza
           return id;
         }
       }
       return null;
 }
 // Felhasználó lejátszási listáinak lekérése függvény
-export const getPlaylist = async (setPending,id,toaster,setPlaylistId,setMusics,setPlaylist,setCreator,navigate) => {
-    setPending(true);
+export const getPlaylist = async (id,toaster) => {
+    let playlistid = id;
+    let playlist = [];
+    let musics = [];
+    let creator = {};
     if(id === "Kedvencek"){
-      id = await getPlaylistByUser(id,setPlaylistId,toaster);
+      id = await getPlaylistByUser(id,toaster);
+      playlistid = id;
     }
     try {
       const response = await api.get("/playlist/"+id);
-      setMusics(response?.data.musics);
-      setPlaylist(response?.data.playlist[0])
+      musics = response?.data.musics;
+      playlist = response?.data.playlist[0];
       let creatorId = response?.data.playlist[0].creatorId;
-      setCreator(await getUserProfile(creatorId));
+      creator = (await getUserProfile(creatorId));
     } catch (e) {
-      navigate(-1)
-    } finally {
-      setPending(false);
+      return null;
     }
+    return await {playlistid,playlist,musics,creator} 
 }
 // Felhasználó összes lejátszási listájának lekérése függvény
-export const getUsersAllPlaylist = async (setPlaylists) =>{
+export const getUsersAllPlaylist = async () =>{
     if(token){
-        api.get("/GetPlaylistByUser?id="+userid)
-        .then(response => {
-            setPlaylists(response.data);
-        })
-        .catch(e => {console.error("HIBA, Nem sikerült lekérni a lejátszási listák: ",e)})
+        const response = await api.get("/GetPlaylistByUser?id="+userid)
+        return response.data;
     }
 }
 // Lejátszási lista készítés függvény
-export const createPlaylist = async (newPlaylist,toaster,setPlaylistName,setImageUrl,setOpen,getPlaylists) => {
-    api.post("/CreatePlaylist",newPlaylist, {
+export const createPlaylist = async (newPlaylist,toaster,setPlaylistName,setImageUrl,setOpen,load) => {
+    await api.post("/CreatePlaylist",newPlaylist, {
         headers: {
             Authorization: `Bearer ${token}`
         }
@@ -109,7 +107,7 @@ export const createPlaylist = async (newPlaylist,toaster,setPlaylistName,setImag
             setPlaylistName("");
             setImageUrl("");
             setOpen(false);
-            getPlaylists();
+            load();
         })
     })
     .catch((e)=>{
@@ -151,23 +149,26 @@ export const getIsPlaylistAdded = async (playlistId, setIsCreator, setIsAdded)=>
     }
 }
 // Lejátszási lista hozzáadása a saját listáimhoz
-export const addToMyPlaylists = async (playlistId,playlistName,toaster,setIsAdded)=>{
-    api.post("/AddPlaylistToUser",{userid,playlistId},{
+export const addToMyPlaylists = async (playlistId,playlistName,toaster)=>{
+    let isAdded = false;
+    await api.post("/AddPlaylistToUser",{userid,playlistId},{
       headers: {
         Authorization: `Bearer ${token}`
     }
     })
     .then(()=>{
       toaster.create({ title: `Sikeresen hozzáadtad a(z) ${playlistName} listát a saját listáidhoz!`, type: "success" });
-      setIsAdded(true);
+      isAdded = true;
     })
     .catch((e)=>{
       console.error("Hiba történt a lista hozzáadása közben: ",e);
     })
+    return await isAdded;
 }
 // Lejátszási lista törlése a saját listáimból
-export  const removeFromMyPlaylists = (playlistId,playlistName,toaster,setIsAdded)=>{
-    api.delete("/DeleteUserFromPlaylist", {
+export  const removeFromMyPlaylists = async (playlistId,playlistName,toaster)=>{
+    let isAdded = true;
+    await api.delete("/DeleteUserFromPlaylist", {
       data: {
           userid: userid,
           playlistId: playlistId
@@ -178,11 +179,12 @@ export  const removeFromMyPlaylists = (playlistId,playlistName,toaster,setIsAdde
     })
     .then(()=>{
       toaster.create({ title: `Sikeresen törölted a(z) ${playlistName} listát a saját listáid közül!`, type: "success" });
-      setIsAdded(false);
+      isAdded = false;
     })
     .catch((e)=>{
       console.error("Hiba történt a lista hozzáadása közben: ",e);
     })
+    return await isAdded;
 }
 // Lejátszási lista adatainak módosítása függvény
 export const editPlaylist = async(playlist,imageUrl,playlistName,toaster,setOpen,load)=>{
@@ -201,11 +203,13 @@ export const editPlaylist = async(playlist,imageUrl,playlistName,toaster,setOpen
     })
 }
 // Lejátszási lista és zenéinek lekérése
-export const getPlaylistsWithMusic = async (setPlaylists,musicId,setAddedMusic) => {
+export const getPlaylistsWithMusic = async (musicId) => {
+  let playlists = null;
+  let addedMusics = null;
   try {
     const res = await api.get(`/GetPlaylistByUser?id=${userid}`);
     const userPlaylists = res.data.filter(pl => pl.creatorId === userid);
-    setPlaylists(userPlaylists);
+    playlists = userPlaylists;
 
     const musicStatus = {};
     await Promise.all(userPlaylists.map(async (playlist) => {
@@ -214,13 +218,14 @@ export const getPlaylistsWithMusic = async (setPlaylists,musicId,setAddedMusic) 
       musicStatus[playlist.id] = isAdded;
     }));
 
-    setAddedMusic(musicStatus);
+    addedMusics = musicStatus;
   } catch (error) {
     console.error("Hiba a playlist betöltésekor:", error);
   }
+  return {playlists,addedMusics}
 };
 // Zene törlése/hozzáadása lejátszási listához
-export const AddOrRemoveFromPlaylist = async (setAddedMusic,musicId,setFavorite,toaster,playlistId, playlistName) => {
+export const AddOrRemoveFromPlaylist = async (musicId,setFavorite,toaster,playlistId, playlistName) => {
   try {
     const musicRes = await api.get(`/playlist/${playlistId}`);
     const isAlreadyAdded = musicRes.data.musics.some(music => music.id === musicId);
@@ -244,7 +249,7 @@ export const AddOrRemoveFromPlaylist = async (setAddedMusic,musicId,setFavorite,
       toaster.create({ title: `Zene hozzáadva ${playlistName} listához.`, type: "success" });
     }
 
-    setAddedMusic(prevState => ({
+    return (prevState => ({
       ...prevState,
       [playlistId]: !isAlreadyAdded
     }));

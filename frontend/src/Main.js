@@ -19,82 +19,18 @@ import UploadPage from './pages/UploadPage';
 import Cookie from './Cookie';
 import UserPage from './pages/UserPage';
 import ProfileSettings from './pages/ProfileSettings';
+import { togglePlayPause } from './services/PlayerService';
 
 
 export default function Main({ themecolor, setThemecolor }) {
   const audioRef = useRef(null);
-  const [currentMusic, setCurrentMusic] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [currentTime, setCurrentTime] = useState(0);
-  const [duration, setDuration] = useState(0); 
-  const [volume, setVolume] = useState(50); 
-  
-  const togglePlayPause = () => {
-    if (!audioRef.current) return;
-    if (isPlaying) {
-      audioRef.current.pause();
-    } else {
-      audioRef.current.play();
-    }
-    setIsPlaying(!isPlaying);
-  };
-  
-  const handlePlay = (music) => {
-    if (currentMusic !== music) {
-      setCurrentMusic(music); // Új zene beállítása
-      setIsPlaying(true); // Automatikusan lejátszásra állítja
-      setCurrentTime(0);
-    } else {
-      togglePlayPause(); // Ha ugyanaz a zene, akkor toggle
-    }
-  };
-  
-  // Ha a currentMusic változik, automatikusan elindítja
-  useEffect(() => {
-    if (currentMusic && audioRef.current) {
-      audioRef.current.play();
-      setIsPlaying(true);
-    }
-  }, [currentMusic]);
-
   const location = useLocation();
     
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
     
-  useEffect(() => {
-    if (audioRef.current) {
-      const updateTime = () => {
-        setCurrentTime(audioRef.current.currentTime);
-      };
-      audioRef.current.addEventListener('timeupdate', updateTime);
-
-      audioRef.current.addEventListener('loadedmetadata', () => {
-        setDuration(audioRef.current.duration);
-      });
-
-      return () => {
-        audioRef.current.removeEventListener('timeupdate', updateTime);
-      };
-    }
-  }, [audioRef]);
-
-  const handleSliderChange = (value) => {
-    if (audioRef.current) {
-      audioRef.current.currentTime = value;
-    }
-  };
-
-  useEffect(() => {
-    if (audioRef.current && isPlaying) {
-      audioRef.current.play();
-    }
-  }, [isPlaying, audioRef]);
-
-  useEffect(() => {
-    audioRef.current.volume = volume / 100;
-  }, [volume]);
   return (
     <Box backgroundSize="cover" backgroundPosition="center" backgroundRepeat="no-repeat" bg={"Background"}>
           {/* Main Grid */}
@@ -112,7 +48,7 @@ export default function Main({ themecolor, setThemecolor }) {
                   <Route path="/settings/profile" element={<ProfileSettings />} />
                   {/* Ha ismeretlen az útvonal, irányítsd a kezdőlapra */}
                   <Route path="*" element={<Navigate to="/" />} />
-                  <Route path="/music/:id" element={<MusicPage currentTime={currentTime} duration={duration} handleSliderChange={handleSliderChange} currentMusic={currentMusic} handlePlay={handlePlay} isPlaying={isPlaying}/>} />
+                  <Route path="/music/:id" element={<MusicPage audioRef={audioRef} setIsPlaying={setIsPlaying} isPlaying={isPlaying}/>} />
                   <Route path="/playlist/:id" element={<PlaylistPage/>} />
                   <Route path="/upload" element={<UploadPage/>} />
                   <Route path="/about" element={<About />} />
@@ -123,8 +59,12 @@ export default function Main({ themecolor, setThemecolor }) {
                 <Footer/>
             </GridItem>
             <GridItem rowSpan={1} zIndex="4">
-               <Player themecolor={themecolor} volume={volume} setVolume={setVolume} currentTime={currentTime} duration={duration} handleSliderChange={handleSliderChange} currentMusic={currentMusic} isPlaying={isPlaying} togglePlayPause={togglePlayPause}/>
-               <audio ref={audioRef} src={currentMusic ? `https://localhost:5205/${currentMusic?.musicUrl}` : ""} />
+               <Player 
+               audioRef={audioRef} 
+               themecolor={themecolor} 
+               setIsPlaying={setIsPlaying}
+               isPlaying={isPlaying} 
+               togglePlayPause={()=> togglePlayPause(audioRef,isPlaying,setIsPlaying)}/>
             </GridItem>
           </Grid>
           <Cookie/>

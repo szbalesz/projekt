@@ -61,7 +61,8 @@ export default function AdminUsers ({selectedmenu}) {
           {
             users.map((user) => {
               return (
-                <Table.Row key={user}
+                <Table.Row 
+                  key={user?.id}
                   data-selected={selection.includes(user) ? "" : undefined}
                 >
                   <Table.Cell textAlign={"center"}>

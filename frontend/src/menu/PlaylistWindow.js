@@ -14,7 +14,7 @@ import { Input } from "@chakra-ui/react"
 import { toaster } from '../components/ui/toaster'
 import { createPlaylist } from '../services/PlaylistService'
 
-export default function PlaylistWindow({getPlaylists, playlists, userid }) {
+export default function PlaylistWindow({load, playlists, userid }) {
     const themecolor = localStorage.getItem("themecolor");
     const [playlistName, setPlaylistName] = useState("");
     const [imageUrl, setImageUrl] = useState("");
@@ -33,7 +33,7 @@ export default function PlaylistWindow({getPlaylists, playlists, userid }) {
                     <DialogTitle>Részletek szerkesztése</DialogTitle>
                 </DialogHeader>
                 <DialogBody>
-                    <form onSubmit={(a) => {
+                    <form onSubmit={async (a) => {
                         a.preventDefault();
                         let newPlaylist = {
                             playlistName: playlistName,
@@ -41,7 +41,7 @@ export default function PlaylistWindow({getPlaylists, playlists, userid }) {
                             creatorId: userid,
                         }
                         if(!playlists.find(x=>x.playlistName == playlistName)){
-                            createPlaylist(newPlaylist,toaster,setPlaylistName,setImageUrl,setOpen,getPlaylists);
+                            await createPlaylist(newPlaylist,toaster,setPlaylistName,setImageUrl,setOpen,load);
                         } 
                         else{
                             toaster.create({ title: `Már létrehoztad a(z) ${playlistName} nevű lejátszási listát!`, type: "error" });

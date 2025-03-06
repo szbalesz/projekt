@@ -3,16 +3,14 @@ import { getToken } from './AuthService';
 
 const token = getToken();
 // Összes zene lekérése függvény
-export const getAllMusic = async (setPending,setMusicList) =>{
-    setPending(true);
-    api.get("/GetAllMusic")
+export const getAllMusic = async () =>{
+    let musicList = [];
+    await api.get("/GetAllMusic")
     .then(response => {
-        setMusicList(response.data);
+        musicList = response.data;
     })
     .catch(e => {console.error("HIBA, Nem sikerült lekérni a zenéket: ",e);}) 
-    .finally(()=>{
-        setPending(false);
-    })
+    return musicList;
 }
 // Id alapján zene lekérés függvény
 export const getMusic = async (id) => {
@@ -80,15 +78,15 @@ export const deleteMusic = async (id, musicTitle, navigate, toaster) => {
   }
 }
 // Zene hozzáadása kedvencekhez függvény
-export const addToFavorite = async (favoritePlaylistId, musicId, toaster, setFavorite) => {
+export const addToFavorite = async (favoritePlaylistId, musicId, toaster) => {
   if (!token) {
     toaster.create({ title: `Jelentkezz be a funkció használatához!`, type: "info" });
-    return;
+    return false;
   }
   
   if (!favoritePlaylistId) {
     toaster.create({ title: `Úgy tűnik nincs Kedvencek nevű listád! Hozz létre egyet!`, type: "info" });
-    return;
+    return false;
   }
 
   try {
@@ -96,21 +94,21 @@ export const addToFavorite = async (favoritePlaylistId, musicId, toaster, setFav
       headers: { Authorization: `Bearer ${token}` }
     });
     toaster.create({ title: `Zene hozzáadva a kedvencekhez.`, type: "success" });
-    setFavorite(true);
+    return true;
   } catch (error) {
     toaster.create({ title: `Hiba történt a művelet közben.`, type: "error" });
     console.error(error);
   }
 }
 // Zene törlése kedvencekből függvény
-export const removeFromFavorite = async (favoritePlaylistId, musicId, toaster, setFavorite) => {
+export const removeFromFavorite = async (favoritePlaylistId, musicId, toaster) => {
   try {
     await api.delete("/DeleteMusicFromPlaylist", { 
       data: { playlistId: favoritePlaylistId, musicId },
       headers: { Authorization: `Bearer ${token}` }
     });
     toaster.create({ title: `A zene törölve a kedvencekből!`, type: "success" });
-    setFavorite(false);
+    return false;
   } catch (error) {
     toaster.create({ title: `Hiba történt a művelet közben.`, type: "error" });
     console.error(error);

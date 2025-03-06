@@ -12,14 +12,18 @@ export default function Playlists() {
   const token = getToken();
   const userid = getUserId();
 
-  const getPlaylists = ()=>{
-    getUsersAllPlaylist(setPlaylists);
+  const getPlaylists = async ()=>{
+    setPlaylists(await getUsersAllPlaylist());
+  }
+
+  const load = async () => {
+    if(token){
+      await getPlaylists();
+    }
   }
 
   useEffect(() => {
-    if(token){
-      getPlaylists();
-    }
+    load();
   }, [])
   
   return (
@@ -44,7 +48,7 @@ export default function Playlists() {
         <Flex px={"5"} pt={"3"} direction={"column"}>
           <Flex justifyContent={"space-between"}>
           {token? <Heading>Lejátszási listák</Heading> : <Heading color={"colorPalette.300"}>Jelentkezz be a funkció használatához!</Heading>}
-          {token? <Heading textAlign="center">  <PlaylistWindow getPlaylists={getPlaylists} playlists={playlists} themecolor={themecolor} userid={userid}/> </Heading> : null} 
+          {token? <Heading textAlign="center">  <PlaylistWindow load={load} playlists={playlists} themecolor={themecolor} userid={userid}/> </Heading> : null} 
           </Flex>
           <Flex my={"3"} overflowX={"auto"} gap={4} width="100%">{playlists?.map((playlist, index) => <PlaylistCard key={index} playlist={playlist} />)}</Flex>
         </Flex>

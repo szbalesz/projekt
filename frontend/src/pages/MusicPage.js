@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Box, Text, VStack, AbsoluteCenter, Button, Spinner } from '@chakra-ui/react';
 import { LuPause, LuPlay, LuStar } from 'react-icons/lu';
 import { useNavigate, useParams } from 'react-router-dom';
-import { Slider } from '../components/ui/slider';
 import { toaster } from '../components/ui/toaster';
 import { Avatar } from '../components/ui/avatar';
 import MusicMenu from '../menu/MusicMenu';
@@ -14,11 +13,11 @@ import {
   removeFromFavorite
 } from '../services/MusicService';
 import { getFavoritePlaylist } from "../services/PlaylistService";
-const MusicPage = ({ currentTime, handleSliderChange, duration, currentMusic, handlePlay, isPlaying }) => {
+import { getCurrentMusic, handlePlay, } from '../services/PlayerService';
+const MusicPage = ({ audioRef,setIsPlaying, isPlaying }) => {
   const themecolor = localStorage.getItem("themecolor");
   const { id } = useParams();
   const navigate = useNavigate();
-
   const [music, setMusic] = useState({});
   const [uploader, setUploader] = useState({});
   const [isPending, setPending] = useState(false);
@@ -26,7 +25,7 @@ const MusicPage = ({ currentTime, handleSliderChange, duration, currentMusic, ha
   const [favoritePlaylistId, setFavoritePlaylistId] = useState("");
   const [isUploader, setIsUploader] = useState(false);
   const [Uploaderid, setUploaderid] = useState("");
-
+  const currentMusic = getCurrentMusic();
   const getData = async () => {
     setPending(true);
     
@@ -121,25 +120,11 @@ const MusicPage = ({ currentTime, handleSliderChange, duration, currentMusic, ha
           </Text>
           <Text fontSize="md">
           {isFavorite? 
-          <Button p={1} m={1} variant="solid" onClick={()=> removeFromFavorite(favoritePlaylistId, music.id, toaster, setFavorite)}><LuStar fill={"colorPalette.solid"} stroke="0"/> </Button> :
-          <Button p={1} m={1} variant="solid" onClick={()=> addToFavorite(favoritePlaylistId, music.id, toaster, setFavorite)}><LuStar/></Button>}
-            <Button p={1} m={1} variant={isPlaying && music?.title === currentMusic?.title ? "outline" : "subtle"} onClick={()=> handlePlay(music)}>{isPlaying && music?.title === currentMusic?.title ? <LuPause /> : <LuPlay />} </Button>
+          <Button p={1} m={1} variant="solid" onClick={async ()=> setFavorite(await removeFromFavorite(favoritePlaylistId, music.id, toaster))}><LuStar fill={"colorPalette.solid"} stroke="0"/> </Button> :
+          <Button p={1} m={1} variant="solid" onClick={async ()=> setFavorite(await addToFavorite(favoritePlaylistId, music.id, toaster))}><LuStar/></Button>}
+            <Button p={1} m={1} variant={isPlaying && music?.title === currentMusic?.title ? "outline" : "subtle"} onClick={()=> handlePlay(audioRef,music,setIsPlaying,isPlaying)}>{isPlaying && music?.title === currentMusic?.title ? <LuPause /> : <LuPlay />} </Button>
             <MusicMenu getData={getData} isUploader={isUploader} music={music} deleteMusic={()=> deleteMusic(id, music.title, navigate, toaster)} setFavorite={setFavorite} isFavorite={isFavorite} musicId={id}/>
           </Text>
-          {music?.id === currentMusic?.id? 
-            <Box display={{base:"flex",md:"none"}} w={"100%"} alignItems="center" mx="5">
-            <Text fontSize="xs" mr="3">{Math.floor(currentTime)} mp</Text>
-              <Slider
-                value={[currentTime]}
-                onValueChange={(a) => handleSliderChange(a.value)}
-                min={0}
-                max={duration}
-                step={1}
-                width="50%"
-              />
-              <Text fontSize="xs" ml="3">{Math.floor(duration)} mp</Text>
-            </Box>
-        : ""}
         </VStack>
       ) : null}
     </Box>

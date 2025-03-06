@@ -22,7 +22,6 @@ export default function AdminMusics ({selectedmenu}) {
   const [selection, setSelection] = useState([])
   const [musics,setMusics] = useState([]);
   const [uploaders, setUploaders] = useState([]);
-  const [isPending,setPending] = useState(false);
   const hasSelection = selection.length > 0
   const navigate = useNavigate();
   
@@ -57,8 +56,8 @@ export default function AdminMusics ({selectedmenu}) {
     fetchProfiles();
   }, [musics]);
   
-  const load = () =>{
-    getAllMusic(setPending,setMusics);
+  const load = async () =>{
+    setMusics(await getAllMusic());
     setSelection([]);
   }
 
