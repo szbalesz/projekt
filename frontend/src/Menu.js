@@ -7,6 +7,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { LuBookHeadphones, LuHouse, LuList, LuSearch, LuSettings, LuShieldBan, LuShieldEllipsis, LuStar, LuUpload, LuUser, LuUsers, } from 'react-icons/lu';
 import Search from './menu/Search';
 import Cookies from "js-cookie";
+import { getUserId } from './services/UserService';
 
 export default function Menu({ themecolor }) {
   const [selectedMenu, setSelectedMenu] = useState('');
@@ -34,7 +35,7 @@ export default function Menu({ themecolor }) {
 
   const [userid, setUserid] = useState("")
   useEffect(() => {
-    setUserid(Cookies.get("userid"));
+    setUserid(getUserId());
   }, [])
   
   const profileMenuItems = useMemo(() => [

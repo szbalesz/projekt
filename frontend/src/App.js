@@ -10,7 +10,7 @@ function App() {
   useEffect(() => {
     localStorage.setItem("themecolor", themecolor);
   }, [themecolor]);
-
+  document.documentElement.style.setProperty('--themecolor', themecolor);
   return (
     <Provider>
       <Theme colorPalette={themecolor}>

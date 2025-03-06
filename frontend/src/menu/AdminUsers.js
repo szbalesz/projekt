@@ -13,7 +13,7 @@ import { LuImage, LuMail, LuPen, LuRefreshCw, LuTrash } from "react-icons/lu";
 import { useEffect } from "react";
 import { getAllUser } from "../services/UserService";
 import { useNavigate } from 'react-router-dom';
-import { deleteSelectedUsers } from "../services/AdminService";
+import { addRoleToUser, deleteSelectedUsers, removeRoleFromUser } from "../services/AdminService";
 import { toaster } from "../components/ui/toaster";
 import EditPicture from "./EditPicture";
 import EmailChange from "./EmailChange";

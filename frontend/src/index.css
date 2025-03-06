@@ -22,10 +22,10 @@ code {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #319795; /* Chakra UI teal.500 */
-  border-radius: 20px;
+  background: var(--themecolor); /* Dinamikusan beállítva a JS-ben */
+  border-radius: 35px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #2c7a7b; /* Chakra UI teal.600 */
+  background: var(--themecolor); /* Dinamikusan beállítva a JS-ben */
 }

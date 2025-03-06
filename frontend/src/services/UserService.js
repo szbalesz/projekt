@@ -1,12 +1,17 @@
 import api from './Api';
 import Cookies from "js-cookie";
 import { sendEmail } from './EmailService';
-import { getToken, onLogout } from './AuthService';
+import { getStayLoggedIn, getToken, onLogout } from './AuthService';
 
 const token = getToken();
 
 export const getUserId = () => {
-  return Cookies.get("userid");
+  if(getStayLoggedIn()){
+    return Cookies.get("userid");
+  }
+  else{
+    return sessionStorage.getItem("userid");
+  }
 }
 
 // Felhasználó adatainak lekérése

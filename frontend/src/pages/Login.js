@@ -21,13 +21,14 @@ export default function Login() {
   const themecolor = localStorage.getItem("themecolor");
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
+  const [stayLoggedIn, setStayLoggedIn] = useState(false)
   const navigate = useNavigate();
+  const isCookieEnabled = localStorage.getItem("Cookie");
   useEffect(() => {
     if(getToken()){
       navigate(-1)
     }
   }, [])
-  
   return (
     <>
     {/* Bejelentkezés */}
@@ -39,7 +40,7 @@ export default function Login() {
                 <Stack spacing={4}>
                   <form onSubmit={(e) => {
                     e.preventDefault();
-                    onLogin(username,password);
+                    onLogin(username,password,stayLoggedIn);
                   }}>
                   <Field py="3" label="Felhasználónév">
                     <Input type="text" value={username} onChange={(q) => setUsername(q.target.value)} placeholder="Add meg a felhasználóneved" />
@@ -49,9 +50,10 @@ export default function Login() {
                     />
                 </Field>
                 <Field my="2">
-                    <Checkbox>
+                <Checkbox checked={stayLoggedIn} onCheckedChange={({ checked }) => setStayLoggedIn(checked)} disabled={!isCookieEnabled}>
                     Maradjon bejelentkezve
                     </Checkbox>
+                    {!isCookieEnabled? <Text fontSize={"xs"} color={"colorPalette.solid"}>Ehhez a funkcióhoz el kell fogadnod a sütiket!</Text> : null}
                 </Field>
                 <Flex justifyContent={"space-between"}>
                 <ChakraLink>Elfelejtett jelszó?</ChakraLink>

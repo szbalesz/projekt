@@ -3,12 +3,22 @@ import Cookies from "js-cookie";
 import { toaster } from "../components/ui/toaster";
 import { sendEmail } from "./EmailService";
 
-export const getToken = () => {
-  return Cookies.get("token");
-}
 
+// Lekéri hogy legutóbbi bejelentkezéskor bepipálta e a maradjon bejelentkezve opciót
+export const getStayLoggedIn = () => {
+  const stayLoggedIn = localStorage.getItem("stayLoggedIn");
+  return stayLoggedIn === "true";
+}
+// Lekéri a tokent a megfelelő tárolóból
+export const getToken = () => {
+  if (getStayLoggedIn()) {
+    return Cookies.get("token");
+  } else {
+    return sessionStorage.getItem("token");
+  }
+}
 // Regisztrációs függvény
-export const onRegister = (username, email, password, navigate, onLogin) => {
+export const onRegister = async (username, email, password, navigate, onLogin) => {
   let newUser = {
     username,
     email,
@@ -17,7 +27,7 @@ export const onRegister = (username, email, password, navigate, onLogin) => {
     phoneNumber: "06301234567"
   };
 
-  api.post("/auth/register", newUser)
+  await api.post("/auth/register", newUser)
     .then(response => {
       if(response.data.message !== "Sikeres regisztráció."){
         toaster.create({ title: response.data.message, type: "error" });
@@ -26,7 +36,6 @@ export const onRegister = (username, email, password, navigate, onLogin) => {
         toaster.create({ title: "Sikeres regisztráció.", type: "success" });
         sendEmail(email, username, "register");
         navigate("/login");
-        onLogin(username, password,navigate);
       }
     })
     .catch(e => {
@@ -35,13 +44,20 @@ export const onRegister = (username, email, password, navigate, onLogin) => {
     });
 }
 // Bejelentkezés függvény
-export const onLogin = (username, password) => {
+export const onLogin = async (username, password,stayLoggedIn) => {
   let user = { username, password };
-  api.post("/auth/login", user)
+  await api.post("/auth/login", user)
     .then(response => {
       if (response.data.token) {
-        Cookies.set("token", response.data.token, { expires: 1, secure: true });
-        Cookies.set("userid", response.data.id, { expires: 1, secure: true });
+        localStorage.setItem("stayLoggedIn",stayLoggedIn);
+        if(stayLoggedIn){
+          Cookies.set("token", response.data.token, { expires: 1, secure: true });
+          Cookies.set("userid", response.data.id, { expires: 1, secure: true });
+        }
+        else{
+          sessionStorage.setItem("token", response.data.token);
+          sessionStorage.setItem("userid", response.data.id);
+        }
         toaster.create({ title: "Sikeres bejelentkezés!", type: "success" });
         window.location.reload(); // az oldal frissítése, hogy minden megfelelően működjön
       } else {
@@ -54,6 +70,8 @@ export const onLogin = (username, password) => {
 export const onLogout = () => {
   Cookies.remove("token");
   Cookies.remove("userid");
+  sessionStorage.removeItem("token");
+  sessionStorage.removeItem("userid");
   toaster.create({ title: "Sikeres kijelentkezés!", type: "success" });
   window.location.reload(); // az oldal frissítése, hogy minden megfelelően működjön
 }

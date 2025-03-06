@@ -31,7 +31,9 @@ export default function MenuAvatar({themecolor, profileMenuItems }) {
       setAccount(profileData);
       setRoles(userRoles);
     };
-    getData();
+    if(token){
+      getData();
+    }
   }, [])
   
   return (

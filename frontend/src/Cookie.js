@@ -1,20 +1,17 @@
 import { useEffect, useState } from "react";
-import { Button, Box, Text, Link, VStack, HStack } from "@chakra-ui/react";
+import { Button, Box, Text, VStack, HStack } from "@chakra-ui/react";
 import {
-  DialogActionTrigger,
   DialogBody,
-  DialogCloseTrigger,
   DialogContent,
   DialogFooter,
-  DialogHeader,
   DialogRoot,
-  DialogTitle,
 } from "./components/ui/dialog";
 import { LuCookie } from "react-icons/lu";
+import { useNavigate } from "react-router-dom";
 
 const Cookie = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const navigate = useNavigate();
   useEffect(() => {
     const consentGiven = localStorage.getItem("Cookie")=== "true";
     if (!consentGiven) {
@@ -25,6 +22,7 @@ const Cookie = () => {
   const handleAccept = () => {
     localStorage.setItem("Cookie", "true");
     setIsOpen(false);
+    navigate("/");
   };
 
   return (
