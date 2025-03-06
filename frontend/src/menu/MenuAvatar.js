@@ -18,6 +18,7 @@ import { Badge } from "@chakra-ui/react"
 import { Link } from 'react-router-dom';
 import { getToken, onLogout } from '../services/AuthService';
 import { getUserId, getUserProfile, getUserRoles } from '../services/UserService';
+import { toaster } from '../components/ui/toaster';
 
 export default function MenuAvatar({themecolor, profileMenuItems }) {
   const userid = getUserId();
@@ -107,7 +108,11 @@ export default function MenuAvatar({themecolor, profileMenuItems }) {
             ): ""}
           </DrawerBody>
           {token ? <DrawerFooter justifyContent="center">
-            <Button variant="outline" onClick={() => onLogout()}>Kijelenkezés</Button>
+            <Button variant="outline" onClick={async () => {
+              await onLogout();
+              toaster.create({ title: "Sikeres kijelentkezés!", type: "success" });
+              window.location.reload(); // az oldal frissítése, hogy minden megfelelően működjön
+              }}>Kijelenkezés</Button>
           </DrawerFooter> : ""}
           </Theme>
         </DrawerContent>

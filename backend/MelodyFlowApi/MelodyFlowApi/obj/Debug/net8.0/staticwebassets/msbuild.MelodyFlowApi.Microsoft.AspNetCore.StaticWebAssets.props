@@ -240,6 +240,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\music\c94b7531-9476-426f-9813-6f11d586c857_ROSE &amp; Bruno Mars - APT. (Official Music Video).mp3))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\music\cd2e5271-dc06-4093-83dd-7255a5938e2c_YEAT - FLAWLESS 2 (ft. LIL UZI VERT) [PROD. SKY x MYWAYBEATZ] 2.mp3))">
+      <SourceType>Package</SourceType>
+      <SourceId>MelodyFlowApi</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/MelodyFlowApi</BasePath>
+      <RelativePath>music/cd2e5271-dc06-4093-83dd-7255a5938e2c_YEAT - FLAWLESS 2 (ft. LIL UZI VERT) [PROD. SKY x MYWAYBEATZ] 2.mp3</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\music\cd2e5271-dc06-4093-83dd-7255a5938e2c_YEAT - FLAWLESS 2 (ft. LIL UZI VERT) [PROD. SKY x MYWAYBEATZ] 2.mp3))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\music\cde7a600-37c6-4332-a889-ef4811b6e7e0_JABER X T. Danny - MILLIÓK (Official Music Video).mp3))">
       <SourceType>Package</SourceType>
       <SourceId>MelodyFlowApi</SourceId>

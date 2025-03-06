@@ -16,6 +16,7 @@ import { Checkbox } from "../components/ui/checkbox"
 import { Link, useNavigate } from 'react-router-dom';
 import { PasswordInput } from "../components/ui/password-input"
 import { getToken, onLogin } from "../services/AuthService";
+import { toaster } from '../components/ui/toaster';
 
 export default function Login() {
   const themecolor = localStorage.getItem("themecolor");
@@ -26,7 +27,8 @@ export default function Login() {
   const isCookieEnabled = localStorage.getItem("Cookie");
   useEffect(() => {
     if(getToken()){
-      navigate(-1)
+      navigate(-1);
+      toaster.create({ title: "Sikeres bejelentkezés!", type: "success" });
     }
   }, [])
   return (
@@ -38,9 +40,12 @@ export default function Login() {
             <Box rounded="lg" w="350px" bg="bg" boxShadow={`0 0 50px 0px ${themecolor}`}  px={8} py={5}>
                 <Heading textAlign="center" color={"colorPalette.solid"} w="50%" borderRadius="25px" mx="auto" my="3" p="1">Bejelentkezés</Heading>
                 <Stack spacing={4}>
-                  <form onSubmit={(e) => {
+                  <form onSubmit={async (e) => {
                     e.preventDefault();
-                    onLogin(username,password,stayLoggedIn);
+                    const res = await onLogin(username,password,stayLoggedIn);
+                    if(res){
+                      window.location.reload(); // az oldal frissítése, hogy minden megfelelően működjön
+                    }
                   }}>
                   <Field py="3" label="Felhasználónév">
                     <Input type="text" value={username} onChange={(q) => setUsername(q.target.value)} placeholder="Add meg a felhasználóneved" />

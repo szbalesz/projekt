@@ -2,6 +2,7 @@ import api from "./Api";
 import Cookies from "js-cookie";
 import { toaster } from "../components/ui/toaster";
 import { sendEmail } from "./EmailService";
+import { jwtDecode } from "jwt-decode";
 
 
 // Lekéri hogy legutóbbi bejelentkezéskor bepipálta e a maradjon bejelentkezve opciót
@@ -11,11 +12,27 @@ export const getStayLoggedIn = () => {
 }
 // Lekéri a tokent a megfelelő tárolóból
 export const getToken = () => {
+  let token;
   if (getStayLoggedIn()) {
-    return Cookies.get("token");
+    token = Cookies.get("token");
   } else {
-    return sessionStorage.getItem("token");
+    token = sessionStorage.getItem("token");
   }
+  if(token){
+    try {
+      const decoded = jwtDecode(token);
+      const currentTime = Math.floor(Date.now() / 1000);
+  
+      if(decoded.exp < currentTime){ // Ha az exp kisebb, mint a mostani idő, akkor lejárt a token
+        toaster.create({ title: "A token lejárt! Kérlek jelentkezz be újra!", type: "error" });
+        onLogout();
+      }
+      else{
+        return token;
+      }
+    } catch (e) {}
+  }
+  return token;
 }
 // Regisztrációs függvény
 export const onRegister = async (username, email, password, navigate, onLogin) => {
@@ -54,30 +71,19 @@ export const onLogin = async (username, password,stayLoggedIn) => {
         localStorage.setItem("stayLoggedIn",stayLoggedIn);
         if(stayLoggedIn){
           Cookies.set("token", response.data.token, { expires: 1, secure: true });
-          Cookies.set("userid", response.data.id, { expires: 1, secure: true });
         }
         else{
           sessionStorage.setItem("token", response.data.token);
-          sessionStorage.setItem("userid", response.data.id);
         }
-        toaster.create({ title: "Sikeres bejelentkezés!", type: "success" });
       } else {
         toaster.create({ title: "Sikertelen bejelentkezés!", type: "error" });
       }
     })
-    .then(()=>{
-      if(token){
-        window.location.reload(); // az oldal frissítése, hogy minden megfelelően működjön
-      }
-    })
     .catch(e => console.error("HIBA, Nem sikerült a bejelentkezés: ", e));
+    return token;
 }
 // Kijelentkezés függvény
 export const onLogout = () => {
   Cookies.remove("token");
-  Cookies.remove("userid");
-  sessionStorage.removeItem("token");
-  sessionStorage.removeItem("userid");
-  toaster.create({ title: "Sikeres kijelentkezés!", type: "success" });
-  window.location.reload(); // az oldal frissítése, hogy minden megfelelően működjön
+  sessionStorage.removeItem("token");;
 }

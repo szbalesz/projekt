@@ -80,9 +80,8 @@ namespace MelodyFlowApi
             }
 
             app.UseHttpsRedirection();
-
-            app.UseAuthorization();
             app.UseCors("_myAllowSpecificOrigins");
+            app.UseAuthorization();
 
             app.MapControllers();
             app.UseStaticFiles();

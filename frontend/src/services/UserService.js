@@ -1,17 +1,14 @@
 import api from './Api';
-import Cookies from "js-cookie";
 import { sendEmail } from './EmailService';
-import { getStayLoggedIn, getToken, onLogout } from './AuthService';
-
+import { getToken, onLogout } from './AuthService';
+import { jwtDecode } from "jwt-decode";
 const token = getToken();
 
 export const getUserId = () => {
-  if(getStayLoggedIn()){
-    return Cookies.get("userid");
+  if(token){
+    return jwtDecode(token).sub
   }
-  else{
-    return sessionStorage.getItem("userid");
-  }
+  return null;
 }
 
 // Felhasználó adatainak lekérése
