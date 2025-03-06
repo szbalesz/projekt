@@ -29,8 +29,7 @@ export default function EditPlaylistWindow({ openbutton,playlist,load }) {
             <DialogTrigger mx={"auto"} asChild>
             {openbutton}
             </DialogTrigger>
-            <DialogBackdrop onClick={()=>setOpen(false)}/>
-            <DialogContent>
+            <DialogContent border="10px solid" borderColor="bg" rounded="xl">
             <Theme colorPalette={themecolor} display={"flex"} flexDirection={"column"} bg={"Background"} h={"100%"}>
                 <DialogHeader>
                     <DialogTitle>Adatok szerkesztése</DialogTitle>

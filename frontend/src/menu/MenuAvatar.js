@@ -42,7 +42,7 @@ export default function MenuAvatar({themecolor, profileMenuItems }) {
         <DrawerTrigger variant="outline" position="absolute" p={0} w="45px" right="5" borderRadius="50%" asChild>
           <Avatar src={account?.profilePictureURL} h="95%" />
         </DrawerTrigger>
-        <DrawerContent bg="Background" borderWidth={{ base: "0px" }} borderRightWidth="1px">
+        <DrawerContent border="10px solid" borderColor="bg" rounded="xl" bg="Background" borderWidth={{ base: "0px" }} borderRightWidth="1px">
         <Theme display={"flex"} flexDirection={"column"} colorPalette={themecolor} bg={"Background"} h={"100%"}>
           <DrawerTrigger as={"div"} fontWeight="bold" borderRadius="5px" variant="outline" width="100%" position="absolute" top="0" right="0">
             <Button w="100%" variant="outline" justifyContent="space-between" fontSize="md" height="50px">

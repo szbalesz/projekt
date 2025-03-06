@@ -27,8 +27,7 @@ export default function EditPicture({userid,openbutton,profilePictureURL,load}) 
             <DialogTrigger asChild>
             {openbutton}
             </DialogTrigger>
-            <DialogBackdrop onClick={()=>setOpen(false)}/>
-            <DialogContent>
+            <DialogContent border="10px solid" borderColor="bg" rounded="xl">
             <Theme colorPalette={themecolor} display={"flex"} flexDirection={"column"} bg={"Background"} h={"100%"}>
                 <DialogHeader>
                     <DialogTitle>Profilkép szerkesztése</DialogTitle>

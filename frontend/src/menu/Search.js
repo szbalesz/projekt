@@ -37,7 +37,7 @@ export default function Search( {handlePopupClose}) {
   
   return (
     <DialogRoot defaultOpen onExitComplete={handlePopupClose} role="search" scrollBehavior="inside">
-      <DialogContent bg="Background" width={{ base: "100%", md: "85%" }} height={{ base: "80%", md: "85%" }} maxW="1500px" maxH="750px">
+      <DialogContent border="10px solid" borderColor="bg" rounded="xl" bg="Background" width={{ base: "100%", md: "85%" }} height={{ base: "80%", md: "85%" }} maxW="1500px" maxH="750px">
       <Theme display={"flex"} flexDirection={"column"} colorPalette={themecolor} bg={"Background"} h={"100%"}>
         <DialogHeader>
           <DialogTitle display={"flex"} gap={"4"}>
@@ -76,12 +76,6 @@ export default function Search( {handlePopupClose}) {
         ) : <p>Nincs találat.</p>
         }
         </DialogBody>
-
-        <DialogFooter justifyContent="center">
-          <Button variant="outline">
-            Keresés
-          </Button>
-        </DialogFooter>
         </Theme>
       </DialogContent>
     </DialogRoot>

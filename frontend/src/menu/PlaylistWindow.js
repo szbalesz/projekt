@@ -27,7 +27,7 @@ export default function PlaylistWindow({load, playlists, userid }) {
                 <Button variant={"surface"} size={"sm"} onClick={()=> setOpen(true)} mx={"5"}>Létrehozás</Button>
             </DialogTrigger>
             <DialogBackdrop onClick={()=>setOpen(false)}/>
-            <DialogContent>
+            <DialogContent border="10px solid" borderColor="bg" rounded="xl">
             <Theme colorPalette={themecolor} display={"flex"} flexDirection={"column"} bg={"Background"} h={"100%"}>
                 <DialogHeader>
                     <DialogTitle>Részletek szerkesztése</DialogTitle>

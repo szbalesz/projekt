@@ -18,7 +18,7 @@ export default function DialogAlert({openButton,func,title,text,buttontext}) {
     <DialogTrigger as={"div"} asChild>
       {openButton}
     </DialogTrigger>
-    <DialogContent>
+    <DialogContent border="10px solid" borderColor="bg" rounded="xl">
       <DialogHeader>
         <DialogTitle>{title}</DialogTitle>
       </DialogHeader>
