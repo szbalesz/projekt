@@ -35,6 +35,7 @@ export default function AdminPlayLists({selectedmenu}) {
 
    useEffect(() => {
     setSelection([]);
+    load();
   }, [selectedmenu])
 
   useEffect(() => {

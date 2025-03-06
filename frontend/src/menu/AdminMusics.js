@@ -35,6 +35,7 @@ export default function AdminMusics ({selectedmenu}) {
 
    useEffect(() => {
      setSelection([]);
+     load();
    }, [selectedmenu])
    
 

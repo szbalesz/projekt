@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "BjefPjYFemL/4Yfo3E7AMqkbawEjL+UpDq6UdQzSRBQ=",
+  "Hash": "d0/L2ThTxu4AoxVNvxjoIncRprsKDwcpS+hsLdVMMGo=",
   "Source": "MelodyFlowApi",
   "BasePath": "_content/MelodyFlowApi",
   "Mode": "Default",
@@ -10,2176 +10,410 @@
     {
       "Name": "MelodyFlowApi\\wwwroot",
       "Source": "MelodyFlowApi",
-      "ContentRoot": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\0859b03c-fb8b-419e-9d1e-a6f66332d07c_The Weeknd - Save Your Tears (Official Music Video).mp3",
+      "Identity": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\0859b03c-fb8b-419e-9d1e-a6f66332d07c_The Weeknd - Save Your Tears (Official Music Video).mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
-      "RelativePath": "music/0859b03c-fb8b-419e-9d1e-a6f66332d07c_The Weeknd - Save Your Tears (Official Music Video)#[.{fingerprint}]?.mp3",
+      "RelativePath": "music/0859b03c-fb8b-419e-9d1e-a6f66332d07c_The Weeknd - Save Your Tears (Official Music Video).mp3",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "hs9y8fqsa3",
-      "Integrity": "EaqBB2QWNCVu6xf+bEGYTzol5MKsObFG1VQb0sO9gBk=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\music\\0859b03c-fb8b-419e-9d1e-a6f66332d07c_The Weeknd - Save Your Tears (Official Music Video).mp3"
     },
     {
-      "Identity": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\0c3e50a4-6c2e-4c03-b795-b1fb797c7ddb_Kendrick Lamar - Not Like Us.mp3",
+      "Identity": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\0c3e50a4-6c2e-4c03-b795-b1fb797c7ddb_Kendrick Lamar - Not Like Us.mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
-      "RelativePath": "music/0c3e50a4-6c2e-4c03-b795-b1fb797c7ddb_Kendrick Lamar - Not Like Us#[.{fingerprint}]?.mp3",
+      "RelativePath": "music/0c3e50a4-6c2e-4c03-b795-b1fb797c7ddb_Kendrick Lamar - Not Like Us.mp3",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "0qyeis3662",
-      "Integrity": "uGadyiqCq8CWGkFAzin/dP116QSioZom0NKQDNZv860=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\music\\0c3e50a4-6c2e-4c03-b795-b1fb797c7ddb_Kendrick Lamar - Not Like Us.mp3"
     },
     {
-      "Identity": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\1502cc33-971f-4ca8-a589-bf8efdbdd8ec_Manuel - Para (Official Lyrics Video).mp3",
+      "Identity": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\1502cc33-971f-4ca8-a589-bf8efdbdd8ec_Manuel - Para (Official Lyrics Video).mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
-      "RelativePath": "music/1502cc33-971f-4ca8-a589-bf8efdbdd8ec_Manuel - Para (Official Lyrics Video)#[.{fingerprint}]?.mp3",
+      "RelativePath": "music/1502cc33-971f-4ca8-a589-bf8efdbdd8ec_Manuel - Para (Official Lyrics Video).mp3",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "dktpxwhzk9",
-      "Integrity": "7XKvVjhDUkU2SJgfiM7b4kGcNYxfULG4uTAFQs9mLZ4=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\music\\1502cc33-971f-4ca8-a589-bf8efdbdd8ec_Manuel - Para (Official Lyrics Video).mp3"
     },
     {
-      "Identity": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\2d98ee0e-baf9-441e-abb5-abc0ac9516a6_Ariana Grande - 7 rings (Official Video).mp3",
+      "Identity": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\2d98ee0e-baf9-441e-abb5-abc0ac9516a6_Ariana Grande - 7 rings (Official Video).mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
-      "RelativePath": "music/2d98ee0e-baf9-441e-abb5-abc0ac9516a6_Ariana Grande - 7 rings (Official Video)#[.{fingerprint}]?.mp3",
+      "RelativePath": "music/2d98ee0e-baf9-441e-abb5-abc0ac9516a6_Ariana Grande - 7 rings (Official Video).mp3",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "vzhdpoamxc",
-      "Integrity": "W9U6AnrAXqBrv1T4P7a6dVstIzvLLJc9+HVte1k+9Ho=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\music\\2d98ee0e-baf9-441e-abb5-abc0ac9516a6_Ariana Grande - 7 rings (Official Video).mp3"
     },
     {
-      "Identity": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\4c74b7c9-ced4-4bc4-9ff0-b43506ae448c_deshwalkinastreet.mp3",
+      "Identity": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\4c74b7c9-ced4-4bc4-9ff0-b43506ae448c_deshwalkinastreet.mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
-      "RelativePath": "music/4c74b7c9-ced4-4bc4-9ff0-b43506ae448c_deshwalkinastreet#[.{fingerprint}]?.mp3",
+      "RelativePath": "music/4c74b7c9-ced4-4bc4-9ff0-b43506ae448c_deshwalkinastreet.mp3",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "t2e4y29ftp",
-      "Integrity": "RRo+TzSCNYtD7+OU38LpovT9UXva7z5D7962M988HaQ=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\music\\4c74b7c9-ced4-4bc4-9ff0-b43506ae448c_deshwalkinastreet.mp3"
     },
     {
-      "Identity": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\7aa86b41-4d5a-40f8-a7e1-9978bfd11e7c_Feher Krisztian - Így jártam (Official Music Video).mp3",
+      "Identity": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\7aa86b41-4d5a-40f8-a7e1-9978bfd11e7c_Feher Krisztian - Így jártam (Official Music Video).mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
-      "RelativePath": "music/7aa86b41-4d5a-40f8-a7e1-9978bfd11e7c_Feher Krisztian - Így jártam (Official Music Video)#[.{fingerprint}]?.mp3",
+      "RelativePath": "music/7aa86b41-4d5a-40f8-a7e1-9978bfd11e7c_Feher Krisztian - Így jártam (Official Music Video).mp3",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "b9f6y54ouy",
-      "Integrity": "v2h5Ha62PKAuQTSPCdn+VrkrTSVRnQFJ5hU8Ulnok3o=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\music\\7aa86b41-4d5a-40f8-a7e1-9978bfd11e7c_Feher Krisztian - Így jártam (Official Music Video).mp3"
     },
     {
-      "Identity": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\811d4a92-72bf-4ffc-a356-9c012d0dda7d_Kendrick Lamar - luther (Official Audio).mp3",
+      "Identity": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\811d4a92-72bf-4ffc-a356-9c012d0dda7d_Kendrick Lamar - luther (Official Audio).mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
-      "RelativePath": "music/811d4a92-72bf-4ffc-a356-9c012d0dda7d_Kendrick Lamar - luther (Official Audio)#[.{fingerprint}]?.mp3",
+      "RelativePath": "music/811d4a92-72bf-4ffc-a356-9c012d0dda7d_Kendrick Lamar - luther (Official Audio).mp3",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "cl3yfpezht",
-      "Integrity": "UKbitS4ahtLAv9sxrRt+PjqBprTbp7pNyWVHrfgVOTA=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\music\\811d4a92-72bf-4ffc-a356-9c012d0dda7d_Kendrick Lamar - luther (Official Audio).mp3"
     },
     {
-      "Identity": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\81f743f6-a04e-4ccb-b525-c860e703cae9_Benson Boone - Beautiful Things (Official Music Video).mp3",
+      "Identity": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\81f743f6-a04e-4ccb-b525-c860e703cae9_Benson Boone - Beautiful Things (Official Music Video).mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
-      "RelativePath": "music/81f743f6-a04e-4ccb-b525-c860e703cae9_Benson Boone - Beautiful Things (Official Music Video)#[.{fingerprint}]?.mp3",
+      "RelativePath": "music/81f743f6-a04e-4ccb-b525-c860e703cae9_Benson Boone - Beautiful Things (Official Music Video).mp3",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "g7bzsl3dws",
-      "Integrity": "fKO8/eK/Npt4/4jesHSG9lAML1jU2/tHZ+foJD2L/Bc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\music\\81f743f6-a04e-4ccb-b525-c860e703cae9_Benson Boone - Beautiful Things (Official Music Video).mp3"
     },
     {
-      "Identity": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\8995a895-76bb-4f85-8466-3ecb9f44ec04_Farkas Pisti x Bódi Csabi - SZERELEM  (hivatalos videoklip).mp3",
+      "Identity": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\8995a895-76bb-4f85-8466-3ecb9f44ec04_Farkas Pisti x Bódi Csabi - SZERELEM  (hivatalos videoklip).mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
-      "RelativePath": "music/8995a895-76bb-4f85-8466-3ecb9f44ec04_Farkas Pisti x Bódi Csabi - SZERELEM  (hivatalos videoklip)#[.{fingerprint}]?.mp3",
+      "RelativePath": "music/8995a895-76bb-4f85-8466-3ecb9f44ec04_Farkas Pisti x Bódi Csabi - SZERELEM  (hivatalos videoklip).mp3",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "9eahcogqqn",
-      "Integrity": "H0VnzXD+n7PaPxzPQlTRBX8JfAkiONNN4V+OoAcpRJ0=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\music\\8995a895-76bb-4f85-8466-3ecb9f44ec04_Farkas Pisti x Bódi Csabi - SZERELEM  (hivatalos videoklip).mp3"
     },
     {
-      "Identity": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\8e589e6a-881f-4df4-996d-597482f6e185_Katy Perry - Firework (Official Music Video).mp3",
+      "Identity": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\8e589e6a-881f-4df4-996d-597482f6e185_Katy Perry - Firework (Official Music Video).mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
-      "RelativePath": "music/8e589e6a-881f-4df4-996d-597482f6e185_Katy Perry - Firework (Official Music Video)#[.{fingerprint}]?.mp3",
+      "RelativePath": "music/8e589e6a-881f-4df4-996d-597482f6e185_Katy Perry - Firework (Official Music Video).mp3",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "qypfd6cdg5",
-      "Integrity": "Mjb6+KtEwxprFBY18/H2MiLrvtX400TI29LF88IB2iQ=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\music\\8e589e6a-881f-4df4-996d-597482f6e185_Katy Perry - Firework (Official Music Video).mp3"
     },
     {
-      "Identity": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\8eefcd7c-014c-47d5-9adf-6e2f222f8d1b_JABER - Isten Vezet (ft. Sean Price).mp3",
+      "Identity": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\8eefcd7c-014c-47d5-9adf-6e2f222f8d1b_JABER - Isten Vezet (ft. Sean Price).mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
-      "RelativePath": "music/8eefcd7c-014c-47d5-9adf-6e2f222f8d1b_JABER - Isten Vezet (ft. Sean Price)#[.{fingerprint}]?.mp3",
+      "RelativePath": "music/8eefcd7c-014c-47d5-9adf-6e2f222f8d1b_JABER - Isten Vezet (ft. Sean Price).mp3",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "hxbodw212j",
-      "Integrity": "m6ByYW4IFnGoQVDkhle434tF6jV7N5gffBK/GOl0ADI=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\music\\8eefcd7c-014c-47d5-9adf-6e2f222f8d1b_JABER - Isten Vezet (ft. Sean Price).mp3"
     },
     {
-      "Identity": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\a16f4de7-8550-4df9-9845-9a1e36565dce_KKevin - PATKÁNY (OFFICIAL VISUALIZER).mp3",
+      "Identity": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\a16f4de7-8550-4df9-9845-9a1e36565dce_KKevin - PATKÁNY (OFFICIAL VISUALIZER).mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
-      "RelativePath": "music/a16f4de7-8550-4df9-9845-9a1e36565dce_KKevin - PATKÁNY (OFFICIAL VISUALIZER)#[.{fingerprint}]?.mp3",
+      "RelativePath": "music/a16f4de7-8550-4df9-9845-9a1e36565dce_KKevin - PATKÁNY (OFFICIAL VISUALIZER).mp3",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "0zu3u2nl4n",
-      "Integrity": "jJWeSlf8duw0L2GuJVBKhvtAbqI3TQ08bl1EBf6h1+k=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\music\\a16f4de7-8550-4df9-9845-9a1e36565dce_KKevin - PATKÁNY (OFFICIAL VISUALIZER).mp3"
     },
     {
-      "Identity": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\a5f28d33-4e77-4fca-b93e-c62c84f40607_Lady Gaga - Abracadabra (Official Music Video).mp3",
+      "Identity": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\a5f28d33-4e77-4fca-b93e-c62c84f40607_Lady Gaga - Abracadabra (Official Music Video).mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
-      "RelativePath": "music/a5f28d33-4e77-4fca-b93e-c62c84f40607_Lady Gaga - Abracadabra (Official Music Video)#[.{fingerprint}]?.mp3",
+      "RelativePath": "music/a5f28d33-4e77-4fca-b93e-c62c84f40607_Lady Gaga - Abracadabra (Official Music Video).mp3",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "wb1jm24syu",
-      "Integrity": "fOurbpsq8VZlw+VTGgr4WmsyG8n6Ad2knnHrLEb8jSY=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\music\\a5f28d33-4e77-4fca-b93e-c62c84f40607_Lady Gaga - Abracadabra (Official Music Video).mp3"
     },
     {
-      "Identity": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\bfa2e020-3511-4e8c-9f84-9ab24cc687b4_Billie Eilish - BIRDS OF A FEATHER (Official Music Video).mp3",
+      "Identity": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\bfa2e020-3511-4e8c-9f84-9ab24cc687b4_Billie Eilish - BIRDS OF A FEATHER (Official Music Video).mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
-      "RelativePath": "music/bfa2e020-3511-4e8c-9f84-9ab24cc687b4_Billie Eilish - BIRDS OF A FEATHER (Official Music Video)#[.{fingerprint}]?.mp3",
+      "RelativePath": "music/bfa2e020-3511-4e8c-9f84-9ab24cc687b4_Billie Eilish - BIRDS OF A FEATHER (Official Music Video).mp3",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "krqw2xktv7",
-      "Integrity": "gDVPbkl0hoVex/leZX00kwaFqkja1uM883E5x20y/Vc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\music\\bfa2e020-3511-4e8c-9f84-9ab24cc687b4_Billie Eilish - BIRDS OF A FEATHER (Official Music Video).mp3"
     },
     {
-      "Identity": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\c94b7531-9476-426f-9813-6f11d586c857_ROSE & Bruno Mars - APT. (Official Music Video).mp3",
+      "Identity": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\c94b7531-9476-426f-9813-6f11d586c857_ROSE & Bruno Mars - APT. (Official Music Video).mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
-      "RelativePath": "music/c94b7531-9476-426f-9813-6f11d586c857_ROSE & Bruno Mars - APT. (Official Music Video)#[.{fingerprint}]?.mp3",
+      "RelativePath": "music/c94b7531-9476-426f-9813-6f11d586c857_ROSE & Bruno Mars - APT. (Official Music Video).mp3",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "xmkfchqu6k",
-      "Integrity": "Oabc//AQACMrC+ZP8W4MAyQ1au4IYnKiUNqr3HGdVFQ=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\music\\c94b7531-9476-426f-9813-6f11d586c857_ROSE & Bruno Mars - APT. (Official Music Video).mp3"
     },
     {
-      "Identity": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\cde7a600-37c6-4332-a889-ef4811b6e7e0_JABER X T. Danny - MILLIÓK (Official Music Video).mp3",
+      "Identity": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\cde7a600-37c6-4332-a889-ef4811b6e7e0_JABER X T. Danny - MILLIÓK (Official Music Video).mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
-      "RelativePath": "music/cde7a600-37c6-4332-a889-ef4811b6e7e0_JABER X T. Danny - MILLIÓK (Official Music Video)#[.{fingerprint}]?.mp3",
+      "RelativePath": "music/cde7a600-37c6-4332-a889-ef4811b6e7e0_JABER X T. Danny - MILLIÓK (Official Music Video).mp3",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "ed8k43zejd",
-      "Integrity": "Yofie37X/MRxgxlVLmA4oSALYDS6pH6dGmLeFQh1apE=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\music\\cde7a600-37c6-4332-a889-ef4811b6e7e0_JABER X T. Danny - MILLIÓK (Official Music Video).mp3"
     },
     {
-      "Identity": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\cf7d8fbd-2072-4ed1-8fe8-ef7b6733fddc_KKevin - PROSECCO ft. Bruno (Official Music Video).mp3",
+      "Identity": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\cf7d8fbd-2072-4ed1-8fe8-ef7b6733fddc_KKevin - PROSECCO ft. Bruno (Official Music Video).mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
-      "RelativePath": "music/cf7d8fbd-2072-4ed1-8fe8-ef7b6733fddc_KKevin - PROSECCO ft. Bruno (Official Music Video)#[.{fingerprint}]?.mp3",
+      "RelativePath": "music/cf7d8fbd-2072-4ed1-8fe8-ef7b6733fddc_KKevin - PROSECCO ft. Bruno (Official Music Video).mp3",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "gpwf8k3yih",
-      "Integrity": "rCQLE95KPmfMTKcVz+Wfx+UjGoS/tUmxRB7huo7fOsc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\music\\cf7d8fbd-2072-4ed1-8fe8-ef7b6733fddc_KKevin - PROSECCO ft. Bruno (Official Music Video).mp3"
     },
     {
-      "Identity": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\d1d61de2-2462-443f-8c86-a0efc5dd4c65_Lady Gaga, Bruno Mars - Die With A Smile (Official Music Video) (1).mp3",
+      "Identity": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\d1d61de2-2462-443f-8c86-a0efc5dd4c65_Lady Gaga, Bruno Mars - Die With A Smile (Official Music Video) (1).mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
-      "RelativePath": "music/d1d61de2-2462-443f-8c86-a0efc5dd4c65_Lady Gaga, Bruno Mars - Die With A Smile (Official Music Video) (1)#[.{fingerprint}]?.mp3",
+      "RelativePath": "music/d1d61de2-2462-443f-8c86-a0efc5dd4c65_Lady Gaga, Bruno Mars - Die With A Smile (Official Music Video) (1).mp3",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "bn9ceqq2wa",
-      "Integrity": "Ka5PetF37Jrv5Z8xX7mNa2nbTy+2mB+pJIWuCkoO06o=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\music\\d1d61de2-2462-443f-8c86-a0efc5dd4c65_Lady Gaga, Bruno Mars - Die With A Smile (Official Music Video) (1).mp3"
     },
     {
-      "Identity": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\d48de4a3-13e9-43b5-be38-7e1e1b7d3fa3_Burai, Fehér Krisztián, Mario feat. Essemm - BarnaLány.mp3",
+      "Identity": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\d48de4a3-13e9-43b5-be38-7e1e1b7d3fa3_Burai, Fehér Krisztián, Mario feat. Essemm - BarnaLány.mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
-      "RelativePath": "music/d48de4a3-13e9-43b5-be38-7e1e1b7d3fa3_Burai, Fehér Krisztián, Mario feat. Essemm - BarnaLány#[.{fingerprint}]?.mp3",
+      "RelativePath": "music/d48de4a3-13e9-43b5-be38-7e1e1b7d3fa3_Burai, Fehér Krisztián, Mario feat. Essemm - BarnaLány.mp3",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "0b48fv9bb5",
-      "Integrity": "zGKDzRZzRx9ZqNZghg4zU5mcJX5tQE0gCVXhdHocCGg=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\music\\d48de4a3-13e9-43b5-be38-7e1e1b7d3fa3_Burai, Fehér Krisztián, Mario feat. Essemm - BarnaLány.mp3"
     },
     {
-      "Identity": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\d4f0cf18-5a86-4481-86c9-bc711d6519e7_L.L. Junior x Azahriah (feat. Farkas Pisti) - ZHA MAJ DUR (Official Music Video).mp3",
+      "Identity": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\d4f0cf18-5a86-4481-86c9-bc711d6519e7_L.L. Junior x Azahriah (feat. Farkas Pisti) - ZHA MAJ DUR (Official Music Video).mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
-      "RelativePath": "music/d4f0cf18-5a86-4481-86c9-bc711d6519e7_L.L. Junior x Azahriah (feat. Farkas Pisti) - ZHA MAJ DUR (Official Music Video)#[.{fingerprint}]?.mp3",
+      "RelativePath": "music/d4f0cf18-5a86-4481-86c9-bc711d6519e7_L.L. Junior x Azahriah (feat. Farkas Pisti) - ZHA MAJ DUR (Official Music Video).mp3",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "il8st512tu",
-      "Integrity": "hhtxhD/ZtgM1LBTpN05UTO5/TmVF0amMLiVBrWRp97A=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\music\\d4f0cf18-5a86-4481-86c9-bc711d6519e7_L.L. Junior x Azahriah (feat. Farkas Pisti) - ZHA MAJ DUR (Official Music Video).mp3"
     },
     {
-      "Identity": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\e228040b-4f28-4f53-b910-1cf5d693e53d_Koboldok.mp3",
+      "Identity": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\e228040b-4f28-4f53-b910-1cf5d693e53d_Koboldok.mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\bales\\Desktop\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
-      "RelativePath": "music/e228040b-4f28-4f53-b910-1cf5d693e53d_Koboldok#[.{fingerprint}]?.mp3",
+      "RelativePath": "music/e228040b-4f28-4f53-b910-1cf5d693e53d_Koboldok.mp3",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "30pdqqj9xg",
-      "Integrity": "Lc5X3Zu5O4budfRJtoejP9+QZLQU0AfLU1vLuc2clPk=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\music\\e228040b-4f28-4f53-b910-1cf5d693e53d_Koboldok.mp3"
-    }
-  ],
-  "Endpoints": [
-    {
-      "Route": "music/0859b03c-fb8b-419e-9d1e-a6f66332d07c_The Weeknd - Save Your Tears (Official Music Video).hs9y8fqsa3.mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\0859b03c-fb8b-419e-9d1e-a6f66332d07c_The Weeknd - Save Your Tears (Official Music Video).mp3",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "5976744"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "audio/mpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"EaqBB2QWNCVu6xf+bEGYTzol5MKsObFG1VQb0sO9gBk=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 06:28:26 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "hs9y8fqsa3"
-        },
-        {
-          "Name": "label",
-          "Value": "music/0859b03c-fb8b-419e-9d1e-a6f66332d07c_The Weeknd - Save Your Tears (Official Music Video).mp3"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-EaqBB2QWNCVu6xf+bEGYTzol5MKsObFG1VQb0sO9gBk="
-        }
-      ]
-    },
-    {
-      "Route": "music/0859b03c-fb8b-419e-9d1e-a6f66332d07c_The Weeknd - Save Your Tears (Official Music Video).mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\0859b03c-fb8b-419e-9d1e-a6f66332d07c_The Weeknd - Save Your Tears (Official Music Video).mp3",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "5976744"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "audio/mpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"EaqBB2QWNCVu6xf+bEGYTzol5MKsObFG1VQb0sO9gBk=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 06:28:26 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-EaqBB2QWNCVu6xf+bEGYTzol5MKsObFG1VQb0sO9gBk="
-        }
-      ]
-    },
-    {
-      "Route": "music/0c3e50a4-6c2e-4c03-b795-b1fb797c7ddb_Kendrick Lamar - Not Like Us.0qyeis3662.mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\0c3e50a4-6c2e-4c03-b795-b1fb797c7ddb_Kendrick Lamar - Not Like Us.mp3",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "8505815"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "audio/mpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"uGadyiqCq8CWGkFAzin/dP116QSioZom0NKQDNZv860=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 06:28:26 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "0qyeis3662"
-        },
-        {
-          "Name": "label",
-          "Value": "music/0c3e50a4-6c2e-4c03-b795-b1fb797c7ddb_Kendrick Lamar - Not Like Us.mp3"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-uGadyiqCq8CWGkFAzin/dP116QSioZom0NKQDNZv860="
-        }
-      ]
-    },
-    {
-      "Route": "music/0c3e50a4-6c2e-4c03-b795-b1fb797c7ddb_Kendrick Lamar - Not Like Us.mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\0c3e50a4-6c2e-4c03-b795-b1fb797c7ddb_Kendrick Lamar - Not Like Us.mp3",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "8505815"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "audio/mpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"uGadyiqCq8CWGkFAzin/dP116QSioZom0NKQDNZv860=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 06:28:26 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-uGadyiqCq8CWGkFAzin/dP116QSioZom0NKQDNZv860="
-        }
-      ]
-    },
-    {
-      "Route": "music/1502cc33-971f-4ca8-a589-bf8efdbdd8ec_Manuel - Para (Official Lyrics Video).dktpxwhzk9.mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\1502cc33-971f-4ca8-a589-bf8efdbdd8ec_Manuel - Para (Official Lyrics Video).mp3",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "4217554"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "audio/mpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"7XKvVjhDUkU2SJgfiM7b4kGcNYxfULG4uTAFQs9mLZ4=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 06:28:26 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "dktpxwhzk9"
-        },
-        {
-          "Name": "label",
-          "Value": "music/1502cc33-971f-4ca8-a589-bf8efdbdd8ec_Manuel - Para (Official Lyrics Video).mp3"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-7XKvVjhDUkU2SJgfiM7b4kGcNYxfULG4uTAFQs9mLZ4="
-        }
-      ]
-    },
-    {
-      "Route": "music/1502cc33-971f-4ca8-a589-bf8efdbdd8ec_Manuel - Para (Official Lyrics Video).mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\1502cc33-971f-4ca8-a589-bf8efdbdd8ec_Manuel - Para (Official Lyrics Video).mp3",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "4217554"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "audio/mpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"7XKvVjhDUkU2SJgfiM7b4kGcNYxfULG4uTAFQs9mLZ4=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 06:28:26 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-7XKvVjhDUkU2SJgfiM7b4kGcNYxfULG4uTAFQs9mLZ4="
-        }
-      ]
-    },
-    {
-      "Route": "music/2d98ee0e-baf9-441e-abb5-abc0ac9516a6_Ariana Grande - 7 rings (Official Video).mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\2d98ee0e-baf9-441e-abb5-abc0ac9516a6_Ariana Grande - 7 rings (Official Video).mp3",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "4440117"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "audio/mpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"W9U6AnrAXqBrv1T4P7a6dVstIzvLLJc9+HVte1k+9Ho=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 20 Feb 2025 06:23:09 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-W9U6AnrAXqBrv1T4P7a6dVstIzvLLJc9+HVte1k+9Ho="
-        }
-      ]
-    },
-    {
-      "Route": "music/2d98ee0e-baf9-441e-abb5-abc0ac9516a6_Ariana Grande - 7 rings (Official Video).vzhdpoamxc.mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\2d98ee0e-baf9-441e-abb5-abc0ac9516a6_Ariana Grande - 7 rings (Official Video).mp3",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "4440117"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "audio/mpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"W9U6AnrAXqBrv1T4P7a6dVstIzvLLJc9+HVte1k+9Ho=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 20 Feb 2025 06:23:09 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "vzhdpoamxc"
-        },
-        {
-          "Name": "label",
-          "Value": "music/2d98ee0e-baf9-441e-abb5-abc0ac9516a6_Ariana Grande - 7 rings (Official Video).mp3"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-W9U6AnrAXqBrv1T4P7a6dVstIzvLLJc9+HVte1k+9Ho="
-        }
-      ]
-    },
-    {
-      "Route": "music/4c74b7c9-ced4-4bc4-9ff0-b43506ae448c_deshwalkinastreet.mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\4c74b7c9-ced4-4bc4-9ff0-b43506ae448c_deshwalkinastreet.mp3",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "4578044"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "audio/mpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"RRo+TzSCNYtD7+OU38LpovT9UXva7z5D7962M988HaQ=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 20 Feb 2025 06:23:09 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-RRo+TzSCNYtD7+OU38LpovT9UXva7z5D7962M988HaQ="
-        }
-      ]
-    },
-    {
-      "Route": "music/4c74b7c9-ced4-4bc4-9ff0-b43506ae448c_deshwalkinastreet.t2e4y29ftp.mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\4c74b7c9-ced4-4bc4-9ff0-b43506ae448c_deshwalkinastreet.mp3",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "4578044"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "audio/mpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"RRo+TzSCNYtD7+OU38LpovT9UXva7z5D7962M988HaQ=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 20 Feb 2025 06:23:09 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "t2e4y29ftp"
-        },
-        {
-          "Name": "label",
-          "Value": "music/4c74b7c9-ced4-4bc4-9ff0-b43506ae448c_deshwalkinastreet.mp3"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-RRo+TzSCNYtD7+OU38LpovT9UXva7z5D7962M988HaQ="
-        }
-      ]
-    },
-    {
-      "Route": "music/7aa86b41-4d5a-40f8-a7e1-9978bfd11e7c_Feher Krisztian - Így jártam (Official Music Video).b9f6y54ouy.mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\7aa86b41-4d5a-40f8-a7e1-9978bfd11e7c_Feher Krisztian - Így jártam (Official Music Video).mp3",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "3461466"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "audio/mpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"v2h5Ha62PKAuQTSPCdn+VrkrTSVRnQFJ5hU8Ulnok3o=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 06:28:26 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "b9f6y54ouy"
-        },
-        {
-          "Name": "label",
-          "Value": "music/7aa86b41-4d5a-40f8-a7e1-9978bfd11e7c_Feher Krisztian - Így jártam (Official Music Video).mp3"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-v2h5Ha62PKAuQTSPCdn+VrkrTSVRnQFJ5hU8Ulnok3o="
-        }
-      ]
-    },
-    {
-      "Route": "music/7aa86b41-4d5a-40f8-a7e1-9978bfd11e7c_Feher Krisztian - Így jártam (Official Music Video).mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\7aa86b41-4d5a-40f8-a7e1-9978bfd11e7c_Feher Krisztian - Így jártam (Official Music Video).mp3",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "3461466"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "audio/mpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"v2h5Ha62PKAuQTSPCdn+VrkrTSVRnQFJ5hU8Ulnok3o=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 06:28:26 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-v2h5Ha62PKAuQTSPCdn+VrkrTSVRnQFJ5hU8Ulnok3o="
-        }
-      ]
-    },
-    {
-      "Route": "music/811d4a92-72bf-4ffc-a356-9c012d0dda7d_Kendrick Lamar - luther (Official Audio).cl3yfpezht.mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\811d4a92-72bf-4ffc-a356-9c012d0dda7d_Kendrick Lamar - luther (Official Audio).mp3",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "4265201"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "audio/mpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"UKbitS4ahtLAv9sxrRt+PjqBprTbp7pNyWVHrfgVOTA=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 06:28:27 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "cl3yfpezht"
-        },
-        {
-          "Name": "label",
-          "Value": "music/811d4a92-72bf-4ffc-a356-9c012d0dda7d_Kendrick Lamar - luther (Official Audio).mp3"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-UKbitS4ahtLAv9sxrRt+PjqBprTbp7pNyWVHrfgVOTA="
-        }
-      ]
-    },
-    {
-      "Route": "music/811d4a92-72bf-4ffc-a356-9c012d0dda7d_Kendrick Lamar - luther (Official Audio).mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\811d4a92-72bf-4ffc-a356-9c012d0dda7d_Kendrick Lamar - luther (Official Audio).mp3",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "4265201"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "audio/mpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"UKbitS4ahtLAv9sxrRt+PjqBprTbp7pNyWVHrfgVOTA=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 06:28:27 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-UKbitS4ahtLAv9sxrRt+PjqBprTbp7pNyWVHrfgVOTA="
-        }
-      ]
-    },
-    {
-      "Route": "music/81f743f6-a04e-4ccb-b525-c860e703cae9_Benson Boone - Beautiful Things (Official Music Video).g7bzsl3dws.mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\81f743f6-a04e-4ccb-b525-c860e703cae9_Benson Boone - Beautiful Things (Official Music Video).mp3",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "4625691"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "audio/mpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"fKO8/eK/Npt4/4jesHSG9lAML1jU2/tHZ+foJD2L/Bc=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 06:28:27 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "g7bzsl3dws"
-        },
-        {
-          "Name": "label",
-          "Value": "music/81f743f6-a04e-4ccb-b525-c860e703cae9_Benson Boone - Beautiful Things (Official Music Video).mp3"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-fKO8/eK/Npt4/4jesHSG9lAML1jU2/tHZ+foJD2L/Bc="
-        }
-      ]
-    },
-    {
-      "Route": "music/81f743f6-a04e-4ccb-b525-c860e703cae9_Benson Boone - Beautiful Things (Official Music Video).mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\81f743f6-a04e-4ccb-b525-c860e703cae9_Benson Boone - Beautiful Things (Official Music Video).mp3",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "4625691"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "audio/mpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"fKO8/eK/Npt4/4jesHSG9lAML1jU2/tHZ+foJD2L/Bc=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 06:28:27 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-fKO8/eK/Npt4/4jesHSG9lAML1jU2/tHZ+foJD2L/Bc="
-        }
-      ]
-    },
-    {
-      "Route": "music/8995a895-76bb-4f85-8466-3ecb9f44ec04_Farkas Pisti x Bódi Csabi - SZERELEM  (hivatalos videoklip).9eahcogqqn.mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\8995a895-76bb-4f85-8466-3ecb9f44ec04_Farkas Pisti x Bódi Csabi - SZERELEM  (hivatalos videoklip).mp3",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "4448894"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "audio/mpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"H0VnzXD+n7PaPxzPQlTRBX8JfAkiONNN4V+OoAcpRJ0=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 06:28:27 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "9eahcogqqn"
-        },
-        {
-          "Name": "label",
-          "Value": "music/8995a895-76bb-4f85-8466-3ecb9f44ec04_Farkas Pisti x Bódi Csabi - SZERELEM  (hivatalos videoklip).mp3"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-H0VnzXD+n7PaPxzPQlTRBX8JfAkiONNN4V+OoAcpRJ0="
-        }
-      ]
-    },
-    {
-      "Route": "music/8995a895-76bb-4f85-8466-3ecb9f44ec04_Farkas Pisti x Bódi Csabi - SZERELEM  (hivatalos videoklip).mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\8995a895-76bb-4f85-8466-3ecb9f44ec04_Farkas Pisti x Bódi Csabi - SZERELEM  (hivatalos videoklip).mp3",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "4448894"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "audio/mpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"H0VnzXD+n7PaPxzPQlTRBX8JfAkiONNN4V+OoAcpRJ0=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 06:28:27 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-H0VnzXD+n7PaPxzPQlTRBX8JfAkiONNN4V+OoAcpRJ0="
-        }
-      ]
-    },
-    {
-      "Route": "music/8e589e6a-881f-4df4-996d-597482f6e185_Katy Perry - Firework (Official Music Video).mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\8e589e6a-881f-4df4-996d-597482f6e185_Katy Perry - Firework (Official Music Video).mp3",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "5600581"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "audio/mpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"Mjb6+KtEwxprFBY18/H2MiLrvtX400TI29LF88IB2iQ=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 20 Feb 2025 06:23:10 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-Mjb6+KtEwxprFBY18/H2MiLrvtX400TI29LF88IB2iQ="
-        }
-      ]
-    },
-    {
-      "Route": "music/8e589e6a-881f-4df4-996d-597482f6e185_Katy Perry - Firework (Official Music Video).qypfd6cdg5.mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\8e589e6a-881f-4df4-996d-597482f6e185_Katy Perry - Firework (Official Music Video).mp3",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "5600581"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "audio/mpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"Mjb6+KtEwxprFBY18/H2MiLrvtX400TI29LF88IB2iQ=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 20 Feb 2025 06:23:10 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "qypfd6cdg5"
-        },
-        {
-          "Name": "label",
-          "Value": "music/8e589e6a-881f-4df4-996d-597482f6e185_Katy Perry - Firework (Official Music Video).mp3"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-Mjb6+KtEwxprFBY18/H2MiLrvtX400TI29LF88IB2iQ="
-        }
-      ]
-    },
-    {
-      "Route": "music/8eefcd7c-014c-47d5-9adf-6e2f222f8d1b_JABER - Isten Vezet (ft. Sean Price).hxbodw212j.mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\8eefcd7c-014c-47d5-9adf-6e2f222f8d1b_JABER - Isten Vezet (ft. Sean Price).mp3",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "5150439"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "audio/mpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"m6ByYW4IFnGoQVDkhle434tF6jV7N5gffBK/GOl0ADI=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 06:28:27 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "hxbodw212j"
-        },
-        {
-          "Name": "label",
-          "Value": "music/8eefcd7c-014c-47d5-9adf-6e2f222f8d1b_JABER - Isten Vezet (ft. Sean Price).mp3"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-m6ByYW4IFnGoQVDkhle434tF6jV7N5gffBK/GOl0ADI="
-        }
-      ]
-    },
-    {
-      "Route": "music/8eefcd7c-014c-47d5-9adf-6e2f222f8d1b_JABER - Isten Vezet (ft. Sean Price).mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\8eefcd7c-014c-47d5-9adf-6e2f222f8d1b_JABER - Isten Vezet (ft. Sean Price).mp3",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "5150439"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "audio/mpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"m6ByYW4IFnGoQVDkhle434tF6jV7N5gffBK/GOl0ADI=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 06:28:27 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-m6ByYW4IFnGoQVDkhle434tF6jV7N5gffBK/GOl0ADI="
-        }
-      ]
-    },
-    {
-      "Route": "music/a16f4de7-8550-4df9-9845-9a1e36565dce_KKevin - PATKÁNY (OFFICIAL VISUALIZER).0zu3u2nl4n.mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\a16f4de7-8550-4df9-9845-9a1e36565dce_KKevin - PATKÁNY (OFFICIAL VISUALIZER).mp3",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "3581838"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "audio/mpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"jJWeSlf8duw0L2GuJVBKhvtAbqI3TQ08bl1EBf6h1+k=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 06:28:27 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "0zu3u2nl4n"
-        },
-        {
-          "Name": "label",
-          "Value": "music/a16f4de7-8550-4df9-9845-9a1e36565dce_KKevin - PATKÁNY (OFFICIAL VISUALIZER).mp3"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-jJWeSlf8duw0L2GuJVBKhvtAbqI3TQ08bl1EBf6h1+k="
-        }
-      ]
-    },
-    {
-      "Route": "music/a16f4de7-8550-4df9-9845-9a1e36565dce_KKevin - PATKÁNY (OFFICIAL VISUALIZER).mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\a16f4de7-8550-4df9-9845-9a1e36565dce_KKevin - PATKÁNY (OFFICIAL VISUALIZER).mp3",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "3581838"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "audio/mpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"jJWeSlf8duw0L2GuJVBKhvtAbqI3TQ08bl1EBf6h1+k=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 06:28:27 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-jJWeSlf8duw0L2GuJVBKhvtAbqI3TQ08bl1EBf6h1+k="
-        }
-      ]
-    },
-    {
-      "Route": "music/a5f28d33-4e77-4fca-b93e-c62c84f40607_Lady Gaga - Abracadabra (Official Music Video).mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\a5f28d33-4e77-4fca-b93e-c62c84f40607_Lady Gaga - Abracadabra (Official Music Video).mp3",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "6469518"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "audio/mpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"fOurbpsq8VZlw+VTGgr4WmsyG8n6Ad2knnHrLEb8jSY=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 06:28:27 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-fOurbpsq8VZlw+VTGgr4WmsyG8n6Ad2knnHrLEb8jSY="
-        }
-      ]
-    },
-    {
-      "Route": "music/a5f28d33-4e77-4fca-b93e-c62c84f40607_Lady Gaga - Abracadabra (Official Music Video).wb1jm24syu.mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\a5f28d33-4e77-4fca-b93e-c62c84f40607_Lady Gaga - Abracadabra (Official Music Video).mp3",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "6469518"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "audio/mpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"fOurbpsq8VZlw+VTGgr4WmsyG8n6Ad2knnHrLEb8jSY=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 06:28:27 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "wb1jm24syu"
-        },
-        {
-          "Name": "label",
-          "Value": "music/a5f28d33-4e77-4fca-b93e-c62c84f40607_Lady Gaga - Abracadabra (Official Music Video).mp3"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-fOurbpsq8VZlw+VTGgr4WmsyG8n6Ad2knnHrLEb8jSY="
-        }
-      ]
-    },
-    {
-      "Route": "music/bfa2e020-3511-4e8c-9f84-9ab24cc687b4_Billie Eilish - BIRDS OF A FEATHER (Official Music Video).krqw2xktv7.mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\bfa2e020-3511-4e8c-9f84-9ab24cc687b4_Billie Eilish - BIRDS OF A FEATHER (Official Music Video).mp3",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "5542275"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "audio/mpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"gDVPbkl0hoVex/leZX00kwaFqkja1uM883E5x20y/Vc=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 10:41:17 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "krqw2xktv7"
-        },
-        {
-          "Name": "label",
-          "Value": "music/bfa2e020-3511-4e8c-9f84-9ab24cc687b4_Billie Eilish - BIRDS OF A FEATHER (Official Music Video).mp3"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-gDVPbkl0hoVex/leZX00kwaFqkja1uM883E5x20y/Vc="
-        }
-      ]
-    },
-    {
-      "Route": "music/bfa2e020-3511-4e8c-9f84-9ab24cc687b4_Billie Eilish - BIRDS OF A FEATHER (Official Music Video).mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\bfa2e020-3511-4e8c-9f84-9ab24cc687b4_Billie Eilish - BIRDS OF A FEATHER (Official Music Video).mp3",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "5542275"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "audio/mpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"gDVPbkl0hoVex/leZX00kwaFqkja1uM883E5x20y/Vc=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 10:41:17 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-gDVPbkl0hoVex/leZX00kwaFqkja1uM883E5x20y/Vc="
-        }
-      ]
-    },
-    {
-      "Route": "music/c94b7531-9476-426f-9813-6f11d586c857_ROSE & Bruno Mars - APT. (Official Music Video).mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\c94b7531-9476-426f-9813-6f11d586c857_ROSE & Bruno Mars - APT. (Official Music Video).mp3",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "4162797"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "audio/mpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"Oabc//AQACMrC+ZP8W4MAyQ1au4IYnKiUNqr3HGdVFQ=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 06:28:27 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-Oabc//AQACMrC+ZP8W4MAyQ1au4IYnKiUNqr3HGdVFQ="
-        }
-      ]
-    },
-    {
-      "Route": "music/c94b7531-9476-426f-9813-6f11d586c857_ROSE & Bruno Mars - APT. (Official Music Video).xmkfchqu6k.mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\c94b7531-9476-426f-9813-6f11d586c857_ROSE & Bruno Mars - APT. (Official Music Video).mp3",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "4162797"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "audio/mpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"Oabc//AQACMrC+ZP8W4MAyQ1au4IYnKiUNqr3HGdVFQ=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 06:28:27 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "xmkfchqu6k"
-        },
-        {
-          "Name": "label",
-          "Value": "music/c94b7531-9476-426f-9813-6f11d586c857_ROSE & Bruno Mars - APT. (Official Music Video).mp3"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-Oabc//AQACMrC+ZP8W4MAyQ1au4IYnKiUNqr3HGdVFQ="
-        }
-      ]
-    },
-    {
-      "Route": "music/cde7a600-37c6-4332-a889-ef4811b6e7e0_JABER X T. Danny - MILLIÓK (Official Music Video).ed8k43zejd.mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\cde7a600-37c6-4332-a889-ef4811b6e7e0_JABER X T. Danny - MILLIÓK (Official Music Video).mp3",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "4295294"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "audio/mpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"Yofie37X/MRxgxlVLmA4oSALYDS6pH6dGmLeFQh1apE=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 20 Feb 2025 06:23:10 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "ed8k43zejd"
-        },
-        {
-          "Name": "label",
-          "Value": "music/cde7a600-37c6-4332-a889-ef4811b6e7e0_JABER X T. Danny - MILLIÓK (Official Music Video).mp3"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-Yofie37X/MRxgxlVLmA4oSALYDS6pH6dGmLeFQh1apE="
-        }
-      ]
-    },
-    {
-      "Route": "music/cde7a600-37c6-4332-a889-ef4811b6e7e0_JABER X T. Danny - MILLIÓK (Official Music Video).mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\cde7a600-37c6-4332-a889-ef4811b6e7e0_JABER X T. Danny - MILLIÓK (Official Music Video).mp3",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "4295294"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "audio/mpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"Yofie37X/MRxgxlVLmA4oSALYDS6pH6dGmLeFQh1apE=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 20 Feb 2025 06:23:10 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-Yofie37X/MRxgxlVLmA4oSALYDS6pH6dGmLeFQh1apE="
-        }
-      ]
-    },
-    {
-      "Route": "music/cf7d8fbd-2072-4ed1-8fe8-ef7b6733fddc_KKevin - PROSECCO ft. Bruno (Official Music Video).gpwf8k3yih.mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\cf7d8fbd-2072-4ed1-8fe8-ef7b6733fddc_KKevin - PROSECCO ft. Bruno (Official Music Video).mp3",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "3295954"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "audio/mpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"rCQLE95KPmfMTKcVz+Wfx+UjGoS/tUmxRB7huo7fOsc=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 20 Feb 2025 06:23:10 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "gpwf8k3yih"
-        },
-        {
-          "Name": "label",
-          "Value": "music/cf7d8fbd-2072-4ed1-8fe8-ef7b6733fddc_KKevin - PROSECCO ft. Bruno (Official Music Video).mp3"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-rCQLE95KPmfMTKcVz+Wfx+UjGoS/tUmxRB7huo7fOsc="
-        }
-      ]
-    },
-    {
-      "Route": "music/cf7d8fbd-2072-4ed1-8fe8-ef7b6733fddc_KKevin - PROSECCO ft. Bruno (Official Music Video).mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\cf7d8fbd-2072-4ed1-8fe8-ef7b6733fddc_KKevin - PROSECCO ft. Bruno (Official Music Video).mp3",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "3295954"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "audio/mpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"rCQLE95KPmfMTKcVz+Wfx+UjGoS/tUmxRB7huo7fOsc=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 20 Feb 2025 06:23:10 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-rCQLE95KPmfMTKcVz+Wfx+UjGoS/tUmxRB7huo7fOsc="
-        }
-      ]
-    },
-    {
-      "Route": "music/d1d61de2-2462-443f-8c86-a0efc5dd4c65_Lady Gaga, Bruno Mars - Die With A Smile (Official Music Video) (1).bn9ceqq2wa.mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\d1d61de2-2462-443f-8c86-a0efc5dd4c65_Lady Gaga, Bruno Mars - Die With A Smile (Official Music Video) (1).mp3",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "6058246"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "audio/mpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"Ka5PetF37Jrv5Z8xX7mNa2nbTy+2mB+pJIWuCkoO06o=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 06:28:27 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "bn9ceqq2wa"
-        },
-        {
-          "Name": "label",
-          "Value": "music/d1d61de2-2462-443f-8c86-a0efc5dd4c65_Lady Gaga, Bruno Mars - Die With A Smile (Official Music Video) (1).mp3"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-Ka5PetF37Jrv5Z8xX7mNa2nbTy+2mB+pJIWuCkoO06o="
-        }
-      ]
-    },
-    {
-      "Route": "music/d1d61de2-2462-443f-8c86-a0efc5dd4c65_Lady Gaga, Bruno Mars - Die With A Smile (Official Music Video) (1).mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\d1d61de2-2462-443f-8c86-a0efc5dd4c65_Lady Gaga, Bruno Mars - Die With A Smile (Official Music Video) (1).mp3",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "6058246"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "audio/mpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"Ka5PetF37Jrv5Z8xX7mNa2nbTy+2mB+pJIWuCkoO06o=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 06:28:27 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-Ka5PetF37Jrv5Z8xX7mNa2nbTy+2mB+pJIWuCkoO06o="
-        }
-      ]
-    },
-    {
-      "Route": "music/d48de4a3-13e9-43b5-be38-7e1e1b7d3fa3_Burai, Fehér Krisztián, Mario feat. Essemm - BarnaLány.0b48fv9bb5.mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\d48de4a3-13e9-43b5-be38-7e1e1b7d3fa3_Burai, Fehér Krisztián, Mario feat. Essemm - BarnaLány.mp3",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "5535379"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "audio/mpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"zGKDzRZzRx9ZqNZghg4zU5mcJX5tQE0gCVXhdHocCGg=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 06:28:27 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "0b48fv9bb5"
-        },
-        {
-          "Name": "label",
-          "Value": "music/d48de4a3-13e9-43b5-be38-7e1e1b7d3fa3_Burai, Fehér Krisztián, Mario feat. Essemm - BarnaLány.mp3"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-zGKDzRZzRx9ZqNZghg4zU5mcJX5tQE0gCVXhdHocCGg="
-        }
-      ]
-    },
-    {
-      "Route": "music/d48de4a3-13e9-43b5-be38-7e1e1b7d3fa3_Burai, Fehér Krisztián, Mario feat. Essemm - BarnaLány.mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\d48de4a3-13e9-43b5-be38-7e1e1b7d3fa3_Burai, Fehér Krisztián, Mario feat. Essemm - BarnaLány.mp3",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "5535379"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "audio/mpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"zGKDzRZzRx9ZqNZghg4zU5mcJX5tQE0gCVXhdHocCGg=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 06:28:27 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-zGKDzRZzRx9ZqNZghg4zU5mcJX5tQE0gCVXhdHocCGg="
-        }
-      ]
-    },
-    {
-      "Route": "music/d4f0cf18-5a86-4481-86c9-bc711d6519e7_L.L. Junior x Azahriah (feat. Farkas Pisti) - ZHA MAJ DUR (Official Music Video).il8st512tu.mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\d4f0cf18-5a86-4481-86c9-bc711d6519e7_L.L. Junior x Azahriah (feat. Farkas Pisti) - ZHA MAJ DUR (Official Music Video).mp3",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "5547918"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "audio/mpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"hhtxhD/ZtgM1LBTpN05UTO5/TmVF0amMLiVBrWRp97A=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 06:28:27 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "il8st512tu"
-        },
-        {
-          "Name": "label",
-          "Value": "music/d4f0cf18-5a86-4481-86c9-bc711d6519e7_L.L. Junior x Azahriah (feat. Farkas Pisti) - ZHA MAJ DUR (Official Music Video).mp3"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-hhtxhD/ZtgM1LBTpN05UTO5/TmVF0amMLiVBrWRp97A="
-        }
-      ]
-    },
-    {
-      "Route": "music/d4f0cf18-5a86-4481-86c9-bc711d6519e7_L.L. Junior x Azahriah (feat. Farkas Pisti) - ZHA MAJ DUR (Official Music Video).mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\d4f0cf18-5a86-4481-86c9-bc711d6519e7_L.L. Junior x Azahriah (feat. Farkas Pisti) - ZHA MAJ DUR (Official Music Video).mp3",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "5547918"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "audio/mpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"hhtxhD/ZtgM1LBTpN05UTO5/TmVF0amMLiVBrWRp97A=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 06:28:27 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-hhtxhD/ZtgM1LBTpN05UTO5/TmVF0amMLiVBrWRp97A="
-        }
-      ]
-    },
-    {
-      "Route": "music/e228040b-4f28-4f53-b910-1cf5d693e53d_Koboldok.30pdqqj9xg.mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\e228040b-4f28-4f53-b910-1cf5d693e53d_Koboldok.mp3",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2712274"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "audio/mpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"Lc5X3Zu5O4budfRJtoejP9+QZLQU0AfLU1vLuc2clPk=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 20 Feb 2025 06:23:10 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "30pdqqj9xg"
-        },
-        {
-          "Name": "label",
-          "Value": "music/e228040b-4f28-4f53-b910-1cf5d693e53d_Koboldok.mp3"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-Lc5X3Zu5O4budfRJtoejP9+QZLQU0AfLU1vLuc2clPk="
-        }
-      ]
-    },
-    {
-      "Route": "music/e228040b-4f28-4f53-b910-1cf5d693e53d_Koboldok.mp3",
-      "AssetFile": "C:\\Users\\Tanulo\\szarazb\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\e228040b-4f28-4f53-b910-1cf5d693e53d_Koboldok.mp3",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2712274"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "audio/mpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"Lc5X3Zu5O4budfRJtoejP9+QZLQU0AfLU1vLuc2clPk=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 20 Feb 2025 06:23:10 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-Lc5X3Zu5O4budfRJtoejP9+QZLQU0AfLU1vLuc2clPk="
-        }
-      ]
     }
   ]
 }

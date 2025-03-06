@@ -4,7 +4,7 @@ import { Slider } from "../components/ui/slider";
 import { useNavigate } from 'react-router-dom';
 import { LuPlay, LuSkipBack, LuSkipForward, LuVolume, LuPause, LuArrowDown, LuArrowUp } from "react-icons/lu";
 import { getCurrentMusic, handlePlay, handleSliderChange, randomMusic} from "../services/PlayerService";
-
+import { url } from "../services/Api"
 export default function Player({audioRef,themecolor, togglePlayPause,setIsPlaying, isPlaying }) {
   const navigate = useNavigate();
   const [open, setopen] = useState(false);
@@ -168,7 +168,7 @@ useEffect(() => {
         <LuArrowUp  />
     </Button>}
     </Flex>
-    <audio ref={audioRef} src={currentMusic ? `https://localhost:5205/${currentMusic?.musicUrl}` : ""} />
+    <audio ref={audioRef} src={currentMusic ? `https://${url}/${currentMusic?.musicUrl}` : ""} />
     </Box>
   );
 }

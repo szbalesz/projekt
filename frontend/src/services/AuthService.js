@@ -46,9 +46,11 @@ export const onRegister = async (username, email, password, navigate, onLogin) =
 // Bejelentkezés függvény
 export const onLogin = async (username, password,stayLoggedIn) => {
   let user = { username, password };
+  let token;
   await api.post("/auth/login", user)
     .then(response => {
-      if (response.data.token) {
+      token = response.data.token;
+      if (token) {
         localStorage.setItem("stayLoggedIn",stayLoggedIn);
         if(stayLoggedIn){
           Cookies.set("token", response.data.token, { expires: 1, secure: true });
@@ -59,9 +61,13 @@ export const onLogin = async (username, password,stayLoggedIn) => {
           sessionStorage.setItem("userid", response.data.id);
         }
         toaster.create({ title: "Sikeres bejelentkezés!", type: "success" });
-        window.location.reload(); // az oldal frissítése, hogy minden megfelelően működjön
       } else {
         toaster.create({ title: "Sikertelen bejelentkezés!", type: "error" });
+      }
+    })
+    .then(()=>{
+      if(token){
+        window.location.reload(); // az oldal frissítése, hogy minden megfelelően működjön
       }
     })
     .catch(e => console.error("HIBA, Nem sikerült a bejelentkezés: ", e));

@@ -27,6 +27,7 @@ export default function AdminUsers ({selectedmenu}) {
 
   useEffect(() => {
     setSelection([]);
+    load();
   }, [selectedmenu])
 
   useEffect(() => {
