@@ -25,7 +25,16 @@ const MusicPage = ({ audioRef,setIsPlaying, isPlaying }) => {
   const [favoritePlaylistId, setFavoritePlaylistId] = useState("");
   const [isUploader, setIsUploader] = useState(false);
   const [Uploaderid, setUploaderid] = useState("");
-  const currentMusic = getCurrentMusic();
+  const [currentMusic,setCurrentMusic] = useState(getCurrentMusic());
+  // Jelenlegi zene lekérése
+  const getCMusic = async () => {
+    await setCurrentMusic(getCurrentMusic());
+  }
+  useEffect(() => {
+    getCMusic();
+  }, [isPlaying])
+
+  // Kiválasztott zene adatainak lekérése
   const getData = async () => {
     setPending(true);
     
@@ -83,7 +92,7 @@ const MusicPage = ({ audioRef,setIsPlaying, isPlaying }) => {
       transition="all 1s ease-in-out"
       zIndex="0" 
       marginTop={{base: "-50px", md:"auto"}} 
-      w={{base: "85%", md:"auto"}} 
+      w={{base: "85%", md:"450px"}} 
       maxW="100%" 
       textAlign="center">
         <Box 
@@ -122,7 +131,10 @@ const MusicPage = ({ audioRef,setIsPlaying, isPlaying }) => {
           {isFavorite? 
           <Button p={1} m={1} variant="solid" onClick={async ()=> setFavorite(await removeFromFavorite(favoritePlaylistId, music.id, toaster))}><LuStar fill={"colorPalette.solid"} stroke="0"/> </Button> :
           <Button p={1} m={1} variant="solid" onClick={async ()=> setFavorite(await addToFavorite(favoritePlaylistId, music.id, toaster))}><LuStar/></Button>}
-            <Button p={1} m={1} variant={isPlaying && music?.title === currentMusic?.title ? "outline" : "subtle"} onClick={()=> handlePlay(audioRef,music,setIsPlaying,isPlaying)}>{isPlaying && music?.title === currentMusic?.title ? <LuPause /> : <LuPlay />} </Button>
+            <Button p={1} m={1} variant={isPlaying && music?.title === currentMusic?.title ? "outline" : "subtle"} onClick={async ()=> {
+              await handlePlay(audioRef,music,setIsPlaying,isPlaying);
+              await getCMusic();
+              }}>{isPlaying && music?.title === currentMusic?.title ? <LuPause /> : <LuPlay />} </Button>
             <MusicMenu getData={getData} isUploader={isUploader} music={music} deleteMusic={()=> deleteMusic(id, music.title, navigate, toaster)} setFavorite={setFavorite} isFavorite={isFavorite} musicId={id}/>
           </Text>
         </VStack>

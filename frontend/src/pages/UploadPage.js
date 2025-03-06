@@ -43,7 +43,7 @@ export default function UploadPage() {
                             <Field label="Zene borítókép url" required helperText="Add meg a zene borítójának az urljét.">
                                 <Input value={imageurl} onChange={(q) => setImageurl(q.target.value)} placeholder="https://image.jpg"/>
                             </Field>
-                            <FileUploadRoot value={musicfile} onChange={(q) => setMusicfile(q.target.files[0])} required maxFiles={1} accept={["audio/*"]}>
+                            <FileUploadRoot value={musicfile} onChange={(q) => setMusicfile(q.target.files[0])} required maxFiles={1} accept={["audio/mp3"]}>
                                 <FileUploadTrigger asChild>
                                     <Button variant="outline" size="sm">
                                         <HiUpload /> Audio fájl feltöltése
