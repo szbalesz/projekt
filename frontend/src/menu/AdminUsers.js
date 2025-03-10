@@ -18,6 +18,7 @@ import { toaster } from "../components/ui/toaster";
 import EditPicture from "./EditPicture";
 import EmailChange from "./EmailChange";
 import UsernameChange from "./UsernameChange";
+import RolesMenu from "./RolesMenu";
 
 export default function AdminUsers ({selectedmenu}) {
   const [selection, setSelection] = useState([]);
@@ -82,16 +83,8 @@ export default function AdminUsers ({selectedmenu}) {
                   </Table.Cell>
                   <Table.Cell><Button onClick={()=> {navigate("/user/"+user?.id)}} variant={"ghost"}><Avatar width="25px" height="25px" src={user?.profilePictureURL}/>{user?.username}</Button></Table.Cell>
                   <Table.Cell>{user?.email}</Table.Cell>
-                  <Table.Cell>{user?.roles.length > 0 ? 
-                  user?.roles.map((role)=> {
-                    if(role === "Admin"){
-                      return <Badge key={role} bg={"red"} color="bg">{role}</Badge>
-                    }
-                    else{
-                      return <Badge key={role}>{role}</Badge>
-                    }
-                    }) 
-                  : <Badge>Alap</Badge>}
+                  <Table.Cell>
+                  <RolesMenu rolename={user?.roles[0]}/>
                   </Table.Cell>
                   <Table.Cell>{user?.musiccount}</Table.Cell>
                   <Table.Cell>{user?.playlistcount}</Table.Cell>
