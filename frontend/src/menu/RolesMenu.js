@@ -1,5 +1,5 @@
 
-import { Badge, Button, Table } from "@chakra-ui/react"
+import { Button } from "@chakra-ui/react"
 import {
   MenuContent,
   MenuRadioItem,
@@ -8,7 +8,6 @@ import {
   MenuTrigger,
 } from "../components/ui/menu"
 import { useState } from "react"
-import { HiSortAscending } from "react-icons/hi"
 import { useEffect } from "react";
 import { addRoleToUser, removeRoleFromUser } from "../services/AdminService";
 import { toaster } from "../components/ui/toaster";

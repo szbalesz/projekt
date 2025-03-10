@@ -81,7 +81,6 @@ export default function AdminMusics ({selectedmenu}) {
           {
             musics.map((music) => {
             const profile = uploaders[music?.uploaderId];
-            console.log(profile)
             return (
             <Table.Row
               key={music?.id}

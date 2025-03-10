@@ -4,9 +4,8 @@ import SmallSidebar from './menu/SmallSidebar';
 import Sidebar from './menu/Sidebar';
 import { GridItem } from '@chakra-ui/react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { LuBookHeadphones, LuBugOff, LuHouse, LuList, LuSearch, LuSettings, LuShieldBan, LuShieldEllipsis, LuStar, LuUpload, LuUser, LuUsers, } from 'react-icons/lu';
+import { LuBookHeadphones, LuBugOff, LuHouse, LuList, LuSearch, LuSettings, LuShieldEllipsis, LuStar, LuUpload, LuUser, LuUsers, } from 'react-icons/lu';
 import Search from './menu/Search';
-import Cookies from "js-cookie";
 import { getUserId } from './services/UserService';
 import { url } from './services/Api';
 
