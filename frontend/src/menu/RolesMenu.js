@@ -36,7 +36,7 @@ export default function RolesMenu({user,load}){
       <Button disabled={user?.id === userid} size={"xs"} colorPalette={
         value === "Admin"? "red"  : "current"
       }>
-            {user?.roles[0]}
+            {user?.roles[0]? user?.roles[0] : "Alap"}
         </Button>
       </MenuTrigger>
       <MenuContent minW="10rem">
