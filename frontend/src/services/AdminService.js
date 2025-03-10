@@ -82,9 +82,6 @@ export const removeRoleFromUser = async (user,role,toaster,load)=>{
       Authorization: `Bearer ${token}`
   }
   })
-  .then(()=>{
-    toaster.create({ title: `A(z) ${user.username} nevű felhasználótól ${role} rang elvéve!`, type: "success" });
-  })
   .catch((e)=>{
     toaster.create({ title: `Hiba történt a rang elvétele közben! (Hiba a konzolban)`, type: "error" });
     console.error("Hiba történt a rang elvétele közben: ",e);

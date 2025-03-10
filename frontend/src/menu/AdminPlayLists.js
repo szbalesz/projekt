@@ -11,7 +11,7 @@ import { Avatar } from "../components/ui/avatar";
 import { useEffect, useState } from "react"
 import { LuPen, LuRefreshCw, LuTrash } from "react-icons/lu";
 import { getAllPlaylist, getPlaylistById } from "../services/PlaylistService";
-import { getUserProfile } from "../services/UserService";
+import { getUserId, getUserProfile } from "../services/UserService";
 import { useNavigate } from 'react-router-dom';
 import { toaster } from "../components/ui/toaster";
 import DialogAlert from "./DialogAlert";
@@ -25,9 +25,11 @@ export default function AdminPlayLists({selectedmenu}) {
   const [musiccounts, setMusiccounts] = useState([]);
   const hasSelection = selection.length > 0
   const navigate = useNavigate();
+  const userid = getUserId();
   const getCreator = async (id) => {
     const user = await getUserProfile(id);
     return { 
+     id: id,
      username: user.username,
      profilePictureURL: user.profilePictureURL
     }
@@ -107,7 +109,7 @@ export default function AdminPlayLists({selectedmenu}) {
               </Table.Cell>
               <Table.Cell><Button onClick={()=> {navigate("/playlist/"+playlist?.id)}} variant={"ghost"}><Avatar width="25px" height="25px" src={playlist?.imageUrl}/>{playlist?.playlistName}</Button></Table.Cell>
               <Table.Cell>{musiccount}</Table.Cell>
-              <Table.Cell><Button onClick={()=> {navigate("/user/"+playlist?.creatorId)}} variant={"ghost"}><Avatar width="25px" height="25px" src={profile?.profilePictureURL}/>{profile?.username}</Button></Table.Cell>
+              <Table.Cell><Button onClick={()=> {navigate("/user/"+playlist?.creatorId)}} variant={"ghost"}><Avatar width="25px" height="25px" src={profile?.profilePictureURL}/>{profile?.username + ((profile?.id === userid) ? " (Te)" : "")}</Button></Table.Cell>
             </Table.Row>
           )})
           }

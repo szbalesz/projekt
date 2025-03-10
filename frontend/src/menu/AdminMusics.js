@@ -11,7 +11,7 @@ import { Avatar } from "../components/ui/avatar";
 import { useEffect, useState } from "react"
 import { LuPen, LuRefreshCw, LuTrash } from "react-icons/lu";
 import { getAllMusic } from "../services/MusicService";
-import { getUserProfile } from "../services/UserService";
+import { getUserId, getUserProfile } from "../services/UserService";
 import { useNavigate } from "react-router-dom"
 import DialogAlert from "./DialogAlert";
 import { toaster } from "../components/ui/toaster";
@@ -24,10 +24,11 @@ export default function AdminMusics ({selectedmenu}) {
   const [uploaders, setUploaders] = useState([]);
   const hasSelection = selection.length > 0
   const navigate = useNavigate();
-  
+  const userid = getUserId();
   const getUploader = async (id) => {
     const user = await getUserProfile(id);
     return { 
+     id: id,
      username: user.username,
      profilePictureURL: user.profilePictureURL
     }
@@ -80,6 +81,7 @@ export default function AdminMusics ({selectedmenu}) {
           {
             musics.map((music) => {
             const profile = uploaders[music?.uploaderId];
+            console.log(profile)
             return (
             <Table.Row
               key={music?.id}
@@ -107,7 +109,7 @@ export default function AdminMusics ({selectedmenu}) {
               <Table.Cell>{music?.artist}</Table.Cell>
               <Table.Cell><Button onClick={()=>{
                 navigate("/user/"+music?.uploaderId)
-              }} variant={"ghost"}><Avatar width="25px" height="25px" src={profile?.profilePictureURL}/>{profile?.username}</Button></Table.Cell>
+              }} variant={"ghost"}><Avatar width="25px" height="25px" src={profile?.profilePictureURL}/>{profile?.username + ((profile?.id === userid) ? " (Te)" : "")}</Button></Table.Cell>
             </Table.Row>
           )})
           }

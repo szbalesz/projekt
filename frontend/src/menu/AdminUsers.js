@@ -11,9 +11,9 @@ import { Avatar } from "../components/ui/avatar";
 import { useState } from "react"
 import { LuImage, LuMail, LuPen, LuRefreshCw, LuTrash } from "react-icons/lu";
 import { useEffect } from "react";
-import { getAllUser } from "../services/UserService";
+import { getAllUser, getUserId } from "../services/UserService";
 import { useNavigate } from 'react-router-dom';
-import { addRoleToUser, deleteSelectedUsers, removeRoleFromUser } from "../services/AdminService";
+import { deleteSelectedUsers } from "../services/AdminService";
 import { toaster } from "../components/ui/toaster";
 import EditPicture from "./EditPicture";
 import EmailChange from "./EmailChange";
@@ -25,7 +25,7 @@ export default function AdminUsers ({selectedmenu}) {
   const navigate = useNavigate();
   const [users, setUsers] = useState([]);
   const hasSelection = selection.length > 0
-
+  const userid = getUserId();
   useEffect(() => {
     setSelection([]);
     load();
@@ -81,10 +81,10 @@ export default function AdminUsers ({selectedmenu}) {
                       }}
                     />
                   </Table.Cell>
-                  <Table.Cell><Button onClick={()=> {navigate("/user/"+user?.id)}} variant={"ghost"}><Avatar width="25px" height="25px" src={user?.profilePictureURL}/>{user?.username}</Button></Table.Cell>
+                  <Table.Cell><Button onClick={()=> {navigate("/user/"+user?.id)}} variant={"ghost"}><Avatar width="25px" height="25px" src={user?.profilePictureURL}/>{user?.username + ((user?.id === userid) ? " (Te)" : "")}</Button></Table.Cell>
                   <Table.Cell>{user?.email}</Table.Cell>
                   <Table.Cell>
-                  <RolesMenu rolename={user?.roles[0]}/>
+                  <RolesMenu user={user} load={load}/>
                   </Table.Cell>
                   <Table.Cell>{user?.musiccount}</Table.Cell>
                   <Table.Cell>{user?.playlistcount}</Table.Cell>
