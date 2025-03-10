@@ -4,10 +4,9 @@ import SmallSidebar from './menu/SmallSidebar';
 import Sidebar from './menu/Sidebar';
 import { GridItem } from '@chakra-ui/react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { LuBookHeadphones, LuBugOff, LuHouse, LuList, LuSearch, LuSettings, LuShieldEllipsis, LuStar, LuUpload, LuUser, LuUsers, } from 'react-icons/lu';
+import { LuBookHeadphones, LuHouse, LuList, LuSearch, LuSettings, LuShieldEllipsis, LuStar, LuUpload, LuUser, LuUsers, } from 'react-icons/lu';
 import Search from './menu/Search';
 import { getUserId } from './services/UserService';
-import { url } from './services/Api';
 
 export default function Menu({ themecolor }) {
   const [selectedMenu, setSelectedMenu] = useState('');
@@ -30,8 +29,7 @@ export default function Menu({ themecolor }) {
     { label: "Kedvencek", icon: <LuStar />, path: "/playlist/Kedvencek" },
     { label: "Lejátszási listák", icon: <LuBookHeadphones />, path: "/playlists" },
     { label: "Zene feltöltés", icon: <LuUpload />, path: "/upload" },
-    { label: "Rólunk", icon: <LuUsers />, path: "/about" },
-    { label: "BUGFIX (Swagger)", icon: <LuBugOff />, path: `https://${url}/swagger/index.html` }
+    { label: "Rólunk", icon: <LuUsers />, path: "/about" }
   ], []);
 
   const [userid, setUserid] = useState("")

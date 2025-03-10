@@ -1,8 +1,10 @@
-import { AbsoluteCenter, Flex, Spinner } from '@chakra-ui/react';
+import { AbsoluteCenter, Box, Button, Flex, Link, Spinner, Text } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
 import BigMusicCard from '../cards/BigMusicCard';
 import { useNavigate } from 'react-router-dom';
 import { getAllMusic } from '../services/MusicService';
+import { url } from '../services/Api';
+import { LuBugOff } from 'react-icons/lu';
 
 export default function Home() {
   const [isPending, setPending] = useState(false)
@@ -34,10 +36,18 @@ export default function Home() {
           <AbsoluteCenter>
             <Spinner/>
           </AbsoluteCenter> 
-          : musicList? musicList.slice(0,8).map((music, index) => (
+          : musicList?.length > 0 ? musicList.slice(0,8).map((music, index) => (
             <BigMusicCard func={()=> navigate("/music/"+music.id)} key={index} music={music}/>
         )) : <AbsoluteCenter color="red">
-        Nem sikerült betölteni a zenéket!
+          <Flex direction={"column"} textAlign={"center"}>
+          <Text>Nem sikerült betölteni a zenéket!</Text>
+          <Box mx={"auto"}>
+            <Link href={`https://${url}/swagger/index.html`}>
+            <Button><LuBugOff /> BUGFIX (Swagger)</Button>
+            </Link>
+          </Box>
+          <Text color={"colorPalette.solid"} fontSize={"xs"}>Nyissa meg a swaggert és a probléma lehetőleg megoldódik!</Text>
+          </Flex>
       </AbsoluteCenter>}
         </Flex>
       </Flex>

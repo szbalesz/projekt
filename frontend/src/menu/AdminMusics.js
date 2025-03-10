@@ -1,5 +1,6 @@
 
-import { Button, Table, Text } from "@chakra-ui/react"
+import { Button, Table,
+ } from "@chakra-ui/react"
 import {
   ActionBarContent,
   ActionBarRoot,
