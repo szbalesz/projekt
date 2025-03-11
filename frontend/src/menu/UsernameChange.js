@@ -34,7 +34,9 @@ export default function UsernameChange({openbutton,userid,currentusername,load})
                         e.preventDefault();
                         if(newusername !== currentusername)
                         {
+                            // Ha megfelelő
                             if(newusername.length >= 6){
+                                // Megváltoztatja a felhasználónevet (megpróbálja)
                                 changeUsername(userid,toaster,newusername,load);
                                 setOpen(false);
                                 setNewUserName("");

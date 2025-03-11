@@ -18,7 +18,7 @@ export default function PlaylistEditMenu({playlist,playlistName,playlistId,load}
   const navigate = useNavigate();
   const [isCreator, setIsCreator] = useState(false);
   const [isAdded, setIsAdded] = useState(false);
-
+  
   useEffect(() => {
     getFavoriteId(playlistId);
     getIsPlaylistAdded(playlistId, setIsCreator, setIsAdded);

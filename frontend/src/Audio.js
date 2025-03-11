@@ -5,32 +5,11 @@ import MusicPage from './pages/MusicPage';
 
 export default function Audio({themecolor}) {
     const audioRef = useRef(null);
-    const location = useLocation();
-    const [currentMusic, setCurrentMusic] = useState(null);
+    const [currentMusic] = useState(null);
     const [isPlaying, setIsPlaying] = useState(false);
     const [currentTime, setCurrentTime] = useState(0);
     const [duration, setDuration] = useState(0); 
     const [volume, setVolume] = useState(50); 
-    
-    const togglePlayPause = () => {
-      if (!audioRef.current) return;
-      if (isPlaying) {
-        audioRef.current.pause();
-      } else {
-        audioRef.current.play();
-      }
-      setIsPlaying(!isPlaying);
-    };
-    
-    const handlePlay = (music) => {
-      if (currentMusic !== music) {
-        setCurrentMusic(music); // Új zene beállítása
-        setIsPlaying(true); // Automatikusan lejátszásra állítja
-        setCurrentTime(0);
-      } else {
-        togglePlayPause(); // Ha ugyanaz a zene, akkor toggle
-      }
-    };
     
     // Ha a currentMusic változik, automatikusan elindítja
     useEffect(() => {
@@ -39,11 +18,7 @@ export default function Audio({themecolor}) {
         setIsPlaying(true);
       }
     }, [currentMusic]);
-      
-    useEffect(() => {
-      window.scrollTo(0, 0);
-    }, [location]);
-      
+    // Idősáv változásának vizsgálata
     useEffect(() => {
       if (audioRef.current) {
         const updateTime = () => {
@@ -60,25 +35,19 @@ export default function Audio({themecolor}) {
         };
       }
     }, [audioRef]);
-  
-    const handleSliderChange = (value) => {
-      if (audioRef.current) {
-        audioRef.current.currentTime = value;
-      }
-    };
-  
+    // Zene elindítása
     useEffect(() => {
       if (audioRef.current && isPlaying) {
         audioRef.current.play();
       }
     }, [isPlaying, audioRef]);
-  
+    // Hangerő változtatása
     useEffect(() => {
       audioRef.current.volume = volume / 100;
     }, [volume]);
   return (
     <>
-        <Player themecolor={themecolor} volume={volume} setVolume={setVolume} currentTime={currentTime} duration={duration} handleSliderChange={handleSliderChange} currentMusic={currentMusic} isPlaying={isPlaying} togglePlayPause={togglePlayPause}/>
+        <Player themecolor={themecolor} volume={volume} setVolume={setVolume} currentTime={currentTime} duration={duration} currentMusic={currentMusic} isPlaying={isPlaying}/>
         <audio ref={audioRef} src={currentMusic ? `https://localhost:5205/${currentMusic?.musicUrl}` : ""} />
     </>
   )
@@ -86,6 +55,6 @@ export default function Audio({themecolor}) {
 
 export const MusicPageRoute = () =>{
     return <Routes>
-    <Route path="/music/:id" element={<MusicPage currentTime={currentTime} duration={duration} handleSliderChange={handleSliderChange} currentMusic={currentMusic} handlePlay={handlePlay} isPlaying={isPlaying}/>} />
+    <Route path="/music/:id" element={<MusicPage currentTime={currentTime} duration={duration} currentMusic={currentMusic} isPlaying={isPlaying}/>} />
 </Routes>;
 }

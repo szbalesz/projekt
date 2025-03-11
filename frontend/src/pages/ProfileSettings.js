@@ -18,10 +18,12 @@ export default function ProfileSettings() {
         const getProfile = async() =>{
             setAccount(await getUserProfile(userid));
         }
+        // Ha nincs tokenje (nincs bejelentkezve) vissza navigálja a főoldalra
         if(!getToken){
         navigate(-1);
         }
         else{
+        // Profil lekérése
         getProfile();
         }
     }, [])

@@ -26,6 +26,7 @@ export default function AdminPlayLists({selectedmenu}) {
   const hasSelection = selection.length > 0
   const navigate = useNavigate();
   const userid = getUserId();
+  // Lejátszási lista készítőjének adatainak lekérése
   const getCreator = async (id) => {
     const user = await getUserProfile(id);
     return { 
@@ -35,6 +36,7 @@ export default function AdminPlayLists({selectedmenu}) {
     }
    }
 
+   // Menü váltáskor törli a kijelőlést, és újratölti az adatokat
    useEffect(() => {
     setSelection([]);
     load();
@@ -44,6 +46,7 @@ export default function AdminPlayLists({selectedmenu}) {
     load();
   }, [])
 
+  // Ha valtoznak a lejátszási listák akkor lekéri az adataikat
   useEffect(() => {
     const fetchData = async () => {
       const newProfiles = {};
@@ -63,9 +66,12 @@ export default function AdminPlayLists({selectedmenu}) {
     };
     fetchData();
   }, [playlists]);
-
-  const load = () => {
-    getAllPlaylist(setPlaylists);
+  
+  // Betöltés függvény
+  const load = async () => {
+    // Lejátszási listák lekérése
+    setPlaylists(await getAllPlaylist());
+    // Eddigi kijelölések törlése
     setSelection([]);
   }
 

@@ -35,11 +35,13 @@ export default function PlaylistWindow({load, playlists, userid }) {
                 <DialogBody>
                     <form onSubmit={async (a) => {
                         a.preventDefault();
+                        // Új lejátszási lista összeállítása
                         let newPlaylist = {
                             playlistName: playlistName,
                             imageUrl: imageUrl.length < 10 ? prevImg : imageUrl,
                             creatorId: userid,
                         }
+                        // Lista létezésének vizsgálata
                         if(!playlists.find(x=>x.playlistName == playlistName)){
                             await createPlaylist(newPlaylist,toaster,setPlaylistName,setImageUrl,setOpen,load);
                         } 

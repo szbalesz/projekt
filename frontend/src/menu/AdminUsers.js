@@ -26,6 +26,7 @@ export default function AdminUsers ({selectedmenu}) {
   const [users, setUsers] = useState([]);
   const hasSelection = selection.length > 0
   const userid = getUserId();
+  // Menü váltáskor törli a kijelőlést, és újratölti az adatokat
   useEffect(() => {
     setSelection([]);
     load();
@@ -35,11 +36,14 @@ export default function AdminUsers ({selectedmenu}) {
     load();
   }, [])
   
+  // Betöltés függvény
   const load = async () =>{
+    // Felhasználók lekérése
     const getusers = async () =>{
       setUsers(await getAllUser());
     }
     getusers();
+    // Eddigi kijelölések törlése
     setSelection([]);
   }
 

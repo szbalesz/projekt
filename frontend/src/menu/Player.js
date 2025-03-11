@@ -3,9 +3,9 @@ import { Box, Flex, Text, IconButton, Button } from "@chakra-ui/react";
 import { Slider } from "../components/ui/slider";
 import { useNavigate } from 'react-router-dom';
 import { LuPlay, LuSkipBack, LuSkipForward, LuVolume, LuPause, LuArrowDown, LuArrowUp } from "react-icons/lu";
-import { getCurrentMusic, handlePlay, handleSliderChange, randomMusic} from "../services/PlayerService";
+import { getCurrentMusic, handlePlay, handleSliderChange, randomMusic, togglePlayPause} from "../services/PlayerService";
 import { url } from "../services/Api"
-export default function Player({audioRef,themecolor, togglePlayPause,setIsPlaying, isPlaying }) {
+export default function Player({audioRef,themecolor,setIsPlaying, isPlaying }) {
   const navigate = useNavigate();
   const [open, setopen] = useState(false);
   const [volume, setVolume] = useState(50); 
@@ -132,7 +132,7 @@ useEffect(() => {
               variant="ghost"
               zIndex="101"
               size="sm"
-              onClick={togglePlayPause}
+              onClick={()=> togglePlayPause(audioRef,isPlaying,setIsPlaying)}
               disabled={!currentMusic}
             > {isPlaying ? <LuPause /> : <LuPlay />} </IconButton>
             <IconButton

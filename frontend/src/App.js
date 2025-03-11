@@ -2,16 +2,14 @@ import { Provider } from "./components/ui/provider";
 import Main from "./Main";
 import { Box, Theme } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
-import { Toaster } from "./components/ui/toaster";
 
 function App() {
   const [themecolor, setThemecolor] = useState(localStorage.getItem("themecolor") || "teal");
-
+  // Téma váltásakor elmenti azt a localstorageba
   useEffect(() => {
     localStorage.setItem("themecolor", themecolor);
   }, [themecolor]);
   
-
   document.documentElement.style.setProperty('--themecolor', themecolor);
   return (
     <Provider>
@@ -21,7 +19,6 @@ function App() {
             themecolor={themecolor} 
             setThemecolor={setThemecolor} 
           />
-          <Toaster />
         </Box>
       </Theme>
     </Provider>

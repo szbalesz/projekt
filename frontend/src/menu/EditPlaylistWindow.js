@@ -37,7 +37,9 @@ export default function EditPlaylistWindow({ openbutton,playlist,load }) {
                 <DialogBody>
                     <form onSubmit={(e)=>{
                         e.preventDefault();
+                        // Ha be van jelentkezve
                         if(token){
+                            // Módosítja a lejátszási lista adatait
                             editPlaylist(playlist,imageUrl,playlistName,toaster,setOpen,load);
                         }
                     }}>

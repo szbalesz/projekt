@@ -25,14 +25,14 @@ export default function EditMusicWindow({openbutton,getData, music}) {
     const [artist, setArtist] = useState(music?.artist);
     const [imageurl, setImageurl] = useState(music?.imageUrl);
 
+    // Zeneadatok módosítás függvény 
     const handleEdit = async () => {
-        const editm = await editMusic(music,artist,title,imageurl,toaster,setOpen,getData);
+        await editMusic(music,artist,title,imageurl,toaster,setOpen,getData);
     }
 
     return (
         // Új lejátszási lista ablak
         <DialogRoot size={"xl"} lazyMount open={open} onOpenChange={(e) => setOpen(e.open)} placement={"center"}>
-
             <DialogTrigger mx={"auto"} asChild>
                 {openbutton}
             </DialogTrigger> 
@@ -45,7 +45,9 @@ export default function EditMusicWindow({openbutton,getData, music}) {
                     <Stack p="5" w={{base: "", md:"md"}} gap="4">
                     <form onSubmit={(e)=>{
                         e.preventDefault();
+                        // Ha be van jelentkezve
                         if(token){
+                            // Módosítja az adatokat
                             handleEdit();
                         }
                         }}>

@@ -1,7 +1,7 @@
 import api from './Api';
 // Email sablonok
 const emailTemplates = {
-    register: {
+    register: { // Regisztrációs email sablon
       subject: "🎶 Üdvözlünk {username} a MelodyFlow-n – Kezdődjön a zenei utazásod!",
       body: `
         <div style="font-family: Arial, sans-serif; text-align: center; padding: 20px; background-color: #f4f4f4;">
@@ -31,7 +31,7 @@ const emailTemplates = {
         </div>
       `
     },  
-    usernameChange: {
+    usernameChange: { // Felhasználónév váltás email sablon
       subject: "🔄 Sikeres felhasználónév módosítás a MelodyFlow-n",
       body: `
       <div style="font-family: Arial, sans-serif; text-align: center; padding: 20px; background-color: #f4f4f4;">
@@ -51,7 +51,7 @@ const emailTemplates = {
       </div>`
   },
   
-  emailChange: {
+  emailChange: { // Email váltás email sablon
       subject: "📧 Sikeres e-mail cím módosítás a MelodyFlow-n",
       body: `
       <div style="font-family: Arial, sans-serif; text-align: center; padding: 20px; background-color: #f4f4f4;">
@@ -71,7 +71,7 @@ const emailTemplates = {
         </div>
       </div>`
   },
-  accountDeletion: {
+  accountDeletion: { // Fiók törlés email sablon
     subject: "⚠️ Fiókod törlésre került a MelodyFlow-n",
     body: `
     <div style="font-family: Arial, sans-serif; text-align: center; padding: 20px; background-color: #f4f4f4;">

@@ -3,15 +3,13 @@ import { sendEmail } from "./EmailService";
 import { getUserProfile } from "./UserService";
 import { getToken } from "./AuthService";
 
-const token = getToken();
-
 // Kiválasztott felhasználók törlése
 export const deleteSelectedUsers = async (selecteduserids,toaster,load) => {
     for (const id of selecteduserids) {
         const profile = await getUserProfile(id);
         await api.delete("/user/"+id,{
         headers: {
-            Authorization: `Bearer ${token}`
+            Authorization: `Bearer ${getToken()}`
         }
         })
         .then(async()=>{
@@ -30,7 +28,7 @@ export const deleteSelectedMusics = async (selectedmusics,toaster,load) => {
     for (const music of selectedmusics) {
         try {
           await api.delete(`/music/${music.id}`, {
-            headers: { Authorization: `Bearer ${token}` }
+            headers: { Authorization: `Bearer ${getToken()}` }
           });
           toaster.create({ title: `A(z) ${music.title} című zene törlésre került!`, type: "success" });
         } catch (error) {
@@ -46,7 +44,7 @@ export const deleteSelectedPlaylists = async (selectedplaylists,toaster,load)=>{
     for (const playlist of selectedplaylists) {
         await api.delete("/playlist/"+playlist.id,{
           headers: {
-            Authorization: `Bearer ${token}`
+            Authorization: `Bearer ${getToken()}`
         }
         })
         .then(()=>{
@@ -63,7 +61,7 @@ export const deleteSelectedPlaylists = async (selectedplaylists,toaster,load)=>{
 export const addRoleToUser = async (user,role,toaster,load)=>{
   await api.post(`/user/addRole/${role}/${user.id}`,{
     headers: {
-      Authorization: `Bearer ${token}`
+      Authorization: `Bearer ${getToken()}`
   }
   })
   .then(()=>{
@@ -79,7 +77,7 @@ export const addRoleToUser = async (user,role,toaster,load)=>{
 export const removeRoleFromUser = async (user,role,toaster,load)=>{
   await api.delete(`/user/removeRole/${role}/${user.id}`,{
     headers: {
-      Authorization: `Bearer ${token}`
+      Authorization: `Bearer ${getToken()}`
   }
   })
   .catch((e)=>{

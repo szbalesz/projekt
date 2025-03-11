@@ -35,7 +35,9 @@ export default function EditPicture({userid,openbutton,profilePictureURL,load}) 
                 <DialogBody>
                     <form onSubmit={(e)=>{
                         e.preventDefault();
+                        //Ha adott meg új urlt
                         if(imageUrl !== ""){
+                            // Megváltoztatja a profilképet
                             changeProfilePicture(userid,imageUrl,toaster,setOpen,load);
                         }
                     }}>

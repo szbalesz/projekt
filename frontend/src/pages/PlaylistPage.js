@@ -18,9 +18,11 @@ export default function PlaylistPage() {
   const [playlist, setPlaylist] = useState([]);
   const [creator, setCreator] = useState({})
 
+  // Adatok betöltése
   const load = async () => {
     await setPending(true);
-    const response = await getPlaylist(id,toaster,navigate);
+    // Lejátszási listák lekérése
+    const response = await getPlaylist(id,toaster);
     if(response == null){
       navigate(-1);
     }

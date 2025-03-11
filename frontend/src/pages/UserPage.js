@@ -16,27 +16,26 @@ export default function UserPage() {
   const [musics, setMusics] = useState([]);
   const [playlists, setPlaylists] = useState([]);
 
+// Adatok betöltése
 const load = async () => {
-  const getData = async () => {
-    const profileData = await getUserProfile(id);
-    const userRoles = await getUserRoles(id);
-    if (profileData) {
-      setAccount(profileData);
-      setRoles(userRoles);
-    } else {
-      navigate("/");
-    }
-
-    const musicsData = await getUserMusics(id);
-    setMusics(musicsData);
-
-    const playlistsData = await getUserPlaylists(id);
-    setPlaylists(playlistsData);
-  };
-
-  getData();
+  // Felhasználói profil lekérése
+  const profileData = await getUserProfile(id);
+  // Felhasználó rangjainak lekérése
+  const userRoles = await getUserRoles(id);
+  if (profileData) {
+    setAccount(profileData);
+    setRoles(userRoles);
+  } else {
+    navigate("/");
+  }
+  // Felhasználó zenéinek lekérése
+  const musicsData = await getUserMusics(id);
+  setMusics(musicsData);
+  // Felhasználó lejátszás listáinak lekérése
+  const playlistsData = await getUserPlaylists(id);
+  setPlaylists(playlistsData);
 }
-
+  
   useEffect(() => {
     load();
   }, [id, navigate]);

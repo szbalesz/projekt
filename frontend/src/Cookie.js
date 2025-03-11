@@ -12,13 +12,14 @@ import { useNavigate } from "react-router-dom";
 const Cookie = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
+  // Oldal betöltésekor feldobja az ablakot
   useEffect(() => {
     const consentGiven = localStorage.getItem("Cookie")=== "true";
     if (!consentGiven) {
       setIsOpen(true);
     }
   }, []);
-
+  // Cookie elfogadás
   const handleAccept = () => {
     localStorage.setItem("Cookie", "true");
     setIsOpen(false);

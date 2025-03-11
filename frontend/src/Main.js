@@ -20,6 +20,7 @@ import Cookie from './Cookie';
 import UserPage from './pages/UserPage';
 import ProfileSettings from './pages/ProfileSettings';
 import { togglePlayPause } from './services/PlayerService';
+import { Toaster } from './components/ui/toaster';
 
 
 export default function Main({ themecolor, setThemecolor }) {
@@ -27,6 +28,7 @@ export default function Main({ themecolor, setThemecolor }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const location = useLocation();
     
+  // Bármikor oldal váltás történik felgörget a legtetejére
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
@@ -57,6 +59,7 @@ export default function Main({ themecolor, setThemecolor }) {
                 </Routes>
                 </Box>
                 <Footer/>
+                <Toaster />
             </GridItem>
             <GridItem rowSpan={1} zIndex="4">
                <Player 

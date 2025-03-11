@@ -25,6 +25,7 @@ export default function Search( {handlePopupClose}) {
   const [playlists, setPlaylists] = useState([]);
 
   useEffect(() => {
+    // Zene keresése
     const fetchData = async () => {
       if (searchType === "Zenék") {
         setMusics(await searchMusic(query));

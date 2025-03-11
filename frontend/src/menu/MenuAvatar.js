@@ -26,12 +26,14 @@ export default function MenuAvatar({themecolor, profileMenuItems }) {
   const [account, setAccount] = useState({});
   const [roles,setRoles] = useState([]);
   useEffect(() => {
+    // Adatok lekérése
     const getData = async () => {
       const profileData = await getUserProfile(userid);
       const userRoles = await getUserRoles(userid);
       setAccount(profileData);
       setRoles(userRoles);
     };
+    // Ha be van jelentkezve
     if(token){
       getData();
     }

@@ -12,16 +12,14 @@ export default function Playlists() {
   const token = getToken();
   const userid = getUserId();
 
-  const getPlaylists = async ()=>{
-    setPlaylists(await getUsersAllPlaylist());
-  }
-
+  // Adatok betöltése
   const load = async () => {
+    // Ha van tokenje (be van jelentkezve) lekéri a lejátszási listáit
     if(token){
-      await getPlaylists();
+      setPlaylists(await getUsersAllPlaylist());
     }
   }
-
+  
   useEffect(() => {
     load();
   }, [])

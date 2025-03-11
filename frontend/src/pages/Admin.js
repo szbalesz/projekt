@@ -13,6 +13,7 @@ export default function Admin() {
   const userid = getUserId();
   const [selectedmenu, setSelectedMenu] = useState("adminusers")
   useEffect(() => {
+    // Admin rang vizsgálata
     const getroles = async () => {
       let roles = await getUserRoles(userid);
       if (!roles.includes("Admin")) { 

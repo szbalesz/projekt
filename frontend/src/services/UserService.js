@@ -2,9 +2,10 @@ import api from './Api';
 import { sendEmail } from './EmailService';
 import { getToken, onLogout } from './AuthService';
 import { jwtDecode } from "jwt-decode";
-const token = getToken();
 
+// Saját UserId lekérése a tokenből
 export const getUserId = () => {
+  const token = getToken();
   if(token){
     return jwtDecode(token).sub
   }
@@ -85,7 +86,7 @@ export const changeProfilePicture = async (id,imageUrl,toaster,setOpen,load) =>{
     id: id
   }, {
       headers: {
-          Authorization: `Bearer ${token}`
+          Authorization: `Bearer ${getToken()}`
       }
   })
   .then(()=>{
@@ -104,7 +105,7 @@ export const deleteUser = async (id,toaster,navigate) => {
   const profile = await getUserProfile(id);
   await api.delete("/user/"+id,{
     headers: {
-      Authorization: `Bearer ${token}`
+      Authorization: `Bearer ${getToken()}`
   }
   })
   .then(async()=>{
@@ -127,7 +128,7 @@ export const changeUsername = async (id,toaster,newusername,load) => {
     id: id
   }, {
       headers: {
-          Authorization: `Bearer ${token}`
+          Authorization: `Bearer ${getToken()}`
       }
   })
   .then(async ()=>{
@@ -149,7 +150,7 @@ export const changeEmail = async (id,toaster,newemail,load) => {
     id: id
   }, {
       headers: {
-          Authorization: `Bearer ${token}`
+          Authorization: `Bearer ${getToken()}`
       }
   })
   .then(async ()=>{

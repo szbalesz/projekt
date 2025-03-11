@@ -17,7 +17,9 @@ export default function RolesMenu({user,load}){
   const [value, setValue] = useState(user?.roles[0]);
   const theme = localStorage.getItem("themecolor");
   const userid = getUserId();
-  const func = async () => {
+
+  // Rang változtatása függvény
+  const changeRole = async () => {
     if(value !== user?.roles[0]){
       await removeRoleFromUser(user,user?.roles[0],toaster,load);
       await addRoleToUser(user,value,toaster,load);
@@ -25,7 +27,7 @@ export default function RolesMenu({user,load}){
   }
 
   useEffect(() => {
-    func();
+    changeRole();
     load();
   }, [value])
 

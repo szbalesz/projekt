@@ -12,6 +12,7 @@ export default function Home() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    // Zenék lekérése
     const getMusics = async () => {
       await setPending(true);
       setMusicList(await getAllMusic())

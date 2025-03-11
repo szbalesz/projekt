@@ -14,17 +14,17 @@ export default function AddToPlaylistMenu({ setFavorite, isFavorite, musicId }) 
   const userid = getUserId();
   const [playlists, setPlaylists] = useState([]);
   const [addedMusic, setAddedMusic] = useState({});
+  // Adatok betöltése függvény definiálása
   const load = async () => {
+    // Lejátszási listák lekérése, + azoknak lekérése amelyekben benne van a zene
     const response = await getPlaylistsWithMusic(musicId);
     setPlaylists(response.playlists);
     setAddedMusic(response.addedMusics);
   }
-  
+
   useEffect(() => {
     load();
   }, [userid, musicId,isFavorite]);
-
-
 
   return (
     // Lejátszási listához adás menü

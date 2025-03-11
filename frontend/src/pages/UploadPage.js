@@ -24,13 +24,14 @@ export default function UploadPage() {
                 <Flex direction={{base: "column", md:"row"}}>
                     <form onSubmit={(f) => {
                             f.preventDefault();
+                            // FormData összeállítása
                             const formData = new FormData();
                             formData.append("Title", title);
                             formData.append("Artist", artist);
                             formData.append("ImageUrl", imageurl);
                             formData.append("MusicFile", musicfile);
                             formData.append("UploaderId", userid);
-
+                            // Zene feltöltés függvény meghívása
                             uploadMusic(formData,toaster,setTitle,setArtist,setImageurl,setMusicfile);
                         }}>
                         <Stack p="5" gap="4" w={{base: "sm", md:"md"}}>

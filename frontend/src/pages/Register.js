@@ -14,7 +14,7 @@ import { Field } from "../components/ui/field"
 import { Link, useNavigate } from 'react-router-dom';
 import { PasswordInput } from "../components/ui/password-input"
 import { toaster } from '../components/ui/toaster';
-import { onRegister, onLogin, getToken } from '../services/AuthService';
+import { onRegister, getToken } from '../services/AuthService';
 
 export default function Register() {
     const themecolor = localStorage.getItem("themecolor");
@@ -23,6 +23,7 @@ export default function Register() {
     const [password, setPassword] = useState("");
     const [passwordAgain, setPasswordAgain] = useState("");
     const navigate = useNavigate();
+    // Ha van tokenje (be van jelentkezve) vissza navigálja a főoldalra
     useEffect(() => {
       if(getToken()){
         navigate(-1)
@@ -38,11 +39,13 @@ export default function Register() {
                 <Heading textAlign="center" color="colorpalette.solid" w="50%" borderRadius="25px" mx="auto" my="3" p="1">Regisztráció</Heading>
                 <form onSubmit={(f) => {
                     f.preventDefault();
+                    // Megfelelő paraméterek vizsgálata
                     if(username.length >= 4){
                         if(email.length > 2 && email.includes(".")){
                             if(password.length >= 6){
                             if(password === passwordAgain){
-                                onRegister(username,email,password,navigate,onLogin);
+                                // Ha mindennek megfelel regisztráció
+                                onRegister(username,email,password,navigate);
                             }
                             else{
                                 toaster.create({

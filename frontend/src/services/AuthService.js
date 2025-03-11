@@ -4,7 +4,6 @@ import { toaster } from "../components/ui/toaster";
 import { sendEmail } from "./EmailService";
 import { jwtDecode } from "jwt-decode";
 
-
 // Lekéri hogy legutóbbi bejelentkezéskor bepipálta e a maradjon bejelentkezve opciót
 export const getStayLoggedIn = () => {
   const stayLoggedIn = localStorage.getItem("stayLoggedIn");
@@ -35,7 +34,7 @@ export const getToken = () => {
   return token;
 }
 // Regisztrációs függvény
-export const onRegister = async (username, email, password, navigate, onLogin) => {
+export const onRegister = async (username, email, password, navigate) => {
   let newUser = {
     username,
     email,

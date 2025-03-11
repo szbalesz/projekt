@@ -1,7 +1,6 @@
 import api from './Api';
 import { getToken } from './AuthService';
 
-const token = getToken();
 // Összes zene lekérése függvény
 export const getAllMusic = async () =>{
     let musicList = [];
@@ -39,7 +38,7 @@ export const uploadMusic = async (formData,toaster,setTitle,setArtist,setImageur
     const response = await api.post("/UploadMusic", formData, {
         headers: {
             "Content-Type": "multipart/form-data",
-            Authorization: `Bearer ${token}`
+            Authorization: `Bearer ${getToken()}`
         },
     });
 
@@ -69,7 +68,7 @@ export const uploadMusic = async (formData,toaster,setTitle,setArtist,setImageur
 export const deleteMusic = async (id, musicTitle, navigate, toaster) => {
   try {
     await api.delete(`/music/${id}`, {
-      headers: { Authorization: `Bearer ${token}` }
+      headers: { Authorization: `Bearer ${getToken()}` }
     });
     toaster.create({ title: `Sikeresen törölted a ${musicTitle} című zenét!`, type: "success" });
     navigate("/");
@@ -79,7 +78,7 @@ export const deleteMusic = async (id, musicTitle, navigate, toaster) => {
 }
 // Zene hozzáadása kedvencekhez függvény
 export const addToFavorite = async (favoritePlaylistId, musicId, toaster) => {
-  if (!token) {
+  if (!getToken()) {
     toaster.create({ title: `Jelentkezz be a funkció használatához!`, type: "info" });
     return false;
   }
@@ -91,7 +90,7 @@ export const addToFavorite = async (favoritePlaylistId, musicId, toaster) => {
 
   try {
     await api.post("/AddMusicToPlaylist", { playlistId: favoritePlaylistId, musicId }, {
-      headers: { Authorization: `Bearer ${token}` }
+      headers: { Authorization: `Bearer ${getToken()}` }
     });
     toaster.create({ title: `Zene hozzáadva a kedvencekhez.`, type: "success" });
     return true;
@@ -105,7 +104,7 @@ export const removeFromFavorite = async (favoritePlaylistId, musicId, toaster) =
   try {
     await api.delete("/DeleteMusicFromPlaylist", { 
       data: { playlistId: favoritePlaylistId, musicId },
-      headers: { Authorization: `Bearer ${token}` }
+      headers: { Authorization: `Bearer ${getToken()}` }
     });
     toaster.create({ title: `A zene törölve a kedvencekből!`, type: "success" });
     return false;
@@ -118,7 +117,7 @@ export const removeFromFavorite = async (favoritePlaylistId, musicId, toaster) =
 export const editMusic = async(music,artist,title,imageurl,toaster,setOpen,getData)=>{
   api.put("/music/"+music.id,{artist,title,imageurl},{
       headers: {
-        Authorization: `Bearer ${token}`
+        Authorization: `Bearer ${getToken()}`
     }
     })
     .then(()=>{

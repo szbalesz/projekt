@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Text, VStack, AbsoluteCenter, Button, Spinner } from '@chakra-ui/react';
-import { LuPause, LuPlay, LuStar } from 'react-icons/lu';
+import { LuList, LuPause, LuPlay, LuStar } from 'react-icons/lu';
 import { useNavigate, useParams } from 'react-router-dom';
 import { toaster } from '../components/ui/toaster';
 import { Avatar } from '../components/ui/avatar';
@@ -14,6 +14,7 @@ import {
 } from '../services/MusicService';
 import { getFavoritePlaylist } from "../services/PlaylistService";
 import { getCurrentMusic, handlePlay, } from '../services/PlayerService';
+import { getToken } from '../services/AuthService';
 const MusicPage = ({ audioRef,setIsPlaying, isPlaying }) => {
   const themecolor = localStorage.getItem("themecolor");
   const { id } = useParams();
@@ -37,7 +38,7 @@ const MusicPage = ({ audioRef,setIsPlaying, isPlaying }) => {
   // Kiválasztott zene adatainak lekérése
   const getData = async () => {
     setPending(true);
-    
+    // Zene lekérése
     const musicData = await getMusic(id);
     if (musicData) {
       setMusic(musicData);
@@ -50,7 +51,7 @@ const MusicPage = ({ audioRef,setIsPlaying, isPlaying }) => {
     } else {
       navigate(-1);
     }
-
+    // Zene benne van e a kedvencek lejátszási listában, vizsgálata
     const { favoritePlaylistId, isFavorite } = await getFavoritePlaylist(id);
     setFavoritePlaylistId(favoritePlaylistId);
     setFavorite(isFavorite);
@@ -102,7 +103,7 @@ const MusicPage = ({ audioRef,setIsPlaying, isPlaying }) => {
         boxShadow={`0 0 25px 0 ${themecolor}`}
         borderRadius="25px"
         _hover={{transition:"all 1s ease-in-out", transform: "scale(1.05)" ,padding: "35px",borderRadius: `50px 15px`}}>
-      {isPending?
+      {isPending ?
       <AbsoluteCenter>
         <Spinner/>
       </AbsoluteCenter> 
@@ -135,7 +136,11 @@ const MusicPage = ({ audioRef,setIsPlaying, isPlaying }) => {
               await handlePlay(audioRef,music,setIsPlaying,isPlaying);
               await getCMusic();
               }}>{isPlaying && music?.title === currentMusic?.title ? <LuPause /> : <LuPlay />} </Button>
-            <MusicMenu getData={getData} isUploader={isUploader} music={music} deleteMusic={()=> deleteMusic(id, music.title, navigate, toaster)} setFavorite={setFavorite} isFavorite={isFavorite} musicId={id}/>
+            {getToken()?
+              <MusicMenu getData={getData} isUploader={isUploader} music={music} deleteMusic={()=> deleteMusic(id, music.title, navigate, toaster)} setFavorite={setFavorite} isFavorite={isFavorite} musicId={id}/> :
+              <Button p={1} m={1} variant="solid" onClick={()=> {
+                toaster.create({ title: `Jelentkezz be a funkció használatához!`, type: "info" });
+              }}><LuList/></Button>  }
           </Text>
         </VStack>
       ) : null}

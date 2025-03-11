@@ -32,9 +32,11 @@ export default function EmailChange({openbutton,userid,currentemail,load}) {
                 <DialogBody>
                 <form onSubmit={(e)=>{
                         e.preventDefault();
+                        // Email vizsgálata
                         if(newemail !== currentemail)
                         {
                             if(newemail.length > 6){
+                                // Email megváltoztatása
                                 changeEmail(userid,toaster,newemail,load);
                                 setOpen(false);
                                 setNewEmail("");

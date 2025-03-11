@@ -26,6 +26,7 @@ export default function AdminMusics ({selectedmenu}) {
   const hasSelection = selection.length > 0
   const navigate = useNavigate();
   const userid = getUserId();
+  // Zene feltöltőjének lekérése
   const getUploader = async (id) => {
     const user = await getUserProfile(id);
     return { 
@@ -35,16 +36,17 @@ export default function AdminMusics ({selectedmenu}) {
     }
    }
 
-   useEffect(() => {
-     setSelection([]);
-     load();
-   }, [selectedmenu])
+  // Menü váltáskor törli a kijelőlést, és újratölti az adatokat
+  useEffect(() => {
+    setSelection([]);
+    load();
+  }, [selectedmenu])
    
-
   useEffect(() => {
     load();
   }, [])
 
+  // Zenék lista változásakor lekéri az adataikat
   useEffect(() => {
     const fetchProfiles = async () => {
       const newProfiles = {};
@@ -60,7 +62,9 @@ export default function AdminMusics ({selectedmenu}) {
   }, [musics]);
   
   const load = async () =>{
+    // Zenék lekérése
     setMusics(await getAllMusic());
+    // Eddigi kijelölések törlése
     setSelection([]);
   }
 

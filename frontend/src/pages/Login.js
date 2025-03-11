@@ -26,6 +26,7 @@ export default function Login() {
   const navigate = useNavigate();
   const isCookieEnabled = localStorage.getItem("Cookie");
   useEffect(() => {
+    // Ha bevan jelentkezve akkor vissza navigálja a főoldalra
     if(getToken()){
       navigate(-1);
       toaster.create({ title: "Sikeres bejelentkezés!", type: "success" });
