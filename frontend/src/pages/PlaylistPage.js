@@ -24,6 +24,7 @@ export default function PlaylistPage() {
     // Lejátszási listák lekérése
     const response = await getPlaylist(id,toaster);
     if(response == null){
+      toaster.create({ title: `Úgy tűnik nincs Kedvencek nevű listád! Hozz létre egyet!`, type: "info" });
       navigate(-1);
     }
     setPlaylistId(response?.playlistid);
@@ -34,7 +35,16 @@ export default function PlaylistPage() {
   }
 
   useEffect(() => {
-    load();
+    // Ha bevan jelentkezve
+    if(getToken()){
+      // Betölti az adatokat
+      load();
+    }
+    // ha nincs akkor vissza navigálja
+    else{ 
+      toaster.create({ title: `Jelentkezz be a funkció használatához!`, type: "info" });
+      navigate(-1);
+    }
   }, [id]);
   
 

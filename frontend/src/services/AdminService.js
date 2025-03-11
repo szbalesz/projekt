@@ -4,10 +4,10 @@ import { getUserProfile } from "./UserService";
 import { getToken } from "./AuthService";
 
 // Kiválasztott felhasználók törlése
-export const deleteSelectedUsers = async (selecteduserids,toaster,load) => {
-    for (const id of selecteduserids) {
-        const profile = await getUserProfile(id);
-        await api.delete("/user/"+id,{
+export const deleteSelectedUsers = async (selectedusers,toaster,load) => {
+    for (const user of selectedusers) {
+        const profile = await getUserProfile(user.id);
+        await api.delete("/user/"+user.id,{
         headers: {
             Authorization: `Bearer ${getToken()}`
         }
