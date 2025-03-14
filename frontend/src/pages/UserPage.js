@@ -6,6 +6,7 @@ import PlaylistCard from '../cards/PlaylistCard';
 import EditPicture from '../menu/EditPicture';
 import { Badge } from "@chakra-ui/react"
 import { getUserProfile, getUserMusics, getUserPlaylists, getUserRoles, getUserId } from '../services/UserService';
+import { Avatar } from '../components/ui/avatar';
 
 export default function UserPage() {
   const { id } = useParams(); 
@@ -58,12 +59,12 @@ const load = async () => {
             boxShadow={"0 0 25px 0"}
             backgroundImage={`url(${account?.profilePictureURL})`}
             boxSize={"150px"}
-            variant={"outline"}
+            variant={"plain"}
             borderRadius={"full"}
             backgroundSize={"cover"}
             backgroundPosition={"center"}
             fit={"cover"}
-            />} userid={userid} profilePictureURL={account?.profilePictureURL} load={()=> {
+            >{account?.profilePictureURL ? null :  <Avatar variant={"ghost"}/>} </Button>} userid={userid} profilePictureURL={account?.profilePictureURL} load={()=> {
               window.location.reload();
             }}/> :
           <Button

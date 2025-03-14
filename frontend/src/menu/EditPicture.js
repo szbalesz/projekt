@@ -19,7 +19,7 @@ export default function EditPicture({userid,openbutton,profilePictureURL,load}) 
     const themecolor = localStorage.getItem("themecolor");
     const [open, setOpen] = useState(false)
     useEffect(() => {
-        setImageUrl(profilePictureURL);
+        setImageUrl(profilePictureURL || "");
     }, [profilePictureURL])
     
     return (
@@ -36,7 +36,7 @@ export default function EditPicture({userid,openbutton,profilePictureURL,load}) 
                     <form onSubmit={(e)=>{
                         e.preventDefault();
                         //Ha adott meg új urlt
-                        if(imageUrl !== ""){
+                        if(imageUrl !== profilePictureURL){
                             // Megváltoztatja a profilképet
                             changeProfilePicture(userid,imageUrl,toaster,setOpen,load);
                         }
@@ -44,7 +44,7 @@ export default function EditPicture({userid,openbutton,profilePictureURL,load}) 
                         <Flex direction={"row"} pb={"3"}>
                             <Button borderRadius="full" variant="ghost" height="150px" width="150px" backgroundPosition="center" backgroundImage={"url("+(imageUrl)+")"} backgroundSize="cover" boxShadow={`0 0 15px 0 ${themecolor}`}/>
                             <Flex width={"full"} direction={"column"} p={"5"}>
-                                <Input required value={imageUrl} onChange={(e)=> setImageUrl(e.target.value)} my={"5"} placeholder="Kép elérési útja" />
+                                <Input value={imageUrl} onChange={(e)=> setImageUrl(e.target.value)} my={"5"} placeholder="Kép elérési útja" />
                             </Flex>
                         </Flex>
                         <Flex justifyContent={"right"}>

@@ -43,7 +43,12 @@ export default function PlaylistWindow({load, playlists, userid }) {
                         }
                         // Lista létezésének vizsgálata
                         if(!playlists.find(x=>x.playlistName == playlistName)){
-                            await createPlaylist(newPlaylist,toaster,setPlaylistName,setImageUrl,setOpen,load);
+                            const res = await createPlaylist(newPlaylist,toaster,load);
+                            if(res == 200){
+                                setPlaylistName("");
+                                setImageUrl("");
+                                setOpen(false);
+                            }
                         } 
                         else{
                             toaster.create({ title: `Már létrehoztad a(z) ${playlistName} nevű lejátszási listát!`, type: "error" });

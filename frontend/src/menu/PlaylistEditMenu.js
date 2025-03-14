@@ -41,7 +41,9 @@ export default function PlaylistEditMenu({playlist,playlistName,playlistId,load}
         {isCreator ?
          <>
          <EditPlaylistWindow openbutton={<MenuItem value="szerkeszt"><LuPen/>Adatok szerkesztése</MenuItem>} playlist={playlist} load={load}/>
+         {playlistName !==  "Kedvencek" ?
          <DialogAlert openButton={<MenuItem value="torles" color={"red.500"}><LuCircleX/>Törlés</MenuItem>} func={()=> deletePlaylist(playlistId,toaster,playlistName,navigate)} title={"Biztosan törölni szeretnéd?"} text={"Ez a művelet nem vonható vissza. Ez véglegesen törli a lejátszási listát a rendszerből."} buttontext={"Törlés"}/>
+         : null }
          </> : null}
       </MenuContent>
     </MenuRoot>

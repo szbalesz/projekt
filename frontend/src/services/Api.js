@@ -1,6 +1,6 @@
 import axios from "axios";
-// Alap: localhost:5205
-export const url = "localhost:5205";
+
+export const url = process.env.REACT_APP_API_URL;
 
 // Axios beállítása
 const api = axios.create({

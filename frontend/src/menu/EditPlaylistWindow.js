@@ -44,10 +44,10 @@ export default function EditPlaylistWindow({ openbutton,playlist,load }) {
                         }
                     }}>
                         <Flex direction={"row"} pb={"3"}>
-                            <Button borderRadius="lg" mt="8" variant="ghost" height="150px" width="150px" backgroundPosition="center" backgroundImage={"url("+imageUrl+")"} backgroundSize="cover" boxShadow={`0 0 15px 0 ${themecolor}`}/>
+                            <Button borderRadius={"full"} mt="8" variant="ghost" height="150px" width="150px" backgroundPosition="center" backgroundImage={"url("+imageUrl+")"} backgroundSize="cover" boxShadow={`0 0 15px 0 ${themecolor}`}/>
                             <Flex width={"full"} direction={"column"} p={"5"}>
                             <Field py="1" label="Lejátszási lista neve" required helperText="Írd be az új nevet!">
-                                <Input required value={playlistName} onChange={(e)=> setPlaylistName(e.target.value)} placeholder="Írd be az új nevet" />
+                                <Input disabled={playlist !== "Kedvencek"} value={playlistName} onChange={(e)=> setPlaylistName(e.target.value)} placeholder="Írd be az új nevet" />
                             </Field>
                             <Field py="1" label="Kép elérési útja" required helperText="Add meg a lejátszási lista képének az elérési útját.">
                                 <Input required value={imageUrl} onChange={(e)=> setImageUrl(e.target.value)} placeholder="Új kép elérési útja" />

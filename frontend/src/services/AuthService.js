@@ -3,6 +3,8 @@ import Cookies from "js-cookie";
 import { toaster } from "../components/ui/toaster";
 import { sendEmail } from "./EmailService";
 import { jwtDecode } from "jwt-decode";
+import { createPlaylist, getFavoritePlaylist } from "./PlaylistService";
+import { getUserId } from "./UserService";
 
 // Lekéri hogy legutóbbi bejelentkezéskor bepipálta e a maradjon bejelentkezve opciót
 export const getStayLoggedIn = () => {
@@ -64,7 +66,7 @@ export const onLogin = async (username, password,stayLoggedIn) => {
   let user = { username, password };
   let token;
   await api.post("/auth/login", user)
-    .then(response => {
+    .then(async response => {
       token = response.data.token;
       if (token) {
         localStorage.setItem("stayLoggedIn",stayLoggedIn);
@@ -73,6 +75,18 @@ export const onLogin = async (username, password,stayLoggedIn) => {
         }
         else{
           sessionStorage.setItem("token", response.data.token);
+        }
+        // Lekérjük a kedvencek lejátszási listájának az idjét
+        const favId = await getFavoritePlaylist();
+        // Ha nincs létrehozunk egyet
+        if(!favId){
+          // Alap kedvencek lejátszási lista összeállítása
+          let newPlaylist = {
+            playlistName: "Kedvencek",
+            imageUrl: "https://t3.ftcdn.net/jpg/04/62/60/80/360_F_462608080_J2AJrf8h0fmbFqnTVUQfza8JivYOfShz.jpg",
+            creatorId: getUserId(),
+          }
+          await createPlaylist(newPlaylist,toaster,()=> null,true)
         }
       } else {
         toaster.create({ title: "Sikertelen bejelentkezés!", type: "error" });

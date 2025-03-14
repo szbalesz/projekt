@@ -12,7 +12,7 @@ import {
   addToFavorite, 
   removeFromFavorite
 } from '../services/MusicService';
-import { getFavoritePlaylist } from "../services/PlaylistService";
+import { getFavoritePlaylist, getIsFavorite } from "../services/PlaylistService";
 import { getCurrentMusic, handlePlay, } from '../services/PlayerService';
 import { getToken } from '../services/AuthService';
 const MusicPage = ({ audioRef,setIsPlaying, isPlaying }) => {
@@ -52,9 +52,9 @@ const MusicPage = ({ audioRef,setIsPlaying, isPlaying }) => {
       navigate(-1);
     }
     // Zene benne van e a kedvencek lejátszási listában, vizsgálata
-    const { favoritePlaylistId, isFavorite } = await getFavoritePlaylist(id);
-    setFavoritePlaylistId(favoritePlaylistId);
-    setFavorite(isFavorite);
+    const favId = (await getFavoritePlaylist(id));
+    setFavoritePlaylistId(favId);
+    setFavorite(await getIsFavorite(favId,id));
     setPending(false);
   };
 
