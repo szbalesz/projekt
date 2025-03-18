@@ -64,9 +64,10 @@ const load = async () => {
             backgroundSize={"cover"}
             backgroundPosition={"center"}
             fit={"cover"}
-            >{account?.profilePictureURL ? null :  <Avatar variant={"ghost"}/>} </Button>} userid={userid} profilePictureURL={account?.profilePictureURL} load={()=> {
+            >{account?.profilePictureURL ? // Ha van kép, akkor ne jelenjen meg az egy kis avatar icon
+              null :  <Avatar variant={"ghost"}/>} </Button>} userid={userid} profilePictureURL={account?.profilePictureURL} load={()=> {
               window.location.reload();
-            }}/> :
+            }}/> : // Ha nem a saját profilját nézi, akkor ne jelenjen meg a kép szerkesztés gomb
           <Button
             zIndex={"2"}
             boxShadowColor={"colorPalette"}
@@ -80,7 +81,8 @@ const load = async () => {
             fit={"cover"}
             />}
           <Box zIndex={"2"} px={"5"} py={"5"} color={"white"}>
-            <Text fontSize="sm">
+            <Text fontSize="sm"> 
+              {/* Rangok megjelenítése */}
               {roles?.length === 0 ? <Badge>Profil</Badge> : null}
               {roles?.includes("Prémium")? <Badge>Prémium</Badge> : null}
               {roles?.includes("Admin")?  <Badge bg={"red"} color="bg">Admin</Badge> : null}
@@ -97,11 +99,13 @@ const load = async () => {
         <Flex px={"5"} pt={"3"} direction={"column"}>
           <Heading>Zenék</Heading>
           <Flex my={"3"} overflowX={"auto"} gap={4} width="100%">
+            {/* Zenék megjelenítése */}
             {musics.map((music, index) => <MusicCard key={index} music={music} />)}
           </Flex>
           <hr />
           <Heading>Lejátszási listák</Heading>
           <Flex my={"3"} overflowX={"auto"} gap={4} width="100%">
+            {/* Lejátszási listák megjelenítése */}
             {playlists.map((playlist, index) => <PlaylistCard key={index} playlist={playlist} />)}
           </Flex>
         </Flex>

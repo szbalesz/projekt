@@ -7,6 +7,7 @@ export default function SmallSidebar({ menuItems,selectedMenu, setIsSidebarOpen}
   const maxItems = isMd ? 10 : 5;
   return (
     <>
+    {/* Kis oldalsó menü / telefonos alsó menü */}
       <Flex direction={{ base: "row", md: "column" }} align="center" pt={{ base: "1", md: "0" }}>
         {menuItems.slice(0,maxItems).map((item, index) => (
           <Flex width={{base: "20%", md:"50px"}} p="0" m="0" key={index}>

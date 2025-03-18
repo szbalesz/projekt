@@ -10,6 +10,7 @@ export default function About() {
         </Center>
       )
 }
+// Rólunk oldal kártyái
 const items = [
     {
       name: "Csehi Tamás",

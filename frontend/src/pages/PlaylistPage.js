@@ -94,7 +94,7 @@ export default function PlaylistPage() {
               <Avatar width="25px" height="25px" src={creator.profilePictureURL}/>
               {creator.username}
               </Button>
-              {token ? 
+              {token ? // Ha be van jelentkezve akkor megjelenik a szerkesztés gomb
               <PlaylistEditMenu playlist={playlist} playlistName={playlist?.playlistName} playlistId={playlistId} load={load}/> 
               : null}
             </Flex>
@@ -102,7 +102,9 @@ export default function PlaylistPage() {
         </Flex>
         <hr/>
         <Flex px={"5"} pt={"3"} direction={"column"}>
-          {musics?.length > 0 ? <Heading>Zenék</Heading> : <Heading>A lejátszási lista üres.</Heading>}
+          {musics?.length > 0 ? // Ha vannak zenék akkor megjelennek a zenék
+           <Heading>Zenék</Heading> : // Ha nincsenek zenék akkor ez a szöveg jelenik meg
+           <Heading>A lejátszási lista üres.</Heading>}
           <Flex my={"3"} wrap={"wrap"} gap={4} width="100%">{musics?.map((music, index) => <MusicCard key={index} music={music} />)}</Flex>
         </Flex>
       </Box>: 

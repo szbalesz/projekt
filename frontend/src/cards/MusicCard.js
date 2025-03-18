@@ -7,6 +7,7 @@ export default function MusicCard({ music, handlePopupClose }) {
   const navigate = useNavigate();
   const location = useLocation();
   const isPopup = location.pathname.includes("popup");  
+  // Kattintáskor a zenéhez navigál
   const click = ()=>{
     navigate(`/music/${music.id}`);
     if(isPopup){
@@ -15,6 +16,7 @@ export default function MusicCard({ music, handlePopupClose }) {
   }
 
   return (
+    // Zenekártya
     <Button
       _hover={{ transform: "scale(1.05)" }}
       variant="ghost"

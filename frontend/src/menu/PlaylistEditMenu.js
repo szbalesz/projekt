@@ -25,6 +25,7 @@ export default function PlaylistEditMenu({playlist,playlistName,playlistId,load}
   }, [])
 
   return (
+    // Lejátszási lista szerkesztése menü
     <MenuRoot>
       <MenuTrigger asChild>
       <Button color={"white"} size={"s"} variant={"ghost"}>
@@ -33,15 +34,15 @@ export default function PlaylistEditMenu({playlist,playlistName,playlistId,load}
       </MenuTrigger>
       <MenuContent>
         {
-        !isCreator? 
-        !isAdded ? 
+        !isCreator? // Ha nem a felhasználó hozta létre a lejátszási listát
+        !isAdded ? // Ha a felhasználó nem adta hozzá a saját listáihoz
         <MenuItem value="hozzaad" onClick={async ()=> setIsAdded(await addToMyPlaylists(playlistId,playlistName,toaster))}><LuUserRoundPlus/> Hozzáadás a saját listáimhoz</MenuItem> 
         : <MenuItem value="eltavolit" color={"red.500"} onClick={async ()=> setIsAdded(await removeFromMyPlaylists(playlistId,playlistName,toaster))}><LuUserRoundMinus/> Eltávolítás a saját listáimból</MenuItem> 
         : null}
-        {isCreator ?
+        {isCreator ? // Ha a felhasználó hozta létre a lejátszási listát
          <>
          <EditPlaylistWindow openbutton={<MenuItem value="szerkeszt"><LuPen/>Adatok szerkesztése</MenuItem>} playlist={playlist} load={load}/>
-         {playlistName !==  "Kedvencek" ?
+         {playlistName !==  "Kedvencek" ? // Ha nem a kedvencek listájáról van szó
          <DialogAlert openButton={<MenuItem value="torles" color={"red.500"}><LuCircleX/>Törlés</MenuItem>} func={()=> deletePlaylist(playlistId,toaster,playlistName,navigate)} title={"Biztosan törölni szeretnéd?"} text={"Ez a művelet nem vonható vissza. Ez véglegesen törli a lejátszási listát a rendszerből."} buttontext={"Törlés"}/>
          : null }
          </> : null}

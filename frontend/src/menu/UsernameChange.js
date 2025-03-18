@@ -20,6 +20,7 @@ export default function UsernameChange({openbutton,userid,currentusername,load})
     const [newusername, setNewUserName] = useState("");
     const [open, setOpen] = useState(false)
   return (
+    // Felhasználónév módosítása felugró ablak
     <DialogRoot lazyMount open={open} onOpenChange={(e) => setOpen(e.open)} placement={"center"}>
             <DialogTrigger mx={"auto"} asChild>
             {openbutton}

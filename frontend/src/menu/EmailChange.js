@@ -20,6 +20,7 @@ export default function EmailChange({openbutton,userid,currentemail,load}) {
     const [newemail, setNewEmail] = useState("");
     const [open, setOpen] = useState(false)
   return (
+    // Email módosító felugró ablak
     <DialogRoot lazyMount open={open} onOpenChange={(e) => setOpen(e.open)} placement={"center"}>
             <DialogTrigger mx={"auto"} asChild>
             {openbutton}

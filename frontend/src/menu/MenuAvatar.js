@@ -40,6 +40,7 @@ export default function MenuAvatar({themecolor, profileMenuItems }) {
   }, [])
   
   return (
+    // Profil menü
       <DrawerRoot placement={{ base: "top", md: "end" }} size={{ base: "full", md: "xs" }}>
         <DrawerBackdrop />
         <DrawerTrigger variant="outline" position="absolute" p={0} w="45px" right="5" borderRadius="50%" asChild>
@@ -61,14 +62,14 @@ export default function MenuAvatar({themecolor, profileMenuItems }) {
           <DrawerHeader>
             <DrawerTitle>
               <Flex justifyContent="center" textAlign="center">
-                {token ?
+                {token ? // Ha be van jelentkezvezve
                   <Flex direction={"column"}>
                       <Avatar mx={"auto"} boxShadow={`0 0 20px 0 ${themecolor}`} width="125px" height="125px" src={account?.profilePictureURL} /><Flex p="3" color="colorPalette.solid">
                       <Text pt={"2"} mx={"auto"} fontSize={"2xl"} color="bg.inverted">{account?.username}</Text>
                       </Flex>
                       {roles?.includes("Admin")?  <Badge mx={"auto"} w={"50px"} bg={"red"} color="bg">Admin</Badge> : null}
                       {roles?.includes("Prémium")? <Badge mx={"auto"} w={"60px"}>Prémium</Badge> : null}
-                  </Flex> :
+                  </Flex> : // Ha nincs bejelentkezve
                   <DrawerActionTrigger as="div">
                     <Link style={{ display: "flex", margin: "5px" }} onClick={onclose} to={"/login"}>
                       <Button

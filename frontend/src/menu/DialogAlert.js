@@ -14,6 +14,7 @@ import {
 
 export default function DialogAlert({openButton,func,title,text,buttontext}) {
   return (
+    // Felugró ablak
     <DialogRoot role="alertdialog">
     <DialogTrigger as={"div"} asChild>
       {openButton}

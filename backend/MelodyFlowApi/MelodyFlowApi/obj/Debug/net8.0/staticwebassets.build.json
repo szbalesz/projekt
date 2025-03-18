@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "f/sGu+mJ3AIbTOG7QzOx4q/b1SF3tBy7cPSFXsywz/w=",
+  "Hash": "ZA0NzrfxMsbt6JFr/Lz6Yr3D3Kh7W6oLZvWoTK9qhnI=",
   "Source": "MelodyFlowApi",
   "BasePath": "_content/MelodyFlowApi",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "MelodyFlowApi\\wwwroot",
       "Source": "MelodyFlowApi",
-      "ContentRoot": "C:\\Users\\Tanulo\\szbalesz\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\Tanulo\\szbalesz\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\0859b03c-fb8b-419e-9d1e-a6f66332d07c_The Weeknd - Save Your Tears (Official Music Video).mp3",
+      "Identity": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\0859b03c-fb8b-419e-9d1e-a6f66332d07c_The Weeknd - Save Your Tears (Official Music Video).mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tanulo\\szbalesz\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
       "RelativePath": "music/0859b03c-fb8b-419e-9d1e-a6f66332d07c_The Weeknd - Save Your Tears (Official Music Video).mp3",
       "AssetKind": "All",
@@ -36,10 +36,10 @@
       "OriginalItemSpec": "wwwroot\\music\\0859b03c-fb8b-419e-9d1e-a6f66332d07c_The Weeknd - Save Your Tears (Official Music Video).mp3"
     },
     {
-      "Identity": "C:\\Users\\Tanulo\\szbalesz\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\0c3e50a4-6c2e-4c03-b795-b1fb797c7ddb_Kendrick Lamar - Not Like Us.mp3",
+      "Identity": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\0c3e50a4-6c2e-4c03-b795-b1fb797c7ddb_Kendrick Lamar - Not Like Us.mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tanulo\\szbalesz\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
       "RelativePath": "music/0c3e50a4-6c2e-4c03-b795-b1fb797c7ddb_Kendrick Lamar - Not Like Us.mp3",
       "AssetKind": "All",
@@ -55,10 +55,10 @@
       "OriginalItemSpec": "wwwroot\\music\\0c3e50a4-6c2e-4c03-b795-b1fb797c7ddb_Kendrick Lamar - Not Like Us.mp3"
     },
     {
-      "Identity": "C:\\Users\\Tanulo\\szbalesz\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\1502cc33-971f-4ca8-a589-bf8efdbdd8ec_Manuel - Para (Official Lyrics Video).mp3",
+      "Identity": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\1502cc33-971f-4ca8-a589-bf8efdbdd8ec_Manuel - Para (Official Lyrics Video).mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tanulo\\szbalesz\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
       "RelativePath": "music/1502cc33-971f-4ca8-a589-bf8efdbdd8ec_Manuel - Para (Official Lyrics Video).mp3",
       "AssetKind": "All",
@@ -74,10 +74,10 @@
       "OriginalItemSpec": "wwwroot\\music\\1502cc33-971f-4ca8-a589-bf8efdbdd8ec_Manuel - Para (Official Lyrics Video).mp3"
     },
     {
-      "Identity": "C:\\Users\\Tanulo\\szbalesz\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\2d98ee0e-baf9-441e-abb5-abc0ac9516a6_Ariana Grande - 7 rings (Official Video).mp3",
+      "Identity": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\2d98ee0e-baf9-441e-abb5-abc0ac9516a6_Ariana Grande - 7 rings (Official Video).mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tanulo\\szbalesz\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
       "RelativePath": "music/2d98ee0e-baf9-441e-abb5-abc0ac9516a6_Ariana Grande - 7 rings (Official Video).mp3",
       "AssetKind": "All",
@@ -93,10 +93,10 @@
       "OriginalItemSpec": "wwwroot\\music\\2d98ee0e-baf9-441e-abb5-abc0ac9516a6_Ariana Grande - 7 rings (Official Video).mp3"
     },
     {
-      "Identity": "C:\\Users\\Tanulo\\szbalesz\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\4c74b7c9-ced4-4bc4-9ff0-b43506ae448c_deshwalkinastreet.mp3",
+      "Identity": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\4c74b7c9-ced4-4bc4-9ff0-b43506ae448c_deshwalkinastreet.mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tanulo\\szbalesz\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
       "RelativePath": "music/4c74b7c9-ced4-4bc4-9ff0-b43506ae448c_deshwalkinastreet.mp3",
       "AssetKind": "All",
@@ -112,10 +112,10 @@
       "OriginalItemSpec": "wwwroot\\music\\4c74b7c9-ced4-4bc4-9ff0-b43506ae448c_deshwalkinastreet.mp3"
     },
     {
-      "Identity": "C:\\Users\\Tanulo\\szbalesz\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\7aa86b41-4d5a-40f8-a7e1-9978bfd11e7c_Feher Krisztian - Így jártam (Official Music Video).mp3",
+      "Identity": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\7aa86b41-4d5a-40f8-a7e1-9978bfd11e7c_Feher Krisztian - Így jártam (Official Music Video).mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tanulo\\szbalesz\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
       "RelativePath": "music/7aa86b41-4d5a-40f8-a7e1-9978bfd11e7c_Feher Krisztian - Így jártam (Official Music Video).mp3",
       "AssetKind": "All",
@@ -131,10 +131,10 @@
       "OriginalItemSpec": "wwwroot\\music\\7aa86b41-4d5a-40f8-a7e1-9978bfd11e7c_Feher Krisztian - Így jártam (Official Music Video).mp3"
     },
     {
-      "Identity": "C:\\Users\\Tanulo\\szbalesz\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\811d4a92-72bf-4ffc-a356-9c012d0dda7d_Kendrick Lamar - luther (Official Audio).mp3",
+      "Identity": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\811d4a92-72bf-4ffc-a356-9c012d0dda7d_Kendrick Lamar - luther (Official Audio).mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tanulo\\szbalesz\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
       "RelativePath": "music/811d4a92-72bf-4ffc-a356-9c012d0dda7d_Kendrick Lamar - luther (Official Audio).mp3",
       "AssetKind": "All",
@@ -150,10 +150,10 @@
       "OriginalItemSpec": "wwwroot\\music\\811d4a92-72bf-4ffc-a356-9c012d0dda7d_Kendrick Lamar - luther (Official Audio).mp3"
     },
     {
-      "Identity": "C:\\Users\\Tanulo\\szbalesz\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\81f743f6-a04e-4ccb-b525-c860e703cae9_Benson Boone - Beautiful Things (Official Music Video).mp3",
+      "Identity": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\81f743f6-a04e-4ccb-b525-c860e703cae9_Benson Boone - Beautiful Things (Official Music Video).mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tanulo\\szbalesz\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
       "RelativePath": "music/81f743f6-a04e-4ccb-b525-c860e703cae9_Benson Boone - Beautiful Things (Official Music Video).mp3",
       "AssetKind": "All",
@@ -169,10 +169,10 @@
       "OriginalItemSpec": "wwwroot\\music\\81f743f6-a04e-4ccb-b525-c860e703cae9_Benson Boone - Beautiful Things (Official Music Video).mp3"
     },
     {
-      "Identity": "C:\\Users\\Tanulo\\szbalesz\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\8995a895-76bb-4f85-8466-3ecb9f44ec04_Farkas Pisti x Bódi Csabi - SZERELEM  (hivatalos videoklip).mp3",
+      "Identity": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\8995a895-76bb-4f85-8466-3ecb9f44ec04_Farkas Pisti x Bódi Csabi - SZERELEM  (hivatalos videoklip).mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tanulo\\szbalesz\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
       "RelativePath": "music/8995a895-76bb-4f85-8466-3ecb9f44ec04_Farkas Pisti x Bódi Csabi - SZERELEM  (hivatalos videoklip).mp3",
       "AssetKind": "All",
@@ -188,10 +188,10 @@
       "OriginalItemSpec": "wwwroot\\music\\8995a895-76bb-4f85-8466-3ecb9f44ec04_Farkas Pisti x Bódi Csabi - SZERELEM  (hivatalos videoklip).mp3"
     },
     {
-      "Identity": "C:\\Users\\Tanulo\\szbalesz\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\8e589e6a-881f-4df4-996d-597482f6e185_Katy Perry - Firework (Official Music Video).mp3",
+      "Identity": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\8e589e6a-881f-4df4-996d-597482f6e185_Katy Perry - Firework (Official Music Video).mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tanulo\\szbalesz\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
       "RelativePath": "music/8e589e6a-881f-4df4-996d-597482f6e185_Katy Perry - Firework (Official Music Video).mp3",
       "AssetKind": "All",
@@ -207,10 +207,10 @@
       "OriginalItemSpec": "wwwroot\\music\\8e589e6a-881f-4df4-996d-597482f6e185_Katy Perry - Firework (Official Music Video).mp3"
     },
     {
-      "Identity": "C:\\Users\\Tanulo\\szbalesz\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\8eefcd7c-014c-47d5-9adf-6e2f222f8d1b_JABER - Isten Vezet (ft. Sean Price).mp3",
+      "Identity": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\8eefcd7c-014c-47d5-9adf-6e2f222f8d1b_JABER - Isten Vezet (ft. Sean Price).mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tanulo\\szbalesz\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
       "RelativePath": "music/8eefcd7c-014c-47d5-9adf-6e2f222f8d1b_JABER - Isten Vezet (ft. Sean Price).mp3",
       "AssetKind": "All",
@@ -226,10 +226,10 @@
       "OriginalItemSpec": "wwwroot\\music\\8eefcd7c-014c-47d5-9adf-6e2f222f8d1b_JABER - Isten Vezet (ft. Sean Price).mp3"
     },
     {
-      "Identity": "C:\\Users\\Tanulo\\szbalesz\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\a16f4de7-8550-4df9-9845-9a1e36565dce_KKevin - PATKÁNY (OFFICIAL VISUALIZER).mp3",
+      "Identity": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\a16f4de7-8550-4df9-9845-9a1e36565dce_KKevin - PATKÁNY (OFFICIAL VISUALIZER).mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tanulo\\szbalesz\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
       "RelativePath": "music/a16f4de7-8550-4df9-9845-9a1e36565dce_KKevin - PATKÁNY (OFFICIAL VISUALIZER).mp3",
       "AssetKind": "All",
@@ -245,10 +245,10 @@
       "OriginalItemSpec": "wwwroot\\music\\a16f4de7-8550-4df9-9845-9a1e36565dce_KKevin - PATKÁNY (OFFICIAL VISUALIZER).mp3"
     },
     {
-      "Identity": "C:\\Users\\Tanulo\\szbalesz\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\a5f28d33-4e77-4fca-b93e-c62c84f40607_Lady Gaga - Abracadabra (Official Music Video).mp3",
+      "Identity": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\a5f28d33-4e77-4fca-b93e-c62c84f40607_Lady Gaga - Abracadabra (Official Music Video).mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tanulo\\szbalesz\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
       "RelativePath": "music/a5f28d33-4e77-4fca-b93e-c62c84f40607_Lady Gaga - Abracadabra (Official Music Video).mp3",
       "AssetKind": "All",
@@ -264,10 +264,10 @@
       "OriginalItemSpec": "wwwroot\\music\\a5f28d33-4e77-4fca-b93e-c62c84f40607_Lady Gaga - Abracadabra (Official Music Video).mp3"
     },
     {
-      "Identity": "C:\\Users\\Tanulo\\szbalesz\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\bfa2e020-3511-4e8c-9f84-9ab24cc687b4_Billie Eilish - BIRDS OF A FEATHER (Official Music Video).mp3",
+      "Identity": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\bfa2e020-3511-4e8c-9f84-9ab24cc687b4_Billie Eilish - BIRDS OF A FEATHER (Official Music Video).mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tanulo\\szbalesz\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
       "RelativePath": "music/bfa2e020-3511-4e8c-9f84-9ab24cc687b4_Billie Eilish - BIRDS OF A FEATHER (Official Music Video).mp3",
       "AssetKind": "All",
@@ -283,10 +283,10 @@
       "OriginalItemSpec": "wwwroot\\music\\bfa2e020-3511-4e8c-9f84-9ab24cc687b4_Billie Eilish - BIRDS OF A FEATHER (Official Music Video).mp3"
     },
     {
-      "Identity": "C:\\Users\\Tanulo\\szbalesz\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\c94b7531-9476-426f-9813-6f11d586c857_ROSE & Bruno Mars - APT. (Official Music Video).mp3",
+      "Identity": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\c94b7531-9476-426f-9813-6f11d586c857_ROSE & Bruno Mars - APT. (Official Music Video).mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tanulo\\szbalesz\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
       "RelativePath": "music/c94b7531-9476-426f-9813-6f11d586c857_ROSE & Bruno Mars - APT. (Official Music Video).mp3",
       "AssetKind": "All",
@@ -302,10 +302,10 @@
       "OriginalItemSpec": "wwwroot\\music\\c94b7531-9476-426f-9813-6f11d586c857_ROSE & Bruno Mars - APT. (Official Music Video).mp3"
     },
     {
-      "Identity": "C:\\Users\\Tanulo\\szbalesz\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\cd2e5271-dc06-4093-83dd-7255a5938e2c_YEAT - FLAWLESS 2 (ft. LIL UZI VERT) [PROD. SKY x MYWAYBEATZ] 2.mp3",
+      "Identity": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\cd2e5271-dc06-4093-83dd-7255a5938e2c_YEAT - FLAWLESS 2 (ft. LIL UZI VERT) [PROD. SKY x MYWAYBEATZ] 2.mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tanulo\\szbalesz\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
       "RelativePath": "music/cd2e5271-dc06-4093-83dd-7255a5938e2c_YEAT - FLAWLESS 2 (ft. LIL UZI VERT) [PROD. SKY x MYWAYBEATZ] 2.mp3",
       "AssetKind": "All",
@@ -321,10 +321,10 @@
       "OriginalItemSpec": "wwwroot\\music\\cd2e5271-dc06-4093-83dd-7255a5938e2c_YEAT - FLAWLESS 2 (ft. LIL UZI VERT) [PROD. SKY x MYWAYBEATZ] 2.mp3"
     },
     {
-      "Identity": "C:\\Users\\Tanulo\\szbalesz\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\cde7a600-37c6-4332-a889-ef4811b6e7e0_JABER X T. Danny - MILLIÓK (Official Music Video).mp3",
+      "Identity": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\cde7a600-37c6-4332-a889-ef4811b6e7e0_JABER X T. Danny - MILLIÓK (Official Music Video).mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tanulo\\szbalesz\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
       "RelativePath": "music/cde7a600-37c6-4332-a889-ef4811b6e7e0_JABER X T. Danny - MILLIÓK (Official Music Video).mp3",
       "AssetKind": "All",
@@ -340,10 +340,10 @@
       "OriginalItemSpec": "wwwroot\\music\\cde7a600-37c6-4332-a889-ef4811b6e7e0_JABER X T. Danny - MILLIÓK (Official Music Video).mp3"
     },
     {
-      "Identity": "C:\\Users\\Tanulo\\szbalesz\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\cf7d8fbd-2072-4ed1-8fe8-ef7b6733fddc_KKevin - PROSECCO ft. Bruno (Official Music Video).mp3",
+      "Identity": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\cf7d8fbd-2072-4ed1-8fe8-ef7b6733fddc_KKevin - PROSECCO ft. Bruno (Official Music Video).mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tanulo\\szbalesz\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
       "RelativePath": "music/cf7d8fbd-2072-4ed1-8fe8-ef7b6733fddc_KKevin - PROSECCO ft. Bruno (Official Music Video).mp3",
       "AssetKind": "All",
@@ -359,10 +359,10 @@
       "OriginalItemSpec": "wwwroot\\music\\cf7d8fbd-2072-4ed1-8fe8-ef7b6733fddc_KKevin - PROSECCO ft. Bruno (Official Music Video).mp3"
     },
     {
-      "Identity": "C:\\Users\\Tanulo\\szbalesz\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\d1d61de2-2462-443f-8c86-a0efc5dd4c65_Lady Gaga, Bruno Mars - Die With A Smile (Official Music Video) (1).mp3",
+      "Identity": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\d1d61de2-2462-443f-8c86-a0efc5dd4c65_Lady Gaga, Bruno Mars - Die With A Smile (Official Music Video) (1).mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tanulo\\szbalesz\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
       "RelativePath": "music/d1d61de2-2462-443f-8c86-a0efc5dd4c65_Lady Gaga, Bruno Mars - Die With A Smile (Official Music Video) (1).mp3",
       "AssetKind": "All",
@@ -378,10 +378,10 @@
       "OriginalItemSpec": "wwwroot\\music\\d1d61de2-2462-443f-8c86-a0efc5dd4c65_Lady Gaga, Bruno Mars - Die With A Smile (Official Music Video) (1).mp3"
     },
     {
-      "Identity": "C:\\Users\\Tanulo\\szbalesz\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\d48de4a3-13e9-43b5-be38-7e1e1b7d3fa3_Burai, Fehér Krisztián, Mario feat. Essemm - BarnaLány.mp3",
+      "Identity": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\d48de4a3-13e9-43b5-be38-7e1e1b7d3fa3_Burai, Fehér Krisztián, Mario feat. Essemm - BarnaLány.mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tanulo\\szbalesz\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
       "RelativePath": "music/d48de4a3-13e9-43b5-be38-7e1e1b7d3fa3_Burai, Fehér Krisztián, Mario feat. Essemm - BarnaLány.mp3",
       "AssetKind": "All",
@@ -397,10 +397,10 @@
       "OriginalItemSpec": "wwwroot\\music\\d48de4a3-13e9-43b5-be38-7e1e1b7d3fa3_Burai, Fehér Krisztián, Mario feat. Essemm - BarnaLány.mp3"
     },
     {
-      "Identity": "C:\\Users\\Tanulo\\szbalesz\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\d4f0cf18-5a86-4481-86c9-bc711d6519e7_L.L. Junior x Azahriah (feat. Farkas Pisti) - ZHA MAJ DUR (Official Music Video).mp3",
+      "Identity": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\d4f0cf18-5a86-4481-86c9-bc711d6519e7_L.L. Junior x Azahriah (feat. Farkas Pisti) - ZHA MAJ DUR (Official Music Video).mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tanulo\\szbalesz\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
       "RelativePath": "music/d4f0cf18-5a86-4481-86c9-bc711d6519e7_L.L. Junior x Azahriah (feat. Farkas Pisti) - ZHA MAJ DUR (Official Music Video).mp3",
       "AssetKind": "All",
@@ -416,10 +416,10 @@
       "OriginalItemSpec": "wwwroot\\music\\d4f0cf18-5a86-4481-86c9-bc711d6519e7_L.L. Junior x Azahriah (feat. Farkas Pisti) - ZHA MAJ DUR (Official Music Video).mp3"
     },
     {
-      "Identity": "C:\\Users\\Tanulo\\szbalesz\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\e228040b-4f28-4f53-b910-1cf5d693e53d_Koboldok.mp3",
+      "Identity": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\music\\e228040b-4f28-4f53-b910-1cf5d693e53d_Koboldok.mp3",
       "SourceId": "MelodyFlowApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tanulo\\szbalesz\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tanulo\\csehit\\projekt\\backend\\MelodyFlowApi\\MelodyFlowApi\\wwwroot\\",
       "BasePath": "_content/MelodyFlowApi",
       "RelativePath": "music/e228040b-4f28-4f53-b910-1cf5d693e53d_Koboldok.mp3",
       "AssetKind": "All",

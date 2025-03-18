@@ -8,6 +8,7 @@ import { getToken } from '../services/AuthService';
 export default function Settings({setThemecolor}) {
   const { colorMode, setColorMode } = useColorMode();
   const token = getToken();
+  // Témák
   const themes = [
     {
       title: "Fehér",
@@ -64,6 +65,7 @@ export default function Settings({setThemecolor}) {
           <hr/>
           <Heading py={"3"} size={"1xl"}>Téma</Heading>
           <Flex wrap={"wrap"} pb={"3"} direction={"row"}>
+            {/* Téma választás */}
             {themes.map((theme,index) => <Button onClick={()=> setThemecolor(theme.value)} key={index} colorPalette={theme.value} variant={"surface"} m={"1"}>{theme.title}</Button>)}
           </Flex>
         </Flex>

@@ -37,6 +37,7 @@ export default function Search( {handlePopupClose}) {
   }, [query, searchType]);
   
   return (
+    // Kereső ablak
     <DialogRoot defaultOpen onExitComplete={handlePopupClose} role="search" scrollBehavior="inside">
       <DialogContent border="10px solid" borderColor="bg" rounded="xl" bg="Background" width={{ base: "100%", md: "85%" }} height={{ base: "80%", md: "85%" }} maxW="1500px" maxH="750px">
       <Theme display={"flex"} flexDirection={"column"} colorPalette={themecolor} bg={"Background"} h={"100%"}>
@@ -64,14 +65,14 @@ export default function Search( {handlePopupClose}) {
         </DialogHeader>
 
         <DialogBody p={{ base: "1", md: "5" }} justifyContent="center" textAlign="center">
-        {searchType === "Zenék"? 
+        {searchType === "Zenék"? // Zenék megjelenítése
           musics.map((music,index)=>
             <MusicCard
             key={index}
             music={music}
             handlePopupClose={handlePopupClose}/>
             )
-      : playlists.length > 0 ?
+      : playlists.length > 0 ? // Lejátszási listák megjelenítése
           playlists.map((playlist,index)=>
           <PlaylistCard key={index} playlist={playlist}/>
         ) : <p>Nincs találat.</p>

@@ -59,6 +59,7 @@ useEffect(() => {
   }
 }, [isPlaying, audioRef]);
   return (
+    // Lejátszó
     <Box
       bg="Background"
       position="fixed"
@@ -97,7 +98,7 @@ useEffect(() => {
             </Box>
           </Box>
         </Button>
-        
+        {/*  Zene időcsúszka */}
         <Box display={{ base: "none", md: "flex" }} alignItems="center" minWidth={"250px"} width={"lg"} mx="5">
   <Text fontSize="sm" mr="2">
     {`${Math.floor(currentTime / 60)}:${Math.floor(currentTime % 60).toString().padStart(2, '0')}`}
@@ -115,8 +116,7 @@ useEffect(() => {
     {`${Math.floor(duration / 60)}:${Math.floor(duration % 60).toString().padStart(2, '0')}`}
   </Text>
 </Box>
-
-        
+{/* Lejátszó gombok */}
           <Flex align="center" gap={4}>
             <IconButton
               aria-label="Previous"
@@ -159,6 +159,7 @@ useEffect(() => {
             </Box>
           </Flex>
       </Flex>
+      {/* Lejátszó összecsukása */}
       <Flex position={"absolute"} bottom={"60px"} right={"0"}>
         {open ?
         <Button rounded={"xl"} onClick={() => (setopen(false))} bg={"Background"} variant={"outline"} borderBottomWidth={"0px"}>

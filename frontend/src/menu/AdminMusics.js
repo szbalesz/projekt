@@ -84,6 +84,7 @@ export default function AdminMusics ({selectedmenu}) {
         </Table.Header>
         <Table.Body>
           {
+            // Zenék listázása
             musics.map((music) => {
             const profile = uploaders[music?.uploaderId];
             return (

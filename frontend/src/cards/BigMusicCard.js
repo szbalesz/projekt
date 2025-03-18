@@ -4,6 +4,7 @@ import { Box, Button, Text } from '@chakra-ui/react';
 export default function BigMusicCard({func, music}) {
   const themecolor = localStorage.getItem("themecolor");
   return (
+    // Főoldali nagy zenekártya
         <Button
         onClick={func}
         borderRadius="lg"

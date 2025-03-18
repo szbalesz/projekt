@@ -49,6 +49,7 @@ export default function AdminUsers ({selectedmenu}) {
 
   return (
     <>
+    {/* // Admin felület felhasználók listázására */}
       <Table.ScrollArea mx={"auto"} maxW={window.innerWidth} borderWidth={"1px"} rounded={"xl"}>
       <Table.Root showColumnBorder>
         <Table.Header>
@@ -65,6 +66,7 @@ export default function AdminUsers ({selectedmenu}) {
         </Table.Header>
         <Table.Body>
           {
+            // Felhasználók listázása
             users.map((user) => {
               return (
                 <Table.Row 

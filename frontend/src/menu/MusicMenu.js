@@ -13,12 +13,13 @@ import { getToken } from "../services/AuthService";
 
 export default function MusicMenu({getData, isUploader, music, setFavorite, isFavorite, musicId, deleteMusic}) {
   return (
+    // Zene menü
     <MenuRoot>
       <MenuTrigger asChild>
       <Button p={1} m={1} variant="solid"><LuList/></Button> 
       </MenuTrigger>
       <MenuContent>
-        {getToken()? 
+        {getToken()? // Ha be van jelentkezve
         <AddToPlaylistMenu setFavorite={setFavorite} isFavorite={isFavorite} musicId={musicId}/> 
         : null}
         {isUploader? 

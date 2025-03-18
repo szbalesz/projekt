@@ -5,6 +5,7 @@ import { LuInstagram } from 'react-icons/lu'
 
 export default function AboutCard({item}) {
   return (
+    // Rólunk kártya
     <Card.Root m={"5"} maxW="sm" textAlign={"center"} justifyContent={"center"} overflow="hidden">
       <Box
       backgroundPosition={"center"}

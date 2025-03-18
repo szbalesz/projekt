@@ -91,6 +91,7 @@ export default function AdminPlayLists({selectedmenu}) {
         </Table.Header>
         <Table.Body>
           {
+            // Lejátszási listák listázása
             playlists.map((playlist) => { 
               const profile = creators[playlist?.creatorId];
               const musiccount = musiccounts[playlist?.id];

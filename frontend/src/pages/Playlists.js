@@ -45,8 +45,10 @@ export default function Playlists() {
         <hr/>
         <Flex px={"5"} pt={"3"} direction={"column"}>
           <Flex justifyContent={"space-between"}>
-          {token? <Heading>Lejátszási listák</Heading> : <Heading color={"colorPalette.300"}>Jelentkezz be a funkció használatához!</Heading>}
-          {token? <Heading textAlign="center">  <PlaylistWindow load={load} playlists={playlists} themecolor={themecolor} userid={userid}/> </Heading> : null} 
+          {token? // Ha be van jelentkezve, akkor megjelenik a cím, ha nincs akkor a figyelmeztetés
+          <Heading>Lejátszási listák</Heading> : <Heading color={"colorPalette.300"}>Jelentkezz be a funkció használatához!</Heading>}
+          {token? // Ha be van jelentkezve, akkor megjelenik a lejátszási lista ablak, ha nincs akkor nem
+          <Heading textAlign="center">  <PlaylistWindow load={load} playlists={playlists} themecolor={themecolor} userid={userid}/> </Heading> : null} 
           </Flex>
           <Flex my={"3"} overflowX={"auto"} gap={4} width="100%">{playlists?.map((playlist, index) => <PlaylistCard key={index} playlist={playlist} />)}</Flex>
         </Flex>

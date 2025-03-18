@@ -23,6 +23,7 @@ export default function EditPicture({userid,openbutton,profilePictureURL,load}) 
     }, [profilePictureURL])
     
     return (
+        // Profilkép szerkesztő felugró ablak
         <DialogRoot lazyMount open={open} onOpenChange={(e) => setOpen(e.open)} placement={"center"}>
             <DialogTrigger asChild>
             {openbutton}

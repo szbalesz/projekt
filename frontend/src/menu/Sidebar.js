@@ -25,6 +25,7 @@ export default function Sidebar({menuItems,selectedMenu,setIsSidebarOpen}) {
 
   return (
     <>
+    {/* Nagy oldalsó menü kinyitva */}
         <DrawerRoot open={open} onOpenChange={onClose} placement={{ base: "bottom", md: "start" }} size={{ base: "full", md: "xs" }}>
         <DrawerBackdrop/> 
         <DrawerContent bg="Background" borderWidth={{ base: "0px", md: "0px" }} borderTopWidth="0"  width={{ base: "100%", md: "225px" }}>
@@ -38,7 +39,8 @@ export default function Sidebar({menuItems,selectedMenu,setIsSidebarOpen}) {
 
           </DrawerHeader>
           <DrawerBody p="0" onClick={onClose}>
-              {menuItems.map((item, index) => item.label !== "Menü" ? (
+              {menuItems.map((item, index) => item.label !== "Menü" ?  // Menü nevű elem nem jelenik meg
+              (
                 <Link style={{display: "flex"}} onClick={onclose} to={item.path} key={index}>
                 <Button
                   key={index}

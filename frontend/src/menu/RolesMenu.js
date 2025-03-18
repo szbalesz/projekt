@@ -34,6 +34,7 @@ export default function RolesMenu({user,load}){
   }, [value])
 
   return (
+    // Rang adás menü
     <MenuRoot>
       <MenuTrigger asChild>
       <Button disabled={user?.id === userid} size={"xs"} colorPalette={

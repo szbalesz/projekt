@@ -12,7 +12,7 @@ export default function PlaylistCard({ playlist }) {
   const openPlaylist = ()=>{
     navigate(`/playlist/${playlist.id}`);
   }
-
+  // Adatok lekérése
   const getData = async ()=>{
     const response = await api.get("/playlist/"+playlist.id);
        let creatorId = response.data.playlist[0].creatorId
@@ -27,6 +27,7 @@ export default function PlaylistCard({ playlist }) {
     getData();
   }, [])
   return (
+    // Lejátszási lista kártya
     <Button
       _hover={{ transform: "scale(1.05)" }}
       variant="ghost"

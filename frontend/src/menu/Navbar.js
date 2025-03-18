@@ -8,6 +8,7 @@ import { LuList } from 'react-icons/lu';
 export default function Navbar({themecolor, setIsSidebarOpen,profileMenuItems}) {
   return (
     <>
+    {/* Navbar */}
     <Flex bg="Background" as="nav" h="50px" align="center" justify="space-between" borderBottomWidth="1px" color="white">
         <Button display={{base: "none", md:"flex"}} h="50px" fontSize="10px" rounded={"0"} colorPalette={"gray"} color={themecolor+".solid"} variant={"surface"} bg="Background" w="50px" onClick={()=>setIsSidebarOpen(true)}>
               <Flex justifyContent="center"><LuList/></Flex>

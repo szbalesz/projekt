@@ -42,7 +42,7 @@ export default function AddToPlaylistMenu({ setFavorite, isFavorite, musicId }) 
               justifyContent={"space-between"}
             >
                 <Flex>
-                {isAdded? <Text p="1" color={"red.500"}><LuMinus /></Text> : <Text p="1"><LuPlus /></Text>}
+                {isAdded? <Text p="1" color={"red.500"}><LuMinus /></Text> : <Text p="1"><LuPlus /></Text>} {/* Ha benne van a zene a lejátszási listában akkor más jelenik meg */}  
                 <Text color={isAdded? "red.500" : "bg.inverted"}>{playlist.playlistName}</Text>
               </Flex>
               <Image rounded={"md"} w={"25px"} h={"25px"} src={playlist.imageUrl} />
