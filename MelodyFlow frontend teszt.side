@@ -1,0 +1,788 @@
+{
+  "id": "d65319ea-7dc8-4f43-9224-29fa0d4bb017",
+  "version": "2.0",
+  "name": "MelodyFlow teszt",
+  "url": "http://localhost:3000/",
+  "tests": [{
+    "id": "5a50f7d3-235f-4de3-81f2-60d026fb402b",
+    "name": "1. Regisztráció",
+    "commands": [{
+      "id": "afbfacfb-e155-4670-ba68-3cfdeb10eb47",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:3000/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9ef93f3a-e10b-414f-8adb-b9fc340a5a5a",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "900x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3272cc7e-9b3f-41ec-a99c-ac1ed3f86df5",
+      "comment": "",
+      "command": "click",
+      "target": "id=avatar:dialog::r0::trigger",
+      "targets": [
+        ["id=avatar:dialog::r0::trigger", "id"],
+        ["css=#avatar\\3A dialog\\3A\\3Ar0\\3A\\3Atrigger", "css:finder"],
+        ["xpath=//div[@id='avatar:dialog::r0::trigger']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div/div/nav/div[2]", "xpath:idRelative"],
+        ["xpath=//div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fc68bbfb-260f-4520-a772-9c97e2cbdef4",
+      "comment": "",
+      "command": "click",
+      "target": "css=.css-1hlk3j4",
+      "targets": [
+        ["css=.css-1hlk3j4", "css:finder"],
+        ["xpath=(//button[@type='button'])[23]", "xpath:attributes"],
+        ["xpath=//h2[@id='dialog::r0::title']/div/div/a/button", "xpath:idRelative"],
+        ["xpath=//h2/div/div/a/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Bejelentkezés')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "62a052f3-be0d-4c5d-80b7-25a73ac09104",
+      "comment": "",
+      "command": "click",
+      "target": "css=.css-1gj5tje",
+      "targets": [
+        ["css=.css-1gj5tje", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/div/div[3]/div/div/div/div/p/a/span", "xpath:idRelative"],
+        ["xpath=//a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Regisztrálj')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c599f556-7ff7-4e93-836f-27a5bfce47b5",
+      "comment": "",
+      "command": "click",
+      "target": "id=:ra:",
+      "targets": [
+        ["id=:ra:", "id"],
+        ["name=username", "name"],
+        ["css=#\\3Ara\\3A", "css:finder"],
+        ["xpath=//input[@id=':ra:']", "xpath:attributes"],
+        ["xpath=//div[@id='field:::ra:']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e92d6a73-cf4f-4ffd-a9b4-554b44f3534d",
+      "comment": "",
+      "command": "type",
+      "target": "id=:ra:",
+      "targets": [
+        ["id=:ra:", "id"],
+        ["name=username", "name"],
+        ["css=#\\3Ara\\3A", "css:finder"],
+        ["xpath=//input[@id=':ra:']", "xpath:attributes"],
+        ["xpath=//div[@id='field:::ra:']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "teszt"
+    }, {
+      "id": "3ae8d7d7-e75b-41a7-87f8-7b09ff175cfc",
+      "comment": "",
+      "command": "type",
+      "target": "id=:rb:",
+      "targets": [
+        ["id=:rb:", "id"],
+        ["name=email", "name"],
+        ["css=#\\3Arb\\3A", "css:finder"],
+        ["xpath=//input[@id=':rb:']", "xpath:attributes"],
+        ["xpath=//div[@id='field:::rb:']/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "teszt@teszt.hu"
+    }, {
+      "id": "9e046000-949b-48e5-b774-387a20359bcb",
+      "comment": "",
+      "command": "type",
+      "target": "id=:rc:",
+      "targets": [
+        ["id=:rc:", "id"],
+        ["css=#\\3Arc\\3A", "css:finder"],
+        ["xpath=//input[@id=':rc:']", "xpath:attributes"],
+        ["xpath=//div[@id='field:::rc:']/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div/input", "xpath:position"]
+      ],
+      "value": "Jelszo!1"
+    }, {
+      "id": "f67204a1-fa16-47cb-9d98-c0858db3ea53",
+      "comment": "",
+      "command": "type",
+      "target": "id=:rd:",
+      "targets": [
+        ["id=:rd:", "id"],
+        ["css=#\\3Ard\\3A", "css:finder"],
+        ["xpath=//input[@id=':rd:']", "xpath:attributes"],
+        ["xpath=//div[@id='field:::rd:']/div/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div/input", "xpath:position"]
+      ],
+      "value": "Jelszo!1"
+    }, {
+      "id": "d4115eaf-3c58-4410-b61d-1042ff3aa61c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.css-1gfryhj",
+      "targets": [
+        ["css=.css-1gfryhj", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div/div[3]/div/div/div/div/div/form/div/button", "xpath:idRelative"],
+        ["xpath=//form/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Regisztráció')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "db5e4f07-37da-436b-8e03-7080f55ce49a",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.css-1gfryhj",
+      "targets": [
+        ["css=.css-1gfryhj", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div/div[3]/div/div/div/div/div/form/div/button", "xpath:idRelative"],
+        ["xpath=//form/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Regisztráció')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "20931e5a-0ac4-4fbf-9710-afb829f41a87",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.css-1gfryhj",
+      "targets": [
+        ["css=.css-1gfryhj", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div/div[3]/div/div/div/div/div/form/div/button", "xpath:idRelative"],
+        ["xpath=//form/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Regisztráció')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5ef2d3b4-bb28-49de-a6b4-197eb5631902",
+      "comment": "Alert megjelent",
+      "command": "waitForElementVisible",
+      "target": "xpath=//*[@data-scope=\"toast\"]",
+      "targets": [
+        ["id=toast:toast:2:title", "id"],
+        ["css=#toast\\3Atoast\\3A 2\\3Atitle", "css:finder"],
+        ["xpath=//div[@id='toast:toast:2:title']", "xpath:attributes"],
+        ["xpath=//div[@id='toast:toast:2']/div[2]/div", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div[2]/div", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "731634d4-527f-4c7a-b1b8-ef853838430c",
+      "comment": "Sikeres regisztráció",
+      "command": "verifyElementPresent",
+      "target": "linkText=Elfelejtett jelszó?",
+      "targets": [
+        ["linkText=Elfelejtett jelszó?", "linkText"],
+        ["css=.css-gg4vpm > .chakra-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Elfelejtett jelszó?')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/div/div/div/div[3]/div/div/div/div/div/div/form/div[4]/a", "xpath:idRelative"],
+        ["xpath=//form/div[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Elfelejtett jelszó?')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }]
+  }, {
+    "id": "2e8823d2-2f02-47e0-8ac4-e65130c6bfcb",
+    "name": "2. Bejelentkezés",
+    "commands": [{
+      "id": "5d4cfdd5-db3a-4de2-8a31-7044201ce16e",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:3000/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7329852e-5fe1-4b5a-a371-d5a8c4afb05e",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "900x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b5a7ba1e-d7b1-4169-af19-1b305e53882b",
+      "comment": "",
+      "command": "click",
+      "target": "id=avatar:dialog::r0::trigger",
+      "targets": [
+        ["id=avatar:dialog::r0::trigger", "id"],
+        ["css=#avatar\\3A dialog\\3A\\3Ar0\\3A\\3Atrigger", "css:finder"],
+        ["xpath=//div[@id='avatar:dialog::r0::trigger']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div/div/nav/div[2]", "xpath:idRelative"],
+        ["xpath=//div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "adddf18f-f291-4d2e-85b5-2a88364b77cf",
+      "comment": "",
+      "command": "click",
+      "target": "css=.css-1hlk3j4",
+      "targets": [
+        ["css=.css-1hlk3j4", "css:finder"],
+        ["xpath=(//button[@type='button'])[23]", "xpath:attributes"],
+        ["xpath=//h2[@id='dialog::r0::title']/div/div/a/button", "xpath:idRelative"],
+        ["xpath=//h2/div/div/a/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Bejelentkezés')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3178f326-fa7c-485f-a3b6-7ec2a71f092d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.css-wuqtn7",
+      "targets": [
+        ["css=.css-wuqtn7", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "b53f1c06-b1dd-402a-9762-ffc5e82622a3",
+      "comment": "",
+      "command": "click",
+      "target": "id=:r6:",
+      "targets": [
+        ["id=:r6:", "id"],
+        ["css=#\\3Ar6\\3A", "css:finder"],
+        ["xpath=//input[@id=':r6:']", "xpath:attributes"],
+        ["xpath=//div[@id='field:::r6:']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f594b8b5-a5e9-4737-9c7a-cf7b0b277f26",
+      "comment": "",
+      "command": "type",
+      "target": "id=:r6:",
+      "targets": [
+        ["id=:r6:", "id"],
+        ["css=#\\3Ar6\\3A", "css:finder"],
+        ["xpath=//input[@id=':r6:']", "xpath:attributes"],
+        ["xpath=//div[@id='field:::r6:']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "teszt"
+    }, {
+      "id": "6c9be158-c3ee-406a-95b4-549029e4c5f6",
+      "comment": "",
+      "command": "type",
+      "target": "id=:r7:",
+      "targets": [
+        ["id=:r7:", "id"],
+        ["css=#\\3Ar7\\3A", "css:finder"],
+        ["xpath=//input[@id=':r7:']", "xpath:attributes"],
+        ["xpath=//div[@id='field:::r7:']/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "Jelszo!1"
+    }, {
+      "id": "cb768d77-acc5-45af-98fa-4994cb8270a7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.css-1gfryhj",
+      "targets": [
+        ["css=.css-1gfryhj", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div/div[3]/div/div/div/div/div/div/form/div[4]/button", "xpath:idRelative"],
+        ["xpath=//div[4]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Bejelentkezés')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2b7ff3f2-14ac-4ca6-8113-a5afa35bd06a",
+      "comment": "Alert megjelent",
+      "command": "waitForElementVisible",
+      "target": "xpath=//*[@data-scope=\"toast\"]",
+      "targets": [
+        ["id=toast:toast:2:title", "id"],
+        ["css=#toast\\3Atoast\\3A 2\\3Atitle", "css:finder"],
+        ["xpath=//div[@id='toast:toast:2:title']", "xpath:attributes"],
+        ["xpath=//div[@id='toast:toast:2']/div[2]/div", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div[2]/div", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "5dead426-f931-45c0-8b23-1ae73c850cd0",
+      "comment": "Sikeres bejelentkezés",
+      "command": "verifyElementPresent",
+      "target": "xpath=//*[@id=\"root\"]/div/div/div/div/div[3]/div/div/div",
+      "targets": [
+        ["css=.css-1slfw36", "css:finder"],
+        ["xpath=(//button[@type='button'])[9]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div/div[3]/div/div/div/button", "xpath:idRelative"],
+        ["xpath=//div/button", "xpath:position"]
+      ],
+      "value": "30000"
+    }]
+  }, {
+    "id": "919ca058-dd95-438e-b440-2b88c679d966",
+    "name": "3. Lejátszási lista létrehozás",
+    "commands": [{
+      "id": "6fd544e4-ed1a-4a83-a2ec-c45dcd6d5ed2",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:3000/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "356b4cf2-0e31-4122-a33c-baee389f0409",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "900x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3cb9d0da-5e7b-4305-ac1b-7572d40d9873",
+      "comment": "",
+      "command": "click",
+      "target": "css=.css-14dyutg:nth-child(5) .chakra-button",
+      "targets": [
+        ["css=.css-14dyutg:nth-child(5) .chakra-button", "css:finder"],
+        ["xpath=(//button[@type='button'])[6]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div/div[2]/div/div[5]/a/button", "xpath:idRelative"],
+        ["xpath=//div[5]/a/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "beb83f7b-5aa9-4935-9397-f5f3ed03bee7",
+      "comment": "",
+      "command": "click",
+      "target": "id=dialog::r6::trigger",
+      "targets": [
+        ["id=dialog::r6::trigger", "id"],
+        ["css=#dialog\\3A\\3Ar6\\3A\\3Atrigger", "css:finder"],
+        ["xpath=//button[@id='dialog::r6::trigger']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div/div[3]/div/div/div/div[3]/div/h2[2]/button", "xpath:idRelative"],
+        ["xpath=//h2[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Létrehozás')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "34520324-dc15-4ddf-b164-7eb74cc64fc3",
+      "comment": "",
+      "command": "click",
+      "target": "css=.css-ee9xfg",
+      "targets": [
+        ["css=.css-ee9xfg", "css:finder"],
+        ["xpath=//input[@value='']", "xpath:attributes"],
+        ["xpath=//div[@id='dialog::r6::content']/div/div[2]/form/div/div/input", "xpath:idRelative"],
+        ["xpath=//form/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6d8c6b8e-657d-4f40-8c3a-567e5f01343f",
+      "comment": "",
+      "command": "type",
+      "target": "css=.css-ee9xfg",
+      "targets": [
+        ["css=.css-ee9xfg", "css:finder"],
+        ["xpath=//input[@value='Teszt']", "xpath:attributes"],
+        ["xpath=//div[@id='dialog::r6::content']/div/div[2]/form/div/div/input", "xpath:idRelative"],
+        ["xpath=//form/div/div/input", "xpath:position"]
+      ],
+      "value": "Teszt"
+    }, {
+      "id": "4d7122cd-e532-445b-ba4e-00d8b1d1b7e9",
+      "comment": "",
+      "command": "click",
+      "target": "css=.css-1irzoy2",
+      "targets": [
+        ["css=.css-1irzoy2", "css:finder"],
+        ["xpath=//input[@value='']", "xpath:attributes"],
+        ["xpath=//div[@id='dialog::r6::content']/div/div[2]/form/div/div/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "688daf23-95ed-4611-9019-2bcddeba2467",
+      "comment": "",
+      "command": "type",
+      "target": "css=.css-1irzoy2",
+      "targets": [
+        ["css=.css-1irzoy2", "css:finder"],
+        ["xpath=//input[@value='teszt']", "xpath:attributes"],
+        ["xpath=//div[@id='dialog::r6::content']/div/div[2]/form/div/div/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "teszt"
+    }, {
+      "id": "a62d8346-d097-4679-9cde-0fe4535db52f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.css-kcj133",
+      "targets": [
+        ["css=.css-kcj133", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='dialog::r6::content']/div/div[2]/form/div[2]/button", "xpath:idRelative"],
+        ["xpath=//form/div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Mentés')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1580b86b-ec9a-4e45-878b-0505b0c5c8a5",
+      "comment": "Alert megjelent",
+      "command": "waitForElementVisible",
+      "target": "xpath=//*[@data-scope=\"toast\"]",
+      "targets": [
+        ["id=toast:toast:9h:title", "id"],
+        ["css=#toast\\3Atoast\\3A 9h\\3Atitle", "css:finder"],
+        ["xpath=//div[@id='toast:toast:9h:title']", "xpath:attributes"],
+        ["xpath=//div[@id='toast:toast:9h']/div[2]/div", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div[2]/div", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "530ecc0b-877c-4b46-bc16-4c1fa8a19048",
+      "comment": "Teszt lejátszási lista sikeresen létrehozva",
+      "command": "verifyElementNotPresent",
+      "target": "id=dialog::r6::title",
+      "targets": [
+        ["id=dialog::r6::title", "id"],
+        ["css=#dialog\\3A\\3Ar6\\3A\\3Atitle", "css:finder"],
+        ["xpath=//h2[@id='dialog::r6::title']", "xpath:attributes"],
+        ["xpath=//div[@id='dialog::r6::content']/div/div/h2", "xpath:idRelative"],
+        ["xpath=//div[6]/div/div/div/h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'Részletek szerkesztése')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }]
+  }, {
+    "id": "1e09fe20-a06d-43f6-8205-c4429771776a",
+    "name": "4. Zene kedvencekhez adása",
+    "commands": [{
+      "id": "d3b94cf8-86a0-42d0-b501-cff4bfe2d452",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:3000/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d1155389-6d21-42ef-9c2a-85f4ed186a11",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "900x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6e5737fa-e3ca-436d-8dc6-72a4edcea9b0",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//*[@id=\"root\"]/div/div/div/div/div[3]/div/div/div/button[1]",
+      "targets": [
+        ["css=.css-1slfw36 > .css-r9xl7y", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/div/div[3]/div/div/div/button/div", "xpath:idRelative"],
+        ["xpath=//div/button/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e8551696-6964-40ec-afff-a27291e4881f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.css-1wx8yla path",
+      "targets": [
+        ["css=.css-1wx8yla path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "0bb66442-7b74-4abd-bd71-6aad250c602d",
+      "comment": "Alert megjelent",
+      "command": "waitForElementVisible",
+      "target": "xpath=//*[@data-scope=\"toast\"]",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "a5ac483c-71cc-4b15-9344-604b59e980c8",
+      "comment": "",
+      "command": "click",
+      "target": "css=.css-14dyutg:nth-child(4) path",
+      "targets": [
+        ["css=.css-14dyutg:nth-child(4) path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "bd972d10-4796-4f57-bc2d-c6272efa9a7f",
+      "comment": "Zene bekerült a Kedvencekbe",
+      "command": "verifyElementPresent",
+      "target": "css=.css-tkct90",
+      "targets": [
+        ["css=.css-tkct90", "css:finder"],
+        ["xpath=//img[contains(@src,'https://i.ytimg.com/vi/Oa_RSwwpPaA/maxresdefault.jpg')]", "xpath:img"],
+        ["xpath=//div[@id='root']/div/div/div/div/div[3]/div/div/div/div/div[3]/div/button/div/img", "xpath:idRelative"],
+        ["xpath=//div[3]/div/button/div/img", "xpath:position"]
+      ],
+      "value": "30000"
+    }]
+  }, {
+    "id": "3e5f79ee-9481-4f44-a3c9-e4b92002947e",
+    "name": "5. Zene keresés",
+    "commands": [{
+      "id": "1ee555f7-8640-4453-a794-232c37b45829",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:3000/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "41eae37c-a2f3-4538-8ecc-4247e82913ec",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "900x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6459a8dc-f447-4efd-9c18-b3978f49f787",
+      "comment": "",
+      "command": "click",
+      "target": "css=circle:nth-child(1)",
+      "targets": [
+        ["css=circle:nth-child(1)", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "4162cb41-a6d8-40b2-be57-c4d2b8adbefd",
+      "comment": "",
+      "command": "click",
+      "target": "css=.chakra-input",
+      "targets": [
+        ["css=.chakra-input", "css:finder"],
+        ["xpath=//input[@value='']", "xpath:attributes"],
+        ["xpath=//h2[@id='dialog::r6::title']/div/input", "xpath:idRelative"],
+        ["xpath=//h2/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "843ce5a8-3cc5-4524-b347-9c06fa1ad3ed",
+      "comment": "",
+      "command": "type",
+      "target": "css=.chakra-input",
+      "targets": [
+        ["css=.chakra-input", "css:finder"],
+        ["xpath=//input[@value='save']", "xpath:attributes"],
+        ["xpath=//h2[@id='dialog::r6::title']/div/input", "xpath:idRelative"],
+        ["xpath=//h2/div/input", "xpath:position"]
+      ],
+      "value": "firework"
+    }, {
+      "id": "85d7db4f-a7bc-4db7-9376-5055897e7312",
+      "comment": "Zene talált",
+      "command": "click",
+      "target": "css=.css-tkct90",
+      "targets": [
+        ["css=.css-tkct90", "css:finder"],
+        ["xpath=//img[contains(@src,'https://uproxx.com/wp-content/uploads/2021/01/the-weeknd-save-your-tears-video-grid-1.jpg?w=710')]", "xpath:img"],
+        ["xpath=//div[@id='dialog::r6::content']/div/div[2]/button/div/img", "xpath:idRelative"],
+        ["xpath=//button/div/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ead84511-0efb-4ce9-b9be-1295948abddc",
+      "comment": "Zene oldal betöltött",
+      "command": "verifyElementPresent",
+      "target": "xpath=//*[@id=\"root\"]/div/div/div/div/div[3]/div/div[3]/div/div/p[4]/button[2]",
+      "targets": [
+        ["css=.css-1ilxhx6 polygon", "css:finder"]
+      ],
+      "value": "30000"
+    }]
+  }, {
+    "id": "42ecb473-bc37-4a1c-9718-2381c61ef5d3",
+    "name": "7. Profil törlése",
+    "commands": [{
+      "id": "ae1b9dff-53c8-4470-b487-086c57acbf2f",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:3000/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "877414b0-731b-41aa-b212-1259fbbd407d",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "902x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e5ebda98-db0f-4067-9410-7e0daebdc61f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.css-1dklkmj",
+      "targets": [
+        ["css=.css-1dklkmj", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "559b35ac-184e-4232-bbf5-e4628e6f6ff6",
+      "comment": "",
+      "command": "click",
+      "target": "css=.css-0:nth-child(3) .chakra-button",
+      "targets": [
+        ["css=.css-0:nth-child(3) .chakra-button", "css:finder"],
+        ["xpath=(//button[@type='button'])[25]", "xpath:attributes"],
+        ["xpath=//div[@id='dialog::r0::content']/div/div[4]/div[3]/a/button", "xpath:idRelative"],
+        ["xpath=//div[4]/div[3]/a/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Beállítások')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7d64adb3-1a7f-4703-bb0c-759394a91b0b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.css-uki2l5",
+      "targets": [
+        ["css=.css-uki2l5", "css:finder"],
+        ["xpath=(//button[@type='button'])[9]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div/div[3]/div/div/div/div/a/button", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/div/div/a/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Módosítás')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9d3d98e0-7899-4a75-82df-e9c94c7dd44b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.css-jox8yk",
+      "targets": [
+        ["css=.css-jox8yk", "css:finder"],
+        ["xpath=(//button[@type='button'])[9]", "xpath:attributes"],
+        ["xpath=//div[@id='dialog::r7::trigger']/button", "xpath:idRelative"],
+        ["xpath=//div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Fiók törlése')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "96d11636-2557-4a5d-ab9c-665acd2ecb25",
+      "comment": "",
+      "command": "click",
+      "target": "css=.css-1uynepj",
+      "targets": [
+        ["css=.css-1uynepj", "css:finder"],
+        ["xpath=(//button[@type='button'])[19]", "xpath:attributes"],
+        ["xpath=//div[@id='dialog::r7::content']/div[3]/div/button", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div[3]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Törlés')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "88805511-7cbb-406c-b636-4a5f31190a15",
+      "comment": "Alert megjelent",
+      "command": "waitForElementVisible",
+      "target": "xpath=//*[@data-scope=\"toast\"]",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "d1ae68ac-efdc-4fcf-ac3b-5f2f92109819",
+      "comment": "Sikeres profil törlése",
+      "command": "verifyElementPresent",
+      "target": "xpath=//*[@id=\"root\"]/div/div/div/div/div[3]/div/div/div",
+      "targets": [
+        ["css=.css-1slfw36", "css:finder"],
+        ["xpath=(//button[@type='button'])[9]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div/div[3]/div/div/div/button", "xpath:idRelative"],
+        ["xpath=//div/button", "xpath:position"]
+      ],
+      "value": "30000"
+    }]
+  }, {
+    "id": "b906f82e-6b37-4386-bbae-8b4ec73ca986",
+    "name": "6. Zene lejátszás, és funkciók",
+    "commands": [{
+      "id": "5d917c72-c213-4e23-b919-a61e91539094",
+      "comment": "(Google miatt lehet buggos a lejátszás teszt)",
+      "command": "open",
+      "target": "http://localhost:3000/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "eb546f5e-068a-460e-a9e8-b7e8b1ed3663",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "904x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "addbcbfd-906f-4507-b0ac-3650d533629e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.css-1slfw36",
+      "targets": [
+        ["css=.css-1slfw36", "css:finder"],
+        ["xpath=(//button[@type='button'])[9]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div/div[3]/div/div/div/button", "xpath:idRelative"],
+        ["xpath=//div/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1681bbb9-4179-4487-ac99-3190e2740a35",
+      "comment": "",
+      "command": "click",
+      "target": "css=.css-1ilxhx6 polygon",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4f374892-74a0-4326-8045-5c03577cd4d5",
+      "comment": "Zene elindítása sikeres",
+      "command": "verifyElementNotPresent",
+      "target": "css=.css-1ilxhx6 > svg",
+      "targets": [
+        ["css=.css-1ilxhx6 > svg", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "1e64f8ab-5c74-422d-95e7-eb1859b7c5c6",
+      "comment": "",
+      "command": "click",
+      "target": "css=.css-vr2eq9:nth-child(3) > svg",
+      "targets": [
+        ["css=.css-vr2eq9:nth-child(3) > svg", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "9b7103da-a68f-45b0-bf1b-3104fe08a219",
+      "comment": "Új zenére váltás sikeres",
+      "command": "verifyElementPresent",
+      "target": "css=.css-vr2eq9:nth-child(2)",
+      "targets": [
+        ["css=.css-vr2eq9:nth-child(2)", "css:finder"],
+        ["xpath=(//button[@type='button'])[15]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div/div[4]/div/div/div[2]/button[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/button[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d2e81613-bc7c-432d-b19d-bb499c2aae10",
+      "comment": "",
+      "command": "click",
+      "target": "css=.css-vr2eq9:nth-child(2) > svg",
+      "targets": [
+        ["css=.css-vr2eq9:nth-child(2) > svg", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "78d0036b-b3c5-4761-aaaf-d3582ad3562f",
+      "comment": "Zene megállítása sikeres",
+      "command": "verifyElementPresent",
+      "target": "css=.css-vr2eq9:nth-child(2) > svg",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "bdc49472-51a7-486e-b848-d7177d874632",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["5a50f7d3-235f-4de3-81f2-60d026fb402b"]
+  }],
+  "urls": ["http://localhost:3000/", "http://localhost:3000/register"],
+  "plugins": []
+}
