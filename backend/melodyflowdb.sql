@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2025. Már 06. 15:53
--- Kiszolgáló verziója: 10.4.32-MariaDB
--- PHP verzió: 8.2.12
+-- Létrehozás ideje: 2025. Ápr 03. 07:48
+-- Kiszolgáló verziója: 10.4.20-MariaDB
+-- PHP verzió: 7.3.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -34,7 +34,7 @@ CREATE TABLE `aspnetroleclaims` (
   `RoleId` varchar(255) NOT NULL,
   `ClaimType` longtext DEFAULT NULL,
   `ClaimValue` longtext DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -47,7 +47,7 @@ CREATE TABLE `aspnetroles` (
   `Name` varchar(256) DEFAULT NULL,
   `NormalizedName` varchar(256) DEFAULT NULL,
   `ConcurrencyStamp` longtext DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- A tábla adatainak kiíratása `aspnetroles`
@@ -68,7 +68,7 @@ CREATE TABLE `aspnetuserclaims` (
   `UserId` varchar(255) NOT NULL,
   `ClaimType` longtext DEFAULT NULL,
   `ClaimValue` longtext DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -81,7 +81,7 @@ CREATE TABLE `aspnetuserlogins` (
   `ProviderKey` varchar(255) NOT NULL,
   `ProviderDisplayName` longtext DEFAULT NULL,
   `UserId` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -92,15 +92,15 @@ CREATE TABLE `aspnetuserlogins` (
 CREATE TABLE `aspnetuserroles` (
   `UserId` varchar(255) NOT NULL,
   `RoleId` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- A tábla adatainak kiíratása `aspnetuserroles`
 --
 
 INSERT INTO `aspnetuserroles` (`UserId`, `RoleId`) VALUES
+('2337dcb3-fee0-4dfe-9c45-b2110a4b2bbe', '04fb29d9-7876-44fa-98ba-361739e22551'),
 ('64db6df7-6cce-4ce9-85fd-f4bc0408cd6b', '04fb29d9-7876-44fa-98ba-361739e22551'),
-('a21926cc-7f20-4af3-aaf2-576f54e8c81c', '04fb29d9-7876-44fa-98ba-361739e22551'),
 ('e291ac04-dc42-43fb-872b-d7c50c53ea97', '54bad147-8c93-4ce2-aaa2-6f26142e293a');
 
 -- --------------------------------------------------------
@@ -128,16 +128,16 @@ CREATE TABLE `aspnetusers` (
   `LockoutEnd` datetime DEFAULT NULL,
   `LockoutEnabled` tinyint(1) NOT NULL,
   `AccessFailedCount` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- A tábla adatainak kiíratása `aspnetusers`
 --
 
 INSERT INTO `aspnetusers` (`Id`, `Fullname`, `BirthDate`, `ProfilePictureURL`, `UserName`, `NormalizedUserName`, `Email`, `NormalizedEmail`, `EmailConfirmed`, `PasswordHash`, `SecurityStamp`, `ConcurrencyStamp`, `PhoneNumber`, `PhoneNumberConfirmed`, `TwoFactorEnabled`, `LockoutEnd`, `LockoutEnabled`, `AccessFailedCount`) VALUES
-('64db6df7-6cce-4ce9-85fd-f4bc0408cd6b', NULL, '2005-02-04 10:49:16.998000', 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/0a135511-f80b-402a-a20c-65ac4a4e04ae/d9zsqmu-3a80d38d-019b-4798-b6b2-35a507f1a146.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzBhMTM1NTExLWY4MGItNDAyYS1hMjBjLTY1YWM0YTRlMDRhZVwvZDl6c3FtdS0zYTgwZDM4ZC0wMTliLTQ3OTgtYjZiMi0zNWE1MDdmMWExNDYucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.CDXZOToellxEzIUmyfIrvdQ0RskboukkVMb65RYhJZA', 'valami', 'VALAMI', 'valami@gmail.com', 'VALAMI@GMAIL.COM', 0, 'AQAAAAIAAYagAAAAEAdU3dAIQMArCuRipO/x9ly+H9WED+58fCFR9aJ/VhXU8/aRadLvkr15VjwfZQWjlg==', 'TODNZTHGQEOKCION2BRQJ65RLM44LQ2P', '75039bc7-8d22-4b25-9b80-8a0bca98d4d3', '06703870023', 0, 0, NULL, 1, 0),
-('a21926cc-7f20-4af3-aaf2-576f54e8c81c', NULL, '2025-02-04 13:22:44.891000', 'https://images.prismic.io/smi-blog/6c987520-81a6-4d03-acc3-2281bbb8b323_IMG_4795.jpg?auto=compress,format', 'szbalesz', 'SZBALESZ', 'baleszvagyok7000@gmail.com', 'BALESZVAGYOK7000@GMAIL.COM', 0, 'AQAAAAIAAYagAAAAEGjRBaNlf3v3Dbtv0nk6sn++aKG9QK8mkaOik6RxCW3+EfzqeGgXDmxVBiQnI07Kcg==', 'NRXJSQOQMHGVT3KPMUTF6MWWHETEZLF7', '81982103-e41b-40ab-97ee-cb84df6f6feb', '06301234567', 0, 0, NULL, 1, 0),
-('e291ac04-dc42-43fb-872b-d7c50c53ea97', NULL, '2025-02-04 13:22:44.891000', 'https://media.port.hu/images/000/066/567.jpg', 'BidamBidam', 'BIDAMBIDAM', 'BidamBidam@gmail.com', 'BIDAMBIDAM@GMAIL.COM', 0, 'AQAAAAIAAYagAAAAEAXC2+24V4Hy6Rm9wT2xyoUwRikE27rVQ/ZwEBLwFCfZSL8zyoKMNtGp/eeZIIes/w==', '3ZXWSES5WYYDLIS3E22UGU4LHXEUTMAZ', '346c64da-9742-47b2-aa76-91ee7b6d0157', '06301234567', 0, 0, NULL, 1, 0);
+('2337dcb3-fee0-4dfe-9c45-b2110a4b2bbe', NULL, '2025-02-04 13:22:44.891000', 'https://assistanteplus.fr/wp-content/uploads/2022/04/chat-midjourney.webp', 'szbalesz', 'SZBALESZ', 'baleszvagyok7000@gmail.com', 'BALESZVAGYOK7000@GMAIL.COM', 0, 'AQAAAAIAAYagAAAAEJIs2bZrslR8se0HnZieNzOWL+eRkk3H9aKczr5aZiKXllZolt5NxL4vkCL14OfQuA==', 'EUAON7JOZ7HWE7KRIU34NQS56P6P6CPF', 'ae26e96b-eb3e-44e0-8a0f-ae89bafef8c6', '06301234567', 0, 0, NULL, 1, 0),
+('64db6df7-6cce-4ce9-85fd-f4bc0408cd6b', NULL, '2005-02-04 10:49:16.998000', 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/0a135511-f80b-402a-a20c-65ac4a4e04ae/d9zsqmu-3a80d38d-019b-4798-b6b2-35a507f1a146.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzBhMTM1NTExLWY4MGItNDAyYS1hMjBjLTY1YWM0YTRlMDRhZVwvZDl6c3FtdS0zYTgwZDM4ZC0wMTliLTQ3OTgtYjZiMi0zNWE1MDdmMWExNDYucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.CDXZOToellxEzIUmyfIrvdQ0RskboukkVMb65RYhJZA', 'adminuser', 'ADMINUSER', 'valami@gmail.com', 'VALAMI@GMAIL.COM', 0, 'AQAAAAIAAYagAAAAEAdU3dAIQMArCuRipO/x9ly+H9WED+58fCFR9aJ/VhXU8/aRadLvkr15VjwfZQWjlg==', 'TODNZTHGQEOKCION2BRQJ65RLM44LQ2P', '0a69e7de-6101-4105-ae3d-86875b40750b', '06703870023', 0, 0, NULL, 1, 0),
+('e291ac04-dc42-43fb-872b-d7c50c53ea97', NULL, '2025-02-04 13:22:44.891000', 'https://media.port.hu/images/000/066/567.jpg', 'BidamBidam', 'BIDAMBIDAM', 'BidamBidam@gmail.com', 'BIDAMBIDAM@GMAIL.COM', 0, 'AQAAAAIAAYagAAAAEAXC2+24V4Hy6Rm9wT2xyoUwRikE27rVQ/ZwEBLwFCfZSL8zyoKMNtGp/eeZIIes/w==', '3ZXWSES5WYYDLIS3E22UGU4LHXEUTMAZ', '7367a81f-d003-45fb-bdf6-ca974e031039', '06301234567', 0, 0, NULL, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -150,7 +150,7 @@ CREATE TABLE `aspnetusertokens` (
   `LoginProvider` varchar(255) NOT NULL,
   `Name` varchar(255) NOT NULL,
   `Value` longtext DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -159,12 +159,12 @@ CREATE TABLE `aspnetusertokens` (
 --
 
 CREATE TABLE `music` (
-  `Id` varchar(36) NOT NULL,
-  `Artist` varchar(50) DEFAULT NULL,
-  `Title` varchar(50) DEFAULT NULL,
-  `Image_URL` longtext DEFAULT NULL,
-  `Music_URL` longtext NOT NULL,
-  `UploaderId` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL
+  `Id` varchar(36) COLLATE utf8mb4_hungarian_ci NOT NULL,
+  `Artist` varchar(50) COLLATE utf8mb4_hungarian_ci DEFAULT NULL,
+  `Title` varchar(50) COLLATE utf8mb4_hungarian_ci DEFAULT NULL,
+  `Image_URL` longtext COLLATE utf8mb4_hungarian_ci DEFAULT NULL,
+  `Music_URL` longtext COLLATE utf8mb4_hungarian_ci NOT NULL,
+  `UploaderId` varchar(255) CHARACTER SET utf8mb4 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
 
 --
@@ -173,11 +173,12 @@ CREATE TABLE `music` (
 
 INSERT INTO `music` (`Id`, `Artist`, `Title`, `Image_URL`, `Music_URL`, `UploaderId`) VALUES
 ('1204303a-3d41-498d-8380-3b3d72590620', 'Benson Boone', 'Beautiful Things', 'https://i.ytimg.com/vi/Oa_RSwwpPaA/maxresdefault.jpg', '/music/81f743f6-a04e-4ccb-b525-c860e703cae9_Benson Boone - Beautiful Things (Official Music Video).mp3', '64db6df7-6cce-4ce9-85fd-f4bc0408cd6b'),
+('395bf642-c850-463d-8171-fe129f062275', 'Azahriah', 'cipoe', 'https://i.ytimg.com/vi/d7judDbrovM/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB7AxNhC9bF2b6mOll7UhR2xNVNGg', '/music/e50cf012-93be-4df5-8a53-3e9800f1fd29_Azahriah - cipoe.mp3', '64db6df7-6cce-4ce9-85fd-f4bc0408cd6b'),
 ('42b5b3b2-2bc1-43ad-bc31-78d6f2adc613', 'Farkas Pisti x Bódi Csabi ', 'SZERELEM', 'https://i.ytimg.com/vi/l-NMUDfX-7Q/maxresdefault.jpg', '/music/8995a895-76bb-4f85-8466-3ecb9f44ec04_Farkas Pisti x Bódi Csabi - SZERELEM  (hivatalos videoklip).mp3', '64db6df7-6cce-4ce9-85fd-f4bc0408cd6b'),
+('4d121dca-b04f-4189-a948-6ebb56b0d30b', 'LMEN PRALA', 'A KARRIEREM LESZ*ROM', 'https://i.ytimg.com/vi/YHc6lKogw7s/maxresdefault.jpg', '/music/83add612-6180-4c49-af2f-84918412c551_LMEN PRALA - A KARRIEREM LESZROM OFFICIAL MUSIC VIDEO  PROD. BY SMITHMUSIX.mp3', '64db6df7-6cce-4ce9-85fd-f4bc0408cd6b'),
 ('507d3e28-551d-43fb-97eb-574b4911c2c7', 'Kkevin', 'Prosecco', 'https://i.ytimg.com/vi/1uu-TUeNtbk/maxresdefault.jpg', '/music/cf7d8fbd-2072-4ed1-8fe8-ef7b6733fddc_KKevin - PROSECCO ft. Bruno (Official Music Video).mp3', '64db6df7-6cce-4ce9-85fd-f4bc0408cd6b'),
 ('53bb8b6d-ef7e-4413-b74b-cbe957d586eb', 'KKevin', 'PATKÁNY ', 'https://i.ytimg.com/vi/nbSpo4NPb_8/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGH8gSygrMA8=&rs=AOn4CLA0hRyxfjkfWsQd-zyYPWVi10uF8A', '/music/a16f4de7-8550-4df9-9845-9a1e36565dce_KKevin - PATKÁNY (OFFICIAL VISUALIZER).mp3', '64db6df7-6cce-4ce9-85fd-f4bc0408cd6b'),
 ('5937082a-9bc7-42a7-8af5-54ef3be9f1f8', 'Fehér Krisztián', 'Így jártam', 'https://i.ytimg.com/vi/jTbgChibXgY/maxresdefault.jpg', '/music/7aa86b41-4d5a-40f8-a7e1-9978bfd11e7c_Feher Krisztian - Így jártam (Official Music Video).mp3', '64db6df7-6cce-4ce9-85fd-f4bc0408cd6b'),
-('5eb3df76-5fbd-41b8-9156-4ef79a6bd7c3', 'YEAT', 'FLAWLESS 2 (ft. LIL UZI VERT) [PROD. SKY x MYWAYBE', 'https://i.ytimg.com/vi/e4YGP5sJGbA/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLA1IJX7dJQNEmfYncG236LE4l0cCA', '/music/cd2e5271-dc06-4093-83dd-7255a5938e2c_YEAT - FLAWLESS 2 (ft. LIL UZI VERT) [PROD. SKY x MYWAYBEATZ] 2.mp3', 'a21926cc-7f20-4af3-aaf2-576f54e8c81c'),
 ('7e691cc8-85f0-46f8-803c-c624058127c7', 'Billie Eilish ', 'BIRDS OF A FEATHER ', 'https://i.ytimg.com/vi/d5gf9dXbPi0/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBQ2XWSoQs4bSVBZeF4-DPBrqHVbw', '/music/bfa2e020-3511-4e8c-9f84-9ab24cc687b4_Billie Eilish - BIRDS OF A FEATHER (Official Music Video).mp3', '64db6df7-6cce-4ce9-85fd-f4bc0408cd6b'),
 ('8677ae83-03ff-4379-b0d3-f5b3aa0789f4', 'Manuel', 'Para ', 'https://images.genius.com/86d3976c320879d6d621c01f2deca318.1000x1000x1.jpg', '/music/1502cc33-971f-4ca8-a589-bf8efdbdd8ec_Manuel - Para (Official Lyrics Video).mp3', '64db6df7-6cce-4ce9-85fd-f4bc0408cd6b'),
 ('a1bd955f-4e86-4ea8-a15a-fb135aaf9b09', 'Lady Gaga x Bruno Mars ', 'Die With A Smile', 'https://i.discogs.com/C7lXx2701Ma_N_-v9eHZazO0XKbl8cb1QomGrYifwqE/rs:fit/g:sm/q:90/h:596/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMxNTI2/NTkxLTE3MjQyNzM3/NzctODQzNS5qcGVn.jpeg', '/music/d1d61de2-2462-443f-8c86-a0efc5dd4c65_Lady Gaga, Bruno Mars - Die With A Smile (Official Music Video) (1).mp3', '64db6df7-6cce-4ce9-85fd-f4bc0408cd6b'),
@@ -200,10 +201,10 @@ INSERT INTO `music` (`Id`, `Artist`, `Title`, `Image_URL`, `Music_URL`, `Uploade
 --
 
 CREATE TABLE `playlist` (
-  `Id` varchar(36) NOT NULL,
-  `PlaylistName` varchar(50) DEFAULT NULL,
-  `Image_URL` longtext NOT NULL,
-  `CreatorId` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL
+  `Id` varchar(36) COLLATE utf8mb4_hungarian_ci NOT NULL,
+  `PlaylistName` varchar(50) COLLATE utf8mb4_hungarian_ci DEFAULT NULL,
+  `Image_URL` longtext COLLATE utf8mb4_hungarian_ci NOT NULL,
+  `CreatorId` varchar(255) CHARACTER SET utf8mb4 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
 
 --
@@ -211,10 +212,10 @@ CREATE TABLE `playlist` (
 --
 
 INSERT INTO `playlist` (`Id`, `PlaylistName`, `Image_URL`, `CreatorId`) VALUES
-('1b6984a4-2b0e-4c83-b4f7-8170e81d9e61', 'Xddd', 'https://i.imgur.com/E3BJp37.gif', 'a21926cc-7f20-4af3-aaf2-576f54e8c81c'),
 ('743ec982-f0c9-4192-904f-085f4f3116ec', 'Magyar', 'https://images.saymedia-content.com/.image/t_share/MTc0OTkxNjA0ODg3NzI2MDQ4/the-changing-face-of-michael-jackson.jpg', '64db6df7-6cce-4ce9-85fd-f4bc0408cd6b'),
-('82d369ff-92ef-4ace-b714-ab15c14ce5c6', 'Kedvencek', 'https://www.gamespot.com/a/uploads/screen_kubrick/1179/11799911/3807415-screenshot2021-03-12at3.13.21pm.png', 'a21926cc-7f20-4af3-aaf2-576f54e8c81c'),
 ('91e4600b-d0ca-4314-8f38-00209a76a439', 'Külföldi', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSumnVKDq0NjiijYRcMyUitJ9xPtWKc05hwyA&s', '64db6df7-6cce-4ce9-85fd-f4bc0408cd6b'),
+('b4863cbf-0a6a-4051-a4db-2627c8541843', 'ASDSADsa', 'https://t3.ftcdn.net/jpg/04/62/60/80/360_F_462608080_J2AJrf8h0fmbFqnTVUQfza8JivYOfShz.jpg', '2337dcb3-fee0-4dfe-9c45-b2110a4b2bbe'),
+('c091ac43-aa24-458a-91b6-455571f7b984', 'Kedvencek', 'https://t3.ftcdn.net/jpg/04/62/60/80/360_F_462608080_J2AJrf8h0fmbFqnTVUQfza8JivYOfShz.jpg', '2337dcb3-fee0-4dfe-9c45-b2110a4b2bbe'),
 ('d6322b24-6ca0-4976-9d4c-7a135f2ef3c6', 'Kedvencek', 'https://t3.ftcdn.net/jpg/04/62/60/80/360_F_462608080_J2AJrf8h0fmbFqnTVUQfza8JivYOfShz.jpg', '64db6df7-6cce-4ce9-85fd-f4bc0408cd6b'),
 ('df7414f2-978e-4b95-baf6-42e7911d9767', 'Kedvencek', 'https://t3.ftcdn.net/jpg/04/62/60/80/360_F_462608080_J2AJrf8h0fmbFqnTVUQfza8JivYOfShz.jpg', 'e291ac04-dc42-43fb-872b-d7c50c53ea97');
 
@@ -225,8 +226,8 @@ INSERT INTO `playlist` (`Id`, `PlaylistName`, `Image_URL`, `CreatorId`) VALUES
 --
 
 CREATE TABLE `playlistmusic` (
-  `PlaylistId` varchar(36) NOT NULL,
-  `MusicId` varchar(36) NOT NULL
+  `PlaylistId` varchar(36) COLLATE utf8mb4_hungarian_ci NOT NULL,
+  `MusicId` varchar(36) COLLATE utf8mb4_hungarian_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
 
 --
@@ -234,8 +235,9 @@ CREATE TABLE `playlistmusic` (
 --
 
 INSERT INTO `playlistmusic` (`PlaylistId`, `MusicId`) VALUES
-('1b6984a4-2b0e-4c83-b4f7-8170e81d9e61', 'cc7568b6-f58e-4ab2-aa33-e94bcba38c8f'),
+('743ec982-f0c9-4192-904f-085f4f3116ec', '395bf642-c850-463d-8171-fe129f062275'),
 ('743ec982-f0c9-4192-904f-085f4f3116ec', '42b5b3b2-2bc1-43ad-bc31-78d6f2adc613'),
+('743ec982-f0c9-4192-904f-085f4f3116ec', '4d121dca-b04f-4189-a948-6ebb56b0d30b'),
 ('743ec982-f0c9-4192-904f-085f4f3116ec', '507d3e28-551d-43fb-97eb-574b4911c2c7'),
 ('743ec982-f0c9-4192-904f-085f4f3116ec', '53bb8b6d-ef7e-4413-b74b-cbe957d586eb'),
 ('743ec982-f0c9-4192-904f-085f4f3116ec', '5937082a-9bc7-42a7-8af5-54ef3be9f1f8'),
@@ -245,8 +247,6 @@ INSERT INTO `playlistmusic` (`PlaylistId`, `MusicId`) VALUES
 ('743ec982-f0c9-4192-904f-085f4f3116ec', 'ac073a3b-1687-4d5b-a333-5c44b3242884'),
 ('743ec982-f0c9-4192-904f-085f4f3116ec', 'e54e5b95-25a5-494e-8ebe-812fd26e07ed'),
 ('743ec982-f0c9-4192-904f-085f4f3116ec', 'f4aa3d71-2a90-4d39-ab08-223f3f4f0fe5'),
-('82d369ff-92ef-4ace-b714-ab15c14ce5c6', '5eb3df76-5fbd-41b8-9156-4ef79a6bd7c3'),
-('82d369ff-92ef-4ace-b714-ab15c14ce5c6', 'c1563ca2-177b-4df1-9ea7-cbcabf572abb'),
 ('91e4600b-d0ca-4314-8f38-00209a76a439', '1204303a-3d41-498d-8380-3b3d72590620'),
 ('91e4600b-d0ca-4314-8f38-00209a76a439', '7e691cc8-85f0-46f8-803c-c624058127c7'),
 ('91e4600b-d0ca-4314-8f38-00209a76a439', 'a1bd955f-4e86-4ea8-a15a-fb135aaf9b09'),
@@ -256,10 +256,11 @@ INSERT INTO `playlistmusic` (`PlaylistId`, `MusicId`) VALUES
 ('91e4600b-d0ca-4314-8f38-00209a76a439', 'ca21bd7c-024b-44a7-8d7f-9c3c89dc5fad'),
 ('91e4600b-d0ca-4314-8f38-00209a76a439', 'cc7568b6-f58e-4ab2-aa33-e94bcba38c8f'),
 ('91e4600b-d0ca-4314-8f38-00209a76a439', 'd1b1d957-d902-4b31-a540-8add2ed8369d'),
+('c091ac43-aa24-458a-91b6-455571f7b984', '507d3e28-551d-43fb-97eb-574b4911c2c7'),
 ('d6322b24-6ca0-4976-9d4c-7a135f2ef3c6', '507d3e28-551d-43fb-97eb-574b4911c2c7'),
 ('d6322b24-6ca0-4976-9d4c-7a135f2ef3c6', '53bb8b6d-ef7e-4413-b74b-cbe957d586eb'),
-('d6322b24-6ca0-4976-9d4c-7a135f2ef3c6', '5eb3df76-5fbd-41b8-9156-4ef79a6bd7c3'),
-('d6322b24-6ca0-4976-9d4c-7a135f2ef3c6', 'ab3cb451-56ec-4534-a57c-d99291b4089f');
+('d6322b24-6ca0-4976-9d4c-7a135f2ef3c6', 'ab3cb451-56ec-4534-a57c-d99291b4089f'),
+('df7414f2-978e-4b95-baf6-42e7911d9767', '4d121dca-b04f-4189-a948-6ebb56b0d30b');
 
 -- --------------------------------------------------------
 
@@ -270,18 +271,18 @@ INSERT INTO `playlistmusic` (`PlaylistId`, `MusicId`) VALUES
 CREATE TABLE `userplaylist` (
   `UserId` varchar(255) NOT NULL,
   `PlaylistId` varchar(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_hungarian_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- A tábla adatainak kiíratása `userplaylist`
 --
 
 INSERT INTO `userplaylist` (`UserId`, `PlaylistId`) VALUES
+('2337dcb3-fee0-4dfe-9c45-b2110a4b2bbe', 'b4863cbf-0a6a-4051-a4db-2627c8541843'),
+('2337dcb3-fee0-4dfe-9c45-b2110a4b2bbe', 'c091ac43-aa24-458a-91b6-455571f7b984'),
 ('64db6df7-6cce-4ce9-85fd-f4bc0408cd6b', '743ec982-f0c9-4192-904f-085f4f3116ec'),
 ('64db6df7-6cce-4ce9-85fd-f4bc0408cd6b', '91e4600b-d0ca-4314-8f38-00209a76a439'),
 ('64db6df7-6cce-4ce9-85fd-f4bc0408cd6b', 'd6322b24-6ca0-4976-9d4c-7a135f2ef3c6'),
-('a21926cc-7f20-4af3-aaf2-576f54e8c81c', '1b6984a4-2b0e-4c83-b4f7-8170e81d9e61'),
-('a21926cc-7f20-4af3-aaf2-576f54e8c81c', '82d369ff-92ef-4ace-b714-ab15c14ce5c6'),
 ('e291ac04-dc42-43fb-872b-d7c50c53ea97', 'df7414f2-978e-4b95-baf6-42e7911d9767');
 
 -- --------------------------------------------------------
@@ -293,7 +294,7 @@ INSERT INTO `userplaylist` (`UserId`, `PlaylistId`) VALUES
 CREATE TABLE `__efmigrationshistory` (
   `MigrationId` varchar(150) NOT NULL,
   `ProductVersion` varchar(32) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- A tábla adatainak kiíratása `__efmigrationshistory`

@@ -33,7 +33,7 @@ namespace MelodyFlowApi
                 options.AddPolicy(MyAllowSpecificOrigins,
                                       policy =>
                                       {
-                                          policy.WithOrigins("http://localhost:3000", "http://192.168.56.1:3000", "http://172.20.10.2:3000")
+                                          policy.WithOrigins("http://localhost:3000")
                                          .AllowAnyHeader()
                                          .AllowAnyMethod()
                                          .AllowCredentials();
