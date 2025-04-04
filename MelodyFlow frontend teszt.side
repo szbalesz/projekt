@@ -759,22 +759,17 @@
       "comment": "",
       "command": "click",
       "target": "xpath=//div[2]/button[2]",
-      "targets": [
-        ["css=.css-1dxzz2h:nth-child(2)", "css:finder"],
-        ["xpath=(//button[@type='button'])[15]", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div/div/div/div/div[4]/div/div/div[2]/button[2]", "xpath:idRelative"],
-        ["xpath=//div[2]/button[2]", "xpath:position"]
-      ],
+      "targets": [],
       "value": ""
     }, {
       "id": "78d0036b-b3c5-4761-aaaf-d3582ad3562f",
       "comment": "Zene megállítása sikeres",
-      "command": "verifyElementPresent",
-      "target": "css=.css-1dxzz2h:nth-child(2) polygon",
+      "command": "waitForElementPresent",
+      "target": "css=.css-vr2eq9:nth-child(2) > svg > polygon",
       "targets": [
-        ["css=.css-1dxzz2h:nth-child(2) polygon", "css:finder"]
+        ["css=.css-vr2eq9:nth-child(2) > svg", "css:finder"]
       ],
-      "value": ""
+      "value": "30000"
     }]
   }],
   "suites": [{
