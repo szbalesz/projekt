@@ -14,31 +14,18 @@
 
 ### 🎨 Frontend UI – Csehi Tamás  
 ✅ **Folyamatban lévő fejlesztések**  
-- Felhasználói dokumentáció
-
-📌 **Következő lépések**  
 - Prezentáció
-  
 ---
 
 ### 🔄 Frontend ↔ Backend kapcsolat – Száraz Bálint Csaba  
 ✅ **Folyamatban lévő fejlesztések**  
-- Besegítés a dokumentációkba
-
-📌 **Következő lépések**  
 - Prezentáció
-
 ---
 
 ### 🗄️ Backend + Adatbázis – Fehér Tamás  
 ✅ **Folyamatban lévő fejlesztések**  
-- Fejlesztői dokumentáció
-
-
-📌 **Következő lépések**
 - Prezentáció
-
 ---
 
-- 📌 Legutóbbi frissítés: **2025.03.17.**
+- 📌 Legutóbbi frissítés: **2025.04.06.**
 - ✏️ Frissítette: **Száraz Bálint Csaba**
